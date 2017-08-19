@@ -17,8 +17,6 @@
                         <li><a href="profile.html">Profilis</a></li>
                         <li><a href="contacts.html">Kontaktai</a></li>
                         <li><a href="mailbox.html">Žinutės</a></li>
-                        <li class="divider"></li>
-                        <li><a href="login.html">Atsijungti</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -34,16 +32,16 @@
             <li>
                 <a href="#"><i class="fa fa-suitcase"></i> <span class="nav-label">Ūkininkai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="<?= base_url(); ?>ukininkai/prideti_ukininka">Naujas ūkininkas</a></li>
-                    <li><a href="<?= base_url(); ?>ukininkai/sarasas_ukininku">Ūkininkų sąrašas</a></li>
+                    <li><a href="<?= base_url(); ?>ukininkai/prideti_ukininka"><i class="fa fa-edit"></i> Naujas ūkininkas</a></li>
+                    <li><a href="<?= base_url(); ?>ukininkai/sarasas_ukininku"><i class="fa fa-bars"></i> Ūkininkų sąrašas</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#"><i class="fa fa-paw"></i> <span class="nav-label">Gyvuliai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="<?= base_url(); ?>gyvuliai/nuskaityti_vic">Įtraukti gyvulius iš VIC.LT</a></li>
-                    <li><a href="<?= base_url(); ?>gyvuliai/gyvuliu_sarasas">Gyvulių sąrašas</a></li>
-                    <li><a href="<?= base_url(); ?>gyvuliai/skaiciuoti_gyvulius">Skaičiuoti gyvulius</a></li>
+                    <li><a href="<?= base_url(); ?>gyvuliai/nuskaityti_vic"><i class="fa fa-plus"></i> Įtraukti iš VIC.LT</a></li>
+                    <li><a href="<?= base_url(); ?>gyvuliai/gyvuliu_sarasas"><i class="fa fa-list"></i> Gyvulių sąrašas</a></li>
+                    <li><a href="<?= base_url(); ?>gyvuliai/skaiciuoti_gyvulius"><i class="fa fa-table"></i> Skaičiuoti gyvulius</a></li>
                 </ul>
             </li>
             <li>
