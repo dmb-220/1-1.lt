@@ -1,17 +1,14 @@
-<!-- begin #content -->
-<div id="content" class="content">
-  <!-- begin panel -->
-  <div class="panel panel-inverse">
-    <div class="panel-heading">
-      <div class="panel-heading-btn">
-        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
-      </div>
-      <h4 class="panel-title">Prisijungimas</h4>
+
+<div class="wrapper wrapper-content">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <h5>Prisijungimas</h5>
+        <div class="ibox-tools">
+            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            <a class="close-link"><i class="fa fa-times"></i></a>
+        </div>
     </div>
-    <div class="panel-body">
+    <div class="ibox-content">
   <form action="" method="POST" class="form-horizontal form-bordered">
     <div class="form-group">
       <label class="col-md-4 control-label">Prisijungimo vardas</label>
@@ -28,11 +25,17 @@
     <div class="form-group">
       <label class="col-md-4 control-label">Prisiminti mane: </label>
         <div class="col-md-6">
-          <input type="checkbox"/>
+            <div class="i-checks"><input type="checkbox"/></div>
      </div>
     </div>
-    <div class="login-buttons">
-      <button type="submit" class="btn btn-success btn-block btn-lg">Prisijungti</button>
+      <div class="form-group">
+          <label class="control-label col-md-4 col-sm-4"></label>
+          <div class="col-md-6 col-sm-6">
+        <button class="btn btn-block btn-outline btn-primary" type="submit">
+            <i class="fa fa-check-circle-o fa-lg"> PRISIJUNGTI</i>
+        </button>
+          </div>
+      </div>
     </div>
   </form>
     </div>

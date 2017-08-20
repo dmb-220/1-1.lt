@@ -40,14 +40,27 @@ class Ukininkai extends CI_Controller {
 
     public function sarasas_ukininku(){
         $this->load->library('table');
+
+        $inf = array();
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Ūkininkai";
+        $inf['url'] = "main/index";
+        $inf['active'] = "Ūkininkų sąrašas";
+
         $this->load->model('ukininkai_model');
         $data = $this->ukininkai_model->ukininku_sarasas();
-        $this->load->view("main_view", array('data'=> $data));
+        $this->load->view("main_view", array('data'=> $data, 'inf' => $inf));
     }
 
 
     public function prideti_ukininka(){
         $this->load->library('form_validation');
+        $inf = array();
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Ūkininkai";
+        $inf['url'] = "main/index";
+        $inf['active'] = "Naujas ūkininkas";
+
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         $this->form_validation->set_rules('vardas', 'Vardas', 'required',  array('required' => 'Įveskite vardą.'));
         $this->form_validation->set_rules('pavarde', 'Pavardė', 'required', array('required' => 'Įveskite pavardę.'));
@@ -56,8 +69,7 @@ class Ukininkai extends CI_Controller {
         $this->form_validation->set_rules('valdos_nr', 'Valdos numeris', 'required|is_natural',
             array('required' => 'Įveskite valdos numerį.', 'is_natural' => 'Valdos numeris tik skaiciai.'));
 
-        if ($this->form_validation->run() == FALSE) {
-            $data['action'] = "";} else {
+        if ($this->form_validation->run()) {
             $vardas = $_POST['vardas'];
             $pavarde = $_POST['pavarde'];
             $valdos_nr = $_POST['valdos_nr'];
@@ -67,14 +79,16 @@ class Ukininkai extends CI_Controller {
             $this->load->model('ukininkai_model');
             $ok = $this->ukininkai_model->tikinti_ukininka($valdos_nr);
             if($ok>0){
-                $data['action'] = "YRA";
+                $error['yra'] = "TOKS ukininkas jau yra!";
             }else{
                 $this->ukininkai_model->irasyti_ukininka($vardas,$pavarde, $valdos_nr, $v_vardas, $slaptazodis );
-            $data['action'] = "OK";}
+            $error['ok'] = "Naujas ukininkas pridetas!";}
+
+            $error['action'] = true;
         }
 
 
-        $this->load->view("main_view", $data);
+        $this->load->view("main_view", array('error' => $error, 'inf' => $inf));
     }
 }
 

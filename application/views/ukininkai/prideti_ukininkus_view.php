@@ -1,26 +1,25 @@
-<!-- begin #content -->
-<div id="content" class="content">
-            <!-- begin panel -->
-            <div class="panel panel-inverse" data-sortable-id="form-stuff-4">
-                <div class="panel-heading">
-                    <div class="panel-heading-btn">
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
-                    </div>
-                    <h4 class="panel-title">Ūkininkai</h4>
-                </div>
-                <div class="panel-body">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Pridėti naują ūkininką</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                <a class="close-link"><i class="fa fa-times"></i></a>
+            </div>
+        </div>
+        <div class="ibox-content">
                     <form class="form-horizontal form-bordered" action="<?= base_url(); ?>ukininkai/prideti_ukininka" method="POST">
                         <fieldset>
-                            <legend>Naujas ūkininkas</legend>
                             <?php
-                            if($data[action]=='OK'){
-                                echo"Naujas ukininkas pridetas!";
+                            if($error['yra']){
+                                echo'<div class="alert alert-danger">';
+                                echo $error['yra'];
+                                echo '</div>';
                             }
-                            if($data[action]=='YRA'){
-                                echo"TOKS ukininkas jau yra!";
+                            if($error['ok']) {
+                                echo '<div class="alert alert-danger">';
+                                echo $error['ok'];
+                                echo '</div>';
                             }
                             ?>
                             <div class="form-group">
@@ -53,7 +52,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Slaptazodis</label>
+                                <label class="col-md-4 control-label">Slaptažodis</label>
                                 <div class="col-md-6">
                                     <?php echo form_error('slaptazodis'); ?>
                                     <input name="slaptazodis" type="password" class="form-control" placeholder="" />
@@ -61,8 +60,11 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-8 col-md-offset-4">
-                                    <button type="submit" class="btn btn-sm btn-primary m-r-5">Pridėti</button>
+                                <label class="control-label col-md-4 col-sm-4"></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <button class="btn btn-block btn-outline btn-primary" type="submit">
+                                        <i class="fa fa-check-circle-o fa-lg"> PRIDĖTI</i>
+                                    </button>
                                 </div>
                             </div>
                         </fieldset>

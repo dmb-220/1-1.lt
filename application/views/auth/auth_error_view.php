@@ -1,5 +1,4 @@
 <div class="wrapper wrapper-content">
-    <!-- begin panel -->
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>Klaida!</h5>
@@ -27,6 +26,4 @@
             <a href ="<?= base_url(); ?>auth/login">Prisijungimas</a>
         </div>
     </div>
-    <!-- end panel -->
 </div>
-<!-- end #content -->

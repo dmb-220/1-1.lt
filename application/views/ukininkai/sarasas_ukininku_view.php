@@ -1,17 +1,13 @@
-<!-- begin #content -->
-<div id="content" class="content">
-    <div class="panel panel-inverse">
-        <div class="panel-heading">
-            <div class="panel-heading-btn">
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Ūkininkų sąrašas</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                <a class="close-link"><i class="fa fa-times"></i></a>
             </div>
-            <h4 class="panel-title">Ūkininkų sąrašas</h4>
         </div>
-        <div class="panel-body">
-
+        <div class="ibox-content">
         <table class="table table-striped table-bordered">
             <thead>
             <tr>
@@ -37,4 +33,3 @@
         </div>
     </div>
 </div>
-<!-- end #content -->

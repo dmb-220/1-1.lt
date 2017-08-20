@@ -1,20 +1,15 @@
-<!-- begin #content -->
-<div id="content" class="content">
-    <!-- begin panel -->
-    <div class="panel panel-inverse">
-        <div class="panel-heading">
-            <div class="panel-heading-btn">
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Įveskite turimų gyvulių kiekius</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                <a class="close-link"><i class="fa fa-times"></i></a>
             </div>
-            <h4 class="panel-title">Pašarų normos 1 gyvuliui per parą</h4>
         </div>
-        <div class="panel-body">
+        <div class="ibox-content">
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>pasarai/rankinis_pasarus" method="POST">
                 <fieldset>
-                    <legend>Rankinis pašarų skaičiavimas</legend>
                     <?php
                     if($error['laikas']){
                         echo'<div class="alert alert-danger">';
@@ -95,37 +90,30 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-8 col-md-offset-4">
-                            <button type="submit" class="btn btn-sm btn-primary m-r-5">Skaičiuoti</button>
+                        <label class="control-label col-md-4 col-sm-4"></label>
+                        <div class="col-md-6 col-sm-6">
+                            <button class="btn btn-block btn-outline btn-primary" type="submit">
+                                <i class="fa fa-check-circle-o fa-lg"> SKAITČIUOTI</i>
+                            </button>
                         </div>
                     </div>
                 </fieldset>
             </form>
         </div>
     </div>
-    <!-- end panel -->
-</div>
-<!-- end #content -->
 
 <?php
 //var_dump($gyvuliai);
 if($error['action']){ ?>
-<!-- begin #content -->
-<div id="content" class="content">
-    <!-- begin panel -->
-    <div class="panel panel-inverse">
-        <div class="panel-heading">
-            <div class="panel-heading-btn">
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
-            </div>
-            <h4 class="panel-title">
-                ...
-            </h4>
+    div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>Informacija</h5>
+        <div class="ibox-tools">
+            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            <a class="close-link"><i class="fa fa-times"></i></a>
         </div>
-        <div class="panel-body">
+    </div>
+    <div class="ibox-content">
             <div class="table-responsive">
                 <h4><strong>
                         <p class="text-center">GYVULIŲ PAŠARŲ LENTELĖ</p>
@@ -194,8 +182,11 @@ if($error['action']){ ?>
                 </table>
                 </div>
 
-            <input type="button" value="Spausdinti" onclick="PrintElem('.table-responsive')" />
-
+        <div class="form-group">
+            <button class="btn btn-block btn-outline btn-primary" type="button" onclick="PrintElem('.table-responsive')">
+                <i class="fa fa-check-circle-o fa-lg"> SPAUSDINTI</i>
+            </button>
+        </div>
             </div>
             </div>
 
@@ -203,6 +194,4 @@ if($error['action']){ ?>
             ?>
         </div>
     </div>
-    <!-- end panel -->
 </div>
-<!-- end #content -->

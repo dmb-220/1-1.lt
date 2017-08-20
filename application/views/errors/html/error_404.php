@@ -8,11 +8,11 @@
 
     <title>INSPINIA | 404 Error</title>
 
-    <link href="http://localhost/Aluza/assets/css\bootstrap.min.css" rel="stylesheet">
-    <link href="http://localhost/Aluza/assets/font-awesome\css\font-awesome.css" rel="stylesheet">
+    <link href="http://localhost/1-1.lt/assets/css\bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/1-1.lt/assets/font-awesome\css\font-awesome.css" rel="stylesheet">
 
-    <link href="http://localhost/Aluza/assets/css\animate.css" rel="stylesheet">
-    <link href="http://localhost/Aluza/assets/css\style.css" rel="stylesheet">
+    <link href="http://localhost/1-1.lt/assets/css\animate.css" rel="stylesheet">
+    <link href="http://localhost/1-1.lt/assets/css\style.css" rel="stylesheet">
 
 </head>
 
@@ -35,8 +35,8 @@
 </div>
 
 <!-- Mainly scripts -->
-<script src="http://localhost/Aluza/assets/js\jquery-3.1.1.min.js"></script>
-<script src="http://localhost/Aluza/assets/js\bootstrap.min.js"></script>
+<script src="http://localhost/1-1.lt/assets/js\jquery-3.1.1.min.js"></script>
+<script src="http://localhost/1-1.lt/assets/js\bootstrap.min.js"></script>
 
 </body>
 

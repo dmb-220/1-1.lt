@@ -33,21 +33,33 @@ class Pasarai extends CI_Controller{
 
     public function meslas(){
         $data = array();
-        $this->load->view("main_view", array('data'=> $data));
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Pašarai";
+        $inf['active'] = "Pašarų normos";
+
+        $this->load->view("main_view", array('data'=> $data, 'inf' => $inf));
     }
 
 
     public function normos(){
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Pašarai";
+        $inf['active'] = "Pašarų normos";
+
         $this->load->model('pasarai_model');
         $data = $this->pasarai_model->nuskaityti_viska();
 
-        $this->load->view("main_view", array('data'=> $data));
+        $this->load->view("main_view", array('data'=> $data, 'inf' => $inf));
     }
 
     public function naujos_normos(){
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Pašarai";
+        $inf['active'] = "Naujos pašarų normos";
+
         $this->load->model('pasarai_model');
         $data = array();
-        $this->load->view("main_view", array('data'=> $data));
+        $this->load->view("main_view", array('data'=> $data, 'inf' => $inf));
     }
 
     public function rankinis_pasarus(){
@@ -301,6 +313,10 @@ class Pasarai extends CI_Controller{
                 $data[$key]['pavadinimas'] = $duo[0]['gyvuliai'];
             }
         }
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Pašarai";
+        $inf['active'] = "Rankinis pašarų skaičiavimas";
+
             $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
     }
 
@@ -617,6 +633,9 @@ class Pasarai extends CI_Controller{
             }
             $error['action'] = true;
         }
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Pašarai";
+        $inf['active'] = "Pašarų skaičiavimas";
 
         $this->load->model('ukininkai_model');
         $data = $this->ukininkai_model->ukininku_sarasas();

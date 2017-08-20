@@ -63,12 +63,24 @@ class Auth extends CI_Controller {
 	}
 
 	public function register(){
-		$this->load->view('main_view');
+        $inf = array();
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Vartotojų valdymas";
+        $inf['url'] = "main/index";
+        $inf['active'] = "Registracija";
+
+		$this->load->view('main_view', array('inf' => $inf));
 	}
 
 
 	// log the user in
 	public function login(){
+        $inf = array();
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Vartotojų valdymas";
+        $inf['url'] = "main/index";
+        $inf['active'] = "Prisijungimas";
+
 		$this->data['title'] = $this->lang->line('login_heading');
 
 		//validate form input

@@ -82,14 +82,16 @@ class Gyvuliai extends CI_Controller {
                     $gyvu[$i]['laikymo_pradzia'] = $psl[$i]['laikymo_pradzia'];
                     $gyvu[$i]['laikymo_pabaiga'] = $psl[$i]['laikymo_pabaiga'];
                     $gyvu[$i]['amzius'] = $psl[$i]['amzius'];
-                    if($psl[$i]['amzius']){
-                        $gyvu[$i]['svoris'] = (float)$psl[$i]['amzius']*5;}else{
-                        $gyvu[$i]['svoris'] = " ";}
                     $gyvu[$i]['informacija'] = $psl[$i]['informacija'];
                 }
 
                 $error['action'] = true;
             }
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Gyvuliai";
+        $inf['url'] = "main/index";
+        $inf['active'] = "Gyvulių sąrašas";
+
             $data = $this->ukininkai_model->ukininku_sarasas();
             $this->load->view("main_view", array('data' => $data, 'gyvu' => $gyvu, 'error' => $error, 'inf' => $inf));
     }
@@ -166,6 +168,10 @@ class Gyvuliai extends CI_Controller {
                 $error = array('OK' => $metai.' '.$men[$menesis-1].' gyvuliai įtraukti į duomenų bazę!');
             }
         }
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Gyvuliai";
+        $inf['url'] = "main/index";
+        $inf['active'] = "Naujų gyvulių įtraukimas";
 
         $data = $this->ukininkai_model->ukininku_sarasas();
         $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
@@ -597,6 +603,11 @@ class Gyvuliai extends CI_Controller {
 
             $error['action'] = true;
         }
+
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Gyvuliai";
+        $inf['url'] = "main/index";
+        $inf['active'] = "Gyvulių skaičiavimas";
 
         $this->load->model('ukininkai_model');
         $data = $this->ukininkai_model->ukininku_sarasas();

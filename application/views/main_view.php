@@ -8,17 +8,25 @@
 
     <title>1-1.LT | Administracija</title>
 
-    <link href="<?= base_url(); ?>assets/css\bootstrap.min.css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets/font-awesome\css\font-awesome.css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets/css\plugins\iCheck\custom.css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets/css\animate.css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets/css\style.css" rel="stylesheet">
-
-    <link href="<?= base_url(); ?>assets/css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\font-awesome\css\font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="<?= base_url(); ?>assets\css\plugins\toastr\toastr.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="<?= base_url(); ?>assets\js\plugins\gritter\jquery.gritter.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\animate.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\style.css" rel="stylesheet">
+    <!-- JQUERY UI -->
+    <link href="<?= base_url(); ?>assets\css\plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <!-- FORMS -->
+    <link href="<?= base_url(); ?>assets\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\plugins\iCheck\custom.css" rel="stylesheet">
+    <!-- mano CSS -->
+    <link href="<?= base_url(); ?>assets/css/mano.css" rel="stylesheet"/>
 
 </head>
 
-<body>
+<body class="no-skin-config md-skin">
 
 <div id="wrapper">
 <?php
@@ -76,21 +84,32 @@ $this->load->view('left_view');
         ?>
 
     </div>
+    <?php
+    $this->load->view("chat_view");
+    $this->load->view("sidebar_view");
+    ?>
+
+
 </div>
 
-
 <!-- Mainly scripts -->
-<script src="<?= base_url(); ?>assets/js\jquery-3.1.1.min.js"></script>
-<script src="<?= base_url(); ?>assets/js\bootstrap.min.js"></script>
-<script src="<?= base_url(); ?>assets/js\plugins\metisMenu\jquery.metisMenu.js"></script>
-<script src="<?= base_url(); ?>assets/js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
-
+<script src="<?= base_url(); ?>assets\js\jquery-3.1.1.min.js"></script>
+<script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
+<script src="<?= base_url(); ?>assets\js\plugins\metisMenu\jquery.metisMenu.js"></script>
+<script src="<?= base_url(); ?>assets\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
 <!-- Custom and plugin javascript -->
-<script src="<?= base_url(); ?>assets/js\inspinia.js"></script>
-<script src="<?= base_url(); ?>assets/js\plugins\pace\pace.min.js"></script>
-
+<script src="<?= base_url(); ?>assets\js\inspinia.js"></script>
+<script src="<?= base_url(); ?>assets\js\plugins\pace\pace.min.js"></script>
+<!-- jQuery UI -->
+<script src="<?= base_url(); ?>assets\js\plugins\jquery-ui\jquery-ui.min.js"></script>
+<!-- GITTER -->
+<script src="<?= base_url(); ?>assets\js\plugins\gritter\jquery.gritter.min.js"></script>
+<!-- Toastr -->
+<script src="<?= base_url(); ?>assets\js\plugins\toastr\toastr.min.js"></script>
+<!-- mano JS -->
+<script src="<?= base_url(); ?>assets\js\mano.js"></script>
 <!-- iCheck -->
-<script src="<?= base_url(); ?>assets/js\plugins\iCheck\icheck.min.js"></script>
+<script src="<?= base_url(); ?>assets\js\plugins\iCheck\icheck.min.js"></script>
 <script>
     $(document).ready(function () {
         $('.i-checks').iCheck({
@@ -99,6 +118,28 @@ $this->load->view('left_view');
         });
     });
 </script>
+
+<script>
+    function Popup(data) {
+        var myWindow = window.open('', 'Spausdinti', 'height=800,width=1200');
+        myWindow.document.write('<html><head><title>Spauzdinti</title>');
+        /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" href="<?= base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css" type="text/css">');
+        /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/mano.css">');
+
+        myWindow.document.write('</head><body >');
+        myWindow.document.write(data);
+        myWindow.document.write('</body></html>');
+        myWindow.document.close(); // necessary for IE >= 10
+
+        myWindow.onload=function(){ // necessary if the div contain images
+
+            myWindow.focus(); // necessary for IE >= 10
+            myWindow.print();
+            myWindow.close();
+        };
+    }
+</script>
+
 </body>
 
 </html>

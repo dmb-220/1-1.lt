@@ -14,9 +14,9 @@
                                     </strong>
                              </span> <span class="text-muted text-xs block">Administratorius<b class="caret"></b></span> </span> </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="profile.html">Profilis</a></li>
-                        <li><a href="contacts.html">Kontaktai</a></li>
-                        <li><a href="mailbox.html">Žinutės</a></li>
+                        <li><a href="<?= base_url(); ?>main/profilis">Profilis</a></li>
+                        <li><a href="<?= base_url(); ?>main/kontaktai">Kontaktai</a></li>
+                        <li><a href="<?= base_url(); ?>main/zinutes">Žinutės</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -29,6 +29,15 @@
             <li>
                 <a href="<?= base_url(); ?>main/index"><i class="fa fa-road"></i> <span class="nav-label">Į pradžią</span></a>
             </li>
+
+             <li>
+                 <a href="#"><i class="fa fa-address-book"></i> <span class="nav-label">Žalioji knyga</span><span class="fa arrow"></span></a>
+                 <ul class="nav nav-second-level collapse">
+                     <li><a href="<?= base_url(); ?>zalioji_knyga/index"><i class="fa fa-bars"></i> Knyga</a></li>
+                     <li><a href="<?= base_url(); ?>zalioji_knyga/itraukti"><i class="fa fa-bars"></i> Nauji įrašai</a></li>
+                 </ul>
+             </li>
+
             <li>
                 <a href="#"><i class="fa fa-suitcase"></i> <span class="nav-label">Ūkininkai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
@@ -48,7 +57,7 @@
                 <a href="#"><i class="fa fa-map-marker"></i> <span class="nav-label">Pasėliai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="<?= base_url(); ?>paseliai/paseliai">Pasėlių sąrašas</a></li>
-                    <li><a href="<?= base_url(); ?>paseliai/nauji_paseliai">Įtraukti deklaracijas</a></li>
+                    <li><a href="<?= base_url(); ?>paseliai/nauji_paseliai">Deklaracijos įkėlimas</a></li>
                     <li><a href="<?= base_url(); ?>paseliai/naujas_kodas">Įtraukti naujus pasėlius</a></li>
                     <li><a href="<?= base_url(); ?>paseliai/redaguoti_kodas">Redaguoti pasėlių reikšmes</a></li>
                     <li><a href="<?= base_url(); ?>paseliai/rankinis_paselius">Rankinis pasėlių skaičiavimas</a></li>
@@ -66,13 +75,16 @@
                 </ul>
             </li>
 
+                <li>
+                    <a href="<?= base_url(); ?>main/kalendorius"><i class="fa fa-calendar"></i> <span class="nav-label">Kalendorius</span></a>
+                </li>
+
                 <?php
             }else{
             ?>
 
             <li><a href="<?= base_url(); ?>main"><i class="fa fa-road"></i> <span>Į pradžią</span></a</li>
-            </br></br>
-            <li><a href="<?= base_url(); ?>auth/login"><i class="fa fa-user"></i> <span>Prisijungti</span></a></li>
+            <li><a data-toggle="modal" href="#modal-form"><i class="fa fa-user"></i> <span>Prisijungti</span></a></li>
             <li><a href="<?= base_url(); ?>auth/register"><i class="fa fa-users"></i> <span>Registruotis</span></a></li>
 
                 <?php
@@ -82,3 +94,39 @@
 
     </div>
 </nav>
+
+<div id="modal-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">PRISIJUNGIMAS</h3>
+                        <hr>
+                        <div class="form-group">
+                            <label>El. paštas:</label>
+                            <input type="email" name="email" placeholder="" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Slaptažodis:</label>
+                            <input type="password" name="password" placeholder="" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label></label>
+                            <input type="checkbox" class="i-checks"> Prisiminti mane
+                        </div>
+                            <button class="btn btn-block btn-outline btn-primary" type="submit">
+                                <i class="fa fa-check-circle-o fa-lg"> PRISIJUNGTI</i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-sm-6"><h4>Dar neturite prieigos?</h4>
+                        <p>Jūs galite užsiregistruoti:</p>
+                        <p class="text-center">
+                            <a href="<?= base_url(); ?>auth/register"><i class="fa fa-sign-in big-icon"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

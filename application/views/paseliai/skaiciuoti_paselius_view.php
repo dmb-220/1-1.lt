@@ -1,23 +1,18 @@
-<!-- begin #content -->
-<div id="content" class="content">
-    <!-- begin panel -->
-    <div class="panel panel-inverse">
-        <div class="panel-heading">
-            <div class="panel-heading-btn">
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Pasirinkite laikotarpį pašarų skaičiavimui</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                <a class="close-link"><i class="fa fa-times"></i></a>
             </div>
-            <h4 class="panel-title">Pasėliai</h4>
         </div>
-        <div class="panel-body">
+        <div class="ibox-content">
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>paseliai/skaiciuoti_paselius" method="POST">
                 <?php
                 $dt = $this->session->userdata();
                 ?>
                 <fieldset>
-                    <legend>Suskaičiuoti gyvulius</legend>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Ūkininkas</label>
                         <div class="col-md-6">
@@ -57,40 +52,35 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-8 col-md-offset-4">
-                            <button type="submit" class="btn btn-sm btn-primary m-r-5">Skaičiuoti</button>
+                        <label class="control-label col-md-4 col-sm-4"></label>
+                        <div class="col-md-6 col-sm-6">
+                            <button class="btn btn-block btn-outline btn-primary" type="submit">
+                                <i class="fa fa-check-circle-o fa-lg"> SKAIČIUOTI</i>
+                            </button>
                         </div>
                     </div>
                 </fieldset>
             </form>
         </div>
     </div>
-    <!-- end panel -->
 </div>
-<!-- end #content -->
 
 <?php
 if($error['action']){ ?>
-    <!-- begin #content -->
-    <div id="content" class="content">
-        <!-- begin panel -->
-        <div class="panel panel-inverse">
-            <div class="panel-heading">
-                <div class="panel-heading-btn">
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Informacija</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    <a class="close-link"><i class="fa fa-times"></i></a>
                 </div>
-                <h4 class="panel-title">
-                    ...
-                </h4>
             </div>
-            <div class="panel-body">
+            <div class="ibox-content">
                 <div class="table-responsive">
                     <h4><strong>
                             <p class="text-center">PASĖLIŲ DEKLARAVIMO LENTELĖ</p>
-                        </strong></h4></br></br>
+                        </strong></h4><br><br>
                     <p class="alignleft">
                         <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
                     </p>
@@ -137,25 +127,26 @@ if($error['action']){ ?>
                     </table>
                 </div>
 
-                <input type="button" value="Spausdinti" onclick="PrintElem('.table-responsive')" />
+                <div class="form-group">
+                    <button class="btn btn-block btn-outline btn-primary" type="button" onclick="PrintElem('.table-responsive')">
+                        <i class="fa fa-check-circle-o fa-lg"> SPAUSDINTI</i>
+                    </button>
+                </div>
 
 
             </div>
         </div>
-        <!-- end panel -->
-        <!-- begin panel -->
-        <div class="panel panel-danger" data-sortable-id="ui-widget-13">
-            <div class="panel-heading">
-                <div class="panel-heading-btn">
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Informacija</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    <a class="close-link"><i class="fa fa-times"></i></a>
                 </div>
-                <h4 class="panel-title">Informacija</h4>
             </div>
-            <div class="panel-body">
-                <div class="note note-success">
+            <div class="ibox-content">
+                <div class="alert alert-info">
                     Rodom visus deklaruotas paselius, lenteleje, rodomi tik tie paseliai kurie turi duomenis, kiek seklu reik i 1 ha.
                     Itraukite naujus paselius ir atsiras lenteleje deklaruotas plotas.
                     </div>
@@ -164,8 +155,6 @@ if($error['action']){ ?>
                 ?>
             </div>
         </div>
-        <!-- end panel -->
     </div>
-    <!-- end #content -->
 <?php }
 ?>
