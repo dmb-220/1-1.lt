@@ -1,5 +1,6 @@
-﻿@import url("../../css.css");
+﻿/*@import url("../../css.css");
 @import url("../../css-1.css");
+
 /*
  *
  *   INSPINIA - Responsive Admin Theme
@@ -5755,7 +5756,7 @@ body.body-small .vote-icon {
   right: 75px;
   background: #fff;
   border: 1px solid #e7eaec;
-  width: 230px;
+  width: 320px;
   height: 320px;
   border-radius: 4px;
 }
@@ -8153,8 +8154,9 @@ body.md-skin {
 }
 .md-skin .ibox-title,
 .md-skin .ibox-content {
-  border-style: none;
+  border-style: 1px;
 }
+
 .md-skin .ibox-title h5 {
   font-size: 16px;
   font-weight: 400;
