@@ -49,7 +49,6 @@ class Main extends CI_Controller {
 		}
 		//sukeliam info, informaciniam meniu
 		$inf['meniu'] = "Pagrindinis MENIU";
-        $inf['url'] = "main/index";
         $inf['active'] = "INFORMACIJA";
 
 		$this->load->model('ukininkai_model');
@@ -77,7 +76,11 @@ class Main extends CI_Controller {
 
 		$this->load->library('calendar');
 
-		$this->load->view('main_view', $data);
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Pagrindinis MENIU";
+        $inf['active'] = "Kalendorius";
+
+		$this->load->view('main_view', array('data' => $data, 'inf' => $inf));
 	}
 }
 ?>

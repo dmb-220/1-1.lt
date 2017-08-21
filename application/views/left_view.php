@@ -102,9 +102,10 @@
                 <div class="row">
                     <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">PRISIJUNGIMAS</h3>
                         <hr>
+                        <form role="form" action="<?= base_url(); ?>auth/login" method="POST" >
                         <div class="form-group">
                             <label>El. paštas:</label>
-                            <input type="email" name="email" placeholder="" class="form-control">
+                            <input type="identity" name="email" placeholder="" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Slaptažodis:</label>

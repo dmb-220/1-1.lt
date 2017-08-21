@@ -22,8 +22,7 @@
  */
 class Auth extends CI_Controller {
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 		error_reporting(E_ERROR | E_WARNING | E_PARSE);
 		$this->load->database();
@@ -78,7 +77,6 @@ class Auth extends CI_Controller {
         $inf = array();
         //sukeliam info, informaciniam meniu
         $inf['meniu'] = "Vartotojų valdymas";
-        $inf['url'] = "main/index";
         $inf['active'] = "Prisijungimas";
 
 		$this->data['title'] = $this->lang->line('login_heading');
@@ -98,14 +96,14 @@ class Auth extends CI_Controller {
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('/', 'refresh');
+				redirect('/main', 'refresh');
 			}
 			else
 			{
 				// if the login was un-successful
 				// redirect them back to the login page
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
-				redirect('auth/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
+				redirect('auth/register', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
 			}
 		}
 		else
@@ -841,7 +839,7 @@ class Auth extends CI_Controller {
 	}
 
 	public function _render_page($view, $data=null, $returnhtml=false)//I think this makes more sense
-	{
+    {
 
 		$this->viewdata = (empty($data)) ? $this->data: $data;
 
