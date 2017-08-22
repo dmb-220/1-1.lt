@@ -57,24 +57,24 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" id="data_1">
                         <label class="control-label col-md-4">Data: nuo</label>
                         <div class="col-md-6">
                             <div class="input-group date">
                                 <?php echo form_error('data1'); ?>
-                                <input type="text" name="data1" class="form-control"  id="datepicker1"/>
+                                <input type="text" name="data1" class="form-control"/>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="data_2">
                         <label class="control-label col-md-4">Data: iki</label>
                         <div class="col-md-6">
                             <div class="input-group date">
                                 <?php echo form_error('data2'); ?>
-                                <input type="text" name="data2" class="form-control"  id="datepicker2"/>
+                                <input type="text" name="data2" class="form-control"/>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>

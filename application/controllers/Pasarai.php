@@ -33,11 +33,44 @@ class Pasarai extends CI_Controller{
 
     public function meslas(){
         $data = array();
+        $error = array();
+
+        $dt = $this->session->userdata();
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
+            $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
+            $ukininkas = $this->input->post('ukininko_vardas');
+            $this->load->model('ukininkai_model');
+            $uk = $this->ukininkai_model->ukininkas($ukininkas);
+            $inf['vardas'] = $uk[0]['vardas'];
+            $inf['pavarde'] = $uk[0]['pavarde'];
+            $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
+            $this->session->set_userdata($new);
+        }else{
+            $ukininkas = $dt['nr'];
+            $inf['vardas'] = $dt['vardas'];
+            $inf['pavarde'] = $dt['pavarde'];
+        }
+        $this->form_validation->set_rules('sezonas', 'Sezonas', 'required', array('required' => 'Pasirinkite sezoną.'));
+        $this->form_validation->set_rules('laikotarpis', 'Laikotarpis', 'required', array('required' => 'Pasirinkite laikotarpį.'));
+
+        if ($this->form_validation->run()) {
+            $metai = $this->input->post('sezonas');
+            $laikotarpis = $this->input->post('laikotarpis');
+
+            $inf['metai'] = $metai;
+            $inf['laikotarpis'] = $laikotarpis;
+
+            $error['action'] = TRUE;
+        }
+
         //sukeliam info, informaciniam meniu
         $inf['meniu'] = "Pašarai";
         $inf['active'] = "Pašarų normos";
 
-        $this->load->view("main_view", array('data'=> $data, 'inf' => $inf));
+        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
     }
 
 

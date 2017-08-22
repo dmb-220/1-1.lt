@@ -9,17 +9,17 @@
         </div>
     </div>
     <div class="ibox-content">
-  <form action="" method="POST" class="form-horizontal form-bordered">
+  <form action="<?= base_url(); ?>auth/login" method="POST" class="form-horizontal form-bordered">
     <div class="form-group">
       <label class="col-md-4 control-label">Prisijungimo vardas</label>
       <div class="col-md-6">
-      <input type="text" name="identity" class="form-control" placeholder="" required />
+      <input type="text" name="identity" class="form-control" placeholder="" required/>
         </div>
     </div>
     <div class="form-group">
       <label class="col-md-4 control-label">Slaptažodis</label>
       <div class="col-md-6">
-      <input type="password" name="password" class="form-control" placeholder="" required />
+      <input type="password" name="password" class="form-control" placeholder="" required/>
         </div>
     </div>
     <div class="form-group">

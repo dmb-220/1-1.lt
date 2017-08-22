@@ -24,13 +24,14 @@
                 </div>
             </li>
             <?php
+            $act = $this->uri->segment(1);
+
             if ($this->ion_auth->logged_in()) {
             ?>
             <li>
                 <a href="<?= base_url(); ?>main/index"><i class="fa fa-road"></i> <span class="nav-label">Į pradžią</span></a>
             </li>
-
-             <li>
+                <?php if($act == 'zalioji_knyga'){echo'<li class="active">';}else{echo'<li>';} ?>
                  <a href="#"><i class="fa fa-address-book"></i> <span class="nav-label">Žalioji knyga</span><span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level collapse">
                      <li><a href="<?= base_url(); ?>zalioji_knyga/index"><i class="fa fa-bars"></i> Knyga</a></li>
@@ -38,14 +39,14 @@
                  </ul>
              </li>
 
-            <li>
+                <?php if($act == 'ukininkai'){echo'<li class="active">';}else{echo'<li>';} ?>
                 <a href="#"><i class="fa fa-suitcase"></i> <span class="nav-label">Ūkininkai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="<?= base_url(); ?>ukininkai/prideti_ukininka"><i class="fa fa-edit"></i> Naujas ūkininkas</a></li>
                     <li><a href="<?= base_url(); ?>ukininkai/sarasas_ukininku"><i class="fa fa-bars"></i> Ūkininkų sąrašas</a></li>
                 </ul>
             </li>
-            <li>
+                <?php if($act == 'gyvuliai'){echo'<li class="active">';}else{echo'<li>';} ?>
                 <a href="#"><i class="fa fa-paw"></i> <span class="nav-label">Gyvuliai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="<?= base_url(); ?>gyvuliai/nuskaityti_vic"><i class="fa fa-plus"></i> Įtraukti iš VIC.LT</a></li>
@@ -53,7 +54,7 @@
                     <li><a href="<?= base_url(); ?>gyvuliai/skaiciuoti_gyvulius"><i class="fa fa-table"></i> Skaičiuoti gyvulius</a></li>
                 </ul>
             </li>
-            <li>
+                <?php if($act == 'paseliai'){echo'<li class="active">';}else{echo'<li>';} ?>
                 <a href="#"><i class="fa fa-map-marker"></i> <span class="nav-label">Pasėliai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="<?= base_url(); ?>paseliai/paseliai">Pasėlių sąrašas</a></li>
@@ -64,7 +65,7 @@
                     <li><a href="<?= base_url(); ?>paseliai/skaiciuoti_paselius">Skaičiuoti pasėlius</a></li>
                 </ul>
             </li>
-            <li>
+                <?php if($act == 'pasarai'){echo'<li class="active">';}else{echo'<li>';} ?>
                 <a href="#"><i class="fa fa-leaf"></i> <span class="nav-label">Pašarai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li><a href="<?= base_url(); ?>pasarai/normos">Normų sąrašas</a></li>
@@ -105,7 +106,7 @@
                         <form role="form" action="<?= base_url(); ?>auth/login" method="POST" >
                         <div class="form-group">
                             <label>El. paštas:</label>
-                            <input type="identity" name="email" placeholder="" class="form-control">
+                            <input type="email" name="identity" placeholder="" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Slaptažodis:</label>

@@ -126,17 +126,13 @@ class Auth extends CI_Controller {
 		}
 	}
 
-	// log the user out
-	public function logout()
-	{
-		$this->data['title'] = "Logout";
-
-		// log the user out
+	//vartotojo atjungimas
+	public function logout(){
+		//vartotojas atsijungia
 		$logout = $this->ion_auth->logout();
-
-		// redirect them to the login page
+		//nukreipiamas i pagrindini meniu
 		$this->session->set_flashdata('message', $this->ion_auth->messages());
-		redirect('auth/login', 'refresh');
+		redirect('main/index', 'refresh');
 	}
 
 	// change password

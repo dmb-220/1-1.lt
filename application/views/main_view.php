@@ -14,14 +14,14 @@
 
     <link href="<?= base_url(); ?>assets\css\bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets\font-awesome\css\font-awesome.css" rel="stylesheet">
+    <!-- Date picker -->
+    <link href="<?= base_url(); ?>assets\css\plugins\datapicker\datepicker3.css" rel="stylesheet">
     <!-- Toastr style -->
     <link href="<?= base_url(); ?>assets\css\plugins\toastr\toastr.min.css" rel="stylesheet">
     <!-- Gritter -->
     <link href="<?= base_url(); ?>assets\js\plugins\gritter\jquery.gritter.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets\css\animate.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets\css\style.css" rel="stylesheet">
-    <!-- JQUERY UI -->
-    <link href="<?= base_url(); ?>assets\css\plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
     <!-- FORMS -->
     <link href="<?= base_url(); ?>assets\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets\css\plugins\iCheck\custom.css" rel="stylesheet">
@@ -89,7 +89,7 @@ $this->load->view('left_view');
 
     </div>
     <?php
-    $this->load->view("chat_view");
+    //$this->load->view("chat_view");
     $this->load->view("sidebar_view");
     ?>
 
@@ -104,8 +104,6 @@ $this->load->view('left_view');
 <!-- Custom and plugin javascript -->
 <script src="<?= base_url(); ?>assets\js\inspinia.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\pace\pace.min.js"></script>
-<!-- jQuery UI -->
-<script src="<?= base_url(); ?>assets\js\plugins\jquery-ui\jquery-ui.min.js"></script>
 <!-- GITTER -->
 <script src="<?= base_url(); ?>assets\js\plugins\gritter\jquery.gritter.min.js"></script>
 <!-- Toastr -->
@@ -114,12 +112,37 @@ $this->load->view('left_view');
 <script src="<?= base_url(); ?>assets\js\mano.js"></script>
 <!-- iCheck -->
 <script src="<?= base_url(); ?>assets\js\plugins\iCheck\icheck.min.js"></script>
+<!-- Data picker -->
+<script src="<?= base_url(); ?>assets\js\plugins\datapicker\bootstrap-datepicker.js"></script>
+
 <script>
     $(document).ready(function () {
         $('.i-checks').iCheck({
             checkboxClass: 'icheckbox_square-green',
             radioClass: 'iradio_square-green',
         });
+    });
+
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    $('#data_1 .input-group.date').datepicker({
+        weekStart: 1,
+        defaultViewDate: "today",
+        keyboardNavigation: false,
+        forceParse: false,
+        autoclose: true,
+        format: "yyyy-mm-dd"
+    });
+
+    $('#data_2 .input-group.date').datepicker({
+        weekStart: 1,
+        defaultViewDate: "today",
+        keyboardNavigation: false,
+        forceParse: false,
+        autoclose: true,
+        format: "yyyy-mm-dd"
     });
 </script>
 
