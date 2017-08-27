@@ -34,8 +34,8 @@
                 <?php if($act == 'zalioji_knyga'){echo'<li class="active">';}else{echo'<li>';} ?>
                  <a href="#"><i class="fa fa-address-book"></i> <span class="nav-label">Žalioji knyga</span><span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level collapse">
-                     <li><a href="<?= base_url(); ?>zalioji_knyga/index"><i class="fa fa-bars"></i> Knyga</a></li>
-                     <li><a href="<?= base_url(); ?>zalioji_knyga/itraukti"><i class="fa fa-bars"></i> Nauji įrašai</a></li>
+                     <li><a href="<?= base_url(); ?>zalia_knyga/knyga"><i class="fa fa-bars"></i> Žalioji Knyga</a></li>
+                     <li><a href="<?= base_url(); ?>zalia_knyga/itraukti"><i class="fa fa-bars"></i> Nauji įrašai</a></li>
                  </ul>
              </li>
 
@@ -69,10 +69,9 @@
                 <a href="#"><i class="fa fa-leaf"></i> <span class="nav-label">Pašarai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li><a href="<?= base_url(); ?>pasarai/normos">Normų sąrašas</a></li>
-                    <li><a href="<?= base_url(); ?>pasarai/naujos_normos">Pridėti naujas normas</a></li>
                     <li><a href="<?= base_url(); ?>pasarai/apskaiciuoti_pasarus">Apskaiciuoti pašarus</a></li>
                     <li><a href="<?= base_url(); ?>pasarai/rankinis_pasarus">Rankinis pašarų skaičiavimas</a></li>
-                    <li><a href="<?= base_url(); ?>pasarai/meslas">Meslas</a></li>
+                    <li><a href="<?= base_url(); ?>pasarai/meslas">Meslas, priesvoris, kiti pašarai</a></li>
                 </ul>
             </li>
 
@@ -85,8 +84,8 @@
             ?>
 
             <li><a href="<?= base_url(); ?>main"><i class="fa fa-road"></i> <span>Į pradžią</span></a</li>
-            <li><a data-toggle="modal" href="#modal-form"><i class="fa fa-user"></i> <span>Prisijungti</span></a></li>
-            <li><a href="<?= base_url(); ?>auth/register"><i class="fa fa-users"></i> <span>Registruotis</span></a></li>
+            <li><a data-toggle="modal" href="#login-form"><i class="fa fa-user"></i> <span>Prisijungti</span></a></li>
+            <li><a data-toggle="modal" href="#register-form"><i class="fa fa-users"></i> <span>Registruotis</span></a></li>
 
                 <?php
             }
@@ -95,8 +94,8 @@
 
     </div>
 </nav>
-
-<div id="modal-form" class="modal fade" aria-hidden="true">
+<!-- Prisijungimo forma -->
+<div id="login-form" class="modal fade" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -104,27 +103,66 @@
                     <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">PRISIJUNGIMAS</h3>
                         <hr>
                         <form role="form" action="<?= base_url(); ?>auth/login" method="POST" >
-                        <div class="form-group">
-                            <label>El. paštas:</label>
-                            <input type="email" name="identity" placeholder="" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Slaptažodis:</label>
-                            <input type="password" name="password" placeholder="" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label></label>
-                            <input type="checkbox" class="i-checks"> Prisiminti mane
-                        </div>
+                            <div class="form-group">
+                                <label>El. paštas:</label>
+                                <input type="email" name="identity" placeholder="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Slaptažodis:</label>
+                                <input type="password" name="password" placeholder="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label></label>
+                                <input type="checkbox" class="i-checks"> Prisiminti mane
+                            </div>
                             <button class="btn btn-block btn-outline btn-primary" type="submit">
                                 <i class="fa fa-check-circle-o fa-lg"> PRISIJUNGTI</i>
                             </button>
                         </form>
                     </div>
-                    <div class="col-sm-6"><h4>Dar neturite prieigos?</h4>
-                        <p>Jūs galite užsiregistruoti:</p>
+                    <div class="col-sm-6"><h4>Dar neturite prieigos? Jūs galite užsiregistruoti:</h4>
+                        <h5>Administracija turės patvirtinti Jūsų registracija, tai gali užtrukti iki 24 valandų.</h5>
+                        <hr>
                         <p class="text-center">
                             <a href="<?= base_url(); ?>auth/register"><i class="fa fa-sign-in big-icon"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Registracijos forma -->
+<div id="register-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">REGISTRACIJA</h3>
+                        <hr>
+                        <form role="form" action="<?= base_url(); ?>auth/register" method="POST" >
+                            <div class="form-group">
+                                <label>El. paštas:</label>
+                                <input type="email" name="identity" placeholder="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Slaptažodis:</label>
+                                <input type="password" name="password" placeholder="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Pakartoti slaptažodį:</label>
+                                <input type="password" name="password2" placeholder="" class="form-control">
+                            </div>
+                            <button class="btn btn-block btn-outline btn-primary" type="submit">
+                                <i class="fa fa-check-circle-o fa-lg"> REGISTRUOTIS</i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-sm-6"><h4>Jūs jau esate užsiregistravęs? Galite prisijungti:</h4>
+                        <hr>
+                        <p class="text-center">
+                            <a href="<?= base_url(); ?>auth/login"><i class="fa fa-user big-icon"></i></a>
                         </p>
                     </div>
                 </div>

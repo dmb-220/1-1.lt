@@ -69,9 +69,10 @@ $this->load->view('left_view');
             //Pasarai
             case "normos": $this->load->view("pasarai/normos_view"); break;
             case "meslas": $this->load->view("pasarai/meslas_view"); break;
-            case "naujos_normos": $this->load->view("pasarai/naujos_normos_view"); break;
             case "apskaiciuoti_pasarus": $this->load->view("pasarai/apskaiciuoti_pasarus_view"); break;
             case "rankinis_pasarus": $this->load->view("pasarai/rankinis_pasarus_view"); break;
+            //Zalioji knyga
+            case "knyga": $this->load->view("knyga/knyga_view"); break;
             //Kalendorius
             case "kalendorius": $this->load->view("kalendorius_view"); break;
             //kai niekas netinka
@@ -89,7 +90,7 @@ $this->load->view('left_view');
 
     </div>
     <?php
-    //$this->load->view("chat_view");
+    $this->load->view("chat_view");
     $this->load->view("sidebar_view");
     ?>
 

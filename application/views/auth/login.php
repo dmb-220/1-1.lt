@@ -9,6 +9,8 @@
         </div>
     </div>
     <div class="ibox-content">
+        <?php //var_dump($data);
+        ?>
   <form action="<?= base_url(); ?>auth/login" method="POST" class="form-horizontal form-bordered">
     <div class="form-group">
       <label class="col-md-4 control-label">Prisijungimo vardas</label>

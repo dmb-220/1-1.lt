@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * ************************* LIBRARY ****************************
  * @property Ion_auth           $ion_auth           Ion_auth library
  */
-class Zalioji_knyga extends CI_Controller{
+class Zalia_knyga extends CI_Controller{
 
     public function __construct(){
         parent::__construct();
@@ -33,7 +33,12 @@ class Zalioji_knyga extends CI_Controller{
         }
     }
 
-    public function index(){
+    public function knyga(){
 
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Žalioji knyga";
+        $inf['active'] = "Pagrindinis";
+
+        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
     }
 }

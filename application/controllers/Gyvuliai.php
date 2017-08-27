@@ -89,7 +89,6 @@ class Gyvuliai extends CI_Controller {
             }
         //sukeliam info, informaciniam meniu
         $inf['meniu'] = "Gyvuliai";
-        $inf['url'] = "main/index";
         $inf['active'] = "Gyvulių sąrašas";
 
             $data = $this->ukininkai_model->ukininku_sarasas();
