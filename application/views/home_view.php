@@ -84,6 +84,26 @@
                         <div class="row">
                             <div class="col-xs-3 date">
                                 <i class="fa fa-briefcase"></i>
+                                2017.09.02
+                                <br>
+                                <small class="text-navy">...</small>
+                            </div>
+                            <div class="col-xs-7 content no-top-border">
+                                <p class="m-b-xs"><strong>Sutvarkyta:</strong></p>
+
+                                <p>
+                                    * Sukelti ukininku gyvuliai uz rugpjuti<br>
+                                    * P. Platakis neleidzia susikelti duomenu, neprisijungiu prie VIC.LT<br>
+                                    * Čejauskas yra klaida, surasiu ir istaisysiu, kazkas su telyciu judejimu i karves, 1 pameta<br>
+                                    * Taip pat Cejausko VIC.LT yra klaida karve parduota 08-31 ja rodo ir prie Visu ir prie Gyvu, vic.lt yra 306 galvijai, man pas manes skaiciuoja 305 galvijus, ismeta ta parduota<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="row">
+                            <div class="col-xs-3 date">
+                                <i class="fa fa-briefcase"></i>
                                 2017.08.22
                                 <br>
                                 <small class="text-navy">...</small>

@@ -35,9 +35,9 @@
                                         <?php
                                         foreach ($data as $row) {
                                             echo "<option value='$row[valdos_nr]'>";
-                                            echo $row[vardas];
+                                            echo $row['vardas'];
                                             echo " ";
-                                            echo $row[pavarde];
+                                            echo $row['pavarde'];
                                             echo "</option>";
                                         }
                                         ?>
@@ -54,7 +54,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Sezonas</label>
                             <div class="col-md-6">
-                                <?php echo form_error('metai'); ?>
+                                <?php echo form_error('sezonas'); ?>
                                 <select name="sezonas" class="form-control">
                                     <option value="2016">2015 - 2016</option>
                                     <option value="2017" selected="selected">2016 - 2017</option>
@@ -69,7 +69,7 @@
                                 <?php
                                 $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
                                 ?>
-                                <?php echo form_error('menesis'); ?>
+                                <?php echo form_error('laikotarpis'); ?>
                                 <select name="laikotarpis" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
@@ -93,4 +93,72 @@
                 </form>
             </div>
     </div>
+
+    <?php
+    if($error['action']) {
+        ?>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Informacija</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
+                    <a class="close-link"><i class="fa fa-times"></i></a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="table-responsive">
+                    <h4><strong>
+                            <p class="text-center">GYVULIŲ MĖŠLO LENTELĖ</p>
+                        </strong></h4><br><br>
+                    <p class="alignleft">
+                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
+                    </p>
+                    <p class="alignright">
+                        <?php
+                        $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
+                        $sezo = $inf['sezonas']-1;
+                        echo $sezo." - ".$inf['sezonas']." sezonas: <b>".$inf['metai']." ".$men[$inf['laikotarpis']]."</b>";
+                        ?>
+                    </p>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Pavadinimas</th>
+                            <th>Kiekis</th>
+                            <th>Mėslas</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $viso = 0;
+
+                        foreach($gyvu as $col){
+                            echo'<tr>';
+                            echo"<td>";  echo $col['pavadinimas'];  echo"</td>";
+                            echo"<td>";  echo $col['kiek'];  echo"</td>";
+                            echo"<td>";  echo $col['meslas'];  echo" t.</td>";
+                            echo"</tr>";
+
+                            $viso += $col['meslas'];
+                        }
+                        echo"<tr>";
+                        echo"<td colspan=2><b>Viso</b></td>";
+                        echo"<td><b>".$viso." t.</b></td>";
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Spauzdinti myktukas -->
+                <div class="form-group">
+                    <button class="btn btn-block btn-outline btn-primary" type="button" onclick="PrintElem('.table-responsive')">
+                        <i class="fa fa-check-circle-o fa-lg"> SPAUSDINTI</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+
 </div>

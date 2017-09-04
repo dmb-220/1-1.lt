@@ -71,7 +71,7 @@
                     <li><a href="<?= base_url(); ?>pasarai/normos">Normų sąrašas</a></li>
                     <li><a href="<?= base_url(); ?>pasarai/apskaiciuoti_pasarus">Apskaiciuoti pašarus</a></li>
                     <li><a href="<?= base_url(); ?>pasarai/rankinis_pasarus">Rankinis pašarų skaičiavimas</a></li>
-                    <li><a href="<?= base_url(); ?>pasarai/meslas">Meslas, priesvoris, kiti pašarai</a></li>
+                    <li><a href="<?= base_url(); ?>pasarai/meslas">Meslas</a></li>
                 </ul>
             </li>
 

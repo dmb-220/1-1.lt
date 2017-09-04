@@ -34,6 +34,8 @@ class Zalia_knyga extends CI_Controller{
     }
 
     public function knyga(){
+        $error = array();
+        $data = array();
 
         //sukeliam info, informaciniam meniu
         $inf['meniu'] = "Žalioji knyga";

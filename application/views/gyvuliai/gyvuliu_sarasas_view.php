@@ -81,12 +81,10 @@
             </form>
         </div>
     </div>
-</div>
 
 <?php
 if($error['action']){
     ?>
-    <div class="wrapper wrapper-content animated fadeInRight">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Gyvulių sąrašas</h5>
@@ -140,6 +138,8 @@ if($error['action']){
                 </div>
         </div>
     </div>
+
+<?php
+}
+?>
 </div>
-            <?php }
-            ?>

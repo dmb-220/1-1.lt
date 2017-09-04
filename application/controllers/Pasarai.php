@@ -37,7 +37,11 @@ class Pasarai extends CI_Controller{
 
         $dt = $this->session->userdata();
 
+        $this->load->model('ukininkai_model');
+        $this->load->model('gyvuliai_model');
         $this->load->library('form_validation');
+        $this->load->library('linksniai');
+
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
             $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
@@ -56,12 +60,92 @@ class Pasarai extends CI_Controller{
         $this->form_validation->set_rules('sezonas', 'Sezonas', 'required', array('required' => 'Pasirinkite sezoną.'));
         $this->form_validation->set_rules('laikotarpis', 'Laikotarpis', 'required', array('required' => 'Pasirinkite laikotarpį.'));
 
+        $mesl = array(
+            'karves' => '3.2',
+            'telycios' => '3.2',
+            'buliai' => '3.0',
+            'verseliai' => '1.5',
+        );
+
+        $arr = array(
+            '00', '11', '12', '01', '02', '03', '04'
+        );
+
+        $gyvu = array(
+            'karves' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'M. Karvės',),
+            'verseliai' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'Veršeliai',),
+            'telycios' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'Telyčios',),
+            'buliai' => array('kiek' => 0,  'meslas' => 0, 'pavadinimas' => 'Buliai',),
+        );
+
+
         if ($this->form_validation->run()) {
-            $metai = $this->input->post('sezonas');
+            $sezonas = $this->input->post('sezonas');
             $laikotarpis = $this->input->post('laikotarpis');
 
-            $inf['metai'] = $metai;
+            $inf['sezonas'] = $sezonas;
             $inf['laikotarpis'] = $laikotarpis;
+            //adresas prie kurio reikia prisjungti
+            $gyvi_url = "https://www.vic.lt:8102/pls/gris/private.gyvuliu_sarasas";
+
+            //sukuriam prisjijungima
+            $ukis = $this->ukininkai_model->ukininkas($ukininkas);
+            $auth = $ukis[0]['VIC_vartotojo_vardas'].":".$ukis[0]['VIC_slaptazodis'];
+
+            if($laikotarpis != 0) {
+                //metai persivercia, del to reik pasiziuret kuri menesi ziuri
+                if ($laikotarpis == 1 OR $laikotarpis == 2) {
+                    $met = $sezonas - 1;} else {$met = $sezonas;
+                }
+                $inf['metai'] = $met;
+                //sugeneruojame data skirta siusti i VIC.LT
+                $da = $met.'.'.$arr[$laikotarpis].'.'.cal_days_in_month(CAL_GREGORIAN, $arr[$laikotarpis], $met);
+                //sukuriam masyva POST
+                $post = ['v_data' => $da, 'v_rus' => 1];
+                //nuskaitom VIC.LT
+                $page = $this->gyvuliai_model->get_VIC($gyvi_url, $post, $auth);
+                if (!$page['content']) {
+                    //isvesti error jei negaunu duomenu is VIC.LT
+                } else {
+                    $data_gyvi = $this->gyvuliai_model->Gyvi_gyvunai($page['content']);
+                    //apdoroti duomenis prie irasant i masyva
+                    //var_dump($data_gyvi); die;
+                    foreach ($data_gyvi as $sk) {
+                        $one = explode(" ", $sk[4]);
+                        if ($one[0] == "Karvė") {
+                                $gyvu['karves']['kiek']++;
+                                $gyvu['karves']['meslas'] += $mesl['karves'];
+                        }
+
+                        if ($one[0] == "Buliukas") {
+                            if ($sk[7] >= 12) {
+                                $gyvu['buliai']['kiek']++;
+                                $gyvu['buliai']['meslas'] += $mesl['buliai'];
+                            }
+                            if ($sk[7] < 12) {
+                                $gyvu['verseliai']['kiek']++;
+                                $gyvu['verseliai']['meslas'] += $mesl['verseliai'];
+                            }
+                        }
+
+                        if ($one[0] == "Telyčaitė") {
+                            if ($sk[7] >= 12) {
+                                $gyvu['telycios']['kiek']++;
+                                $gyvu['telycios']['meslas'] += $mesl['telycios'];
+                            }
+                            if ($sk[7] < 12) {
+                                $gyvu['verseliai']['kiek']++;
+                                $gyvu['verseliai']['meslas'] += $mesl['verseliai'];
+                            }
+                        }
+                    }
+
+                    //var_dump($gyvu); die;
+
+                }
+
+
+            }
 
             $error['action'] = TRUE;
         }
@@ -70,7 +154,10 @@ class Pasarai extends CI_Controller{
         $inf['meniu'] = "Pašarai";
         $inf['active'] = "Pašarų normos";
 
-        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
+        $this->load->model('ukininkai_model');
+        $data = $this->ukininkai_model->ukininku_sarasas();
+
+        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf, 'gyvu' => $gyvu));
     }
 
 

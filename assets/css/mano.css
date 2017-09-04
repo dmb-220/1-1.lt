@@ -144,4 +144,8 @@ div.today {
     display: inline-block;
 }
 
+/* lentele texto lygiavimas per viduri */
 
+.table > thead > tbody > tr > td {
+    vertical-align: middle;
+}
