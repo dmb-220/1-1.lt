@@ -36,10 +36,50 @@ class Zalia_knyga extends CI_Controller{
     public function knyga(){
         $error = array();
         $data = array();
+        $dt = $this->session->userdata();
+
+        $this->load->model('ukininkai_model');
+        //$this->load->model('zalia_knyga_model');
+        $this->load->library('linksniai');
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        if ($dt['vardas'] == "" AND $dt['pavarde'] == "") {
+            $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+            $ukininkas = $_POST['ukininko_vardas'];
+            $this->load->model('ukininkai_model');
+            $uk = $this->ukininkai_model->ukininkas($ukininkas);
+            $inf['vardas'] = $uk[0]['vardas'];
+            $inf['pavarde'] = $uk[0]['pavarde'];
+            $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
+            $this->session->set_userdata($new);
+        } else {
+            $ukininkas = $dt['nr'];
+            $inf['vardas'] = $dt['vardas'];
+            $inf['pavarde'] = $dt['pavarde'];
+        }
+
+        $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
+        $this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
+
+        if ($this->form_validation->run()) {
+            $metai = $this->input->post('metai');
+            $menesis = $this->input->post('menesis');
+
+            $inf['metai'] = $metai;
+            $inf['menesis'] = $menesis;
+
+            //rasomas kodas
+
+
+            $error['action'] = TRUE;
+        }
 
         //sukeliam info, informaciniam meniu
         $inf['meniu'] = "Žalioji knyga";
         $inf['active'] = "Pagrindinis";
+
+        $data = $this->ukininkai_model->ukininku_sarasas();
 
         $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
     }

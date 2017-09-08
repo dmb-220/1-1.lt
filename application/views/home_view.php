@@ -84,6 +84,24 @@
                         <div class="row">
                             <div class="col-xs-3 date">
                                 <i class="fa fa-briefcase"></i>
+                                2017.09.07
+                                <br>
+                                <small class="text-navy">...</small>
+                            </div>
+                            <div class="col-xs-7 content no-top-border">
+                                <p class="m-b-xs"><strong>Sutvarkyta:</strong></p>
+
+                                <p>
+                                    * Sutvarkytas meslu skaiciavimas<br>
+                                    * skaiciuoja pasirinkta menesi arba visa sezona<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="row">
+                            <div class="col-xs-3 date">
+                                <i class="fa fa-briefcase"></i>
                                 2017.09.02
                                 <br>
                                 <small class="text-navy">...</small>

@@ -307,6 +307,20 @@ class Gyvuliai extends CI_Controller {
                             }
                         }
                     }else{
+                        //is telyciu pereina i karves ir parduodama, dingsta
+                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                        $pi = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
+
+                        if (!empty($pi)) {
+                            if ($pi[0]['lytis'] == "Telyčaitė (Karvė)" OR $pi[0]['lytis'] == "Telyčaitė (Telyčaitė)") {
+                                //reikia patikrinti amziu, nes i karves galiu judeti ir is telyciu iki 24 menesiu
+                                if($pi[0]['amzius']>=24){
+                                    $gyvuliai['karves']['j_i']++; $gyvuliai['telycios_24']['j_is']++;
+                                }else{
+                                    $gyvuliai['telycios_12']['j_is']++; $gyvuliai['karves']['j_i']++;
+                                }
+                            }
+                        }
                         //tikrinsim pagal ivykio koda kas nutiko gyvuliui
                         $pp = $this->gyvuliai_model->ivykio_kodas($sk['laikymo_pabaiga']);
 

@@ -107,6 +107,31 @@ if($error['action']){
                         echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
                         ?>
                     </p>
+                    <hr>
+                    Sutartinis žymėjimas:
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Karvė (Karvė)</th>
+                            <th>Telyčaitė (Telyčaitė)</th>
+                            <th>Buliukas (Buliukas)</th>
+                            <th>Telyčaitė (Karvė)</th>
+                            <th>Iškeliavęs gyvulys</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td bgcolor="#faebd7"></td>
+                            <td bgcolor="#f0e68c"></td>
+                            <td bgcolor="#90ee90"></td>
+                            <td bgcolor="#add8e6"></td>
+                            <td bgcolor="#dc143c"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <hr>
+
                     <table class="table table-bordered">
                         <thead>
                         <tr>
@@ -124,11 +149,20 @@ if($error['action']){
 
                         <?php
                 foreach($gyvu as $col){
-                    if($col['amzius'] == ""){echo'<tr class="danger">';}else{echo'<tr>';}
+                    switch ($col['lytis']) {
+                        case "Karvė (Karvė)": echo'<tr bgcolor="#faebd7">'; break;
+                        case "Telyčaitė (Telyčaitė)": echo'<tr bgcolor="#f0e68c">'; break;
+                        case "Buliukas (Buliukas)": echo'<tr bgcolor="#90ee90">'; break;
+                        case "Telyčaitė (Karvė)": echo'<tr bgcolor="#add8e6">'; break;
+                        default: echo'<tr>';
+                    }
+
                     foreach($col as $row){
-                            echo "<td>";
-                            echo $row;
-                            echo "</td>";
+                        if($row == ""){
+                            echo "<td bgcolor='#dc143c'>".$row."</td>";
+                        }else{
+                            echo "<td>".$row."</td>";
+                        }
                     }
                     echo"</tr>";
                 }

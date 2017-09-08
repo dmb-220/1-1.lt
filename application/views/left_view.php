@@ -72,7 +72,8 @@
                     <li><a href="<?= base_url(); ?>pasarai/apskaiciuoti_pasarus">Apskaiciuoti pašarus</a></li>
                     <li><a href="<?= base_url(); ?>pasarai/rankinis_pasarus">Rankinis pašarų skaičiavimas</a></li>
                     <li><a href="<?= base_url(); ?>pasarai/meslas">Meslas</a></li>
-                </ul>
+                    <li><a href="<?= base_url(); ?>pasarai/ganykliniai_pasarai">Ganykliniai pašarai</a></li>
+        </ul>
             </li>
 
                 <li>

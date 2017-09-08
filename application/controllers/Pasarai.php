@@ -31,6 +31,244 @@ class Pasarai extends CI_Controller{
         }
     }
 
+    public function ganykliniai_pasarai(){
+        $data = array();
+        $error = array();
+
+        $dt = $this->session->userdata();
+
+        $this->load->model('ukininkai_model');
+        $this->load->model('gyvuliai_model');
+        $this->load->library('form_validation');
+        $this->load->library('linksniai');
+
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
+            $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
+            $ukininkas = $this->input->post('ukininko_vardas');
+            $this->load->model('ukininkai_model');
+            $uk = $this->ukininkai_model->ukininkas($ukininkas);
+            $inf['vardas'] = $uk[0]['vardas'];
+            $inf['pavarde'] = $uk[0]['pavarde'];
+            $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
+            $this->session->set_userdata($new);
+        }else{
+            $ukininkas = $dt['nr'];
+            $inf['vardas'] = $dt['vardas'];
+            $inf['pavarde'] = $dt['pavarde'];
+        }
+        $this->form_validation->set_rules('sezonas', 'Sezonas', 'required', array('required' => 'Pasirinkite sezoną.'));
+        $this->form_validation->set_rules('laikotarpis', 'Laikotarpis', 'required', array('required' => 'Pasirinkite laikotarpį.'));
+
+        $mesl = array(
+            'karves' => '65',
+            'telycios' => '50',
+            'buliai' => '55',
+            'verseliai' => '35',
+        );
+
+        $arr = array(
+            '00', '05', '06', '07', '08', '09', '10'
+        );
+
+
+        if ($this->form_validation->run()) {
+            $sezonas = $this->input->post('sezonas');
+            $laikotarpis = $this->input->post('laikotarpis');
+
+            $inf['sezonas'] = $sezonas;
+            $inf['laikotarpis'] = $laikotarpis;
+            //adresas prie kurio reikia prisjungti
+            $gyvi_url = "https://www.vic.lt:8102/pls/gris/private.gyvuliu_sarasas";
+
+            //sukuriam prisjijungima
+            $ukis = $this->ukininkai_model->ukininkas($ukininkas);
+            $auth = $ukis[0]['VIC_vartotojo_vardas'].":".$ukis[0]['VIC_slaptazodis'];
+
+            if($laikotarpis != 0) {
+
+                $gyvu = array(
+                    'karves' => array('kiek' => 0, 'pasarai' => 0, 'pavadinimas' => 'M. Karvės',),
+                    'verseliai' => array('kiek' => 0, 'pasarai' => 0, 'pavadinimas' => 'Veršeliai',),
+                    'telycios' => array('kiek' => 0, 'pasarai' => 0, 'pavadinimas' => 'Telyčios',),
+                    'buliai' => array('kiek' => 0,  'pasarai' => 0, 'pavadinimas' => 'Buliai',),
+                );
+
+
+                //sugeneruojame data skirta siusti i VIC.LT
+                $da = $sezonas.'.'.$arr[$laikotarpis].'.'.cal_days_in_month(CAL_GREGORIAN, $arr[$laikotarpis], $sezonas);
+                //sukuriam masyva POST
+                $post = ['v_data' => $da, 'v_rus' => 1];
+                //nuskaitom VIC.LT
+                $page = $this->gyvuliai_model->get_VIC($gyvi_url, $post, $auth);
+                //print_r($page['content']); die;
+                if (!$page['content']) {
+                    //isvesti error jei negaunu duomenu is VIC.LT
+                } else {
+                    $data_gyvi = $this->gyvuliai_model->Gyvi_gyvunai($page['content']);
+                    //apdoroti duomenis prie irasant i masyva
+                    //var_dump($data_gyvi); die;
+                    foreach ($data_gyvi as $sk) {
+                        $one = explode(" ", $sk[4]);
+                        if ($one[0] == "Karvė") {
+                            $gyvu['karves']['kiek']++;
+                            $gyvu['karves']['pasarai'] += $mesl['karves'];
+                        }
+
+                        if ($one[0] == "Buliukas") {
+                            if ($sk[7] >= 12) {
+                                $gyvu['buliai']['kiek']++;
+                                $gyvu['buliai']['pasarai'] += $mesl['buliai'];
+                            }
+                            if ($sk[7] < 12) {
+                                $gyvu['verseliai']['kiek']++;
+                                $gyvu['verseliai']['pasarai'] += $mesl['verseliai'];
+                            }
+                        }
+
+                        if ($one[0] == "Telyčaitė") {
+                            if ($sk[7] >= 12) {
+                                $gyvu['telycios']['kiek']++;
+                                $gyvu['telycios']['pasarai'] += $mesl['telycios'];
+                            }
+                            if ($sk[7] < 12) {
+                                $gyvu['verseliai']['kiek']++;
+                                $gyvu['verseliai']['pasarai'] += $mesl['verseliai'];
+                            }
+                        }
+                    }
+
+                }
+
+                //var_dump($gyvu); die;
+
+                $error['action'] = 1;
+
+            }else{
+                $gyvu = array(
+                    'karves' => array('pavadinimas' => 'M. Karvės', 'kiek' => 0, 'pasarai' => 0,
+                        '11' => array('kiek' => 0, 'pasarai' => 0,),
+                        '12' => array('kiek' => 0, 'pasarai' => 0,),
+                        '01' => array('kiek' => 0, 'pasarai' => 0,),
+                        '02' => array('kiek' => 0, 'pasarai' => 0,),
+                        '03' => array('kiek' => 0, 'pasarai' => 0,),
+                        '04' => array('kiek' => 0, 'pasarai' => 0,),
+                        'viso' => array('kiek' => 0, 'pasarai' => 0,)),
+                    'verseliai' => array('pavadinimas' => 'Veršeliai',  'kiek' => 0, 'pasarai' => 0,
+                        '11' => array('kiek' => 0, 'pasarai' => 0,),
+                        '12' => array('kiek' => 0, 'pasarai' => 0,),
+                        '01' => array('kiek' => 0, 'pasarai' => 0,),
+                        '02' => array('kiek' => 0, 'pasarai' => 0,),
+                        '03' => array('kiek' => 0, 'pasarai' => 0,),
+                        '04' => array('kiek' => 0, 'pasarai' => 0,),
+                        'viso' => array('kiek' => 0, 'pasarai' => 0,)),
+                    'telycios' => array('pavadinimas' => 'Telyčios',  'kiek' => 0, 'pasarai' => 0,
+                        '11' => array('kiek' => 0, 'pasarai' => 0,),
+                        '12' => array('kiek' => 0, 'pasarai' => 0,),
+                        '01' => array('kiek' => 0, 'pasarai' => 0,),
+                        '02' => array('kiek' => 0, 'pasarai' => 0,),
+                        '03' => array('kiek' => 0, 'pasarai' => 0,),
+                        '04' => array('kiek' => 0, 'pasarai' => 0,),
+                        'viso' => array('kiek' => 0, 'pasarai' => 0,)),
+                    'buliai' => array('pavadinimas' => 'Buliai',  'kiek' => 0, 'pasarai' => 0,
+                        '11' => array('kiek' => 0, 'pasarai' => 0,),
+                        '12' => array('kiek' => 0, 'pasarai' => 0,),
+                        '01' => array('kiek' => 0, 'pasarai' => 0,),
+                        '02' => array('kiek' => 0, 'pasarai' => 0,),
+                        '03' => array('kiek' => 0, 'pasarai' => 0,),
+                        '04' => array('kiek' => 0, 'pasarai' => 0,),
+                        'viso' => array('kiek' => 0, 'pasarai' => 0,)),
+                );
+
+                //metai persivercia, del to reik pasiziuret kuri menesi ziuri
+                if ($laikotarpis == 1 OR $laikotarpis == 2) {
+                    $met = $sezonas - 1;} else {$met = $sezonas;
+                }
+
+                for($i = 1; $i<count($arr); $i++) {
+                    if ($arr[$i] == 11 OR $arr[$i] == 12) {
+                        $met = $sezonas - 1;} else {$met = $sezonas;
+                    }
+                    //sugeneruojame data skirta siusti i VIC.LT
+                    $da = $met.'.'.$arr[$i].'.'.cal_days_in_month(CAL_GREGORIAN, $arr[$i], $met);
+
+                    //sukuriam masyva POST
+                    $post = ['v_data' => $da, 'v_rus' => 1];
+
+                    //nuskaitom VIC.LT
+                    $page = $this->gyvuliai_model->get_VIC($gyvi_url, $post, $auth);
+                    if (!$page['content']) {
+                        //isvesti error jei negaunu duomenu is VIC.LT
+                    } else {
+                        $data_gyvi = $this->gyvuliai_model->Gyvi_gyvunai($page['content']);
+                        //apdoroti duomenis prie irasant i masyva
+                        //var_dump($data_gyvi); die;
+                        foreach ($data_gyvi as $sk) {
+                            $one = explode(" ", $sk[4]);
+                            if ($one[0] == "Karvė") {
+                                //menesiu
+                                $gyvu['karves'][$arr[$i]]['kiek']++;
+                                $gyvu['karves'][$arr[$i]]['pasarai'] += $mesl['karves'];
+                                //viso
+                                $gyvu['karves']['viso']['kiek']++;
+                                $gyvu['karves']['viso']['pasarai'] += $mesl['karves'];
+                            }
+
+                            if ($one[0] == "Buliukas") {
+                                if ($sk[7] >= 12) {
+                                    $gyvu['buliai'][$arr[$i]]['kiek']++;
+                                    $gyvu['buliai'][$arr[$i]]['pasarai'] += $mesl['buliai'];
+                                    //viso
+                                    $gyvu['buliai']['viso']['kiek']++;
+                                    $gyvu['buliai']['viso']['pasarai'] += $mesl['buliai'];
+                                }
+                                if ($sk[7] < 12) {
+                                    $gyvu['verseliai'][$arr[$i]]['kiek']++;
+                                    $gyvu['verseliai'][$arr[$i]]['pasarai'] += $mesl['verseliai'];
+                                    //viso
+                                    $gyvu['verseliai']['viso']['kiek']++;
+                                    $gyvu['verseliai']['viso']['pasarai'] += $mesl['verseliai'];
+                                }
+                            }
+
+                            if ($one[0] == "Telyčaitė") {
+                                if ($sk[7] >= 12) {
+                                    $gyvu['telycios'][$arr[$i]]['kiek']++;
+                                    $gyvu['telycios'][$arr[$i]]['pasarai'] += $mesl['telycios'];
+                                    //viso
+                                    $gyvu['telycios']['viso']['kiek']++;
+                                    $gyvu['telycios']['viso']['pasarai'] += $mesl['telycios'];
+                                }
+                                if ($sk[7] < 12) {
+                                    $gyvu['verseliai'][$arr[$i]]['kiek']++;
+                                    $gyvu['verseliai'][$arr[$i]]['pasarai'] += $mesl['verseliai'];
+                                    //viso
+                                    $gyvu['verseliai']['viso']['kiek']++;
+                                    $gyvu['verseliai']['viso']['pasarai'] += $mesl['verseliai'];
+                                }
+                            }
+                        }
+
+                    }
+                    //var_dump($da); die;
+                }
+
+                $error['action'] = 2;
+            }
+
+            //$error['action'] = TRUE;
+        }
+
+        //sukeliam info, informaciniam meniu
+        $inf['meniu'] = "Pašarai";
+        $inf['active'] = "Ganykliniai pašarai";
+
+        $this->load->model('ukininkai_model');
+        $data = $this->ukininkai_model->ukininku_sarasas();
+
+        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf, 'gyvu' => $gyvu));
+    }
+
     public function meslas(){
         $data = array();
         $error = array();
@@ -71,13 +309,6 @@ class Pasarai extends CI_Controller{
             '00', '11', '12', '01', '02', '03', '04'
         );
 
-        $gyvu = array(
-            'karves' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'M. Karvės',),
-            'verseliai' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'Veršeliai',),
-            'telycios' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'Telyčios',),
-            'buliai' => array('kiek' => 0,  'meslas' => 0, 'pavadinimas' => 'Buliai',),
-        );
-
 
         if ($this->form_validation->run()) {
             $sezonas = $this->input->post('sezonas');
@@ -93,6 +324,14 @@ class Pasarai extends CI_Controller{
             $auth = $ukis[0]['VIC_vartotojo_vardas'].":".$ukis[0]['VIC_slaptazodis'];
 
             if($laikotarpis != 0) {
+
+                $gyvu = array(
+                    'karves' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'M. Karvės',),
+                    'verseliai' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'Veršeliai',),
+                    'telycios' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'Telyčios',),
+                    'buliai' => array('kiek' => 0,  'meslas' => 0, 'pavadinimas' => 'Buliai',),
+                );
+
                 //metai persivercia, del to reik pasiziuret kuri menesi ziuri
                 if ($laikotarpis == 1 OR $laikotarpis == 2) {
                     $met = $sezonas - 1;} else {$met = $sezonas;
@@ -140,19 +379,132 @@ class Pasarai extends CI_Controller{
                         }
                     }
 
-                    //var_dump($gyvu); die;
-
                 }
 
+                //var_dump($gyvu); die;
 
+                $error['action'] = 1;
+
+            }else{
+                $gyvu = array(
+                    'karves' => array('pavadinimas' => 'M. Karvės', 'kiek' => 0, 'meslas' => 0,
+                        '11' => array('kiek' => 0, 'meslas' => 0,),
+                        '12' => array('kiek' => 0, 'meslas' => 0,),
+                        '01' => array('kiek' => 0, 'meslas' => 0,),
+                        '02' => array('kiek' => 0, 'meslas' => 0,),
+                        '03' => array('kiek' => 0, 'meslas' => 0,),
+                        '04' => array('kiek' => 0, 'meslas' => 0,),
+                        'viso' => array('kiek' => 0, 'meslas' => 0,)),
+                    'verseliai' => array('pavadinimas' => 'Veršeliai',  'kiek' => 0, 'meslas' => 0,
+                        '11' => array('kiek' => 0, 'meslas' => 0,),
+                        '12' => array('kiek' => 0, 'meslas' => 0,),
+                        '01' => array('kiek' => 0, 'meslas' => 0,),
+                        '02' => array('kiek' => 0, 'meslas' => 0,),
+                        '03' => array('kiek' => 0, 'meslas' => 0,),
+                        '04' => array('kiek' => 0, 'meslas' => 0,),
+                        'viso' => array('kiek' => 0, 'meslas' => 0,)),
+                    'telycios' => array('pavadinimas' => 'Telyčios',  'kiek' => 0, 'meslas' => 0,
+                        '11' => array('kiek' => 0, 'meslas' => 0,),
+                        '12' => array('kiek' => 0, 'meslas' => 0,),
+                        '01' => array('kiek' => 0, 'meslas' => 0,),
+                        '02' => array('kiek' => 0, 'meslas' => 0,),
+                        '03' => array('kiek' => 0, 'meslas' => 0,),
+                        '04' => array('kiek' => 0, 'meslas' => 0,),
+                        'viso' => array('kiek' => 0, 'meslas' => 0,)),
+                    'buliai' => array('pavadinimas' => 'Buliai',  'kiek' => 0, 'meslas' => 0,
+                        '11' => array('kiek' => 0, 'meslas' => 0,),
+                        '12' => array('kiek' => 0, 'meslas' => 0,),
+                        '01' => array('kiek' => 0, 'meslas' => 0,),
+                        '02' => array('kiek' => 0, 'meslas' => 0,),
+                        '03' => array('kiek' => 0, 'meslas' => 0,),
+                        '04' => array('kiek' => 0, 'meslas' => 0,),
+                        'viso' => array('kiek' => 0, 'meslas' => 0,)),
+                );
+
+                //metai persivercia, del to reik pasiziuret kuri menesi ziuri
+                if ($laikotarpis == 1 OR $laikotarpis == 2) {
+                    $met = $sezonas - 1;} else {$met = $sezonas;
+                }
+
+                for($i = 1; $i<count($arr); $i++) {
+                    if ($arr[$i] == 11 OR $arr[$i] == 12) {
+                        $met = $sezonas - 1;} else {$met = $sezonas;
+                    }
+                    //sugeneruojame data skirta siusti i VIC.LT
+                    $da = $met.'.'.$arr[$i].'.'.cal_days_in_month(CAL_GREGORIAN, $arr[$i], $met);
+
+                    //sukuriam masyva POST
+                    $post = ['v_data' => $da, 'v_rus' => 1];
+
+                    //nuskaitom VIC.LT
+                $page = $this->gyvuliai_model->get_VIC($gyvi_url, $post, $auth);
+                if (!$page['content']) {
+                    //isvesti error jei negaunu duomenu is VIC.LT
+                } else {
+                    $data_gyvi = $this->gyvuliai_model->Gyvi_gyvunai($page['content']);
+                    //apdoroti duomenis prie irasant i masyva
+                    //var_dump($data_gyvi); die;
+                    foreach ($data_gyvi as $sk) {
+                        $one = explode(" ", $sk[4]);
+                        if ($one[0] == "Karvė") {
+                            //$gyvu['karves']['kiek']++;
+                            //$gyvu['karves']['meslas'] += $mesl['karves'];
+                            //menesiu
+                            $gyvu['karves'][$arr[$i]]['kiek']++;
+                            $gyvu['karves'][$arr[$i]]['meslas'] += $mesl['karves'];
+                            //viso
+                            $gyvu['karves']['viso']['kiek']++;
+                            $gyvu['karves']['viso']['meslas'] += $mesl['karves'];
+                        }
+
+                        if ($one[0] == "Buliukas") {
+                            if ($sk[7] >= 12) {
+                                $gyvu['buliai'][$arr[$i]]['kiek']++;
+                                $gyvu['buliai'][$arr[$i]]['meslas'] += $mesl['buliai'];
+                                //viso
+                                $gyvu['buliai']['viso']['kiek']++;
+                                $gyvu['buliai']['viso']['meslas'] += $mesl['buliai'];
+                            }
+                            if ($sk[7] < 12) {
+                                $gyvu['verseliai'][$arr[$i]]['kiek']++;
+                                $gyvu['verseliai'][$arr[$i]]['meslas'] += $mesl['verseliai'];
+                                //viso
+                                $gyvu['verseliai']['viso']['kiek']++;
+                                $gyvu['verseliai']['viso']['meslas'] += $mesl['verseliai'];
+                            }
+                        }
+
+                        if ($one[0] == "Telyčaitė") {
+                            if ($sk[7] >= 12) {
+                                $gyvu['telycios'][$arr[$i]]['kiek']++;
+                                $gyvu['telycios'][$arr[$i]]['meslas'] += $mesl['telycios'];
+                                //viso
+                                $gyvu['telycios']['viso']['kiek']++;
+                                $gyvu['telycios']['viso']['meslas'] += $mesl['telycios'];
+                            }
+                            if ($sk[7] < 12) {
+                                $gyvu['verseliai'][$arr[$i]]['kiek']++;
+                                $gyvu['verseliai'][$arr[$i]]['meslas'] += $mesl['verseliai'];
+                                //viso
+                                $gyvu['verseliai']['viso']['kiek']++;
+                                $gyvu['verseliai']['viso']['meslas'] += $mesl['verseliai'];
+                            }
+                        }
+                    }
+
+                }
+                //var_dump($da); die;
             }
 
-            $error['action'] = TRUE;
+                $error['action'] = 2;
+            }
+
+            //$error['action'] = TRUE;
         }
 
         //sukeliam info, informaciniam meniu
         $inf['meniu'] = "Pašarai";
-        $inf['active'] = "Pašarų normos";
+        $inf['active'] = "Mėslo kiekis";
 
         $this->load->model('ukininkai_model');
         $data = $this->ukininkai_model->ukininku_sarasas();

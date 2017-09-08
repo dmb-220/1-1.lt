@@ -176,21 +176,21 @@ public function ivykio_kodas($data){
 
         $table = array();
         //get all rows from the table
-        $rows = $tables->item(8)->getElementsByTagName('tr');
-        foreach ($rows as $row) {
-            // get each column by tag name
-            $cols = $row->getElementsByTagName('td');
-            $row = array();
-            $i=0;
-            foreach ($cols as $node) {
-                if($row_headers==NULL)
-                    $row[] = $node->nodeValue;
-                else
-                    $row[$row_headers[$i]] = $node->nodeValue;
-                $i++;
+            $rows = $tables->item(8)->getElementsByTagName('tr');
+            foreach ($rows as $row) {
+                // get each column by tag name
+                $cols = $row->getElementsByTagName('td');
+                $row = array();
+                $i = 0;
+                foreach ($cols as $node) {
+                    if ($row_headers == NULL)
+                        $row[] = $node->nodeValue;
+                    else
+                        $row[$row_headers[$i]] = $node->nodeValue;
+                    $i++;
+                }
+                $table[] = $row;
             }
-            $table[] = $row;
-        }
         return $table;
     }
 

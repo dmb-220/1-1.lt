@@ -1,14 +1,14 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>Mėšlo skaičiavimas laikotarpiui</h5>
+            <h5>Ganyklinių pašarų skaičiavimas laikotarpiui</h5>
             <div class="ibox-tools">
                 <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 <a class="close-link"><i class="fa fa-times"></i></a>
             </div>
         </div>
         <div class="ibox-content">
-                <form class="form-horizontal form-bordered" action="<?= base_url(); ?>pasarai/meslas" method="POST">
+                <form class="form-horizontal form-bordered" action="<?= base_url(); ?>pasarai/ganykliniai_pasarai" method="POST">
                     <?php
                     $dt = $this->session->userdata();
                     ?>
@@ -56,10 +56,10 @@
                             <div class="col-md-6">
                                 <?php echo form_error('sezonas'); ?>
                                 <select name="sezonas" class="form-control">
-                                    <option value="2016">2015 - 2016</option>
-                                    <option value="2017" selected="selected">2016 - 2017</option>
-                                    <option value="2018">2017 - 2018</option>
-                                    <option value="2019">2018 - 2019</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017" selected="selected">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
                                 </select>
                             </div>
                         </div>
@@ -67,14 +67,19 @@
                             <label class="col-md-4 control-label">Laikotarpis</label>
                             <div class="col-md-6">
                                 <?php
-                                $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
+                                $men = array("Visas sezonas", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis");
+                                $arr = array('00', '05', '06', '07', '08', '09', '10');
                                 ?>
                                 <?php echo form_error('laikotarpis'); ?>
                                 <select name="laikotarpis" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
+                                    $me = date('m');
                                     for($i=0; $i<count($men); $i++) {
-                                        echo"<option value=".$i.">";
+                                        //reik sutvarkyti, jei sezonas praejes, leistu apskaiciuoti visa
+                                        if($me > $arr[$i] && $arr[$i] != '00'){
+                                                echo "<option value=" . $i . ">";
+                                        }
                                         echo $men[$i];
                                         echo"</option>";
                                     } ?>
@@ -109,16 +114,15 @@
             <div class="ibox-content">
                 <div class="table-responsive">
                     <h4><strong>
-                            <p class="text-center">GYVULIŲ MĖŠLO LENTELĖ</p>
+                            <p class="text-center">GYVULIŲ GANYKLINIŲ PAŠARŲ LENTELĖ</p>
                         </strong></h4><br><br>
                     <p class="alignleft">
                         <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
                     </p>
                     <p class="alignright">
                         <?php
-                        $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
-                        $sezo = $inf['sezonas']-1;
-                        echo $sezo." - ".$inf['sezonas']." sezonas: <b>".$inf['metai']." ".$men[$inf['laikotarpis']]."</b>";
+                        $men = array("Visas sezonas", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis");
+                        echo $inf['sezonas']." sezonas: <b>".$men[$inf['laikotarpis']]."</b>";
                         ?>
                     </p>
                     <table class="table table-bordered">
@@ -126,7 +130,7 @@
                         <tr>
                             <th>Pavadinimas</th>
                             <th>Kiekis</th>
-                            <th>Mėslas</th>
+                            <th>Ganykliniai pašarai</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -137,14 +141,16 @@
                             echo'<tr>';
                             echo"<td>";  echo $col['pavadinimas'];  echo"</td>";
                             echo"<td>";  echo $col['kiek'];  echo"</td>";
-                            echo"<td>";  echo $col['meslas'];  echo" t.</td>";
+                            echo"<td>";  echo $col['pasarai']/1000;  echo" t.</td>";
                             echo"</tr>";
 
-                            $viso += $col['meslas'];
+                            $viso += $col['pasarai'];
                         }
                         echo"<tr>";
                         echo"<td class='success' colspan='2'><b>Viso</b></td>";
-                        echo"<td class='danger'><b>".$viso." t.</b></td>";
+                        echo"<td class='danger'><b>";
+                        echo $viso/1000;
+                            echo" t.</b></td>";
                         ?>
                         </tbody>
                     </table>
@@ -165,7 +171,7 @@
     if($error['action'] == 2) {
         //var_dump($gyvu);
         $arr = array(
-            '00', '11', '12', '01', '02', '03', '04', 'viso'
+            '00', '05', '06', '07', '08', '09', '10', 'viso'
         );
         ?>
         <div class="ibox float-e-margins">
@@ -180,45 +186,44 @@
             <div class="ibox-content">
                 <div class="table-responsive">
                     <h4><strong>
-                            <p class="text-center">GYVULIŲ MĖŠLO LENTELĖ</p>
+                            <p class="text-center">GYVULIŲ GANYKLINIŲ PAŠARŲ LENTELĖ</p>
                         </strong></h4><br><br>
                     <p class="alignleft">
                         <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
                     </p>
                     <p class="alignright">
                         <?php
-                        $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
-                        $sezo = $inf['sezonas']-1;
-                        echo $sezo." - ".$inf['sezonas']." sezonas: <b>".$men[$inf['laikotarpis']]."</b>";
+                        $men = array("Visas sezonas", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis");
+                        echo $inf['sezonas']." sezonas: <b>Visas sezonas</b>";
                         ?>
                     </p>
                     <table class="table table-bordered">
                         <thead>
                         <tr>
                             <td rowspan=2><b>Pavadinimas</b></td>
-                            <td colspan=2><b>Lapkritis</b></td>
-                            <td colspan=2><b>Gruodis</b></td>
-                            <td colspan=2><b>Sausis</b></td>
-                            <td colspan=2><b>Vasaris</b></td>
-                            <td colspan=2><b>Kovas</b></td>
-                            <td colspan=2><b>Balandis</b></td>
+                            <td colspan=2><b>Gegužė</b></td>
+                            <td colspan=2><b>Birželis</b></td>
+                            <td colspan=2><b>Liepa</b></td>
+                            <td colspan=2><b>Rugpjūtis</b></td>
+                            <td colspan=2><b>Rugsėjis</b></td>
+                            <td colspan=2><b>Spalis</b></td>
                             <td colspan=2><b>VISO</b></td>
                         </tr>
                         <tr>
                             <td>Kiekis</td>
-                            <td>Mėšlas</td>
+                            <td>Ganykliniai pašarai</td>
                             <td>Kiekis</td>
-                            <td>Mėšlas</td>
+                            <td>Ganykliniai pašarai</td>
                             <td>Kiekis</td>
-                            <td>Mėšlas</td>
+                            <td>Ganykliniai pašarai</td>
                             <td>Kiekis</td>
-                            <td>Mėšlas</td>
+                            <td>Ganykliniai pašarai</td>
                             <td>Kiekis</td>
-                            <td>Mėšlas</td>
+                            <td>Ganykliniai pašarai</td>
                             <td>Kiekis</td>
-                            <td>Mėšlas</td>
+                            <td>Ganykliniai pašarai</td>
                             <td>Kiekis</td>
-                            <td>Mėšlas</td>
+                            <td>Ganykliniai pašarai</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -230,15 +235,17 @@
                             echo $col['pavadinimas'];  echo"</td>";
                             for($i = 1; $i < count($arr); $i++) {
                                 echo "<td>" . $col[$arr[$i]]['kiek'] . "</td>";
-                                echo "<td>" . $col[$arr[$i]]['meslas'] . " t.</td>";
+                                echo "<td>" . $col[$arr[$i]]['pasarai']/1000 . " t.</td>";
                             }
                             echo"</tr>";
 
-                            $viso += $col['viso']['meslas'];
+                            $viso += $col['viso']['pasarai'];
                         }
                         echo"<tr>";
                         echo"<td class='success' colspan='14'><b>Viso</b></td>";
-                        echo"<td class='danger'><b>".$viso." t.</b></td>";
+                        echo"<td class='danger'><b>";
+                        echo $viso/1000;
+                        echo" t.</b></td>";
                         ?>
                         </tbody>
                     </table>
