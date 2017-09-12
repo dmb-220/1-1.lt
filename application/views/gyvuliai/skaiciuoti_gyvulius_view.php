@@ -139,23 +139,36 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <?php
-                        $x = 0;
-                        $ss = 0;
-                        $pavad = array('Melžiamos karvės', 'Veršeliai iki 1m.', 'Telyčios 1-2 m.', 'Buliai 1-2 m.', 'Tel. virš 2 m.', 'Buliai 2 m. ir daugiau', 'Iš viso:');
-                        foreach($gyvuliai as $col){
-                            $ss = $col['pradzia'] + $col['pirkimai'] + $col['gimimai'] - $col['j_is'] + $col['j_i'] - $col['kritimai'] - $col['suvartota'] - $col['parduota'];
-                            if($col['pabaiga'] != $ss){echo'<tr class="danger">';}else{echo'<tr>';}
-                            echo"<td>";  echo $pavad[$x];  echo"</td>";
-                            foreach($col as $row){
-                                echo"<td><b>";
-                                if($row != 0){
-                                echo $row;}
-                                echo"</b></td>";
-                            }
-                            echo"</tr>";
-                            $x++;
+                <?php
+
+                    $x = 0;
+                    $ss = 0;
+                    if($inf['karves'] == 1){$karves = 'Melžiamos karvės';}else
+                        if($inf['karves'] == 2){$karves = 'Mėsinės karvės';}else{
+                            $karves = 'Karvės';
                         }
+                    $pavad = array($karves, 'Veršeliai iki 1m.', 'Telyčios 1-2 m.', 'Buliai 1-2 m.', 'Tel. virš 2 m.', 'Buliai 2 m. ir daugiau', 'Iš viso:');
+                    foreach ($gyvuliai as $col) {
+                        $ss = $col['pradzia'] + $col['pirkimai'] + $col['gimimai'] - $col['j_is'] + $col['j_i'] - $col['kritimai'] - $col['suvartota'] - $col['parduota'];
+                        if ($col['pabaiga'] != $ss) {
+                            echo '<tr class="danger">';
+                        } else {
+                            echo '<tr>';
+                        }
+                        echo "<td>";
+                        echo $pavad[$x];
+                        echo "</td>";
+                        foreach ($col as $row) {
+                            echo "<td><b>";
+                            if ($row != 0) {
+                                echo $row;
+                            }
+                            echo "</b></td>";
+                        }
+                        echo "</tr>";
+                        $x++;
+                    }
+
                         ?>
                         </tbody>
                     </table>

@@ -23,6 +23,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Gyvuliai extends CI_Controller {
 
+
+
+//va, dabar galesi naudoti $this->gyvuliai
+// tai ir is model medotu prieisiu prie sio masyvo?
+// norit prieiti is modelio, turetum tada tiesiai kreiptis i sita klase. kaip modelyje pasiimi sita klase ? aj ble,... cia kontrolleris, tada ta pati gali modelyje padaryti ir bus tas pats.
+//supratau, dekui uz paasikinimus, bandysiu persidaryti
+// cia ner kas ;D
     public function __construct(){
         parent::__construct();
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
@@ -180,19 +187,12 @@ class Gyvuliai extends CI_Controller {
     public function skaiciuoti_gyvulius(){
         $error = array();
         $inf = array();
-        $gyvuliai = array(
-            'karves' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
-            'verseliai' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
-            'telycios_12' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
-            'buliai_12' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
-            'telycios_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
-            'buliai_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
-            'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
-        );
+
         
         $dt = $this->session->userdata();
 
         $this->load->library('linksniai');
+        $this->load->model('gyvuliai_model');
         $this->load->library('table');
         $this->load->library('form_validation');
 
@@ -215,11 +215,17 @@ class Gyvuliai extends CI_Controller {
         $this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
 
         if ($this->form_validation->run()) {
+            //gaunami ukininko nustatymai
+            $set = $this->gyvuliai_model->nustatymai($dt['nr']);
+
+            //$this->gyvuliai_model->gyvuliai; // va.
+
             $metai = $this->input->post('metai');
             $menesis = $this->input->post('menesis');
 
             $inf['metai'] = $metai;
             $inf['menesis'] = $menesis;
+            $inf['karves'] = $set[0]['karves'];
 
             $this->load->model('gyvuliai_model');
             //nuskaitom visus gyvulius, pasirinkto menesio
@@ -233,49 +239,40 @@ class Gyvuliai extends CI_Controller {
             $rezultatai_vakar = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
 
             //nuskaitom gyvuliu kieki menesio pradzioje, tik kieki, daugiau nieko nereikia
-            //$k = $b12 = $b24 = $v = $t12 = $t24 = 0;
             foreach($rezultatai_vakar as $sk){
                 $one = explode(" ", $sk['lytis']);
                 if($one[0] == "Karvė"){
-                    //$arr[] = $sk[numeris];
-                    $gyvuliai['karves']['pradzia']++;
-                    //$debug['karves'][$k] = $sk;
-                    //$k++;
+                    //skirstom i mesines ir melzamas karves
+                    $this->gyvuliai_model->gyvuliai['karves']['pradzia']++;
+                    //if($set[0]['karves'] == 1){$gyvuliai['karves']['pradzia']++;}
+                   // if($set[0]['karves'] == 2){$gyvuliai['karves2']['pradzia']++;}
+                    //if($set[0]['karves'] == 3){
+                        //if($sk['veisle'] == 'Limuzinai'){
+                            //$gyvuliai['karves2']['pradzia']++;}else{$gyvuliai['karves']['pradzia']++;}
+                    //}
                 }
 
                 if($one[0] == "Buliukas"){
                     if($sk['amzius']>=12 AND $sk['amzius']<24){
-                        $gyvuliai['buliai_12']['pradzia']++;
-                        //$debug['buliai_12'][$b12] = $sk;
-                        //$b12++;
+                        $this->gyvuliai_model->gyvuliai['buliai_12']['pradzia']++;
                     }
                     if($sk['amzius']>=24){
-                        $gyvuliai['buliai_24']['pradzia']++;
-                        //$debug['buliai_24'][$b24] = $sk;
-                        //$b24++;
+                        $this->gyvuliai_model->gyvuliai['buliai_24']['pradzia']++;
                     }
                     if($sk['amzius']<12 AND $sk['amzius']!=""){
-                        $gyvuliai['verseliai']['pradzia']++;
-                        //$debug['verseliai'][$v] = $sk;
-                        //$v++;
+                        $this->gyvuliai_model->gyvuliai['verseliai']['pradzia']++;
                     }
             }
 
                 if($one[0] == "Telyčaitė"){
                     if($sk['amzius']>=12 AND $sk['amzius']<24){
-                        $gyvuliai['telycios_12']['pradzia']++;
-                        //$debug['telycios_12'][$t12] = $sk;
-                        //$t12++;
+                        $this->gyvuliai_model->gyvuliai['telycios_12']['pradzia']++;
                     }
                     if($sk['amzius']>=24){
-                        $gyvuliai['telycios_24']['pradzia']++;
-                        //$debug['telycios_24'][$t24] = $sk;
-                        //$t24++;
+                        $this->gyvuliai_model->gyvuliai['telycios_24']['pradzia']++;
                     }
                     if($sk['amzius']<12 AND $sk['amzius']!=""){
-                        $gyvuliai['verseliai']['pradzia']++;
-                        //$debug['verseliai'][$v] = $sk;
-                        //$v++;
+                        $this->gyvuliai_model->gyvuliai['verseliai']['pradzia']++;
                     }
                 }
             }
@@ -287,22 +284,25 @@ class Gyvuliai extends CI_Controller {
                 //Karviu skaiciavimas
                 if($one[0] == "Karvė"){
                     if($sk['amzius'] != ""){
-                        $gyvuliai['karves']['pabaiga']++;
+                        $this->gyvuliai_model->gyvuliai['karves']['pabaiga']++;
 
                         $laikas = explode(".",$sk['laikymo_pradzia']);
                         if($laikas[0] == $metai AND $laikas[1] == $menesis){
-                            $gyvuliai['karves']['pirkimai']++;
+                            $this->gyvuliai_model->gyvuliai['karves']['pirkimai']++;
                         }
+
+                        //$this->gyvuliai_model->karviu_judejimas($this->gyvuliai_model->gyvuliai);
+
                         $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                         $pi = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
 
                         if (!empty($pi)) {
                             if ($pi[0]['lytis'] == "Telyčaitė (Karvė)" OR $pi[0]['lytis'] == "Telyčaitė (Telyčaitė)") {
-                                //reikia patikrinti amziu, nes i karves galiu judeti ir is telyciu iki 24 menesiu
+                                //reikia patikrinti amziu, nes i karves gali judeti ir is telyciu iki 24 menesiu
                                 if($pi[0]['amzius']>=24){
-                                $gyvuliai['karves']['j_i']++; $gyvuliai['telycios_24']['j_is']++;
+                                    $this->gyvuliai_model->gyvuliai['karves']['j_i']++; $this->gyvuliai_model->gyvuliai['telycios_24']['j_is']++;
                                 }else{
-                                    $gyvuliai['telycios_12']['j_is']++; $gyvuliai['karves']['j_i']++;
+                                    $this->gyvuliai_model->gyvuliai['telycios_12']['j_is']++; $this->gyvuliai_model->gyvuliai['karves']['j_i']++;
                                 }
                             }
                         }
@@ -315,9 +315,9 @@ class Gyvuliai extends CI_Controller {
                             if ($pi[0]['lytis'] == "Telyčaitė (Karvė)" OR $pi[0]['lytis'] == "Telyčaitė (Telyčaitė)") {
                                 //reikia patikrinti amziu, nes i karves galiu judeti ir is telyciu iki 24 menesiu
                                 if($pi[0]['amzius']>=24){
-                                    $gyvuliai['karves']['j_i']++; $gyvuliai['telycios_24']['j_is']++;
+                                    $this->gyvuliai_model->gyvuliai['karves']['j_i']++; $this->gyvuliai_model->gyvuliai['telycios_24']['j_is']++;
                                 }else{
-                                    $gyvuliai['telycios_12']['j_is']++; $gyvuliai['karves']['j_i']++;
+                                    $this->gyvuliai_model->gyvuliai['telycios_12']['j_is']++; $this->gyvuliai_model->gyvuliai['karves']['j_i']++;
                                 }
                             }
                         }
@@ -325,16 +325,16 @@ class Gyvuliai extends CI_Controller {
                         $pp = $this->gyvuliai_model->ivykio_kodas($sk['laikymo_pabaiga']);
 
                         if($pp == '07' || $pp[1] == '05'){
-                            $gyvuliai['karves']['parduota']++;
+                            $this->gyvuliai_model->gyvuliai['karves']['parduota']++;
                         }
                         if($pp == '03'){
-                            $gyvuliai['karves']['kritimai']++;
+                            $this->gyvuliai_model->gyvuliai['karves']['kritimai']++;
                         }
                         if($pp == '14'){
-                            $gyvuliai['karves']['suvartota']++;
+                            $this->gyvuliai_model->gyvuliai['karves']['suvartota']++;
                         }
                         if($pp == '02'){
-                            $gyvuliai['karves']['parduota']++;
+                            $this->gyvuliai_model->gyvuliai['karves']['parduota']++;
                         }
                     }
                 }
@@ -343,45 +343,45 @@ class Gyvuliai extends CI_Controller {
                 if($one[0] == "Buliukas"){
                     //buliukai nuo 12 iki 24
                     if($sk['amzius']>=12 AND $sk['amzius']<24){
-                        $gyvuliai['buliai_12']['pabaiga']++;
+                        $this->gyvuliai_model->gyvuliai['buliai_12']['pabaiga']++;
                         if($sk['amzius']>=12 AND $sk['amzius']<14) {
                             $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                             $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                             if (!empty($am)) {
                                 if ($am[0]['amzius'] < 12) {
-                                    $gyvuliai['buliai_12']['j_i']++;
-                                    $gyvuliai['verseliai']['j_is']++;
+                                    $this->gyvuliai_model->gyvuliai['buliai_12']['j_i']++;
+                                    $this->gyvuliai_model->gyvuliai['verseliai']['j_is']++;
                                 }
                             }
                         }
                                 $lka = explode(".", $sk['laikymo_pradzia']);
                                 $info = explode(" ",$sk['informacija']);
                                 if($lka[0] == $metai AND $lka[1] == $menesis AND $info[1] == 'Atvyko'){
-                                    $gyvuliai['buliai_12']['pirkimai']++;
+                                    $this->gyvuliai_model->gyvuliai['buliai_12']['pirkimai']++;
                                 }
 
                     }
 
                     //Buliukai virs 24
                     if ($sk['amzius'] >= 24) {
-                        $gyvuliai['buliai_24']['pabaiga']++;
+                        $this->gyvuliai_model->gyvuliai['buliai_24']['pabaiga']++;
                         $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                         $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                         if(!empty($am)){
                             if($am[0]['amzius']<24){
-                                $gyvuliai['buliai_24']['j_i']++; $gyvuliai['buliai_12']['j_is']++;
+                                $this->gyvuliai_model->gyvuliai['buliai_24']['j_i']++; $this->gyvuliai_model->gyvuliai['buliai_12']['j_is']++;
                             }
                         }
                             $lk = explode(".", $sk['laikymo_pradzia']);
                             $info = explode(" ",$sk['informacija']);
                             if($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko'){
-                                $gyvuliai['buliai_24']['pirkimai']++;
+                                $this->gyvuliai_model->gyvuliai['buliai_24']['pirkimai']++;
                             }
                     }
 
                     //Buliukai mezesni negu 12
                     if ($sk['amzius']<12 AND $sk['amzius'] != "") {
-                        $gyvuliai['verseliai']['pabaiga']++;
+                        $this->gyvuliai_model->gyvuliai['verseliai']['pabaiga']++;
                         //$debug2['verseliai'][$v] = $sk;
                         //$v++;
 
@@ -391,18 +391,18 @@ class Gyvuliai extends CI_Controller {
                         $lp = explode(".", $sk['laikymo_pradzia']);
                         $info = explode(" ",$sk['informacija']);
                         if($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs'){
-                            $gyvuliai['verseliai']['gimimai']++;
+                            $this->gyvuliai_model->gyvuliai['verseliai']['gimimai']++;
                         }
                         //reik del gimimu dar patikrinti ar nera atgaline tvarka irasytas
                         if($lp[0] == $metai AND $lp[1] == $menesis-1 AND $info[1] == 'Gimęs') {
                             $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                             $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                             if(empty($am)){
-                                $gyvuliai['verseliai']['gimimai']++;
+                                $this->gyvuliai_model->gyvuliai['verseliai']['gimimai']++;
                         }
                     }
                         if($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko'){
-                            $gyvuliai['verseliai']['pirkimai']++;
+                            $this->gyvuliai_model->gyvuliai['verseliai']['pirkimai']++;
                         }
                     }
 
@@ -431,42 +431,42 @@ class Gyvuliai extends CI_Controller {
                             $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                             $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                             if($am[0]['amzius']<12){
-                                $gyvuliai['verseliai']['j_is']++;
-                                $gyvuliai['buliai_12']['j_i']++;
+                                $this->gyvuliai_model->gyvuliai['verseliai']['j_is']++;
+                                $this->gyvuliai_model->gyvuliai['buliai_12']['j_i']++;
                             }
                             //pardavimai
-                            if($pa == '07' || $pa == '05') {$gyvuliai['buliai_12']['parduota']++;}
+                            if($pa == '07' || $pa == '05') {$this->gyvuliai_model->gyvuliai['buliai_12']['parduota']++;}
                             //suvartota
-                            if($pa == '14') {$gyvuliai['buliai_12']['suvartota']++;}
+                            if($pa == '14') {$this->gyvuliai_model->gyvuliai['buliai_12']['suvartota']++;}
                             //kritimai
-                            if($pa == '03') {$gyvuliai['buliai_12']['kritimai']++;}
+                            if($pa == '03') {$this->gyvuliai_model->gyvuliai['buliai_12']['kritimai']++;}
                         }
                         if ($mo >= 24) {
                             $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                             $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                             if($am[0]['amzius']<24){
-                                $gyvuliai['buliai_12']['j_is']++;
-                                $gyvuliai['buliai_24']['j_i']++;
+                                $this->gyvuliai_model->gyvuliai['buliai_12']['j_is']++;
+                                $this->gyvuliai_model->gyvuliai['buliai_24']['j_i']++;
                             }
                             //pardavimai
-                            if($pa == '07' || $pa == '05') { $gyvuliai['buliai_24']['parduota']++; }
+                            if($pa == '07' || $pa == '05') { $this->gyvuliai_model->gyvuliai['buliai_24']['parduota']++; }
                             //suvartota
-                            if($pa == '14') { $gyvuliai['buliai_24']['suvartota']++; }
+                            if($pa == '14') { $this->gyvuliai_model->gyvuliai['buliai_24']['suvartota']++; }
                             //kritimai
-                            if($pa == '03') { $gyvuliai['buliai_24']['kritimai']++; }
+                            if($pa == '03') { $this->gyvuliai_model->gyvuliai['buliai_24']['kritimai']++; }
                         }
                         if ($mo < 12) {
                             $lp = explode(".", $sk['laikymo_pradzia']);
                             $info = explode(" ",$sk['informacija']);
                             if($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs'){
-                                $gyvuliai['verseliai']['gimimai']++;
+                                $this->gyvuliai_model->gyvuliai['verseliai']['gimimai']++;
                             }
                             //pardavimai
-                            if($pa == '07' || $pa == '05') {$gyvuliai['verseliai']['parduota']++;}
+                            if($pa == '07' || $pa == '05') {$this->gyvuliai_model->gyvuliai['verseliai']['parduota']++;}
                             //suvartota
-                            if($pa == '14') {$gyvuliai['verseliai']['suvartota']++;}
+                            if($pa == '14') {$this->gyvuliai_model->gyvuliai['verseliai']['suvartota']++;}
                             //kritimai
-                            if($pa == '03') {$gyvuliai['verseliai']['kritimai']++;}
+                            if($pa == '03') {$this->gyvuliai_model->gyvuliai['verseliai']['kritimai']++;}
                         }
 
 
@@ -477,42 +477,42 @@ class Gyvuliai extends CI_Controller {
                 if($one[0] == "Telyčaitė"){
                     //Telycaites nuo 12 iki 24
                     if($sk['amzius']>=12 AND $sk['amzius']<24){
-                        $gyvuliai['telycios_12']['pabaiga']++;
+                        $this->gyvuliai_model->gyvuliai['telycios_12']['pabaiga']++;
                         if($sk['amzius']>=12 AND $sk['amzius']<14) {
                             $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                             $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                             if(!empty($am) AND $am[0]['amzius']<12){
-                                $gyvuliai['telycios_12']['j_i']++; $gyvuliai['verseliai']['j_is']++;
+                                $this->gyvuliai_model->gyvuliai['telycios_12']['j_i']++; $this->gyvuliai_model->gyvuliai['verseliai']['j_is']++;
                                 }
                             }
                                 $lk = explode(".", $sk['laikymo_pradzia']);
                                 $info = explode(" ",$sk['informacija']);
                                 if($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko'){
-                                    $gyvuliai['telycios_12']['pirkimai']++;
+                                    $this->gyvuliai_model->gyvuliai['telycios_12']['pirkimai']++;
                                 }
                     }
 
                     //Telycaites virs 24
                     if ($sk['amzius'] >= 24) {
-                        $gyvuliai['telycios_24']['pabaiga']++;
+                        $this->gyvuliai_model->gyvuliai['telycios_24']['pabaiga']++;
 
                         $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                         $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                         if(!empty($am)){
                             if($am[0]['amzius']<24){
-                            $gyvuliai['telycios_24']['j_i']++; $gyvuliai['telycios_12']['j_is']++;
+                            $this->gyvuliai_model->gyvuliai['telycios_24']['j_i']++; $this->gyvuliai_model->gyvuliai['telycios_12']['j_is']++;
                             }
                         }
                             $lk = explode(".", $sk['laikymo_pradzia']);
                             $info = explode(" ",$sk['informacija']);
                             if($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko'){
-                                $gyvuliai['telycios_24']['pirkimai']++;
+                                $this->gyvuliai_model->gyvuliai['telycios_24']['pirkimai']++;
                             }
                     }
 
                     //Telycaites mazesnios negu 12
                     if ($sk['amzius']<12 AND $sk['amzius'] != "") {
-                        $gyvuliai['verseliai']['pabaiga']++;
+                        $this->gyvuliai_model->gyvuliai['verseliai']['pabaiga']++;
                         //$debug2['verseliai'][$v] = $sk;
                         //$v++;
 
@@ -520,19 +520,19 @@ class Gyvuliai extends CI_Controller {
                         $lp = explode(".", $sk['laikymo_pradzia']);
                         $info = explode(" ",$sk['informacija']);
                         if($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs'){
-                            $gyvuliai['verseliai']['gimimai']++;
+                            $this->gyvuliai_model->gyvuliai['verseliai']['gimimai']++;
                         }
                         //reik del gimimu dar patikrinti ar nera atgaline tvarka irasytas
                         if($lp[0] == $metai AND $lp[1] == $menesis-1 AND $info[1] == 'Gimęs') {
                             $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                             $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                             if(empty($am)){
-                                $gyvuliai['verseliai']['gimimai']++;
+                                $this->gyvuliai_model->gyvuliai['verseliai']['gimimai']++;
                             }
                         }
 
                         if($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko'){
-                            $gyvuliai['verseliai']['pirkimai']++;
+                            $this->gyvuliai_model->gyvuliai['verseliai']['pirkimai']++;
                         }
                     }
 
@@ -564,51 +564,51 @@ class Gyvuliai extends CI_Controller {
                                 $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                                 $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                                 if($am[0]['amzius']<12){
-                                    $gyvuliai['verseliai']['j_is']++;
-                                    $gyvuliai['telycios_12']['j_i']++;
+                                    $this->gyvuliai_model->gyvuliai['verseliai']['j_is']++;
+                                    $this->gyvuliai_model->gyvuliai['telycios_12']['j_i']++;
                                 }
                                 //pardavimai
-                                if($pa == '07' || $pa == '05') {$gyvuliai['telycios_12']['parduota']++;}
+                                if($pa == '07' || $pa == '05') {$this->gyvuliai_model->gyvuliai['telycios_12']['parduota']++;}
                                 //suvartota
-                                if($pa == '14') { $gyvuliai['telycios_12']['suvartota']++;}
+                                if($pa == '14') { $this->gyvuliai_model->gyvuliai['telycios_12']['suvartota']++;}
                                 //kritimai
-                                if($pa == '03') { $gyvuliai['telycios_12']['kritimai']++;}
+                                if($pa == '03') { $this->gyvuliai_model->gyvuliai['telycios_12']['kritimai']++;}
                             }
                             if ($mo >= 24) {
                                 $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                                 $am = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
                                 if($am[0]['amzius']<24){
-                                    $gyvuliai['telycios_12']['j_is']++;
-                                    $gyvuliai['telycios_24']['j_i']++;
+                                    $this->gyvuliai_model->gyvuliai['telycios_12']['j_is']++;
+                                    $this->gyvuliai_model->gyvuliai['telycios_24']['j_i']++;
                                 }
                                 //pardavimai
-                                if($pa == '07' || $pa == '05') {$gyvuliai['telycios_24']['parduota']++;}
+                                if($pa == '07' || $pa == '05') {$this->gyvuliai_model->gyvuliai['telycios_24']['parduota']++;}
                                 //suvartota
-                                if($pa == '14') {$gyvuliai['telycios_24']['suvartota']++;}
+                                if($pa == '14') {$this->gyvuliai_model->gyvuliai['telycios_24']['suvartota']++;}
                                 //kritimai
-                                if($pa == '03') {$gyvuliai['telycios_24']['kritimai']++;}
+                                if($pa == '03') {$this->gyvuliai_model->gyvuliai['telycios_24']['kritimai']++;}
                             }
                             if ($mo < 12) {
                                 $lp = explode(".", $sk['laikymo_pradzia']);
                                 $info = explode(" ",$sk['informacija']);
                                 if($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs'){
-                                    $gyvuliai['verseliai']['gimimai']++;
+                                    $this->gyvuliai_model->gyvuliai['verseliai']['gimimai']++;
                                 }
                                 //pardavimai
-                                if($pa == '07' || $pa == '05') {$gyvuliai['verseliai']['parduota']++;}
+                                if($pa == '07' || $pa == '05') {$this->gyvuliai_model->gyvuliai['verseliai']['parduota']++;}
                                 //kritimai
-                                if($pa == '14') {$gyvuliai['verseliai']['suvartota']++;}
+                                if($pa == '14') {$this->gyvuliai_model->gyvuliai['verseliai']['suvartota']++;}
                                 //kritimai
-                                if($pa == '03') { $gyvuliai['verseliai']['kritimai']++;}
+                                if($pa == '03') { $this->gyvuliai_model->gyvuliai['verseliai']['kritimai']++;}
                             }
                     }
                 }
             }
             //suskaiciuoti lenteleje, viso kiekius
-            $keys = array_keys($gyvuliai['karves']);
+            $keys = array_keys($this->gyvuliai_model->gyvuliai['karves']);
             foreach($keys as $ro){
                 $sumDetail = $ro;
-                $gyvuliai['viso'][$ro] = array_reduce($gyvuliai,
+                $this->gyvuliai_model->gyvuliai['viso'][$ro] = array_reduce($this->gyvuliai_model->gyvuliai,
                     function($runningTotal, $record) use($sumDetail) {
                         $runningTotal += $record[$sumDetail];
                         return $runningTotal;}, 0 );
@@ -624,7 +624,7 @@ class Gyvuliai extends CI_Controller {
 
         $this->load->model('ukininkai_model');
         $data = $this->ukininkai_model->ukininku_sarasas();
-        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'gyvuliai'=>$gyvuliai, 'inf'=>$inf));
+        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'gyvuliai'=>$this->gyvuliai_model->gyvuliai, 'inf'=>$inf));
 
     }
 

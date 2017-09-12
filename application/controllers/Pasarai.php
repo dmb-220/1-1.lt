@@ -85,6 +85,7 @@ class Pasarai extends CI_Controller{
             $ukis = $this->ukininkai_model->ukininkas($ukininkas);
             $auth = $ukis[0]['VIC_vartotojo_vardas'].":".$ukis[0]['VIC_slaptazodis'];
 
+
             if($laikotarpis != 0) {
 
                 $gyvu = array(
@@ -94,6 +95,7 @@ class Pasarai extends CI_Controller{
                     'buliai' => array('kiek' => 0,  'pasarai' => 0, 'pavadinimas' => 'Buliai',),
                 );
 
+                $day = cal_days_in_month(CAL_GREGORIAN, $arr[$laikotarpis], $sezonas);
 
                 //sugeneruojame data skirta siusti i VIC.LT
                 $da = $sezonas.'.'.$arr[$laikotarpis].'.'.cal_days_in_month(CAL_GREGORIAN, $arr[$laikotarpis], $sezonas);
@@ -112,28 +114,28 @@ class Pasarai extends CI_Controller{
                         $one = explode(" ", $sk[4]);
                         if ($one[0] == "Karvė") {
                             $gyvu['karves']['kiek']++;
-                            $gyvu['karves']['pasarai'] += $mesl['karves'];
+                            $gyvu['karves']['pasarai'] += $mesl['karves'] * $day;
                         }
 
                         if ($one[0] == "Buliukas") {
                             if ($sk[7] >= 12) {
                                 $gyvu['buliai']['kiek']++;
-                                $gyvu['buliai']['pasarai'] += $mesl['buliai'];
+                                $gyvu['buliai']['pasarai'] += $mesl['buliai'] * $day;
                             }
                             if ($sk[7] < 12) {
                                 $gyvu['verseliai']['kiek']++;
-                                $gyvu['verseliai']['pasarai'] += $mesl['verseliai'];
+                                $gyvu['verseliai']['pasarai'] += $mesl['verseliai'] * $day;
                             }
                         }
 
                         if ($one[0] == "Telyčaitė") {
                             if ($sk[7] >= 12) {
                                 $gyvu['telycios']['kiek']++;
-                                $gyvu['telycios']['pasarai'] += $mesl['telycios'];
+                                $gyvu['telycios']['pasarai'] += $mesl['telycios'] * $day;
                             }
                             if ($sk[7] < 12) {
                                 $gyvu['verseliai']['kiek']++;
-                                $gyvu['verseliai']['pasarai'] += $mesl['verseliai'];
+                                $gyvu['verseliai']['pasarai'] += $mesl['verseliai'] * $day;
                             }
                         }
                     }
@@ -145,8 +147,11 @@ class Pasarai extends CI_Controller{
                 $error['action'] = 1;
 
             }else{
+
+                //Cia dar gali buti klaidu, teks patvarkyti, kai jau gales skaiciuoti visa sezona
+
                 $gyvu = array(
-                    'karves' => array('pavadinimas' => 'M. Karvės', 'kiek' => 0, 'pasarai' => 0,
+                    'karves' => array('pavadinimas' => 'M. Karvės',
                         '11' => array('kiek' => 0, 'pasarai' => 0,),
                         '12' => array('kiek' => 0, 'pasarai' => 0,),
                         '01' => array('kiek' => 0, 'pasarai' => 0,),
@@ -154,7 +159,7 @@ class Pasarai extends CI_Controller{
                         '03' => array('kiek' => 0, 'pasarai' => 0,),
                         '04' => array('kiek' => 0, 'pasarai' => 0,),
                         'viso' => array('kiek' => 0, 'pasarai' => 0,)),
-                    'verseliai' => array('pavadinimas' => 'Veršeliai',  'kiek' => 0, 'pasarai' => 0,
+                    'verseliai' => array('pavadinimas' => 'Veršeliai',
                         '11' => array('kiek' => 0, 'pasarai' => 0,),
                         '12' => array('kiek' => 0, 'pasarai' => 0,),
                         '01' => array('kiek' => 0, 'pasarai' => 0,),
@@ -162,7 +167,7 @@ class Pasarai extends CI_Controller{
                         '03' => array('kiek' => 0, 'pasarai' => 0,),
                         '04' => array('kiek' => 0, 'pasarai' => 0,),
                         'viso' => array('kiek' => 0, 'pasarai' => 0,)),
-                    'telycios' => array('pavadinimas' => 'Telyčios',  'kiek' => 0, 'pasarai' => 0,
+                    'telycios' => array('pavadinimas' => 'Telyčios',
                         '11' => array('kiek' => 0, 'pasarai' => 0,),
                         '12' => array('kiek' => 0, 'pasarai' => 0,),
                         '01' => array('kiek' => 0, 'pasarai' => 0,),
@@ -170,7 +175,7 @@ class Pasarai extends CI_Controller{
                         '03' => array('kiek' => 0, 'pasarai' => 0,),
                         '04' => array('kiek' => 0, 'pasarai' => 0,),
                         'viso' => array('kiek' => 0, 'pasarai' => 0,)),
-                    'buliai' => array('pavadinimas' => 'Buliai',  'kiek' => 0, 'pasarai' => 0,
+                    'buliai' => array('pavadinimas' => 'Buliai',
                         '11' => array('kiek' => 0, 'pasarai' => 0,),
                         '12' => array('kiek' => 0, 'pasarai' => 0,),
                         '01' => array('kiek' => 0, 'pasarai' => 0,),
@@ -180,17 +185,13 @@ class Pasarai extends CI_Controller{
                         'viso' => array('kiek' => 0, 'pasarai' => 0,)),
                 );
 
-                //metai persivercia, del to reik pasiziuret kuri menesi ziuri
-                if ($laikotarpis == 1 OR $laikotarpis == 2) {
-                    $met = $sezonas - 1;} else {$met = $sezonas;
-                }
 
                 for($i = 1; $i<count($arr); $i++) {
-                    if ($arr[$i] == 11 OR $arr[$i] == 12) {
-                        $met = $sezonas - 1;} else {$met = $sezonas;
-                    }
+
+                    $day = cal_days_in_month(CAL_GREGORIAN, $arr[$i], $sezonas);
+
                     //sugeneruojame data skirta siusti i VIC.LT
-                    $da = $met.'.'.$arr[$i].'.'.cal_days_in_month(CAL_GREGORIAN, $arr[$i], $met);
+                    $da = $sezonas.'.'.$arr[$i].'.'.$day;
 
                     //sukuriam masyva POST
                     $post = ['v_data' => $da, 'v_rus' => 1];
@@ -208,43 +209,43 @@ class Pasarai extends CI_Controller{
                             if ($one[0] == "Karvė") {
                                 //menesiu
                                 $gyvu['karves'][$arr[$i]]['kiek']++;
-                                $gyvu['karves'][$arr[$i]]['pasarai'] += $mesl['karves'];
+                                $gyvu['karves'][$arr[$i]]['pasarai'] += $mesl['karves'] * $day;
                                 //viso
                                 $gyvu['karves']['viso']['kiek']++;
-                                $gyvu['karves']['viso']['pasarai'] += $mesl['karves'];
+                                $gyvu['karves']['viso']['pasarai'] += $mesl['karves'] * $day;
                             }
 
                             if ($one[0] == "Buliukas") {
                                 if ($sk[7] >= 12) {
                                     $gyvu['buliai'][$arr[$i]]['kiek']++;
-                                    $gyvu['buliai'][$arr[$i]]['pasarai'] += $mesl['buliai'];
+                                    $gyvu['buliai'][$arr[$i]]['pasarai'] += $mesl['buliai'] * $day;
                                     //viso
                                     $gyvu['buliai']['viso']['kiek']++;
-                                    $gyvu['buliai']['viso']['pasarai'] += $mesl['buliai'];
+                                    $gyvu['buliai']['viso']['pasarai'] += $mesl['buliai'] * $day;
                                 }
                                 if ($sk[7] < 12) {
                                     $gyvu['verseliai'][$arr[$i]]['kiek']++;
-                                    $gyvu['verseliai'][$arr[$i]]['pasarai'] += $mesl['verseliai'];
+                                    $gyvu['verseliai'][$arr[$i]]['pasarai'] += $mesl['verseliai'] * $day;
                                     //viso
                                     $gyvu['verseliai']['viso']['kiek']++;
-                                    $gyvu['verseliai']['viso']['pasarai'] += $mesl['verseliai'];
+                                    $gyvu['verseliai']['viso']['pasarai'] += $mesl['verseliai'] * $day;
                                 }
                             }
 
                             if ($one[0] == "Telyčaitė") {
                                 if ($sk[7] >= 12) {
                                     $gyvu['telycios'][$arr[$i]]['kiek']++;
-                                    $gyvu['telycios'][$arr[$i]]['pasarai'] += $mesl['telycios'];
+                                    $gyvu['telycios'][$arr[$i]]['pasarai'] += $mesl['telycios'] * $day;
                                     //viso
                                     $gyvu['telycios']['viso']['kiek']++;
-                                    $gyvu['telycios']['viso']['pasarai'] += $mesl['telycios'];
+                                    $gyvu['telycios']['viso']['pasarai'] += $mesl['telycios'] * $day;
                                 }
                                 if ($sk[7] < 12) {
                                     $gyvu['verseliai'][$arr[$i]]['kiek']++;
-                                    $gyvu['verseliai'][$arr[$i]]['pasarai'] += $mesl['verseliai'];
+                                    $gyvu['verseliai'][$arr[$i]]['pasarai'] += $mesl['verseliai'] * $day;
                                     //viso
                                     $gyvu['verseliai']['viso']['kiek']++;
-                                    $gyvu['verseliai']['viso']['pasarai'] += $mesl['verseliai'];
+                                    $gyvu['verseliai']['viso']['pasarai'] += $mesl['verseliai'] * $day;
                                 }
                             }
                         }

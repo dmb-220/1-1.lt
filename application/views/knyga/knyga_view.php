@@ -1,10 +1,9 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>Informacija</h5>
+            <h5>Pasirinkti laikotarpį</h5>
             <div class="ibox-tools">
                 <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
                 <a class="close-link"><i class="fa fa-times"></i></a>
             </div>
         </div>
@@ -138,7 +137,7 @@ if($error['action']) {
                     <tr>
                         <td>1</td>
                         <td>2017.08.26</td>
-                        <td>pavedimas sdflghk derhkgoe</td>
+                        <td>pavedimas sdflghk derhkgoe     ghjgk yhjk yi tyut yut yuty utttttttttttttt yu uuuuuuuuuuuuuuuuuuuuu</td>
                         <td>1</td>
                         <td>12</td>
                         <td>21</td>
@@ -154,6 +153,12 @@ if($error['action']) {
                     </tr>
                     </tbody>
                 </table>
+            </div>
+            <!-- Spauzdinti myktukas -->
+            <div class="form-group">
+                <button class="btn btn-block btn-outline btn-primary" type="button" onclick="PrintElem('.table-responsive')">
+                    <i class="fa fa-check-circle-o fa-lg"> SPAUSDINTI</i>
+                </button>
             </div>
         </div>
     </div>

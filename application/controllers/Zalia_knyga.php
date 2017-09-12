@@ -83,4 +83,8 @@ class Zalia_knyga extends CI_Controller{
 
         $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
     }
+
+    public function pwz(){
+
+    }
 }

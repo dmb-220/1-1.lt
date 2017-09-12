@@ -3,8 +3,20 @@
  * @property Gyvuliai_model     $gyvuliai_model     Gyvuliai models
  */
 class Gyvuliai_model extends CI_Model{
+    public $gyvuliai = array(
+        'karves' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        //'karves2' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'verseliai' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'telycios_12' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai_12' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'telycios_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
+    );
+
     public function __construct(){
         parent::__construct();
+
     }
 
 public function ivykio_kodas($data){
@@ -22,6 +34,41 @@ public function ivykio_kodas($data){
 
     public function gyvuliai_trinti(){
 
+    }
+
+    public function karviu_judejimas(& $gyvuliai){
+        $dat = array(
+            'ukininkas' => $ukininkas,
+            'metai' => $met,
+            'menesis' => $men,
+            'numeris' => $nr
+        );
+
+        $this->gyvuliai; //stai ;)
+        //o jei is controllerio kreipsiuos? tas pats kaip i model medtoda?
+        // siaip tokiems dalykas buna rasomi getteriai, setteriai, jeigu nezinai kas cia, pasidomek. beeet siuo atveju tai atrodytu sitaip..
+        // onereikia i  conntroller/ i model deti sita masyva?
+
+        $pi = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
+
+        if (!empty($pi)) {
+            if ($pi[0]['lytis'] == "Telyčaitė (Karvė)" OR $pi[0]['lytis'] == "Telyčaitė (Telyčaitė)") {
+                //reikia patikrinti amziu, nes i karves galiu judeti ir is telyciu iki 24 menesiu
+                if($pi[0]['amzius']>=24){
+                    $gyvuliai['karves']['j_i']++; $gyvuliai['telycios_24']['j_is']++;
+                }else{
+                    $gyvuliai['telycios_12']['j_is']++; $gyvuliai['karves']['j_i']++;
+                }
+            }
+        }
+    }
+
+    public function nustatymai($nr){
+        $this->db->from('nustatymai');
+        $this->db->where('u_id', $nr);
+        $result = $this->db->get();
+        $data = $result->result_array();
+        return $data;
     }
 
     public function gyvuliu_sarasas_limit($dat, $limit, $start) {

@@ -153,7 +153,7 @@ $this->load->view('left_view');
         var myWindow = window.open('', 'Spausdinti', 'height=800,width=1200');
         myWindow.document.write('<html><head><title>Spauzdinti</title>');
         /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" href="<?= base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css" type="text/css">');
-        /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/mano.css">');
+        /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/mano.css" media="print">');
 
         myWindow.document.write('</head><body >');
         myWindow.document.write(data);
