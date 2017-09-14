@@ -31,13 +31,10 @@
             <li>
                 <a href="<?= base_url(); ?>main/index"><i class="fa fa-road"></i> <span class="nav-label">Į pradžią</span></a>
             </li>
-                <?php if($act == 'zalioji_knyga'){echo'<li class="active">';}else{echo'<li>';} ?>
-                 <a href="#"><i class="fa fa-address-book"></i> <span class="nav-label">Žalioji knyga</span><span class="fa arrow"></span></a>
-                 <ul class="nav nav-second-level collapse">
-                     <li><a href="<?= base_url(); ?>zalia_knyga/knyga"><i class="fa fa-bars"></i> Žalioji Knyga</a></li>
-                     <li><a href="<?= base_url(); ?>zalia_knyga/itraukti"><i class="fa fa-bars"></i> Nauji įrašai</a></li>
-                 </ul>
-             </li>
+                
+                <li>
+                    <a href="<?= base_url(); ?>zalia_knyga/knyga"><i class="fa fa-bars"></i> <span class="nav-label">Žalioji Knyga</span></a>
+                </li>
 
                 <?php if($act == 'ukininkai'){echo'<li class="active">';}else{echo'<li>';} ?>
                 <a href="#"><i class="fa fa-suitcase"></i> <span class="nav-label">Ūkininkai</span><span class="fa arrow"></span></a>
@@ -46,12 +43,12 @@
                     <li><a href="<?= base_url(); ?>ukininkai/sarasas_ukininku"><i class="fa fa-bars"></i> Ūkininkų sąrašas</a></li>
                 </ul>
             </li>
-                <?php if($act == 'gyvuliai'){echo'<li class="active">';}else{echo'<li>';} ?>
-                <a href="#"><i class="fa fa-paw"></i> <span class="nav-label">Gyvuliai</span><span class="fa arrow"></span></a>
+                <?php if($act == 'galvijai'){echo'<li class="active">';}else{echo'<li>';} ?>
+                <a href="#"><i class="fa fa-paw"></i> <span class="nav-label">Galvijai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="<?= base_url(); ?>gyvuliai/nuskaityti_vic"><i class="fa fa-plus"></i> Įtraukti iš VIC.LT</a></li>
-                    <li><a href="<?= base_url(); ?>gyvuliai/gyvuliu_sarasas"><i class="fa fa-list"></i> Gyvulių sąrašas</a></li>
-                    <li><a href="<?= base_url(); ?>gyvuliai/skaiciuoti_gyvulius"><i class="fa fa-table"></i> Skaičiuoti gyvulius</a></li>
+                    <li><a href="<?= base_url(); ?>galvijai/nuskaityti_vic"><i class="fa fa-plus"></i> Įtraukti iš VIC.LT</a></li>
+                    <li><a href="<?= base_url(); ?>galvijai/gyvuliu_sarasas"><i class="fa fa-list"></i> Galvijų sąrašas</a></li>
+                    <li><a href="<?= base_url(); ?>galvijai/skaiciuoti_gyvulius"><i class="fa fa-table"></i> Skaičiuoti galvijus</a></li>
                 </ul>
             </li>
                 <?php if($act == 'paseliai'){echo'<li class="active">';}else{echo'<li>';} ?>

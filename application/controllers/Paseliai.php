@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Pasarai            $pasarai            Pasarai controller
  * @property Paseliai           $paseliai           Paseliai controller
  * @property Ukininkai          $ukininkai          Ukininkai controller
- * @property Gyvuliai           $gyvuliai           Gyvuliai controller
+ * @property galvijai           $galvijai           galvijai controller
  * @property Auth               $auth               Auth controller
  * @property Main               $main               Main controller
  * @property Admin              $admin              Admin controller
@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Pasarai_model      $pasarai_model      Pasarai models
  * @property Paseliai_model     $paseliai_model     Paseliai models
  * @property Ukininkai_model    $ukininkai_model    Ukininkai models
- * @property Gyvuliai_model     $gyvuliai_model     Gyvuliai models
+ * @property galvijai_model     $galvijai_model     galvijai models
  * @property Ion_auth_model     $ion_auth_model     Ion_Auth models
  * @property Main_model         $main_model         Main models
  * @property Admin_model        $admin_model        Admin models
@@ -433,7 +433,7 @@ class Paseliai extends CI_Controller{
             $data_de = $this->paseliai_model->deklaracija(base_url().'DATA/'.$deklaracija['file_name']);
             //var_dump($data_de);
 
-            //pasitikrinti ar sito ukininko gyvuliai jau nera itrauktas i db !!!
+            //pasitikrinti ar sito ukininko galvijai jau nera itrauktas i db !!!
             $kiek = $this->paseliai_model->ar_deklaracija_ikelta($metai, $ukininkas);
             if($kiek>0){
                 $error['jau_yra'] = $metai.' m., jau esate pridejęs deklaraciją!';

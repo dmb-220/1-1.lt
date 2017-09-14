@@ -51,10 +51,10 @@ $this->load->view('left_view');
             case "prideti_ukininka": $this->load->view("ukininkai/prideti_ukininkus_view"); break;
             case "sarasas_ukininku": $this->load->view("ukininkai/sarasas_ukininku_view"); break;
             //Gyvuliai
-            case "ikelti_duomenis": $this->load->view("gyvuliai/ikelti_gyvulius_view"); break;
-            case "skaiciuoti_gyvulius": $this->load->view("gyvuliai/skaiciuoti_gyvulius_view"); break;
-            case "gyvuliu_sarasas": $this->load->view("gyvuliai/gyvuliu_sarasas_view"); break;
-            case "nuskaityti_vic": $this->load->view("gyvuliai/nuskaityti_vic_view"); break;
+            case "ikelti_duomenis": $this->load->view("galvijai/ikelti_gyvulius_view"); break;
+            case "skaiciuoti_gyvulius": $this->load->view("galvijai/skaiciuoti_gyvulius_view"); break;
+            case "gyvuliu_sarasas": $this->load->view("galvijai/gyvuliu_sarasas_view"); break;
+            case "nuskaityti_vic": $this->load->view("galvijai/nuskaityti_vic_view"); break;
             //Paseliai
             case "nauji_paseliai": $this->load->view("paseliai/nauji_paseliai_view"); break;
             case "skaiciuoti_paselius": $this->load->view("paseliai/skaiciuoti_paselius_view"); break;

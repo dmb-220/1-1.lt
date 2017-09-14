@@ -73,6 +73,9 @@ class Zalia_knyga extends CI_Controller{
 
 
             $error['action'] = TRUE;
+        }else{
+            $inf['menesis'] = date('m');
+            $inf['metai'] = date('Y');
         }
 
         //sukeliam info, informaciniam meniu

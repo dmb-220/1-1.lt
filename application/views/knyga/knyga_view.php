@@ -1,7 +1,16 @@
+<?php
+$men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa",
+    "Rugpjūtis", "Rugsėjis", "Spalis","Lapkritis", "Gruodis");
+?>
+
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>Pasirinkti laikotarpį</h5>
+            <h5>Laikotarpis</h5>
+                <?php
+                $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
+                echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
+                ?>
             <div class="ibox-tools">
                 <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 <a class="close-link"><i class="fa fa-times"></i></a>
@@ -55,10 +64,6 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label">Menesis</label>
                         <div class="col-md-6">
-                            <?php
-                            $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa",
-                                "Rugpjūtis", "Rugsėjis", "Spalis","Lapkritis", "Gruodis");
-                            ?>
                             <?php echo form_error('menesis'); ?>
                             <select name="menesis" class="form-control">
                                 <option value="">Pasirinkite...</option>
@@ -86,12 +91,22 @@
         </div>
     </div>
 
-<?php
-if($error['action']) {
-    ?>
+    <!-- Nauajas irasas-->
+    <div class="form-group">
+        <a data-toggle="modal" href="#naujas_irasas" class="btn btn-outline btn-default" type="button">
+            <i class="fa fa-plus-square-o fa-lg"> NAUJAS ĮRAŠAS</i>
+        </a>
+    </div>
+
+     <?php
+     $this->load->view("knyga/naujas_irasas_view");
+     ?>
+
+    <!-- Pagrindinis langas -->
+
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>Informacija</h5>
+            <h5>Pagrindinis</h5>
             <div class="ibox-tools">
                 <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
@@ -103,15 +118,16 @@ if($error['action']) {
                 <h4><strong>
                         <p class="text-center"> PINIGŲ, PIRKIMO IR PARDAVIMO OPERACIJOS</p>
                     </strong></h4><br><br>
-                <p class="alignleft">
+                <div class="pull-left">
                     <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
-                </p>
-                <p class="alignright">
+                </div>
+                <div class="pull-right">
                     <?php
                     $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
                     echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
                     ?>
-                </p>
+                </div>
+                <hr>
                 <table class="table table-bordered text-center">
                     <thead>
                     <tr>
@@ -162,9 +178,6 @@ if($error['action']) {
             </div>
         </div>
     </div>
-    <?php
-}
-    ?>
 </div>
 
 

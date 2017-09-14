@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Pasarai            $pasarai            Pasarai controller
  * @property Paseliai           $paseliai           Paseliai controller
  * @property Ukininkai          $ukininkai          Ukininkai controller
- * @property Gyvuliai           $gyvuliai           Gyvuliai controller
+ * @property Galvijai           $galvijai           Galvijai controller
  * @property Auth               $auth               Auth controller
  * @property Main               $main               Main controller
  * @property Admin              $admin              Admin controller
@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Pasarai_model      $pasarai_model      Pasarai models
  * @property Paseliai_model     $paseliai_model     Paseliai models
  * @property Ukininkai_model    $ukininkai_model    Ukininkai models
- * @property Gyvuliai_model     $gyvuliai_model     Gyvuliai models
+ * @property Galvijai_model     $galvijai_model     Galvijai models
  * @property Ion_auth_model     $ion_auth_model     Ion_Auth models
  * @property Main_model         $main_model         Main models
  * @property Admin_model        $admin_model        Admin models
@@ -38,7 +38,7 @@ class Pasarai extends CI_Controller{
         $dt = $this->session->userdata();
 
         $this->load->model('ukininkai_model');
-        $this->load->model('gyvuliai_model');
+        $this->load->model('galvijai_model');
         $this->load->library('form_validation');
         $this->load->library('linksniai');
 
@@ -102,12 +102,12 @@ class Pasarai extends CI_Controller{
                 //sukuriam masyva POST
                 $post = ['v_data' => $da, 'v_rus' => 1];
                 //nuskaitom VIC.LT
-                $page = $this->gyvuliai_model->get_VIC($gyvi_url, $post, $auth);
+                $page = $this->galvijai_model->get_VIC($gyvi_url, $post, $auth);
                 //print_r($page['content']); die;
                 if (!$page['content']) {
                     //isvesti error jei negaunu duomenu is VIC.LT
                 } else {
-                    $data_gyvi = $this->gyvuliai_model->Gyvi_gyvunai($page['content']);
+                    $data_gyvi = $this->galvijai_model->Gyvi_gyvunai($page['content']);
                     //apdoroti duomenis prie irasant i masyva
                     //var_dump($data_gyvi); die;
                     foreach ($data_gyvi as $sk) {
@@ -197,11 +197,11 @@ class Pasarai extends CI_Controller{
                     $post = ['v_data' => $da, 'v_rus' => 1];
 
                     //nuskaitom VIC.LT
-                    $page = $this->gyvuliai_model->get_VIC($gyvi_url, $post, $auth);
+                    $page = $this->galvijai_model->get_VIC($gyvi_url, $post, $auth);
                     if (!$page['content']) {
                         //isvesti error jei negaunu duomenu is VIC.LT
                     } else {
-                        $data_gyvi = $this->gyvuliai_model->Gyvi_gyvunai($page['content']);
+                        $data_gyvi = $this->galvijai_model->Gyvi_gyvunai($page['content']);
                         //apdoroti duomenis prie irasant i masyva
                         //var_dump($data_gyvi); die;
                         foreach ($data_gyvi as $sk) {
@@ -277,7 +277,7 @@ class Pasarai extends CI_Controller{
         $dt = $this->session->userdata();
 
         $this->load->model('ukininkai_model');
-        $this->load->model('gyvuliai_model');
+        $this->load->model('galvijai_model');
         $this->load->library('form_validation');
         $this->load->library('linksniai');
 
@@ -300,10 +300,10 @@ class Pasarai extends CI_Controller{
         $this->form_validation->set_rules('laikotarpis', 'Laikotarpis', 'required', array('required' => 'Pasirinkite laikotarpį.'));
 
         $mesl = array(
-            'karves' => '3.2',
-            'telycios' => '3.2',
-            'buliai' => '3.0',
-            'verseliai' => '1.5',
+            'karves' => '0.53',
+            'telycios' => '0.53',
+            'buliai' => '0.5',
+            'verseliai' => '0,25',
         );
 
         $arr = array(
@@ -343,11 +343,11 @@ class Pasarai extends CI_Controller{
                 //sukuriam masyva POST
                 $post = ['v_data' => $da, 'v_rus' => 1];
                 //nuskaitom VIC.LT
-                $page = $this->gyvuliai_model->get_VIC($gyvi_url, $post, $auth);
+                $page = $this->galvijai_model->get_VIC($gyvi_url, $post, $auth);
                 if (!$page['content']) {
                     //isvesti error jei negaunu duomenu is VIC.LT
                 } else {
-                    $data_gyvi = $this->gyvuliai_model->Gyvi_gyvunai($page['content']);
+                    $data_gyvi = $this->galvijai_model->Gyvi_gyvunai($page['content']);
                     //apdoroti duomenis prie irasant i masyva
                     //var_dump($data_gyvi); die;
                     foreach ($data_gyvi as $sk) {
@@ -388,7 +388,7 @@ class Pasarai extends CI_Controller{
 
             }else{
                 $gyvu = array(
-                    'karves' => array('pavadinimas' => 'M. Karvės', 'kiek' => 0, 'meslas' => 0,
+                    'karves' => array('pavadinimas' => 'M. Karvės',
                         '11' => array('kiek' => 0, 'meslas' => 0,),
                         '12' => array('kiek' => 0, 'meslas' => 0,),
                         '01' => array('kiek' => 0, 'meslas' => 0,),
@@ -396,7 +396,7 @@ class Pasarai extends CI_Controller{
                         '03' => array('kiek' => 0, 'meslas' => 0,),
                         '04' => array('kiek' => 0, 'meslas' => 0,),
                         'viso' => array('kiek' => 0, 'meslas' => 0,)),
-                    'verseliai' => array('pavadinimas' => 'Veršeliai',  'kiek' => 0, 'meslas' => 0,
+                    'verseliai' => array('pavadinimas' => 'Veršeliai',
                         '11' => array('kiek' => 0, 'meslas' => 0,),
                         '12' => array('kiek' => 0, 'meslas' => 0,),
                         '01' => array('kiek' => 0, 'meslas' => 0,),
@@ -404,7 +404,7 @@ class Pasarai extends CI_Controller{
                         '03' => array('kiek' => 0, 'meslas' => 0,),
                         '04' => array('kiek' => 0, 'meslas' => 0,),
                         'viso' => array('kiek' => 0, 'meslas' => 0,)),
-                    'telycios' => array('pavadinimas' => 'Telyčios',  'kiek' => 0, 'meslas' => 0,
+                    'telycios' => array('pavadinimas' => 'Telyčios',
                         '11' => array('kiek' => 0, 'meslas' => 0,),
                         '12' => array('kiek' => 0, 'meslas' => 0,),
                         '01' => array('kiek' => 0, 'meslas' => 0,),
@@ -412,7 +412,7 @@ class Pasarai extends CI_Controller{
                         '03' => array('kiek' => 0, 'meslas' => 0,),
                         '04' => array('kiek' => 0, 'meslas' => 0,),
                         'viso' => array('kiek' => 0, 'meslas' => 0,)),
-                    'buliai' => array('pavadinimas' => 'Buliai',  'kiek' => 0, 'meslas' => 0,
+                    'buliai' => array('pavadinimas' => 'Buliai',
                         '11' => array('kiek' => 0, 'meslas' => 0,),
                         '12' => array('kiek' => 0, 'meslas' => 0,),
                         '01' => array('kiek' => 0, 'meslas' => 0,),
@@ -424,8 +424,7 @@ class Pasarai extends CI_Controller{
 
                 //metai persivercia, del to reik pasiziuret kuri menesi ziuri
                 if ($laikotarpis == 1 OR $laikotarpis == 2) {
-                    $met = $sezonas - 1;} else {$met = $sezonas;
-                }
+                    $met = $sezonas - 1;} else {$met = $sezonas;}
 
                 for($i = 1; $i<count($arr); $i++) {
                     if ($arr[$i] == 11 OR $arr[$i] == 12) {
@@ -438,19 +437,16 @@ class Pasarai extends CI_Controller{
                     $post = ['v_data' => $da, 'v_rus' => 1];
 
                     //nuskaitom VIC.LT
-                $page = $this->gyvuliai_model->get_VIC($gyvi_url, $post, $auth);
+                $page = $this->galvijai_model->get_VIC($gyvi_url, $post, $auth);
                 if (!$page['content']) {
                     //isvesti error jei negaunu duomenu is VIC.LT
                 } else {
-                    $data_gyvi = $this->gyvuliai_model->Gyvi_gyvunai($page['content']);
+                    $data_gyvi = $this->galvijai_model->Gyvi_gyvunai($page['content']);
                     //apdoroti duomenis prie irasant i masyva
                     //var_dump($data_gyvi); die;
                     foreach ($data_gyvi as $sk) {
                         $one = explode(" ", $sk[4]);
                         if ($one[0] == "Karvė") {
-                            //$gyvu['karves']['kiek']++;
-                            //$gyvu['karves']['meslas'] += $mesl['karves'];
-                            //menesiu
                             $gyvu['karves'][$arr[$i]]['kiek']++;
                             $gyvu['karves'][$arr[$i]]['meslas'] += $mesl['karves'];
                             //viso
@@ -902,12 +898,12 @@ class Pasarai extends CI_Controller{
             if($menesis AND $laikotarpis){
                 $error['laikas2'] = "Pasirinkite TIK mėnesį arba TIK laikotarpį kuriam skaičiuosime pašarus.";}
 
-            $this->load->model('gyvuliai_model');
+            $this->load->model('galvijai_model');
             if($menesis AND !$laikotarpis) {
                 //skaiciuojam nurodyto menesio pasaru kieki galvijams
                 //nuskaitom visus gyvulius, pasirinkto menesio
                 $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
-                $rezultatai = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
+                $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
 
                 foreach ($rezultatai as $sk) {
                     $one = explode(" ", $sk['lytis']);
@@ -1018,7 +1014,7 @@ class Pasarai extends CI_Controller{
                         $num_day = $num_day + cal_days_in_month(CAL_GREGORIAN, $lk, $metai);
                         //nuskaitom visus gyvulius, pasirinkto menesio
                         $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $lk);
-                        $rezultatai = $this->gyvuliai_model->nuskaityti_gyvulius($dat);
+                        $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
 
                         foreach ($rezultatai as $sk) {
                             $one = explode(" ", $sk['lytis']);
