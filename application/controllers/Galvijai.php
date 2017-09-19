@@ -235,14 +235,7 @@ class Galvijai extends CI_Controller {
             foreach($rezultatai_vakar as $sk){
                 $one = explode(" ", $sk['lytis']);
                 if($one[0] == "Karvė"){
-                    //skirstom i mesines ir melzamas karves
                     $this->galvijai_model->galvijai['karves']['pradzia']++;
-                    //if($set[0]['karves'] == 1){$galvijai['karves']['pradzia']++;}
-                   // if($set[0]['karves'] == 2){$galvijai['karves2']['pradzia']++;}
-                    //if($set[0]['karves'] == 3){
-                        //if($sk['veisle'] == 'Limuzinai'){
-                            //$galvijai['karves2']['pradzia']++;}else{$galvijai['karves']['pradzia']++;}
-                    //}
                 }
 
                 if($one[0] == "Buliukas"){

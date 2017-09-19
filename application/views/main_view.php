@@ -69,6 +69,7 @@ $this->load->view('left_view');
             //Pasarai
             case "normos": $this->load->view("pasarai/normos_view"); break;
             case "meslas": $this->load->view("pasarai/meslas_view"); break;
+            case "priesvoris": $this->load->view("pasarai/priesvoris_view"); break;
             case "ganykliniai_pasarai": $this->load->view("pasarai/ganykliniai_pasarai_view"); break;
             case "apskaiciuoti_pasarus": $this->load->view("pasarai/apskaiciuoti_pasarus_view"); break;
             case "rankinis_pasarus": $this->load->view("pasarai/rankinis_pasarus_view"); break;

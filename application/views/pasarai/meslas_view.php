@@ -111,16 +111,16 @@
                     <h4><strong>
                             <p class="text-center">GYVULIŲ MĖŠLO LENTELĖ</p>
                         </strong></h4><br><br>
-                    <p class="alignleft">
+                    <div class="pull-left">
                         <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
-                    </p>
-                    <p class="alignright">
+                    </div>
+                    <div class="pull-right">
                         <?php
                         $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
                         $sezo = $inf['sezonas']-1;
                         echo $sezo." - ".$inf['sezonas']." sezonas: <b>".$inf['metai']." ".$men[$inf['laikotarpis']]."</b>";
                         ?>
-                    </p>
+                    </div>
                     <table class="table table-bordered">
                         <thead>
                         <tr>

@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="ibox-content">
-            <form class="form-horizontal form-bordered" action="<?= base_url(); ?>pasarai/apskaiciuoti_pasarus" method="POST">
+            <form class="form-horizontal form-bordered" action="<?= base_url(); ?>pasarai/priesvoris" method="POST">
                 <?php
                 $dt = $this->session->userdata();
                 ?>
@@ -115,9 +115,9 @@
         </div>
     </div>
 
-<?php
-//var_dump($gyvuliai);
-if($error['action']){ ?>
+    <?php
+    //var_dump($gyvuliai);
+    if($error['action']){ ?>
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Informacija</h5>
@@ -127,80 +127,63 @@ if($error['action']){ ?>
                 </div>
             </div>
             <div class="ibox-content">
-    <div class="table-responsive">
-        <h4><strong>
-                <p class="text-center">GYVULIŲ PAŠARŲ LENTELĖ</p>
-            </strong></h4></br></br>
-        <div class="pull-left">
-            <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
-        </div>
-        <div class="pull-right">
-            <?php
-            if($inf['menesis']){
-            $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
-            echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
-            }
-            if($inf['laikotarpis']){
-                echo $inf['metai']." <b>".$inf['laikotarpis']."</b>";
-            }
-            ?>
-        </div>
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>Gyvuliai</th>
-                <th>Kiek</th>
-                <th>Šienas</th>
-                <th>Šiaudai</th>
-                <th>Grudai</th>
-                <th>Šakniavaisiai</th>
-                <th>Šienainis</th>
-                <th>Bulves</th>
-                <th>Silosas</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-
-            foreach($gyvu as $col){
-                $ke = array_keys($col);
-                echo"<tr>";
-            for($i = 0; $i < count($ke); $i++) {
-                echo "<td>";
-                    if ($col[$ke[$i]] != 0 OR $col[$ke[$i]] != '') {
-                        if ($ke[$i] == 'kiek') {
-                            echo $col[$ke[$i]];
-                            echo " vnt.";
-                        } else if ($ke[$i] == 'pavadinimas') {
-                            echo $col[$ke[$i]];
-                        } else {
-                            if ($col[$ke[$i]]['vid'] != 0 OR $col[$ke[$i]]['vid'] != '') {
-                                if( $col[$ke[$i]]['vid'] ==  $col[$ke[$i]]['min'] AND $col[$ke[$i]]['vid'] == $col[$ke[$i]]['max']){
-                                    echo round($col[$ke[$i]]['vid'] / 1000, 2)." T.<br>";
-                                }else{
-                                    echo "MIN: ".round($col[$ke[$i]]['min'] / 1000, 2)." T.<br>";
-                                    echo "VID: ".round($col[$ke[$i]]['vid'] / 1000, 2)." T.<br>";
-                                    echo "MAX: ".round($col[$ke[$i]]['max'] / 1000, 2)." T.";
-                                }
-                            }
+                <div class="table-responsive">
+                    <h4><strong>
+                            <p class="text-center">GYVULIŲ PRIESVORIO LENTELĖ</p>
+                        </strong></h4></br></br>
+                    <div class="pull-left">
+                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
+                    </div>
+                    <div class="pull-right">
+                        <?php
+                        if($inf['menesis']){
+                            $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
+                            echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
                         }
-                    }
-                echo "</td>";
-            }
-                echo"</tr>";
-            }
+                        if($inf['laikotarpis']){
+                            echo $inf['metai']." <b>".$inf['laikotarpis']."</b>";
+                        }
+                        ?>
+                    </div>
+                    <hr>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Pavadinimas</th>
+                            <th>Kiekis</th>
+                            <th>Priesvoris</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $viso = 0;
 
-            ?>
-            </tbody>
-        </table>
-    </div>
+                        foreach($gyvu as $col){
+                            echo'<tr>';
+                            echo"<td>";  echo $col['pavadinimas'];  echo"</td>";
+                            echo"<td>";  echo $col['kiek'];  echo"</td>";
+                            echo"<td>";  echo $col['svoris'];  echo" kg.</td>";
+                            echo"</tr>";
+
+                            $viso += $col['svoris'];
+                        }
+                        echo"<tr>";
+                        echo"<td class='success' colspan='2'><b>Viso:</b></td>";
+                        echo"<td class='danger'><b>";
+                        echo $viso;
+                        echo" kg.</b></td>";
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="form-group">
                     <button class="btn btn-block btn-outline btn-primary" type="button" onclick="PrintElem('.table-responsive')">
                         <i class="fa fa-check-circle-o fa-lg"> SPAUSDINTI</i>
                     </button>
                 </div>
-    </div>
-    </div>
-<?php }
-?>
+            </div>
+        </div>
+    <?php }
+    ?>
+
 </div>

@@ -31,6 +31,190 @@ class Pasarai extends CI_Controller{
         }
     }
 
+    public function priesvoris(){
+        $data = array();
+        $error = array();
+        $laiko = array();
+
+        $gyvu = array(
+            //'karves' => array('kiek' => 0, 'svoris' => 0, 'pavadinimas' => 'Karvės',),
+            'verseliai' => array('kiek' => 0, 'svoris' => 0, 'pavadinimas' => 'Veršeliai',),
+            'telycios_1_2' => array('kiek' => 0, 'svoris' => 0, 'pavadinimas' => 'Telyčios 1-2 m.',),
+            'telycios_2' => array('kiek' => 0, 'svoris' => 0, 'pavadinimas' => 'Telyčios virš 2 m.',),
+            'buliai_1_2' => array('kiek' => 0,  'svoris' => 0, 'pavadinimas' => 'Buliai 1-2 m.',),
+            'buliai_2' => array('kiek' => 0,  'svoris' => 0, 'pavadinimas' => 'Buliai virš 2.',),
+        );
+
+        $dt = $this->session->userdata();
+
+        $this->load->model('ukininkai_model');
+        $this->load->model('galvijai_model');
+        $this->load->library('form_validation');
+        $this->load->library('linksniai');
+
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
+        $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
+        $ukininkas = $this->input->post('ukininko_vardas');
+        $this->load->model('ukininkai_model');
+        $uk = $this->ukininkai_model->ukininkas($ukininkas);
+        $inf['vardas'] = $uk[0]['vardas'];
+        $inf['pavarde'] = $uk[0]['pavarde'];
+        $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
+        $this->session->set_userdata($new);
+        }else{
+            $ukininkas = $dt['nr'];
+            $inf['vardas'] = $dt['vardas'];
+            $inf['pavarde'] = $dt['pavarde'];
+        }
+
+        $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
+        //$this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
+
+        $svoris = array(
+            //'karves' => '0',
+            'telycios_1_2' => '12',
+            'telycios_2' => '9',
+            'buliai_1_2' => '16',
+            'buliai_2' => '18',
+            'verseliai' => '20',
+        );
+
+        if ($this->form_validation->run()) {
+            $metai = $this->input->post('metai');
+            $menesis = $this->input->post('menesis');
+            $laikotarpis = $this->input->post('laikotarpis');
+
+            $inf['metai'] = $metai;
+            $inf['menesis'] = $menesis;
+
+            //patikrinam kokie pasirinkimai yra, kad maziau nesusipratimu skaiciuojant
+            if(!$menesis AND !$laikotarpis){
+                $error['laikas'] = "Pasirinkite mėnesį arba laikotarpį kuriam skaičiuosime pašarus.";}
+            if($menesis AND $laikotarpis){
+                $error['laikas2'] = "Pasirinkite TIK mėnesį arba TIK laikotarpį kuriam skaičiuosime pašarus.";}
+
+            if($menesis AND !$laikotarpis) {
+                //skaiciuojam nurodyto menesio pasaru kieki galvijams
+                //nuskaitom visus gyvulius, pasirinkto menesio
+                $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
+                $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                //suskaiciuoti lenteleje, viso kiekius
+                foreach($rezultatai as $sk){
+                    $one = explode(" ", $sk['lytis']);
+                    /*if($one[0] == "Karvė"){
+                        $gyvu['karves']['pradzia']++;
+                    }*/
+
+                    if($one[0] == "Buliukas"){
+                        if($sk['amzius']>=12 AND $sk['amzius']<24){
+                            $gyvu['buliai_1_2']['kiek']++;
+                            $gyvu['buliai_1_2']['svoris'] += $svoris['buliai_1_2'];
+                        }
+                        if($sk['amzius']>=24){
+                            $gyvu['buliai_2']['kiek']++;
+                            $gyvu['buliai_2']['svoris'] += $svoris['buliai_2'];
+                        }
+                        if($sk['amzius']<12 AND $sk['amzius']!=""){
+                            $gyvu['verseliai']['kiek']++;
+                            $gyvu['verseliai']['svoris'] += $svoris['verseliai'];
+                        }
+                    }
+
+                    if($one[0] == "Telyčaitė"){
+                        if($sk['amzius']>=12 AND $sk['amzius']<24){
+                            $gyvu['telycios_1_2']['kiek']++;
+                            $gyvu['telycios_1_2']['svoris'] += $svoris['telycios_1_2'];
+                        }
+                        if($sk['amzius']>=24){
+                            $gyvu['telycios_2']['kiek']++;
+                            $gyvu['telycios_2']['svoris'] += $svoris['telycios_2'];
+                        }
+                        if($sk['amzius']<12 AND $sk['amzius']!=""){
+                            $gyvu['verseliai']['kiek']++;
+                            $gyvu['verseliai']['svoris'] += $svoris['verseliai'];
+                        }
+                    }
+                }
+            }
+
+            //pradedam skaiciuoti ketvircius ir pusmecius
+            if(!$menesis AND $laikotarpis){
+                if($laikotarpis == 1){
+                    $laiko = array(1, 2, 3, 4, 5, 6);
+                    $inf['laikotarpis'] = 'I pusmetis';}
+                if($laikotarpis == 2){
+                    $laiko = array(7, 8, 9, 10, 11, 12);
+                    $inf['laikotarpis'] = 'II pusmetis';}
+                if($laikotarpis == 3){
+                    $laiko = array(1, 2, 3);
+                    $inf['laikotarpis'] = 'I ketvirtis';}
+                if($laikotarpis == 4){
+                    $laiko = array(4, 5, 6);
+                    $inf['laikotarpis'] = 'II ketvirtis';}
+                if($laikotarpis == 5){
+                    $laiko = array(7, 8, 9);
+                    $inf['laikotarpis'] = 'III ketvirtis';}
+                if($laikotarpis == 6){
+                    $laiko = array(10, 11, 12);
+                    $inf['laikotarpis'] = 'IV ketvirtis';}
+
+                foreach ($laiko as $laikas){
+                    //nuskaitom visus gyvulius, pasirinkto menesio
+                    $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $laikas);
+                    $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                    //suskaiciuoti lenteleje, viso kiekius
+                    foreach($rezultatai as $sk){
+                        $one = explode(" ", $sk['lytis']);
+                        /*if($one[0] == "Karvė"){
+                            $gyvu['karves']['pradzia']++;
+                        }*/
+
+                        if($one[0] == "Buliukas"){
+                            if($sk['amzius']>=12 AND $sk['amzius']<24){
+                                $gyvu['buliai_1_2']['kiek']++;
+                                $gyvu['buliai_1_2']['svoris'] += $svoris['buliai_1_2'];
+                            }
+                            if($sk['amzius']>=24){
+                                $gyvu['buliai_2']['kiek']++;
+                                $gyvu['buliai_2']['svoris'] += $svoris['buliai_2'];
+                            }
+                            if($sk['amzius']<12 AND $sk['amzius']!=""){
+                                $gyvu['verseliai']['kiek']++;
+                                $gyvu['verseliai']['svoris'] += $svoris['verseliai'];
+                            }
+                        }
+
+                        if($one[0] == "Telyčaitė"){
+                            if($sk['amzius']>=12 AND $sk['amzius']<24){
+                                $gyvu['telycios_1_2']['kiek']++;
+                                $gyvu['telycios_1_2']['svoris'] += $svoris['telycios_1_2'];
+                            }
+                            if($sk['amzius']>=24){
+                                $gyvu['telycios_2']['kiek']++;
+                                $gyvu['telycios_2']['svoris'] += $svoris['telycios_2'];
+                            }
+                            if($sk['amzius']<12 AND $sk['amzius']!=""){
+                                $gyvu['verseliai']['kiek']++;
+                                $gyvu['verseliai']['svoris'] += $svoris['verseliai'];
+                            }
+                        }
+                    }
+                }
+            }
+
+            $error['action'] = true;
+        }
+
+            //sukeliam info, informaciniam meniu
+            $inf['meniu'] = "Pašarai";
+            $inf['active'] = "Priesvoris";
+
+            $data = $this->ukininkai_model->ukininku_sarasas();
+
+            $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf, 'gyvu' => $gyvu));
+    }
+
     public function ganykliniai_pasarai(){
         $data = array();
         $error = array();
@@ -303,7 +487,7 @@ class Pasarai extends CI_Controller{
             'karves' => '0.53',
             'telycios' => '0.53',
             'buliai' => '0.5',
-            'verseliai' => '0,25',
+            'verseliai' => '0.25',
         );
 
         $arr = array(
