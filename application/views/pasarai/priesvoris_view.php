@@ -84,25 +84,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Laikotarpis</label>
-                        <div class="col-md-6">
-                            <?php
-                            $lai = array("I pusmetis", "II pusmetis", "I ketvirtis", "II ketvirtis", "III ketvirtis", "IV ketvirtis");
-                            ?>
-                            <?php echo form_error('laikotarpis'); ?>
-                            <select name="laikotarpis" class="form-control">
-                                <option value="">Pasirinkite...</option>
-                                <?php
-                                for($i=0; $i<count($lai); $i++) {
-                                    $mm = $i+1;
-                                    echo"<option value=".$mm.">";
-                                    echo $lai[$i];
-                                    echo"</option>";
-                                } ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="control-label col-md-4 col-sm-4"></label>
                         <div class="col-md-6 col-sm-6">
                             <button class="btn btn-block btn-outline btn-primary" type="submit">
@@ -139,9 +120,6 @@
                         if($inf['menesis']){
                             $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
                             echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
-                        }
-                        if($inf['laikotarpis']){
-                            echo $inf['metai']." <b>".$inf['laikotarpis']."</b>";
                         }
                         ?>
                     </div>
