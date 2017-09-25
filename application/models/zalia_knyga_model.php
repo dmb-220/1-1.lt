@@ -7,6 +7,8 @@ class Zalia_knyga_model extends CI_Model{
     }
 
 
+    //tikrinam
+
     public function read(){
         return true;
     }
