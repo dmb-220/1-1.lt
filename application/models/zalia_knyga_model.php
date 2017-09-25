@@ -7,6 +7,8 @@ class Zalia_knyga_model extends CI_Model{
     }
 
 
+    //tikrinamg fgh fd fgb
+
     public function read(){
         return true;
     }
