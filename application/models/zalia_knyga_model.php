@@ -5,7 +5,7 @@ class Zalia_knyga_model extends CI_Model{
         parent::__construct();
 
     }
-
+//vgjf
     public function read(){
         return true;
     }
