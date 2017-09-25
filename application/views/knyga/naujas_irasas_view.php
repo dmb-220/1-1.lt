@@ -7,6 +7,7 @@
             <div class="modal-body">
                 <p>Naujas Irasas</p>
                 forma sukurti naujam irasui
+                asfgsdj kgsdfg sdf
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Uždaryti</button>
