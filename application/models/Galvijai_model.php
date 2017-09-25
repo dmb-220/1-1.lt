@@ -13,6 +13,16 @@ class Galvijai_model extends CI_Model{
         'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
     );
 
+    public $mesiniai = array(
+        'karves' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'verseliai' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'telycios_12' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai_12' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'telycios_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
+    );
+
     public function __construct(){
         parent::__construct();
 
@@ -37,30 +47,92 @@ class Galvijai_model extends CI_Model{
     }
 
     //suskaiciuoja karviu judejima
-    public function karviu_judejimas($dat){
+    public function karviu_judejimas($dat, $banda){
         $pi = $this->nuskaityti_gyvulius($dat);
         if (!empty($pi)) {
             if ($pi[0]['lytis'] == "Telyčaitė (Karvė)" OR $pi[0]['lytis'] == "Telyčaitė (Telyčaitė)") {
                 //reikia patikrinti amziu, nes i karves galiu judeti ir is telyciu iki 24 menesiu
                 if($pi[0]['amzius']>=24){
-                    $this->galvijai['karves']['j_i']++; $this->galvijai['telycios_24']['j_is']++;
+                    if($banda == '3'){
+                        if($sk['veisle'] == "Limuzinai"){
+                            $this->galvijai_model->mesiniai['karves']['j_i']++;
+                            $this->galvijai_model->mesiniai['telycios_24']['j_is']++;
+                        }else{
+                            $this->galvijai_model->galvijai['karves']['j_i']++;
+                            $this->galvijai_model->galvijai['telycios_24']['j_is']++;
+                        }
+                    }else{
+                        $this->galvijai_model->galvijai['karves']['j_i']++;
+                        $this->galvijai_model->galvijai['telycios_24']['j_is']++;
+                    }
+                    //$this->galvijai['karves']['j_i']++;
+                    //$this->galvijai['telycios_24']['j_is']++;
                 }else{
-                    $this->galvijai['telycios_12']['j_is']++; $this->galvijai['karves']['j_i']++;
+                    if($banda == '3'){
+                        if($sk['veisle'] == "Limuzinai"){
+                            $this->galvijai_model->mesiniai['karves']['j_i']++;
+                            $this->galvijai_model->mesiniai['telycios_12']['j_is']++;
+                        }else{
+                            $this->galvijai_model->galvijai['karves']['j_i']++;
+                            $this->galvijai_model->galvijai['telycios_12']['j_is']++;
+                        }
+                    }else{
+                        $this->galvijai_model->galvijai['karves']['j_i']++;
+                        $this->galvijai_model->galvijai['telycios_12']['j_is']++;
+                    }
+                    //$this->galvijai['telycios_12']['j_is']++;
+                    //$this->galvijai['karves']['j_i']++;
                 }
             }
         }
     }
 
     //skaiciuja kur dingo gyvunai pagal koda
-    public function ivykio_skaiciavimas($pp, $gyvunas){
+    public function ivykio_skaiciavimas($pp, $banda, $gyvunas){
         if($pp == '07' || $pp == '05'){
-            $this->galvijai[$gyvunas]['parduota']++;}
+            if($banda == '3'){
+                if($sk['veisle'] == "Limuzinai"){
+                    $this->galvijai_model->mesiniai[$gyvunas]['parduota']++;}else{
+                    $this->galvijai_model->galvijai[$gyvunas]['parduota']++;
+                }
+            }else{
+                $this->galvijai_model->galvijai[$gyvunas]['parduota']++;
+            }
+            //$this->galvijai[$gyvunas]['parduota']++;
+        }
         if($pp == '03'){
-            $this->galvijai[$gyvunas]['kritimai']++;}
+            if($banda == '3'){
+                if($sk['veisle'] == "Limuzinai"){
+                    $this->galvijai_model->mesiniai[$gyvunas]['kritimai']++;}else{
+                    $this->galvijai_model->galvijai[$gyvunas]['kritimai']++;
+                }
+            }else{
+                $this->galvijai_model->galvijai[$gyvunas]['kritimai']++;
+            }
+            //$this->galvijai[$gyvunas]['kritimai']++;
+            }
         if($pp == '14'){
-            $this->galvijai[$gyvunas]['suvartota']++;}
+            if($banda == '3'){
+                if($sk['veisle'] == "Limuzinai"){
+                    $this->galvijai_model->mesiniai[$gyvunas]['suvartota']++;}else{
+                    $this->galvijai_model->galvijai[$gyvunas]['suvartota']++;
+                }
+            }else{
+                $this->galvijai_model->galvijai[$gyvunas]['suvartota']++;
+            }
+            //$this->galvijai[$gyvunas]['suvartota']++;
+        }
         if($pp == '02'){
-            $this->galvijai[$gyvunas]['parduota']++;}
+            if($banda == '3'){
+                if($sk['veisle'] == "Limuzinai"){
+                    $this->galvijai_model->mesiniai[$gyvunas]['parduota']++;}else{
+                    $this->galvijai_model->galvijai[$gyvunas]['parduota']++;
+                }
+            }else{
+                $this->galvijai_model->galvijai[$gyvunas]['parduota']++;
+            }
+            //$this->galvijai[$gyvunas]['parduota']++;
+        }
     }
 
     //nustatymai, perkelti prie (ukininkai)

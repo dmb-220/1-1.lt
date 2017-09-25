@@ -72,6 +72,14 @@ div.today {
 
 
 /* lentele texto lygiavimas per viduri */
-.table > thead > tbody > tr > td {
-    vertical-align: middle;
+table,
+thead,
+tr,
+tbody,
+th,
+td {
+    text-align: center;
+    vertical-align: middle !important;
+    /*border-color: lightskyblue !important;*/
 }
+

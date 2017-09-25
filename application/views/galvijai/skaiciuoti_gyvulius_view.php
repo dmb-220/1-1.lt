@@ -11,7 +11,7 @@
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>galvijai/skaiciuoti_gyvulius" method="POST">
                 <?php
                 $dt = $this->session->userdata();
-
+                //var_dump($this->galvijai_model->galvijai);
                 ?>
 
                 <fieldset>
@@ -112,55 +112,142 @@
                         ?>
                     </div>
                     <hr>
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th>Gyvuliai</th>
-                            <th>Mėnesio pradžioje</th>
-                            <th>Gimimai</th>
-                            <th>Pirkimai</th>
-                            <th>Judėjimas IŠ</th>
-                            <th>Judėjimas Į</th>
-                            <th>Kritimai</th>
-                            <th>Suvartota ūkyje</th>
-                            <th>Parduota</th>
-                            <th>Mėnesio pabaigoje</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                <?php
+                    <?php
+                    if($inf['banda'] == 1){$karves = 'Melžiamos karvės';}else
+                        if($inf['banda'] == 2){$karves = 'Mėsinės karvės';}else{
+                            $karves = 'Karvės';}
 
-                    $x = 0;
-                    $ss = 0;
-                    if($inf['karves'] == 1){$karves = 'Melžiamos karvės';}else
-                        if($inf['karves'] == 2){$karves = 'Mėsinės karvės';}else{
-                            $karves = 'Karvės';
-                        }
-                    $pavad = array($karves, 'Veršeliai iki 1m.', 'Telyčios 1-2 m.', 'Buliai 1-2 m.', 'Tel. virš 2 m.', 'Buliai 2 m. ir daugiau', 'Iš viso:');
-                    foreach ($galvijai as $col) {
-                        $ss = $col['pradzia'] + $col['pirkimai'] + $col['gimimai'] - $col['j_is'] + $col['j_i'] - $col['kritimai'] - $col['suvartota'] - $col['parduota'];
-                        if ($col['pabaiga'] != $ss) {
-                            echo '<tr class="danger">';
-                        } else {
-                            echo '<tr>';
-                        }
-                        echo "<td>";
-                        echo $pavad[$x];
-                        echo "</td>";
-                        foreach ($col as $row) {
-                            echo "<td><b>";
-                            if ($row != 0) {
-                                echo $row;
-                            }
-                            echo "</b></td>";
-                        }
-                        echo "</tr>";
-                        $x++;
-                    }
+                            if($inf['banda'] == 1 || $inf['banda'] == 2) {
+                                ?>
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Gyvuliai</th>
+                                        <th>Mėnesio pradžioje</th>
+                                        <th>Gimimai</th>
+                                        <th>Pirkimai</th>
+                                        <th>Judėjimas IŠ</th>
+                                        <th>Judėjimas Į</th>
+                                        <th>Kritimai</th>
+                                        <th>Suvartota ūkyje</th>
+                                        <th>Parduota</th>
+                                        <th>Mėnesio pabaigoje</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
 
+                                    $x = 0;
+                                    $ss = 0;
+
+
+                                    $pavad = array($karves, 'Veršeliai iki 1m.', 'Telyčios 1-2 m.', 'Buliai 1-2 m.', 'Tel. virš 2 m.', 'Buliai 2 m. ir daugiau', 'Iš viso:');
+                                    foreach ($this->galvijai_model->galvijai as $key => $col) {
+                                        $ss = $col['pradzia'] + $col['pirkimai'] + $col['gimimai'] - $col['j_is'] + $col['j_i'] - $col['kritimai'] - $col['suvartota'] - $col['parduota'];
+                                        if ($col['pabaiga'] != $ss) {
+                                            echo '<tr class="danger">';
+                                        } else {
+                                            echo '<tr>';
+                                        }
+                                        echo "<td>";
+                                        echo $pavad[$x];
+                                        echo "</td>";
+                                        foreach ($col as $row) {
+                                            echo "<td><b>";
+                                            if ($row != 0) {
+                                                echo $row;
+                                            }
+                                            echo "</b></td>";
+                                        }
+                                        echo "</tr>";
+                                        $x++;
+                                    }
+
+                                    ?>
+                                    </tbody>
+                                </table>
+                                <?php
+                            }else if($inf['banda'] == 3){ ?>
+                                <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th rowspan="2">Gyvuliai</th>
+                                    <th colspan="2">Mėnesio pradžioje</th>
+                                    <th colspan="2">Gimimai</th>
+                                    <th colspan="2">Pirkimai</th>
+                                    <th colspan="2">Judėjimas IŠ</th>
+                                    <th colspan="2">Judėjimas Į</th>
+                                    <th colspan="2">Kritimai</th>
+                                    <th colspan="2">Suvartota ūkyje</th>
+                                    <th colspan="2">Parduota</th>
+                                    <th colspan="2">Mėnesio pabaigoje</th>
+                                </tr>
+                                <tr>
+                                    <th>Pien.</th>
+                                    <th>Mės.</th>
+                                    <th>Pien.</th>
+                                    <th>Mės.</th>
+                                    <th>Pien.</th>
+                                    <th>Mės.</th>
+                                    <th>Pien.</th>
+                                    <th>Mės.</th>
+                                    <th>Pien.</th>
+                                    <th>Mės.</th>
+                                    <th>Pien.</th>
+                                    <th>Mės.</th>
+                                    <th>Pien.</th>
+                                    <th>Mės.</th>
+                                    <th>Pien.</th>
+                                    <th>Mės.</th>
+                                    <th>Pien.</th>
+                                    <th>Mės.</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $x = 0; $ss = 0;
+                                $pavad = array($karves, 'Veršeliai iki 1m.', 'Telyčios 1-2 m.', 'Buliai 1-2 m.', 'Tel. virš 2 m.', 'Buliai 2 m. ir daugiau', 'Iš viso:');
+                                foreach ($this->galvijai_model->galvijai as $key => $col) {
+                                    $ss = $col['pradzia'] + $col['pirkimai'] + $col['gimimai'] - $col['j_is'] + $col['j_i'] - $col['kritimai'] - $col['suvartota'] - $col['parduota'];
+                                    if ($col['pabaiga'] != $ss) {
+                                        echo '<tr class="danger">';
+                                    } else {
+                                        echo '<tr>';
+                                    }
+                                    echo "<td>";
+                                    echo $pavad[$x];
+                                    echo "</td>";
+                                    foreach ($col as $ke => $row) {
+                                        //pieniniai
+                                        echo "<td><b>";
+                                        if ($row != 0) { echo $row; }
+                                        echo "</b></td>";
+                                        //mesiniai
+                                        echo "<td><b>";
+                                        if ($this->galvijai_model->mesiniai[$key][$ke] != 0) { echo $this->galvijai_model->mesiniai[$key][$ke]; }
+                                        echo "</b></td>";
+                                    }
+                                    echo "</tr>";
+                                    $x++;
+                                }
+
+                                ?>
+                                <tr class="info">
+                                <th></th>
+                                <th colspan="2"><?php echo $this->galvijai_model->mesiniai['viso']['pradzia'] + $this->galvijai_model->galvijai['viso']['pradzia']; ?></th>
+                                <th colspan="2"><?php echo $this->galvijai_model->mesiniai['viso']['gimimai'] + $this->galvijai_model->galvijai['viso']['gimimai']; ?></th><th colspan="2"><?php echo $this->galvijai_model->mesiniai['viso']['pirkimai'] + $this->galvijai_model->galvijai['viso']['pirkimai']; ?></th>
+                                <th colspan="2"><?php echo $this->galvijai_model->mesiniai['viso']['j_is'] + $this->galvijai_model->galvijai['viso']['j_is']; ?></th>
+                                <th colspan="2"><?php echo $this->galvijai_model->mesiniai['viso']['j_i'] + $this->galvijai_model->galvijai['viso']['j_i']; ?></th>
+                                <th colspan="2"><?php echo $this->galvijai_model->mesiniai['viso']['kritimai'] + $this->galvijai_model->galvijai['viso']['kritimai']; ?></th>
+                                <th colspan="2"><?php echo $this->galvijai_model->mesiniai['viso']['suvartota'] + $this->galvijai_model->galvijai['viso']['suvartota']; ?></th>
+                                <th colspan="2"><?php echo $this->galvijai_model->mesiniai['viso']['parduota'] + $this->galvijai_model->galvijai['viso']['parduota']; ?></th>
+                                <th colspan="2"><?php echo $this->galvijai_model->mesiniai['viso']['pabaiga'] + $this->galvijai_model->galvijai['viso']['pabaiga']; ?></th>
+                                </tr>
+                                </tbody>
+                            </table>
+                         <?php
+                        }
                         ?>
-                        </tbody>
-                    </table>
                 </div>
 
             <div class="form-group">
