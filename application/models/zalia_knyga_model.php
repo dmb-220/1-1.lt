@@ -5,10 +5,7 @@ class Zalia_knyga_model extends CI_Model{
         parent::__construct();
 
     }
-
-
-    //tikrinamg fgh fd fgb
-
+//vgjf
     public function read(){
         return true;
     }
