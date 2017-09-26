@@ -27,10 +27,20 @@ class Zalia_knyga extends CI_Controller{
 
     public function __construct(){
         parent::__construct();
+        //Užkraunam reikalingus
+        //MODEL
+        $this->load->model('ukininkai_model');
+        $this->load->model('zalia_knyga_model');
+        //LIBRARY
+        $this->load->library('linksniai');
+        $this->load->library('form_validation');
+        //klaidu rodymas
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
+        //turinys rodomas tik prisijungusiems
         if(!$this->ion_auth->logged_in() OR !$this->ion_auth->is_admin()) {
             redirect('main/auth_error');
         }
+
     }
 
     public function knyga(){
@@ -38,10 +48,6 @@ class Zalia_knyga extends CI_Controller{
         $data = array();
         $dt = $this->session->userdata();
 
-        $this->load->model('ukininkai_model');
-        //$this->load->model('zalia_knyga_model');
-        $this->load->library('linksniai');
-        $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         if ($dt['vardas'] == "" AND $dt['pavarde'] == "") {
@@ -87,7 +93,30 @@ class Zalia_knyga extends CI_Controller{
         $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
     }
 
-    public function pwz(){
+    public function naujas_irasas(){
 
+    }
+
+    public function pvm_irasas(){
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        $this->form_validation->set_rules('kodas', 'PVM kodas', 'required', array('required' => 'Įrašykite PVM kodą.'));
+        $this->form_validation->set_rules('tarifas', 'PVM tarifas', 'required', array('required' => 'Įrašykite PVM tarif1.'));
+        $this->form_validation->set_rules('aprasymas', 'PVM aprašymas', 'required', array('required' => 'Įveskite PVM aprašymą.'));
+        $this->form_validation->set_rules('pvz', 'Pavyzdžiai', 'required', array('required' => 'Įveskite pavyzdžių.'));
+
+        if ($this->form_validation->run()) {
+            $kodas = $this->input->post('kodas');
+            $tarifas = $this->input->post('tarifas');
+            $aprasymas $this->input->post('aprasymas');
+            $pvz = $this->input->post('pvz');
+
+
+            //rasomas kodas
+
+
+            $error['action'] = TRUE;
+        }
+        redirect('zalia_knyga/knyga');
     }
 }

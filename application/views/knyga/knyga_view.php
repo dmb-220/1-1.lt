@@ -91,12 +91,18 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
         </div>
     </div>
 
-    <!-- Nauajas irasas-->
-    <div class="form-group">
-        <a data-toggle="modal" href="#naujas_irasas" class="btn btn-outline btn-default" type="button">
+    <div class="alert alert-success" role="alert">
+        <!-- Nauajas irasas-->
+        <a data-toggle="modal" href="#naujas_irasas" class="btn btn-default" type="button">
             <i class="fa fa-plus-square-o fa-lg"> NAUJAS ĮRAŠAS</i>
         </a>
+
+        <!-- PVM-->
+        <a data-toggle="modal" href="#pvm" class="btn btn-default" type="button">
+            <i class="fa fa-plus-square-o fa-lg"> PVM</i>
+        </a>
     </div>
+
 
      <?php
      $this->load->view("knyga/naujas_irasas_view");
