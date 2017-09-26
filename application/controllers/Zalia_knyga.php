@@ -89,6 +89,7 @@ class Zalia_knyga extends CI_Controller{
         $inf['active'] = "Pagrindinis";
 
         $data = $this->ukininkai_model->ukininku_sarasas();
+        $inf['pvm'] = $this->zalia_knyga_model->nuskaityti_pvm();
 
         $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
     }
@@ -98,25 +99,29 @@ class Zalia_knyga extends CI_Controller{
     }
 
     public function pvm_irasas(){
-        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        $this->form_validation->set_rules('pavadinimas', 'Operacijos pavadinimas', 'required', array('required' => 'Įrašykite PVM kodą.'));
+        $this->form_validation->set_rules('kodas', 'PVM kodas', 'alpha_numeric', array('alpha_numeric' => 'PVM kodas tik iš raidžių ir skaičių'));
+        $this->form_validation->set_rules('tarifas', 'PVM tarifas', 'is_natural|max_length[2]', array('is_natural' => 'PVM tarifas gali būti įvestas tik, skaičiai',
+            'max_length' => 'PVM tarifas,  Tik du skaiciai'));
 
-        $this->form_validation->set_rules('kodas', 'PVM kodas', 'required', array('required' => 'Įrašykite PVM kodą.'));
-        $this->form_validation->set_rules('tarifas', 'PVM tarifas', 'required', array('required' => 'Įrašykite PVM tarif1.'));
-        $this->form_validation->set_rules('aprasymas', 'PVM aprašymas', 'required', array('required' => 'Įveskite PVM aprašymą.'));
-        $this->form_validation->set_rules('pvz', 'Pavyzdžiai', 'required', array('required' => 'Įveskite pavyzdžių.'));
 
         if ($this->form_validation->run()) {
             $kodas = $this->input->post('kodas');
             $tarifas = $this->input->post('tarifas');
-            $aprasymas $this->input->post('aprasymas');
-            $pvz = $this->input->post('pvz');
-
+            $pavadinimas = $this->input->post('pavadinimas');
 
             //rasomas kodas
-
-
-            $error['action'] = TRUE;
+            if($this->zalia_knyga_model->tikrinti_pvm($kodas, $pavadinimas) > 0){
+                $this->session->set_flashdata('pvm_yra', "Toks, ".strtoupper($kodas)." tarifas jau YRA");
+            }else{
+                $this->zalia_knyga_model->naujas_irasas($pavadinimas, $kodas, $tarifas);
+                $this->session->set_flashdata('pvm_ok', "Naujas PVM tarifas pridėtas");
+            }
         }
+
+        $this->session->set_flashdata('pvm_kodas', form_error('kodas'));
+        $this->session->set_flashdata('pvm_tarifas', form_error('tarifas'));
+
         redirect('zalia_knyga/knyga');
     }
 }

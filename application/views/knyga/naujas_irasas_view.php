@@ -21,23 +21,41 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Menesis</label>
+                            <label class="col-md-4 control-label">Operacija</label>
                             <div class="col-md-6">
-                                <?php
-                                $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa",
-                                    "Rugpjūtis", "Rugsejis", "Spalis","Lapkritis", "Gruodis");
-                                ?>
-                                <?php echo form_error('menesis'); ?>
-                                <select name="menesis" class="form-control">
+                                <?php echo form_error('operacija'); ?>
+                                <select name="operacija" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
-                                    for($i=0; $i<count($men); $i++) {
-                                        $mm = $i+1;
-                                        echo"<option value=".$mm.">";
-                                        echo $men[$i];
+                                    foreach ($inf['pvm'] as $pvm){
+                                        echo"<option value=".$pvm['id'].">";
+                                        echo $pvm['pavadinimas'];
                                         echo"</option>";
                                     } ?>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Kiekis</label>
+                            <div class="col-md-6">
+                                <input name="kiekis" type="text" class="form-control" placeholder= "" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Mato vienetas</label>
+                            <div class="col-md-6">
+                                <?php echo form_error('vnt'); ?>
+                                <select name="vnt" class="form-control">
+                                    <option value="vnt">VNT</option>
+                                    <option value="kg">KG</option>
+                                    <option value="litrai">Litrai</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Vertė</label>
+                            <div class="col-md-6">
+                                <input name="verte" type="text" class="form-control" placeholder= "" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -68,31 +86,21 @@
                 <form class="form-horizontal form-bordered" action="<?= base_url(); ?>zalia_knyga/pvm_irasas" method="POST">
                     <fieldset>
                         <div class="form-group">
+                            <label class="col-md-4 control-label">Operacija</label>
+                            <div class="col-md-6">
+                                <input name="pavadinimas" type="text" class="form-control" placeholder= "" />
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-md-4 control-label">Kodas</label>
                             <div class="col-md-6">
-                                <?php echo form_error('kodas'); ?>
                                 <input name="kodas" type="text" class="form-control" placeholder= "" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label">Tarifas ( % )</label>
                             <div class="col-md-6">
-                                <?php echo form_error('tarifas'); ?>
                                 <input name="tarifas" type="text" class="form-control" placeholder= "" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Aprašymas</label>
-                            <div class="col-md-6">
-                                <?php echo form_error('aprasymas'); ?>
-                                <textarea class="form-control" rows="2" name="aprasymas"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Pavyzdžiai</label>
-                            <div class="col-md-6">
-                                <?php echo form_error('pvz'); ?>
-                                <textarea class="form-control" rows="2" name="pvz"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -105,6 +113,31 @@
                         </div>
                     </fieldset>
                 </form>
+                <hr>
+                <table class="table table-bordered text-center">
+                    <thead>
+                    <tr>
+                        <td>Operacija</td>
+                        <td><b>Kodas</b></td>
+                        <td><b>Tarifas</b></td>
+                    </tr>
+                    </thead>
+                    <tbody
+                    <?php
+                    foreach ($inf['pvm'] as $pvm){
+                        echo"<tr>";
+                        echo"<td>".$pvm['pavadinimas']."</td>";
+                        if($pvm['kodas'] != ""){
+                            echo"<td>".$pvm['kodas']."</td>";
+                        }else{echo"<td>-</td>";}
+                        if($pvm['tarifas'] != 0){
+                            echo"<td>".$pvm['tarifas']."</td>";
+                        }else{echo"<td> </td>";}
+                        echo"</tr>";
+                    }
+                    ?>
+                    </tbody>
+                </table>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Uždaryti</button>

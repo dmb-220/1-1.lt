@@ -18,10 +18,6 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
         </div>
         <div class="ibox-content">
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>zalia_knyga/knyga" method="POST">
-                <?php
-                $dt = $this->session->userdata();
-                ?>
-
                 <fieldset>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Ūkininkas</label>
@@ -91,6 +87,25 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
         </div>
     </div>
 
+    <!-- Klaidu pranesimai is, naujo PVM tarifo sukurimo -->
+    <?php
+    //i masyva surasom klaidu pavadinimus(masyvo raktai)
+    $array_error = array("pvm_ok", "pvm_kodas", "pvm_tarifas");
+    foreach ($array_error as $err){
+    if($this->session->flashdata($err)){ ?>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <i class="fa fa-info-circle"></i> Informacija
+            </div>
+            <div class="panel-body">
+                <?php echo $this->session->flashdata($err); ?>
+            </div>
+        </div>
+    <?php }
+    }
+    ?>
+
+
     <div class="alert alert-success" role="alert">
         <!-- Nauajas irasas-->
         <a data-toggle="modal" href="#naujas_irasas" class="btn btn-default" type="button">
@@ -137,7 +152,6 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
                 <table class="table table-bordered text-center">
                     <thead>
                     <tr>
-                        <td rowspan=2><b>Nr.</b></td>
                         <td rowspan=2><b>Data</b></td>
                         <td rowspan=2><b>Operacija</b></td>
                         <td rowspan=2><b>Kiekis</b></td>
@@ -157,17 +171,32 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
                     </thead>
                     <tbody
                     <tr>
-                        <td>1</td>
                         <td>2017.08.26</td>
-                        <td>pavedimas sdflghk derhkgoe     ghjgk yhjk yi tyut yut yuty utttttttttttttt yu uuuuuuuuuuuuuuuuuuuuu</td>
-                        <td>1</td>
-                        <td>12</td>
-                        <td>21</td>
-                        <td>jkl</td>
-                        <td>36</td>
-                        <td>11</td>
-                        <td>jk</td>
-                        <td>jk</td>
+                        <td>Pardavimas (Pienas)</td>
+                        <td>348</td>
+                        <td>Litrai</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>143 eurų</td>
+                        <td>21 %</td>
+                        <td>PVM1</td>
+                        <td>
+                            <a data-toggle='modal' href='#redaguoti-form' id=".$data[$i]['gid'].">Red.</a> |
+                            <a data-toggle='modal' href='#istrinti-form' id=".$data[$i]['gid'].">Išt.</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2017.09.25</td>
+                        <td>Pirkimas (Grudai)</td>
+                        <td>100</td>
+                        <td>KG</td>
+                        <td>14 eurų</td>
+                        <td>21 %</td>
+                        <td>PVM6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <a data-toggle='modal' href='#redaguoti-form' id=".$data[$i]['gid'].">Red.</a> |
                             <a data-toggle='modal' href='#istrinti-form' id=".$data[$i]['gid'].">Išt.</a>
