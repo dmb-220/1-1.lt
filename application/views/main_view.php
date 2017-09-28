@@ -147,6 +147,15 @@ $this->load->view('left_view');
         autoclose: true,
         format: "yyyy-mm-dd"
     });
+
+    $('#data_knyga .input-group.date').datepicker({
+        weekStart: 1,
+        defaultViewDate: "today",
+        keyboardNavigation: false,
+        forceParse: false,
+        autoclose: true,
+        format: "yyyy.mm.dd"
+    });
 </script>
 
 <script>

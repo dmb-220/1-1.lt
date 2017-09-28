@@ -27,10 +27,20 @@ class Zalia_knyga extends CI_Controller{
 
     public function __construct(){
         parent::__construct();
+        //Užkraunam reikalingus
+        //MODEL
+        $this->load->model('ukininkai_model');
+        $this->load->model('zalia_knyga_model');
+        //LIBRARY
+        $this->load->library('linksniai');
+        $this->load->library('form_validation');
+        //klaidu rodymas
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
+        //turinys rodomas tik prisijungusiems
         if(!$this->ion_auth->logged_in() OR !$this->ion_auth->is_admin()) {
             redirect('main/auth_error');
         }
+
     }
 
     public function knyga(){
@@ -38,10 +48,6 @@ class Zalia_knyga extends CI_Controller{
         $data = array();
         $dt = $this->session->userdata();
 
-        $this->load->model('ukininkai_model');
-        //$this->load->model('zalia_knyga_model');
-        $this->load->library('linksniai');
-        $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         if ($dt['vardas'] == "" AND $dt['pavarde'] == "") {
@@ -83,11 +89,39 @@ class Zalia_knyga extends CI_Controller{
         $inf['active'] = "Pagrindinis";
 
         $data = $this->ukininkai_model->ukininku_sarasas();
+        $inf['pvm'] = $this->zalia_knyga_model->nuskaityti_pvm();
 
         $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
     }
 
-    public function pwz(){
+    public function naujas_irasas(){
 
+    }
+
+    public function pvm_irasas(){
+        $this->form_validation->set_rules('pavadinimas', 'Operacijos pavadinimas', 'required', array('required' => 'Įrašykite PVM kodą.'));
+        $this->form_validation->set_rules('kodas', 'PVM kodas', 'alpha_numeric', array('alpha_numeric' => 'PVM kodas tik iš raidžių ir skaičių'));
+        $this->form_validation->set_rules('tarifas', 'PVM tarifas', 'is_natural|max_length[2]', array('is_natural' => 'PVM tarifas gali būti įvestas tik, skaičiai',
+            'max_length' => 'PVM tarifas,  Tik du skaiciai'));
+
+
+        if ($this->form_validation->run()) {
+            $kodas = $this->input->post('kodas');
+            $tarifas = $this->input->post('tarifas');
+            $pavadinimas = $this->input->post('pavadinimas');
+
+            //rasomas kodas
+            if($this->zalia_knyga_model->tikrinti_pvm($kodas, $pavadinimas) > 0){
+                $this->session->set_flashdata('pvm_yra', "Toks, ".strtoupper($kodas)." tarifas jau YRA");
+            }else{
+                $this->zalia_knyga_model->naujas_irasas($pavadinimas, $kodas, $tarifas);
+                $this->session->set_flashdata('pvm_ok', "Naujas PVM tarifas pridėtas");
+            }
+        }
+
+        $this->session->set_flashdata('pvm_kodas', form_error('kodas'));
+        $this->session->set_flashdata('pvm_tarifas', form_error('tarifas'));
+
+        redirect('zalia_knyga/knyga');
     }
 }
