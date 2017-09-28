@@ -87,7 +87,7 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
         </div>
     </div>
 
-    <!-- Klaidu pranesimai is, naujo PVM tarifo sukurimo -->
+    <!-- Klaidu pranesimai is, naujo PVM tarifo sukurimo  -->
     <?php
     //i masyva surasom klaidu pavadinimus(masyvo raktai)
     $array_error = array("pvm_ok", "pvm_kodas", "pvm_tarifas");
