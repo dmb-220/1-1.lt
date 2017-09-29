@@ -80,7 +80,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Naujas PVM įrašas</h4>
+                <h4 class="modal-title">Nauja operacija</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal form-bordered" action="<?= base_url(); ?>zalia_knyga/pvm_irasas" method="POST">

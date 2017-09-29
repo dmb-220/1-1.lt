@@ -114,7 +114,7 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
 
         <!-- PVM-->
         <a data-toggle="modal" href="#pvm" class="btn btn-default" type="button">
-            <i class="fa fa-plus-square-o fa-lg"> PVM</i>
+            <i class="fa fa-plus-square-o fa-lg"> OPERACIJOS</i>
         </a>
     </div>
 
