@@ -95,7 +95,35 @@ class Zalia_knyga extends CI_Controller{
     }
 
     public function naujas_irasas(){
+        $this->form_validation->set_rules('data', 'Pasirinkite datą', 'required', array('required' => 'Pasirinkite dieną.'));
+        $this->form_validation->set_rules('operacija', 'Operacija', 'required', array('required' => 'Pasirinkite atliekama operaciją'));
+        $this->form_validation->set_rules('kiekis', 'Kiekis', 'is_natural|required', array('is_natural' => 'Kiekis gali būti įvestas tik, skaičiai',
+            'required' => 'Kiekis privalo buti įvestas'));
+        $this->form_validation->set_rules('vnt', 'Mato vienetas', 'required', array('required' => 'Pasirinkite mato vienetą'));
+        $this->form_validation->set_rules('verte', 'Vertė', 'required', array('required' => 'Vertė privalo būti įvesta'));
 
+        if ($this->form_validation->run()) {
+            $data = $this->input->post('data');
+            $operacija = $this->input->post('operacija');
+            $kiekis = $this->input->post('kiekis');
+            $vnt = $this->input->post('vnt');
+            $verte = $this->input->post('verte');
+
+            //issiskaidom data i metai, menesis, diena
+            $exp = explode(".", $data);
+            $metai = $exp[0];
+            $menesis = $exp[1];
+            $diena = $exp[2];
+
+            //rasomas kodas
+            $da = array("data" => $data);
+            if($this->zalia_knyga_model->tikrinti_irasa($da) > 0){
+                $this->session->set_flashdata('irasas_yra', "Toks, ".strtoupper($kodas)." tarifas jau YRA");
+            }else{
+                //$this->zalia_knyga_model->naujas_pwm($pavadinimas, $kodas, $tarifas);
+                $this->session->set_flashdata('pvm_ok', "Naujas PVM tarifas pridėtas");
+            }
+        }
     }
 
     public function pvm_irasas(){
@@ -103,7 +131,6 @@ class Zalia_knyga extends CI_Controller{
         $this->form_validation->set_rules('kodas', 'PVM kodas', 'alpha_numeric', array('alpha_numeric' => 'PVM kodas tik iš raidžių ir skaičių'));
         $this->form_validation->set_rules('tarifas', 'PVM tarifas', 'is_natural|max_length[2]', array('is_natural' => 'PVM tarifas gali būti įvestas tik, skaičiai',
             'max_length' => 'PVM tarifas,  Tik du skaiciai'));
-
 
         if ($this->form_validation->run()) {
             $kodas = $this->input->post('kodas');
@@ -114,7 +141,7 @@ class Zalia_knyga extends CI_Controller{
             if($this->zalia_knyga_model->tikrinti_pvm($kodas, $pavadinimas) > 0){
                 $this->session->set_flashdata('pvm_yra', "Toks, ".strtoupper($kodas)." tarifas jau YRA");
             }else{
-                $this->zalia_knyga_model->naujas_irasas($pavadinimas, $kodas, $tarifas);
+                $this->zalia_knyga_model->naujas_pwm($pavadinimas, $kodas, $tarifas);
                 $this->session->set_flashdata('pvm_ok', "Naujas PVM tarifas pridėtas");
             }
         }
