@@ -115,7 +115,7 @@ class Zalia_knyga extends CI_Controller{
             $menesis = $exp[1];
             $diena = $exp[2];
 
-            //rasomas kodas
+            //rasomas kodas, skirtas naujam irasui
             $da = array("data" => $data);
             if($this->zalia_knyga_model->tikrinti_irasa($da) > 0){
                 $this->session->set_flashdata('irasas_yra', "Toks, ".strtoupper($kodas)." tarifas jau YRA");
