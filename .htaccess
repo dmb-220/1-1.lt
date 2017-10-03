@@ -2,6 +2,13 @@
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
 </IfModule>
 
+<IfModule mod_expires.c>
+# Enable expirations
+ExpiresActive On
+# Default directive
+ExpiresDefault "access plus 1 month"
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   # !IMPORTANT! Set your RewriteBase here and don't forget trailing and leading
@@ -9,8 +16,8 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javasc
   # If your page resides at
   #  http://www.example.com/mypage/test1
   # then use
-  # RewriteBase /
-  RewriteBase /1-1.lt
+  RewriteBase /
+  #RewriteBase /1-1.lt
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)$ index.php?/$1 [L]
