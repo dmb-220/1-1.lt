@@ -43,4 +43,7 @@ class Zalia_knyga_model extends CI_Model{
         $data = $query->result_array();
         return $data;
     }
+
+    ///kiti metodai
+    ///
 }
