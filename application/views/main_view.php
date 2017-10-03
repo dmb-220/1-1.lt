@@ -28,9 +28,11 @@
     <!-- mano CSS -->
     <link href="<?= base_url(); ?>assets/css/mano.css" rel="stylesheet"/>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
-<body class="no-skin-config md-skin">
+<body class="md-skin">
 
 <div id="wrapper">
 <?php
@@ -100,6 +102,7 @@ $this->load->view('left_view');
 </div>
 
 <!-- Mainly scripts -->
+
 <script src="<?= base_url(); ?>assets\js\jquery-3.1.1.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\metisMenu\jquery.metisMenu.js"></script>

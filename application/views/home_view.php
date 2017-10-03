@@ -1,16 +1,4 @@
 <div class="wrapper wrapper-content animated fadeInRight">
-    <?php
-    if($this->session->flashdata('message')){ ?>
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <i class="fa fa-info-circle"></i> PRISIJUNGTA
-            </div>
-            <div class="panel-body">
-                <?php echo $this->session->flashdata('message'); ?>
-            </div>
-        </div>
-    <?php }
-    ?>
     <div class="row">
         <div class="col-md-6">
             <div class="ibox float-e-margins">
@@ -31,7 +19,7 @@
                     ?>
                     <form class="form-horizontal form-bordered" action="<?= base_url(); ?>main" method="POST">
                         <div class="form-group">
-                            <label class="col-lg-2 control-label"">Rinktis :</label>
+                            <label class="col-lg-2 control-label">Rinktis :</label>
                             <div class="col-md-6 col-sm-6">
                                 <?php
                         foreach($data as $row){
@@ -73,7 +61,7 @@
                 jei kartais lieptu prisijungti, uzrasau prisijungimo duomenis.
                 <h1>
                     Vartotojo vardas: admin@admin.com
-                    </br>
+                    <br>
                     Slaptazodis: password
                 </h1>
             </div>
