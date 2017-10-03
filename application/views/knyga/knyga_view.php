@@ -9,7 +9,8 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
             <h5>Laikotarpis</h5>
                 <?php
                 $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
-                echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
+                echo "  ".$inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
+                $dt = $this->session->userdata();
                 ?>
             <div class="ibox-tools">
                 <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -90,7 +91,7 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
     <!-- Klaidu pranesimai is, naujo PVM tarifo sukurimo  -->
     <?php
     //i masyva surasom klaidu pavadinimus(masyvo raktai)
-    $array_error = array("pvm_ok", "pvm_kodas", "pvm_tarifas");
+    $array_error = array("pvm_ok", "pvm_yra", "pvm_kodas", "pvm_tarifas", "irasas_yra", "irasas_ok");
     foreach ($array_error as $err){
     if($this->session->flashdata($err)){ ?>
         <div class="panel panel-info">
@@ -149,6 +150,11 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
                     ?>
                 </div>
                 <hr>
+                <?php
+                //var_dump($irasai);
+                $irasu_kiekis = count($irasai);
+                if($irasu_kiekis >0){
+                ?>
                 <table class="table table-bordered text-center">
                     <thead>
                     <tr>
@@ -170,38 +176,27 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
                     </tr>
                     </thead>
                     <tbody
-                    <tr>
-                        <td>2017.08.26</td>
-                        <td>Pardavimas (Pienas)</td>
-                        <td>348</td>
-                        <td>Litrai</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>143 eurų</td>
-                        <td>21 %</td>
-                        <td>PVM1</td>
-                        <td>
-                            <a data-toggle='modal' href='#redaguoti-form' id=".$data[$i]['gid'].">Red.</a> |
-                            <a data-toggle='modal' href='#istrinti-form' id=".$data[$i]['gid'].">Išt.</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2017.09.25</td>
-                        <td>Pirkimas (Grudai)</td>
-                        <td>100</td>
-                        <td>KG</td>
-                        <td>14 eurų</td>
-                        <td>21 %</td>
-                        <td>PVM6</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a data-toggle='modal' href='#redaguoti-form' id=".$data[$i]['gid'].">Red.</a> |
-                            <a data-toggle='modal' href='#istrinti-form' id=".$data[$i]['gid'].">Išt.</a>
-                        </td>
-                    </tr>
+                    <?php
+                        foreach ($irasai as $irasas){
+                            echo"<tr>";
+                            echo"<td>".$irasas['metai']."-".$irasas['menesis']."-".$irasas['diena']."</td>";
+                            echo"<td>".$irasas['pavadinimas']."</td>";
+                            echo"<td>".$irasas['kiekis']."</td>";
+                            echo"<td>".$irasas['mato_vnt']."</td>";
+                            echo"<td></td>";
+                            echo"<td></td>";
+                            echo"<td></td>";
+                            echo"<td>".$irasas['verte']."</td>";
+                            echo"<td>".$irasas['tarifas']."</td>";
+                            echo"<td>".$irasas['kodas']."</td>";
+                            echo"<td>";
+                            echo"<a data-toggle='modal' href='#redaguoti-form' id='.$data[$i].'>Red</a> |
+                            <a data-toggle='modal' href='#istrinti-form' id='.$data[$i].'>Išt</a>
+                            </td>";
+                            echo"</tr>";
+                        }
+                    ?>
+
                     </tbody>
                 </table>
             </div>
@@ -211,6 +206,13 @@ $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", 
                     <i class="fa fa-check-circle-o fa-lg"> SPAUSDINTI</i>
                 </button>
             </div>
+            <?php
+            }else{
+                    echo"<div class=\"alert alert-info\">";
+                    echo $inf['metai']." ".$this->linksniai->getName($men[$inf['menesis']-1], "kil")." mėnesį, įrasų nerasta";
+                    echo"</div>";
+                }
+            ?>
         </div>
     </div>
 </div>

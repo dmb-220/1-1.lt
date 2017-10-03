@@ -1,4 +1,16 @@
 <div class="wrapper wrapper-content animated fadeInRight">
+    <?php
+    if($this->session->flashdata('message')){ ?>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <i class="fa fa-info-circle"></i> KLAIDA
+            </div>
+            <div class="panel-body">
+                <?php echo $this->session->flashdata('message'); ?>
+            </div>
+        </div>
+    <?php }
+    ?>
   <div class="ibox float-e-margins">
     <div class="ibox-title">
       <h5>Registracija</h5>
@@ -18,7 +30,7 @@
                   <input type="text" name="vardas" class="form-control" placeholder="Vardas">
                 </div>
                 <div class="col-md-6 m-b-15">
-                  <?php echo form_error('pavade'); ?>
+                  <?php echo form_error('pavarde'); ?>
                   <input type="text" name="pavarde" class="form-control" placeholder="Pavardė">
                 </div>
               </div>
@@ -27,7 +39,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label">El. paštas <span class="text-danger">*</span></label>
             <div class="col-md-6">
-              <?php echo form_error('emeil'); ?>
+              <?php echo form_error('email'); ?>
               <input name="email" type="text" class="form-control" placeholder=""/>
             </div>
           </div>

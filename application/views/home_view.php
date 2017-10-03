@@ -1,4 +1,16 @@
 <div class="wrapper wrapper-content animated fadeInRight">
+    <?php
+    if($this->session->flashdata('message')){ ?>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <i class="fa fa-info-circle"></i> PRISIJUNGTA
+            </div>
+            <div class="panel-body">
+                <?php echo $this->session->flashdata('message'); ?>
+            </div>
+        </div>
+    <?php }
+    ?>
     <div class="row">
         <div class="col-md-6">
             <div class="ibox float-e-margins">

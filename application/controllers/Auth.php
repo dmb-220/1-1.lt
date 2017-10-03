@@ -67,7 +67,54 @@ class Auth extends CI_Controller {
         $inf['meniu'] = "Vartotojų valdymas";
         $inf['active'] = "Registracija";
 
-		$this->load->view('main_view', array('inf' => $inf));
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        //validate form input
+        $this->form_validation->set_rules('vardas', "Vardas", 'required|min_length[3]|max_length[15]');
+        $this->form_validation->set_rules('pavarde', "Pavarde", 'required|min_length[3]|max_length[15]');
+        $this->form_validation->set_rules('email', "El. paštas", 'required|valid_email');
+        $this->form_validation->set_rules('password', "Slaptažodis", 'required|min_length[8]');
+        $this->form_validation->set_rules('password2', "Pakartoti slaptažodį", 'required|matches[password]');
+
+        if ($this->form_validation->run() == true)
+        {
+            // check to see if the user is logging in
+            // check for "remember me"
+            //$remember = (bool) $this->input->post('remember');
+            //$identity, $password, $email, $additional_data = array(), $group_ids = array()
+            if (TRUE /*$this->ion_auth->register($this->input->post('identity'), $this->input->post('password'), $remember)*/)
+            {
+                //if the login is successful
+                //redirect them back to the home page
+                $this->session->set_flashdata('message', $this->ion_auth->messages());
+                redirect('/main', 'refresh');
+            }
+            else
+            {
+                // if the login was un-successful
+                // redirect them back to the login page
+                $this->session->set_flashdata('message', $this->ion_auth->errors());
+                redirect('auth/register', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
+            }
+        }
+        else
+        {
+            // the user is not logging in so display the login page
+            // set the flash data error message if there is one
+            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+            $this->data['identity'] = array('name' => 'identity',
+                'id'    => 'identity',
+                'type'  => 'text',
+                'value' => $this->form_validation->set_value('identity'),
+            );
+            $this->data['password'] = array('name' => 'password',
+                'id'   => 'password',
+                'type' => 'password',
+            );
+
+            //$this->_render_page('main_view', $this->data);
+            $this->load->view("main_view", array('data'=> $this->data, 'inf' => $inf));
+        }
 	}
 
 
@@ -102,7 +149,7 @@ class Auth extends CI_Controller {
 				// if the login was un-successful
 				// redirect them back to the login page
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
-				redirect('auth/register', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
+				redirect('auth/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
 			}
 		}
 		else

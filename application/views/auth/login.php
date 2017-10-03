@@ -1,5 +1,16 @@
-
 <div class="wrapper wrapper-content">
+    <?php
+    if($this->session->flashdata('message')){ ?>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <i class="fa fa-info-circle"></i> KLAIDA
+            </div>
+            <div class="panel-body">
+                <?php echo $this->session->flashdata('message'); ?>
+            </div>
+        </div>
+    <?php }
+    ?>
   <div class="ibox float-e-margins">
     <div class="ibox-title">
       <h5>Prisijungimas</h5>

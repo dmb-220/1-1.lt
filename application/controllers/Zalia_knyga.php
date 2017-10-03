@@ -84,6 +84,14 @@ class Zalia_knyga extends CI_Controller{
             $inf['metai'] = date('Y');
         }
 
+        //nuskaitom irasus is zaliosios knygos
+        $da = array(
+            "u_id" => $ukininkas,
+            "metai" => $inf['metai'],
+            "menesis" => $inf['menesis'],
+        );
+        $irasai = $this->zalia_knyga_model->nuskaityti_knyga($da);
+
         //sukeliam info, informaciniam meniu
         $inf['meniu'] = "Žalioji knyga";
         $inf['active'] = "Pagrindinis";
@@ -91,7 +99,7 @@ class Zalia_knyga extends CI_Controller{
         $data = $this->ukininkai_model->ukininku_sarasas();
         $inf['pvm'] = $this->zalia_knyga_model->nuskaityti_pvm();
 
-        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
+        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf, 'irasai' => $irasai));
     }
 
     public function naujas_irasas(){
@@ -116,14 +124,31 @@ class Zalia_knyga extends CI_Controller{
             $diena = $exp[2];
 
             //rasomas kodas, skirtas naujam irasui
-            $da = array("data" => $data);
+            $da = array(
+                "u_id" => $this->session->userdata('nr'),
+                "metai" => $metai,
+                "menesis" => $menesis,
+                "diena" => $diena,
+                "pvm_id" => $operacija,
+                );
             if($this->zalia_knyga_model->tikrinti_irasa($da) > 0){
-                $this->session->set_flashdata('irasas_yra', "Toks, ".strtoupper($kodas)." tarifas jau YRA");
+                $this->session->set_flashdata('irasas_yra', "Toks įrašas jau egzistuoja");
             }else{
-                //$this->zalia_knyga_model->naujas_pwm($pavadinimas, $kodas, $tarifas);
-                $this->session->set_flashdata('pvm_ok', "Naujas PVM tarifas pridėtas");
+                $da = array(
+                    "u_id" => $this->session->userdata('nr'),
+                    "metai" => $metai,
+                    "menesis" => $menesis,
+                    "diena" => $diena,
+                    "pvm_id" => $operacija,
+                    "kiekis" => $kiekis,
+                    "mato_vnt" => $vnt,
+                    "verte" => $verte,
+                );
+                $this->zalia_knyga_model->naujas_irasas_knyga($da);
+                $this->session->set_flashdata('irasas_ok', "Naujas įrašas įtrauktas į KNYGA");
             }
         }
+        redirect('zalia_knyga/knyga');
     }
 
     public function pvm_irasas(){
