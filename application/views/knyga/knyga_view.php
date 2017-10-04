@@ -1,17 +1,21 @@
 <?php
 $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa",
     "Rugpjūtis", "Rugsėjis", "Spalis","Lapkritis", "Gruodis");
+
+//$sa = $this->zalia_knyga_model->nuskaityti_saskaitas();
+//var_dump($sa);
 ?>
 
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>Laikotarpis</h5>
+            <h5>Laikotarpis -
                 <?php
                 $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
                 echo "  ".$inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
                 $dt = $this->session->userdata();
                 ?>
+            </h5>
             <div class="ibox-tools">
                 <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 <a class="close-link"><i class="fa fa-times"></i></a>
