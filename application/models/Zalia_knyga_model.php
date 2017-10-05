@@ -47,10 +47,10 @@ class Zalia_knyga_model extends CI_Model{
 
     public function nuskaityti_saskaitas(){
             $this->db->select ( '*' );
-            $this->db->from ( 'saskaitu_pogrupis' );
-            $this->db->join ( 'saskaitu_grupe_pogrupis', 'saskaitu_grupe_pogrupis.po_id = saskaitu_pogrupis.id' , 'left' );
-            $this->db->join ( 'saskaitu_grupe', 'saskaitu_grupe.id = saskaitu_pogrupis.id' , 'left' );
+            $this->db->from ( 'saskaitu_grupe' );
+            $this->db->join ( 'saskaitu_grupe_pogrupis', 'saskaitu_grupe_pogrupis.po_id = saskaitu_grupe.id' , 'left' );
+            //$this->db->join ( 'saskaitu_grupe', 'saskaitu_grupe.id = saskaitu_pogrupis.id' , 'left' );
             $query = $this->db->get ();
-            return $query->result ();
+            return $query->result_array();
         }
 }
