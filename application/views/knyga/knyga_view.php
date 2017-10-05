@@ -11,7 +11,7 @@ $sa = $this->zalia_knyga_model->nuskaityti_saskaitas();
 /// ///////////////////////////////////virsuje padaryti meniu, informacijai itraukti, is iconu////////////////
 ?>
 
-<div class="wrapper wrapper-content animated fadeInRight">
+<div class="wrapper wrapper-content">
 
     <!-- Klaidu pranesimai is, naujo PVM tarifo sukurimo  -->
     <?php
@@ -31,28 +31,17 @@ $sa = $this->zalia_knyga_model->nuskaityti_saskaitas();
     }
     ?>
 
-
     <div class="alert alert-success" role="alert">
-        <!-- Laikotarpis -->
-        <a data-toggle="modal" href="#laikotarpis" class="btn btn-default" type="button">
-            <i class="fa fa-plus-square-o fa-lg"> LAIKOTARPIS</i>
+        <a data-toggle="modal" data-target="#laikotarpis" class="btn btn-lg btn-default" role="button">
+            <span class="glyphicon glyphicon-list-alt"></span> <br/>Laikotarpis
         </a>
-
-        <!-- Nauajas irasas-->
-        <a data-toggle="modal" href="#naujas_irasas" class="btn btn-default" type="button">
-            <i class="fa fa-plus-square-o fa-lg"> NAUJAS ĮRAŠAS</i>
+        <a data-toggle="modal" data-target="#organizaciju_sarasas" class="btn btn-lg btn-default" role="button">
+            <span class="glyphicon glyphicon-bookmark"></span> <br/>Organizacijos
         </a>
-
-        <!-- PVM -->
-        <a data-toggle="modal" href="#pvm" class="btn btn-default" type="button">
-            <i class="fa fa-plus-square-o fa-lg"> OPERACIJOS</i>
-        </a>
-        <!-- Organizacijos -->
-        <a data-toggle="modal" href="#organizaciju_sarasas" class="btn btn-default" type="button">
-            <i class="fa fa-plus-square-o fa-lg"> ORGANIZACIJŲ SĄRAŠAS</i>
+        <a data-toggle="modal" data-target="#naujas_irasas" class="btn btn-lg btn-default" role="button">
+            <span class="glyphicon glyphicon-bookmark"></span> <br/>Naujas įrašas
         </a>
     </div>
-
 
      <?php
      $this->load->view("knyga/naujas_irasas_view",array('dt'=> $dt, 'men' => $men));
@@ -171,26 +160,8 @@ $sa = $this->zalia_knyga_model->nuskaityti_saskaitas();
                 </div>
             </div>
         </div>
-
-
     </div>
 
-
-    <!-- Pagrindinis langas -->
-
-    <div class="ibox float-e-margins">
-        <div class="ibox-title">
-            <h5>Pagrindinis</h5>
-            <div class="ibox-tools">
-                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
-                <a class="close-link"><i class="fa fa-times"></i></a>
-            </div>
-        </div>
-        <div class="ibox-content">
-
-        </div>
-    </div>
 </div>
 
 
