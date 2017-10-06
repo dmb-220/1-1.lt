@@ -121,7 +121,7 @@ $this->load->view('left_view');
 <!-- Data picker -->
 <script src="<?= base_url(); ?>assets\js\plugins\datapicker\bootstrap-datepicker.js"></script>
 
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
         $('.i-checks').iCheck({
             checkboxClass: 'icheckbox_square-green',

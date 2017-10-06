@@ -82,7 +82,7 @@
 </div>
 
 <!-- Naujas irasas i knyga -->
-<div id="naujas_irasas" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="naujas_irasas" class="modal fade" tabindex="-3" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -119,28 +119,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">PVM tarifas</label>
-                            <div class="col-md-8">
-                                <?php echo form_error('pvm_tarifas'); ?>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" value="1" name="pvm_tarifas">
-                                    <label> 21 % </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" value="2" name="pvm_tarifas">
-                                    <label> 9 % </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" value="3" name="pvm_tarifas">
-                                    <label> 5 % </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" value="4" name="pvm_tarifas">
-                                    <label> 0 % </label>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">Operacija</label>
@@ -159,19 +137,20 @@
                                     <label> DOTACIJOS </label>
                                 </div>
 
-                                <hr>
-
-                                <div class="radio radio-info radio-info radio-inline">
-                                    <input type="radio" value="1" name="pinigai">
-                                    <label> BANKAS </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" value="2" name="pinigai">
-                                    <label> KASA </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" value="3" name="pinigai">
-                                    <label> SKOLA </label>
+                                <div id="dot">
+                                    <hr>
+                                    <div class="radio radio-info radio-info radio-inline">
+                                        <input type="radio" value="1" name="pinigai">
+                                        <label> BANKAS </label>
+                                    </div>
+                                    <div class="radio radio-info radio-inline">
+                                        <input type="radio" value="2" name="pinigai">
+                                        <label> KASA </label>
+                                    </div>
+                                    <div class="radio radio-info radio-inline">
+                                        <input type="radio" value="3" name="pinigai">
+                                        <label> SKOLA </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -214,9 +193,31 @@
                                     </div>
                                     <div class="col-md-2 m-b-15">
                                     <div class="checkbox checkbox-info checkbox-circle">
-                                        <input id="checkbox" type="checkbox">
+                                        <input id="is_check" type="checkbox">
                                         <label> </label>
                                     </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="inp" style="display:none">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label"> </label>
+                                <div class="col-md-8">
+                                    <div class="row row-space-12">
+                                        <div class="col-md-3 m-b-15">
+                                            <?php echo form_error('sume_be_pvm'); ?>
+                                            <input type="text" name="suma_be_pvm" class="form-control" placeholder="Be PVM">
+                                        </div>
+                                        <div class="col-md-3 m-b-15">
+                                            <?php echo form_error('pvm_suma'); ?>
+                                            <input type="text" name="pvm_suma" class="form-control" placeholder="PVM">
+                                        </div>
+                                        <div class="col-md-4 m-b-15">
+                                            <?php echo form_error('pvm_kodas'); ?>
+                                            <input type="text" name="pvm_kodas" class="form-control" placeholder="PVM kodas">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +242,7 @@
 
 
 <!-- Itraukiamos naujos organizacijos -->
-<div id="organizaciju_sarasas" class="modal modal-child" data-backdrop-limit="1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-modal-parent="#naujas_irasas">
+<div id="organizaciju_sarasas" class="modal fade modal-child" data-backdrop-limit="1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-modal-parent="#naujas_irasas">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

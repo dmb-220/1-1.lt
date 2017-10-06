@@ -100,7 +100,7 @@
         <div class="ibox-content">
                 <div class="table-responsive">
                     <h4><strong>
-                            <p class="text-center">GYVULIŲ JUDĖJIMO LENTELĖ</p>
+                            <p class="text-center">GYVULIŲ APSKAITOS LENTELĖ</p>
                         </strong></h4><br><br>
                     <div class="pull-left">
                         <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
