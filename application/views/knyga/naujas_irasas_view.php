@@ -181,17 +181,28 @@
                                 <div class="row row-space-12">
                                     <div class="col-md-3 m-b-15">
                                         <?php echo form_error('sume_be_pvm'); ?>
-                                        <input type="text" name="suma_be_pvm" class="form-control" placeholder="Be PVM">
+                                        <input type="text" id="suma_be_pvm" name="suma_be_pvm" class="form-control" placeholder="Be PVM">
                                     </div>
                                     <div class="col-md-3 m-b-15">
                                         <?php echo form_error('pvm_suma'); ?>
-                                        <input type="text" name="pvm_suma" class="form-control" placeholder="PVM">
+                                        <input type="text" id="pvm_suma" name="pvm_suma" class="form-control" placeholder="PVM">
                                     </div>
                                     <div class="col-md-4 m-b-15">
                                         <?php echo form_error('pvm_kodas'); ?>
-                                        <input type="text" name="pvm_kodas" class="form-control" placeholder="PVM kodas">
+                                        <!-- <input type="text" name="pvm_kodas" class="form-control" placeholder="PVM kodas"> -->
+                                        <select name="pvm" class="form-control">
+                                            <option value="">Pasirinkite...</option>
+                                            <?php
+                                            foreach ($inf['pvm'] as $pwm){
+                                                echo"<option value=".$pwm['id'].">".$pwm['pavadinimas']."</option>";
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
-                                    <div class="col-md-2 m-b-15">
+                                    <div class="col-md-1 m-b-15">
+                                            <a href="#pvm" role="button" class="btn btn-primary" data-toggle="modal">+</a>
+                                    </div>
+                                    <div class="col-md-1 m-b-15">
                                     <div class="checkbox checkbox-info checkbox-circle">
                                         <input id="is_check" type="checkbox">
                                         <label> </label>
@@ -208,15 +219,23 @@
                                     <div class="row row-space-12">
                                         <div class="col-md-3 m-b-15">
                                             <?php echo form_error('sume_be_pvm'); ?>
-                                            <input type="text" name="suma_be_pvm" class="form-control" placeholder="Be PVM">
+                                            <input type="text" id="suma_be_pvm" name="suma_be_pvm" class="form-control" placeholder="Be PVM">
                                         </div>
                                         <div class="col-md-3 m-b-15">
                                             <?php echo form_error('pvm_suma'); ?>
-                                            <input type="text" name="pvm_suma" class="form-control" placeholder="PVM">
+                                            <input type="text" id="pvm_suma" name="pvm_suma" class="form-control" placeholder="PVM">
                                         </div>
                                         <div class="col-md-4 m-b-15">
                                             <?php echo form_error('pvm_kodas'); ?>
-                                            <input type="text" name="pvm_kodas" class="form-control" placeholder="PVM kodas">
+                                            <!-- <input type="text" name="pvm_kodas" class="form-control" placeholder="PVM kodas"> -->
+                                            <select name="pvm" class="form-control">
+                                                <option value="">Pasirinkite...</option>
+                                                <?php
+                                                foreach ($inf['pvm'] as $pwm){
+                                                    echo"<option value=".$pwm['id'].">".$pwm['pavadinimas']."</option>";
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

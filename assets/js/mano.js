@@ -32,5 +32,10 @@ $(document).ready(function() {
         });
     });
 
+    $('#suma_be_pvm').change(function() {
+        $('#pvm_suma').val($(this).val()*0.21);
+    });
+
+
 });
 

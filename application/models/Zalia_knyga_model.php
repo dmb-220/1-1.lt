@@ -17,8 +17,11 @@ class Zalia_knyga_model extends CI_Model{
         return $this->db->insert('pvm', array("pavadinimas" => $pavadinimas, "kodas" => $kodas, "tarifas" => $tarifas));
     }
     //nuskaito pvm irasus
-    public function nuskaityti_pvm(){
+    public function nuskaityti_pvm($id = ""){
         $query = $this->db->get("pvm");
+        if($id){
+            $this->db->where(array("id" => $id));
+        }
         $data = $query->result_array();
         return $data;
     }

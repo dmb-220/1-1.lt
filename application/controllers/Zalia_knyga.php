@@ -176,4 +176,11 @@ class Zalia_knyga extends CI_Controller{
 
         redirect('zalia_knyga/knyga');
     }
+
+    //siunciama ajax uzklausa del pvm reiksmes
+    public function ajax_pvm(){
+        
+        $data = $this->zalia_knyga_model->nuskaityti_pvm($id);
+}
+
 }
