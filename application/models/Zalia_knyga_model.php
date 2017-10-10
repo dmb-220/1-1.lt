@@ -56,4 +56,15 @@ class Zalia_knyga_model extends CI_Model{
             $query = $this->db->get ();
             return $query->result_array();
         }
+
+        /////////////////////////////////////////////////////////// ORGANIZACIJOS //////////////////////////////////////////
+    //nuskaito pvm irasus
+    public function nuskaityti_organizacijas($id = ""){
+        $query = $this->db->get("organizaciju_sarasas");
+        if ($id) {
+            $this->db->where(array("id" => $id));
+        }
+        $data = $query->result_array();
+        return $data;
+    }
 }

@@ -81,6 +81,8 @@
     </div>
 </div>
 
+
+
 <!-- Naujas irasas i knyga -->
 <div id="naujas_irasas" class="modal fade" tabindex="-3" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -111,6 +113,11 @@
                                         <?php echo form_error('organizacija'); ?>
                                         <select name="organizacija" class="form-control">
                                             <option value="">Pasirinkite</option>
+                                            <?php
+                                            foreach ($inf['organizacijos'] as $pwm){
+                                                echo"<option value=".$pwm['id'].">".$pwm['pavadinimas']."</option>";
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                     <div class="col-md-2 m-b-15">
@@ -165,15 +172,24 @@
                             <label class="col-md-4 control-label">Mato vienetas</label>
                             <div class="col-md-8">
                                 <?php echo form_error('vnt'); ?>
-                                <select name="vnt" class="form-control">
-                                    <option value="vnt">VNT</option>
-                                    <option value="kg">KG</option>
-                                    <option value="kg">Tonos</option>
-                                    <option value="litrai">Litrai</option>
-                                </select>
+                                <div class="radio radio-info radio-info radio-inline">
+                                    <input type="radio" value="1" name="mato_vnt">
+                                    <label> VIENETAI </label>
+                                </div>
+                                <div class="radio radio-info radio-inline">
+                                    <input type="radio" value="2" name="pinigai">
+                                    <label> KILOGRAMAI </label>
+                                </div>
+                                <div class="radio radio-info radio-inline">
+                                    <input type="radio" value="3" name="pinigai">
+                                    <label> TONOS </label>
+                                </div>
+                                <div class="radio radio-info radio-inline">
+                                    <input type="radio" value="4" name="pinigai">
+                                    <label> LITRAI </label>
+                                </div>
                             </div>
                         </div>
-
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">Suma:</label>
@@ -181,15 +197,14 @@
                                 <div class="row row-space-12">
                                     <div class="col-md-3 m-b-15">
                                         <?php echo form_error('sume_be_pvm'); ?>
-                                        <input type="text" id="suma_be_pvm" name="suma_be_pvm" class="form-control" placeholder="Be PVM">
+                                        <input type="text" name="suma_be_pvm" class="form-control" placeholder="Be PVM">
                                     </div>
                                     <div class="col-md-3 m-b-15">
                                         <?php echo form_error('pvm_suma'); ?>
-                                        <input type="text" id="pvm_suma" name="pvm_suma" class="form-control" placeholder="PVM">
+                                        <input type="text" name="pvm_suma" class="form-control" placeholder="PVM">
                                     </div>
                                     <div class="col-md-4 m-b-15">
                                         <?php echo form_error('pvm_kodas'); ?>
-                                        <!-- <input type="text" name="pvm_kodas" class="form-control" placeholder="PVM kodas"> -->
                                         <select name="pvm" class="form-control">
                                             <option value="">Pasirinkite...</option>
                                             <?php
@@ -200,13 +215,13 @@
                                         </select>
                                     </div>
                                     <div class="col-md-1 m-b-15">
-                                            <a href="#pvm" role="button" class="btn btn-primary" data-toggle="modal">+</a>
+                                        <a href="#pvm" role="button" class="btn btn-primary" data-toggle="modal">+</a>
                                     </div>
                                     <div class="col-md-1 m-b-15">
-                                    <div class="checkbox checkbox-info checkbox-circle">
-                                        <input id="is_check" type="checkbox">
-                                        <label> </label>
-                                    </div>
+                                        <div class="checkbox checkbox-info checkbox-circle">
+                                            <input id="is_check" type="checkbox">
+                                            <label> </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -219,15 +234,14 @@
                                     <div class="row row-space-12">
                                         <div class="col-md-3 m-b-15">
                                             <?php echo form_error('sume_be_pvm'); ?>
-                                            <input type="text" id="suma_be_pvm" name="suma_be_pvm" class="form-control" placeholder="Be PVM">
+                                            <input type="text" name="suma_be_pvm" class="form-control" placeholder="Be PVM">
                                         </div>
                                         <div class="col-md-3 m-b-15">
                                             <?php echo form_error('pvm_suma'); ?>
-                                            <input type="text" id="pvm_suma" name="pvm_suma" class="form-control" placeholder="PVM">
+                                            <input type="text" name="pvm_suma" class="form-control" placeholder="PVM">
                                         </div>
                                         <div class="col-md-4 m-b-15">
                                             <?php echo form_error('pvm_kodas'); ?>
-                                            <!-- <input type="text" name="pvm_kodas" class="form-control" placeholder="PVM kodas"> -->
                                             <select name="pvm" class="form-control">
                                                 <option value="">Pasirinkite...</option>
                                                 <?php
@@ -306,6 +320,8 @@
     </div>
 </div>
 
+
+<!-- Itraukiamos nauja PVM reiksme -->
 <div id="pvm" class="modal fade" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

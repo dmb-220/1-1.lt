@@ -60,7 +60,6 @@ class Main extends CI_Controller {
         $inf = array();
         //sukeliam info, informaciniam meniu
         $inf['meniu'] = "Vartotojų valdymas";
-        $inf['url'] = "auth/login";
         $inf['active'] = "Prisijungimo KLAIDA!";
 
 		$this->load->view('main_view', array('inf' => $inf));

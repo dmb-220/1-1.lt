@@ -58,12 +58,7 @@
                 </div>
             </div>
             <div class="ibox-content">
-                jei kartais lieptu prisijungti, uzrasau prisijungimo duomenis.
-                <h1>
-                    Vartotojo vardas: admin@admin.com
-                    <br>
-                    Slaptazodis: password
-                </h1>
+                ...
             </div>
         </div>
     </div>

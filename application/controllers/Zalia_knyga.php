@@ -98,6 +98,7 @@ class Zalia_knyga extends CI_Controller{
 
         $data = $this->ukininkai_model->ukininku_sarasas();
         $inf['pvm'] = $this->zalia_knyga_model->nuskaityti_pvm();
+        $inf['organizacijos'] = $this->zalia_knyga_model->nuskaityti_organizacijas();
 
         $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf, 'irasai' => $irasai));
     }

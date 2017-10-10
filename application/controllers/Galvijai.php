@@ -211,8 +211,6 @@ class Galvijai extends CI_Controller {
             //gaunami ukininko nustatymai
             $set = $this->galvijai_model->nustatymai($dt['nr']);
 
-            //$this->galvijai_model->galvijai; // va.
-
             $metai = $this->input->post('metai');
             $menesis = $this->input->post('menesis');
 
