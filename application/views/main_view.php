@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta name="keywords" content="Ūkininkai, Buhalterija, Gyvuliai, Pašarai, Pasėliai, Skaičiavimai">
-    <meta name="description" content="Ūkininkų buhalterijos vedimas, gyvulių, pasėlių ir pašarų skaičiavimas, žalioji knyga">
+    <meta name="description" content="Ūkininkų buhalterijos vedimas, gyvulių, pasėlių ir pašarų skaičiavimas">
     <meta name="author" content="Andrius Norkus (DMB-220)">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,8 +27,6 @@
     <link href="<?= base_url(); ?>assets\css\plugins\iCheck\custom.css" rel="stylesheet">
     <!-- mano CSS -->
     <link href="<?= base_url(); ?>assets/css/mano.css" rel="stylesheet"/>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
@@ -102,8 +100,7 @@ $this->load->view('left_view');
 </div>
 
 <!-- Mainly scripts -->
-
-<script src="<?= base_url(); ?>assets\js\jquery-3.1.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\metisMenu\jquery.metisMenu.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>

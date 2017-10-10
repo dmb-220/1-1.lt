@@ -312,6 +312,29 @@
                         </div>
                     </fieldset>
                 </form>
+                <hr>
+                <table class="table table-bordered text-center">
+                    <thead>
+                    <tr>
+                        <td>Operacija</td>
+                        <td><b>Įmonės Kodas</b></td>
+                        <td><b>PVM kodas</b></td>
+                    </tr>
+                    </thead>
+                    <tbody
+                    <?php
+                    foreach ($inf['organizacijos'] as $org){
+                        echo"<tr>";
+                        echo"<td>".$org['pavadinimas']."</td>";
+                        echo"<td>".$org['imones_kodas']."</td>";
+                        if($org['pvm_kodas'] != ""){
+                            echo"<td>".$org['pvm_kodas']."</td>";
+                        }else{echo"<td> </td>";}
+                        echo"</tr>";
+                    }
+                    ?>
+                    </tbody>
+                </table>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Uždaryti</button>
