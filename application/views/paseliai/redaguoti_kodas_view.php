@@ -1,4 +1,4 @@
-<?php if(!$error['action']){ ?>
+<?php if(!$this->main_model->info['error']['action']){ ?>
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -12,20 +12,20 @@
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>paseliai/redaguoti_kodas/read" method="POST">
                 <fieldset>
                     <?php
-                    if($error["jau_yra"]){
+                    if($this->main_model->info['error']["jau_yra"]){
                         echo'<div class="alert alert-info">';
-                        echo $error['jau_yra'];
+                        echo $this->main_model->info['error']['jau_yra'];
                         echo '</div>';
                     }
 
-                       if($error["ok"]){
+                       if($this->main_model->info['error']["ok"]){
                         echo'<div class="alert alert-success">';
-                        echo $error['ok'];
+                        echo $this->main_model->info['error']['ok'];
                         echo '</div>';
                     }
-                    if($error["klaida"]){
+                    if($this->main_model->info['error']["klaida"]){
                         echo'<div class="alert alert-success">';
-                        echo $error['klaida'];
+                        echo $this->main_model->info['error']['klaida'];
                         echo '</div>';
                     }
 
@@ -48,15 +48,10 @@
             </form>
         </div>
     </div>
-</div>
-<!-- end panel -->
-</div>
-<!-- end #content -->
 <?php }
 ?>
 
-<?php if($error['action']){ ?>
-    <div class="wrapper wrapper-content animated fadeInRight">
+<?php if($this->main_model->info['error']['action']){ ?>
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Redaguogite norimas reikšmes</h5>
@@ -109,6 +104,6 @@
             </form>
         </div>
     </div>
-</div>
 <?php }
 ?>
+    </div>

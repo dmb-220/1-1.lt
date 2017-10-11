@@ -100,7 +100,7 @@
     </div>
 
     <?php
-    if($error['action'] == 1) {
+    if($this->main_model->info['error']['action'] == 1) {
         ?>
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -113,16 +113,18 @@
             </div>
             <div class="ibox-content">
                 <div class="table-responsive">
-                    <h4><strong>
-                            <p class="text-center">GYVULIŲ GANYKLINIŲ PAŠARŲ LENTELĖ</p>
-                        </strong></h4><br><br>
+                    <div class="text-center">
+                        <h4><strong>GYVULIŲ GANYKLINIŲ PAŠARŲ LENTELĖ</strong></h4>
+                    </div>
+                    <br><br>
                     <div class="pull-left">
-                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
+                        <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                        ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
                     </div>
                     <div class="pull-right">
                         <?php
                         $men = array("Visas sezonas", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis");
-                        echo $inf['sezonas']." sezonas: <b>".$men[$inf['laikotarpis']]."</b>";
+                        echo $this->main_model->info['txt']['sezonas']." sezonas: <b>".$men[$this->main_model->info['txt']['laikotarpis']]."</b>";
                         ?>
                     </div>
                     <hr>
@@ -169,7 +171,7 @@
     ?>
 
     <?php
-    if($error['action'] == 2) {
+    if($this->main_model->info['error']['action'] == 2) {
         //var_dump($gyvu);
         $arr = array(
             '00', '05', '06', '07', '08', '09', '10', 'viso'
@@ -186,16 +188,18 @@
             </div>
             <div class="ibox-content">
                 <div class="table-responsive">
-                    <h4><strong>
-                            <p class="text-center">GYVULIŲ GANYKLINIŲ PAŠARŲ LENTELĖ</p>
-                        </strong></h4><br><br>
+                            <div class="text-center">
+                                <h4><strong>GYVULIŲ GANYKLINIŲ PAŠARŲ LENTELĖ</strong></h4>
+                            </div>
+                        <br><br>
                     <p class="alignleft">
-                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
+                        <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                        ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
                     </p>
                     <p class="alignright">
                         <?php
                         $men = array("Visas sezonas", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis");
-                        echo $inf['sezonas']." sezonas: <b>Visas sezonas</b>";
+                        echo $this->main_model->info['txt']['sezonas']." sezonas: <b>Visas sezonas</b>";
                         ?>
                     </p>
                     <table class="table table-bordered">

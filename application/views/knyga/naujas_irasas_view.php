@@ -16,7 +16,7 @@
                                     <select name="ukininko_vardas" class="form-control">
                                         <option value="">Pasirinkite...</option>
                                         <?php
-                                        foreach ($data as $row) {
+                                        foreach ($this->main_model->info['ukininkai'] as $row) {
                                             echo "<option value='$row[valdos_nr]'>";
                                             echo $row['vardas'];
                                             echo " ";
@@ -114,8 +114,8 @@
                                         <select name="organizacija" class="form-control">
                                             <option value="">Pasirinkite</option>
                                             <?php
-                                            foreach ($inf['organizacijos'] as $pwm){
-                                                echo"<option value=".$pwm['id'].">".$pwm['pavadinimas']."</option>";
+                                            foreach ($this->main_model->info['organizacijos'] as $org){
+                                                echo"<option value=".$org['id'].">".$org['pavadinimas']."</option>";
                                             }
                                             ?>
                                         </select>
@@ -208,7 +208,7 @@
                                         <select name="pvm" class="form-control">
                                             <option value="">Pasirinkite...</option>
                                             <?php
-                                            foreach ($inf['pvm'] as $pwm){
+                                            foreach ($this->main_model->info['pvm'] as $pwm){
                                                 echo"<option value=".$pwm['id'].">".$pwm['pavadinimas']."</option>";
                                             }
                                             ?>
@@ -245,7 +245,7 @@
                                             <select name="pvm" class="form-control">
                                                 <option value="">Pasirinkite...</option>
                                                 <?php
-                                                foreach ($inf['pvm'] as $pwm){
+                                                foreach ($this->main_model->info['pvm'] as $pwm){
                                                     echo"<option value=".$pwm['id'].">".$pwm['pavadinimas']."</option>";
                                                 }
                                                 ?>
@@ -321,9 +321,9 @@
                         <td><b>PVM kodas</b></td>
                     </tr>
                     </thead>
-                    <tbody
+                    <tbody>
                     <?php
-                    foreach ($inf['organizacijos'] as $org){
+                    foreach ($this->main_model->info['organizacijos'] as $org){
                         echo"<tr>";
                         echo"<td>".$org['pavadinimas']."</td>";
                         echo"<td>".$org['imones_kodas']."</td>";
@@ -391,9 +391,9 @@
                         <td><b>Tarifas</b></td>
                     </tr>
                     </thead>
-                    <tbody
+                    <tbody>
                     <?php
-                    foreach ($inf['pvm'] as $pvm){
+                    foreach ($this->main_model->info['pvm'] as $pvm){
                         echo"<tr>";
                         echo"<td>".$pvm['pavadinimas']."</td>";
                         if($pvm['kodas'] != ""){

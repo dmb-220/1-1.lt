@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Pasarai            $pasarai            Pasarai controller
  * @property Paseliai           $paseliai           Paseliai controller
  * @property Ukininkai          $ukininkai          Ukininkai controller
- * @property galvijai           $galvijai           galvijai controller
+ * @property Galvijai           $galvijai           galvijai controller
  * @property Auth               $auth               Auth controller
  * @property Main               $main               Main controller
  * @property Admin              $admin              Admin controller
@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Pasarai_model      $pasarai_model      Pasarai models
  * @property Paseliai_model     $paseliai_model     Paseliai models
  * @property Ukininkai_model    $ukininkai_model    Ukininkai models
- * @property galvijai_model     $galvijai_model     galvijai models
+ * @property Galvijai_model     $galvijai_model     galvijai models
  * @property Ion_auth_model     $ion_auth_model     Ion_Auth models
  * @property Main_model         $main_model         Main models
  * @property Admin_model        $admin_model        Admin models
@@ -26,7 +26,12 @@ class Paseliai extends CI_Controller{
     {
         parent::__construct();
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+        $this->load->model('paseliai_model');
+
         $this->load->library('form_validation');
+        $this->load->library('linksniai');
+
         $this->load->library('Ion_auth');
         if (!$this->ion_auth->logged_in()) {
             redirect('main/auth_error');
@@ -34,7 +39,7 @@ class Paseliai extends CI_Controller{
     }
 
     public function paseliai(){
-        $this->load->model('paseliai_model');
+
         $this->load->library("pagination");
 
         $config = array();
@@ -73,20 +78,18 @@ class Paseliai extends CI_Controller{
         $data["links"] = $this->pagination->create_links();
 
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Pasėliai";
-        $inf['active'] = "Pasėlių sąrašas";
+        $this->main_model->info['txt']['meniu'] = "Pasėliai";
+        $this->main_model->info['txt']['info'] = "Pasėlių sąrašas";
 
-        $this->load->view("main_view", array('data' => $data, 'inf' => $inf));
+        $this->load->view("main_view", array('data' => $data));
     }
 
     public function redaguoti_kodas(){
-        $error = array();
 
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Pasėliai";
-        $inf['active'] = "Redaguoti pasėlių reikšmes";
+        $this->main_model->info['txt']['meniu'] = "Pasėliai";
+        $this->main_model->info['txt']['info'] = "Redaguoti pasėlių reikšmes";
 
-        $this->load->model('paseliai_model');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         $action = $this->uri->segment(3);
@@ -100,9 +103,9 @@ class Paseliai extends CI_Controller{
                 //tikrinam ar duomenu bazeje nera tokio paselio, nes naujai ivedamas
                 $dek = $this->paseliai_model->nuskaityti_pavadinima(strtoupper($kodas));
                 if (count($dek) == 0) {
-                    $error['jau_yra'] = "Kodo ".strtoupper($kodas).", nera duomenų bazėje!";
+                    $this->main_model->info['error']['jau_yra'] = "Kodo ".strtoupper($kodas).", nera duomenų bazėje!";
                 }else{
-                    $error['action'] = TRUE;}
+                    $this->main_model->info['error']['action'] = TRUE;}
                 }
             if($this->uri->segment(4)){
                 $kodas = urldecode ($this->uri->segment(4));
@@ -110,15 +113,15 @@ class Paseliai extends CI_Controller{
                 //tikrinam ar duomenu bazeje nera tokio paselio, nes naujai ivedamas
                 $dek = $this->paseliai_model->nuskaityti_pavadinima(strtoupper($kodas));
                 if (count($dek) == 0) {
-                    $error['jau_yra'] = "Kodo ".strtoupper($kodas).", nera duomenų bazėje!!!";
+                    $this->main_model->info['error']['jau_yra'] = "Kodo ".strtoupper($kodas).", nera duomenų bazėje!!!";
                 }else{
-                    $error['action'] = TRUE;}
+                    $this->main_model->info['error']['action'] = TRUE;}
             }
             //sukeliam info, informaciniam meniu
-            $inf['meniu'] = "Pasėliai";
-            $inf['active'] = "Redaguoti pasėlių reikšmes";
+            $this->main_model->info['txt']['meniu'] = "Pasėliai";
+            $this->main_model->info['txt']['info'] = "Redaguoti pasėlių reikšmes";
 
-            $this->load->view("main_view", array('error' => $error, 'dek' => $dek[0], 'inf' => $inf));
+            $this->load->view("main_view", array('dek' => $dek[0]));
         }
         if($action == "save"){
             //$this->form_validation->set_rules('sutrumpinimas', 'Pasėlio kodas', 'required', array('required' => 'Įveskite pasėlio kodą.'));
@@ -136,25 +139,23 @@ class Paseliai extends CI_Controller{
                 $dek['sekla'] = $sekla;
                 $dek['derlius'] = $derlius;
                 $this->paseliai_model->atnaujinti_paselius($dek, strtoupper($kodas));
-                $error['ok'] = "Kodo " . strtoupper($kodas) . ", duomenys atnaujinti!";
+                $this->main_model->info['error']['ok'] = "Kodo " . strtoupper($kodas) . ", duomenys atnaujinti!";
             }else{
                 //jei nesuvede duomenu reik nukreipti i ta pati puslapi ir nusiusti vel redagavimui tuos pacius duomenis
-                $error['klaida'] = "Neįvedėte duomenų!";
+                $this->main_model->info['error']['klaida'] = "Neįvedėte duomenų!";
             }
             //issaugojam pakeistas reiksmes
-            $this->load->view("main_view", array('error' => $error, 'inf' => $inf));
+            $this->load->view("main_view");
         }
 
         if($action == ""){
             //uzkraunam tik paieska
-            $this->load->view("main_view", array('inf' => $inf));
+            $this->load->view("main_view");
         }
     }
 
     public function naujas_kodas(){
         $dek = array();
-        $error = array();
-        $this->load->model('paseliai_model');
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         $this->form_validation->set_rules('kodas', 'Pasėlio kodas', 'required', array('required' => 'Įveskite pasėlio kodą.'));
@@ -176,31 +177,27 @@ class Paseliai extends CI_Controller{
                     $dek['derlius'] = $derlius;
 
                     $this->paseliai_model->irasyti_paseli($dek);
-                    $error['ok'] = "Kodas " . strtoupper($kodas) . ", pavadinimas " . $pavadinimas . " įkeltas i duomenų bazę!";
+                    $this->main_model->info['error']['ok'] = "Kodas " . strtoupper($kodas) . ", pavadinimas " . $pavadinimas . " įkeltas i duomenų bazę!";
                 } else {
-                    $error['jau_yra'] = "Kodas " . strtoupper($kodas) . ", jau yra duomenų bazėje! Jei norite pakeisti reikšmes, galite redaguoti";
+                    $this->main_model->info['error']['jau_yra'] = "Kodas " . strtoupper($kodas) . ", jau yra duomenų bazėje! Jei norite pakeisti reikšmes, galite redaguoti";
                 }
         }
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Pasėliai";
-        $inf['active'] = "Įtraukti naujus pasėlius";
+        $this->main_model->info['txt']['meniu'] = "Pasėliai";
+        $this->main_model->info['txt']['info'] = "Įtraukti naujus pasėlius";
 
-        $this->load->view("main_view", array('error' => $error, 'inf' => $inf));
+        $this->load->view("main_view");
     }
 
     public function rankinis_paselius(){
         //kintamieji
-        $error = array();
         $da = array(
             'pavadinimas' => "",
             'plotas' => 0,
             'sekla' => array('min' => 0, 'vid' => 0, 'max' => 0,),
             'derlius' => array('min' => 0, 'vid' => 0, 'max' => 0,),
         );
-        $inf = array();
 
-        $this->load->model('paseliai_model');
-        $this->load->library('linksniai');
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         $this->form_validation->set_rules('vardas', 'Įveskite vardą', 'required', array('required' => 'Įveskite ūkininko vardą'));
@@ -211,9 +208,9 @@ class Paseliai extends CI_Controller{
             $vardas = $this->input->post('vardas');
             $pavarde = $this->input->post('pavarde');
 
-            $inf['vardas'] = $vardas;
-            $inf['pavarde'] = $pavarde;
-            $inf['metai'] = "2017";
+            $this->main_model->info['txt']['vardas'] = $vardas;
+            $this->main_model->info['txt']['pavarde'] = $pavarde;
+            $this->main_model->info['txt']['metai'] = "2017";
 
             $kodas = $this->input->post('kodas');
             $plotas = $this->input->post('plotas');
@@ -226,13 +223,13 @@ class Paseliai extends CI_Controller{
                         $dek[$x]['plotas'] = $plotas[$x];
                     } else {
                         $dek[$x]['plotas'] = "Neįvestas plotas!";
-                        $error['plotas'] = "Neįvestas plotas, kodui ".strtoupper($kodas[$x]);
+                        $this->main_model->info['error']['plotas'] = "Neįvestas plotas, kodui ".strtoupper($kodas[$x]);
                     }
                     if ($kk[0]['pavadinimas']) {
                         $dek[$x]['pavadinimas'] = $kk[0]['pavadinimas'];
                     } else {
                         $dek[$x]['pavadinimas'] = "Kodas nerastas duomenu bazėje";
-                        $error['kodas'] = "Nerastas pavadinimas, kodui ".strtoupper($kodas[$x]);
+                        $this->main_model->info['error']['kodas'] = "Nerastas pavadinimas, kodui ".strtoupper($kodas[$x]);
                     }
                 }
             }
@@ -285,51 +282,47 @@ class Paseliai extends CI_Controller{
 
             }
 
-            $error['action'] = TRUE;
+            $this->main_model->info['error']['action'] = TRUE;
         }
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Pasėliai";
-        $inf['active'] = "Rankinis pasėlių skaičiavimas";
+        $this->main_model->info['txt']['meniu'] = "Pasėliai";
+        $this->main_model->info['txt']['info'] = "Rankinis pasėlių skaičiavimas";
 
-        $this->load->view("main_view", array('error' => $error, 'da' => $da, 'inf' => $inf));
+        $this->load->view("main_view", array('da' => $da));
     }
 
     public function skaiciuoti_paselius(){
+        $this->load->model('ukininkai_model');
         //kintamieji
-        $error = array();
         $da = array(
             'pavadinimas' => "",
             'plotas' => 0,
             'sekla' => array('min' => 0, 'vid' => 0, 'max' => 0,),
             'derlius' => array('min' => 0, 'vid' => 0, 'max' => 0,),
         );
-        $inf = array();
 
         $dt = $this->session->userdata();
-        $this->load->model('ukininkai_model');
-        $this->load->model('paseliai_model');
-        $this->load->library('linksniai');
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
             $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
-            $ukininkas = $_POST['ukininko_vardas'];
+            $ukininkas = $this->input->post('ukininko_vardas');
             $uk = $this->ukininkai_model->ukininkas($ukininkas);
-            $inf['vardas'] = $uk[0]['vardas'];
-            $inf['pavarde'] = $uk[0]['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
             $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
             $this->session->set_userdata($new);
         }else{
             $ukininkas = $dt['nr'];
-            $inf['vardas'] = $dt['vardas'];
-            $inf['pavarde'] = $dt['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $dt['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
         }
         $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
 
         if ($this->form_validation->run()) {
-            $metai = $_POST['metai'];
+            $metai = $this->input->post('metai');
 
-            $inf['metai'] = $metai;
+            $this->main_model->info['txt']['metai'] = $metai;
 
             //reik nuskaityti ukininko deklaracija ir apskaiciuoti kiek suseta
             $dat = array('ukininkas' => $ukininkas, 'metai' => $metai);
@@ -380,37 +373,36 @@ class Paseliai extends CI_Controller{
                     $da[$key]['derlius']['max'] = $max * $da[$key]['plotas'];
                 }
             }
-            $error['action'] = TRUE;
+            $this->main_model->info['error']['action'] = TRUE;
         }
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Pasėliai";
-        $inf['active'] = "Pasėlių skaičiavimas";
+        $this->main_model->info['txt']['meniu'] = "Pasėliai";
+        $this->main_model->info['txt']['info'] = "Pasėlių skaičiavimas";
 
-        $this->load->model('ukininkai_model');
-        $data = $this->ukininkai_model->ukininku_sarasas();
-        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf, 'da' => $da));
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
+        $this->load->view("main_view", array('da' => $da));
     }
 
 
 
     public function nauji_paseliai(){
-        $error = array();
+        $this->load->model('ukininkai_model');
         $dt = $this->session->userdata();
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
             $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
-            $ukininkas = $_POST['ukininko_vardas'];
-            $this->load->model('ukininkai_model');
+            $ukininkas = $this->input->post('ukininko_vardas');
+
             $uk = $this->ukininkai_model->ukininkas($ukininkas);
-            $inf['vardas'] = $uk[0]['vardas'];
-            $inf['pavarde'] = $uk[0]['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
             $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
             $this->session->set_userdata($new);
         }else{
             $ukininkas = $dt['nr'];
-            $inf['vardas'] = $dt['vardas'];
-            $inf['pavarde'] = $dt['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $dt['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
         }
         $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
 
@@ -418,17 +410,16 @@ class Paseliai extends CI_Controller{
             $this->form_validation->set_rules('deklaracija', 'Deklaracija', 'required', array('required' => 'Pasirinkite failą, deklaracija.'));}
 
         if ($this->form_validation->run()) {
-            $metai = $_POST['metai'];
+            $metai = $this->input->post('metai');
             $config['upload_path']   = './DATA/';
             $config['allowed_types'] = '*';
             $config['max_size']      = 1024*3;
             $this->load->library('upload', $config);
             if ( ! $this->upload->do_upload('deklaracija')) {
-                $error['deklaracija'] = $this->upload->display_errors();
+                $this->main_model->info['error']['deklaracija'] = $this->upload->display_errors();
             }
             $deklaracija = $this->upload->data();
 
-            $this->load->model('paseliai_model');
             //parsinam duomenis is html failu
             $data_de = $this->paseliai_model->deklaracija(base_url().'DATA/'.$deklaracija['file_name']);
             //var_dump($data_de);
@@ -436,22 +427,21 @@ class Paseliai extends CI_Controller{
             //pasitikrinti ar sito ukininko galvijai jau nera itrauktas i db !!!
             $kiek = $this->paseliai_model->ar_deklaracija_ikelta($metai, $ukininkas);
             if($kiek>0){
-                $error['jau_yra'] = $metai.' m., jau esate pridejęs deklaraciją!';
+                $this->main_model->info['error']['jau_yra'] = $metai.' m., jau esate pridejęs deklaraciją!';
             }else{
                 //ikelia duomenis i duomenu baze
                 $this->paseliai_model->irasyti_deklaracija($data_de, $ukininkas, $metai);
-                $error['OK'] = $metai.' m., deklaracija įtraukta į duomenų bazę!';
+                $this->main_model->info['error']['OK'] = $metai.' m., deklaracija įtraukta į duomenų bazę!';
             }
             //istrinam panaudotus failus
             unlink('./DATA/'.$deklaracija['file_name']);
         }
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Pasėliai";
-        $inf['active'] = "Deklaracijos įkėlimas";
+        $this->main_model->info['txt']['meniu'] = "Pasėliai";
+        $this->main_model->info['txt']['info'] = "Deklaracijos įkėlimas";
 
-        $this->load->model('ukininkai_model');
-        $data = $this->ukininkai_model->ukininku_sarasas();
-        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
+        $this->load->view("main_view");
 
     }
 }

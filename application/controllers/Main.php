@@ -26,6 +26,7 @@ class Main extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		error_reporting(E_ERROR);
+
 		//ukraunami reikalingi MODEL
         $this->load->model('ukininkai_model');
         $this->load->model('main_model');
@@ -41,6 +42,7 @@ class Main extends CI_Controller {
 			$uk = $this->ukininkai_model->ukininkas($ukininkas);
 			$new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
 			$this->session->set_userdata($new);
+			//$this->ukininkai_model->priskirti($ukininkas);
 			//Pranesimas kad ivyko pasirinkimas
 			$this->main_model->info['error']['action'] = true;
             //$this->session->set_flashdata('message', 'Pasirinktas ūkininkas, su kuriuo dirbsite!');

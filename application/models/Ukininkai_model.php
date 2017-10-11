@@ -2,11 +2,18 @@
 
 
 class Ukininkai_model extends CI_Model{
+    public $ukininkas;
+
     public function __construct(){
         parent::__construct();
     }
 
+    //priskiriamas ukininkas
+    public function priskirti($nr){
+        $this->ukininkas = $nr;
+    }
 
+    //irasom nauja ukininka i duomenu baze
     public function irasyti_ukininka($vardas, $pavarde, $valdos_nr, $v_vardas, $slaptazodis){
         $sql = array(
             'vardas' => $vardas ,
@@ -16,8 +23,9 @@ class Ukininkai_model extends CI_Model{
             'VIC_slaptazodis' => $slaptazodis,
         );
         $this->db->insert('ukininkai', $sql);
-}
+    }
 
+    //patikrinam ar toks ukininkas nera itrauktas i DB
     public function tikinti_ukininka($valdos_nr) {
         $this->db->select('id');
         $this->db->from('ukininkai');
@@ -31,6 +39,7 @@ class Ukininkai_model extends CI_Model{
         }
     }
 
+    //nuskaitom visus ukininkus, jei reiksme TRUE, paimam tik pagrindinius duomenis
     public function ukininku_sarasas($ar = ""){
         if($ar){
             $this->db->select('vardas, pavarde, valdos_nr');
@@ -40,8 +49,8 @@ class Ukininkai_model extends CI_Model{
         return $data;
     }
 
+    //gaunam informacija apie konkretu ukininka
     public function ukininkas($nr){
-        //$this->db->select('vardas, pavarde, ');
         $this->db->from('ukininkai');
         $this->db->where('valdos_nr', $nr);
         $result = $this->db->get();

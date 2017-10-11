@@ -15,21 +15,21 @@
                 ?>
                 <fieldset>
                     <?php
-                    if($error['deklaracija']){
+                    if($this->main_model->info['error']['deklaracija']){
                         echo'<div class="alert alert-danger">';
-                        echo $error['deklaracija'];
+                        echo $this->main_model->info['error']['deklaracija'];
                         echo '</div>';
                     }
 
-                    if($error['jau_yra']){
+                    if($this->main_model->info['error']['jau_yra']){
                         echo'<div class="alert alert-danger">';
-                        echo $error['jau_yra'];
+                        echo $this->main_model->info['error']['jau_yra'];
                         echo '</div>';
                     }
 
-                    if($error['OK']){
+                    if($this->main_model->info['error']['OK']){
                         echo'<div class="alert alert-success">';
-                        echo $error["OK"];
+                        echo $this->main_model->info['error']["OK"];
                         echo '</div>';
                     }
                     ?>
@@ -41,7 +41,7 @@
                                 <select name="ukininko_vardas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
-                                    foreach ($data as $row) {
+                                    foreach ($this->main_model->info['ukininkai'] as $row) {
                                         echo "<option value='$row[valdos_nr]'>";
                                         echo $row['vardas'];
                                         echo " ";

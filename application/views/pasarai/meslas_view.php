@@ -13,18 +13,6 @@
                     $dt = $this->session->userdata();
                     ?>
                     <fieldset>
-                        <?php
-                        if($error['laikas']){
-                            echo'<div class="alert alert-danger">';
-                            echo $error['laikas'];
-                            echo '</div>';
-                        }
-                        if($error['laikas2']) {
-                            echo '<div class="alert alert-danger">';
-                            echo $error['laikas2'];
-                            echo '</div>';
-                        }
-                        ?>
                         <div class="form-group">
                             <label class="col-md-4 control-label">Ūkininkas</label>
                             <div class="col-md-6">
@@ -33,7 +21,7 @@
                                     <select name="ukininko_vardas" class="form-control">
                                         <option value="">Pasirinkite...</option>
                                         <?php
-                                        foreach ($data as $row) {
+                                        foreach ($this->main_model->info['ukininkai'] as $row) {
                                             echo "<option value='$row[valdos_nr]'>";
                                             echo $row['vardas'];
                                             echo " ";
@@ -95,7 +83,7 @@
     </div>
 
     <?php
-    if($error['action'] == 1) {
+    if($this->main_model->info['error']['action'] == 1) {
         ?>
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -108,17 +96,19 @@
             </div>
             <div class="ibox-content">
                 <div class="table-responsive">
-                    <h4><strong>
-                            <p class="text-center">GYVULIŲ MĖŠLO LENTELĖ</p>
-                        </strong></h4><br><br>
+                    <div class="text-center">
+                        <h4><strong>GYVULIŲ MĖŠLO LENTELĖ</strong></h4>
+                    </div>
+                    <br><br>
                     <div class="pull-left">
-                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
+                        <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                        ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
                     </div>
                     <div class="pull-right">
                         <?php
                         $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
-                        $sezo = $inf['sezonas']-1;
-                        echo $sezo." - ".$inf['sezonas']." sezonas: <b>".$inf['metai']." ".$men[$inf['laikotarpis']]."</b>";
+                        $sezo = $this->main_model->info['txt']['sezonas']-1;
+                        echo $sezo." - ".$this->main_model->info['txt']['sezonas']." sezonas: <b>".$this->main_model->info['txt']['metai']." ".$men[$this->main_model->info['txt']['laikotarpis']]."</b>";
                         ?>
                     </div>
                     <table class="table table-bordered">
@@ -162,7 +152,7 @@
     ?>
 
     <?php
-    if($error['action'] == 2) {
+    if($this->main_model->info['error']['action'] == 2) {
         //var_dump($gyvu);
         $arr = array(
             '00', '11', '12', '01', '02', '03', '04', 'viso'
@@ -179,19 +169,21 @@
             </div>
             <div class="ibox-content">
                 <div class="table-responsive">
-                    <h4><strong>
-                            <p class="text-center">GYVULIŲ MĖŠLO LENTELĖ</p>
-                        </strong></h4><br><br>
-                    <p class="alignleft">
-                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
-                    </p>
-                    <p class="alignright">
+                    <div class="text-center">
+                        <h4><strong>GYVULIŲ MĖŠLO LENTELĖ</strong></h4>
+                    </div>
+                    <br><br>
+                    <div class="pull-left">
+                        <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                        ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
+                    </div>
+                    <div class="pull-right">
                         <?php
                         $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
-                        $sezo = $inf['sezonas']-1;
-                        echo $sezo." - ".$inf['sezonas']." sezonas: <b>".$men[$inf['laikotarpis']]."</b>";
+                        $sezo = $this->main_model->info['txt']['sezonas']-1;
+                        echo $sezo." - ".$this->main_model->info['txt']['sezonas']." sezonas: <b>".$men[$this->main_model->info['txt']['laikotarpis']]."</b>";
                         ?>
-                    </p>
+                    </div>
                     <table class="table table-bordered">
                         <thead>
                         <tr>

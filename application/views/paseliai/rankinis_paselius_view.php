@@ -11,15 +11,15 @@
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>paseliai/rankinis_paselius" method="POST">
                 <fieldset>
                     <?php
-                    if($error['plotas']){
+                    if($this->main_model->info['error']['plotas']){
                         echo'<div class="alert alert-info">';
-                        echo $error['plotas'];
+                        echo $this->main_model->info['error']['plotas'];
                         echo '</div>';
                     }
 
-                    if($error['kodas']){
+                    if($this->main_model->info['error']['kodas']){
                         echo'<div class="alert alert-info">';
-                        echo $error['kodas'];
+                        echo $this->main_model->info['error']['kodas'];
                         echo '</div>';
                     }
                     ?>
@@ -89,7 +89,7 @@
     </div>
 
 <?php
-if($error['action']){ ?>
+if($this->main_model->info['error']['action']){ ?>
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -101,17 +101,19 @@ if($error['action']){ ?>
             </div>
             <div class="ibox-content">
                 <div class="table-responsive">
-                    <h4><strong>
-                            <p class="text-center">PASĖLIŲ DEKLARAVIMO LENTELĖ</p>
-                        </strong></h4></br></br>
-                    <p class="alignleft">
-                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
-                    </p>
-                    <p class="alignright">
+                    <div class="text-center">
+                        <h4><strong>PASĖLIŲ DEKLARAVIMO LENTELĖ</strong></h4>
+                    </div>
+                    <br><br>
+                    <div class="pull-left">
+                        <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                        ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
+                    </div>
+                    <div class="pull-right">
                         <?php
-                        echo $inf['metai']." m." ;
+                        echo $this->main_model->info['txt']['metai']." m." ;
                         ?>
-                    </p>
+                    </div>
                     <table class="table table-bordered">
                         <thead>
                         <tr>

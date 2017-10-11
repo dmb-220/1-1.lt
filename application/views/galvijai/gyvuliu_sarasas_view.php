@@ -19,7 +19,7 @@
                                 <select name="ukininko_vardas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
-                                    foreach ($data as $row) {
+                                    foreach ($this->main_model->info['ukininkai'] as $row) {
                                         echo "<option value='$row[valdos_nr]'>";
                                         echo $row['vardas'];
                                         echo " ";
@@ -83,7 +83,7 @@
     </div>
 
 <?php
-if($error['action']){
+if($this->main_model->info['error']['action']){
     ?>
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -98,15 +98,16 @@ if($error['action']){
                     <h4><strong>
                             <p class="text-center">GYVULIŲ SĄRAŠAS</p>
                         </strong></h4><br><br>
-                    <p class="alignleft">
-                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
-                    </p>
-                    <p class="alignright">
+                    <div class="pull-left">
+                        <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                        ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
+                    </div>
+                    <div class="pull-right">
                         <?php
-                        $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
-                        echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
+                        $num_day = cal_days_in_month(CAL_GREGORIAN, $this->main_model->info['txt']['menesis'], $this->main_model->info['txt']['metai']);
+                        echo $this->main_model->info['txt']['metai']." ".$men[$this->main_model->info['txt']['menesis']-1]." 1 - ".$num_day;
                         ?>
-                    </p>
+                    </div>
                     <hr>
                     Sutartinis žymėjimas:
                     <table class="table table-bordered">

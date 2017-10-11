@@ -27,6 +27,14 @@ class Galvijai extends CI_Controller {
     public function __construct(){
         parent::__construct();
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+        //uzkraunam MODEL
+        $this->load->model('ukininkai_model');
+        $this->load->model('galvijai_model');
+        $this->load->model('main_model');
+
+        $this->load->library('linksniai');
+
         if (!$this->ion_auth->logged_in()) {
             redirect('main/auth_error');
         }
@@ -38,30 +46,24 @@ class Galvijai extends CI_Controller {
     }
     ///////////////////////////////////////////// RODOMAS GYVULIU SARASAS //////////////////////////////////////////////
     public function gyvuliu_sarasas(){
-        $error = array();
         $gyvu = array();
         $dt = $this->session->userdata();
 
-        $this->load->model('ukininkai_model');
-        $this->load->model('galvijai_model');
-        $this->load->library('linksniai');
-        $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-            if ($dt['vardas'] == "" AND $dt['pavarde'] == "") {
-                $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
-                $ukininkas = $_POST['ukininko_vardas'];
-                $this->load->model('ukininkai_model');
-                $uk = $this->ukininkai_model->ukininkas($ukininkas);
-                $inf['vardas'] = $uk[0]['vardas'];
-                $inf['pavarde'] = $uk[0]['pavarde'];
-                $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
-                $this->session->set_userdata($new);
-            } else {
-                $ukininkas = $dt['nr'];
-                $inf['vardas'] = $dt['vardas'];
-                $inf['pavarde'] = $dt['pavarde'];
-            }
+        if ($dt['vardas'] == "" AND $dt['pavarde'] == "") {
+            $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+            $ukininkas = $this->input->post('ukininko_vardas');
+            $uk = $this->ukininkai_model->ukininkas($ukininkas);
+            $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
+            $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
+            $this->session->set_userdata($new);
+        } else {
+            $ukininkas = $dt['nr'];
+            $this->main_model->info['txt']['vardas'] = $dt['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
+        }
 
             $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
             $this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
@@ -70,8 +72,8 @@ class Galvijai extends CI_Controller {
                 $metai = $this->input->post('metai');
                 $menesis = $this->input->post('menesis');
 
-                $inf['metai'] = $metai;
-                $inf['menesis'] = $menesis;
+                $this->main_model->info['txt']['metai'] = $metai;
+                $this->main_model->info['txt']['menesis'] = $menesis;
 
                 $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
                 $psl = $this->galvijai_model->nuskaityti_gyvulius($dat);
@@ -86,39 +88,33 @@ class Galvijai extends CI_Controller {
                     $gyvu[$i]['informacija'] = $psl[$i]['informacija'];
                 }
 
-                $error['action'] = true;
+                $this->main_model->info['error']['action'] = true;
             }
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Galvijai";
-        $inf['active'] = "Galvijų sąrašas";
+        $this->main_model->info['txt']['meniu'] = "Galvijai";
+        $this->main_model->info['txt']['info'] = "Galvijų sąrašas";
 
-            $data = $this->ukininkai_model->ukininku_sarasas();
-            $this->load->view("main_view", array('data' => $data, 'gyvu' => $gyvu, 'error' => $error, 'inf' => $inf));
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
+        $this->load->view("main_view", array('data' => $data, 'gyvu' => $gyvu));
     }
 
     ///////////////////////////////////////////// IKELIAMI DUOMENYS IS VIC.LT  //////////////////////////////////////////////
     public function nuskaityti_vic(){
-        $error = array();
         $dt = $this->session->userdata();
-
-        $this->load->model('ukininkai_model');
-        $this->load->model('galvijai_model');
-        $this->load->library('form_validation');
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
             $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
-            $ukininkas = $_POST['ukininko_vardas'];
-            $this->load->model('ukininkai_model');
+            $ukininkas = $this->input->post('ukininko_vardas');
             $uk = $this->ukininkai_model->ukininkas($ukininkas);
-            $inf['vardas'] = $uk[0]['vardas'];
-            $inf['pavarde'] = $uk[0]['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
             $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
             $this->session->set_userdata($new);
         }else{
             $ukininkas = $dt['nr'];
-            $inf['vardas'] = $dt['vardas'];
-            $inf['pavarde'] = $dt['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $dt['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
         }
 
         $this->form_validation->set_rules('data1', 'Data-1', 'required', array('required' => 'Pasirinkite data.'));
@@ -128,8 +124,8 @@ class Galvijai extends CI_Controller {
             $data1 = $this->input->post('data1');
             $data2 = $this->input->post('data2');
 
-            $inf['data1'] = $data1;
-            $inf['data2'] = $data2;
+            $this->main_model->info['txt']['data1'] = $data1;
+            $this->main_model->info['txt']['data2'] = $data2;
 
             $menesis = explode("-", $data2);
             $menesis = $menesis[1];
@@ -160,49 +156,39 @@ class Galvijai extends CI_Controller {
             //reik patikrinti ar antra karta neitraukia gyvulio ta pati menesi
             //buna kad prie visu gyvuliu pagal nr dubliuojasi
             if($kiek>0){
-                $error = array('jau_yra' => $metai.' '.$men[$menesis-1].', jau esate pridejes gyvulius!');
+                $this->main_model->info['error']['jau_yra'] = $metai.' '.$men[$menesis-1].', jau esate pridejes gyvulius!';
             }else{
                 //ikelia duomenis i duomenu baze
                 $this->galvijai_model->Irasyti_visus($data_visi, $ukininkas, $metai, $menesis);
                 $this->galvijai_model->Atnaujinti_visus($data_gyvi, $ukininkas, $metai, $menesis);
-                $error = array('OK' => $metai.' '.$men[$menesis-1].' galvijai įtraukti į duomenų bazę!');
+                $this->main_model->info['error']['OK'] = $metai.' '.$men[$menesis-1].' galvijai įtraukti į duomenų bazę!';
             }
         }
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Galvijai";
-        $inf['active'] = "Naujų galvijų įtraukimas";
+        $this->main_model->info['txt']['meniu'] = "Galvijai";
+        $this->main_model->info['txt']['info'] = "Naujų galvijų įtraukimas";
 
-        $data = $this->ukininkai_model->ukininku_sarasas();
-        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf));
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas();
+        $this->load->view("main_view");
     }
 
     ///////////////////////////////////////////// SKAICIUOJAMI GALVIJAI //////////////////////////////////////////////
     public function skaiciuoti_gyvulius(){
-        $error = array();
-        $inf = array();
-
-        
         $dt = $this->session->userdata();
-
-        $this->load->library('linksniai');
-        $this->load->model('galvijai_model');
-        $this->load->library('table');
-        $this->load->library('form_validation');
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
             $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
-            $ukininkas = $_POST['ukininko_vardas'];
-            $this->load->model('ukininkai_model');
+            $ukininkas = $this->input->post('ukininko_vardas');
             $uk = $this->ukininkai_model->ukininkas($ukininkas);
-            $inf['vardas'] = $uk[0]['vardas'];
-            $inf['pavarde'] = $uk[0]['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
             $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
             $this->session->set_userdata($new);
         }else{
             $ukininkas = $dt['nr'];
-            $inf['vardas'] = $dt['vardas'];
-            $inf['pavarde'] = $dt['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $dt['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
         }
         $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
         $this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
@@ -210,20 +196,18 @@ class Galvijai extends CI_Controller {
         if ($this->form_validation->run()) {
             //gaunami ukininko nustatymai
             $set = $this->galvijai_model->nustatymai($dt['nr']);
-
             $metai = $this->input->post('metai');
             $menesis = $this->input->post('menesis');
 
-            $inf['metai'] = $metai;
-            $inf['menesis'] = $menesis;
-            $inf['banda'] = $set[0]['banda'];
+            $this->main_model->info['txt']['metai'] = $metai;
+            $this->main_model->info['txt']['menesis'] = $menesis;
+            $this->main_model->info['txt']['banda'] = $set[0]['banda'];
             //bandos nustatymas
             //1: pieniniai
             //2: mesiniai
             //3: pieniniai ir mesiniai reikia atskirti
             $banda = $set[0]['banda'];
 
-            $this->load->model('galvijai_model');
             //nuskaitom visus gyvulius, pasirinkto menesio
             $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
             $rezultatai_dabar = $this->galvijai_model->nuskaityti_gyvulius($dat);
@@ -865,16 +849,15 @@ class Galvijai extends CI_Controller {
                 }
             }
 
-            $error['action'] = true;
+            $this->main_model->info['error']['action'] = true;
         }
 
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Galvijai";
-        $inf['active'] = "Galvijų skaičiavimas";
+        $this->main_model->info['txt']['meniu'] = "Galvijai";
+        $this->main_model->info['txt']['info'] = "Galvijų skaičiavimas";
 
-        $this->load->model('ukininkai_model');
-        $data = $this->ukininkai_model->ukininku_sarasas();
-        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf'=>$inf));
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
+        $this->load->view("main_view");
 
     }
 

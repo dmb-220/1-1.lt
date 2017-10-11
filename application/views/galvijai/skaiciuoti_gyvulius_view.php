@@ -11,9 +11,7 @@
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>galvijai/skaiciuoti_gyvulius" method="POST">
                 <?php
                 $dt = $this->session->userdata();
-                //var_dump($this->galvijai_model->galvijai);
                 ?>
-
                 <fieldset>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Ūkininkas</label>
@@ -23,7 +21,7 @@
                                 <select name="ukininko_vardas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
-                                    foreach ($data as $row) {
+                                    foreach ($this->main_model->info['ukininkai'] as $row) {
                                         echo "<option value='$row[valdos_nr]'>";
                                         echo $row['vardas'];
                                         echo " ";
@@ -78,7 +76,7 @@
                         <label class="control-label col-md-4 col-sm-4"></label>
                         <div class="col-md-6 col-sm-6">
                             <button class="btn btn-block btn-outline btn-primary" type="submit">
-                                <i class="fa fa-check-circle-o fa-lg"> SKAIČIUTI GYVULIUS</i>
+                                <i class="fa fa-check-circle-o fa-lg"> SKAIČIUOTI GYVULIUS</i>
                             </button>
                         </div>
                     </div>
@@ -88,7 +86,7 @@
     </div>
 
             <?php
-            if($error['action']){ ?>
+            if($this->main_model->info['error']['action']){ ?>
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>Informacija</h5>
@@ -103,21 +101,22 @@
                             <p class="text-center">GYVULIŲ APSKAITOS LENTELĖ</p>
                         </strong></h4><br><br>
                     <div class="pull-left">
-                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
+                        <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                        ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
                     </div>
                     <div class="pull-right">
                         <?php
-                        $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
-                        echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
+                        $num_day = cal_days_in_month(CAL_GREGORIAN, $this->main_model->info['txt']['menesis'], $this->main_model->info['txt']['metai']);
+                        echo $this->main_model->info['txt']['metai']." ".$men[$this->main_model->info['txt']['menesis']-1]." 1 - ".$num_day;
                         ?>
                     </div>
                     <hr>
                     <?php
-                    if($inf['banda'] == 1){$karves = 'Melžiamos karvės';}else
-                        if($inf['banda'] == 2){$karves = 'Mėsinės karvės';}else{
+                    if($this->main_model->info['txt']['banda'] == 1){$karves = 'Melžiamos karvės';}else
+                        if($this->main_model->info['txt']['banda'] == 2){$karves = 'Mėsinės karvės';}else{
                             $karves = 'Karvės';}
 
-                            if($inf['banda'] == 1 || $inf['banda'] == 2) {
+                            if($this->main_model->info['txt']['banda'] == 1 || $this->main_model->info['txt']['banda'] == 2) {
                                 ?>
                                 <table class="table table-bordered table-hover">
                                     <thead>
@@ -167,7 +166,7 @@
                                     </tbody>
                                 </table>
                                 <?php
-                            }else if($inf['banda'] == 3){ ?>
+                            }else if($this->main_model->info['txt']['banda'] == 3){ ?>
                                 <table class="table table-bordered table-hover">
                                 <thead>
                                 <tr>

@@ -44,7 +44,6 @@ class Zalia_knyga extends CI_Controller{
     }
 
     public function knyga(){
-        $error = array();
         $dt = $this->session->userdata();
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
@@ -52,16 +51,15 @@ class Zalia_knyga extends CI_Controller{
         if ($dt['vardas'] == "" AND $dt['pavarde'] == "") {
             $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
             $ukininkas = $_POST['ukininko_vardas'];
-            $this->load->model('ukininkai_model');
             $uk = $this->ukininkai_model->ukininkas($ukininkas);
-            $inf['vardas'] = $uk[0]['vardas'];
-            $inf['pavarde'] = $uk[0]['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
             $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
             $this->session->set_userdata($new);
         } else {
             $ukininkas = $dt['nr'];
-            $inf['vardas'] = $dt['vardas'];
-            $inf['pavarde'] = $dt['pavarde'];
+            $this->main_model->info['txt']['vardas'] = $dt['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
         }
 
         $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
@@ -71,35 +69,35 @@ class Zalia_knyga extends CI_Controller{
             $metai = $this->input->post('metai');
             $menesis = $this->input->post('menesis');
 
-            $inf['metai'] = $metai;
-            $inf['menesis'] = $menesis;
+            $this->main_model->info['txt']['metai'] = $metai;
+            $this->main_model->info['txt']['menesis'] = $menesis;
 
             //rasomas kodas
 
 
-            $error['action'] = TRUE;
+            $this->main_model->info['error']['action'] = TRUE;
         }else{
-            $inf['menesis'] = date('m');
-            $inf['metai'] = date('Y');
+            $this->main_model->info['txt']['menesis'] = date('m');
+            $this->main_model->info['txt']['metai'] = date('Y');
         }
 
         //nuskaitom irasus is zaliosios knygos
         $da = array(
             "u_id" => $ukininkas,
-            "metai" => $inf['metai'],
-            "menesis" => $inf['menesis'],
+            "metai" => $this->main_model->info['txt']['metai'],
+            "menesis" => $this->main_model->info['txt']['menesis'],
         );
         $irasai = $this->zalia_knyga_model->nuskaityti_knyga($da);
 
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Žalioji knyga";
-        $inf['active'] = "Pagrindinis";
+        $this->main_model->info['txt']['meniu'] = "Žalioji knyga";
+        $this->main_model->info['txt']['info'] = "Pagrindinis";
 
-        $data = $this->ukininkai_model->ukininku_sarasas();
-        $inf['pvm'] = $this->zalia_knyga_model->nuskaityti_pvm();
-        $inf['organizacijos'] = $this->zalia_knyga_model->nuskaityti_organizacijas();
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas();
+        $this->main_model->info['pvm'] = $this->zalia_knyga_model->nuskaityti_pvm();
+        $this->main_model->info['organizacijos'] = $this->zalia_knyga_model->nuskaityti_organizacijas();
 
-        $this->load->view("main_view", array('data'=> $data, 'error' => $error, 'inf' => $inf, 'irasai' => $irasai));
+        $this->load->view("main_view", array('irasai' => $irasai));
     }
 
     public function naujas_irasas(){

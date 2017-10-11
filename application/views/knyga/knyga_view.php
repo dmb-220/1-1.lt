@@ -10,7 +10,6 @@ $dt = $this->session->userdata();
 ?>
 
 <div class="wrapper wrapper-content">
-
     <!-- Klaidu pranesimai is, naujo PVM tarifo sukurimo  -->
     <?php
     //i masyva surasom klaidu pavadinimus(masyvo raktai)
@@ -57,17 +56,18 @@ $dt = $this->session->userdata();
                 <div id="tab-1" class="tab-pane active">
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <h4><strong>
-                                    <p class="text-center">PIRKIMO IR PARDAVIMO OPERACIJOS</p>
-                                </strong></h4>
+                            <div class="text-center">
+                                <h4><strong>PIRKIMO IR PARDAVIMO OPERACIJOS</strong></h4>
+                            </div>
                             <br><br>
                             <div class="pull-left">
-                                <?php echo $this->linksniai->getName($inf['vardas'], 'kil') . " " . $this->linksniai->getName($inf['pavarde'], 'kil') . " ūkis"; ?>
+                                <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil') . " 
+                                " . $this->linksniai->getName($this->main_model->info['txt']['pavarde'], 'kil') . " ūkis"; ?>
                             </div>
                             <div class="pull-right">
                                 <?php
-                                $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
-                                echo $inf['metai'] . " " . $men[$inf['menesis'] - 1] . " 1 - " . $num_day;
+                                $num_day = cal_days_in_month(CAL_GREGORIAN, $this->main_model->info['txt']['menesis'], $this->main_model->info['txt']['metai']);
+                                echo $this->main_model->info['txt']['metai'] . " " . $men[$this->main_model->info['txt']['menesis'] - 1] . " 1 - " . $num_day;
                                 ?>
                             </div>
                             <hr>
@@ -95,7 +95,7 @@ $dt = $this->session->userdata();
                                     <td>Kodas</td>
                                 </tr>
                                 </thead>
-                                <tbody
+                                <tbody>
                                 <?php
                                 foreach ($irasai as $irasas) {
                                     echo "<tr>";
@@ -122,7 +122,7 @@ $dt = $this->session->userdata();
                                 <?php
                             } else {
                                 echo "<div class=\"alert alert-info\">";
-                                echo $inf['metai'] . " " . $this->linksniai->getName($men[$inf['menesis'] - 1], "kil") . " mėnesį, įrasų nerasta";
+                                echo $this->main_model->info['txt']['metai'] . " " . $this->linksniai->getName($men[$this->main_model->info['txt']['menesis'] - 1], "kil") . " mėnesį, įrasų nerasta";
                                 echo "</div>";
                             }
                             ?>

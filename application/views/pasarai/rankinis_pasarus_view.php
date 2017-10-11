@@ -11,14 +11,14 @@
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>pasarai/rankinis_pasarus" method="POST">
                 <fieldset>
                     <?php
-                    if($error['laikas']){
+                    if($this->main_model->info['error']['laikas']){
                         echo'<div class="alert alert-danger">';
-                        echo $error['laikas'];
+                        echo $this->main_model->info['error']['laikas'];
                         echo '</div>';
                     }
-                    if($error['laikas2']) {
+                    if($this->main_model->info['error']['laikas2']) {
                         echo '<div class="alert alert-danger">';
-                        echo $error['laikas2'];
+                        echo $this->main_model->info['error']['laikas2'];
                         echo '</div>';
                     }
 
@@ -104,8 +104,8 @@
 
 <?php
 //var_dump($gyvuliai);
-if($error['action']){ ?>
-    div class="ibox float-e-margins">
+if($this->main_model->info['error']['action']){ ?>
+    <div class="ibox float-e-margins">
     <div class="ibox-title">
         <h5>Informacija</h5>
         <div class="ibox-tools">
@@ -115,23 +115,26 @@ if($error['action']){ ?>
     </div>
     <div class="ibox-content">
             <div class="table-responsive">
-                <h4><strong>
-                        <p class="text-center">GYVULIŲ PAŠARŲ LENTELĖ</p>
-                    </strong></h4></br></br>
-                <p class="alignleft">
-                    <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
-                </p>
-                <p class="alignright">
+                <div class="text-center">
+                    <h4><strong>GYVULIŲ PAŠARŲ LENTELĖ</strong></h4>
+                </div>
+                <br><br>
+                <div class="pull-left">
+                    <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                    ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
+                </div>
+                <div class="pull-right">
                     <?php
-                    if($inf['menesis']){
-                        $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
-                        echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
+                    if($this->main_model->info['txt']['menesis']){
+                        $num_day = cal_days_in_month(CAL_GREGORIAN, $this->main_model->info['txt']['menesis'], $this->main_model->info['txt']['metai']);
+                        echo $this->main_model->info['txt']['metai']." ".$men[$this->main_model->info['txt']['menesis']-1]." 1 - ".$num_day;
                     }
-                    if($inf['laikotarpis']){
-                        echo $inf['metai']." <b>".$inf['laikotarpis']."</b>";
+                    if($this->main_model->info['txt']['laikotarpis']){
+                        echo $this->main_model->info['txt']['metai']." <b>".$inf['laikotarpis']."</b>";
                     }
                     ?>
-                </p>
+                </div>
+                <hr>
                 <table class="table table-bordered">
                     <thead>
                     <tr>
@@ -193,5 +196,3 @@ if($error['action']){ ?>
             <?php }
             ?>
         </div>
-    </div>
-</div>

@@ -38,20 +38,20 @@
                             </thead>
                             <tbody>
                             <?php
-                            for($i = 0; $i < count($data); $i++) {
+                            for($i = 0; $i < count($this->main_model->info['pasarai']); $i++) {
                                 echo"<tr >
-                <td><strong>".$data[$i]['gyvuliai']."</strong></td >
-                <td>".$data[$i]['sienas']." kg.</td >
-                <td>".$data[$i]['siaudai']." kg.</td >
-                <td>".$data[$i]['grudai']." kg.</td >
-                <td>".$data[$i]['sakniavaisiai']."kg.</td >
-                <td>".$data[$i]['sienainis']." kg.</td >
-                <td>".$data[$i]['bulves']." kg.</td >
-                <td>".$data[$i]['silosas']." kg.</td >
-                <td>".$data[$i]['runkeliai']." kg.</td >
+                <td><strong>".$this->main_model->info['pasarai'][$i]['gyvuliai']."</strong></td >
+                <td>".$this->main_model->info['pasarai'][$i]['sienas']." kg.</td >
+                <td>".$this->main_model->info['pasarai'][$i]['siaudai']." kg.</td >
+                <td>".$this->main_model->info['pasarai'][$i]['grudai']." kg.</td >
+                <td>".$this->main_model->info['pasarai'][$i]['sakniavaisiai']."kg.</td >
+                <td>".$this->main_model->info['pasarai'][$i]['sienainis']." kg.</td >
+                <td>".$this->main_model->info['pasarai'][$i]['bulves']." kg.</td >
+                <td>".$this->main_model->info['pasarai'][$i]['silosas']." kg.</td >
+                <td>".$this->main_model->info['pasarai'][$i]['runkeliai']." kg.</td >
                 <td><p class='text-center'>
-                <a data-toggle='modal' href='#redaguoti-form' id=".$data[$i]['gid']." class='btn btn-outline btn-primary'><i class='fa fa-edit'></i></a>
-                <!-- <a data-toggle='modal' href='#istrinti-form' id=".$data[$i]['gid']." class='btn btn-outline btn-danger'><i class='fa fa-trash'></i></a> -->
+                <a data-toggle='modal' href='#redaguoti-form' id=".$this->main_model->info['pasarai'][$i]['gid']." class='btn btn-outline btn-primary'><i class='fa fa-edit'></i></a>
+                <!-- <a data-toggle='modal' href='#istrinti-form' id=".$this->main_model->info['pasarai'][$i]['gid']." class='btn btn-outline btn-danger'><i class='fa fa-trash'></i></a> -->
                 </p></td>
             </tr >";
                             }?>
@@ -83,4 +83,3 @@
             </div>
         </div>
     </div>
-</div>

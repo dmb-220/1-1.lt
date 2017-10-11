@@ -21,7 +21,7 @@
                                 <select name="ukininko_vardas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
-                                    foreach ($data as $row) {
+                                    foreach ($this->main_model->info['ukininkai'] as $row) {
                                         echo "<option value='$row[valdos_nr]'>";
                                         echo $row['vardas'];
                                         echo " ";
@@ -63,11 +63,9 @@
             </form>
         </div>
     </div>
-</div>
 
 <?php
-if($error['action']){ ?>
-    <div class="wrapper wrapper-content animated fadeInRight">
+if($this->main_model->info['error']['action']){ ?>
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Informacija</h5>
@@ -78,17 +76,20 @@ if($error['action']){ ?>
             </div>
             <div class="ibox-content">
                 <div class="table-responsive">
-                    <h4><strong>
-                            <p class="text-center">PASĖLIŲ DEKLARAVIMO LENTELĖ</p>
-                        </strong></h4><br><br>
-                    <p class="alignleft">
-                        <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
-                    </p>
-                    <p class="alignright">
+                    <div class="text-center">
+                        <h4><strong>PASĖLIŲ DEKLARAVIMO LENTELĖ</strong></h4>
+                    </div>
+                    <br><br>
+                    <div class="pull-left">
+                        <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                        ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
+                    </div>
+                    <div class="pull-right">
                         <?php
-                        echo $inf['metai']." m." ;
+                        echo $this->main_model->info['txt']['metai']." m." ;
                         ?>
-                    </p>
+                    </div>
+                    <hr>
                     <table class="table table-bordered">
                         <thead>
                         <tr>
@@ -155,6 +156,6 @@ if($error['action']){ ?>
                 ?>
             </div>
         </div>
-    </div>
 <?php }
 ?>
+</div>

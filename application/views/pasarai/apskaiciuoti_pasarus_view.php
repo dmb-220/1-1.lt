@@ -14,14 +14,14 @@
                 ?>
                 <fieldset>
                     <?php
-                    if($error['laikas']){
+                    if($this->main_model->info['error']['laikas']){
                         echo'<div class="alert alert-danger">';
-                        echo $error['laikas'];
+                        echo $this->main_model->info['error']['laikas'];
                         echo '</div>';
                     }
-                    if($error['laikas2']) {
+                    if($this->main_model->info['error']['laikas2']) {
                         echo '<div class="alert alert-danger">';
-                        echo $error['laikas2'];
+                        echo $this->main_model->info['error']['laikas2'];
                         echo '</div>';
                     }
                     ?>
@@ -33,7 +33,7 @@
                                 <select name="ukininko_vardas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
-                                    foreach ($data as $row) {
+                                    foreach ($this->main_model->info['ukininkai'] as $row) {
                                         echo "<option value='$row[valdos_nr]'>";
                                         echo $row[vardas];
                                         echo " ";
@@ -116,8 +116,7 @@
     </div>
 
 <?php
-//var_dump($gyvuliai);
-if($error['action']){ ?>
+if($this->main_model->info['error']['action']){ ?>
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Informacija</h5>
@@ -127,21 +126,23 @@ if($error['action']){ ?>
                 </div>
             </div>
             <div class="ibox-content">
-    <div class="table-responsive">
-        <h4><strong>
-                <p class="text-center">GYVULIŲ PAŠARŲ LENTELĖ</p>
-            </strong></h4></br></br>
-        <div class="pull-left">
-            <?php echo $this->linksniai->getName($inf['vardas'], 'kil')." ".$this->linksniai->getName($inf['pavarde'],'kil')." ūkis"; ?>
+                <div class="table-responsive">
+                    <div class="text-center">
+                        <h4><strong>GYVULIŲ PAŠARŲ LENTELĖ</strong></h4>
+                    </div>
+                    <br><br>
+                    <div class="pull-left">
+                        <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
+                        ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>
         </div>
         <div class="pull-right">
             <?php
-            if($inf['menesis']){
-            $num_day = cal_days_in_month(CAL_GREGORIAN, $inf['menesis'], $inf['metai']);
-            echo $inf['metai']." ".$men[$inf['menesis']-1]." 1 - ".$num_day;
+            if($this->main_model->info['txt']['menesis']){
+            $num_day = cal_days_in_month(CAL_GREGORIAN, $this->main_model->info['txt']['menesis'], $this->main_model->info['txt']['metai']);
+            echo $this->main_model->info['txt']['metai']." ".$men[$this->main_model->info['txt']['menesis']-1]." 1 - ".$num_day;
             }
-            if($inf['laikotarpis']){
-                echo $inf['metai']." <b>".$inf['laikotarpis']."</b>";
+            if($this->main_model->info['txt']['laikotarpis']){
+                echo $this->main_model->info['txt']['metai']." <b>".$this->main_model->info['txt']['laikotarpis']."</b>";
             }
             ?>
         </div>

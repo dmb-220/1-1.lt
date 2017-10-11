@@ -18,15 +18,15 @@
                 ?>
                 <fieldset>
                     <?php
-                    if($error['OK']){
+                    if($this->main_model->info['error']['OK']){
                         echo'<div class="alert alert-info">';
-                        echo $error['OK'];
+                        echo $this->main_model->info['error']['OK'];
                         echo '</div>';
                     }
 
-                    if($error['jau_yra']){
+                    if($this->main_model->info['error']['jau_yra']){
                         echo'<div class="alert alert-info">';
-                        echo $error['jau_yra'];
+                        echo $this->main_model->info['error']['jau_yra'];
                         echo '</div>';
                     }
                     ?>
@@ -38,7 +38,7 @@
                                 <select name="ukininko_vardas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
-                                    foreach ($data as $row) {
+                                    foreach ($this->main_model->info['ukininkai'] as $row) {
                                         echo "<option value='$row[valdos_nr]'>";
                                         echo $row['vardas'];
                                         echo " ";
@@ -63,9 +63,9 @@
                             <?php echo form_error('data1'); ?>
                             <div class="input-group date">
                                 <input type="text" name="data1" class="form-control"/>
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -75,9 +75,9 @@
                             <?php echo form_error('data2'); ?>
                             <div class="input-group date">
                                 <input type="text" name="data2" class="form-control"/>
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,6 @@
                                 <i class="fa fa-check-circle-o fa-lg"> ĮTRAUKTI NAUJUS DUOMENIS</i>
                             </button>
                         </div>
-                    </div>
                     </div>
                 </fieldset>
             </form>
