@@ -1,14 +1,9 @@
 
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2><?php echo $inf['meniu']; ?></h2>
+        <h2><?php echo $this->main_model->info['txt']['meniu']; ?></h2>
         <ol class="breadcrumb">
-            <li>
-                <a href="<?php echo base_url(); ?>">ATGAL</a>
-            </li>
-            <li class="active">
-                <strong><?php echo $inf['active']; ?></strong>
-            </li>
+            <?php echo $this->main_model->info['txt']['info']; ?>
         </ol>
     </div>
     <div class="spin-icon">
@@ -17,7 +12,6 @@
 </div>
 <?php
 if($this->session->flashdata('message')){ ?>
-
 <script type="text/javascript">
     $(document).ready(function() {
     var message = "<?php echo $this->session->flashdata('message'); ?>";

@@ -5,7 +5,7 @@
  * @property Pasarai            $pasarai            Pasarai controller
  * @property Paseliai           $paseliai           Paseliai controller
  * @property Ukininkai          $ukininkai          Ukininkai controller
- * @property Gyvuliai           $gyvuliai           Gyvuliai controller
+ * @property Galvijai           $galvijai           Galvijai controller
  * @property Auth               $auth               Auth controller
  * @property Main               $main               Main controller
  * @property Admin              $admin              Admin controller
@@ -13,7 +13,7 @@
  * @property Pasarai_model      $pasarai_model      Pasarai models
  * @property Paseliai_model     $paseliai_model     Paseliai models
  * @property Ukininkai_model    $ukininkai_model    Ukininkai models
- * @property Gyvuliai_model     $gyvuliai_model     Gyvuliai models
+ * @property Galvijai_model     $galvijai_model     Galvijai models
  * @property Ion_auth_model     $ion_auth_model     Ion_Auth models
  * @property Main_model         $main_model         Main models
  * @property Admin_model        $admin_model        Admin models
@@ -25,9 +25,11 @@ class Auth extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		error_reporting(E_ERROR | E_WARNING | E_PARSE);
-		$this->load->database();
-		$this->load->library(array('ion_auth','form_validation'));
+		//$this->load->database();
+		//$this->load->library(array('ion_auth','form_validation'));
 		$this->load->helper(array('url','language'));
+
+        $this->load->model('main_model');
 
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 
@@ -62,10 +64,9 @@ class Auth extends CI_Controller {
 	}
 
 	public function register(){
-        $inf = array();
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Vartotojų valdymas";
-        $inf['active'] = "Registracija";
+        $this->main_model->info['txt']['meniu'] = "Vartotojų valdymas";
+        $this->main_model->info['txt']['info'] = "Registracija";
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         //validate form input
@@ -120,12 +121,11 @@ class Auth extends CI_Controller {
 
 	// log the user in
 	public function login(){
-        $inf = array();
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Vartotojų valdymas";
-        $inf['active'] = "Prisijungimas";
+        $this->main_model->info['txt']['meniu'] = "Vartotojų valdymas";
+        $this->main_model->info['txt']['info'] = "Prisijungimas";
 
-		$this->data['title'] = $this->lang->line('login_heading');
+		//$this->data['title'] = $this->lang->line('login_heading');
 
 		//validate form input
 		$this->form_validation->set_rules('identity', str_replace(':', '', $this->lang->line('login_identity_label')), 'required');

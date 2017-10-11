@@ -31,7 +31,10 @@ class Ukininkai_model extends CI_Model{
         }
     }
 
-    public function ukininku_sarasas(){
+    public function ukininku_sarasas($ar = ""){
+        if($ar){
+            $this->db->select('vardas, pavarde, valdos_nr');
+        }
         $query = $this->db->get("ukininkai");
         $data = $query->result_array();
         return $data;

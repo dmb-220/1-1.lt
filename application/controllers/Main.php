@@ -26,43 +26,41 @@ class Main extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		error_reporting(E_ERROR);
+		//ukraunami reikalingi MODEL
+        $this->load->model('ukininkai_model');
+        $this->load->model('main_model');
 	}
 
+	//Pagrindinis visos svetaines puslapis
 	public function index(){
-		$inf = array();
-        $error = array();
-		//$dt = $this->session->userdata();
-		//var_dump($this->session->userdata());
-		$this->load->library('form_validation');
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 		$this->form_validation->set_rules('ukininkas', 'Pasirinkti ūkininką', 'required', array('required' => 'Pasirinkite!.'));
-
+		//Nustatom i sesijas su kuriuo ukininku dirbsim
 		if ($this->form_validation->run()) {
-			$ukininkas = $_POST['ukininkas'];
-
-			$this->load->model('ukininkai_model');
+			$ukininkas = $this->input->post('ukininkas');
 			$uk = $this->ukininkai_model->ukininkas($ukininkas);
 			$new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
 			$this->session->set_userdata($new);
-
-			$error['action'] = true;
+			//Pranesimas kad ivyko pasirinkimas
+			$this->main_model->info['error']['action'] = true;
+            //$this->session->set_flashdata('message', 'Pasirinktas ūkininkas, su kuriuo dirbsite!');
 		}
 		//sukeliam info, informaciniam meniu
-		$inf['meniu'] = "Pagrindinis MENIU";
-        $inf['active'] = "INFORMACIJA";
+		$this->main_model->info['txt']['meniu'] = "Pagrindinis puslapis";
+        $this->main_model->info['txt']['info'] = "Čia pateikiama visa reikalinga informacija, kurios pagalba, bus lengva pateikti duomenis, keisti nustatymus. ";
 
-		$this->load->model('ukininkai_model');
-		$data = $this->ukininkai_model->ukininku_sarasas();
-		$this->load->view('main_view', array('data'=> $data, 'error' => $error, 'inf' => $inf));
+        //Nuskaitom ukininku sarasa, kad butu visada po ranka
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
+
+		$this->load->view('main_view');
 	}
 
 	public function auth_error(){
-        $inf = array();
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Vartotojų valdymas";
-        $inf['active'] = "Prisijungimo KLAIDA!";
+        $this->main_model->info['txt']['meniu'] = "Vartotojų valdymas";
+        $this->main_model->info['txt']['info'] = "Prisijungimo KLAIDA!";
 
-		$this->load->view('main_view', array('inf' => $inf));
+		$this->load->view('main_view');
 	}
 
 	public function kalendorius(){
@@ -76,10 +74,10 @@ class Main extends CI_Controller {
 		$this->load->library('calendar');
 
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Pagrindinis MENIU";
-        $inf['active'] = "Kalendorius";
+        $this->main_model->info['txt']['meniu'] = "Pagrindinis MENIU";
+        $this->main_model->info['txt']['active'] = "Kalendorius";
 
-		$this->load->view('main_view', array('data' => $data, 'inf' => $inf));
+		$this->load->view('main_view', array('data' => $data));
 	}
 }
 

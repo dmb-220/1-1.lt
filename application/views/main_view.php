@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8">
     <meta name="keywords" content="Ūkininkai, Buhalterija, Gyvuliai, Pašarai, Pasėliai, Skaičiavimai">
     <meta name="description" content="Ūkininkų buhalterijos vedimas, gyvulių, pasėlių ir pašarų skaičiavimas">
@@ -27,17 +25,14 @@
     <link href="<?= base_url(); ?>assets\css\plugins\iCheck\custom.css" rel="stylesheet">
     <!-- mano CSS -->
     <link href="<?= base_url(); ?>assets/css/mano.css" rel="stylesheet"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-
 <body class="md-skin">
-
 <div id="wrapper">
 <?php
 //uzkraunam meniu
 $this->load->view('left_view');
 ?>
-
     <div id="page-wrapper" class="gray-bg">
         <?php
         //uzkraunam virsutini meniu
@@ -95,12 +90,9 @@ $this->load->view('left_view');
     $this->load->view("chat_view");
     $this->load->view("sidebar_view");
     ?>
-
-
 </div>
 
 <!-- Mainly scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\metisMenu\jquery.metisMenu.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
@@ -178,7 +170,5 @@ $this->load->view('left_view');
         };
     }
 </script>
-
 </body>
-
 </html>

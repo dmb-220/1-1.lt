@@ -12,7 +12,7 @@
                 <div class="ibox-content">
                     <?php
                     $dt = $this->session->userdata();
-                    if($error['action']){
+                    if($this->info['error']['action']){
                         echo '<div class="alert alert-success">Pasirinkta!</div>';
                     }
                     echo form_error('ukininkas');
@@ -22,7 +22,7 @@
                             <label class="col-lg-2 control-label">Rinktis :</label>
                             <div class="col-md-6 col-sm-6">
                                 <?php
-                        foreach($data as $row){
+                        foreach($this->main_model->info['ukininkai'] as $row){
                             if($dt['nr'] == $row["valdos_nr"]){
                                 echo"<div class='i-checks'> <input type='radio' name='ukininkas' value=".$row["valdos_nr"]." disabled> ";
                                 echo $row['vardas']." ".$row['pavarde']."</div>";
@@ -58,7 +58,9 @@
                 </div>
             </div>
             <div class="ibox-content">
-                ...
+                <?php
+                var_dump($this->main_model->info);
+                ?>
             </div>
         </div>
     </div>

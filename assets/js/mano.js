@@ -18,24 +18,17 @@ $(document).ready(function() {
         if($(this).is(":checked")) {$("#inp").show();} else {$("#inp").hide();}
     });
 
-
-    $(document).ready(function() {
-        $('input[type=radio][name=operacija]').change(function() {
-            if (this.value == '1') {
-                $("#dot").show();
-            }
-            else if (this.value == '2') {
-                $("#dot").show();
-            }else{
-                $("#dot").hide();
-            }
-        });
-    });
-
-    $('#suma_be_pvm').change(function() {
-        $('#pvm_suma').val($(this).val()*0.21);
-    });
-
-
 });
 
+$(document).ready(function() {
+    $('input[type=radio][name=operacija]').change(function() {
+        if (this.value == '1') {
+            $("#dot").show();
+        }
+        else if (this.value == '2') {
+            $("#dot").show();
+        }else{
+            $("#dot").hide();
+        }
+    });
+});
