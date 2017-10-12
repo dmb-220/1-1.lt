@@ -3,7 +3,6 @@ function PrintElem(elem) {
 }
 
 $(document).ready(function() {
-
     $(".add-more").click(function(){
         var html = $(".copy").html();
         $(".after-add-more").after(html);

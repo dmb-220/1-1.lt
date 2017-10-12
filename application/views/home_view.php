@@ -56,6 +56,14 @@
                 </div>
             </div>
             <div class="ibox-content">
+                <div id="app">
+                    <datepicker :value.sync="startDate_1"></datepicker>
+                    <br/>
+                    <datepicker :value.sync="startDate_2"></datepicker>
+                    <br/>
+                    {{ startDate_1 }} - {{ startDate_2 }}
+                </div>
+                <br>
                 <?php
                 var_dump($this->main_model->info);
                 ?>
