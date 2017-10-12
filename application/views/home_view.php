@@ -12,7 +12,7 @@
                 <div class="ibox-content">
                     <?php
                     $dt = $this->session->userdata();
-                    if($this->info['error']['action']){
+                    if($this->main_model->info['error']['action']){
                         echo '<div class="alert alert-success">Pasirinkta!</div>';
                     }
                     echo form_error('ukininkas');
@@ -22,18 +22,16 @@
                             <label class="col-lg-2 control-label">Rinktis :</label>
                             <div class="col-md-6 col-sm-6">
                                 <?php
-                        foreach($this->main_model->info['ukininkai'] as $row){
-                            if($dt['nr'] == $row["valdos_nr"]){
-                                echo"<div class='i-checks'> <input type='radio' name='ukininkas' value=".$row["valdos_nr"]." disabled> ";
-                                echo $row['vardas']." ".$row['pavarde']."</div>";
-                            }else{
-                                echo"<div class='i-checks'><input type='radio' name='ukininkas' value=".$row["valdos_nr"]."> <b>";
-                                echo $row['vardas']." ".$row['pavarde'];
-                                echo"</b></div>";
-                            }
-                        }
-                        ?>
-
+                                foreach($this->main_model->info['ukininkai'] as $row){
+                                    if($dt['nr'] == $row["valdos_nr"]){
+                                        echo"<div class='radio radio-info'><input type='radio' name='ukininkas' value=".$row["valdos_nr"]." disabled> ";
+                                        echo "<label>". $row['vardas']." ".$row['pavarde']."</label></div>";
+                                    }else{
+                                        echo"<div class='radio radio-info'><input type='radio' name='ukininkas' value=".$row["valdos_nr"].">";
+                                        echo " <label><b>". $row['vardas']." ".$row['pavarde']."</b></label></div>";
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
                         <div class="form-group">

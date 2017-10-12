@@ -16,13 +16,11 @@
     <link href="<?= base_url(); ?>assets\css\plugins\datapicker\datepicker3.css" rel="stylesheet">
     <!-- Toastr style -->
     <link href="<?= base_url(); ?>assets\css\plugins\toastr\toastr.min.css" rel="stylesheet">
-    <!-- Gritter -->
-    <link href="<?= base_url(); ?>assets\js\plugins\gritter\jquery.gritter.css" rel="stylesheet">
+
     <link href="<?= base_url(); ?>assets\css\animate.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets\css\style.css" rel="stylesheet">
     <!-- FORMS -->
     <link href="<?= base_url(); ?>assets\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets\css\plugins\iCheck\custom.css" rel="stylesheet">
     <!-- mano CSS -->
     <link href="<?= base_url(); ?>assets/css/mano.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -93,35 +91,21 @@ $this->load->view('left_view');
 </div>
 
 <!-- Mainly scripts -->
+<script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
 <script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\metisMenu\jquery.metisMenu.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
 <!-- Custom and plugin javascript -->
 <script src="<?= base_url(); ?>assets\js\inspinia.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\pace\pace.min.js"></script>
-<!-- GITTER -->
-<script src="<?= base_url(); ?>assets\js\plugins\gritter\jquery.gritter.min.js"></script>
 <!-- Toastr -->
 <script src="<?= base_url(); ?>assets\js\plugins\toastr\toastr.min.js"></script>
 <!-- mano JS -->
 <script src="<?= base_url(); ?>assets\js\mano.js"></script>
-<!-- iCheck -->
-<script src="<?= base_url(); ?>assets\js\plugins\iCheck\icheck.min.js"></script>
 <!-- Data picker -->
 <script src="<?= base_url(); ?>assets\js\plugins\datapicker\bootstrap-datepicker.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('.i-checks').iCheck({
-            checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green',
-        });
-    });
-
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-
     $('#data_1 .input-group.date').datepicker({
         weekStart: 1,
         defaultViewDate: "today",
