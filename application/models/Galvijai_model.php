@@ -23,6 +23,15 @@ class Galvijai_model extends CI_Model{
         'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
     );
 
+    public $pardavimai = array(
+        'karves' => array(),
+        'verseliai' => array(),
+        'telycios_12' => array(),
+        'buliai_12' => array(),
+        'telycios_24' => array(),
+        'buliai_24' => array(),
+    );
+
     public function __construct(){
         parent::__construct();
 
@@ -88,15 +97,19 @@ class Galvijai_model extends CI_Model{
     }
 
     //skaiciuja kur dingo gyvunai pagal koda
-    public function ivykio_skaiciavimas($pp, $banda, $gyvunas){
+    public function ivykio_skaiciavimas($pp, $banda, $gyvunas, $duomenys){
         if($pp == '07' || $pp == '05'){
             if($banda == '3'){
                 if($sk['veisle'] == "Limuzinai"){
-                    $this->galvijai_model->mesiniai[$gyvunas]['parduota']++;}else{
+                    $this->galvijai_model->mesiniai[$gyvunas]['parduota']++;
+                    $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
+                }else{
                     $this->galvijai_model->galvijai[$gyvunas]['parduota']++;
+                    $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
                 }
             }else{
                 $this->galvijai_model->galvijai[$gyvunas]['parduota']++;
+                $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
             }
             //$this->galvijai[$gyvunas]['parduota']++;
         }
@@ -125,11 +138,15 @@ class Galvijai_model extends CI_Model{
         if($pp == '02'){
             if($banda == '3'){
                 if($sk['veisle'] == "Limuzinai"){
-                    $this->galvijai_model->mesiniai[$gyvunas]['parduota']++;}else{
+                    $this->galvijai_model->mesiniai[$gyvunas]['parduota']++;
+                    $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
+                }else{
                     $this->galvijai_model->galvijai[$gyvunas]['parduota']++;
+                    $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
                 }
             }else{
                 $this->galvijai_model->galvijai[$gyvunas]['parduota']++;
+                $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
             }
             //$this->galvijai[$gyvunas]['parduota']++;
         }

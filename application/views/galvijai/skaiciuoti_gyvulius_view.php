@@ -98,7 +98,7 @@
         <div class="ibox-content">
                 <div class="table-responsive">
                     <h4><strong>
-                            <p class="text-center">GYVULIŲ APSKAITOS LENTELĖ</p>
+                            <div class="text-center">GYVULIŲ APSKAITOS LENTELĖ</div>
                         </strong></h4><br><br>
                     <div class="pull-left">
                         <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
@@ -129,7 +129,9 @@
                                         <th>Judėjimas Į</th>
                                         <th>Kritimai</th>
                                         <th>Suvartota ūkyje</th>
-                                        <th>Parduota</th>
+                                        <th>
+                                            <a data-toggle="modal" data-target="#pardavimai">Parduota</a>
+                                        </th>
                                         <th>Mėnesio pabaigoje</th>
                                     </tr>
                                     </thead>
@@ -178,7 +180,9 @@
                                     <th colspan="2">Judėjimas Į</th>
                                     <th colspan="2">Kritimai</th>
                                     <th colspan="2">Suvartota ūkyje</th>
-                                    <th colspan="2">Parduota</th>
+                                    <th colspan="2">
+                                        <a data-toggle="modal" data-target="#pardavimai">Parduota</a>
+                                    </th>
                                     <th colspan="2">Mėnesio pabaigoje</th>
                                 </tr>
                                 <tr>
@@ -258,4 +262,52 @@
     </div>
             <?php }
             ?>
+    <!-- pardavimai galviju, kam parduota -->
+    <div id="pardavimai" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Pardavimai</h4>
+                </div>
+                <div class="modal-body">
+
+                    <?php
+                    $par = array('karves' => "Karvės", 'verseliai' => "Veršeliai", 'telycios_12' => "Telyčios 1-2 m.",
+                        'buliai_12' => "Buliai 1-2 m.", 'telycios_24' => "Telyčios virš 2 m.", 'buliai_24' => "Buliai virš 2 m.",
+                    );
+
+                    //var_dump($this->galvijai_model->pardavimai);
+                    foreach ($this->galvijai_model->pardavimai as $key => $pardavimai){
+                        if(!empty($pardavimai)){
+                            echo"<div class='text-center'><h2>".$par[$key]."</h2></div><hr>";
+                            echo"<table class='table table-bordered table-hover'>
+                                    <thead>
+                                        <tr>
+                                            <th>Numeris</th>
+                                            <th>Kam parduota?</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>";
+                                       foreach ($pardavimai as $row) {
+                                           $kam = str_replace("Įvykiai", " ", $row['kam']);
+                                echo"<tr>
+                                    <td><b>".$row['numeris']."</b></td>
+                                    <td>".$kam."</td>
+                                    </tr>";
+                                       }
+                                    echo"</tbody>
+                                 </table>";
+                        //var_dump($pardavimai);
+                        }
+                    }
+                    ?>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Uždaryti</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

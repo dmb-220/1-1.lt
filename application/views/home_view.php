@@ -64,9 +64,27 @@
                     {{ startDate_1 }} - {{ startDate_2 }}
                 </div>
                 <br>
-                <?php
-                var_dump($this->main_model->info);
-                ?>
+                <?php /*
+                //var_dump($this->main_model->info);
+                $array = array();
+                $this->db->where(array('ukininkas' => '1004556454', 'menesis' => 7));
+                $query = $this->db->get("galvijai");
+                $data = $query->result_array();
+
+                //var_dump($data);
+
+                foreach ($data as $da){
+                    //var_dump($da);
+                    $this->db->select('id');
+                    $this->db->from('galvijai');
+                    $arra = array('ukininkas' => $da['ukininkas'], 'menesis' => 8, 'numeris' => $da['numeris']);
+                    $this->db->where($arra);
+                    $re = $this->db->count_all_results();
+                    if($re < 1){$array[] = $da;}
+                }
+
+                var_dump($array);
+                */?>
             </div>
         </div>
     </div>

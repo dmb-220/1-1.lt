@@ -152,7 +152,7 @@ class Galvijai extends CI_Controller {
             //kiekviena irasa reikia patikrinti, artoks nera, nes prie visi galvijai dubliuojasi
             $kiek = $this->galvijai_model->tikinti_gyvulius_ikelti($metai, $menesis, $ukininkas);
             $men = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa",
-                "Rugpjūtis", "Rugsejis", "Spalis","Lapkritis", "Gruodis");
+                "Rugpjūtis", "Rugsėjis", "Spalis","Lapkritis", "Gruodis");
             //reik patikrinti ar antra karta neitraukia gyvulio ta pati menesi
             //buna kad prie visu gyvuliu pagal nr dubliuojasi
             if($kiek>0){
@@ -339,7 +339,8 @@ class Galvijai extends CI_Controller {
                         //issifiltruojam ivykio koda
                         $pp = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
                         //tikrinsim pagal ivykio koda kas nutiko gyvuliui
-                        $this->galvijai_model->ivykio_skaiciavimas($pp, $banda,  "karves");
+                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                        $this->galvijai_model->ivykio_skaiciavimas($pp, $banda,  "karves", $dd);
                     }
                 }
 
@@ -538,8 +539,8 @@ class Galvijai extends CI_Controller {
                                 //$this->galvijai_model->galvijai['verseliai']['j_is']++;
                                 //$this->galvijai_model->galvijai['buliai_12']['j_i']++;
                             }
-
-                            $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "buliai_12");
+                            $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                            $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "buliai_12", $dd);
                         }
                         if ($mo >= 24) {
                             $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
@@ -560,8 +561,8 @@ class Galvijai extends CI_Controller {
                                 //$this->galvijai_model->galvijai['buliai_12']['j_is']++;
                                 //$this->galvijai_model->galvijai['buliai_24']['j_i']++;
                             }
-
-                            $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "buliai_24");
+                            $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                            $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "buliai_24", $dd);
                         }
                         if ($mo < 12) {
                             $lp = explode(".", $sk['laikymo_pradzia']);
@@ -577,8 +578,8 @@ class Galvijai extends CI_Controller {
                                     $this->galvijai_model->galvijai['verseliai']['gimimai']++;
                                 }
                             }
-
-                            $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "verseliai");
+                            $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                            $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "verseliai", $dd);
                         }
 
 
@@ -781,8 +782,8 @@ class Galvijai extends CI_Controller {
                                     //$this->galvijai_model->galvijai['verseliai']['j_is']++;
                                     //$this->galvijai_model->galvijai['telycios_12']['j_i']++;
                                 }
-
-                                $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "telycios_12");
+                                $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "telycios_12", $dd);
                             }
                             if ($mo >= 24) {
                                 $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
@@ -803,8 +804,8 @@ class Galvijai extends CI_Controller {
                                     //$this->galvijai_model->galvijai['telycios_12']['j_is']++;
                                     //$this->galvijai_model->galvijai['telycios_24']['j_i']++;
                                 }
-
-                                $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "telycios_24");
+                                $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                $this->galvijai_model->ivykio_skaiciavimas($pa, $banda, "telycios_24", $dd);
                             }
                             if ($mo < 12) {
                                 $lp = explode(".", $sk['laikymo_pradzia']);
@@ -820,8 +821,8 @@ class Galvijai extends CI_Controller {
                                         $this->galvijai_model->galvijai['verseliai']['gimimai']++;
                                     }
                                 }
-
-                                $this->galvijai_model->ivykio_skaiciavimas($pa, $banda,  "verseliai");
+                                $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                $this->galvijai_model->ivykio_skaiciavimas($pa, $banda,  "verseliai", $dd);
                             }
                     }
                 }
