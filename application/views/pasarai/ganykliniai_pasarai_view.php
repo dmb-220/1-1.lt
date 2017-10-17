@@ -77,12 +77,16 @@
                                     $me = date('m');
                                     for($i=0; $i<count($men); $i++) {
                                         //reik sutvarkyti, jei sezonas praejes, leistu apskaiciuoti visa
-                                        if($me > $arr[$i] && $arr[$i] != '00'){
-                                                echo "<option value=" . $i . ">";
-                                        }
-                                        echo $men[$i];
-                                        echo"</option>";
-                                    } ?>
+                                        if($me > $arr[$i] && $arr[$i] != '00' && $arr[$i] != '10'){
+                                                echo "<option value=" . $i . ">".$men[$i]."</option>";}
+                                                if($arr[$i] == 10 && date('d') > 15){
+                                                    echo "<option value=" . $i . ">Iki ".$this->linksniai->getName($men[$i], 'kil')." 15 d.</option>";
+                                                }
+                                    }
+                                    /*if(date('m') == 10 && date('d') > 15){
+                                        echo "<option value='00'>Visas sezonas</option>";
+                                    }*/
+                                    ?>
                                 </select>
                             </div>
                         </div>
@@ -101,6 +105,7 @@
 
     <?php
     if($this->main_model->info['error']['action'] == 1) {
+        //var_dump($this->main_model->info['txt']);
         ?>
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -124,7 +129,11 @@
                     <div class="pull-right">
                         <?php
                         $men = array("Visas sezonas", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis");
-                        echo $this->main_model->info['txt']['sezonas']." sezonas: <b>".$men[$this->main_model->info['txt']['laikotarpis']]."</b>";
+                        echo $this->main_model->info['txt']['sezonas']." sezonas: ";
+                        if($this->main_model->info['txt']['laikotarpis'] == 6){
+                            echo"<b>".$men[$this->main_model->info['txt']['laikotarpis']]." 1 - 15 d.</b>";}else{
+                            echo"<b>".$men[$this->main_model->info['txt']['laikotarpis']]."</b>";
+                        }
                         ?>
                     </div>
                     <hr>

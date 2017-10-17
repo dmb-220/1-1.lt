@@ -186,7 +186,7 @@ class Pasarai extends CI_Controller{
             $auth = $ukis[0]['VIC_vartotojo_vardas'].":".$ukis[0]['VIC_slaptazodis'];
 
 
-            if($laikotarpis != 0) {
+            if($laikotarpis != 00) {
                 //sita iskelti
                 $gyvu = array(
                     'karves' => array('kiek' => 0, 'pasarai' => 0, 'pavadinimas' => 'M. Karvės',),
@@ -194,11 +194,11 @@ class Pasarai extends CI_Controller{
                     'telycios' => array('kiek' => 0, 'pasarai' => 0, 'pavadinimas' => 'Telyčios',),
                     'buliai' => array('kiek' => 0,  'pasarai' => 0, 'pavadinimas' => 'Buliai',),
                 );
-
-                $day = cal_days_in_month(CAL_GREGORIAN, $arr[$laikotarpis], $sezonas);
+                if($arr[$laikotarpis] == 10){$day = 15;}else{
+                $day = cal_days_in_month(CAL_GREGORIAN, $arr[$laikotarpis], $sezonas);}
 
                 //sugeneruojame data skirta siusti i VIC.LT
-                $da = $sezonas.'.'.$arr[$laikotarpis].'.'.cal_days_in_month(CAL_GREGORIAN, $arr[$laikotarpis], $sezonas);
+                $da = $sezonas.'.'.$arr[$laikotarpis].'.'.$day;
                 //sukuriam masyva POST
                 $post = ['v_data' => $da, 'v_rus' => 1];
                 //nuskaitom VIC.LT
@@ -251,7 +251,7 @@ class Pasarai extends CI_Controller{
             }else{
 
                 //Cia dar gali buti klaidu, teks patvarkyti, kai jau gales skaiciuoti visa sezona
-                $gyvu = array(
+                /*$gyvu = array(
                     'karves' => array('pavadinimas' => 'M. Karvės',
                         '11' => array('kiek' => 0, 'pasarai' => 0,),
                         '12' => array('kiek' => 0, 'pasarai' => 0,),
@@ -352,7 +352,7 @@ class Pasarai extends CI_Controller{
                 }
 
                 $this->main_model->info['error']['action'] = 2;
-            }
+            */}
             //$error['action'] = TRUE;
         }
 
@@ -392,13 +392,15 @@ class Pasarai extends CI_Controller{
         );
 
         $arr = array(
-            '00', '11', '12', '01', '02', '03', '04'
+            '00', '10', '11', '12', '01', '02', '03', '04'
         );
 
 
         if ($this->form_validation->run()) {
             $sezonas = $this->input->post('sezonas');
             $laikotarpis = $this->input->post('laikotarpis');
+
+            //reikia iterpti tikrinima , kad jei to sezono menesis nepraejes, neleistu jo paziureti
 
             $this->main_model->info['txt']['sezonas'] = $sezonas;
             $this->main_model->info['txt']['laikotarpis'] = $laikotarpis;
@@ -446,28 +448,43 @@ class Pasarai extends CI_Controller{
                         $one = explode(" ", $sk[4]);
                         if ($one[0] == "Karvė") {
                                 $gyvu['karves']['kiek']++;
-                                $gyvu['karves']['meslas'] += $mesl['karves'];
+                                if($laikotarpis == 1){
+                                    $gyvu['karves']['meslas'] += $mesl['karves']/2;
+                                }else{
+                                    $gyvu['karves']['meslas'] += $mesl['karves'];}
                         }
 
                         if ($one[0] == "Buliukas") {
                             if ($sk[7] >= 12) {
                                 $gyvu['buliai']['kiek']++;
-                                $gyvu['buliai']['meslas'] += $mesl['buliai'];
+                                if($laikotarpis == 1){
+                                    $gyvu['karves']['meslas'] += $mesl['karves']/2;
+                                }else{
+                                    $gyvu['karves']['meslas'] += $mesl['karves'];}
                             }
                             if ($sk[7] < 12) {
                                 $gyvu['verseliai']['kiek']++;
-                                $gyvu['verseliai']['meslas'] += $mesl['verseliai'];
+                                if($laikotarpis == 1){
+                                    $gyvu['karves']['meslas'] += $mesl['karves']/2;
+                                }else{
+                                    $gyvu['karves']['meslas'] += $mesl['karves'];}
                             }
                         }
 
                         if ($one[0] == "Telyčaitė") {
                             if ($sk[7] >= 12) {
                                 $gyvu['telycios']['kiek']++;
-                                $gyvu['telycios']['meslas'] += $mesl['telycios'];
+                                if($laikotarpis == 1){
+                                    $gyvu['karves']['meslas'] += $mesl['karves']/2;
+                                }else{
+                                    $gyvu['karves']['meslas'] += $mesl['karves'];}
                             }
                             if ($sk[7] < 12) {
                                 $gyvu['verseliai']['kiek']++;
-                                $gyvu['verseliai']['meslas'] += $mesl['verseliai'];
+                                if($laikotarpis == 1){
+                                    $gyvu['karves']['meslas'] += $mesl['karves']/2;
+                                }else{
+                                    $gyvu['karves']['meslas'] += $mesl['karves'];}
                             }
                         }
                     }
@@ -689,6 +706,7 @@ class Pasarai extends CI_Controller{
 
         $this->form_validation->set_rules('vardas', 'Įveskite vardą', 'required', array('required' => 'Įveskite ūkininko vardą'));
         $this->form_validation->set_rules('pavarde', 'Įveskite pavardę', 'required', array('required' => 'Įveskite ūkininko pavardę!'));
+        $this->form_validation->set_rules('rinktis', 'Skaiciavimas', 'required', array('required' => 'Pasirinkite skaičiavimo metodą'));
 
         if ($this->form_validation->run()) {
             foreach($data as $key => $row){
@@ -698,12 +716,15 @@ class Pasarai extends CI_Controller{
             $pavarde = $this->input->post('pavarde');
             $menesis = $this->input->post('menesis');
             $laikotarpis = $this->input->post('laikotarpis');
+            $rinktis = $this->input->post('rinktis');
 
             $metai = 2017;
             $this->main_model->info['txt']['metai'] = $metai;
             $this->main_model->info['txt']['menesis'] = $menesis;
             $this->main_model->info['txt']['vardas'] = $vardas;
             $this->main_model->info['txt']['pavarde'] = $pavarde;
+
+            $this->main_model->info['txt']['rinktis'] = $rinktis;
 
 
             //patikrinam kokie pasirinkimai yra, kad maziau nesusipratimu skaiciuojant
@@ -954,15 +975,19 @@ class Pasarai extends CI_Controller{
             $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
         }
         $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
+        $this->form_validation->set_rules('rinktis', 'Skaiciavimas', 'required', array('required' => 'Pasirinkite skaičiavimo metodą.'));
         //$this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
 
         if ($this->form_validation->run()) {
             $metai = $this->input->post('metai');
             $menesis = $this->input->post('menesis');
             $laikotarpis = $this->input->post('laikotarpis');
+            $rinktis = $this->input->post('rinktis');
 
             $this->main_model->info['txt']['metai'] = $metai;
             $this->main_model->info['txt']['menesis'] = $menesis;
+
+            $this->main_model->info['txt']['rinktis'] = $rinktis;
 
             //patikrinam kokie pasirinkimai yra, kad maziau nesusipratimu skaiciuojant
             if(!$menesis AND !$laikotarpis){

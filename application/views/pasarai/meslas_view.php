@@ -45,8 +45,8 @@
                                 <?php echo form_error('sezonas'); ?>
                                 <select name="sezonas" class="form-control">
                                     <option value="2016">2015 - 2016</option>
-                                    <option value="2017" selected="selected">2016 - 2017</option>
-                                    <option value="2018">2017 - 2018</option>
+                                    <option value="2017">2016 - 2017</option>
+                                    <option value="2018" selected="selected">2017 - 2018</option>
                                     <option value="2019">2018 - 2019</option>
                                 </select>
                             </div>
@@ -55,7 +55,7 @@
                             <label class="col-md-4 control-label">Laikotarpis</label>
                             <div class="col-md-6">
                                 <?php
-                                $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
+                                $men = array("Visas sezonas", "Spalis", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
                                 ?>
                                 <?php echo form_error('laikotarpis'); ?>
                                 <select name="laikotarpis" class="form-control">
@@ -106,7 +106,7 @@
                     </div>
                     <div class="pull-right">
                         <?php
-                        $men = array("Visas sezonas", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
+                        $men = array("Visas sezonas", "Spalis", "Lapkritis", "Gruodis", "Sausis", "Vasaris", "Kovas", "Balandis");
                         $sezo = $this->main_model->info['txt']['sezonas']-1;
                         echo $sezo." - ".$this->main_model->info['txt']['sezonas']." sezonas: <b>".$this->main_model->info['txt']['metai']." ".$men[$this->main_model->info['txt']['laikotarpis']]."</b>";
                         ?>

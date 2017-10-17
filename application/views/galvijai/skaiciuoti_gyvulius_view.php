@@ -124,7 +124,9 @@
                                         <th>Gyvuliai</th>
                                         <th>Mėnesio pradžioje</th>
                                         <th>Gimimai</th>
-                                        <th>Pirkimai</th>
+                                        <th>
+                                            <a data-toggle="modal" data-target="#pirkimai">Pirkimai</a>
+                                        </th>
                                         <th>Judėjimas IŠ</th>
                                         <th>Judėjimas Į</th>
                                         <th>Kritimai</th>
@@ -175,7 +177,9 @@
                                     <th rowspan="2">Gyvuliai</th>
                                     <th colspan="2">Mėnesio pradžioje</th>
                                     <th colspan="2">Gimimai</th>
-                                    <th colspan="2">Pirkimai</th>
+                                    <th colspan="2">
+                                        <a data-toggle="modal" data-target="#pirkimai">Pirkimai</a>
+                                    </th>
                                     <th colspan="2">Judėjimas IŠ</th>
                                     <th colspan="2">Judėjimas Į</th>
                                     <th colspan="2">Kritimai</th>
@@ -298,6 +302,54 @@
                                     echo"</tbody>
                                  </table>";
                         //var_dump($pardavimai);
+                        }
+                    }
+                    ?>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Uždaryti</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- pardavimai galviju, kam parduota -->
+    <div id="pirkimai" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Pirkimai</h4>
+                </div>
+                <div class="modal-body">
+
+                    <?php
+                    $par = array('karves' => "Karvės", 'verseliai' => "Veršeliai", 'telycios_12' => "Telyčios 1-2 m.",
+                        'buliai_12' => "Buliai 1-2 m.", 'telycios_24' => "Telyčios virš 2 m.", 'buliai_24' => "Buliai virš 2 m.",
+                    );
+
+                    //var_dump($this->galvijai_model->pardavimai);
+                    foreach ($this->galvijai_model->pirkimai as $key => $pardavimai){
+                        if(!empty($pardavimai)){
+                            echo"<div class='text-center'><h2>".$par[$key]."</h2></div><hr>";
+                            echo"<table class='table table-bordered table-hover'>
+                                    <thead>
+                                        <tr>
+                                            <th>Numeris</th>
+                                            <th>Iš ko nupirkta?</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>";
+                            foreach ($pardavimai as $row) {
+                                $kam = str_replace("Įvykiai", " ", $row['kam']);
+                                echo"<tr>
+                                    <td><b>".$row['numeris']."</b></td>
+                                    <td>".$kam."</td>
+                                    </tr>";
+                            }
+                            echo"</tbody>
+                                 </table>";
+                            //var_dump($pardavimai);
                         }
                     }
                     ?>

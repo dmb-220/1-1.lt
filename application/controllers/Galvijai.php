@@ -95,7 +95,7 @@ class Galvijai extends CI_Controller {
         $this->main_model->info['txt']['info'] = "Galvijų sąrašas";
 
         $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
-        $this->load->view("main_view", array('data' => $data, 'gyvu' => $gyvu));
+        $this->load->view("main_view", array('gyvu' => $gyvu));
     }
 
     ///////////////////////////////////////////// IKELIAMI DUOMENYS IS VIC.LT  //////////////////////////////////////////////
@@ -316,15 +316,21 @@ class Galvijai extends CI_Controller {
                             $this->galvijai_model->galvijai['karves']['pabaiga']++;
                         }
                         //nupirktos karves
+                        $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
                         $laikas = explode(".",$sk['laikymo_pradzia']);
                         if($laikas[0] == $metai AND $laikas[1] == $menesis){
                             if($banda == '3'){
                                 if($sk['veisle'] == "Limuzinai"){
-                                    $this->galvijai_model->mesiniai['karves']['pirkimai']++;}else{
+                                    $this->galvijai_model->mesiniai['karves']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['karves'][] = $da;
+                                }else{
                                     $this->galvijai_model->galvijai['karves']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['karves'][] = $da;
                                 }
                             }else{
                                 $this->galvijai_model->galvijai['karves']['pirkimai']++;
+                                $this->galvijai_model->pirkimai['karves'][] = $da;
                             }
                         }
                         //karviu judejimas is telyciu
@@ -380,17 +386,22 @@ class Galvijai extends CI_Controller {
                             }
                         }
                         //tikrinam ar nera nupirktas
+                        $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
                         $lka = explode(".", $sk['laikymo_pradzia']);
                         $info = explode(" ",$sk['informacija']);
                         if($lka[0] == $metai AND $lka[1] == $menesis AND $info[1] == 'Atvyko'){
-                            //$this->galvijai_model->galvijai['buliai_12']['pirkimai']++;
                             if($banda == '3'){
                                 if($sk['veisle'] == "Limuzinai"){
-                                    $this->galvijai_model->mesiniai['buliai_12']['pirkimai']++;}else{
+                                    $this->galvijai_model->mesiniai['buliai_12']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['buliai_12'][] = $da;
+                                }else{
                                     $this->galvijai_model->galvijai['buliai_12']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['buliai_12'][] = $da;
                                 }
                             }else{
                                 $this->galvijai_model->galvijai['buliai_12']['pirkimai']++;
+                                $this->galvijai_model->pirkimai['buliai_12'][] = $da;
                             }
                         }
 
@@ -428,17 +439,22 @@ class Galvijai extends CI_Controller {
                             }
                         }
                         //tikrinam ar nera nupirktas
+                        $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
                         $lk = explode(".", $sk['laikymo_pradzia']);
                         $info = explode(" ",$sk['informacija']);
                         if($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko'){
-                            //$this->galvijai_model->galvijai['buliai_24']['pirkimai']++;
                             if($banda == '3'){
                                 if($sk['veisle'] == "Limuzinai"){
-                                    $this->galvijai_model->mesiniai['buliai_24']['pirkimai']++;}else{
+                                    $this->galvijai_model->mesiniai['buliai_24']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['buliai_24'][] = $da;
+                                }else{
                                     $this->galvijai_model->galvijai['buliai_24']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['buliai_24'][] = $da;
                                 }
                             }else{
                                 $this->galvijai_model->galvijai['buliai_24']['pirkimai']++;
+                                $this->galvijai_model->pirkimai['buliai_24'][] = $da;
                             }
                         }
                     }
@@ -486,15 +502,20 @@ class Galvijai extends CI_Controller {
                                 }
                         }
                     }
+                        $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
                         if($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko'){
-                            //$this->galvijai_model->galvijai['verseliai']['pirkimai']++;
                             if($banda == '3'){
                                 if($sk['veisle'] == "Limuzinai"){
-                                    $this->galvijai_model->mesiniai['verseliai']['pirkimai']++;}else{
+                                    $this->galvijai_model->mesiniai['verseliai']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['verseliai'][] = $da;
+                                }else{
                                     $this->galvijai_model->galvijai['verseliai']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['verseliai'][] = $da;
                                 }
                             }else{
                                 $this->galvijai_model->galvijai['verseliai']['pirkimai']++;
+                                $this->galvijai_model->pirkimai['verseliai'][] = $da;
                             }
                         }
                     }
@@ -621,19 +642,25 @@ class Galvijai extends CI_Controller {
                             }
                         }
                         //pirkimai
+                        $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
                         $lk = explode(".", $sk['laikymo_pradzia']);
                         $info = explode(" ",$sk['informacija']);
                         if($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko'){
-                            //$this->galvijai_model->galvijai['telycios_12']['pirkimai']++;
                             if($banda == '3'){
                                 if($sk['veisle'] == "Limuzinai"){
-                                    $this->galvijai_model->mesiniai['telycios_12']['pirkimai']++;}else{
+                                    $this->galvijai_model->mesiniai['telycios_12']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['telycios_12'][] = $da;
+                                }else{
                                     $this->galvijai_model->galvijai['telycios_12']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['telycios_12'][] = $da;
                                 }
                             }else{
                                 $this->galvijai_model->galvijai['telycios_12']['pirkimai']++;
+                                $this->galvijai_model->pirkimai['telycios_12'][] = $da;
                             }
                         }
+
                     }
 
                     //Telycaites virs 24
@@ -669,17 +696,22 @@ class Galvijai extends CI_Controller {
                             }
                         }
                         //pirkimai
+                        $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
                         $lk = explode(".", $sk['laikymo_pradzia']);
                         $info = explode(" ",$sk['informacija']);
                         if($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko'){
-                            //$this->galvijai_model->galvijai['telycios_24']['pirkimai']++;
                             if($banda == '3'){
                                 if($sk['veisle'] == "Limuzinai"){
-                                    $this->galvijai_model->mesiniai['telycios_24']['pirkimai']++;}else{
+                                    $this->galvijai_model->mesiniai['telycios_24']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['telycios_24'][] = $da;
+                                }else{
                                     $this->galvijai_model->galvijai['telycios_24']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['telycios_24'][] = $da;
                                 }
                             }else{
                                 $this->galvijai_model->galvijai['telycios_24']['pirkimai']++;
+                                $this->galvijai_model->pirkimai['telycios_24'][] = $da;
                             }
                         }
                     }
@@ -726,15 +758,21 @@ class Galvijai extends CI_Controller {
                             }
                         }
 
+                        $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
                         if($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko'){
                             //$this->galvijai_model->galvijai['verseliai']['pirkimai']++;
                             if($banda == '3'){
                                 if($sk['veisle'] == "Limuzinai"){
-                                    $this->galvijai_model->mesiniai['verseliai']['pirkimai']++;}else{
+                                    $this->galvijai_model->mesiniai['verseliai']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['verseliai'][] = $da;
+                                }else{
                                     $this->galvijai_model->galvijai['verseliai']['pirkimai']++;
+                                    $this->galvijai_model->pirkimai['verseliai'][] = $da;
                                 }
                             }else{
                                 $this->galvijai_model->galvijai['verseliai']['pirkimai']++;
+                                $this->galvijai_model->pirkimai['verseliai'][] = $da;
                             }
                         }
                     }

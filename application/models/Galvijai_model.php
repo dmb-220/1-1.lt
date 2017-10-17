@@ -24,6 +24,14 @@ class Galvijai_model extends CI_Model{
     );
 
     public $pardavimai = array(
+    'karves' => array(),
+    'verseliai' => array(),
+    'telycios_12' => array(),
+    'buliai_12' => array(),
+    'telycios_24' => array(),
+    'buliai_24' => array(),
+);
+    public $pirkimai = array(
         'karves' => array(),
         'verseliai' => array(),
         'telycios_12' => array(),
@@ -95,6 +103,26 @@ class Galvijai_model extends CI_Model{
             }
         }
     }
+
+    //galviju pirkimas
+    /*public function galviju_pirkimas($pradzia, $informacija, $banda, $gyvunas, $duomenys){
+        $lka = explode(".", $pradzia);
+        $info = explode(" ",$informacija);
+        if($lka[0] == $metai AND $lka[1] == $menesis AND $info[1] == 'Atvyko'){
+            if($banda == '3'){
+                if($sk['veisle'] == "Limuzinai"){
+                    $this->galvijai_model->mesiniai[$gyvunas]['pirkimai']++;
+                    $this->galvijai_model->pirkimai[$gyvunas][] = $duomenys;
+                }else{
+                    $this->galvijai_model->galvijai[$gyvunas]['pirkimai']++;
+                    $this->galvijai_model->pirkimai[$gyvunas][] = $duomenys;
+                }
+            }else{
+                $this->galvijai_model->galvijai[$gyvunas]['pirkimai']++;
+                $this->galvijai_model->pirkimai[$gyvunas][] = $duomenys;
+            }
+        }
+    }*/
 
     //skaiciuja kur dingo gyvunai pagal koda
     public function ivykio_skaiciavimas($pp, $banda, $gyvunas, $duomenys){

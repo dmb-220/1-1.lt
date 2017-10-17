@@ -103,6 +103,28 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-4 control-label">Skaičiavimas</label>
+                        <div class="col-md-8">
+                            <?php echo form_error('rinktis'); ?>
+                            <div class="radio radio-info radio-info radio-inline">
+                                <input type="radio" value="1" name="rinktis">
+                                <label> MAŽIAUSIAI </label>
+                            </div>
+                            <div class="radio radio-info radio-inline">
+                                <input type="radio" value="2" name="rinktis">
+                                <label> VIDURKIS </label>
+                            </div>
+                            <div class="radio radio-info radio-inline">
+                                <input type="radio" value="3" name="rinktis">
+                                <label> DAUGIAUSIAI </label>
+                            </div>
+                            <div class="radio radio-info radio-inline">
+                                <input type="radio" value="4" name="rinktis">
+                                <label> BENDRAS </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="control-label col-md-4 col-sm-4"></label>
                         <div class="col-md-6 col-sm-6">
                             <button class="btn btn-block btn-outline btn-primary" type="submit">
@@ -176,12 +198,23 @@ if($this->main_model->info['error']['action']){ ?>
                             echo $col[$ke[$i]];
                         } else {
                             if ($col[$ke[$i]]['vid'] != 0 OR $col[$ke[$i]]['vid'] != '') {
-                                if( $col[$ke[$i]]['vid'] ==  $col[$ke[$i]]['min'] AND $col[$ke[$i]]['vid'] == $col[$ke[$i]]['max']){
-                                    echo round($col[$ke[$i]]['vid'] / 1000, 2)." T.<br>";
-                                }else{
-                                    echo "MIN: ".round($col[$ke[$i]]['min'] / 1000, 2)." T.<br>";
-                                    echo "VID: ".round($col[$ke[$i]]['vid'] / 1000, 2)." T.<br>";
-                                    echo "MAX: ".round($col[$ke[$i]]['max'] / 1000, 2)." T.";
+                                if( $this->main_model->info['txt']['rinktis'] == 4){
+                                    if( $col[$ke[$i]]['vid'] ==  $col[$ke[$i]]['min'] AND $col[$ke[$i]]['vid'] == $col[$ke[$i]]['max']){
+                                        echo round($col[$ke[$i]]['vid'] / 1000, 2)." T.<br>";
+                                    }else{
+                                        echo "MIN: ".round($col[$ke[$i]]['min'] / 1000, 2)." T.<br>";
+                                        echo "VID: ".round($col[$ke[$i]]['vid'] / 1000, 2)." T.<br>";
+                                        echo "MAX: ".round($col[$ke[$i]]['max'] / 1000, 2)." T.";
+                                    }
+                                }
+                                if( $this->main_model->info['txt']['rinktis'] == 3){
+                                    echo round($col[$ke[$i]]['max'] / 1000, 2)." T.";
+                                }
+                                if( $this->main_model->info['txt']['rinktis'] == 2){
+                                    echo round($col[$ke[$i]]['vid'] / 1000, 2)." T.";
+                                }
+                                if( $this->main_model->info['txt']['rinktis'] == 1){
+                                    echo round($col[$ke[$i]]['min'] / 1000, 2)." T.";
                                 }
                             }
                         }
