@@ -1,30 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="ukio saskaitos plano suvedimas">
+    <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DATA/Darbsut.xls" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/Sutartys.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Autoloader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/APC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/CacheBase.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/DiscISAM.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/ICache.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/Igbinary.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/Memcache.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/Memory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/MemoryGZip.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/MemorySerialized.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/PHPTemp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/SQLite.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/SQLite3.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorage/Wincache.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CachedObjectStorageFactory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CalcEngine/CyclicReferenceStack.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/CalcEngine/Logger.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/Database.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/DateTime.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/Engineering.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/Exception.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/ExceptionHandler.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/Financial.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/FormulaParser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/FormulaToken.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/Function.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/Functions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/Logical.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/LookupRef.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/MathTrig.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/Statistical.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/TextData.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/Token/Stack.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Calculation/functionlist.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Cell.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Cell/AdvancedValueBinder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Cell/DataType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Cell/DataValidation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Cell/DefaultValueBinder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Cell/Hyperlink.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Cell/IValueBinder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/Axis.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/DataSeries.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/DataSeriesValues.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/Exception.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/GridLines.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/Layout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/Legend.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/PlotArea.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/Properties.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/Renderer/jpgraph.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Chart/Title.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Comment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/DocumentProperties.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/DocumentSecurity.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Exception.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/HashTable.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Helper/HTML.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/IComparable.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/IOFactory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/NamedRange.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Abstract.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/CSV.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/DefaultReadFilter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel2003XML.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel2007.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel2007/Chart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel2007/Theme.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/Color.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/Color/BIFF5.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/Color/BIFF8.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/Color/BuiltIn.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/ErrorCode.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/Escher.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/MD5.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/RC4.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/Style/Border.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Excel5/Style/FillPattern.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Exception.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/Gnumeric.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/HTML.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/IReadFilter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/IReader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/OOCalc.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Reader/SYLK.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/ReferenceHelper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/RichText.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/RichText/ITextElement.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/RichText/Run.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/RichText/TextElement.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Settings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/CodePage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Date.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Drawing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Escher.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Escher/DgContainer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Escher/DggContainer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Excel5.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/File.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/Font.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/JAMA/CHANGELOG.TXT" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/JAMA/CholeskyDecomposition.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/JAMA/LUDecomposition.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/JAMA/Matrix.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/JAMA/QRDecomposition.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/JAMA/SingularValueDecomposition.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/JAMA/utils/Error.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/JAMA/utils/Maths.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/OLE.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/OLE/ChainedBlockStream.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/OLE/PPS.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/OLE/PPS/File.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/OLE/PPS/Root.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/OLERead.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/PCLZip/gnu-lgpl.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/PCLZip/pclzip.lib.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/PCLZip/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/PasswordHasher.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/String.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/TimeZone.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/XMLWriter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/ZipArchive.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/ZipStreamWrapper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/trend/bestFitClass.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/trend/exponentialBestFitClass.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/trend/linearBestFitClass.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/trend/logarithmicBestFitClass.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/trend/polynomialBestFitClass.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/trend/powerBestFitClass.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Shared/trend/trendClass.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/Alignment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/Border.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/Borders.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/Color.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/Conditional.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/Fill.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/Font.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/NumberFormat.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/Protection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Style/Supervisor.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/AutoFilter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/AutoFilter/Column.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/AutoFilter/Column/Rule.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/BaseDrawing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/CellIterator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/Column.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/ColumnCellIterator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/ColumnDimension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/ColumnIterator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/Dimension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/Drawing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/Drawing/Shadow.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/HeaderFooter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/HeaderFooterDrawing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/MemoryDrawing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/PageMargins.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/PageSetup.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/Protection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/Row.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/RowCellIterator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/RowDimension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/RowIterator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Worksheet/SheetView.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/WorksheetIterator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Abstract.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/CSV.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/Chart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/Comments.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/ContentTypes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/DocProps.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/Drawing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/Rels.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/RelsRibbon.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/RelsVBA.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/StringTable.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/Style.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/Theme.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/Workbook.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/Worksheet.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel2007/WriterPart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel5.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel5/BIFFwriter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel5/Escher.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel5/Font.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel5/Parser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel5/Workbook.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel5/Worksheet.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Excel5/Xf.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/Exception.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/HTML.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/IWriter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument/Cell/Comment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument/Content.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument/Meta.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument/MetaInf.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument/Mimetype.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument/Settings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument/Styles.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument/Thumbnails.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/OpenDocument/WriterPart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/PDF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/PDF/Core.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/PDF/DomPDF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/PDF/mPDF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/Writer/PDF/tcPDF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/bg/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/cs/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/cs/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/da/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/da/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/de/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/de/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/en/uk/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/es/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/es/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/fi/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/fi/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/fr/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/fr/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/hu/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/hu/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/it/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/it/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/nl/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/nl/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/no/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/no/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/pl/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/pl/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/pt/br/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/pt/br/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/pt/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/pt/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/ru/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/ru/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/sv/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/sv/functions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/tr/config" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PHPExcel/locale/tr/functions" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Aluza.iml" afterPath="$PROJECT_DIR$/.idea/Aluza.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Galvijai.php" afterPath="$PROJECT_DIR$/application/controllers/Galvijai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Main.php" afterPath="$PROJECT_DIR$/application/controllers/Main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Pasarai.php" afterPath="$PROJECT_DIR$/application/controllers/Pasarai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Paseliai.php" afterPath="$PROJECT_DIR$/application/controllers/Paseliai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Zalia_knyga.php" afterPath="$PROJECT_DIR$/application/controllers/Zalia_knyga.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Ukininkai_model.php" afterPath="$PROJECT_DIR$/application/models/Ukininkai_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/galvijai/gyvuliu_sarasas_view.php" afterPath="$PROJECT_DIR$/application/views/galvijai/gyvuliu_sarasas_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/galvijai/nuskaityti_vic_view.php" afterPath="$PROJECT_DIR$/application/views/galvijai/nuskaityti_vic_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" afterPath="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/knyga/knyga_view.php" afterPath="$PROJECT_DIR$/application/views/knyga/knyga_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php" afterPath="$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php" afterPath="$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pasarai/ganykliniai_pasarai_view.php" afterPath="$PROJECT_DIR$/application/views/pasarai/ganykliniai_pasarai_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pasarai/meslas_view.php" afterPath="$PROJECT_DIR$/application/views/pasarai/meslas_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pasarai/normos_view.php" afterPath="$PROJECT_DIR$/application/views/pasarai/normos_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pasarai/priesvoris_view.php" afterPath="$PROJECT_DIR$/application/views/pasarai/priesvoris_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pasarai/rankinis_pasarus_view.php" afterPath="$PROJECT_DIR$/application/views/pasarai/rankinis_pasarus_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/paseliai/nauji_paseliai_view.php" afterPath="$PROJECT_DIR$/application/views/paseliai/nauji_paseliai_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/paseliai/rankinis_paselius_view.php" afterPath="$PROJECT_DIR$/application/views/paseliai/rankinis_paselius_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/paseliai/redaguoti_kodas_view.php" afterPath="$PROJECT_DIR$/application/views/paseliai/redaguoti_kodas_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/paseliai/skaiciuoti_paselius_view.php" afterPath="$PROJECT_DIR$/application/views/paseliai/skaiciuoti_paselius_view.php" />
     </list>
     <ignored path="Aluza.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,21 +319,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
+      <file leaf-file-name="naujas_irasas_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="171" column="9" lean-forward="false" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Zalia_knyga.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Zalia_knyga.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="99" column="45" lean-forward="false" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
+            <state relative-caret-position="17">
+              <caret line="126" column="28" lean-forward="false" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -107,54 +332,81 @@
       <file leaf-file-name="knyga_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/knyga/knyga_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+            <state relative-caret-position="578">
+              <caret line="34" column="10" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="105" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="naujas_irasas_view.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php">
+      <file leaf-file-name="skaitciuokle_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Paseliai.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Paseliai.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="436" column="26" lean-forward="false" selection-start-line="436" selection-start-column="19" selection-end-line="436" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vuejs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/vuejs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sutartys.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
-              <caret line="120" column="49" lean-forward="true" selection-start-line="120" selection-start-column="49" selection-end-line="120" selection-end-column="49" />
+              <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/info_view.php">
+      <file leaf-file-name="Excel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/Excel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+            <state relative-caret-position="51">
+              <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Main.php">
+      <file leaf-file-name="Sutartys_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="50" column="34" lean-forward="true" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/home_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+            <state relative-caret-position="34">
+              <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -181,6 +433,10 @@
       <find>fa</find>
       <find>// Uncomment on server mode to enable XHR calls</find>
       <find>gyvuliai</find>
+      <find>pardavimai</find>
+      <find>parduota</find>
+      <find>ivykio</find>
+      <find>pirkimai</find>
     </findStrings>
     <replaceStrings>
       <replace>pill</replace>
@@ -195,19 +451,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/gyvuliai/nuskaityti_vic_view.php" />
-        <option value="$PROJECT_DIR$/assets/css/plugins/datapicker/datepicker3.css" />
-        <option value="$PROJECT_DIR$/assets/js/plugins/datapicker/bootstrap-datepicker.js" />
-        <option value="$PROJECT_DIR$/application/views/errors/html/error_404.php" />
-        <option value="$PROJECT_DIR$/application/models/zalia_knyga_,model.php" />
-        <option value="$PROJECT_DIR$/application/views/gyvuliai/gyvuliu_sarasas_view.php" />
-        <option value="$PROJECT_DIR$/application/models/Gyvuliai_model.php" />
         <option value="$PROJECT_DIR$/application/views/gyvuliai/skaiciuoti_gyvulius_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/Gyvuliai.php" />
         <option value="$PROJECT_DIR$/application/controllers/Ukininkai.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/ikelti_gyvulius_view.php" />
-        <option value="$PROJECT_DIR$/application/views/left_view.php" />
-        <option value="$PROJECT_DIR$/application/models/Galvijai_model.php" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
         <option value="$PROJECT_DIR$/application/views/auth/no_login_view.php" />
         <option value="$PROJECT_DIR$/application/views/auth/register.php" />
@@ -217,35 +464,44 @@
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/application/views/sidebar_view.php" />
         <option value="$PROJECT_DIR$/application/models/Zalia_knyga_model.php" />
-        <option value="$PROJECT_DIR$/assets/js/mano.js" />
         <option value="$PROJECT_DIR$/application/config/autoload.php" />
-        <option value="$PROJECT_DIR$/application/views/main_view.php" />
         <option value="$PROJECT_DIR$/application/views/auth/login.php" />
         <option value="$PROJECT_DIR$/application/models/Main_model.php" />
         <option value="$PROJECT_DIR$/application/views/info_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/Auth.php" />
-        <option value="$PROJECT_DIR$/application/views/home_view.php" />
         <option value="$PROJECT_DIR$/application/models/Ukininkai_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/Main.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/gyvuliu_sarasas_view.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/nuskaityti_vic_view.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Galvijai.php" />
-        <option value="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" />
         <option value="$PROJECT_DIR$/application/views/pasarai/priesvoris_view.php" />
-        <option value="$PROJECT_DIR$/application/views/pasarai/ganykliniai_pasarai_view.php" />
-        <option value="$PROJECT_DIR$/application/views/pasarai/meslas_view.php" />
         <option value="$PROJECT_DIR$/application/views/pasarai/normos_view.php" />
-        <option value="$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Pasarai.php" />
         <option value="$PROJECT_DIR$/application/views/paseliai/redaguoti_kodas_view.php" />
         <option value="$PROJECT_DIR$/application/views/paseliai/rankinis_paselius_view.php" />
         <option value="$PROJECT_DIR$/application/views/paseliai/skaiciuoti_paselius_view.php" />
-        <option value="$PROJECT_DIR$/application/views/pasarai/rankinis_pasarus_view.php" />
         <option value="$PROJECT_DIR$/application/views/paseliai/nauji_paseliai_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/Paseliai.php" />
         <option value="$PROJECT_DIR$/application/controllers/Zalia_knyga.php" />
         <option value="$PROJECT_DIR$/application/views/knyga/knyga_view.php" />
         <option value="$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php" />
+        <option value="$PROJECT_DIR$/assets/js/mano.js" />
+        <option value="$PROJECT_DIR$/application/views/home_view.php" />
+        <option value="$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php" />
+        <option value="$PROJECT_DIR$/application/views/pasarai/rankinis_pasarus_view.php" />
+        <option value="$PROJECT_DIR$/application/views/pasarai/ganykliniai_pasarai_view.php" />
+        <option value="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" />
+        <option value="$PROJECT_DIR$/application/models/Galvijai_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Galvijai.php" />
+        <option value="$PROJECT_DIR$/application/views/pasarai/meslas_view.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Pasarai.php" />
+        <option value="$PROJECT_DIR$/application/models/Sutartys_model.php" />
+        <option value="$PROJECT_DIR$/application/views/left_view.php" />
+        <option value="$PROJECT_DIR$/application/views/main_view.php" />
+        <option value="$PROJECT_DIR$/assets/js/vuejs.js" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
+        <option value="$PROJECT_DIR$/application/libraries/EXcel.php" />
+        <option value="$PROJECT_DIR$/application/libraries/Excel.php" />
+        <option value="$PROJECT_DIR$/application/third_party/PHPExcel.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
       </list>
     </option>
   </component>
@@ -270,8 +526,8 @@
       <path value="G:\WAMP64\www\Aluza" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-6" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
     <option name="width" value="1923" />
     <option name="height" value="1040" />
   </component>
@@ -306,7 +562,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,26 +584,31 @@
               <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
               <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="libraries" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
               <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="third_party" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
               <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="knyga" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="DATA" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,18 +619,23 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ToolWindowTODO.ShowToolbar" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\WAMP64\www\1-1.lt\application\third_party" />
+      <recent name="G:\WAMP64\www\1-1.lt\application\third_party\PHP_excel" />
+      <recent name="G:\WAMP64\www\1-1.lt\application\libraries\PHP_excel" />
+      <recent name="G:\WAMP64\www\1-1.lt\application\libraries\PHP_excel\PHPExcel" />
+      <recent name="G:\WAMP64\www\1-1.lt\DATA" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\WAMP64\www\1-1.lt\DATA" />
       <recent name="G:\WAMP64\www\1-1.lt\application\views\pasarai" />
       <recent name="G:\WAMP64\www\1-1.lt\assets\css" />
       <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
       <recent name="G:\WAMP64\www\Aluza\application\views\gyvuliai" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\WAMP64\www\Aluza\application\third_party" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -477,35 +742,16 @@
       <workItem from="1507549125021" duration="3210000" />
       <workItem from="1507626513108" duration="4912000" />
       <workItem from="1507717770164" duration="7049000" />
-      <workItem from="1507740018202" duration="8882000" />
-    </task>
-    <task id="LOCAL-00001" summary="rt">
-      <created>1501098197214</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1501098197214</updated>
-    </task>
-    <task id="LOCAL-00002" summary="rt">
-      <created>1501098278772</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1501098278772</updated>
-    </task>
-    <task id="LOCAL-00003" summary="rt">
-      <created>1501098373631</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1501098373631</updated>
-    </task>
-    <task id="LOCAL-00004" summary="sutvarkiau controllers ir model reik pavadinimus is didziosios raides, linux atskiria mazasias nuo didziuju">
-      <created>1501098538009</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1501098538009</updated>
+      <workItem from="1507740018202" duration="9108000" />
+      <workItem from="1507818803979" duration="6651000" />
+      <workItem from="1507830357310" duration="692000" />
+      <workItem from="1507961473512" duration="589000" />
+      <workItem from="1508093581539" duration="1161000" />
+      <workItem from="1508174258615" duration="6679000" />
+      <workItem from="1508253725497" duration="8794000" />
+      <workItem from="1508347286352" duration="599000" />
+      <workItem from="1508652391715" duration="167000" />
+      <workItem from="1509727805555" duration="9200000" />
     </task>
     <task id="LOCAL-00005" summary="enesio gyvuliu, pilna klaidu">
       <created>1501863868650</created>
@@ -808,11 +1054,53 @@
       <option name="project" value="LOCAL" />
       <updated>1507737982736</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="patvarkymai 2">
+      <created>1507750050931</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1507750050931</updated>
+    </task>
+    <task id="LOCAL-00049" summary="VUE JS iterpimas">
+      <created>1507826673517</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1507826673517</updated>
+    </task>
+    <task id="LOCAL-00050" summary="vuejs datepicker naudojimas">
+      <created>1507830143436</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1507830143436</updated>
+    </task>
+    <task id="LOCAL-00051" summary="padaryta matyti parduotu gyvuliu sarasa, numeris, kam parduota?">
+      <created>1508181884061</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1508181884061</updated>
+    </task>
+    <task id="LOCAL-00052" summary="padaryta matyti perkamu gyvuliu sarasa, numeris, is ko nupirkta? taip pat patvarkyta pasaru MIN, VID, MAX isvedimas, bet ganykliniai pasarai iki spalio 15">
+      <created>1508262906189</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1508262906189</updated>
+    </task>
+    <task id="LOCAL-00053" summary="sutarciu itraukimas">
+      <created>1509737875499</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1509737875515</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251112000" />
+    <option name="totallyTimeSpent" value="285870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -824,15 +1112,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="0" width="1923" height="1040" extended-state="0" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15190552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15085287" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16639829" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13140312" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.155902" sideWeight="0.510661" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12249443" sideWeight="0.49394855" order="13" side_tool="false" content_ui="tabs" x="682" y="810" width="743" height="144" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15555556" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.122171946" sideWeight="0.49394855" order="13" side_tool="false" content_ui="tabs" x="682" y="810" width="743" height="144" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15497738" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1535039" sideWeight="0.49382716" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15512614" sideWeight="0.5085865" order="2" side_tool="true" content_ui="tabs" />
@@ -917,13 +1205,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rt" />
-    <MESSAGE value="sutvarkiau controllers ir model reik pavadinimus is didziosios raides, linux atskiria mazasias nuo didziuju" />
-    <MESSAGE value="enesio gyvuliu, pilna klaidu" />
-    <MESSAGE value="istaisytos klaidos, daromas gyvuliu sarasas" />
-    <MESSAGE value="atsinaujinam" />
-    <MESSAGE value="sutvarkyti paseliu skaiciavimai, pasaru skaiciavimas buvo klaidike" />
-    <MESSAGE value="pradedamas kurti admin panel" />
     <MESSAGE value="istaisytos kalidos, phpstorm atpazysta codeigniter koda" />
     <MESSAGE value="pritaikytas naujas stilius &quot;inspinia&quot;" />
     <MESSAGE value="pakeistas visas stilius" />
@@ -940,9 +1221,16 @@
     <MESSAGE value="error tvarkymas kad tvarkingai rodytu" />
     <MESSAGE value="saskaitos ivedimo pasirinkimai" />
     <MESSAGE value="patvarkymai" />
-    <MESSAGE value="ukio saskaitos plano suvedimas" />
     <MESSAGE value="pataisymai 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="pataisymai 1" />
+    <MESSAGE value="patvarkymai 2" />
+    <MESSAGE value="ukio saskaitos plano suvedimas" />
+    <MESSAGE value="VUE JS iterpimas" />
+    <MESSAGE value="vuejs datepicker naudojimas" />
+    <MESSAGE value="padaryta matyti parduotu gyvuliu sarasa, numeris, kam parduota?" />
+    <MESSAGE value="padaryta matyti perkamu gyvuliu sarasa, numeris, is ko nupirkta? taip pat patvarkyta pasaru MIN, VID, MAX isvedimas, bet ganykliniai pasarai iki spalio 15" />
+    <MESSAGE value="sutarciu itraukimas" />
+    <MESSAGE value="php excel library" />
+    <option name="LAST_COMMIT_MESSAGE" value="php excel library" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -952,91 +1240,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/libraries/Ion_auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4380">
-          <caret line="292" column="87" lean-forward="false" selection-start-line="292" selection-start-column="87" selection-end-line="292" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="54" column="54" lean-forward="false" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="4" column="46343" lean-forward="false" selection-start-line="4" selection-start-column="46342" selection-end-line="4" selection-end-column="46343" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/font-awesome/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5355">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3540">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/auth/no_login_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="58" lean-forward="false" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/auth/login_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/inspinia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="102" column="6" lean-forward="false" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/plugins/toastr/toastr.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="354" lean-forward="false" selection-start-line="0" selection-start-column="354" selection-end-line="0" selection-end-column="354" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/paseliai/naujas_kodas_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="39" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="30" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/ikelti_gyvulius_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="72" column="22" lean-forward="true" selection-start-line="72" selection-start-column="20" selection-end-line="83" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="729">
@@ -1048,7 +1251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1056,15 +1258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="67" lean-forward="true" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Zalia_knyga_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="62" column="56" lean-forward="false" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,24 +1265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="25" />
-          <folding>
-            <marker date="1507570254163" expanded="true" signature="7623:7656" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mano.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Galvijai_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1530">
-          <caret line="57" column="69" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="66" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,14 +1272,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="171" column="9" lean-forward="false" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1119,23 +1286,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/info_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Main_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,7 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="74" lean-forward="false" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1151,7 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-799">
           <caret line="68" column="44" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1159,7 +1307,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1167,7 +1314,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" column="47" lean-forward="false" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,7 +1321,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="103" column="25" lean-forward="false" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1183,39 +1328,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="91" column="26" lean-forward="false" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="168" column="67" lean-forward="false" selection-start-line="168" selection-start-column="67" selection-end-line="168" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Galvijai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="951">
-          <caret line="859" column="37" lean-forward="false" selection-start-line="859" selection-start-column="37" selection-end-line="859" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pasarai/ganykliniai_pasarai_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="173" column="37" lean-forward="false" selection-start-line="173" selection-start-column="37" selection-end-line="173" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pasarai/meslas_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="100" column="20" lean-forward="false" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,27 +1335,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="733">
           <caret line="84" column="10" lean-forward="false" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
-          <folding>
-            <marker date="1507745682459" expanded="true" signature="2190:3428" ph="..." />
-            <marker date="1507745682459" expanded="true" signature="2988:3409" ph="..." />
-            <marker date="1507745682459" expanded="true" signature="3011:3404" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="181" column="44" lean-forward="true" selection-start-line="181" selection-start-column="44" selection-end-line="181" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Pasarai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="1179" column="45" lean-forward="false" selection-start-line="1179" selection-start-column="45" selection-end-line="1179" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1251,7 +1342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +1349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-205">
           <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,7 +1356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="103" column="20" lean-forward="true" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,20 +1363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="110" column="25" lean-forward="false" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
-          <folding>
-            <marker date="1507749120879" expanded="true" signature="6820:7047" ph="..." />
-            <marker date="1507749120879" expanded="true" signature="7402:7636" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pasarai/rankinis_pasarus_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="136" column="20" lean-forward="false" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
-          <folding>
-            <marker date="1507749167113" expanded="true" signature="1306:1455" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1296,10 +1370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="91" column="24" lean-forward="false" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
-          <folding>
-            <marker date="1507749155988" expanded="true" signature="5614:5841" ph="..." />
-            <marker date="1507749155988" expanded="true" signature="6196:6430" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1307,29 +1377,158 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="31" column="61" lean-forward="false" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Paseliai.php">
+    <entry file="file://$PROJECT_DIR$/application/views/info_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="388" column="46" lean-forward="false" selection-start-line="388" selection-start-column="46" selection-end-line="388" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="85">
+          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mano.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Zalia_knyga_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="62" column="56" lean-forward="false" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/home_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+        <state relative-caret-position="644">
+          <caret line="86" column="18" lean-forward="false" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="200" column="33" lean-forward="false" selection-start-line="200" selection-start-column="32" selection-end-line="217" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pasarai/rankinis_pasarus_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="206" column="41" lean-forward="false" selection-start-line="206" selection-start-column="41" selection-end-line="206" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5627">
+          <caret line="331" column="60" lean-forward="false" selection-start-line="331" selection-start-column="60" selection-end-line="331" selection-end-column="60" />
+          <folding>
+            <marker date="1508260150074" expanded="true" signature="16588:16940" ph="..." />
+            <marker date="1508260150074" expanded="true" signature="16632:16896" ph="..." />
+            <marker date="1508260150074" expanded="true" signature="16677:16851" ph="..." />
+            <marker date="1508260150074" expanded="true" signature="17147:17315" ph="..." />
+            <marker date="1508260150074" expanded="true" signature="18848:19202" ph="..." />
+            <marker date="1508260150074" expanded="true" signature="18892:19158" ph="..." />
+            <marker date="1508260150074" expanded="true" signature="18937:19113" ph="..." />
+            <marker date="1508260150074" expanded="true" signature="19387:19555" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pasarai/ganykliniai_pasarai_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="107" column="10" lean-forward="false" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pasarai/meslas_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="108" column="61" lean-forward="false" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Galvijai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="43" column="24" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Galvijai_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="41" column="62" lean-forward="true" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/paseliai/naujas_kodas_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="43" column="39" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Main_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="71" column="73" lean-forward="false" selection-start-line="71" selection-start-column="73" selection-end-line="71" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="71" column="39" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Paseliai_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Pasarai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2482">
+          <caret line="444" column="20" lean-forward="false" selection-start-line="444" selection-start-column="20" selection-end-line="444" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Zalia_knyga.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
+        <state relative-caret-position="357">
           <caret line="99" column="45" lean-forward="false" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
           <folding />
         </state>
@@ -1337,24 +1536,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/knyga/knyga_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+        <state relative-caret-position="578">
+          <caret line="34" column="10" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="105" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Main.php">
+    <entry file="file://$PROJECT_DIR$/assets/js/vuejs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="50" column="34" lean-forward="true" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="38" />
+        <state relative-caret-position="612">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.568/PHPExcel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="126" column="28" lean-forward="false" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Paseliai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="436" column="26" lean-forward="false" selection-start-line="436" selection-start-column="19" selection-end-line="436" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/third_party/PHPExcel/Autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/third_party/PHPExcel/IOFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1377">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Excel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/third_party/PHPExcel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
-          <caret line="120" column="49" lean-forward="true" selection-start-line="120" selection-start-column="49" selection-end-line="120" selection-end-column="49" />
+          <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
           <folding />
         </state>
       </provider>
