@@ -68,6 +68,8 @@ $this->load->view('left_view');
             case "rankinis_pasarus": $this->load->view("pasarai/rankinis_pasarus_view"); break;
             //Zalioji knyga
             case "knyga": $this->load->view("knyga/knyga_view"); break;
+            //Sutartys
+            case "skaitciuokle": $this->load->view("sutartys/skaitciuokle_view"); break;
             //Kalendorius
             case "kalendorius": $this->load->view("kalendorius_view"); break;
             //kai niekas netinka
@@ -155,5 +157,17 @@ $this->load->view('left_view');
         };
     }
 </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108429154-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108429154-1');
+</script>
+
+
 </body>
 </html>

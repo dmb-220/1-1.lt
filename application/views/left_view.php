@@ -33,7 +33,15 @@
             </li>
                 
                 <li>
-                    <a href="<?= base_url(); ?>zalia_knyga/knyga"><i class="fa fa-bars"></i> <span class="nav-label">Žalioji Knyga</span></a>
+                    <a href="<?= base_url(); ?>zalia_knyga/knyga"><i class="fa fa-bars"></i> <span class="nav-label">Didžioji Knyga</span></a>
+                </li>
+
+                <?php if($act == 'sutartys'){echo'<li class="active">';}else{echo'<li>';} ?>
+                <a href="#"><i class="fa fa-keyboard-o"></i> <span class="nav-label">Sutartys</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="<?= base_url(); ?>sutartys/skaitciuokle"><i class="fa fa-edit"></i>Sutarties skaitčiuoklė</a></li>
+                    <li><a href="<?= base_url(); ?>sutartys/sutartys"><i class="fa fa-bars"></i> Sutartys</a></li>
+                </ul>
                 </li>
 
                 <?php if($act == 'ukininkai'){echo'<li class="active">';}else{echo'<li>';} ?>
