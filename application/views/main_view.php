@@ -70,6 +70,7 @@ $this->load->view('left_view');
             case "knyga": $this->load->view("knyga/knyga_view"); break;
             //Sutartys
             case "skaitciuokle": $this->load->view("sutartys/skaitciuokle_view"); break;
+            case "sutartys": $this->load->view("sutartys/sutartys_view"); break;
             //Kalendorius
             case "kalendorius": $this->load->view("kalendorius_view"); break;
             //kai niekas netinka

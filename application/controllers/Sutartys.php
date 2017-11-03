@@ -51,11 +51,41 @@ class Sutartys extends CI_Controller
     }
 
     public function skaitciuokle(){
-        $file = './DATA/Darbsut.xls';
+        //$file = './DATA/Darbsut.xls';
 
-        //$this->load->library('Excel');
+        /*$this->load->library('Excel');
+
+        $inputFileName = './DATA/Darbsut.xls';
 
 
+// Read the existing excel file
+        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+        $objPHPExcel = $objReader->load($inputFileName);
+
+// Update it's data
+// Set active sheet index to the first sheet, so Excel opens this as the first sheet
+        $objPHPExcel->setActiveSheetIndex(0);
+
+// Add column headers
+        $objPHPExcel->getActiveSheet()
+            ->setCellValue('A6', 'Genute Norkiene')
+        ;
+
+// Generate an updated excel file
+// Redirect output to a client’s web browser (Excel2007)
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="' . $inputFileName . '"');
+        header('Cache-Control: max-age=0');
+
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output');*/
+
+
+        $this->load->view('main_view');
+    }
+
+    public function sutartys(){
 
         $this->load->view('main_view');
     }
