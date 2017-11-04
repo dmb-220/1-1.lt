@@ -87,6 +87,10 @@ class Sutartys extends CI_Controller
 
     public function sutartys(){
 
+        $file = './DATA/paslaugu_teikimas.odt';
+
+        $this->load->library('Word');
+
         $this->load->view('main_view');
     }
 
