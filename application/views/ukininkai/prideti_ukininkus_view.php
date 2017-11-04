@@ -11,14 +11,14 @@
                     <form class="form-horizontal form-bordered" action="<?= base_url(); ?>ukininkai/prideti_ukininka" method="POST">
                         <fieldset>
                             <?php
-                            if($error['yra']){
+                            if($this->main_model->info['error']['yra']){
                                 echo'<div class="alert alert-danger">';
-                                echo $error['yra'];
+                                echo $this->main_model->info['error']['yra'];
                                 echo '</div>';
                             }
-                            if($error['ok']) {
+                            if($this->main_model->info['error']['ok']) {
                                 echo '<div class="alert alert-danger">';
-                                echo $error['ok'];
+                                echo $this->main_model->info['error']['ok'];
                                 echo '</div>';
                             }
                             ?>

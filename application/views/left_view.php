@@ -40,7 +40,9 @@
                 <a href="#"><i class="fa fa-keyboard-o"></i> <span class="nav-label">Sutartys</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="<?= base_url(); ?>sutartys/skaitciuokle"><i class="fa fa-edit"></i>Sutarties skaitčiuoklė</a></li>
-                    <li><a href="<?= base_url(); ?>sutartys/sutartys"><i class="fa fa-bars"></i> Sutartys</a></li>
+                    <li><a href="<?= base_url(); ?>sutartys/paslaugu_teikimas"><i class="fa fa-bars"></i> Paslaugų teikimas</a></li>
+                    <li><a href="<?= base_url(); ?>sutartys/sutartys"><i class="fa fa-bars"></i> Sutikimas dėl duomenų naudojimo</a></li>
+                    <li><a href="<?= base_url(); ?>sutartys/darbo_sutartis"><i class="fa fa-bars"></i> Darbo sutartis</a></li>
                 </ul>
                 </li>
 

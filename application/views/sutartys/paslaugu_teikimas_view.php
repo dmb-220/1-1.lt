@@ -1,14 +1,14 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>Sutikimas dėl duomenų naudojimo</h5>
+            <h5>Paslaugų teikimo sutartis</h5>
             <div class="ibox-tools">
                 <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 <a class="close-link"><i class="fa fa-times"></i></a>
             </div>
         </div>
         <div class="ibox-content">
-            <form class="form-horizontal form-bordered" action="<?= base_url(); ?>sutartys/sutartys" method="POST">
+            <form class="form-horizontal form-bordered" action="<?= base_url(); ?>sutartys/paslaugu_teikimas" method="POST">
                 <?php $dt = $this->session->userdata(); ?>
                 <fieldset>
                     <div class="form-group">
@@ -35,6 +35,31 @@
                                 echo'</select>';
                             }
                             ?>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Sutarties nr:</label>
+                        <div class="col-md-10">
+                            <?php echo form_error('numeris'); ?>
+                            <input name="numeris" type="text" class="form-control" placeholder= "" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Data:</label>
+                        <div class="col-md-10">
+                            <?php echo form_error('data'); ?>
+                            <div id="app">
+                                <datepicker :value.sync="paslaugu_sutartis"></datepicker>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Kaina:</label>
+                        <div class="col-md-10">
+                            <?php echo form_error('kaina'); ?>
+                            <input name="kaina" type="text" class="form-control" placeholder= "" />
                         </div>
                     </div>
 

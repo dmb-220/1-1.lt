@@ -27,6 +27,13 @@ class Ukininkai extends CI_Controller {
     public function __construct(){
         parent::__construct();
         error_reporting(E_ERROR);
+        //uzkraunam MODEL
+        $this->load->model('ukininkai_model');
+        //$this->load->model('galvijai_model');
+        $this->load->model('main_model');
+
+        $this->load->library('form_validation');
+
         $this->load->library('Ion_auth');
         if (!$this->ion_auth->logged_in()) {
         redirect('main/auth_error');
@@ -38,28 +45,32 @@ class Ukininkai extends CI_Controller {
         $this->load->view("main_view");
     }
 
+    public function redaguoti(){
+        $action = $this->uri->segment(3);
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Ūkininkai";
+        $this->main_model->info['txt']['info'] = "Redaguoti ūkininko informaciją";
+        $this->main_model->info['ukininkas'] = $this->ukininkai_model->ukininkas($action);
+        $this->load->view("main_view");
+    }
+
     public function sarasas_ukininku(){
         $this->load->library('table');
 
-        $inf = array();
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Ūkininkai";
-        $inf['url'] = "main/index";
-        $inf['active'] = "Ūkininkų sąrašas";
+        $this->main_model->info['txt']['meniu'] = "Ūkininkai";
+        $this->main_model->info['txt']['info'] = "Ūkininkų sąrašas";
 
-        $this->load->model('ukininkai_model');
-        $data = $this->ukininkai_model->ukininku_sarasas();
-        $this->load->view("main_view", array('data'=> $data, 'inf' => $inf));
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas();
+        $this->load->view("main_view");
     }
 
 
     public function prideti_ukininka(){
-        $this->load->library('form_validation');
-        $inf = array();
+
         //sukeliam info, informaciniam meniu
-        $inf['meniu'] = "Ūkininkai";
-        $inf['url'] = "main/index";
-        $inf['active'] = "Naujas ūkininkas";
+        $this->main_model->info['txt']['meniu'] = "Ūkininkai";
+        $this->main_model->info['txt']['info'] = "Naujas ūkininkas";
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         $this->form_validation->set_rules('vardas', 'Vardas', 'required',  array('required' => 'Įveskite vardą.'));
@@ -76,19 +87,18 @@ class Ukininkai extends CI_Controller {
             $v_vardas = $_POST['v_vardas'];
             $slaptazodis = $_POST['slaptazodis'];
 
-            $this->load->model('ukininkai_model');
             $ok = $this->ukininkai_model->tikinti_ukininka($valdos_nr);
             if($ok>0){
-                $error['yra'] = "TOKS ukininkas jau yra!";
+                $this->main_model->info['error']['yra'] = "TOKS ukininkas jau yra!";
             }else{
                 $this->ukininkai_model->irasyti_ukininka($vardas,$pavarde, $valdos_nr, $v_vardas, $slaptazodis );
-            $error['ok'] = "Naujas ukininkas pridetas!";}
+                $this->main_model->info['error']['ok'] = "Naujas ukininkas pridetas!";}
 
-            $error['action'] = true;
+            $this->main_model->info['error']['action'] = true;
         }
 
 
-        $this->load->view("main_view", array('error' => $error, 'inf' => $inf));
+        $this->load->view("main_view");
     }
 }
 

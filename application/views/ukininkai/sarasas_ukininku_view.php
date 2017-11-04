@@ -19,12 +19,12 @@
             </thead>
             <tbody>
             <?php
-            for($i = 0; $i < count($data); $i++) {
+            foreach($this->main_model->info['ukininkai'] as $row) {
                 echo"<tr >
-                <td>".$data[$i][vardas]."</td >
-                <td>".$data[$i][pavarde]."</td >
-                <td>".$data[$i][valdos_nr]."</td >
-                <td><a href='redaguoti/".$data[$i][valdos_nr]."'>Readaguoti</a> | <a href='istrinti/".$data[$i][valdos_nr]."'>Ištrinti</a></td >
+                <td>".$row['vardas']."</td >
+                <td>".$row['pavarde']."</td >
+                <td>".$row['valdos_nr']."</td >
+                <td><a href='redaguoti/".$row['valdos_nr']."'>Readaguoti</a> | <a href='istrinti/".$row['valdos_nr']."'>Ištrinti</a></td >
             </tr >";
 }?>
             </tbody>

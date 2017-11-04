@@ -43,6 +43,7 @@ $this->load->view('left_view');
             //Ukininkai
             case "prideti_ukininka": $this->load->view("ukininkai/prideti_ukininkus_view"); break;
             case "sarasas_ukininku": $this->load->view("ukininkai/sarasas_ukininku_view"); break;
+            case "redaguoti": $this->load->view("ukininkai/redaguoti_view"); break;
             //Gyvuliai
             case "ikelti_duomenis": $this->load->view("galvijai/ikelti_gyvulius_view"); break;
             case "skaiciuoti_gyvulius": $this->load->view("galvijai/skaiciuoti_gyvulius_view"); break;
@@ -71,6 +72,8 @@ $this->load->view('left_view');
             //Sutartys
             case "skaitciuokle": $this->load->view("sutartys/skaitciuokle_view"); break;
             case "sutartys": $this->load->view("sutartys/sutartys_view"); break;
+            case "paslaugu_teikimas": $this->load->view("sutartys/paslaugu_teikimas_view"); break;
+            case "darbo_sutartis": $this->load->view("sutartys/darbo_sutartis_view"); break;
             //Kalendorius
             case "kalendorius": $this->load->view("kalendorius_view"); break;
             //kai niekas netinka

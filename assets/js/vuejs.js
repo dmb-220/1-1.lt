@@ -1,7 +1,7 @@
 var datepickerComponent = Vue.extend({
     //v-el:select
     template: '<div class="input-group date" v-el:inputgroup>' +
-    '<input type="text" class="form-control" v-model="value"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>' +
+    '<input name="data" type="text" class="form-control" v-model="value"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>' +
     '</div>',
     props: {
         value: ''
@@ -29,6 +29,7 @@ new Vue({
     data: {
         startDate_1: '',
         startDate_2: '',
+        paslaugu_sutartis: '',
     },
     ready: function() {},
     methods: {},
