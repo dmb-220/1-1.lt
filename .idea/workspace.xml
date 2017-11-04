@@ -1,11 +1,281 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" />
+    <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="php excel library">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/resources/doc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/resources/ppt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/resources/xls.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/AbstractCollection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Bookmarks.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Charts.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Comments.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Endnotes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Footnotes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Titles.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/ComplexType/FootnoteProperties.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/ComplexType/ProofState.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/ComplexType/TrackChangesView.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/AbstractContainer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/AbstractElement.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Bookmark.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Cell.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Chart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/CheckBox.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Comment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Endnote.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Field.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Footer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Footnote.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/FormField.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Header.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Line.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Link.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/ListItem.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/ListItemRun.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Object.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/PageBreak.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/PreserveText.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Row.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/SDT.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Section.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Shape.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TOC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Text.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TextBox.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TextBreak.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TextRun.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Title.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TrackChange.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/AbstractEscaper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/EscaperInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/RegExp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/Rtf.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/Xml.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/CopyFileException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/CreateTemporaryFileException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/Exception.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/InvalidImageException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/InvalidObjectException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/InvalidStyleException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/UnsupportedImageTypeException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/IOFactory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Media.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Metadata/Compatibility.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Metadata/DocInfo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Metadata/Protection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Metadata/Settings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/PhpWord.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/AbstractReader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/HTML.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/MsDoc.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ODText.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ODText/AbstractPart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ODText/Content.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ODText/Meta.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/RTF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/RTF/Document.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ReaderInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/AbstractPart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/DocPropsApp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/DocPropsCore.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/DocPropsCustom.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Document.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Endnotes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Footnotes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Numbering.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Settings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Styles.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Settings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/AbstractEnum.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/Converter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/Html.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/OLERead.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/PCLZip/pclzip.lib.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/ZipArchive.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/SimpleType/Jc.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/SimpleType/JcTable.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/SimpleType/NumberFormat.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/SimpleType/Zoom.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/AbstractStyle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Border.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Cell.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Chart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Extrusion.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Fill.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Font.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Frame.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Indentation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Language.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Line.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/LineNumbering.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/ListItem.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Numbering.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/NumberingLevel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Outline.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Paper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Paragraph.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Row.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Section.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Shading.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Shadow.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Shape.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Spacing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/TOC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Tab.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Style/TextBox.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Template.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/TemplateProcessor.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/AbstractWriter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/AbstractElement.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Container.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Endnote.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Footnote.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Link.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/ListItem.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/PageBreak.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Text.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/TextBreak.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/TextRun.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Title.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Part/AbstractPart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Part/Body.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Part/Head.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/AbstractStyle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/Font.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/Generic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/Paragraph.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/AbstractElement.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Container.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Link.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Text.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/TextBreak.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/TextRun.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Title.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/AbstractPart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Content.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Manifest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Meta.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Mimetype.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Styles.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/AbstractStyle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Font.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Paragraph.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Section.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF/AbstractRenderer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF/DomPDF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF/MPDF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF/TCPDF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/AbstractElement.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Container.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Link.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/ListItem.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/PageBreak.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Text.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/TextBreak.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/TextRun.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Title.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Part/AbstractPart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Part/Document.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Part/Header.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/AbstractStyle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/Border.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/Font.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/Paragraph.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/Section.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/AbstractElement.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Bookmark.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Chart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/CheckBox.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Container.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Endnote.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Field.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Footnote.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/FormField.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Line.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Link.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/ListItem.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/ListItemRun.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Object.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/PageBreak.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/ParagraphAlignment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/PreserveText.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/SDT.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Shape.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TOC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TableAlignment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Text.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TextBox.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TextBreak.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TextRun.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Title.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/AbstractPart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Chart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Comments.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/ContentTypes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/DocPropsApp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/DocPropsCore.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/DocPropsCustom.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Document.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Endnotes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/FontTable.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Footer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Footnotes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Header.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Numbering.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Rels.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/RelsDocument.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/RelsPart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Settings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Styles.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Theme.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/WebSettings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/AbstractStyle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Cell.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Extrusion.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Fill.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Font.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Frame.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Indentation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Line.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/LineNumbering.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/MarginBorder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Outline.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Paragraph.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Row.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Section.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Shading.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Shadow.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Shape.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Spacing.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Tab.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/TextBox.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/WriterInterface.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Sutartys.php" afterPath="$PROJECT_DIR$/application/controllers/Sutartys.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main_view.php" afterPath="$PROJECT_DIR$/application/views/main_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" />
     </list>
     <ignored path="Aluza.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,7 +349,7 @@
         <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
+              <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,7 +358,7 @@
       <file leaf-file-name="Paseliai.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Paseliai.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="7412">
               <caret line="436" column="26" lean-forward="false" selection-start-line="436" selection-start-column="19" selection-end-line="436" selection-end-column="28" />
               <folding />
             </state>
@@ -108,7 +378,7 @@
       <file leaf-file-name="Sutartys.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
+            <state relative-caret-position="1479">
               <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
               <folding />
             </state>
@@ -128,18 +398,28 @@
       <file leaf-file-name="main_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="1224">
               <caret line="72" column="65" lean-forward="false" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sutartys_view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sutartys_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/sutartys/sutartys_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="67" column="45" lean-forward="false" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+            <state relative-caret-position="935">
+              <caret line="55" column="94" lean-forward="false" selection-start-line="55" selection-start-column="94" selection-end-line="55" selection-end-column="94" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Row.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/third_party/PhpWord/Style/Row.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -360,8 +640,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,19 +656,19 @@
     <property name="ToolWindowTODO.ShowToolbar" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\WAMP64\www\1-1.lt\application\third_party" />
+      <recent name="G:\WAMP64\www\1-1.lt\DATA" />
+      <recent name="G:\WAMP64\www\1-1.lt\application\views\pasarai" />
+      <recent name="G:\WAMP64\www\1-1.lt\assets\css" />
+      <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\WAMP64\www\1-1.lt\application\third_party" />
       <recent name="G:\WAMP64\www\1-1.lt\application\third_party\PHP_excel" />
       <recent name="G:\WAMP64\www\1-1.lt\application\libraries\PHP_excel" />
       <recent name="G:\WAMP64\www\1-1.lt\application\libraries\PHP_excel\PHPExcel" />
       <recent name="G:\WAMP64\www\1-1.lt\DATA" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\WAMP64\www\1-1.lt\DATA" />
-      <recent name="G:\WAMP64\www\1-1.lt\application\views\pasarai" />
-      <recent name="G:\WAMP64\www\1-1.lt\assets\css" />
-      <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
-      <recent name="G:\WAMP64\www\Aluza\application\views\gyvuliai" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -504,14 +784,8 @@
       <workItem from="1508253725497" duration="8794000" />
       <workItem from="1508347286352" duration="599000" />
       <workItem from="1508652391715" duration="167000" />
-      <workItem from="1509727805555" duration="12156000" />
-    </task>
-    <task id="LOCAL-00006" summary="istaisytos klaidos, daromas gyvuliu sarasas">
-      <created>1501924658526</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1501924658526</updated>
+      <workItem from="1509727805555" duration="12188000" />
+      <workItem from="1509779250595" duration="196000" />
     </task>
     <task id="LOCAL-00007" summary="atsinaujinam">
       <created>1502465778854</created>
@@ -849,11 +1123,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509738057453</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="php excel library">
+      <created>1509741379959</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1509741379959</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288826000" />
+    <option name="totallyTimeSpent" value="289054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,15 +1147,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1923" height="1040" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15190552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16639829" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1680086" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13140312" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.155902" sideWeight="0.510661" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.122171946" sideWeight="0.49394855" order="13" side_tool="false" content_ui="tabs" x="682" y="810" width="743" height="144" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15497738" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15497738" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1535039" sideWeight="0.49382716" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15512614" sideWeight="0.5085865" order="2" side_tool="true" content_ui="tabs" />
@@ -994,13 +1274,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/header_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="67" lean-forward="true" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/sidebar_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1166,16 +1439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5627">
           <caret line="331" column="60" lean-forward="false" selection-start-line="331" selection-start-column="60" selection-end-line="331" selection-end-column="60" />
-          <folding>
-            <marker date="1508260150074" expanded="true" signature="16588:16940" ph="..." />
-            <marker date="1508260150074" expanded="true" signature="16632:16896" ph="..." />
-            <marker date="1508260150074" expanded="true" signature="16677:16851" ph="..." />
-            <marker date="1508260150074" expanded="true" signature="17147:17315" ph="..." />
-            <marker date="1508260150074" expanded="true" signature="18848:19202" ph="..." />
-            <marker date="1508260150074" expanded="true" signature="18892:19158" ph="..." />
-            <marker date="1508260150074" expanded="true" signature="18937:19113" ph="..." />
-            <marker date="1508260150074" expanded="true" signature="19387:19555" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1190,7 +1453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="108" column="61" lean-forward="false" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,7 +1484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="43" column="39" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1282,25 +1543,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.568/PHPExcel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.568/PHPExcel.php" />
     <entry file="file://$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="126" column="28" lean-forward="false" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Paseliai.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="7412">
           <caret line="436" column="26" lean-forward="false" selection-start-line="436" selection-start-column="19" selection-end-line="436" selection-end-column="28" />
           <folding />
         </state>
@@ -1310,7 +1563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1318,7 +1570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1377">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1326,7 +1577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1334,7 +1584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2754">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1348,7 +1597,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="1224">
           <caret line="72" column="65" lean-forward="false" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
           <folding />
         </state>
@@ -1356,7 +1605,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
+        <state relative-caret-position="1479">
           <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
           <folding />
         </state>
@@ -1373,15 +1622,23 @@
     <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
+          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/sutartys/sutartys_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="67" column="45" lean-forward="false" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+        <state relative-caret-position="935">
+          <caret line="55" column="94" lean-forward="false" selection-start-line="55" selection-start-column="94" selection-end-line="55" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/third_party/PhpWord/Style/Row.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

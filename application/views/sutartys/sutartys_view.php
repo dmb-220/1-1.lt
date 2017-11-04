@@ -53,7 +53,7 @@
                                         <label class="control-label col-md-2 col-sm-2"></label>
                                         <div class="col-md-10 col-sm-10">
                                             <button class="btn btn-block btn-outline btn-primary" type="submit">
-                                                <i class="fa fa-check-circle-o fa-lg"> SUKURTIS</i>
+                                                <i class="fa fa-check-circle-o fa-lg"> SUKURTI</i>
                                             </button>
                                         </div>
                                     </div>
