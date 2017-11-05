@@ -9,9 +9,6 @@
         </div>
         <div class="ibox-content">
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>sutartys/darbo_sutartis" method="POST">
-                <?php
-                var_dump($data);
-                ?>
                 <fieldset>
                     <div class="form-group">
                         <label class="control-label col-md-2 col-sm-2"></label>

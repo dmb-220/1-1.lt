@@ -70,19 +70,19 @@
                         </div>
 
                     </div>
-                    <div id="numeris">
+                    <div id="ajax">
                     <div class="form-group">
                         <label class="col-md-4 control-label">Sąskaitos numeris:</label>
                         <div class="col-md-6">
                             <?php echo form_error('numeris'); ?>
-                            <input name="numeris" v-model="message"  type="text" class="form-control" placeholder="Sąskaitos numeris:" value="<?= $this->main_model->info['ukininkas'][0]['saskaitos_nr'] ?>" />
+                            <input name="numeris" @change="get_bankas" v-model="numeris" type="text" class="form-control" placeholder="Sąskaitos numeris:" value="<?= $this->main_model->info['ukininkas'][0]['saskaitos_nr'] ?>" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Banko pavadinimas:</label>
                         <div class="col-md-6">
                             <?php echo form_error('bankas'); ?>
-                            <input name="bankas" type="text" class="form-control" placeholder="Banko pavadinimas" value="{{ message }}" />
+                            <input name="bankas" type="text" class="form-control" placeholder="<?= $this->main_model->info['ukininkas'][0]['bankas'] ?>" value="{{ repos }}" />
                         </div>
                     </div>
                     </div>

@@ -29,7 +29,7 @@ class Ukininkai extends CI_Controller {
         error_reporting(E_ERROR);
         //uzkraunam MODEL
         $this->load->model('ukininkai_model');
-        //$this->load->model('galvijai_model');
+        $this->load->model('galvijai_model');
         $this->load->model('main_model');
 
         $this->load->library('form_validation');
@@ -43,6 +43,18 @@ class Ukininkai extends CI_Controller {
     public function index()
     {
         $this->load->view("main_view");
+    }
+
+    public function iban(){
+        $action = $this->uri->segment(3);
+        //$action = "LT977181700162733511";
+        $arr = str_split($action);
+        if(count($arr) > 9){
+            $arra = $arr[4].$arr[5].$arr[6].$arr[7].$arr[8];
+            //echo $arra; die;
+            $bankas = $this->ukininkai_model->read_iban($arra);
+        }
+        $this->load->view('ukininkai/iban_view', array('bankas' => $bankas[0]['pavadinimas']));
     }
 
     public function redaguoti(){
@@ -69,7 +81,7 @@ class Ukininkai extends CI_Controller {
             $asmens_kodas = $this->input->post('asmens_kodas');
             $adresas = $this->input->post('adresas');
             $numeris = $this->input->post('numeris');
-            $bankas = $this->input->post('bankas');
+            $bankas = $this->input->post('bankas',TRUE);
             $email = $this->input->post('email');
             $telefonas = $this->input->post('telefonas');
 

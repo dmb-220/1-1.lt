@@ -46,6 +46,14 @@ class Ukininkai_model extends CI_Model{
         }
     }
 
+    public function read_iban($nr){
+        $this->db->from('iban');
+        $this->db->where('kodas', $nr);
+        $result = $this->db->get();
+        $data = $result->result_array();
+        return $data;
+    }
+
     //nuskaitom visus ukininkus, jei reiksme TRUE, paimam tik pagrindinius duomenis
     public function ukininku_sarasas($ar = ""){
         if($ar){

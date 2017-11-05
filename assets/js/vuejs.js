@@ -37,13 +37,21 @@ new Vue({
 });
 
 new Vue({
-    el: '#numeris',
+    el: '#ajax',
     data: {
-        message: 'nuMERIS'
+        numeris: null,
+        repos: []
     },
-    filters: {
-        uppercase: function (value) {
-            return value.toUpperCase()
+    methods: {
+        get_bankas() {
+            let Url = 'https://1-1.lt/ukininkai/iban/' + this.numeris;
+            axios.get(Url)
+                .then((response) => {
+                this.repos = response.data;
+        })
+        .catch((error) => {
+                this.repos = error.response.statusText;
+        });
         }
     }
-})
+});

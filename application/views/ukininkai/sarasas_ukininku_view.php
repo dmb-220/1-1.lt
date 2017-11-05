@@ -24,7 +24,7 @@
                 <td>".$row['vardas']."</td >
                 <td>".$row['pavarde']."</td >
                 <td>".$row['valdos_nr']."</td >
-                <td><a href='redaguoti/".$row['valdos_nr']."'>Readaguoti</a> | <a href='istrinti/".$row['valdos_nr']."'>Ištrinti</a></td >
+                <td><a href='perziureti/".$row['valdos_nr']."'>Peržiūrėti</a> |<a href='redaguoti/".$row['valdos_nr']."'>Readaguoti</a> | <a href='istrinti/".$row['valdos_nr']."'>Ištrinti</a></td >
             </tr >";
 }?>
             </tbody>

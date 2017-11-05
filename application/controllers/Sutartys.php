@@ -34,7 +34,7 @@ class Sutartys extends CI_Controller
 
         //uzkraunam MODEL
         $this->load->model('ukininkai_model');
-        //$this->load->model('galvijai_model');
+        $this->load->model('sutartys_model');
         $this->load->model('main_model');
 
         //$this->load->library('linksniai');
@@ -56,35 +56,6 @@ class Sutartys extends CI_Controller
     }
 
     public function darbo_sutartis(){
-        $file = './DATA/iban.xls';
-
-//load the excel library
-        $this->load->library('excel');
-
-//read file from path
-        $objPHPExcel = PHPExcel_IOFactory::load($file);
-
-//get only the Cell Collection
-        $cell_collection = $objPHPExcel->getActiveSheet()->getCellCollection();
-
-//extract to a PHP readable array format
-        foreach ($cell_collection as $cell) {
-            $column = $objPHPExcel->getActiveSheet()->getCell($cell)->getColumn();
-            $row = $objPHPExcel->getActiveSheet()->getCell($cell)->getRow();
-            $data_value = $objPHPExcel->getActiveSheet()->getCell($cell)->getValue();
-
-            //header will/should be in row 1 only. of course this can be modified to suit your need.
-            if ($row == 1) {
-                $header[$row][$column] = $data_value;
-            } else {
-                $arr_data[$row][$column] = $data_value;
-            }
-        }
-
-//send the data in an array format
-        $data['header'] = $header;
-        $data['values'] = $arr_data;
-
 
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Sutartys";
