@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DATA/iban.xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DATA/iban.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Sutartys.php" afterPath="$PROJECT_DIR$/application/controllers/Sutartys.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Ukininkai.php" afterPath="$PROJECT_DIR$/application/controllers/Ukininkai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Ukininkai_model.php" afterPath="$PROJECT_DIR$/application/models/Ukininkai_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main_view.php" afterPath="$PROJECT_DIR$/application/views/main_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/darbo_sustartis_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/darbo_sustartis_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/paslaugu_teikimas_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/paslaugu_teikimas_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php" afterPath="$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/vuejs.js" afterPath="$PROJECT_DIR$/assets/js/vuejs.js" />
     </list>
     <ignored path="Aluza.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -122,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="redaguoti_view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="redaguoti_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="1224">
               <caret line="84" column="132" lean-forward="false" selection-start-line="84" selection-start-column="132" selection-end-line="84" selection-end-column="132" />
               <folding>
                 <marker date="1509881587459" expanded="true" signature="696:832" ph="..." />
@@ -144,11 +137,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sutartys.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sutartys.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+            <state relative-caret-position="-134">
+              <caret line="58" column="32" lean-forward="false" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="darbo_sustartis_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/sutartys/darbo_sustartis_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -259,14 +262,14 @@
         <option value="$PROJECT_DIR$/application/views/ukininkai/sarasas_ukininku_view.php" />
         <option value="$PROJECT_DIR$/application/views/left_view.php" />
         <option value="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" />
-        <option value="$PROJECT_DIR$/application/views/sutartys/darbo_sustartis_view.php" />
         <option value="$PROJECT_DIR$/application/views/main_view.php" />
         <option value="$PROJECT_DIR$/application/models/Ukininkai_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/Ukininkai.php" />
         <option value="$PROJECT_DIR$/application/views/sutartys/paslaugu_teikimas_view.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
         <option value="$PROJECT_DIR$/assets/js/vuejs.js" />
         <option value="$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/darbo_sustartis_view.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
       </list>
     </option>
   </component>
@@ -546,14 +549,7 @@
       <workItem from="1509727805555" duration="12188000" />
       <workItem from="1509779250595" duration="18427000" />
       <workItem from="1509825919344" duration="1253000" />
-      <workItem from="1509872326425" duration="8718000" />
-    </task>
-    <task id="LOCAL-00011" summary="istaisytos kalidos, phpstorm atpazysta codeigniter koda">
-      <created>1503129183621</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1503129183621</updated>
+      <workItem from="1509872326425" duration="9066000" />
     </task>
     <task id="LOCAL-00012" summary="istaisytos kalidos, phpstorm atpazysta codeigniter koda">
       <created>1503172952138</created>
@@ -891,11 +887,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509826379344</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="patvarkymai">
+      <created>1509881835397</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1509881835413</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="317256000" />
+    <option name="totallyTimeSpent" value="317604000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -908,6 +911,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="1" width="1923" height="1040" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15190552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1712292" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
@@ -915,7 +919,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12111111" sideWeight="0.510661" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12111111" sideWeight="0.48933902" order="13" side_tool="false" content_ui="tabs" x="682" y="810" width="743" height="144" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15158372" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15158372" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1535039" sideWeight="0.49382716" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15512614" sideWeight="0.5085865" order="2" side_tool="true" content_ui="tabs" />
@@ -1011,7 +1015,6 @@
     <MESSAGE value=" model test" />
     <MESSAGE value="error tvarkymas kad tvarkingai rodytu" />
     <MESSAGE value="saskaitos ivedimo pasirinkimai" />
-    <MESSAGE value="patvarkymai" />
     <MESSAGE value="pataisymai 1" />
     <MESSAGE value="patvarkymai 2" />
     <MESSAGE value="ukio saskaitos plano suvedimas" />
@@ -1025,7 +1028,8 @@
     <MESSAGE value="php word integracija 2" />
     <MESSAGE value="ikeliama nauja sutarties sablonas" />
     <MESSAGE value="sutikimas naudoti asmens duomenis" />
-    <option name="LAST_COMMIT_MESSAGE" value="sutikimas naudoti asmens duomenis" />
+    <MESSAGE value="patvarkymai" />
+    <option name="LAST_COMMIT_MESSAGE" value="patvarkymai" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1333,14 +1337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/sutartys/darbo_sustartis_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pasarai/rankinis_pasarus_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -1415,14 +1411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/vuejs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -1433,11 +1421,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="1224">
           <caret line="84" column="132" lean-forward="false" selection-start-line="84" selection-start-column="132" selection-end-line="84" selection-end-column="132" />
           <folding>
             <marker date="1509881587459" expanded="true" signature="696:832" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/darbo_sustartis_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="58" column="32" lean-forward="false" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
