@@ -47,16 +47,52 @@ class Ukininkai extends CI_Controller {
 
     public function redaguoti(){
         $action = $this->uri->segment(3);
+
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        $this->form_validation->set_rules('vardas', 'Vardas', 'required',  array('required' => 'Įveskite vardą.'));
+        $this->form_validation->set_rules('pavarde', 'Pavardė', 'required', array('required' => 'Įveskite pavardę.'));
+        $this->form_validation->set_rules('vartotojas', 'Vartotojo vardas', 'required', array('required' => 'Įveskite VIC.LT vartotojo vardą.'));
+        $this->form_validation->set_rules('asmens_kodas', 'Asmens kodas');
+        $this->form_validation->set_rules('adresas', 'Adresas');
+        $this->form_validation->set_rules('numeris', 'Saskaitos numeris');
+        $this->form_validation->set_rules('bankas', 'Banko pavadinimas');
+        $this->form_validation->set_rules('telefonas', 'Telefono numeris');
+
+
+        if ($this->form_validation->run()) {
+            $vardas = $this->input->post('vardas');
+            $pavarde = $this->input->post('pavarde');
+            $vartotojas = $this->input->post('vartotojas');
+            $slaptazodis = $this->input->post('slaptazodis');
+
+            $asmens_kodas = $this->input->post('asmens_kodas');
+            $adresas = $this->input->post('adresas');
+            $numeris = $this->input->post('numeris');
+            $bankas = $this->input->post('bankas');
+            $email = $this->input->post('email');
+            $telefonas = $this->input->post('telefonas');
+
+            $ok = $this->ukininkai_model->tikinti_ukininka($action);
+            if($ok>0){
+                $data = array('vardas' => $vardas, 'pavarde' => $pavarde, 'VIC_vartotojo_vardas' => $vartotojas, 'VIC_slaptazodis' => $slaptazodis,
+                    'asmens_kodas' => $asmens_kodas, 'adresas' => $adresas, 'saskaitos_nr' => $numeris, 'bankas' => $bankas, 'email' => $email, 'telefonas' => $telefonas);
+                $this->ukininkai_model->atnaujinti_ukininka($action, $data);
+                $this->main_model->info['error']['ok'] = "Ūkininko duomenys atnaujinti!";
+            }else{
+                $this->main_model->info['error']['nerasta'] = "Ūkininkas nerastas!";
+            }
+    }
+
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Ūkininkai";
         $this->main_model->info['txt']['info'] = "Redaguoti ūkininko informaciją";
+
         $this->main_model->info['ukininkas'] = $this->ukininkai_model->ukininkas($action);
         $this->load->view("main_view");
     }
 
     public function sarasas_ukininku(){
-        $this->load->library('table');
-
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Ūkininkai";
         $this->main_model->info['txt']['info'] = "Ūkininkų sąrašas";
@@ -68,10 +104,6 @@ class Ukininkai extends CI_Controller {
 
     public function prideti_ukininka(){
 
-        //sukeliam info, informaciniam meniu
-        $this->main_model->info['txt']['meniu'] = "Ūkininkai";
-        $this->main_model->info['txt']['info'] = "Naujas ūkininkas";
-
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         $this->form_validation->set_rules('vardas', 'Vardas', 'required',  array('required' => 'Įveskite vardą.'));
         $this->form_validation->set_rules('pavarde', 'Pavardė', 'required', array('required' => 'Įveskite pavardę.'));
@@ -81,11 +113,11 @@ class Ukininkai extends CI_Controller {
             array('required' => 'Įveskite valdos numerį.', 'is_natural' => 'Valdos numeris tik skaiciai.'));
 
         if ($this->form_validation->run()) {
-            $vardas = $_POST['vardas'];
-            $pavarde = $_POST['pavarde'];
-            $valdos_nr = $_POST['valdos_nr'];
-            $v_vardas = $_POST['v_vardas'];
-            $slaptazodis = $_POST['slaptazodis'];
+            $vardas = $this->input->post('vardas');
+            $pavarde = $this->input->post('pavarde');
+            $valdos_nr = $this->input->post('valdos_nr');
+            $v_vardas = $this->input->post('v_vardas');
+            $slaptazodis = $this->input->post('slaptazodis');
 
             $ok = $this->ukininkai_model->tikinti_ukininka($valdos_nr);
             if($ok>0){
@@ -97,6 +129,9 @@ class Ukininkai extends CI_Controller {
             $this->main_model->info['error']['action'] = true;
         }
 
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Ūkininkai";
+        $this->main_model->info['txt']['info'] = "Naujas ūkininkas";
 
         $this->load->view("main_view");
     }

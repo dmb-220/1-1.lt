@@ -55,24 +55,26 @@ class Sutartys extends CI_Controller
         $this->load->view('main_view');
     }
 
+    public function darbo_sutartis(){
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Sutartys";
+        $this->main_model->info['txt']['info'] = "Darbo sutartis";
+
+        $this->load->view('main_view');
+    }
+
     public function sutartys(){
         $dt = $this->session->userdata();
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-        if ($dt['vardas'] == "" AND $dt['pavarde'] == "") {
+
             $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+
+        if ($this->form_validation->run()) {
             $ukininkas = $this->input->post('ukininko_vardas');
             $uk = $this->ukininkai_model->ukininkas($ukininkas);
             $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
             $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
-            $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
-            $this->session->set_userdata($new);
-        } else {
-            $ukininkas = $dt['nr'];
-            $this->main_model->info['txt']['vardas'] = $dt['vardas'];
-            $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
-        }
 
-        if ($this->form_validation->run()) {
             $this->load->library('Excel');
             $inputFileName = './DATA/sutikimas.xls';
 // Read the existing excel file
@@ -86,6 +88,7 @@ class Sutartys extends CI_Controller
             $objPHPExcel->getActiveSheet()
                 ->setCellValue('D2', date("Y-m-d"))
                 ->setCellValue('C5', $this->main_model->info['txt']['vardas']." ".$this->main_model->info['txt']['pavarde'])
+                //sita pasikeisti kai ukininkai tures duomenis
                 ->setCellValue('G5', "38621116145")
             ;
 // Generate an updated excel file
@@ -106,31 +109,26 @@ class Sutartys extends CI_Controller
     }
 
     public function paslaugu_teikimas(){
-        $dt = $this->session->userdata();
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-            if ($dt['vardas'] == "" AND $dt['pavarde'] == "") {
-                $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
-                $ukininkas = $this->input->post('ukininko_vardas');
-                $uk = $this->ukininkai_model->ukininkas($ukininkas);
-                $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
-                $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
-                $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
-                $this->session->set_userdata($new);
-            } else {
-                $ukininkas = $dt['nr'];
-                $this->main_model->info['txt']['vardas'] = $dt['vardas'];
-                $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
-            }
 
-            $this->form_validation->set_rules('numeris', 'Numeris', 'required', array('required' => 'Įveskite sutarties numerį.'));
-            $this->form_validation->set_rules('data', 'Data', 'required', array('required' => 'Pasirinkite datą.'));
-            $this->form_validation->set_rules('kaina', 'Kaina', 'required', array('required' => 'Įveskitę kaina.'));
+        $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+        $ukininkas = $this->input->post('ukininko_vardas');
+        $uk = $this->ukininkai_model->ukininkas($ukininkas);
+        $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
+        $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
+
+        $this->form_validation->set_rules('numeris', 'Numeris', 'required', array('required' => 'Įveskite sutarties numerį.'));
+        $this->form_validation->set_rules('data', 'Data', 'required', array('required' => 'Pasirinkite datą.'));
+        $this->form_validation->set_rules('kaina', 'Kaina', 'required', array('required' => 'Įveskitę kaina.'));
 
             if ($this->form_validation->run()) {
                 $numeris = $this->input->post('numeris');
                 $data = $this->input->post('data');
                 $kaina = $this->input->post('kaina');
 
+                $uki = $this->ukininkai_model->ukininkas($ukininkas);
+                $adr = explode(PHP_EOL, $uki[0]['adresas']);
+                //var_dump($adr); die;
                 $this->load->library('Excel');
        $inputFileName = './DATA/paslaugu_sutartis.xls';
 // Read the existing excel file
@@ -148,6 +146,13 @@ class Sutartys extends CI_Controller
            ->setCellValue('B6', $this->main_model->info['txt']['vardas']." ".$this->main_model->info['txt']['pavarde'])
            ->setCellValue('C19', $kaina)
            ->setCellValue('E35', $this->main_model->info['txt']['vardas']." ".$this->main_model->info['txt']['pavarde'])
+           ->setCellValue('E36', "a.k. ".$uki[0]['asmens_kodas'])
+           ->setCellValue('E37', $adr[2])
+           ->setCellValue('E38', str_replace("\r"," ",$adr[1])." ".str_replace("\r"," ",$adr[0]))
+           ->setCellValue('E39', $uki[0]['saskaitos_nr'])
+           ->setCellValue('E40', $uki[0]['bankas'])
+           ->setCellValue('E41', "el. p.: ".$uki[0]['email'])
+           ->setCellValue('E42', "Tel.: ".$uki[0]['telefonas'])
        ;
 // Generate an updated excel file
 // Redirect output to a client’s web browser (Excel2007)

@@ -14,27 +14,19 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Ūkininkas</label>
                         <div class="col-md-10">
-                            <?php echo form_error('ukininko_vardas');
-                            if($dt['vardas'] == "" AND $dt['pavarde'] == "") { ?>
-                                <select name="ukininko_vardas" class="form-control">
-                                    <option value="">Pasirinkite...</option>
-                                    <?php
-                                    foreach ($this->main_model->info['ukininkai'] as $row) {
-                                        echo "<option value='$row[valdos_nr]'>";
-                                        echo $row['vardas'];
-                                        echo " ";
-                                        echo $row['pavarde'];
-                                        echo "</option>";
-                                    }
-                                    ?>
-                                </select>
+                            <?php echo form_error('ukininko_vardas'); ?>
+                            <select name="ukininko_vardas" class="form-control">
+                                <option value="">Pasirinkite...</option>
                                 <?php
-                            }else{
-                                echo '<select name="ukininko_vardas" class="form-control" disabled>';
-                                echo'<option value='.$dt['nr'].' selected="selected">'.$dt['vardas'].' '.$dt['pavarde'].'</option>';
-                                echo'</select>';
-                            }
-                            ?>
+                                foreach ($this->main_model->info['ukininkai'] as $row) {
+                                    echo "<option value='$row[valdos_nr]'>";
+                                    echo $row['vardas'];
+                                    echo " ";
+                                    echo $row['pavarde'];
+                                    echo "</option>";
+                                }
+                                ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">

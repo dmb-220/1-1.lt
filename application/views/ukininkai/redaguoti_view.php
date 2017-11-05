@@ -9,53 +9,88 @@
         </div>
         <div class="ibox-content">
             <?php
-            var_dump($this->main_model->info['ukininkas']);
+            //var_dump($this->main_model->info['ukininkas']);
             ?>
-            <form class="form-horizontal form-bordered" action="<?= base_url(); ?>ukininkai/redaguoti" method="POST">
+            <form class="form-horizontal form-bordered" action="<?= base_url(); ?>ukininkai/redaguoti/<?= $this->uri->segment(3) ?>" method="POST">
                 <fieldset>
+                    <?php
+                    if($this->main_model->info['error']['nerasta']){
+                        echo'<div class="alert alert-danger">';
+                        echo $this->main_model->info['error']['nerasta'];
+                        echo '</div>';
+                    }
+                    if($this->main_model->info['error']['ok']) {
+                        echo '<div class="alert alert-danger">';
+                        echo $this->main_model->info['error']['ok'];
+                        echo '</div>';
+                    }
+                    ?>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Ūkininkas:</label>
                         <div class="col-md-6">
-                            <?php echo form_error('ukininko_vardas'); ?>
-                            <input name="ukininko_vardas" type="text" class="form-control" placeholder="" value="<?= $this->main_model->info['ukininkas'][0]['vardas']." ".
-                            $this->main_model->info['ukininkas'][0]['pavarde'] ?>" disabled/>
+                            <div class="row row-space-10">
+                                <div class="col-md-6 m-b-15">
+                                    <?php echo form_error('vardas'); ?>
+                                    <input type="text" name="vardas" class="form-control" placeholder="Vardas" value="<?= $this->main_model->info['ukininkas'][0]['vardas'] ?>">
+                                </div>
+                                <div class="col-md-6 m-b-15">
+                                    <?php echo form_error('pavarde'); ?>
+                                    <input type="text" name="pavarde" class="form-control" placeholder="Pavardė" value="<?= $this->main_model->info['ukininkas'][0]['pavarde'] ?>">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-4 control-label">VIC.LT prisijungimas:</label>
+                    <div class="col-md-6">
+                        <div class="row row-space-10">
+                            <div class="col-md-6 m-b-15">
+                                <?php echo form_error('vartotojas'); ?>
+                                <input type="text" name="vartotojas" class="form-control" placeholder="Vartotojo vardas" value="<?= $this->main_model->info['ukininkas'][0]['VIC_vartotojo_vardas'] ?>">
+                            </div>
+                            <div class="col-md-6 m-b-15">
+                                <?php echo form_error('slaptazodis'); ?>
+                                <input type="text" name="slaptazodis" class="form-control" placeholder="Slaptažodis" value="<?= $this->main_model->info['ukininkas'][0]['VIC_slaptazodis'] ?>">
+                            </div>
+                        </div>
+                    </div>
+        </div>
+                    <div class="form-group">
                         <label class="col-md-4 control-label">Asmens kodas:</label>
                         <div class="col-md-6">
-                            <?php echo form_error('kodas'); ?>
-                            <input name="kodas" type="text" class="form-control" placeholder=""/>
+                            <?php echo form_error('asmens_kodas'); ?>
+                            <input name="asmens_kodas" type="text" class="form-control" placeholder="Asmens kodas" value="<?= $this->main_model->info['ukininkas'][0]['asmens_kodas'] ?>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Adresas:</label>
                         <div class="col-md-6">
                             <?php echo form_error('adresas'); ?>
-                            <input name="adresas" type="text" class="form-control" placeholder="" />
+                            <textarea class="form-control" name="adresas"  rows="3" placeholder="Adresas"><?= $this->main_model->info['ukininkas'][0]['adresas'] ?></textarea>
                         </div>
 
                     </div>
+                    <div id="numeris">
                     <div class="form-group">
                         <label class="col-md-4 control-label">Sąskaitos numeris:</label>
                         <div class="col-md-6">
                             <?php echo form_error('numeris'); ?>
-                            <input name="numeris" type="text" class="form-control" placeholder="" />
+                            <input name="numeris" v-model="message"  type="text" class="form-control" placeholder="Sąskaitos numeris:" value="<?= $this->main_model->info['ukininkas'][0]['saskaitos_nr'] ?>" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Bankas</label>
+                        <label class="col-md-4 control-label">Banko pavadinimas:</label>
                         <div class="col-md-6">
-                            <?php echo form_error('Bankas'); ?>
-                            <input name="bankas" type="password" class="form-control" placeholder="" />
+                            <?php echo form_error('bankas'); ?>
+                            <input name="bankas" type="text" class="form-control" placeholder="Banko pavadinimas" value="{{ message }}" />
                         </div>
                     </div>
-
+                    </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">El. paštas:</label>
                         <div class="col-md-6">
                             <?php echo form_error('email'); ?>
-                            <input name="email" type="password" class="form-control" placeholder="" />
+                            <input name="email" type="email" class="form-control" placeholder="El. paštas" value="<?= $this->main_model->info['ukininkas'][0]['email'] ?>"/>
                         </div>
                     </div>
 
@@ -63,7 +98,7 @@
                         <label class="col-md-4 control-label">Telefono numeris</label>
                         <div class="col-md-6">
                             <?php echo form_error('telefonas'); ?>
-                            <input name="telefonas" type="password" class="form-control" placeholder="" />
+                            <input name="telefonas" type="text" class="form-control" value="<?= $this->main_model->info['ukininkas'][0]['telefonas'] ?>" placeholder="Telefono numeris" />
                         </div>
                     </div>
 

@@ -14,8 +14,7 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Ūkininkas</label>
                         <div class="col-md-10">
-                            <?php echo form_error('ukininko_vardas');
-                            if($dt['vardas'] == "" AND $dt['pavarde'] == "") { ?>
+                            <?php echo form_error('ukininko_vardas'); ?>
                                 <select name="ukininko_vardas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
@@ -28,13 +27,6 @@
                                     }
                                     ?>
                                 </select>
-                                <?php
-                            }else{
-                                echo '<select name="ukininko_vardas" class="form-control" disabled>';
-                                echo'<option value='.$dt['nr'].' selected="selected">'.$dt['vardas'].' '.$dt['pavarde'].'</option>';
-                                echo'</select>';
-                            }
-                            ?>
                         </div>
                     </div>
 

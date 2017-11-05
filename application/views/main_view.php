@@ -73,7 +73,7 @@ $this->load->view('left_view');
             case "skaitciuokle": $this->load->view("sutartys/skaitciuokle_view"); break;
             case "sutartys": $this->load->view("sutartys/sutartys_view"); break;
             case "paslaugu_teikimas": $this->load->view("sutartys/paslaugu_teikimas_view"); break;
-            case "darbo_sutartis": $this->load->view("sutartys/darbo_sutartis_view"); break;
+            case "darbo_sutartis": $this->load->view("sutartys/darbo_sustartis_view"); break;
             //Kalendorius
             case "kalendorius": $this->load->view("kalendorius_view"); break;
             //kai niekas netinka

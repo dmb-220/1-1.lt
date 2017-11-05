@@ -35,3 +35,15 @@ new Vue({
     methods: {},
     watch: {}
 });
+
+new Vue({
+    el: '#numeris',
+    data: {
+        message: 'nuMERIS'
+    },
+    filters: {
+        uppercase: function (value) {
+            return value.toUpperCase()
+        }
+    }
+})

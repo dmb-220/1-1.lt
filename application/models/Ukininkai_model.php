@@ -13,6 +13,13 @@ class Ukininkai_model extends CI_Model{
         $this->ukininkas = $nr;
     }
 
+    //atnaujinam ukikinku duomenis
+    public function atnaujinti_ukininka($nr, $data){
+        $where = array('valdos_nr' => $nr);
+        $this->db->where($where);
+        $this->db->update('ukininkai', $data);
+    }
+
     //irasom nauja ukininka i duomenu baze
     public function irasyti_ukininka($vardas, $pavarde, $valdos_nr, $v_vardas, $slaptazodis){
         $sql = array(
