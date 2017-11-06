@@ -46,23 +46,38 @@
                                         <div class="col-md-10">
                                             <div class="row row-space-12">
                                                 <?php echo form_error('gyvuliai'); ?>
-                                                <div class="col-md-4 m-b-15">
+                                                <div class="col-md-2 m-b-15">
                                                     <div class="radio radio-info radio-inline">
                                                         <input type="radio" value="1" name="gyvuliai">
                                                         <label> MĖSINIAI </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4 m-b-15">
+                                                <div class="col-md-2 m-b-15">
                                                     <div class="radio radio-info radio-inline">
                                                         <input type="radio" value="1" name="gyvuliai">
                                                         <label> PIENINIAI </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4 m-b-15">
+                                                <div class="col-md-2 m-b-15">
                                                     <div class="radio radio-info radio-inline">
                                                         <input type="radio" value="1" name="gyvuliai">
                                                         <label> MIŠRŪS </label>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row row-space-12">
+                                                <div class="col-md-4 m-b-15">
+                                                    <?php echo form_error('kiekis'); ?>
+                                                    <input type="text" name="kiekis" class="form-control" placeholder="Kiekis">
+                                                </div>
+                                                <div class="col-md-4 m-b-15">
+                                                    <?php echo form_error('suma_menesis'); ?>
+                                                    <input type="text" name="suma_menesis" class="form-control" placeholder="Suma per menesį">
+                                                </div>
+                                                <div class="col-md-4 m-b-15">
+                                                    <?php echo form_error('suma_metai'); ?>
+                                                    <input type="text" name="suma_metai" class="form-control" placeholder="Suma per metus">
                                                 </div>
                                             </div>
                                         </div>

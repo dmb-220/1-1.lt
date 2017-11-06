@@ -63,6 +63,14 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-4 control-label">PVM kodas:</label>
+                        <div class="col-md-6">
+                            <?php echo form_error('pvm'); ?>
+                            <input name="pvm" type="text" class="form-control" placeholder="PVM kodas" value="<?= $this->main_model->info['ukininkas'][0]['pvm_kodas'] ?>"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="col-md-4 control-label">Adresas:</label>
                         <div class="col-md-6">
                             <?php echo form_error('adresas'); ?>
