@@ -1,12 +1,13 @@
-<?
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require_once APPPATH."third_party/PhpWord.php";
+require_once APPPATH."/third_party/PhpWord.php";
 
-class Word extends PhpWord{
+class Word extends PhpWord {
 
     public function __construct() {
-        parent::__construct(); }
+
+        parent::__construct();
+
+    }
 
 }
-?>
