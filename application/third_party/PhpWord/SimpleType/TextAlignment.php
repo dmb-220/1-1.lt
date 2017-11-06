@@ -15,30 +15,31 @@
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-namespace PhpOffice\PhpWord\Writer\Word2007\Element;
+namespace PhpOffice\PhpWord\SimpleType;
+
+use PhpOffice\PhpWord\Shared\AbstractEnum;
 
 /**
- * PageBreak element writer
+ * Magnification Preset Values
  *
- * @since 0.10.0
+ * @since 0.14.0
+ *
+ * @see http://www.datypic.com/sc/ooxml/t-w_ST_TextAlignment.html
  */
-class PageBreak extends AbstractElement
+final class TextAlignment extends AbstractEnum
 {
-    /**
-     * Write element.
-     *
-     * @usedby \PhpOffice\PhpWord\Writer\Word2007\Element\AbstractElement::startElementP()
-     */
-    public function write()
-    {
-        $xmlWriter = $this->getXmlWriter();
+    //Align Text at Top
+    const TOP = 'top';
 
-        $xmlWriter->startElement('w:p');
-        $xmlWriter->startElement('w:r');
-        $xmlWriter->startElement('w:br');
-        $xmlWriter->writeAttribute('w:type', 'page');
-        $xmlWriter->endElement(); // w:br
-        $xmlWriter->endElement(); // w:r
-        $xmlWriter->endElement(); // w:p
-    }
+    //Align Text at Center
+    const CENTER = 'center';
+
+    //Align Text at Baseline
+    const BASELINE = 'baseline';
+
+    //Align Text at Bottom
+    const BOTTOM = 'bottom';
+
+    //Automatically Determine Alignment
+    const AUTO = 'auto';
 }
