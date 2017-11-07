@@ -34,6 +34,7 @@ class Sutartys extends CI_Controller
 
         //uzkraunam MODEL
         $this->load->model('ukininkai_model');
+        $this->load->model('galvijai_model');
         $this->load->model('sutartys_model');
         $this->load->model('main_model');
 
@@ -51,20 +52,36 @@ class Sutartys extends CI_Controller
     }
 
     public function skaitciuokle(){
+        $dt = $this->session->userdata();
+        if($dt['nr'] == ""){
+            $this->main_model->info['error']['login'] = "Norėdami pradėti darbus, Pasirinkite ūkininką su kuriuo dirbsite!";
+        }else {
+            //suskaiciuoti deklaruojama plota
+            $dat = array('ukininkas' => $dt['nr'], 'metai' => "2017");
+            $this->main_model->info['txt']['deklaruota']  = $this->sutartys_model->skaiciuoti_deklaruota_plota($dat);
+            //suskaiciuoti gyvuliu vidurki
+            $this->main_model->info['txt']['vidurkis'] = $this->sutartys_model->galvijai_vidurkis();
+            $banda = $this->galvijai_model->nustatymai($dt['nr']);
+            $this->main_model->info['txt']['banda'] = $banda[0]['banda'];
+        }
 
         $this->load->view('main_view');
     }
 
     public function darbo_sutartis(){
+        $this->load->library('word');
+
 
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Sutartys";
         $this->main_model->info['txt']['info'] = "Darbo sutartis";
 
+
         $this->load->view('main_view', array('data' => $data));
     }
 
     public function sutartys(){
+
         $dt = $this->session->userdata();
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
@@ -128,7 +145,7 @@ class Sutartys extends CI_Controller
                 $kaina = $this->input->post('kaina');
 
                 $uki = $this->ukininkai_model->ukininkas($ukininkas);
-                $adr = explode(PHP_EOL, $uki[0]['adresas']);
+                //$adr = explode(PHP_EOL, $uki[0]['adresas']);
                 //var_dump($adr); die;
                 $this->load->library('Excel');
        $inputFileName = './DATA/paslaugu_sutartis.xls';
@@ -148,8 +165,8 @@ class Sutartys extends CI_Controller
            ->setCellValue('C19', $kaina)
            ->setCellValue('E35', $this->main_model->info['txt']['vardas']." ".$this->main_model->info['txt']['pavarde'])
            ->setCellValue('E36', "a.k. ".$uki[0]['asmens_kodas'])
-           ->setCellValue('E37', $adr[2])
-           ->setCellValue('E38', str_replace("\r"," ",$adr[1])." ".str_replace("\r"," ",$adr[0]))
+           ->setCellValue('E37', $uki[0]['pvm_kodas'])
+           ->setCellValue('E38', $uki[0]['adresas'])
            ->setCellValue('E39', $uki[0]['saskaitos_nr'])
            ->setCellValue('E40', $uki[0]['bankas'])
            ->setCellValue('E41', "el. p.: ".$uki[0]['email'])

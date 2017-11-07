@@ -70,6 +70,7 @@ class Ukininkai extends CI_Controller {
         $this->form_validation->set_rules('numeris', 'Saskaitos numeris');
         $this->form_validation->set_rules('bankas', 'Banko pavadinimas');
         $this->form_validation->set_rules('telefonas', 'Telefono numeris');
+        $this->form_validation->set_rules('pvm', 'PVM kodas');
 
 
         if ($this->form_validation->run()) {
@@ -84,11 +85,12 @@ class Ukininkai extends CI_Controller {
             $bankas = $this->input->post('bankas',TRUE);
             $email = $this->input->post('email');
             $telefonas = $this->input->post('telefonas');
+            $pvm = $this->input->post('pvm');
 
             $ok = $this->ukininkai_model->tikinti_ukininka($action);
             if($ok>0){
                 $data = array('vardas' => $vardas, 'pavarde' => $pavarde, 'VIC_vartotojo_vardas' => $vartotojas, 'VIC_slaptazodis' => $slaptazodis,
-                    'asmens_kodas' => $asmens_kodas, 'adresas' => $adresas, 'saskaitos_nr' => $numeris, 'bankas' => $bankas, 'email' => $email, 'telefonas' => $telefonas);
+                    'asmens_kodas' => $asmens_kodas, 'adresas' => $adresas, 'saskaitos_nr' => $numeris, 'bankas' => $bankas, 'email' => $email, 'telefonas' => $telefonas, 'pvm_kodas' => $pvm);
                 $this->ukininkai_model->atnaujinti_ukininka($action, $data);
                 $this->main_model->info['error']['ok'] = "Ūkininko duomenys atnaujinti!";
             }else{

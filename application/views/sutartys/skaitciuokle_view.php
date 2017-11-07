@@ -9,7 +9,11 @@
         </div>
         <div class="ibox-content">
             <?php
-            //var_dump($data);
+            if($this->main_model->info['error']['login']){
+                echo'<div class="alert alert-danger">';
+                echo $this->main_model->info['error']['login'];
+                echo '</div>';
+            }
             ?>
             <div class="tabs-container">
                 <ul class="nav nav-tabs">
@@ -42,25 +46,34 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-md-2 control-label">Gyvuliai:</label>
+                                        <label class="col-md-2 control-label">Galvijai (vnt):</label>
                                         <div class="col-md-10">
                                             <div class="row row-space-12">
                                                 <?php echo form_error('gyvuliai'); ?>
                                                 <div class="col-md-2 m-b-15">
                                                     <div class="radio radio-info radio-inline">
-                                                        <input type="radio" value="1" name="gyvuliai">
+                                                        <?php if($this->main_model->info['txt']['banda'] == 2){
+                                                        echo"<input type='radio' value='2' name='gyvuliai' checked>";}else{
+                                                            echo"<input type='radio' value='2' name='gyvuliai'>";
+                                                        } ?>
                                                         <label> MĖSINIAI </label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 m-b-15">
                                                     <div class="radio radio-info radio-inline">
-                                                        <input type="radio" value="1" name="gyvuliai">
+                                                        <?php if($this->main_model->info['txt']['banda'] == 1){
+                                                            echo"<input type='radio' value='1' name='gyvuliai' checked>";}else{
+                                                            echo"<input type='radio' value='1' name='gyvuliai'>";
+                                                        } ?>
                                                         <label> PIENINIAI </label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2 m-b-15">
                                                     <div class="radio radio-info radio-inline">
-                                                        <input type="radio" value="1" name="gyvuliai">
+                                                        <?php if($this->main_model->info['txt']['banda'] == 3){
+                                                            echo"<input type='radio' value='3' name='gyvuliai' checked>";}else{
+                                                            echo"<input type='radio' value='3' name='gyvuliai'>";
+                                                        } ?>
                                                         <label> MIŠRŪS </label>
                                                     </div>
                                                 </div>
@@ -69,7 +82,27 @@
                                             <div class="row row-space-12">
                                                 <div class="col-md-4 m-b-15">
                                                     <?php echo form_error('kiekis'); ?>
-                                                    <input type="text" name="kiekis" class="form-control" placeholder="Kiekis">
+                                                    <input type="text" name="kiekis" class="form-control" placeholder="Kiekis" value="<?=  $this->main_model->info['txt']['vidurkis'] ?>">
+                                                </div>
+                                                <div class="col-md-4 m-b-15">
+                                                    <?php echo form_error('suma_menesis'); ?>
+                                                    <input type="text" name="suma_menesis" class="form-control" placeholder="Suma per menesį">
+                                                </div>
+                                                <div class="col-md-4 m-b-15">
+                                                    <?php echo form_error('suma_metai'); ?>
+                                                    <input type="text" name="suma_metai" class="form-control" placeholder="Suma per metus">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Deklaruotas plotas (ha):</label>
+                                        <div class="col-md-10">
+                                            <div class="row row-space-12">
+                                                <div class="col-md-4 m-b-15">
+                                                    <?php echo form_error('kiekis'); ?>
+                                                    <input type="text" name="kiekis" class="form-control" placeholder="Kiekis" value="<?= $this->main_model->info['txt']['deklaruota'] ?>">
                                                 </div>
                                                 <div class="col-md-4 m-b-15">
                                                     <?php echo form_error('suma_menesis'); ?>
@@ -256,7 +289,7 @@
                                             <div class="row row-space-12">
                                                 <div class="col-md-4 m-b-15">
                                                     <?php echo form_error('kiekis'); ?>
-                                                    <input type="text" name="kiekis" class="form-control" placeholder="Kiekis">
+                                                    <input type="text" name="kiekis" class="form-control" placeholder="Kiekis" value="">
                                                 </div>
                                                 <div class="col-md-4 m-b-15">
                                                     <?php echo form_error('suma_menesis'); ?>

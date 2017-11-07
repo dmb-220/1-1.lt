@@ -44,6 +44,14 @@ class Galvijai_model extends CI_Model{
         parent::__construct();
 
     }
+    //suskaiciuoti gyvulius
+    public function skaitciuoti_galvijus($data) {
+        //$this->db->select('id');
+        $this->db->from('galvijai');
+        $this->db->where($data);
+        $result = $this->db->count_all_results();
+        return $result;
+    }
 
     //is filtruojamas kodas pagal kuri nustatom kur dingo gyvuliukas
     public function ivykio_kodas($data){
