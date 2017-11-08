@@ -86,17 +86,21 @@ class Ukininkai extends CI_Controller {
             $email = $this->input->post('email');
             $telefonas = $this->input->post('telefonas');
             $pvm = $this->input->post('pvm');
+            $banda = $this->input->post('banda');
 
             $ok = $this->ukininkai_model->tikinti_ukininka($action);
             if($ok>0){
                 $data = array('vardas' => $vardas, 'pavarde' => $pavarde, 'VIC_vartotojo_vardas' => $vartotojas, 'VIC_slaptazodis' => $slaptazodis,
-                    'asmens_kodas' => $asmens_kodas, 'adresas' => $adresas, 'saskaitos_nr' => $numeris, 'bankas' => $bankas, 'email' => $email, 'telefonas' => $telefonas, 'pvm_kodas' => $pvm);
+                    'asmens_kodas' => $asmens_kodas, 'adresas' => $adresas, 'saskaitos_nr' => $numeris, 'bankas' => $bankas, 'email' => $email,
+                    'telefonas' => $telefonas, 'pvm_kodas' => $pvm, 'banda' => $banda);
                 $this->ukininkai_model->atnaujinti_ukininka($action, $data);
                 $this->main_model->info['error']['ok'] = "Ūkininko duomenys atnaujinti!";
             }else{
                 $this->main_model->info['error']['nerasta'] = "Ūkininkas nerastas!";
             }
-    }
+        }
+        $banda = $this->ukininkai_model->ukininkas($action);
+        $this->main_model->info['txt']['banda'] = $banda[0]['banda'];
 
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Ūkininkai";
@@ -111,7 +115,7 @@ class Ukininkai extends CI_Controller {
         $this->main_model->info['txt']['meniu'] = "Ūkininkai";
         $this->main_model->info['txt']['info'] = "Ūkininkų sąrašas";
 
-        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas();
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
         $this->load->view("main_view");
     }
 
@@ -119,12 +123,14 @@ class Ukininkai extends CI_Controller {
     public function prideti_ukininka(){
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
         $this->form_validation->set_rules('vardas', 'Vardas', 'required',  array('required' => 'Įveskite vardą.'));
         $this->form_validation->set_rules('pavarde', 'Pavardė', 'required', array('required' => 'Įveskite pavardę.'));
         $this->form_validation->set_rules('v_vardas', 'Vartotojo vardas', 'required', array('required' => 'Įveskite vartotojo vardą.'));
         $this->form_validation->set_rules('slaptazodis', 'Slaptazodis', 'required', array('required' => 'Įveskite slaptazodi.'));
         $this->form_validation->set_rules('valdos_nr', 'Valdos numeris', 'required|is_natural',
             array('required' => 'Įveskite valdos numerį.', 'is_natural' => 'Valdos numeris tik skaiciai.'));
+        $this->form_validation->set_rules('banda', 'Galviju banda', 'required',  array('required' => 'pasirinkite galvij7 bandos tipą.'));
 
         if ($this->form_validation->run()) {
             $vardas = $this->input->post('vardas');
@@ -132,12 +138,16 @@ class Ukininkai extends CI_Controller {
             $valdos_nr = $this->input->post('valdos_nr');
             $v_vardas = $this->input->post('v_vardas');
             $slaptazodis = $this->input->post('slaptazodis');
+            $banda = $this->input->post('banda');
 
             $ok = $this->ukininkai_model->tikinti_ukininka($valdos_nr);
             if($ok>0){
                 $this->main_model->info['error']['yra'] = "TOKS ukininkas jau yra!";
             }else{
-                $this->ukininkai_model->irasyti_ukininka($vardas,$pavarde, $valdos_nr, $v_vardas, $slaptazodis );
+                $duomenys = array('vardas' => $vardas , 'pavarde' => $pavarde , 'valdos_nr' => $valdos_nr,
+                    'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis, 'banda' => $banda,
+                );
+                $this->ukininkai_model->irasyti_ukininka($duomenys);
                 $this->main_model->info['error']['ok'] = "Naujas ukininkas pridetas!";}
 
             $this->main_model->info['error']['action'] = true;

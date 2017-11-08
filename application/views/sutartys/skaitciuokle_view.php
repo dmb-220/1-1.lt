@@ -217,6 +217,33 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label class="col-md-2 control-label"> </label>
+                                        <div class="col-md-10">
+                                            <div class="row row-space-12">
+                                                <div class="col-md-4 m-b-15">
+                                                    <?php echo form_error('europa'); ?>
+                                                    <div class="radio radio-info radio-info radio-inline">
+                                                    <input type="radio" value="1" name="europa">
+                                                    <label> EUROPOS PARAMA </label>
+                                                </div>
+                                                </div>
+                                                <div class="col-md-4 m-b-15">
+                                                    <div class="checkbox checkbox-info checkbox-circle">
+                                                        <input id="is_check" type="checkbox" name="kuras_tikrinti">
+                                                        <label>KURO APSKAITA</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 m-b-15" id="inp2" style="display:none">
+                                                    <?php echo form_error('kuras'); ?>
+                                                    <input type="text" name="kuras" class="form-control" placeholder="Įveskite transporto priemonių skaičių">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
                                         <label class="col-md-2 control-label">Praeitų metų turtas:</label>
                                         <div class="col-md-10">
                                             <input name="turtas" type="text" class="form-control" placeholder= "" />

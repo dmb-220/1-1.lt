@@ -13,24 +13,39 @@ class Sutartys_model extends CI_Model{
         $sk = 0;
         $dt = $this->session->userdata();
         $metai = date('Y');
-        $menesis = date('m') - 2;
-        $m = $menesis;
+        $menesis = date('m') -1;
+        //$m = $menesis;
         //$nuskaityti gyvulius
         for($i=0; $i<9; $i++) {
-            if(($m - $i) <= 1){$menesis = 12; $metai = $metai - 1;}else{$menesis = $menesis -1;}
+            if($menesis <= 1){$menesis = 12; $metai = $metai - 1;}else{$menesis = $menesis - 1;}
             $array = array('ukininkas' => $dt['nr'], 'metai' => $metai, 'menesis' => $menesis, 'amzius !=' => "");
-            $s = $this->galvijai_model->skaitciuoti_galvijus($array);
+            $s = $this->sutartys_model->skaitciuoti_galvijus($array);
             $sk = $sk + $s;
         }
         return round($sk/9, 0);
     }
 
+    //suskaiciuoti gyvulius
+    public function skaitciuoti_galvijus($data) {
+        $this->db->from('galvijai');
+        $this->db->where($data);
+        $result = $this->db->count_all_results();
+        return $result;
+    }
+
     public function skaiciuoti_deklaruota_plota($dat){
-        $this->db->select_sum('plotas');
-        $this->db->where($dat);
-        $query = $this->db->get("deklaracija");
-        $data = $query->result_array();
-        return round($data[0]['plotas'], 0);
+        $plotas = 0;
+        $dek = $this->paseliai_model->nuskaityti_deklaracija($dat);
+        //sukuriamas masyvas, jis bus sukuriamas pagal deklaracijos duomenis
+        $da = array();
+        foreach($dek as $row){
+            $dat = array('sutrumpinimas' =>  $row['kodas']);
+            $de = $this->paseliai_model->nuskaityti_paselius($dat);
+            if(!empty($de[0]['sekla'])){
+                $plotas += $row['plotas'];
+            }
+        }
+        return round($plotas, 0);
     }
 
 

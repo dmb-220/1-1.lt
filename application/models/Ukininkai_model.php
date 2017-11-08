@@ -21,14 +21,7 @@ class Ukininkai_model extends CI_Model{
     }
 
     //irasom nauja ukininka i duomenu baze
-    public function irasyti_ukininka($vardas, $pavarde, $valdos_nr, $v_vardas, $slaptazodis){
-        $sql = array(
-            'vardas' => $vardas ,
-            'pavarde' => $pavarde ,
-            'valdos_nr' => $valdos_nr,
-            'VIC_vartotojo_vardas' => $v_vardas,
-            'VIC_slaptazodis' => $slaptazodis,
-        );
+    public function irasyti_ukininka($sql){
         $this->db->insert('ukininkai', $sql);
     }
 

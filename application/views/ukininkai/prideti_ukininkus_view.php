@@ -60,6 +60,42 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-md-4 control-label">Galvijų banda:</label>
+                                <div class="col-md-6">
+                                    <div class="row row-space-12">
+                                        <?php echo form_error('banda'); ?>
+                                        <div class="col-md-2 m-b-15">
+                                            <div class="radio radio-info radio-inline">
+                                                <?php if($this->main_model->info['txt']['banda'] == 2){
+                                                    echo"<input type='radio' value='2' name='banda' checked>";}else{
+                                                    echo"<input type='radio' value='2' name='banda'>";
+                                                } ?>
+                                                <label> MĖSINIAI </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 m-b-15">
+                                            <div class="radio radio-info radio-inline">
+                                                <?php if($this->main_model->info['txt']['banda'] == 1){
+                                                    echo"<input type='radio' value='1' name='banda' checked>";}else{
+                                                    echo"<input type='radio' value='1' name='banda'>";
+                                                } ?>
+                                                <label> PIENINIAI </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 m-b-15">
+                                            <div class="radio radio-info radio-inline">
+                                                <?php if($this->main_model->info['txt']['banda'] == 3){
+                                                    echo"<input type='radio' value='3' name='banda' checked>";}else{
+                                                    echo"<input type='radio' value='3' name='banda'>";
+                                                } ?>
+                                                <label> MIŠRŪS </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="control-label col-md-4 col-sm-4"></label>
                                 <div class="col-md-6 col-sm-6">
                                     <button class="btn btn-block btn-outline btn-primary" type="submit">

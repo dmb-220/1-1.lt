@@ -42,19 +42,56 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">VIC.LT prisijungimas:</label>
-                    <div class="col-md-6">
-                        <div class="row row-space-10">
-                            <div class="col-md-6 m-b-15">
-                                <?php echo form_error('vartotojas'); ?>
-                                <input type="text" name="vartotojas" class="form-control" placeholder="Vartotojo vardas" value="<?= $this->main_model->info['ukininkas'][0]['VIC_vartotojo_vardas'] ?>">
-                            </div>
-                            <div class="col-md-6 m-b-15">
-                                <?php echo form_error('slaptazodis'); ?>
-                                <input type="text" name="slaptazodis" class="form-control" placeholder="Slaptažodis" value="<?= $this->main_model->info['ukininkas'][0]['VIC_slaptazodis'] ?>">
+                        <div class="col-md-6">
+                            <div class="row row-space-10">
+                                <div class="col-md-6 m-b-15">
+                                    <?php echo form_error('vartotojas'); ?>
+                                    <input type="text" name="vartotojas" class="form-control" placeholder="Vartotojo vardas" value="<?= $this->main_model->info['ukininkas'][0]['VIC_vartotojo_vardas'] ?>">
+                                </div>
+                                <div class="col-md-6 m-b-15">
+                                    <?php echo form_error('slaptazodis'); ?>
+                                    <input type="text" name="slaptazodis" class="form-control" placeholder="Slaptažodis" value="<?= $this->main_model->info['ukininkas'][0]['VIC_slaptazodis'] ?>">
+                                </div>
                             </div>
                         </div>
                     </div>
-        </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Galvijų banda:</label>
+                        <div class="col-md-6">
+                            <div class="row row-space-12">
+                                <?php echo form_error('banda'); ?>
+                                <div class="col-md-2 m-b-15">
+                                    <div class="radio radio-info radio-inline">
+                                        <?php if($this->main_model->info['txt']['banda'] == 2){
+                                            echo"<input type='radio' value='2' name='banda' checked>";}else{
+                                            echo"<input type='radio' value='2' name='banda'>";
+                                        } ?>
+                                        <label> MĖSINIAI </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 m-b-15">
+                                    <div class="radio radio-info radio-inline">
+                                        <?php if($this->main_model->info['txt']['banda'] == 1){
+                                            echo"<input type='radio' value='1' name='banda' checked>";}else{
+                                            echo"<input type='radio' value='1' name='banda'>";
+                                        } ?>
+                                        <label> PIENINIAI </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 m-b-15">
+                                    <div class="radio radio-info radio-inline">
+                                        <?php if($this->main_model->info['txt']['banda'] == 3){
+                                            echo"<input type='radio' value='3' name='banda' checked>";}else{
+                                            echo"<input type='radio' value='3' name='banda'>";
+                                        } ?>
+                                        <label> MIŠRŪS </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label class="col-md-4 control-label">Asmens kodas:</label>
                         <div class="col-md-6">
@@ -76,8 +113,8 @@
                             <?php echo form_error('adresas'); ?>
                             <textarea class="form-control" name="adresas"  rows="3" placeholder="Adresas"><?= $this->main_model->info['ukininkas'][0]['adresas'] ?></textarea>
                         </div>
-
                     </div>
+
                     <div id="ajax">
                     <div class="form-group">
                         <label class="col-md-4 control-label">Sąskaitos numeris:</label>

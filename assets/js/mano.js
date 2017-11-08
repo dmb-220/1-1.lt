@@ -17,6 +17,9 @@ $(document).ready(function() {
         if($(this).is(":checked")) {$("#inp").show();} else {$("#inp").hide();}
     });
 
+    $('#is_check').change(function() {
+        if($(this).is(":checked")) {$("#inp2").show();} else {$("#inp2").hide();}
+    });
 });
 
 $(document).ready(function() {

@@ -304,6 +304,7 @@ class Paseliai extends CI_Controller{
         $dt = $this->session->userdata();
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
         if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
             $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
             $ukininkas = $this->input->post('ukininko_vardas');

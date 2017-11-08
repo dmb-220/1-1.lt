@@ -187,6 +187,7 @@ class Galvijai extends CI_Controller {
             $this->session->set_userdata($new);
         }else{
             $ukininkas = $dt['nr'];
+            $uk = $this->ukininkai_model->ukininkas($ukininkas);
             $this->main_model->info['txt']['vardas'] = $dt['vardas'];
             $this->main_model->info['txt']['pavarde'] = $dt['pavarde'];
         }
@@ -195,18 +196,17 @@ class Galvijai extends CI_Controller {
 
         if ($this->form_validation->run()) {
             //gaunami ukininko nustatymai
-            $set = $this->galvijai_model->nustatymai($dt['nr']);
             $metai = $this->input->post('metai');
             $menesis = $this->input->post('menesis');
 
             $this->main_model->info['txt']['metai'] = $metai;
             $this->main_model->info['txt']['menesis'] = $menesis;
-            $this->main_model->info['txt']['banda'] = $set[0]['banda'];
+            $this->main_model->info['txt']['banda'] = $uk[0]['banda'];
             //bandos nustatymas
             //1: pieniniai
             //2: mesiniai
             //3: pieniniai ir mesiniai reikia atskirti
-            $banda = $set[0]['banda'];
+            $banda = $uk[0]['banda'];
 
             //nuskaitom visus gyvulius, pasirinkto menesio
             $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);

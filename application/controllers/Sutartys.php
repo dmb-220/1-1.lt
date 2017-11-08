@@ -52,12 +52,15 @@ class Sutartys extends CI_Controller
     }
 
     public function skaitciuokle(){
+        $this->load->model('paseliai_model');
+
         $dt = $this->session->userdata();
         if($dt['nr'] == ""){
             $this->main_model->info['error']['login'] = "Norėdami pradėti darbus, Pasirinkite ūkininką su kuriuo dirbsite!";
         }else {
             //suskaiciuoti deklaruojama plota
-            $dat = array('ukininkas' => $dt['nr'], 'metai' => "2017");
+            //metus sutvarkyti, kad paimtu teisingus 2017-10 imtu 2017, o 2018-02 imtu irgi 2017
+            $dat = array('ukininkas' => $dt['nr'], 'metai' => '2017');
             $this->main_model->info['txt']['deklaruota']  = $this->sutartys_model->skaiciuoti_deklaruota_plota($dat);
             //suskaiciuoti gyvuliu vidurki
             $this->main_model->info['txt']['vidurkis'] = $this->sutartys_model->galvijai_vidurkis();
