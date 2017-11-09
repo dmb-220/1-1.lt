@@ -79,7 +79,8 @@
                                         //reik sutvarkyti, jei sezonas praejes, leistu apskaiciuoti visa
                                         if($me > $arr[$i] && $arr[$i] != '00' && $arr[$i] != '10'){
                                                 echo "<option value=" . $i . ">".$men[$i]."</option>";}
-                                                if($arr[$i] == 10 && date('d') > 15){
+                                                //cia istaisyti kai ateina spalis
+                                                if($arr[$i] == 10 /*&& date('d') > 15 */){
                                                     echo "<option value=" . $i . ">Iki ".$this->linksniai->getName($men[$i], 'kil')." 15 d.</option>";
                                                 }
                                     }

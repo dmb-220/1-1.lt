@@ -9,6 +9,8 @@ class Sutartys_model extends CI_Model{
         parent::__construct();
     }
 
+    //
+
     public function galvijai_vidurkis(){
         $sk = 0;
         $dt = $this->session->userdata();
