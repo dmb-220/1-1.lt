@@ -141,39 +141,18 @@ $this->load->view('left_view');
         autoclose: true,
         format: "yyyy.mm.dd"
     });
+
+    $('#paslaugu_sutartis .input-group.date').datepicker({
+        weekStart: 1,
+        defaultViewDate: "today",
+        keyboardNavigation: false,
+        forceParse: false,
+        autoclose: true,
+        format: "yyyy.mm.dd"
+    });
 </script>
 
 <script>
-    function Popup(data) {
-        var myWindow = window.open('', 'Spausdinti', 'height=800,width=1200');
-        myWindow.document.write('<html><head><title>Spauzdinti</title>');
-        /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" href="<?= base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css" type="text/css">');
-        /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/mano.css" media="print">');
-
-        myWindow.document.write('</head><body >');
-        myWindow.document.write(data);
-        myWindow.document.write('</body></html>');
-        myWindow.document.close(); // necessary for IE >= 10
-
-        myWindow.onload=function(){ // necessary if the div contain images
-
-            myWindow.focus(); // necessary for IE >= 10
-            myWindow.print();
-            myWindow.close();
-        };
-    }
 </script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108429154-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-108429154-1');
-</script>
-
-
 </body>
 </html>

@@ -37,12 +37,15 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" id="paslaugu_sutartis">
                         <label class="col-md-2 control-label">Data:</label>
                         <div class="col-md-10">
                             <?php echo form_error('data'); ?>
-                            <div id="app">
-                                <datepicker :value.sync="paslaugu_sutartis"></datepicker>
+                            <div class="input-group date">
+                                <input type="text" name="data" class="form-control"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
                             </div>
                         </div>
                     </div>

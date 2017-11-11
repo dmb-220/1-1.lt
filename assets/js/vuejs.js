@@ -29,7 +29,6 @@ new Vue({
     data: {
         startDate_1: '',
         startDate_2: '',
-        paslaugu_sutartis: '',
     },
     ready: function() {},
     methods: {},
