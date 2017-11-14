@@ -16,8 +16,8 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javasc
   # If your page resides at
   #  http://www.example.com/mypage/test1
   # then use
-  #RewriteBase /
-  RewriteBase /1-1.lt
+  RewriteBase /
+  #RewriteBase /1-1.lt
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)$ index.php?/$1 [L]

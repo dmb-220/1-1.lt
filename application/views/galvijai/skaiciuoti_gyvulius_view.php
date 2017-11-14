@@ -86,7 +86,8 @@
     </div>
 
             <?php
-            if($this->main_model->info['error']['action']){ ?>
+            if($this->main_model->info['error']['action']){
+                ?>
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>Informacija</h5>

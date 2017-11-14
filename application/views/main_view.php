@@ -91,15 +91,15 @@ $this->load->view('left_view');
 
     </div>
     <?php
-    $this->load->view("chat_view");
+    //$this->load->view("chat_view");
     $this->load->view("sidebar_view");
     ?>
 </div>
 
-<!-- Mainly scripts -->
+<!-- Mainly scripts
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js"></script>
-<!-- axios -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script>
+axios -->
 <script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\metisMenu\jquery.metisMenu.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
@@ -112,6 +112,7 @@ $this->load->view('left_view');
 <script src="<?= base_url(); ?>assets\js\plugins\datapicker\bootstrap-datepicker.js"></script>
 <!-- mano JS -->
 <script src="<?= base_url(); ?>assets\js\mano.js"></script>
+<script src="<?= base_url(); ?>assets\js\printPreview.js"></script>
 <script src="<?= base_url(); ?>assets\js\vuejs.js"></script>
 
 <script type="text/javascript">
@@ -150,9 +151,6 @@ $this->load->view('left_view');
         autoclose: true,
         format: "yyyy.mm.dd"
     });
-</script>
-
-<script>
 </script>
 </body>
 </html>

@@ -137,8 +137,8 @@ if($this->main_model->info['error']['action']){ ?>
 
             </div>
         </div>
-
-        <div class="ibox float-e-margins">
+    <!--
+        <div class="ibox float-e-margins nerodyti">
             <div class="ibox-title">
                 <h5>Informacija</h5>
                 <div class="ibox-tools">
@@ -155,7 +155,7 @@ if($this->main_model->info['error']['action']){ ?>
                 var_dump($da);
                 ?>
             </div>
-        </div>
+        </div> -->
 <?php }
 ?>
 </div>

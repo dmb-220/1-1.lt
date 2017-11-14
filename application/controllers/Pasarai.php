@@ -1087,22 +1087,22 @@ class Pasarai extends CI_Controller{
             if(!$menesis AND $laikotarpis){
                 if($laikotarpis == 1){
                     $laiko = array(1, 2, 3, 4, 5, 6);
-                    $inf['laikotarpis'] = 'I pusmetis';}
+                    $this->main_model->info['txt']['laikotarpis'] = 'I pusmetis';}
                 if($laikotarpis == 2){
                     $laiko = array(7, 8, 9, 10, 11, 12);
-                    $inf['laikotarpis'] = 'II pusmetis';}
+                    $this->main_model->info['txt']['laikotarpis'] = 'II pusmetis';}
                 if($laikotarpis == 3){
                     $laiko = array(1, 2, 3);
-                    $inf['laikotarpis'] = 'I ketvirtis';}
+                    $this->main_model->info['txt']['laikotarpis'] = 'I ketvirtis';}
                 if($laikotarpis == 4){
                     $laiko = array(4, 5, 6);
-                    $inf['laikotarpis'] = 'II ketvirtis';}
+                    $this->main_model->info['txt']['laikotarpis'] = 'II ketvirtis';}
                 if($laikotarpis == 5){
                     $laiko = array(7, 8, 9);
-                    $inf['laikotarpis'] = 'III ketvirtis';}
+                    $this->main_model->info['txt']['laikotarpis'] = 'III ketvirtis';}
                 if($laikotarpis == 6){
                     $laiko = array(10, 11, 12);
-                    $inf['laikotarpis'] = 'IV ketvirtis';}
+                    $this->main_model->info['txt']['laikotarpis'] = 'IV ketvirtis';}
 
                 if(is_array($laiko)){
                     foreach($laiko as $lk){

@@ -1,11 +1,31 @@
 function PrintElem(elem) {
-    Popup($(elem).html());
+    window.print();
 }
+
+$(function(){
+    $("#btnPrint").printPreview({
+        obj2print: '.table-responsive',
+        width: '1620',
+
+        /*optional properties with default values*/
+        //obj2print:'body',     /*if not provided full page will be printed*/
+        //style:'',             /*if you want to override or add more css assign here e.g: "<style>#masterContent:background:red;</style>"*/
+        //width: '670',         /*if width is not provided it will be 670 (default print paper width)*/
+        //height:screen.height, /*if not provided its height will be equal to screen height*/
+        //top:0,                /*if not provided its top position will be zero*/
+        //left:'center',        /*if not provided it will be at center, you can provide any number e.g. 300,120,200*/
+        //resizable : 'yes',    /*yes or no default is yes, * do not work in some browsers*/
+        //scrollbars:'yes',     /*yes or no default is yes, * do not work in some browsers*/
+        //status:'no',          /*yes or no default is yes, * do not work in some browsers*/
+        title:'Spausdinimas' /*title of print preview popup window*/
+    });
+
+});
 
 function Popup(data) {
     var myWindow = window.open('', 'Spausdinti', 'height=800,width=1200');
-    myWindow.document.write('<html><head><title>Spauzdinti</title>');
-    /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" href="<?= base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css" type="text/css">');
+    myWindow.document.write('<html><head><title>Spausdinti</title>');
+    /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css">');
     /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/mano.css" media="print">');
 
     myWindow.document.write('</head><body >');
@@ -202,15 +222,42 @@ $(document).ready(function(){
             $("#inp_rastai").hide(); $("#inp_darbininkai").hide(); $("#inp_darbininkai_2").hide();
             $("#is_darbininkai").prop( "checked", false );
             $("#is_darbininkai_2").prop( "checked", false );
+             pirminiai_kiek=0; pirminiai_menuo=0; pirminiai_metai=0;
+             darb_2_kiekis=0; darb_2_menuo=0; darb_2_metai=0;
+             darb_kiekis=0; darb_menuo=0; darb_metai=0;
+            $('#pirminiai_metai').val('');
+            $('#pirminiai_menuo').val('');
+            $('#darbuotojai_2_metai').val('');
+            $('#darbuotojai_2_menesis').val('');
+            $('#darbuotojai_2_kiekis').val('');
+            $('#darbuotojai_metai').val('');
+            $('#darbuotojai_menesis').val('');
+            $('#darbuotojai_kiekis').val('');
         }
     });
 
     $('#is_darbininkai').change(function() {
-        if($(this).is(":checked")) {$("#inp_darbininkai").show();} else {$("#inp_darbininkai").hide();}
+        if($(this).is(":checked")) {
+            $("#inp_darbininkai").show();
+        } else {
+            $("#inp_darbininkai").hide();
+            darb_kiekis=0; darb_menuo=0; darb_metai=0;
+            $('#darbuotojai_metai').val('');
+            $('#darbuotojai_menesis').val('');
+            $('#darbuotojai_kiekis').val('');
+        }
     });
 
     $('#is_darbininkai_2').change(function() {
-        if($(this).is(":checked")) {$("#inp_darbininkai_2").show();} else {$("#inp_darbininkai_2").hide();}
+        if($(this).is(":checked")) {
+            $("#inp_darbininkai_2").show();
+        } else {
+            $("#inp_darbininkai_2").hide();
+            darb_2_kiekis=0; darb_2_menuo=0; darb_2_metai=0;
+            $('#darbuotojai_2_metai').val('');
+            $('#darbuotojai_2_menesis').val('');
+            $('#darbuotojai_2_kiekis').val('');
+        }
     });
 
 });

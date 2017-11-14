@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="MySQL - aluza@localhost" uuid="f44688ad-f8ef-4461-8195-68c6b0eaf66b">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-driver>com.mysql.jdbc.ReplicationDriver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/aluza</jdbc-url>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />

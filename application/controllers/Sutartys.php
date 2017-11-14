@@ -64,9 +64,11 @@ class Sutartys extends CI_Controller
             $this->main_model->info['txt']['deklaruota']  = $this->sutartys_model->skaiciuoti_deklaruota_plota($dat);
             //suskaiciuoti gyvuliu vidurki
             $this->main_model->info['txt']['vidurkis'] = $this->sutartys_model->galvijai_vidurkis();
-            $banda = $this->galvijai_model->nustatymai($dt['nr']);
+            $banda = $this->ukininkai_model->ukininkas($dt['nr']);
             $this->main_model->info['txt']['banda'] = $banda[0]['banda'];
         }
+
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
 
         $this->load->view('main_view');
     }
@@ -78,7 +80,6 @@ class Sutartys extends CI_Controller
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Sutartys";
         $this->main_model->info['txt']['info'] = "Darbo sutartis";
-
 
         $this->load->view('main_view', array('data' => $data));
     }

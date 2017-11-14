@@ -168,6 +168,7 @@ if($this->main_model->info['error']['action']){ ?>
             }
             ?>
         </div>
+                <hr>
         <table class="table table-bordered">
             <thead>
             <tr>

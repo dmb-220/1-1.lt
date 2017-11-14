@@ -15,11 +15,13 @@
                 echo'<div class="alert alert-danger">';
                 echo $this->main_model->info['error']['login'];
                 echo '</div>';
-            } ?>
-            <form class="form-horizontal form-bordered" id="skaitciuokle" method="POST">
+            }
+            ?>
+
+            <form class="form-horizontal form-bordered" action="" id="skaitciuokle" method="POST">
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Ūkininkas:</label>
+                        <label class="col-md-2 control-label">Ūkininkas</label>
                         <div class="col-md-10">
                             <?php echo form_error('ukininko_vardas');
                             if($dt['vardas'] == "" AND $dt['pavarde'] == "") { ?>
@@ -75,36 +77,18 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Samdomi darbuotojai:</label>
                         <div class="col-md-10">
-                            <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
-                                    <div class="checkbox checkbox-info checkbox-circle">
-                                        <input id="is_rastai" type="checkbox" name="saskaitu_planas">
-                                        <label> DARBUOTOJAI</label>
-                                    </div>
-                                </div>
-                                <div id="inp_rastai" style="display:none">
-                                    <div class="col-md-4 m-b-15">
-                                        <div class="checkbox checkbox-info checkbox-circle">
-                                            <input id="is_darbininkai_2" type="checkbox" name="darbininkai_2">
-                                            <label> BE VYKDOMŲ RAŠTŲ</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 m-b-15">
-                                        <div class="checkbox checkbox-info checkbox-circle">
-                                            <input id="is_darbininkai" type="checkbox" name="darbininkai">
-                                            <label> SU VYKDOMAIS RAŠTAIS</label>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="checkbox checkbox-info">
+                                <input id="is_darbininkai_2" type="checkbox" name="saskaitu_planas">
+                                <label> DARBUOTOJAI</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group" id="inp_darbininkai_2" style="display:none">
-                        <label class="col-md-2 control-label"> Be vykdomų raštų:</label>
+                        <label class="col-md-2 control-label"> </label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-3 m-b-15">
                                     <input type="text" name="darbuotojai_2_kiekis" id="darbuotojai_2_kiekis" class="form-control" placeholder="Kiekis">
                                 </div>
                                 <div class="col-md-4 m-b-15">
@@ -113,6 +97,12 @@
                                 <div class="col-md-4 m-b-15">
                                     <input type="text" name="darbuotojai_2_metai" id="darbuotojai_2_metai" class="form-control" placeholder="Suma per metus">
                                 </div>
+                                <div class="col-md-1 m-b-15">
+                                    <div class="checkbox checkbox-info">
+                                        <input id="is_darbininkai" type="checkbox" name="darbininkai">
+                                        <label> <b>*</b></label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,7 +110,7 @@
                         <label class="col-md-2 control-label"> Su vykdomais raštais:</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-3 m-b-15">
                                     <input type="text" name="darbuotojai_kiekis" id="darbuotojai_kiekis" class="form-control" placeholder="Kiekis">
                                 </div>
                                 <div class="col-md-4 m-b-15">
@@ -285,19 +275,19 @@
                             <div class="row row-space-12">
                                 <div class="col-md-2 m-b-15">
                                     <?php echo form_error('europa'); ?>
-                                    <div class="checkbox checkbox-info checkbox-circle">
+                                    <div class="checkbox checkbox-info">
                                     <input type="checkbox" value="1" name="europa">
                                     <label> ES PARAMA</label>
                                 </div>
                                 </div>
                                 <div class="col-md-3 m-b-15">
-                                    <div class="checkbox checkbox-info checkbox-circle">
+                                    <div class="checkbox checkbox-info">
                                         <input type="checkbox" name="saskaitu_planas">
                                         <label> SĄSKAITŲ PLANAS</label>
                                     </div>
                                 </div>
                                 <div class="col-md-3 m-b-15">
-                                    <div class="checkbox checkbox-info checkbox-circle">
+                                    <div class="checkbox checkbox-info">
                                         <input id="is_kuras" type="checkbox" name="kuras_tikrinti">
                                         <label>KURO APSKAITA</label>
                                     </div>
