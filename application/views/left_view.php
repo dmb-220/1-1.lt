@@ -4,28 +4,23 @@
             <?php $dt = $this->session->userdata(); ?>
 
             <li class="nav-header">
-                <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="<?= base_url(); ?>assets/img\profile_small.jpg">
-                             </span>
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs">
-                                    <strong class="font-bold">
-                                        <?php
-                                        if($dt['email']){echo $dt['email'];}else{echo "Neprisijungęs";}
-                                        $user = $this->ion_auth->user()->row();
-                                        ?>
-                                    </strong>
-                             </span> <span class="text-muted text-xs block"> <?= $user->username ?><b class="caret"></b></span> </span> </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <?php
-                        if($this->ion_auth->is_admin()){?>
-                            <li><a href="<?= base_url(); ?>admin/admin">ADMIN MENIU</a></li>
-                        <?php
-                        }
-                        ?>
-                        <li><a href="<?= base_url(); ?>main/profilis">PROFILIS</a></li>
-                        <li><a href="<?= base_url(); ?>main/zinutes">ŽINUTĖS</a></li>
-                    </ul>
+                <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" src="<?= base_url(); ?>assets/img\profile_small.jpg">
+                    </span>
+                    <span class="clear">
+                        <span class="block m-t-xs">
+                            <strong class="font-bold">
+                                <?php
+                                if($dt['email']){echo $dt['email'];}else{echo "Neprisijungęs";}
+                                $user = $this->ion_auth->user()->row();
+                                ?>
+                            </strong>
+                        </span>
+                        <span class="text-muted text-xs block">
+                            <?= $user->username ?>
+                        </span>
+                    </span>
                 </div>
                 <div class="logo-element">
                     1-1.LT

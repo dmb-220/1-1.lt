@@ -2,44 +2,17 @@ function PrintElem(elem) {
     window.print();
 }
 
-$(function(){
-    $("#btnPrint").printPreview({
-        obj2print: '.table-responsive',
-        width: '1620',
-
-        /*optional properties with default values*/
-        //obj2print:'body',     /*if not provided full page will be printed*/
-        //style:'',             /*if you want to override or add more css assign here e.g: "<style>#masterContent:background:red;</style>"*/
-        //width: '670',         /*if width is not provided it will be 670 (default print paper width)*/
-        //height:screen.height, /*if not provided its height will be equal to screen height*/
-        //top:0,                /*if not provided its top position will be zero*/
-        //left:'center',        /*if not provided it will be at center, you can provide any number e.g. 300,120,200*/
-        //resizable : 'yes',    /*yes or no default is yes, * do not work in some browsers*/
-        //scrollbars:'yes',     /*yes or no default is yes, * do not work in some browsers*/
-        //status:'no',          /*yes or no default is yes, * do not work in some browsers*/
-        title:'Spausdinimas' /*title of print preview popup window*/
-    });
-
-});
-
-function Popup(data) {
-    var myWindow = window.open('', 'Spausdinti', 'height=800,width=1200');
-    myWindow.document.write('<html><head><title>Spausdinti</title>');
-    /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css">');
-    /*optional stylesheet*/ myWindow.document.write('<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/mano.css" media="print">');
-
-    myWindow.document.write('</head><body >');
-    myWindow.document.write(data);
-    myWindow.document.write('</body></html>');
-    myWindow.document.close(); // necessary for IE >= 10
-
-    myWindow.onload=function(){ // necessary if the div contain images
-
-        myWindow.focus(); // necessary for IE >= 10
-        myWindow.print();
-        myWindow.close();
-    };
-}
+$('#prideti').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var uid = button.data('id')
+    var uname = button.data('name')
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    modal.find('.modal-title').text('Pridėti narius į ' + uname)
+    modal.find('.modal-body #recipient-name').val(uname)
+    modal.find('.modal-body #recipient-name-2').val(uid)
+})
 
 $(document).ready(function() {
     $('#btn_view').on('click', function (e) {
