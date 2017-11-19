@@ -70,6 +70,7 @@ class Auth extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         //validate form input
+        $this->form_validation->set_rules('v_vardas', "Vartotojo vardas", 'required|min_length[3]|max_length[15]');
         $this->form_validation->set_rules('vardas', "Vardas", 'required|min_length[3]|max_length[15]');
         $this->form_validation->set_rules('pavarde', "Pavarde", 'required|min_length[3]|max_length[15]');
         $this->form_validation->set_rules('email', "El. paštas", 'required|valid_email');
@@ -82,7 +83,12 @@ class Auth extends CI_Controller {
             // check for "remember me"
             //$remember = (bool) $this->input->post('remember');
             //$identity, $password, $email, $additional_data = array(), $group_ids = array()
-            if (TRUE /*$this->ion_auth->register($this->input->post('identity'), $this->input->post('password'), $remember)*/)
+            $additional_data = array(
+                'first_name' => $this->input->post('vardas'),
+                'last_name' => $this->input->post('pavarde'),
+            );
+            //$group = array('1'); //admin grupe
+            if ($this->ion_auth->register($this->input->post('v_vardas'), $this->input->post('password'), $this->input->post('email'), $additional_data))
             {
                 //if the login is successful
                 //redirect them back to the home page

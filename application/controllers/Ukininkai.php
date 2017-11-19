@@ -114,8 +114,9 @@ class Ukininkai extends CI_Controller {
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Ūkininkai";
         $this->main_model->info['txt']['info'] = "Ūkininkų sąrašas";
-
-        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
+        $user = $this->ion_auth->user()->row();
+        //Nuskaitom ukininku sarasa, kad butu visada po ranka
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
         $this->load->view("main_view");
     }
 
@@ -140,12 +141,14 @@ class Ukininkai extends CI_Controller {
             $slaptazodis = $this->input->post('slaptazodis');
             $banda = $this->input->post('banda');
 
+            $user = $this->ion_auth->user()->row();
+
             $ok = $this->ukininkai_model->tikinti_ukininka($valdos_nr);
             if($ok>0){
                 $this->main_model->info['error']['yra'] = "TOKS ukininkas jau yra!";
             }else{
                 $duomenys = array('vardas' => $vardas , 'pavarde' => $pavarde , 'valdos_nr' => $valdos_nr,
-                    'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis, 'banda' => $banda,
+                    'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis, 'banda' => $banda, 'user_id' => $user->id,
                 );
                 $this->ukininkai_model->irasyti_ukininka($duomenys);
                 $this->main_model->info['error']['ok'] = "Naujas ukininkas pridetas!";}

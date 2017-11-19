@@ -9,6 +9,13 @@
     </div>
     <div class="ibox-content">
         <form action="" method="POST" class="form-horizontal form-bordered">
+            <div class="form-group">
+                <label class="col-md-4 control-label">Vartotojo vardas: <span class="text-danger">*</span></label>
+                <div class="col-md-6">
+                    <?php echo form_error('v_vardas'); ?>
+                    <input name="v_vardas" type="text" class="form-control" placeholder=""/>
+                </div>
+            </div>
           <div class="form-group">
             <label class="col-md-4 control-label">Asmeniniai duomenys: <span class="text-danger">*</span></label>
             <div class="col-md-6">

@@ -51,8 +51,9 @@ class Main extends CI_Controller {
 		$this->main_model->info['txt']['meniu'] = "Pagrindinis puslapis";
         $this->main_model->info['txt']['info'] = "Čia pateikiama visa reikalinga informacija, kurios pagalba, bus lengva pateikti duomenis, keisti nustatymus. ";
 
+        $user = $this->ion_auth->user()->row();
         //Nuskaitom ukininku sarasa, kad butu visada po ranka
-        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
 
 		$this->load->view('main_view');
 	}

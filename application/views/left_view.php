@@ -10,13 +10,21 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs">
                                     <strong class="font-bold">
-                                        <?php if($dt['email']){echo $dt['email'];}else{echo "Neprisijungęs";} ?>
+                                        <?php
+                                        if($dt['email']){echo $dt['email'];}else{echo "Neprisijungęs";}
+                                        $user = $this->ion_auth->user()->row();
+                                        ?>
                                     </strong>
-                             </span> <span class="text-muted text-xs block">Administratorius<b class="caret"></b></span> </span> </a>
+                             </span> <span class="text-muted text-xs block"> <?= $user->username ?><b class="caret"></b></span> </span> </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="<?= base_url(); ?>main/profilis">Profilis</a></li>
-                        <li><a href="<?= base_url(); ?>main/kontaktai">Kontaktai</a></li>
-                        <li><a href="<?= base_url(); ?>main/zinutes">Žinutės</a></li>
+                        <?php
+                        if($this->ion_auth->is_admin()){?>
+                            <li><a href="<?= base_url(); ?>admin/admin">ADMIN MENIU</a></li>
+                        <?php
+                        }
+                        ?>
+                        <li><a href="<?= base_url(); ?>main/profilis">PROFILIS</a></li>
+                        <li><a href="<?= base_url(); ?>main/zinutes">ŽINUTĖS</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -94,7 +102,7 @@
 
             <li><a href="<?= base_url(); ?>main"><i class="fa fa-road"></i> <span>Į pradžią</span></a</li>
             <li><a data-toggle="modal" href="#login-form"><i class="fa fa-user"></i> <span>Prisijungti</span></a></li>
-            <li><a data-toggle="modal" href="#register-form"><i class="fa fa-users"></i> <span>Registruotis</span></a></li>
+            <li><a href="<?= base_url(); ?>auth/register"><i class="fa fa-users"></i> <span>Registruotis</span></a></li>
 
                 <?php
             }
@@ -134,44 +142,6 @@
                         <hr>
                         <p class="text-center">
                             <a href="<?= base_url(); ?>auth/register"><i class="fa fa-sign-in big-icon"></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Registracijos forma -->
-<div id="register-form" class="modal fade" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">REGISTRACIJA</h3>
-                        <hr>
-                        <form role="form" action="<?= base_url(); ?>auth/register" method="POST" >
-                            <div class="form-group">
-                                <label>El. paštas:</label>
-                                <input type="email" name="identity" placeholder="" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Slaptažodis:</label>
-                                <input type="password" name="password" placeholder="" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Pakartoti slaptažodį:</label>
-                                <input type="password" name="password2" placeholder="" class="form-control">
-                            </div>
-                            <button class="btn btn-block btn-outline btn-primary" type="submit">
-                                <i class="fa fa-check-circle-o fa-lg"> REGISTRUOTIS</i>
-                            </button>
-                        </form>
-                    </div>
-                    <div class="col-sm-6"><h4>Jūs jau esate užsiregistravęs? Galite prisijungti:</h4>
-                        <hr>
-                        <p class="text-center">
-                            <a href="<?= base_url(); ?>auth/login"><i class="fa fa-user big-icon"></i></a>
                         </p>
                     </div>
                 </div>

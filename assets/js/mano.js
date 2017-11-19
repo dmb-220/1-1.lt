@@ -42,6 +42,13 @@ function Popup(data) {
 }
 
 $(document).ready(function() {
+    $('#btn_view').on('click', function (e) {
+        $('#kiekis').val('');
+        $('#kiekis').val($(this).data("value"));
+    });
+});
+
+$(document).ready(function() {
     $(".add-more").click(function(){
         var html = $(".copy").html();
         $(".after-add-more").after(html);

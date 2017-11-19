@@ -48,10 +48,11 @@ class Ukininkai_model extends CI_Model{
     }
 
     //nuskaitom visus ukininkus, jei reiksme TRUE, paimam tik pagrindinius duomenis
-    public function ukininku_sarasas($ar = ""){
+    public function ukininku_sarasas($id = "", $ar = ""){
         if($ar){
-            $this->db->select('vardas, pavarde, valdos_nr');
-        }
+            $this->db->select('vardas, pavarde, valdos_nr');}
+        if($id){
+            $this->db->where('user_id', $id);}
         $query = $this->db->get("ukininkai");
         $data = $query->result_array();
         return $data;

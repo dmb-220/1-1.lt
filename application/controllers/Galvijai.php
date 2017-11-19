@@ -94,7 +94,9 @@ class Galvijai extends CI_Controller {
         $this->main_model->info['txt']['meniu'] = "Galvijai";
         $this->main_model->info['txt']['info'] = "Galvijų sąrašas";
 
-        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
+        $user = $this->ion_auth->user()->row();
+        //Nuskaitom ukininku sarasa, kad butu visada po ranka
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
         $this->load->view("main_view", array('gyvu' => $gyvu));
     }
 
@@ -168,7 +170,9 @@ class Galvijai extends CI_Controller {
         $this->main_model->info['txt']['meniu'] = "Galvijai";
         $this->main_model->info['txt']['info'] = "Naujų galvijų įtraukimas";
 
-        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas();
+        $user = $this->ion_auth->user()->row();
+        //Nuskaitom ukininku sarasa, kad butu visada po ranka
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
         $this->load->view("main_view");
     }
 
@@ -895,7 +899,9 @@ class Galvijai extends CI_Controller {
         $this->main_model->info['txt']['meniu'] = "Galvijai";
         $this->main_model->info['txt']['info'] = "Galvijų skaičiavimas";
 
-        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas(TRUE);
+        $user = $this->ion_auth->user()->row();
+        //Nuskaitom ukininku sarasa, kad butu visada po ranka
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
         $this->load->view("main_view");
 
     }

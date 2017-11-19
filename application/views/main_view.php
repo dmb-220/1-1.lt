@@ -76,6 +76,8 @@ $this->load->view('left_view');
             case "darbo_sutartis": $this->load->view("sutartys/darbo_sustartis_view"); break;
             //Kalendorius
             case "kalendorius": $this->load->view("kalendorius_view"); break;
+            //Administravimo meniu
+            case "admin": $this->load->view("admin/admin_view"); break;
             //kai niekas netinka
             default:
                 if ($this->ion_auth->logged_in()) {
@@ -96,10 +98,10 @@ $this->load->view('left_view');
     ?>
 </div>
 
-<!-- Mainly scripts
+<!-- Mainly scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script>
-axios -->
+
 <script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\metisMenu\jquery.metisMenu.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
@@ -112,7 +114,6 @@ axios -->
 <script src="<?= base_url(); ?>assets\js\plugins\datapicker\bootstrap-datepicker.js"></script>
 <!-- mano JS -->
 <script src="<?= base_url(); ?>assets\js\mano.js"></script>
-<script src="<?= base_url(); ?>assets\js\printPreview.js"></script>
 <script src="<?= base_url(); ?>assets\js\vuejs.js"></script>
 
 <script type="text/javascript">

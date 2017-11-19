@@ -1,5 +1,7 @@
 @media print {
     body, html {
+        float: none !important;
+        overflow: visible !important;
         padding: 0 !important;
         margin: 0 !important;
         position: relative;
@@ -7,8 +9,12 @@
     }
     .ibox-footer, .form-group, .ibox-title, .page-heading, .border-bottom, .modal, .nerodyt {
         display: none;
+        float: none !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
-    html, body, div, span, h1, h2, h3, h4, h5, h6, p,{
+    div, span, h1, h2, h3, h4, h5, h6, p {
         margin: 0;
         padding: 0;
         border: 0;

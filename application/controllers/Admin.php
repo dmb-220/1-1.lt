@@ -31,7 +31,11 @@ class Admin extends CI_Controller{
         }
     }
 
-    public function index(){
+    public function admin(){
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Administravimo meniu";
+        $this->main_model->info['txt']['info'] = "Pagrindinis langas";
 
+        $this->load->view("main_view");
     }
 }

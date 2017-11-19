@@ -35,22 +35,3 @@ new Vue({
     watch: {}
 });
 
-new Vue({
-    el: '#ajax',
-    data: {
-        numeris: null,
-        repos: []
-    },
-    methods: {
-        get_bankas() {
-            let Url = 'https://1-1.lt/ukininkai/iban/' + this.numeris;
-            axios.get(Url)
-                .then((response) => {
-                this.repos = response.data;
-        })
-        .catch((error) => {
-                this.repos = error.response.statusText;
-        });
-        }
-    }
-});

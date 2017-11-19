@@ -29,7 +29,7 @@ $lang['account_creation_invalid_default_group'] = 'Nustatytas neteisingas numaty
 
 // Password
 $lang['password_change_successful'] 	 	 = 'Slaptažodis sukurtas';
-$lang['password_change_unsuccessful'] 	  	 = 'Negalima paeisti slaptažodžio';
+$lang['password_change_unsuccessful'] 	  	 = 'Negalima pakeisti slaptažodžio';
 $lang['forgot_password_successful'] 	 	 = 'Slaptažodis keičiamas. Instrukcijos išsiųstos paštu.';
 $lang['forgot_password_unsuccessful'] 	 	 = 'Neįmanoma pakeisti slaptažodžio';
 
