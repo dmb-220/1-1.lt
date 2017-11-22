@@ -108,14 +108,6 @@
                     </li>
                 </ul>
             </li>
-            <?php
-            if($this->ion_auth->is_admin()){?>
-                <li>
-                    <a data-toggle="tooltip" data-placement="left" title="Admin meniu" href="<?= base_url(); ?>admin/admin"><i class="fa fa-briefcase"></i></a>
-                </li>
-                <?php
-            }
-            ?>
             <?php  if(!$this->ion_auth->logged_in()) { ?>
             <li>
                 <a data-toggle="tooltip" data-placement="left" title="Prisijungti" href="<?= base_url(); ?>auth/login"><i class="fa fa-user"></i></a>

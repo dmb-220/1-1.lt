@@ -34,10 +34,23 @@
             <li>
                 <a href="<?= base_url(); ?>main/index"><i class="fa fa-road"></i> <span class="nav-label">Į pradžią</span></a>
             </li>
-                
-                <li>
-                    <a href="<?= base_url(); ?>zalia_knyga/knyga"><i class="fa fa-bars"></i> <span class="nav-label">Didžioji Knyga</span></a>
-                </li>
+                <?php
+                if($this->ion_auth->is_admin()){?>
+                    <li>
+                        <a href="<?= base_url(); ?>admin/admin"><i class="fa fa-briefcase"></i><span class="nav-label">Admininstracija</span></a>
+                    </li>
+
+                    <li>
+                        <a href="<?= base_url(); ?>buhalterija/buhalterija"><i class="fa fa-calculator"></i><span class="nav-label">Buhalterinė apskaita</span></a>
+                    </li>
+
+                    <li>
+                        <a href="<?= base_url(); ?>zalia_knyga/knyga"><i class="fa fa-bars"></i> <span class="nav-label">Didžioji Knyga</span></a>
+                    </li>
+
+                    <?php
+                }
+                ?>
 
                 <?php if($act == 'sutartys'){echo'<li class="active">';}else{echo'<li>';} ?>
                 <a href="#"><i class="fa fa-keyboard-o"></i> <span class="nav-label">Sutartys</span><span class="fa arrow"></span></a>

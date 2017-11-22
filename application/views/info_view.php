@@ -6,6 +6,7 @@
             <?php echo $this->main_model->info['txt']['info']; ?>
         </ol>
     </div>
+
     <div class="spin-icon">
         <i class="fa fa-cogs fa-spin"></i>
     </div>
