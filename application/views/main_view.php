@@ -23,7 +23,6 @@
     <link href="<?= base_url(); ?>assets\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" rel="stylesheet">
     <!-- mano CSS -->
     <link href="<?= base_url(); ?>assets/css/mano.css" rel="stylesheet"/>
-    <link href="<?= base_url(); ?>assets/css/bootstrap-submenu.min.css" rel="stylesheet"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -116,8 +115,6 @@ $this->load->view('left_view');
 <script src="<?= base_url(); ?>assets\js\plugins\toastr\toastr.min.js"></script>
 <!-- Data picker -->
 <script src="<?= base_url(); ?>assets\js\plugins\datapicker\bootstrap-datepicker.js"></script>
-
-<script src="<?= base_url(); ?>assets\js\plugins\datapicker\bootstrap-submenu.min.js"></script>
 <!-- mano JS -->
 <script src="<?= base_url(); ?>assets\js\mano.js"></script>
 <script src="<?= base_url(); ?>assets\js\vuejs.js"></script>
@@ -158,10 +155,6 @@ $this->load->view('left_view');
         autoclose: true,
         format: "yyyy.mm.dd"
     });
-
-    // For v2 [data-toggle="dropdown"] is required for [data-submenu].
-    // For v2 .dropdown-submenu > [data-toggle="dropdown"] is forbidden.
-    $('[data-submenu]').submenupicker();
 
 </script>
 </body>

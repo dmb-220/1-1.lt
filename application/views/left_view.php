@@ -44,9 +44,9 @@
                         <a href="<?= base_url(); ?>buhalterija/buhalterija"><i class="fa fa-calculator"></i><span class="nav-label">Buhalterinė apskaita</span></a>
                     </li>
 
-                    <li>
+                    <!--<li>
                         <a href="<?= base_url(); ?>zalia_knyga/knyga"><i class="fa fa-bars"></i> <span class="nav-label">Didžioji Knyga</span></a>
-                    </li>
+                    </li> -->
 
                     <?php
                 }
