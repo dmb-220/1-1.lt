@@ -80,7 +80,7 @@ $this->load->view('left_view');
             //Administravimo meniu
             case "admin": $this->load->view("admin/admin_view"); break;
             //Buhalterija meniu
-            case "buhalterija": $this->load->view("buhalterija/buhalterija_view"); break;
+            case "buhalterija": $this->load->view("buhalterija/index_view"); break;
             //kai niekas netinka
             default:
                 if ($this->ion_auth->logged_in()) {

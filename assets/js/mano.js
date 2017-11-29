@@ -1,7 +1,22 @@
+//Spauzdinimas
 function PrintElem(elem) {
     window.print();
 }
+//perkrovus puslapi, lieka paskutinis aktyvus TAB'AS
+$(document).ready(function() {
+    if (location.hash) {
+        $("a[href='" + location.hash + "']").tab("show");
+    }
+    $(document.body).on("click", "a[data-toggle]", function(event) {
+        location.hash = this.getAttribute("href");
+    });
+});
+$(window).on("popstate", function() {
+    var anchor = location.hash || $("a[data-toggle='tab']").first().attr("href");
+    $("a[href='" + anchor + "']").tab("show");
+});
 
+//permeta duomenis i MODAL
 $('#prideti').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
     var uid = button.data('id')
@@ -13,6 +28,7 @@ $('#prideti').on('show.bs.modal', function (event) {
     modal.find('.modal-body #recipient-name').val(uname)
     modal.find('.modal-body #recipient-name-2').val(uid)
 })
+
 
 $(document).ready(function() {
     $('#btn_view').on('click', function (e) {
@@ -55,6 +71,7 @@ $(document).ready(function() {
     });
 });
 
+//sutartties sablono sukurimas
 $(document).ready(function(){
     var bazine_kaina = {
         darbuotojai: {vykdomi_rastai: 12, be_vykdomu_rastu: 10},
