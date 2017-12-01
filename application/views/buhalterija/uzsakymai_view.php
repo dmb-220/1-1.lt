@@ -1,4 +1,4 @@
-<div id="uzsakymai" class="tab-pane fade">
+<div id="uzsakymai" class="tab-pane">
     <div class="panel-body">
         <div class="alert alert-success" role="alert">
             <button class="btn btn-default" type="button" data-toggle="modal">

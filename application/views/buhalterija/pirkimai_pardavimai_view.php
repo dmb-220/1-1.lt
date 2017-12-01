@@ -1,4 +1,4 @@
-<div id="pirkimai_pardavimai" class="tab-pane fade in active">
+<div id="pirkimai_pardavimai" class="tab-pane">
     <div class="panel-body">
         <div class="alert alert-success" role="alert">
             <button class="btn btn-default" type="button" data-toggle="modal">

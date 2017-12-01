@@ -46,4 +46,14 @@ class Buhalterija extends CI_Controller{
 
         $this->load->view("main_view");
     }
+
+    public function pradiniai_likuciai(){
+        $post = $this->input->post();
+        //var_dump($post); die;
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Buhalterinė programa";
+        $this->main_model->info['txt']['info'] = "Pagrindinis langas";
+
+        $this->load->view("main_view");
+    }
 }

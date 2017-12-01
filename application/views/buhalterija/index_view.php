@@ -13,16 +13,16 @@
 
             <div class="tabs-container" id="tabs">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#pirkimai_pardavimai"><i class="fa fa-star-o fa-2x"></i> Pirkimai / Pardavimai</a></li>
+                    <li class="active"><a data-toggle="tab" href="#ilg_turtas"><i class="fa fa-pie-chart fa-2x text-success"></i> Ilgal. turtas</a></li>
+                    <li><a data-toggle="tab" href="#pirkimai_pardavimai"><i class="fa fa-star-o fa-2x"></i> Pirkimai / Pardavimai</a></li>
                     <li><a data-toggle="tab" href="#zinynai"><i class="fa fa-star-o fa-2x"></i> Žinynai</a></li>
                     <li><a data-toggle="tab" href="#mokejimai"><i class="fa fa-star-o fa-2x"></i> Mokėjimai</a></li>
-                    <li><a data-toggle="tab" href="#darbo_uzmokestis"><i class="fa fa-briefcase fa-2x"></i><span> Darbo užm.</span></a></li>
-                    <li><a data-toggle="tab" href="#buhalterija"><i class="fa fa-briefcase fa-2x"></i><span> Buhalterija</span></a></li>
-                    <li><a data-toggle="tab" href="#ilg_turtas"><i class="fa fa-pie-chart fa-2x"></i><span> Ilgal. turtas</span></a></li>
-                    <li><a data-toggle="tab" href="#uzsakymai"><i class="fa fa-briefcase fa-2x"></i><span> Užsakymai</span></a></li>
+                    <li><a data-toggle="tab" href="#darbo_uzmokestis"><i class="fa fa-briefcase fa-2x"></i> Darbo užm.</a></li>
+                    <li><a data-toggle="tab" href="#buhalterija"><i class="fa fa-briefcase fa-2x"></i> Buhalterija</a></li>
+                    <li><a data-toggle="tab" href="#uzsakymai"><i class="fa fa-briefcase fa-2x"></i> Užsakymai</a></li>
                 </ul>
 
-                <div class="tab-content">
+                <div class="tab-content animated fadeInRight">
                     <?php $this->load->view("buhalterija/pirkimai_pardavimai_view"); ?>
 
                     <?php $this->load->view("buhalterija/zinynai_view"); ?>
@@ -41,3 +41,4 @@
         </div>
     </div>
 </div>
+<script src="<?= base_url(); ?>assets\js\buhalterija.js"></script>

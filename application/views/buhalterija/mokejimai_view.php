@@ -1,4 +1,4 @@
-<div id="mokejimai" class="tab-pane fade">
+<div id="mokejimai" class="tab-pane">
     <div class="panel-body">
         <div class="alert alert-success" role="alert">
             <div class="btn-group">
