@@ -192,10 +192,10 @@ $(document).ready(function(){
         $('#viso_metai').val(viso_metai.toFixed(2) + ' €');
     });
 
-    $("#formuoti").click(function(e) {
+    /*$("#formuoti").click(function(e) {
         e.preventDefault();
         alert('paspausta');
-    });
+    });*/
 
 
     //isjungiam ijungiam pagal pasirinkima

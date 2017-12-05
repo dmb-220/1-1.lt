@@ -1,69 +1,71 @@
-<div class="wrapper wrapper-content animated fadeInRight">
-  <div class="ibox float-e-margins">
-    <div class="ibox-title">
-      <h5>Registracija</h5>
-        <div class="ibox-tools">
-            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-            <a class="close-link"><i class="fa fa-times"></i></a>
-        </div>
-    </div>
-    <div class="ibox-content">
-        <form action="" method="POST" class="form-horizontal form-bordered">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-1.LT | Registracija</title>
+    <link href="<?= base_url(); ?>assets\css\bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\font-awesome\css\font-awesome.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\animate.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\style.css" rel="stylesheet">
+</head>
+<body class="md-skin">
+<div class="middle-box text-center"">
+    <div>
+        <h3>Sveiki, atvykę į 1-1.LT</h3>
+        <p>Užsiregistruokite norėdami gauti paslaugų paketa, registracija patvirtinama per 24 val.</p>
+        <?php if($this->session->flashdata('message')){
+            echo"<div class='alert alert-danger'>";
+            echo $this->session->flashdata('message');
+            echo "</div>";}?>
+        <div class="pull-left">Registracija:</div><br>
+        <hr>
+        <form class="m-t" action="<?= base_url(); ?>auth/register" method="POST" >
             <div class="form-group">
-                <label class="col-md-4 control-label">Vartotojo vardas: <span class="text-danger">*</span></label>
-                <div class="col-md-6">
-                    <?php echo form_error('v_vardas'); ?>
-                    <input name="v_vardas" type="text" class="form-control" placeholder=""/>
-                </div>
-            </div>
-          <div class="form-group">
-            <label class="col-md-4 control-label">Asmeniniai duomenys: <span class="text-danger">*</span></label>
-            <div class="col-md-6">
-              <div class="row row-space-12">
-                <div class="col-md-6 m-b-15">
-                  <?php echo form_error('vardas'); ?>
-                  <input type="text" name="vardas" class="form-control" placeholder="Vardas">
-                </div>
-                <div class="col-md-6 m-b-15">
-                  <?php echo form_error('pavarde'); ?>
-                  <input type="text" name="pavarde" class="form-control" placeholder="Pavardė">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-4 control-label">El. paštas <span class="text-danger">*</span></label>
-            <div class="col-md-6">
-              <?php echo form_error('email'); ?>
-              <input name="email" type="text" class="form-control" placeholder=""/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-4 control-label">Slaptažodis <span class="text-danger">*</span></label>
-            <div class="col-md-6">
-              <?php echo form_error('password'); ?>
-              <input name="password" type="password" class="form-control" placeholder=""/>
-            </div>
-          </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label">Pakartoti slaptažodį <span class="text-danger">*</span></label>
-                <div class="col-md-6">
-                    <?php echo form_error('password2'); ?>
-                    <input name="password2" type="password" class="form-control" placeholder=""/>
-                </div>
+                <?php echo form_error('v_vardas'); ?>
+                <input type="text" class="form-control" name="v_vardas" placeholder="Vartotojo vardas" required="">
             </div>
             <div class="form-group">
-                <label class="control-label col-md-4 col-sm-4"></label>
-                <div class="col-md-6 col-sm-6">
-                    <button class="btn btn-block btn-outline btn-primary" type="submit">
-                        <i class="fa fa-check-circle-o fa-lg"> REGISTRUOTIS</i>
-                    </button>
+                <?php echo form_error('vardas'); ?>
+                <input type="text" class="form-control" name="vardas" placeholder="Vardas" required="">
+            </div>
+            <div class="form-group">
+                <?php echo form_error('pavarde'); ?>
+                <input type="text" class="form-control" name="pavarde" placeholder="Pavardė" required="">
+            </div>
+            <div class="form-group">
+                <?php echo form_error('email'); ?>
+                <input type="email" class="form-control" name="email" placeholder="El. paštas" required="">
+            </div>
+            <div class="form-group">
+                <?php echo form_error('password'); ?>
+                <input type="password" class="form-control" name="password" placeholder="Slaptažodis" required="">
+            </div>
+            <div class="form-group">
+                <?php echo form_error('password2'); ?>
+                <input type="password" class="form-control" name="password2" placeholder="Pakartotį slaptažodį" required="">
+            </div>
+            <div class="pull-left">
+                <div class="form-group">
+                    <div class="checkbox checkbox-info">
+                        <input  name="sutinku" type="checkbox">
+                        <label> Sutinku su taisyklėmis</label>
+                    </div>
                 </div>
             </div>
-          <div class="m-t-20 m-b-40 p-b-40 text-inverse">
-            Atsimenate prisijungimą? Spauskite <a data-toggle="modal" href="#modal-form">čia</a> prisijungti.
-          </div>
+            <button type="submit" class="btn btn-primary block full-width m-b">REGISTRUOTIS</button>
+
+            <p class="text-muted text-center"><small>Jau esate užsiregistravęs?</small></p>
+            <a class="btn btn-sm btn-white btn-block" href="<?= base_url(); ?>auth/login">PRISIJUNGTI</a>
         </form>
+        <p class="m-t"> <small>&copy; 2017 1-1.LT - All Rights Reserved.</small> </p>
     </div>
-  </div>
 </div>
+
+<!-- Mainly scripts -->
+<script src="<?= base_url(); ?>assets\js\jquery-3.1.1.min.js"></script>
+<script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
+
+</body>
+</html>

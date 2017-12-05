@@ -108,18 +108,9 @@
                     </li>
                 </ul>
             </li>
-            <?php  if(!$this->ion_auth->logged_in()) { ?>
-            <li>
-                <a data-toggle="tooltip" data-placement="left" title="Prisijungti" href="<?= base_url(); ?>auth/login"><i class="fa fa-user"></i></a>
-            </li>
-            <li>
-                <a data-toggle="tooltip" data-placement="left" title="Registruotis" href="<?= base_url(); ?>auth/register"><i class="fa fa-users"></i></a>
-            </li>
-            <?php }else{ ?>
             <li>
                 <a data-toggle="tooltip" data-placement="left" title="Atsijungti" href="<?= base_url(); ?>auth/logout"><i class="fa fa-sign-out"></i></a>
             </li>
-            <?php } ?>
         </ul>
 
     </nav>

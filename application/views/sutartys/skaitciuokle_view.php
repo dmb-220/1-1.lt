@@ -18,7 +18,7 @@
             }
             ?>
 
-            <form class="form-horizontal form-bordered" action="" id="skaitciuokle" method="POST">
+            <form class="form-horizontal form-bordered" action="<?= base_url(); ?>sutartys/formuoti" id="skaitciuokle" method="POST">
                 <fieldset>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Ūkininkas</label>
@@ -354,14 +354,13 @@
                                     </button>
                                 </div>
                                 <div class="col-md-6 m-b-15">
-                                    <button class="btn btn-block btn-outline btn-primary" id="formuoti">
+                                    <button class="btn btn-block btn-outline btn-primary">
                                         <i class="fa fa-check-circle-o fa-lg"> FORMUOTI</i>
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </fieldset>
             </form>
         </div>

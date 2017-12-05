@@ -98,9 +98,10 @@
         </div>
         <div class="ibox-content">
                 <div class="table-responsive">
-                    <h4><strong>
-                            <div class="text-center">GYVULIŲ APSKAITOS LENTELĖ</div>
-                        </strong></h4><br><br>
+                    <div class="text-center">
+                        <h4><strong>GYVULIŲ APSKAITOS LENTELĖ</strong></h4>
+                    </div>
+                    <br><br>
                     <div class="pull-left">
                         <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 
                         ".$this->linksniai->getName($this->main_model->info['txt']['pavarde'],'kil')." ūkis"; ?>

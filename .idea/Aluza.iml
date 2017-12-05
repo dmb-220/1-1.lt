@@ -7,5 +7,9 @@
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="vue" level="application" />
     <orderEntry type="library" name="axios" level="application" />
+    <orderEntry type="library" name="froala_editor" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="bootstrap-datepicker" level="application" />
+    <orderEntry type="library" name="toastr" level="application" />
   </component>
 </module>

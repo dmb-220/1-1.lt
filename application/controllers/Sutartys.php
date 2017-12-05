@@ -51,6 +51,17 @@ class Sutartys extends CI_Controller
         redirect('main');
     }
 
+    public function formuoti(){
+
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Sutartys";
+        $this->main_model->info['txt']['info'] = "Skaičiuoklės galutinis rezultatas";
+
+        $data = $this->input->post();
+
+        $this->load->view('main_view', array('data' => $data));
+    }
+
     public function skaitciuokle(){
         $this->load->model('paseliai_model');
 
@@ -67,6 +78,10 @@ class Sutartys extends CI_Controller
             $banda = $this->ukininkai_model->ukininkas($dt['nr']);
             $this->main_model->info['txt']['banda'] = $banda[0]['banda'];
         }
+
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Sutartys";
+        $this->main_model->info['txt']['info'] = "Sutarties paruošimas";
 
         $user = $this->ion_auth->user()->row();
         //Nuskaitom ukininku sarasa, kad butu visada po ranka

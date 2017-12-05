@@ -1,41 +1,57 @@
-
-    <section class="widget login-widget">
-        <header class="text-align-center">
-            <h4>Prisijungimas</h4>
-        </header>
-        <div class="body">
-            <form class="no-margin"
-                  action="http://1-1.lt" method="get">
-                <fieldset>
-                    <div class="form-group">
-                        <label for="email" >El. paštas</label>
-                        <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                            <input id="email" type="email" class="form-control input-lg input-transparent"
-                                   placeholder="Jūsų el. paštas">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" >Slaptažodis</label>
-
-                        <div class="input-group input-group-lg">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-lock"></i>
-                                    </span>
-                            <input id="password" type="password" class="form-control input-lg input-transparent"
-                                   placeholder="Jūsų slaptažodis">
-                        </div>
-                    </div>
-                </fieldset>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-block btn-lg btn-danger">
-                        <span class="small-circle"><i class="fa fa-caret-right"></i></span>
-                        <small>Prisijungti</small>
-                    </button>
-                    <a class="forgot" href="#">Užmiršote prisijungimo duomenis?</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-1.LT | Prisijungimas</title>
+    <link href="<?= base_url(); ?>assets\css\bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\font-awesome\css\font-awesome.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\animate.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets\css\style.css" rel="stylesheet">
+</head>
+<body class="md-skin">
+<div class="middle-box text-center">
+    <div>
+        <h3>Sveiki, sugrįžę į 1-1.LT</h3>
+        <p>Prisijunkite, ir galėsi dirbti</p>
+        <?php if($this->session->flashdata('message')){
+            echo"<div class='alert alert-danger'>";
+            echo $this->session->flashdata('message');
+        echo "</div>";}?>
+        <div class="pull-left">Prisijungimas:</div><br>
+        <hr>
+        <form class="m-t" action="<?= base_url(); ?>auth/login" method="POST" >
+            <div class="form-group">
+                <?php echo form_error('identity'); ?>
+                <input type="email" name="identity" class="form-control" placeholder="El. paštas" required="">
+            </div>
+            <div class="form-group">
+                <?php echo form_error('password'); ?>
+                <input type="password" name="password" class="form-control" placeholder="Slaptažodis" required="">
+            </div>
+            <div class="pull-left">
+            <div class="form-group">
+                <div class="checkbox checkbox-info">
+                    <input  name="remember" type="checkbox">
+                    <label> Prisiminti</label>
                 </div>
-            </form>
-        </div>
-    </section>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary block full-width m-b">PRISIJUNGTI</button>
+
+            <a href="#"><small>Pamiršote slaptažodį?</small></a>
+            <p class="text-muted text-center"><small>Dar nesinaudojate mūsų paslaugomis?</small></p>
+            <a class="btn btn-sm btn-white btn-block" href="<?= base_url(); ?>auth/register">REGISTRUOTIS</a>
+        </form>
+        <p class="m-t"> <small>&copy; 2017 1-1.LT - All Rights Reserved.</small> </p>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="<?= base_url(); ?>assets\js\jquery-3.1.1.min.js"></script>
+<script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
+
+</body>
+
+</html>

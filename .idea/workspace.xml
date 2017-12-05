@@ -1,23 +1,702 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php" line="479" />
+    <bookmark url="file://$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php" line="266" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/buhalterija.js" />
+    <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="ideigtas editorius">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp.net/bin/LitJSON.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/_static/file.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/_static/firebug_upload_json.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/jsp/lib/commons-fileupload-1.2.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/jsp/lib/commons-io-1.4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/jsp/lib/json_simple-1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug128.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug24_disabled.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/blank.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/buttonBg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/buttonBgHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/detach.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/detachHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/disable.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/disable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/disableHover.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/disableHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/downActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/downHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/errorIcon-sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/errorIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/errorIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/group.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/infoIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/infoIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/loading_16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/min.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/minHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/offHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/pixel_transparent.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/search.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/shadow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/shadow2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/shadowAlpha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabHoverLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabHoverMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabHoverRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuCheckbox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuPin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuRadio.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuTarget.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuTargetHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/textEditorBorders.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/textEditorBorders.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/textEditorCorners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/textEditorCorners.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/titlebarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/toolbarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tree_close.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tree_open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/upActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/upHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/warningIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/warningIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug128.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug24_disabled.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/blank.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/buttonBg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/buttonBgHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/detach.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/detachHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/disable.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/disable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/disableHover.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/disableHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/downActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/downHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/errorIcon-sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/errorIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/errorIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/group.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/infoIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/infoIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/loading_16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/min.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/minHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/offHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/pixel_transparent.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/search.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/shadow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/shadow2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/shadowAlpha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabHoverLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabHoverMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabHoverRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuCheckbox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuPin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuRadio.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuTarget.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuTargetHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/textEditorBorders.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/textEditorBorders.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/textEditorCorners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/textEditorCorners.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/titlebarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/toolbarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tree_close.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tree_open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/upActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/upHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/warningIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/warningIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/blank.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/buttonBg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/buttonBgHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/detach.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/detachHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/disable.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/disable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/disableHover.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/disableHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/downActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/downHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/errorIcon-sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/errorIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/errorIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/firebug.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/group.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/infoIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/infoIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/loading_16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/min.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/minHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/offHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/pixel_transparent.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/search.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/shadow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/shadow2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/shadowAlpha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabHoverLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabHoverMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabHoverRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuCheckbox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuPin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuRadio.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuTarget.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuTargetHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/textEditorBorders.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/textEditorBorders.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/textEditorCorners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/textEditorCorners.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/titlebarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/toolbarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tree_close.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tree_open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/twistyClosed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/twistyOpen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/upActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/upHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/warningIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/warningIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/blank.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/buttonBg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/buttonBgHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/closeHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/detach.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/detachHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/disable.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/disable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/disableHover.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/disableHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/downActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/downHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/errorIcon-sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/errorIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/errorIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/firebug.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/group.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/infoIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/infoIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/loading_16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/min.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/minHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/offHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/pixel_transparent.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/search.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/shadow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/shadow2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/shadowAlpha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabHoverLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabHoverMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabHoverRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuCheckbox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuPin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuRadio.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuTarget.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuTargetHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/textEditorBorders.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/textEditorBorders.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/textEditorCorners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/textEditorCorners.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/titlebarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/toolbarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tree_close.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tree_open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/twistyClosed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/twistyOpen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/upActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/upHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/warningIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/warningIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/blank.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/buttonBg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/buttonBgHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/detach.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/detachHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/disable.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/disable.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/disableHover.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/disableHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/downActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/downHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/errorIcon-sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/errorIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/errorIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/group.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/infoIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/infoIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/loading_16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/min.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/minHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/offHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/pixel_transparent.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/search.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/shadow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/shadow2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/shadowAlpha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabHoverLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabHoverMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabHoverRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabLeft.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuCheckbox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuPin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuRadio.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuTarget.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuTargetHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabRight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/textEditorBorders.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/textEditorBorders.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/textEditorCorners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/textEditorCorners.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/titlebarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/toolbarMid.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tree_close.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tree_open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/upActive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/upHover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/warningIcon.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/warningIcon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/0.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/10.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/100.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/101.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/102.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/103.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/104.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/105.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/106.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/107.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/108.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/109.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/11.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/110.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/111.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/112.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/113.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/114.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/115.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/116.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/117.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/118.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/119.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/12.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/120.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/121.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/122.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/123.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/124.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/125.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/126.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/127.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/128.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/129.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/13.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/130.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/131.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/132.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/133.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/134.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/14.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/15.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/17.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/18.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/19.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/20.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/21.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/22.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/23.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/24.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/25.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/26.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/27.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/28.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/29.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/3.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/30.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/31.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/32.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/33.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/34.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/35.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/36.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/37.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/38.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/39.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/4.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/40.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/41.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/42.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/43.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/44.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/45.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/46.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/47.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/48.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/49.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/5.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/50.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/51.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/52.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/53.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/54.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/55.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/56.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/57.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/58.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/59.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/6.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/60.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/61.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/62.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/63.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/64.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/65.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/66.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/67.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/68.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/69.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/7.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/70.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/71.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/72.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/73.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/74.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/75.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/76.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/77.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/78.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/79.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/8.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/80.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/81.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/82.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/83.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/84.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/85.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/86.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/87.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/88.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/89.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/9.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/90.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/91.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/92.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/93.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/94.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/95.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/96.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/97.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/98.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/99.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/static.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/file-16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/file-64.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/folder-16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/folder-64.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/go-up.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/image/images/align_left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/image/images/align_right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/image/images/align_top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/image/images/refresh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/images/image.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/images/select-files-en.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/images/select-files-zh-CN.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/images/swfupload.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/data/logo_180_30.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/common/anchor.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/common/blank.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/common/flash.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/common/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/common/media.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/common/rm.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/default/background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/default/default.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/qq/editor.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp.net/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp.net/demo.aspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp.net/file_manager_json.ashx.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp.net/upload_json.ashx.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp/JSON_2.0.4.asp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp/UpLoad_Class.asp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp/demo.asp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp/file_manager_json.asp.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/asp/upload_json.asp.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/_templates/classy/layout.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/_templates/classy/static/classy.css_t" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/_templates/classy/theme.conf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/ajax.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/changelog.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/classyext.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/cmd.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/colorpicker.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/conf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/core.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/dialog.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/editor.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/event.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/index.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/make.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/menu.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/node.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/option.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/plugin.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/qna.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/range.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/selector.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/tabs.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/theme.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/upgrade.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/upload.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/uploadbutton.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/usage.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/docs/widget.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/jsp/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/jsp/demo.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/jsp/file_manager_json.jsp.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/jsp/upload_json.jsp.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/kindeditor-all-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/kindeditor-all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lang/ar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lang/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lang/ko.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lang/ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lang/zh-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lang/zh-TW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/.htaccess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/build.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/background.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/contentScript.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug-lite-beta.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/googleChrome.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/manifest.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug-1.3a2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug.IE6.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/roundCorner.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/background.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/contentScript.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug-lite.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/googleChrome.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/manifest.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug-1.3a2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug.IE6.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/roundCorner.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/compress.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/firebug-lite-beta.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/firebug-lite-debug.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/firebug-lite.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/plugin/proxy/proxy.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/firebug.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/firebug.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/roundCorner.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/firebug.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/firebug.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/roundCorner.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug-1.3a2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug.IE6.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/roundCorner.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/qunit/qunit.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/lib/qunit/qunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/php/JSON.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/php/demo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/php/file_manager_json.php.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/php/upload_json.php.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/anchor/anchor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/autoheight/autoheight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/baidumap/baidumap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/baidumap/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/baidumap/map.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/clearhtml/clearhtml.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/code/code.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/code/prettify.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/code/prettify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/emoticons.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/filemanager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/fixtoolbar/fixtoolbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/flash/flash.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/image/image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/insertfile/insertfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/lineheight/lineheight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/link/link.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/map/map.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/map/map.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/media/media.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/multiimage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/pagebreak/pagebreak.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/plainpaste/plainpaste.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/preview/preview.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/quickformat/quickformat.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/table/table.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/template/html/1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/template/html/2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/template/html/3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/template/template.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/plugins/wordpaste/wordpaste.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/cmd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/colorpicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/dialog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/edit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/event.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/footer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/header.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/html.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/menu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/range.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/selector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/tabs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/toolbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/uploadbutton.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/src/widget.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/ajax.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/cmd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/cmd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/core.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/dialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/edit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/edit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/editor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/editor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/event.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/event.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/hidden.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/html.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/html.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/leak.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/main.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/menu.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/menu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/navi.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/node.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/quirkmode.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/range.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/range.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/remote.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/selector.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/selector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/tabs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/toolbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/toolbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/total.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/KindEditorDriver.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/all-chrome.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/all-firefox.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/all-ie.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/all.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriver.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverBase.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverContainer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverElement.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverEnvironment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverExceptions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverSession.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverSimpleItem.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/__init__.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/test-default.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/test-dialog.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/test-unittest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/test/widget.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/default/default.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/qq/qq.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/kindeditor/themes/simple/simple.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/pvz.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/pvz.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/auth/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/jquery-2.1.1.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Aluza.iml" afterPath="$PROJECT_DIR$/.idea/Aluza.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/ion_auth.php" afterPath="$PROJECT_DIR$/application/config/ion_auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Auth.php" afterPath="$PROJECT_DIR$/application/controllers/Auth.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Buhalterija.php" afterPath="$PROJECT_DIR$/application/controllers/Buhalterija.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buhalterija/buhalterija_view.php" afterPath="$PROJECT_DIR$/application/views/buhalterija/buhalterija_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buhalterija/darbo_uzmokestis_view.php" afterPath="$PROJECT_DIR$/application/views/buhalterija/darbo_uzmokestis_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Main.php" afterPath="$PROJECT_DIR$/application/controllers/Main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Sutartys.php" afterPath="$PROJECT_DIR$/application/controllers/Sutartys.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/auth/login_view.php" afterPath="$PROJECT_DIR$/application/views/auth/login_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/auth/register.php" afterPath="$PROJECT_DIR$/application/views/auth/register.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php" afterPath="$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buhalterija/index_view.php" afterPath="$PROJECT_DIR$/application/views/buhalterija/index_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buhalterija/mokejimai_view.php" afterPath="$PROJECT_DIR$/application/views/buhalterija/mokejimai_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buhalterija/pirkimai_pardavimai_view.php" afterPath="$PROJECT_DIR$/application/views/buhalterija/pirkimai_pardavimai_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buhalterija/uzsakymai_view.php" afterPath="$PROJECT_DIR$/application/views/buhalterija/uzsakymai_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/buhalterija/zinynai_view.php" afterPath="$PROJECT_DIR$/application/views/buhalterija/zinynai_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" afterPath="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/header_view.php" afterPath="$PROJECT_DIR$/application/views/header_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/home_view.php" afterPath="$PROJECT_DIR$/application/views/home_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/left_view.php" afterPath="$PROJECT_DIR$/application/views/left_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main_view.php" afterPath="$PROJECT_DIR$/application/views/main_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/mano.css" afterPath="$PROJECT_DIR$/assets/css/mano.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mano.js" afterPath="$PROJECT_DIR$/assets/js/mano.js" />
     </list>
     <ignored path="Aluza.iws" />
@@ -56,114 +735,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main_view.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2006">
-              <caret line="118" column="7" lean-forward="false" selection-start-line="118" selection-start-column="3" selection-end-line="125" selection-end-column="7" />
+            <state relative-caret-position="255">
+              <caret line="117" column="60" lean-forward="false" selection-start-line="117" selection-start-column="60" selection-end-line="117" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="naujas_irasas_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php">
+      <file leaf-file-name="formuoti_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="226" column="34" lean-forward="true" selection-start-line="226" selection-start-column="34" selection-end-line="226" selection-end-column="34" />
+            <state relative-caret-position="170">
+              <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buhalterija_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/buhalterija/buhalterija_view.php">
+      <file leaf-file-name="skaitciuokle_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1402">
+              <caret line="356" column="89" lean-forward="false" selection-start-line="356" selection-start-column="89" selection-end-line="356" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/home_view.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+              <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ilgalaikis_turtas_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php">
+      <file leaf-file-name="index_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/buhalterija/index_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="73" column="30" lean-forward="true" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
-              <folding>
-                <marker date="1512155531008" expanded="true" signature="12863:13245" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="13318:13511" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="13557:13778" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="13638:13751" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="13922:26307" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="26077:26244" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="26077:26272" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="26077:26292" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="26104:26217" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="26384:26904" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="26995:27516" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="27621:28149" ph="..." />
-                <marker date="1512155531008" expanded="true" signature="28260:28791" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Buhalterija.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Buhalterija.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+            <state relative-caret-position="629">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="skaiciuoti_gyvulius_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php">
+      <file leaf-file-name="Sutartys.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="34" />
-              <folding>
-                <marker date="1510686561364" expanded="true" signature="16604:16956" ph="..." />
-                <marker date="1510686561364" expanded="true" signature="16648:16912" ph="..." />
-                <marker date="1510686561364" expanded="true" signature="16693:16867" ph="..." />
-                <marker date="1510686561364" expanded="true" signature="17163:17331" ph="..." />
-                <marker date="1510686561364" expanded="true" signature="18864:19218" ph="..." />
-                <marker date="1510686561364" expanded="true" signature="18908:19174" ph="..." />
-                <marker date="1510686561364" expanded="true" signature="18953:19129" ph="..." />
-                <marker date="1510686561364" expanded="true" signature="19403:19571" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mano.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/mano.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="30" />
+            <state relative-caret-position="433">
+              <caret line="59" column="35" lean-forward="false" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buhalterija.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/js/buhalterija.js">
+      <file leaf-file-name="Sutartys_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mano.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="113" column="20" lean-forward="false" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+            <state relative-caret-position="-273">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -180,7 +816,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>config</find>
       <find>footer</find>
       <find>skin-1</find>
       <find>_render_page</find>
@@ -210,6 +845,7 @@
       <find>get_users_groups</find>
       <find>groups(</find>
       <find>groups</find>
+      <find>middle-box</find>
     </findStrings>
     <replaceStrings>
       <replace>pill</replace>
@@ -224,43 +860,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/sutartys/iban_view.php" />
-        <option value="$PROJECT_DIR$/application/third_party/PhpWord.php" />
-        <option value="$PROJECT_DIR$/application/third_party/PhpWord/PhpWord.php" />
-        <option value="$PROJECT_DIR$/application/libraries/Word.php" />
-        <option value="$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php" />
-        <option value="$PROJECT_DIR$/application/models/Galvijai_model.php" />
         <option value="$PROJECT_DIR$/application/views/pasarai/ganykliniai_pasarai_view.php" />
         <option value="$PROJECT_DIR$/application/models/Sutartys_model.php" />
         <option value="$PROJECT_DIR$/application/views/sutartys/paslaugu_teikimas_view.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
-        <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
-        <option value="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" />
         <option value="$PROJECT_DIR$/application/views/paseliai/skaiciuoti_paselius_view.php" />
         <option value="$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php" />
         <option value="$PROJECT_DIR$/application/views/ukininkai/sarasas_ukininku_view.php" />
         <option value="$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php" />
         <option value="$PROJECT_DIR$/assets/js/vuejs.js" />
-        <option value="$PROJECT_DIR$/application/views/auth/register.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Auth.php" />
         <option value="$PROJECT_DIR$/application/models/Ukininkai_model.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Main.php" />
         <option value="$PROJECT_DIR$/application/language/lithuanian/ion_auth_lang.php" />
-        <option value="$PROJECT_DIR$/application/views/home_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/Ukininkai.php" />
         <option value="$PROJECT_DIR$/application/controllers/Galvijai.php" />
         <option value="$PROJECT_DIR$/application/controllers/Pasarai.php" />
         <option value="$PROJECT_DIR$/application/controllers/Paseliai.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
         <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
         <option value="$PROJECT_DIR$/application/models/Admin_model.php" />
         <option value="$PROJECT_DIR$/application/views/admin/admin_view.php" />
         <option value="$PROJECT_DIR$/application/views/info_view.php" />
         <option value="$PROJECT_DIR$/application/models/Buhalterija_model.php" />
-        <option value="$PROJECT_DIR$/application/views/header_view.php" />
-        <option value="$PROJECT_DIR$/application/views/left_view.php" />
         <option value="$PROJECT_DIR$/application/views/buhalterija/meniu_view.php" />
         <option value="$PROJECT_DIR$/application/views/buhalterija/pirkimai_pardavimai_view.php" />
         <option value="$PROJECT_DIR$/application/views/buhalterija/uzsakymai_view.php" />
@@ -268,13 +889,28 @@
         <option value="$PROJECT_DIR$/application/views/buhalterija/buhalterija_view.php" />
         <option value="$PROJECT_DIR$/application/views/buhalterija/darbo_uzmokestis_view.php" />
         <option value="$PROJECT_DIR$/application/views/buhalterija/mokejimai_view.php" />
-        <option value="$PROJECT_DIR$/assets/js/mano.js" />
-        <option value="$PROJECT_DIR$/application/views/buhalterija/index_view.php" />
-        <option value="$PROJECT_DIR$/application/views/main_view.php" />
         <option value="$PROJECT_DIR$/assets/css/mano.css" />
-        <option value="$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Buhalterija.php" />
         <option value="$PROJECT_DIR$/assets/js/buhalterija.js" />
+        <option value="$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php" />
+        <option value="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Buhalterija.php" />
+        <option value="$PROJECT_DIR$/application/views/buhalterija/index_view.php" />
+        <option value="$PROJECT_DIR$/application/views/auth/register.php" />
+        <option value="$PROJECT_DIR$/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/application/views/auth/login_view.php" />
+        <option value="$PROJECT_DIR$/application/views/left_view.php" />
+        <option value="$PROJECT_DIR$/application/views/header_view.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Main.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Auth.php" />
+        <option value="$PROJECT_DIR$/application/config/ion_auth.php" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
+        <option value="$PROJECT_DIR$/assets/js/mano.js" />
+        <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
+        <option value="$PROJECT_DIR$/assets/js/editor.js" />
+        <option value="$PROJECT_DIR$/assets/kindeditor/src/config.js" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
+        <option value="$PROJECT_DIR$/application/views/home_view.php" />
+        <option value="$PROJECT_DIR$/application/views/main_view.php" />
       </list>
     </option>
   </component>
@@ -299,7 +935,7 @@
       <path value="G:\WAMP64\www\Aluza" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="338" />
     <option name="y" value="5" />
     <option name="width" value="1243" />
@@ -376,20 +1012,6 @@
             <path>
               <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
               <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="galvijai" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="knyga" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -401,15 +1023,14 @@
             <path>
               <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
               <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="DATA" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -423,21 +1044,22 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ToolWindowTODO.ShowToolbar" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\WAMP64\www\1-1.lt\assets" />
+      <recent name="G:\WAMP64\www\1-1.lt\assets\css" />
+      <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
+      <recent name="G:\WAMP64\www\1-1.lt\application\views\ukininkai" />
+      <recent name="G:\WAMP64\www\1-1.lt\application\third_party" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\WAMP64\www\1-1.lt\assets" />
       <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
       <recent name="G:\WAMP64\www\1-1.lt\application\third_party" />
       <recent name="G:\WAMP64\www\1-1.lt\application\libraries" />
       <recent name="G:\WAMP64\www\1-1.lt\DATA" />
-      <recent name="G:\WAMP64\www\1-1.lt\application\views\pasarai" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
-      <recent name="G:\WAMP64\www\1-1.lt\assets\css" />
-      <recent name="G:\WAMP64\www\1-1.lt\application\views\ukininkai" />
-      <recent name="G:\WAMP64\www\1-1.lt\application\third_party" />
-      <recent name="G:\WAMP64\www\1-1.lt\application\third_party\PHP_excel" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -579,14 +1201,11 @@
       <workItem from="1511972771150" duration="7153000" />
       <workItem from="1511988261670" duration="1889000" />
       <workItem from="1512070818513" duration="6190000" />
-      <workItem from="1512144014820" duration="11039000" />
-    </task>
-    <task id="LOCAL-00027" summary="zalioji knyga, patvarkytas meslu skaicivimas">
-      <created>1505417672307</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1505417672307</updated>
+      <workItem from="1512144014820" duration="11633000" />
+      <workItem from="1512242544918" duration="2093000" />
+      <workItem from="1512293321226" duration="1347000" />
+      <workItem from="1512404732167" duration="8596000" />
+      <workItem from="1512489387750" duration="10982000" />
     </task>
     <task id="LOCAL-00028" summary="priesvoris">
       <created>1505847187346</created>
@@ -924,13 +1543,20 @@
       <option name="project" value="LOCAL" />
       <updated>1511980868385</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="ilgalaikis turtas, pradiniai likuciai, pildymas">
+      <created>1512156196542</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1512156196542</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="496946000" />
+    <option name="totallyTimeSpent" value="520558000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -940,17 +1566,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15138593" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13646056" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13140312" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14285715" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13111112" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15" sideWeight="0.5138593" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12222222" sideWeight="0.48720682" order="13" side_tool="false" content_ui="tabs" x="682" y="810" width="743" height="144" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11" sideWeight="0.48614073" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1535039" sideWeight="0.49382716" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15333334" sideWeight="0.49382716" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15512614" sideWeight="0.5085865" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1008,7 +1634,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="VUE JS iterpimas" />
     <MESSAGE value="vuejs datepicker naudojimas" />
     <MESSAGE value="padaryta matyti parduotu gyvuliu sarasa, numeris, kam parduota?" />
     <MESSAGE value="padaryta matyti perkamu gyvuliu sarasa, numeris, is ko nupirkta? taip pat patvarkyta pasaru MIN, VID, MAX isvedimas, bet ganykliniai pasarai iki spalio 15" />
@@ -1033,7 +1658,8 @@
     <MESSAGE value="buhalterija dizainas 2" />
     <MESSAGE value="buhalterija: ilgalaikis turtas, pradiniai likuciai, pildymas" />
     <MESSAGE value="ilgalaikis turtas, pradiniai likuciai, pildymas" />
-    <option name="LAST_COMMIT_MESSAGE" value="ilgalaikis turtas, pradiniai likuciai, pildymas" />
+    <MESSAGE value="ideigtas editorius" />
+    <option name="LAST_COMMIT_MESSAGE" value="ideigtas editorius" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1043,197 +1669,140 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/js/printPreview.js" />
+    <entry file="file://$PROJECT_DIR$/system/core/Output.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="209" column="8" lean-forward="false" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/Loader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="148" column="8" lean-forward="false" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/footer_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        <state relative-caret-position="102">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php">
+    <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="170" column="17" lean-forward="false" selection-start-line="170" selection-start-column="17" selection-end-line="170" selection-end-column="17" />
+        <state relative-caret-position="340">
+          <caret line="104" column="20" lean-forward="true" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
+    <entry file="file://$PROJECT_DIR$/application/views/auth/login.php" />
+    <entry file="file://$PROJECT_DIR$/application/views/info_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="109" column="85" lean-forward="false" selection-start-line="109" selection-start-column="85" selection-end-line="109" selection-end-column="85" />
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/vuejs.js">
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="254">
+          <caret line="4693" column="20" lean-forward="false" selection-start-line="4693" selection-start-column="20" selection-end-line="4693" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/auth/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="221">
+          <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php">
+    <entry file="file://$PROJECT_DIR$/application/views/auth/login_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="129" column="160" lean-forward="false" selection-start-line="129" selection-start-column="160" selection-end-line="129" selection-end-column="160" />
+        <state relative-caret-position="442">
+          <caret line="26" column="96" lean-forward="false" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/language/lithuanian/auth_lang.php">
+    <entry file="file://$PROJECT_DIR$/application/views/auth/reset_password.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1930">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/language/lithuanian/ion_auth_lang.php">
+    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/buhalterija_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-213">
-          <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Ukininkai_model.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Buhalterija.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="54" column="45" lean-forward="false" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+        <state relative-caret-position="952">
+          <caret line="56" column="10" lean-forward="false" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/auth/no_login_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/header_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="109" column="17" lean-forward="false" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="107" column="13" lean-forward="false" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="55" column="104" lean-forward="true" selection-start-line="53" selection-start-column="8" selection-end-line="55" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Galvijai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="903" column="106" lean-forward="false" selection-start-line="903" selection-start-column="106" selection-end-line="903" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Paseliai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="447" column="106" lean-forward="false" selection-start-line="447" selection-start-column="106" selection-end-line="447" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="197" column="106" lean-forward="false" selection-start-line="197" selection-start-column="106" selection-end-line="197" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Zalia_knyga.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1811">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/ikelti_gyvulius_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/home_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="41" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        <state relative-caret-position="1003">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10404">
-          <caret line="612" column="58" lean-forward="false" selection-start-line="612" selection-start-column="42" selection-end-line="612" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Galvijai_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3961">
-          <caret line="233" column="9" lean-forward="false" selection-start-line="233" selection-start-column="8" selection-end-line="233" selection-end-column="49" />
+        <state relative-caret-position="1054">
+          <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Ukininkai.php">
+    <entry file="file://$PROJECT_DIR$/application/config/ion_auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Ion_auth_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27659">
-          <caret line="1627" column="9" lean-forward="false" selection-start-line="1627" selection-start-column="9" selection-end-line="1627" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="-927">
+          <caret line="98" column="41" lean-forward="false" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/libraries/Ion_auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8755">
-          <caret line="515" column="54" lean-forward="false" selection-start-line="515" selection-start-column="48" selection-end-line="515" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/sidebar_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="true" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/sarasas_ukininku_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/info_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/admin_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="173" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="207" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="60" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Admin_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="1" />
+        <state relative-caret-position="5100">
+          <caret line="300" column="28" lean-forward="false" selection-start-line="300" selection-start-column="28" selection-end-line="300" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1246,199 +1815,255 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/header_view.php">
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/paslaugu_teikimas_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="109" column="17" lean-forward="false" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/auth/login_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="49" lean-forward="true" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/knyga/knyga_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="59" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/meniu_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3638">
-          <caret line="214" column="4" lean-forward="false" selection-start-line="214" selection-start-column="4" selection-end-line="214" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/gyvuliu_sarasas_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="54" lean-forward="true" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/darbo_uzmokestis_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/zinynai_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/uzsakymai_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/pirkimai_pardavimai_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/mokejimai_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/index_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mano.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="118" column="7" lean-forward="false" selection-start-line="118" selection-start-column="3" selection-end-line="125" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/buhalterija_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="113" column="20" lean-forward="false" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="34" />
-          <folding>
-            <marker date="1510686561364" expanded="true" signature="16604:16956" ph="..." />
-            <marker date="1510686561364" expanded="true" signature="16648:16912" ph="..." />
-            <marker date="1510686561364" expanded="true" signature="16693:16867" ph="..." />
-            <marker date="1510686561364" expanded="true" signature="17163:17331" ph="..." />
-            <marker date="1510686561364" expanded="true" signature="18864:19218" ph="..." />
-            <marker date="1510686561364" expanded="true" signature="18908:19174" ph="..." />
-            <marker date="1510686561364" expanded="true" signature="18953:19129" ph="..." />
-            <marker date="1510686561364" expanded="true" signature="19403:19571" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="226" column="34" lean-forward="true" selection-start-line="226" selection-start-column="34" selection-end-line="226" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Pasarai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4204">
-          <caret line="1211" column="106" lean-forward="false" selection-start-line="1211" selection-start-column="106" selection-end-line="1211" selection-end-column="106" />
+        <state relative-caret-position="-103">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="73" column="30" lean-forward="true" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
-          <folding>
-            <marker date="1512155531008" expanded="true" signature="12863:13245" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="13318:13511" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="13557:13778" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="13638:13751" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="13922:26307" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="26077:26244" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="26077:26272" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="26077:26292" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="26104:26217" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="26384:26904" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="26995:27516" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="27621:28149" ph="..." />
-            <marker date="1512155531008" expanded="true" signature="28260:28791" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Buhalterija.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+        <state relative-caret-position="340">
+          <caret line="39" column="66" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/buhalterija.js">
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/sutartys_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+        <state relative-caret-position="212">
+          <caret line="21" column="48" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1402">
+          <caret line="356" column="89" lean-forward="false" selection-start-line="356" selection-start-column="89" selection-end-line="356" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="59" column="35" lean-forward="false" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/index_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mano.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3349">
+          <caret line="197" column="9" lean-forward="false" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-273">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="869" column="93" lean-forward="false" selection-start-line="869" selection-start-column="93" selection-end-line="869" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/kindeditor-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/asp/demo.asp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/src/colorpicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/upload_json.php.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/JSON.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3060">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/demo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/docs/node.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1428">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/kindeditor-all-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/kindeditor-all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/src/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1503378170000" expanded="true" signature="756:774" ph="..." />
+            <marker date="1503378170000" expanded="true" signature="1381:1428" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/animate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/plugins/toastr/toastr.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/plugins/toastr/toastr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/home_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="117" column="60" lean-forward="false" selection-start-line="117" selection-start-column="60" selection-end-line="117" selection-end-column="60" />
           <folding />
         </state>
       </provider>

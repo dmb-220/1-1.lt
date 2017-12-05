@@ -105,55 +105,9 @@
                 </li>
 
                 <?php
-            }else{
-            ?>
-
-            <li><a href="<?= base_url(); ?>main"><i class="fa fa-road"></i> <span>Į pradžią</span></a</li>
-            <li><a data-toggle="modal" href="#login-form"><i class="fa fa-user"></i> <span>Prisijungti</span></a></li>
-            <li><a href="<?= base_url(); ?>auth/register"><i class="fa fa-users"></i> <span>Registruotis</span></a></li>
-
-                <?php
             }
             ?>
         </ul>
 
     </div>
 </nav>
-<!-- Prisijungimo forma -->
-<div id="login-form" class="modal fade" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">PRISIJUNGIMAS</h3>
-                        <hr>
-                        <form role="form" action="<?= base_url(); ?>auth/login" method="POST" >
-                            <div class="form-group">
-                                <label>El. paštas:</label>
-                                <input type="email" name="identity" placeholder="" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Slaptažodis:</label>
-                                <input type="password" name="password" placeholder="" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label></label>
-                                <input type="checkbox" class="i-checks"> Prisiminti mane
-                            </div>
-                            <button class="btn btn-block btn-outline btn-primary" type="submit">
-                                <i class="fa fa-check-circle-o fa-lg"> PRISIJUNGTI</i>
-                            </button>
-                        </form>
-                    </div>
-                    <div class="col-sm-6"><h4>Dar neturite prieigos? Jūs galite užsiregistruoti:</h4>
-                        <h5>Administracija turės patvirtinti Jūsų registracija, tai gali užtrukti iki 24 valandų.</h5>
-                        <hr>
-                        <p class="text-center">
-                            <a href="<?= base_url(); ?>auth/register"><i class="fa fa-sign-in big-icon"></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

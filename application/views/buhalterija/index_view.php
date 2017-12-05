@@ -1,11 +1,17 @@
 <div class="wrapper wrapper-content">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5># 1-1.LT #</h5>
+            <h5># 1-1.LT # - <b>
+                    <?php
+                    $dt = $this->session->userdata();
+                    if($dt['vardas'] == "" AND $dt['pavarde'] == "") {
+                    echo "Pasirinkite ūkininką!"; }else{
+                        echo $dt['vardas']." ".$dt['pavarde'];
+                    }
+                    ?></b></h5>
             <div class="ibox-tools">
                 <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
-                <a class="close-link"><i class="fa fa-times"></i></a>
             </div>
         </div>
         <div class="ibox-content">

@@ -58,13 +58,6 @@ class Main extends CI_Controller {
 		$this->load->view('main_view');
 	}
 
-	public function auth_error(){
-        //sukeliam info, informaciniam meniu
-        $this->main_model->info['txt']['meniu'] = "Vartotojų valdymas";
-        $this->main_model->info['txt']['info'] = "Prisijungimo KLAIDA!";
-
-		$this->load->view('main_view');
-	}
 
 	public function kalendorius(){
 		$data['data'] = array(

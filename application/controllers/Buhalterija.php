@@ -28,6 +28,7 @@ class Buhalterija extends CI_Controller{
     public function __construct(){
         parent::__construct();
         $this->load->model('main_model');
+        $this->load->model('ukininkai_model');
         $this->load->model('admin_model');
 
         $this->load->library('form_validation');
@@ -43,6 +44,10 @@ class Buhalterija extends CI_Controller{
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Buhalterinė programa";
         $this->main_model->info['txt']['info'] = "Pagrindinis langas";
+
+        $user = $this->ion_auth->user()->row();
+        //Nuskaitom ukininku sarasa, kad butu visada po ranka
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
 
         $this->load->view("main_view");
     }

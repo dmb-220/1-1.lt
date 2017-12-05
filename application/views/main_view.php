@@ -7,24 +7,32 @@
     <meta name="author" content="Andrius Norkus (DMB-220)">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <?php $action = $this->uri->segment(2); ?>
+
     <title>1-1.LT | Administracija</title>
     <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>assets\euro.ico" />
-
-    <link href="<?= base_url(); ?>assets\css\bootstrap.min.css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets\font-awesome\css\font-awesome.css" rel="stylesheet">
-    <!-- Date picker -->
-    <link href="<?= base_url(); ?>assets\css\plugins\datapicker\datepicker3.css" rel="stylesheet">
-    <!-- Toastr style -->
-    <link href="<?= base_url(); ?>assets\css\plugins\toastr\toastr.min.css" rel="stylesheet">
-
-    <link href="<?= base_url(); ?>assets\css\animate.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets\css\style.css" rel="stylesheet">
-    <!-- FORMS -->
     <link href="<?= base_url(); ?>assets\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" rel="stylesheet">
     <!-- mano CSS -->
     <link href="<?= base_url(); ?>assets/css/mano.css" rel="stylesheet"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <?php if($action == 'formuoti'){ ?>
+    <link href="<?= base_url(); ?>assets/kindeditor/themes/default/default.css" type="text/css" rel="stylesheet"/>
+    <script src="<?= base_url(); ?>assets/kindeditor/kindeditor-all-min.js"></script>
+    <script src="<?= base_url(); ?>assets/kindeditor/lang/en.js"></script>
+    <script>
+        $(function() {
+            var editor = KindEditor.create('textarea[name="content"]');
+        });
+    </script>
+    <?php } ?>
 </head>
 <body class="md-skin">
 <div id="wrapper">
@@ -39,7 +47,6 @@ $this->load->view('left_view');
         //uzkraunam informacijos juosta
         $this->load->view("info_view");
 
-        $action = $this->uri->segment(2);
         switch ($action) {
             //Ukininkai
             case "prideti_ukininka": $this->load->view("ukininkai/prideti_ukininkus_view"); break;
@@ -58,9 +65,9 @@ $this->load->view('left_view');
             case "redaguoti_kodas": $this->load->view("paseliai/redaguoti_kodas_view"); break;
             case "paseliai": $this->load->view("paseliai/paseliai_view"); break;
             //Autorizacija
-            case "login": $this->load->view("auth/login.php"); break;
-            case "register": $this->load->view("auth/register.php"); break;
-            case "auth_error": $this->load->view("auth/auth_error_view"); break;
+            //case "login": $this->load->view("auth/login.php"); break;
+            //case "register": $this->load->view("auth/register.php"); break;
+            //case "auth_error": $this->load->view("auth/auth_error_view"); break;
             //Pasarai
             case "normos": $this->load->view("pasarai/normos_view"); break;
             case "meslas": $this->load->view("pasarai/meslas_view"); break;
@@ -75,6 +82,7 @@ $this->load->view('left_view');
             case "sutartys": $this->load->view("sutartys/sutartys_view"); break;
             case "paslaugu_teikimas": $this->load->view("sutartys/paslaugu_teikimas_view"); break;
             case "darbo_sutartis": $this->load->view("sutartys/darbo_sustartis_view"); break;
+            case "formuoti": $this->load->view("sutartys/formuoti_view"); break;
             //Kalendorius
             case "kalendorius": $this->load->view("kalendorius_view"); break;
             //Administravimo meniu
@@ -86,7 +94,8 @@ $this->load->view('left_view');
                 if ($this->ion_auth->logged_in()) {
                     $this->load->view("home_view");
                 }else{
-                    $this->load->view("auth/no_login_view");
+                    //$this->load->view("auth/no_login_view");
+                    redirect('auth/login');
                 }
                 break;
         }
@@ -101,19 +110,15 @@ $this->load->view('left_view');
     ?>
 </div>
 
-<script src="<?= base_url(); ?>assets\js\bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\metisMenu\jquery.metisMenu.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
-<!-- Custom and plugin javascript -->
-<script src="<?= base_url(); ?>assets\js\inspinia.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\pace\pace.min.js"></script>
-<!-- Toastr -->
-<script src="<?= base_url(); ?>assets\js\plugins\toastr\toastr.min.js"></script>
-<!-- Data picker -->
-<script src="<?= base_url(); ?>assets\js\plugins\datapicker\bootstrap-datepicker.js"></script>
+<script src="<?= base_url(); ?>assets\js\inspinia.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 <!-- mano JS -->
 <script src="<?= base_url(); ?>assets\js\mano.js"></script>
-
 
 <script type="text/javascript">
     $('#data_1 .input-group.date').datepicker({

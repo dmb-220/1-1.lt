@@ -4688,18 +4688,12 @@ body.mini-navbar.fixed-sidebar .logo-element {
 }
 /* ERROR & LOGIN & LOCKSCREEN*/
 .middle-box {
-  max-width: 400px;
+  max-width: 640px;
   z-index: 100;
   margin: 0 auto;
   padding-top: 40px;
 }
-.lockscreen.middle-box {
-  width: 200px;
-  padding-top: 110px;
-}
-.loginscreen.middle-box {
-  width: 300px;
-}
+
 .loginColumns {
   max-width: 800px;
   margin: 0 auto;
@@ -4710,13 +4704,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
   margin: 0 auto;
   padding: 100px 20px 20px 20px;
 }
-.logo-name {
-  color: #e6e6e6;
-  font-size: 180px;
-  font-weight: 800;
-  letter-spacing: -10px;
-  margin-bottom: 0;
-}
+
 .middle-box h1 {
   font-size: 170px;
 }

@@ -1,6 +1,6 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h5>Pasirinkite ūkininką  su kuriuo dirbsite</h5>
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Informacija</h5>
@@ -63,13 +63,6 @@
                 <?php
                 if($this->ion_auth->is_admin()){
                 echo"Testinis langas"; ?>
-                <div id="app">
-                    <datepicker :value.sync="startDate_1"></datepicker>
-                    <br/>
-                    <datepicker :value.sync="startDate_2"></datepicker>
-                    <br/>
-                    {{ startDate_1 }} - {{ startDate_2 }}
-                </div>
                 <?php }
                 echo"<br>";
                  /*

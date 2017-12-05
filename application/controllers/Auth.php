@@ -25,21 +25,15 @@ class Auth extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		error_reporting(E_ERROR | E_WARNING | E_PARSE);
-		//$this->load->database();
-		//$this->load->library(array('ion_auth','form_validation'));
 		$this->load->helper(array('url','language'));
-
         $this->load->model('main_model');
-
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
-
 		$this->lang->load('auth');
 	}
 
 	// redirect if needed, otherwise display the user list
 	public function index(){
 		if (!$this->ion_auth->logged_in()) {
-			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
 		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
@@ -59,14 +53,14 @@ class Auth extends CI_Controller {
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
 
-			$this->_render_page('main_view', $this->data);
+			$this->_render_page('auth/login_view', $this->data);
 		}
 	}
 
 	public function register(){
         //sukeliam info, informaciniam meniu
-        $this->main_model->info['txt']['meniu'] = "Vartotojų valdymas";
-        $this->main_model->info['txt']['info'] = "Registracija";
+        //$this->main_model->info['txt']['meniu'] = "Vartotojų valdymas";
+        //$this->main_model->info['txt']['info'] = "Registracija";
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         //validate form input
@@ -120,7 +114,7 @@ class Auth extends CI_Controller {
             );
 
             //$this->_render_page('main_view', $this->data);
-            $this->load->view("main_view", array('data'=> $this->data, 'inf' => $inf));
+            $this->load->view("auth/register");
         }
 	}
 
@@ -128,8 +122,8 @@ class Auth extends CI_Controller {
 	// log the user in
 	public function login(){
         //sukeliam info, informaciniam meniu
-        $this->main_model->info['txt']['meniu'] = "Vartotojų valdymas";
-        $this->main_model->info['txt']['info'] = "Prisijungimas";
+        //$this->main_model->info['txt']['meniu'] = "Vartotojų valdymas";
+        //$this->main_model->info['txt']['info'] = "Prisijungimas";
 
 		//$this->data['title'] = $this->lang->line('login_heading');
 
@@ -175,7 +169,7 @@ class Auth extends CI_Controller {
 			);
 
 			//$this->_render_page('main_view', $this->data);
-            $this->load->view("main_view", array('data'=> $this->data, 'inf' => $inf));
+            $this->load->view("auth/login_view", array('data'=> $this->data));
 		}
 	}
 
