@@ -32,6 +32,11 @@ class Main extends CI_Controller {
         $this->load->model('main_model');
 	}
 
+	//cia tam kartui, nukreipiama is kitu puslapiu kai neprisijungta, numestu i login, visur reik keisti, kad sito nereiketu
+    public function auth_error(){
+        redirect('auth/login');
+        }
+
 	//Pagrindinis visos svetaines puslapis
 	public function index(){
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');

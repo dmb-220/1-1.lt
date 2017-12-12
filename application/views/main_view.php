@@ -64,10 +64,6 @@ $this->load->view('left_view');
             case "naujas_kodas": $this->load->view("paseliai/naujas_kodas_view"); break;
             case "redaguoti_kodas": $this->load->view("paseliai/redaguoti_kodas_view"); break;
             case "paseliai": $this->load->view("paseliai/paseliai_view"); break;
-            //Autorizacija
-            //case "login": $this->load->view("auth/login.php"); break;
-            //case "register": $this->load->view("auth/register.php"); break;
-            //case "auth_error": $this->load->view("auth/auth_error_view"); break;
             //Pasarai
             case "normos": $this->load->view("pasarai/normos_view"); break;
             case "meslas": $this->load->view("pasarai/meslas_view"); break;
@@ -94,9 +90,7 @@ $this->load->view('left_view');
                 if ($this->ion_auth->logged_in()) {
                     $this->load->view("home_view");
                 }else{
-                    //$this->load->view("auth/no_login_view");
-                    redirect('auth/login');
-                }
+                    redirect('auth/login');}
                 break;
         }
 
@@ -119,6 +113,11 @@ $this->load->view('left_view');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 <!-- mano JS -->
 <script src="<?= base_url(); ?>assets\js\mano.js"></script>
+<!-- skaiciuokles programa, kad uzsipildytu laukeliai su informacija, kuria paduosim, formajant sutati -->
+<?php if($action == 'skaitciuokle'){ ?>
+    <script src="<?= base_url(); ?>assets/js/bootstrap-number-input.js"></script>
+    <script src="<?= base_url(); ?>assets/js/skaitciuokle.js"></script>
+<?php } ?>
 
 <script type="text/javascript">
     $('#data_1 .input-group.date').datepicker({

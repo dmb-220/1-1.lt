@@ -38,8 +38,8 @@
         <!-- pradiniai likuciai -->
         <div id="pradiniai_likuciai_show"  style="display:none">
             <form class="form-bordered" action="<?= base_url(); ?>buhalterija/pradiniai_likuciai" method="POST">
-                <fieldset>
-                    <legend>PRADINIAI LIKUČIAI</legend>
+                <fieldset class="buh">
+                    <legend class="buh">PRADINIAI LIKUČIAI</legend>
                     <div class="form-group row">
                         <div class="col-xs-5">
                         <label for="numeris">Numeris:</label>

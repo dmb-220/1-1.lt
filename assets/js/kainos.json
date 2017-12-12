@@ -1,0 +1,42 @@
+{
+  "darbuotojai": {
+    "vykdomi_rastai": "12",
+    "be_vykdomu_rastu": "10"
+  },
+  "pirminiai_dokumentai": {
+    "p100": "75",
+    "p250": "150",
+    "p500": "200",
+    "p750": "250",
+    "p1000": "300"
+  },
+  "galvijai": {
+    "0": {"kiekis": "0", "melziamos": "0", "ne_melziamos": "0"},
+    "1": {"kiekis": "20", "melziamos": "20", "ne_melziamos": "15"},
+    "2": {"kiekis": "40", "melziamos": "30", "ne_melziamos": "20"},
+    "3": {"kiekis": "60", "melziamos": "35", "ne_melziamos": "20"},
+    "4": {"kiekis": "80", "melziamos": "60", "ne_melziamos": "25"},
+    "5": {"kiekis": "100", "melziamos": "75", "ne_melziamos": "25"},
+    "6": {"kiekis": "120", "melziamos": "75", "ne_melziamos": "25"},
+    "7": {"kiekis": "140", "melziamos": "75", "ne_melziamos": "25"},
+    "8": {"kiekis": "160", "melziamos": "80", "ne_melziamos": "30"},
+    "9": {"kiekis": "180", "melziamos": "100", "ne_melziamos": "35"},
+    "10": {"kiekis": "200", "melziamos": "110", "ne_melziamos": "40"},
+    "11": {"kiekis": "250", "melziamos": "120", "ne_melziamos": "45"},
+    "12": {"kiekis": "3000", "melziamos": "150", "ne_melziamos": "65"}
+  },
+  "deklaruota": {
+    "0": {"kiekis": "0", "parduodantys": "0", "savo_reikmems": "0"},
+    "1": {"kiekis": "25", "parduodantys": "2.50", "savo_reikmems": "1.50"},
+    "2": {"kiekis": "50", "parduodantys": "3.00", "savo_reikmems": "2.00"},
+    "3": {"kiekis": "75", "parduodantys": "3.50", "savo_reikmems": "2.50"},
+    "4": {"kiekis": "100", "parduodantys": "4.00", "savo_reikmems": "3.00"},
+    "5": {"kiekis": "1000", "parduodantys": "4.50", "savo_reikmems": "3.50"}
+  },
+  "bankas": "7",
+  "kreditas": "6",
+  "saskaita_kaina": "45",
+  "kuras_kaina": "5",
+  "gamtos_apsauga": "100",
+  "europa_kaina": "30"
+}

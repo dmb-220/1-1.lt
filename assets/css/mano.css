@@ -95,7 +95,7 @@ td {
 }
 /* ******************************************** */
 
-fieldset
+fieldset.buh
 {
     border: 1px solid #ddd !important;
     margin: 0;
@@ -107,7 +107,7 @@ fieldset
     padding-left:10px!important;
 }
 
-legend
+legend.buh
 {
     font-size:14px;
     font-weight:bold;

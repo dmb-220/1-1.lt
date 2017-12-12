@@ -1,4 +1,4 @@
-<div class="wrapper wrapper-content animated fadeInRight">
+<div class="wrapper wrapper-content">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>Sutarties skaičiuoklės</h5>
@@ -52,7 +52,7 @@
                         <label class="col-md-2 control-label">Pirminiai dokumentai:</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <select id="pirminiai" name="pirminiai" class="form-control">
                                         <option value="0">Pasirinkite...</option>
                                         <option value="100">iki 100 įrašų per metus</option>
@@ -62,15 +62,21 @@
                                         <option value="1000">virš 1000 įrašų per metus</option>
                                     </select>
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <?php echo form_error('suma_menesis'); ?>
                                     <input type="text" name="pirminiai_menuo" id="pirminiai_menuo" class="form-control" placeholder="Suma per menesį">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <?php echo form_error('suma_metai'); ?>
                                     <input type="text" name="pirminiai_metai" id="pirminiai_metai" class="form-control" placeholder="Suma per metus">
                                 </div>
                             </div>
+                            <h5>
+                                <small>
+                                    Pagal įrašų skaičių nustatoma kaina. Vienas įrašas neapsiriboja sąskaitos įvedimu. Į įrašų skaičių patenkanurašymai, pajamavimas, kiti tarpiniai įrašai,
+                                    reikalingi teisingos bugalterijos tvarkymui.
+                                </small>
+                            </h5>
                         </div>
                     </div>
                     <!-- Darbuotojai -->
@@ -81,6 +87,11 @@
                                 <input id="is_darbininkai_2" type="checkbox" name="saskaitu_planas">
                                 <label> DARBUOTOJAI</label>
                             </div>
+                            <h5>
+                                <small>
+                                    Į šią kainą įeina darbuotojų darbo užmokesčio skaičiavimas, tabelio pildymas, kitos ataskaitos, išskyrus deklaracijos teikimus.
+                                </small>
+                            </h5>
                         </div>
                     </div>
 
@@ -88,16 +99,16 @@
                         <label class="col-md-2 control-label"> </label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-3 m-b-15">
-                                    <input type="text" name="darbuotojai_2_kiekis" id="darbuotojai_2_kiekis" class="form-control" placeholder="Kiekis">
+                                <div class="col-md-3">
+                                    <input type="text" name="darbuotojai_2_kiekis" value="0" min="0" max="100" id="darbuotojai_2_kiekis" class="form-control" placeholder="Kiekis">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="darbuotojai_2_menesis" id="darbuotojai_2_menesis" class="form-control" placeholder="Suma per menesį">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="darbuotojai_2_metai" id="darbuotojai_2_metai" class="form-control" placeholder="Suma per metus">
                                 </div>
-                                <div class="col-md-1 m-b-15">
+                                <div class="col-md-1">
                                     <div class="checkbox checkbox-info">
                                         <input id="is_darbininkai" type="checkbox" name="darbininkai">
                                         <label> <b>*</b></label>
@@ -110,13 +121,13 @@
                         <label class="col-md-2 control-label"> Su vykdomais raštais:</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-3 m-b-15">
-                                    <input type="text" name="darbuotojai_kiekis" id="darbuotojai_kiekis" class="form-control" placeholder="Kiekis">
+                                <div class="col-md-3">
+                                    <input type="text" name="darbuotojai_kiekis" id="darbuotojai_kiekis"  value="0" min="0" max="100" class="form-control" placeholder="Kiekis">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="darbuotojai_menesis" id="darbuotojai_menesis" class="form-control" placeholder="Suma per menesį">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="darbuotojai_metai" id="darbuotojai_metai" class="form-control" placeholder="Suma per metus">
                                 </div>
                             </div>
@@ -130,8 +141,24 @@
                         <label class="col-md-2 control-label">Galvijai (vnt):</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
+                                <div class="col-md-4">
+                                    <?php echo form_error('galvijai_kiekis'); ?>
+                                    <input type="text" name="galvijai_kiekis" id="galvijai_kiekis" class="form-control" placeholder="Galvijų kiekis"
+                                           value="<?=  $this->main_model->info['txt']['vidurkis'] ?>" disabled>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo form_error('suma_menesis'); ?>
+                                    <input type="text" name="galvijai_menesis" id="galvijai_menesis" class="form-control" placeholder="Suma per menesį">
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo form_error('suma_metai'); ?>
+                                    <input type="text" name="galvijai_metai" id="galvijai_metai" class="form-control" placeholder="Suma per metus">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row row-space-12">
                                 <?php echo form_error('gyvuliai'); ?>
-                                <div class="col-md-2 m-b-15">
+                                <div class="col-md-2">
                                     <div class="radio radio-info radio-inline">
                                         <?php if($this->main_model->info['txt']['banda'] == 2){
                                             echo"<input type='radio' value='2' name='banda' id='banda' checked>";}else{
@@ -140,7 +167,7 @@
                                         <label> MĖSINIAI </label>
                                     </div>
                                 </div>
-                                <div class="col-md-2 m-b-15">
+                                <div class="col-md-2">
                                     <div class="radio radio-info radio-inline">
                                         <?php if($this->main_model->info['txt']['banda'] == 1){
                                             echo"<input type='radio' value='1' name='banda' id='banda' checked>";}else{
@@ -149,7 +176,7 @@
                                         <label> PIENINIAI </label>
                                     </div>
                                 </div>
-                                <div class="col-md-2 m-b-15">
+                                <div class="col-md-2">
                                     <div class="radio radio-info radio-inline">
                                         <?php if($this->main_model->info['txt']['banda'] == 3){
                                             echo"<input type='radio' value='3' name='banda' id='banda' checked>";}else{
@@ -159,39 +186,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <br>
-                            <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
-                                    <?php echo form_error('galvijai_kiekis'); ?>
-                                    <input type="text" name="galvijai_kiekis" id="galvijai_kiekis" class="form-control" placeholder="Galvijų kiekis"
-                                           value="<?=  $this->main_model->info['txt']['vidurkis'] ?>" disabled>
-                                </div>
-                                <div class="col-md-4 m-b-15">
-                                    <?php echo form_error('suma_menesis'); ?>
-                                    <input type="text" name="galvijai_menesis" id="galvijai_menesis" class="form-control" placeholder="Suma per menesį">
-                                </div>
-                                <div class="col-md-4 m-b-15">
-                                    <?php echo form_error('suma_metai'); ?>
-                                    <input type="text" name="galvijai_metai" id="galvijai_metai" class="form-control" placeholder="Suma per metus">
-                                </div>
-                            </div>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label class="col-md-2 control-label">Deklaruotas plotas (ha):</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <?php echo form_error('dek_plotas'); ?>
                                     <input type="text" name="dek_plotas" id="dek_plotas" class="form-control" placeholder="Kiekis"
                                            value="<?= $this->main_model->info['txt']['deklaruota'] ?>" disabled>
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <?php echo form_error('suma_menesis'); ?>
                                     <input type="text" name="suma_menesis" id="dek_menesis" class="form-control" placeholder="Suma per menesį">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <?php echo form_error('suma_metai'); ?>
                                     <input type="text" name="suma_metai" id="dek_metai" class="form-control" placeholder="Suma per metus">
                                 </div>
@@ -205,13 +215,13 @@
                         <label class="col-md-2 control-label">Banko sąskaitos:</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
-                                    <input type="text" name="bankai" id="bankai" class="form-control" placeholder="Sąskaitų kiekis">
+                                <div class="col-md-4">
+                                    <input type="number" name="bankai" id="bankai" value="0" min="0" max="100"  class="form-control" placeholder="Sąskaitų kiekis">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="bankai_menesis" id="bankai_menesis" class="form-control" placeholder="Suma per menesį">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="bankai_metai" id="bankai_metai" class="form-control" placeholder="Suma per metus">
                                 </div>
                             </div>
@@ -222,13 +232,13 @@
                         <label class="col-md-2 control-label">Kreditai:</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
-                                    <input type="text" name="kreditai" id="kreditai" class="form-control" placeholder="Kreditų kiekis">
+                                <div class="col-md-4">
+                                    <input type="number" name="kreditai" id="kreditai" value="0" min="0" max="100"  class="form-control" placeholder="Kreditų kiekis">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="kreditai_menesis" id="kreditai_menesis" class="form-control" placeholder="Suma per menesį">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="kreditai_metai" id="kreditai_metai" class="form-control" placeholder="Suma per metus">
                                 </div>
                             </div>
@@ -239,13 +249,13 @@
                         <label class="col-md-2 control-label">Deklaracijos:</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="kiekis" class="form-control" placeholder="Kiekis">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="suma_menesis" class="form-control" placeholder="Suma per menesį">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="suma_metai" class="form-control" placeholder="Suma per metus">
                                 </div>
                             </div>
@@ -253,91 +263,158 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Kiti spec. požymiai:</label>
+                        <label class="col-md-2 control-label"></label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15">
-                                    <input type="text" name="kiekis" class="form-control" placeholder="Kiekis">
+                                <div class="col-md-4">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="gamtos_apsauga" id="gamtos_apsauga">
+                                        <label> APLINKOS TARŠOS MOKESTIS</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-4 m-b-15">
-                                    <input type="text" name="suma_menesis" class="form-control" placeholder="Suma per menesį">
-                                </div>
-                                <div class="col-md-4 m-b-15">
-                                    <input type="text" name="suma_metai" class="form-control" placeholder="Suma per metus">
+                                <div id="inp_apsauga" style="display:none">
+                                    <div class="col-md-4">
+                                        <input type="text" name="apsauga_menesis" id="apsauga_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="apsauga_metai" id="apsauga_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
                                 </div>
                             </div>
+                            <h5>
+                                <small>
+                                    Pagal LR atliekų tvarkymo įstatymą į Lietuvą įvežus daugiau kaip 5 vnt. baterijų savo reikmėms,
+                                    o verslo reikmėms nuo pirmo tokio vieneto gamintojas arba importuotojas turi registruotis Gamintojų ir importuotojųsąvade,
+                                    organizuoti surinkimą, vežimą, pasiruošimą naudoti, šviesti visuomenę gaminių tvarkymo klausimais, tvarkyti gaminių apskaitą, teikti ataskaitas.<br>
+                                    Nuo mokesčio už aplinkos teršimą iš mobilių taršos šaltinių atleidžiami:
+                                    <ul>
+                                        <li>fiziniai ir juridiniai asmenys, turintys išmetamųjų dujų neutralizavimo sistemas</li>
+                                        <li>fiziniai ir juridiniai asmenys, teršiantys iš transporto priemonių naudojamų žemės ūkio veiklai, jei jų pajamos iš šios veiklos sudaro daugiau kaip 50 procentų visų gaunamų pajamų.</li>
+                                        <li>fiziniai asmenys, kurie verčiasi individualia veikla ir naudoją asmenines transporto priemones.</li>
+                                        <li>fiziniai ir juridiniai asmenys naudojantys biodegalus.</li>
+                                    </ul>
+                                    Nuo mokesčio už aplinkos teršimą iš stacionarių taršos šaltinių atleidžiami:
+                                    <ul>
+                                        <li>fiziniai ir juridiniai asmenys, įgyvendinantys aplinkosaugos priemones.
+                                        <li>fiziniai ir juridiniai asmenys, pateikę ... sunaudojimą patvirtinančius dokumentus</li>
+                                    </ul>
+                                </small>
+                            </h5>
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label class="col-md-2 control-label"> </label>
+                        <label class="col-md-2 control-label"></label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-2 m-b-15">
-                                    <?php echo form_error('europa'); ?>
+                                <div class="col-md-4">
                                     <div class="checkbox checkbox-info">
-                                    <input type="checkbox" value="1" name="europa">
-                                    <label> ES PARAMA</label>
+                                        <input type="checkbox" name="europa" id="europa">
+                                        <label> EUROPOS PARAMA</label>
+                                    </div>
                                 </div>
+                                <div id="inp_europa" style="display:none">
+                                    <div class="col-md-4">
+                                        <input type="text" name="europa_menesis" id="europa_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="europa_metai" id="europa_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
                                 </div>
-                                <div class="col-md-3 m-b-15">
+                            </div>
+                            <h5>
+                                <small>
+                                    Pasinaudojus ES struktūrinių fondų, kita ES parama skaičiuojamas paramos procentas, skirstomas paramos nusidėvėjimas ir nusidėvėjimas standartinėmis sąnaudomis.
+                                </small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-4">
                                     <div class="checkbox checkbox-info">
-                                        <input type="checkbox" name="saskaitu_planas">
+                                        <input type="checkbox" name="saskaita" id="saskaita">
                                         <label> SĄSKAITŲ PLANAS</label>
                                     </div>
                                 </div>
-                                <div class="col-md-3 m-b-15">
-                                    <div class="checkbox checkbox-info">
-                                        <input id="is_kuras" type="checkbox" name="kuras_tikrinti">
-                                        <label>KURO APSKAITA</label>
+                                <div id="inp_saskaita" style="display:none">
+                                    <div class="col-md-4">
+                                        <input type="text" name="saskaita_menesis" id="saskaita_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="saskaita_metai" id="saskaita_metai" class="form-control" placeholder="Suma per metus">
                                     </div>
                                 </div>
-                                <div class="col-md-4 m-b-15" id="inp_kuras" style="display:none">
-                                    <?php echo form_error('kuras'); ?>
-                                    <input type="text" name="kuras" class="form-control" placeholder="Įveskite transporto priemonių skaičių">
+                            </div>
+                            <h5>
+                                <small>
+                                    2018-01-01 pasikeitus ūkininkų sąskaitų planui, neišvengiamai turi būti buhalterijos pervedimas prie naujo sąskaitų planų. Šis sąskaitų planas programuotojų apmokestinamas.
+                                </small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-2">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="kuras" id="kuras">
+                                        <label> KURO APSKAITA</label>
+                                    </div>
+                                </div>
+                                <div id="inp_kuras" style="display:none">
+                                    <div class="col-md-4">
+                                        <input type="text" name="kuras_kiekis" value="0" min="0" max="100" id="kuras_kiekis" class="form-control" placeholder="Transp. priemonių kiekis (vnt)">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="kuras_menesis" id="kuras_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="kuras_metai" id="kuras_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
                                 </div>
                             </div>
+                            <h5>
+                                <small>
+                                    Kuro apskaita vykdome, jei įtraukiami į apskaitą visų rušių degalai. Pildomi kelionės lapai kiekvienai transporto priemonei.
+                                </small>
+                            </h5>
                         </div>
                     </div>
-
                     <hr>
-
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Praeitų metų turtas:</label>
-                        <div class="col-md-10">
-                            <input name="turtas" type="text" class="form-control" placeholder= "" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Praeitų metų nuosavybė:</label>
-                        <div class="col-md-10">
-                            <input name="nuosavybe" type="text" class="form-control" placeholder= "" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Praeitų metų pajamos:</label>
-                        <div class="col-md-10">
-                            <input name="pajamos" type="text" class="form-control" placeholder= "" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Praeitų metų sąnaudos:</label>
-                        <div class="col-md-10">
-                            <input name="sanaudos" type="text" class="form-control" placeholder= "" />
-                        </div>
-                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>...</th>
+                            <th>...</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td  class="text-left">Gyvulių vidurkis</td >
+                            <td>U5</td >
+                        </tr >
+                        <tr>
+                            <td  class="text-left">Deklaruojamas plotas</td >
+                            <td>A4</td >
+                        </tr >
+                        <tr>
+                            <td  class="text-left">Gyvulininkystė</td >
+                            <td>0</td >
+                        </tr >
+                        </tbody>
+                    </table>
                     <hr>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Viso:</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-4 m-b-15 col-md-offset-4">
+                                <div class="col-md-4 col-md-offset-4">
                                     <input type="text" name="viso_menesis" id="viso_menesis" class="form-control" placeholder="Viso per menesį">
                                 </div>
-                                <div class="col-md-4 m-b-15">
+                                <div class="col-md-4">
                                     <input type="text" name="viso_metai" id="viso_metai" class="form-control" placeholder="Viso per metus">
                                 </div>
                             </div>
@@ -348,12 +425,12 @@
                         <label class="control-label col-md-2 col-sm-2"></label>
                         <div class="col-md-10 col-sm-10">
                             <div class="row row-space-12">
-                                <div class="col-md-6 m-b-15">
+                                <div class="col-md-6">
                                     <button class="btn btn-block btn-outline btn-primary" id="skaitciuoti">
                                         <i class="fa fa-check-circle-o fa-lg"> SKAITČIUOTI</i>
                                     </button>
                                 </div>
-                                <div class="col-md-6 m-b-15">
+                                <div class="col-md-6">
                                     <button class="btn btn-block btn-outline btn-primary">
                                         <i class="fa fa-check-circle-o fa-lg"> FORMUOTI</i>
                                     </button>

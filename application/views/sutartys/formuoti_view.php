@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="ibox-content">
-            <textarea rows="50" title="" class="form-control" name="content">
+            <textarea rows="30" title="" class="form-control" name="content">
 
             </textarea>
         </div>
