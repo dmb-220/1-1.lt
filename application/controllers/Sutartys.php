@@ -65,6 +65,43 @@ class Sutartys extends CI_Controller
     public function skaitciuokle(){
         $this->load->model('paseliai_model');
 
+        $galviju = array(
+            array("kodas" => "U0", "kiekis" => 10),
+            array("kodas" => "U1", "kiekis" => 30),
+            array("kodas" => "U2", "kiekis" => 60),
+            array("kodas" => "U3", "kiekis" => 90),
+            array("kodas" => "U4", "kiekis" => 120),
+            array("kodas" => "U5", "kiekis" => 150),
+            array("kodas" => "U6", "kiekis" => 180),
+            array("kodas" => "U7", "kiekis" => 210),
+            array("kodas" => "U8", "kiekis" => 240),
+            array("kodas" => "U9", "kiekis" => 270),
+            array("kodas" => "U10", "kiekis" => 300),
+            array("kodas" => "U11", "kiekis" => 350),
+            array("kodas" => "U12", "kiekis" => 400),
+            array("kodas" => "U13", "kiekis" => 450),
+            array("kodas" => "U14", "kiekis" => 500),
+            array("kodas" => "U15", "kiekis" => 750),
+        );
+        $ploto = array(
+            array("kodas" => "A0", "kiekis" => 5),
+            array("kodas" => "A1", "kiekis" => 10),
+            array("kodas" => "A2", "kiekis" => 15),
+            array("kodas" => "A3", "kiekis" => 20),
+            array("kodas" => "A4", "kiekis" => 25),
+            array("kodas" => "A5", "kiekis" => 30),
+            array("kodas" => "A6", "kiekis" => 35),
+            array("kodas" => "A7", "kiekis" => 40),
+            array("kodas" => "A8", "kiekis" => 50),
+            array("kodas" => "A9", "kiekis" => 75),
+            array("kodas" => "A10", "kiekis" => 100),
+            array("kodas" => "A11", "kiekis" => 150),
+            array("kodas" => "A12", "kiekis" => 200),
+            array("kodas" => "A13", "kiekis" => 250),
+            array("kodas" => "A14", "kiekis" => 300),
+            array("kodas" => "A15", "kiekis" => 500),
+        );
+
         $dt = $this->session->userdata();
         if($dt['nr'] == ""){
             $this->main_model->info['error']['login'] = "Norėdami pradėti darbus, Pasirinkite ūkininką su kuriuo dirbsite!";
@@ -77,6 +114,17 @@ class Sutartys extends CI_Controller
             $this->main_model->info['txt']['vidurkis'] = $this->sutartys_model->galvijai_vidurkis();
             $banda = $this->ukininkai_model->ukininkas($dt['nr']);
             $this->main_model->info['txt']['banda'] = $banda[0]['banda'];
+
+            $sk_gal = $this->sutartys_model->rasti_skaiciu($galviju, $this->main_model->info['txt']['vidurkis']);
+            $sk_plo = $this->sutartys_model->rasti_skaiciu($ploto, $this->main_model->info['txt']['deklaruota']);
+
+            $suma = $this->sutartys_model->sutarties_suma($dt['nr'], "2017");
+
+            $this->main_model->info['txt']['ukis'] = "Gyvulininkystė";
+            $this->main_model->info['txt']['galvijai'] = $sk_gal;
+            $this->main_model->info['txt']['plotas'] = $sk_plo;
+            $this->main_model->info['txt']['suma'] = $suma[0];
+
         }
 
         //sukeliam info, informaciniam meniu

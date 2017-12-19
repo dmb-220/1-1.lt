@@ -10,6 +10,23 @@ class Sutartys_model extends CI_Model{
     }
 
     //
+    public function rasti_skaiciu($masyvas, $skaicius){
+        foreach ($masyvas as $row){
+            if($row['kiekis'] >= $skaicius){
+                $array[] = $row['kodas'];
+            }
+        }
+        //var_dump($array); die;
+       return $array[0];
+    }
+
+    public function sutarties_suma($id, $metai){
+        $this->db->from('ikainiai');
+        $this->db->where(array("u_id" => $id, "metai" => $metai));
+        $result = $this->db->get();
+        $data = $result->result_array();
+        return $data;
+    }
 
     public function galvijai_vidurkis(){
         $sk = 0;

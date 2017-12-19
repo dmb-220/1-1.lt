@@ -11,5 +11,8 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="bootstrap-datepicker" level="application" />
     <orderEntry type="library" name="toastr" level="application" />
+    <orderEntry type="library" name="bootstrap-select" level="application" />
+    <orderEntry type="library" name="lt" level="application" />
+    <orderEntry type="library" name="select2" level="application" />
   </component>
 </module>

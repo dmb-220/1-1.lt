@@ -18,6 +18,7 @@
             }
             ?>
 
+
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>sutartys/formuoti" id="skaitciuokle" method="POST">
                 <fieldset>
                     <div class="form-group">
@@ -49,17 +50,12 @@
                     <div class="alert alert-info text-center">BAZINĖ KAINA</div>
                     <!-- Pirminiai dokumentai -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Pirminiai dokumentai:</label>
+                        <label for="pirminiai" class="col-md-2 control-label">Pirminiai dokumentai:</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
                                 <div class="col-md-4">
                                     <select id="pirminiai" name="pirminiai" class="form-control">
                                         <option value="0">Pasirinkite...</option>
-                                        <option value="100">iki 100 įrašų per metus</option>
-                                        <option value="250">iki 250 įrašų per metus</option>
-                                        <option value="500">iki 500 įrašų per metus</option>
-                                        <option value="750">iki 750 įrašų per metus</option>
-                                        <option value="1000">virš 1000 įrašų per metus</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
@@ -73,7 +69,7 @@
                             </div>
                             <h5>
                                 <small>
-                                    Pagal įrašų skaičių nustatoma kaina. Vienas įrašas neapsiriboja sąskaitos įvedimu. Į įrašų skaičių patenkanurašymai, pajamavimas, kiti tarpiniai įrašai,
+                                    Pagal įrašų skaičių nustatoma kaina. Vienas įrašas neapsiriboja sąskaitos įvedimu. Į įrašų skaičių patenka nurašymai, pajamavimas, kiti tarpiniai įrašai,
                                     reikalingi teisingos bugalterijos tvarkymui.
                                 </small>
                             </h5>
@@ -246,17 +242,20 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Deklaracijos:</label>
+                        <label for="deklaracija" class="col-md-2 control-label">Deklaracijos:</label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
                                 <div class="col-md-4">
-                                    <input type="text" name="kiekis" class="form-control" placeholder="Kiekis">
+                                    <select name="deklaracija" id="deklaracija" class="form-control" multiple="multiple">
+                                        <option value="pvm_12">PVM deklaracija x12</option>
+                                        <option value="pvm_2">PVM deklaracija x2</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" name="suma_menesis" class="form-control" placeholder="Suma per menesį">
+                                    <input type="text" name="deklaracija_menesis" id="deklaracija_menesis" class="form-control" placeholder="Suma per menesį">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" name="suma_metai" class="form-control" placeholder="Suma per metus">
+                                    <input type="text" name="deklaracija_metai" id="deklaracija_metai" class="form-control" placeholder="Suma per metus">
                                 </div>
                             </div>
                         </div>
@@ -383,29 +382,74 @@
                             </h5>
                         </div>
                     </div>
-                    <hr>
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>...</th>
-                            <th>...</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td  class="text-left">Gyvulių vidurkis</td >
-                            <td>U5</td >
-                        </tr >
-                        <tr>
-                            <td  class="text-left">Deklaruojamas plotas</td >
-                            <td>A4</td >
-                        </tr >
-                        <tr>
-                            <td  class="text-left">Gyvulininkystė</td >
-                            <td>0</td >
-                        </tr >
-                        </tbody>
-                    </table>
+                    <div class="alert alert-info text-center">PAPILDOMI NUSTATYMAI</div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Nuolaida (%):</label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-4">
+                                    <select id="nuolaida" name="nuolaida" class="form-control">
+                                        <option value="0">Pasirinkite...</option>
+                                        <option value="2">2%</option>
+                                        <option value="5">5%</option>
+                                        <option value="10">10%</option>
+                                        <option value="15">15%</option>
+                                        <option value="20">20$</option>
+                                        <option value="25">25%</option>
+                                        <option value="30">30%</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="nuolaida_menesis" id="nuolaida_menesis" class="form-control" placeholder="Nuolaida per menesį">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="nuolaida_metai" id="nuolaida_metai" class="form-control" placeholder="Nuolaida per metus">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-4">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="gamtos_apsauga" id="gamtos_apsauga">
+                                        <label> LAIKU ATSISKAITO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="gamtos_apsauga" id="gamtos_apsauga">
+                                        <label> ŠEIMOS NARIAI VEDA APSKAITA</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="gamtos_apsauga" id="gamtos_apsauga">
+                                        <label> GALVIJŲ JUDĖJIMAS</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-danger">
+                        <div class="row row-space-12">
+                            <div class="col-md-3">
+                                ŪKIS: <b><?php echo $this->main_model->info['txt']['ukis']; ?></b>
+                            </div>
+                            <div class="col-md-3">
+                                Gyvulių vidurkis: <b><?php echo $this->main_model->info['txt']['galvijai']; ?></b>
+                            </div>
+                            <div class="col-md-3">
+                                Deklaruojamas plotas: <b><?php echo $this->main_model->info['txt']['plotas']; ?></b>
+                            </div>
+                            <div class="col-md-3">
+                                Praėjusių metų suma: <b><?php echo $this->main_model->info['txt']['suma']['uz_metus']." €, ( ".$this->main_model->info['txt']['suma']['uz_menesi']." € )"; ?></b>
+                            </div>
+                        </div>
+                    </div>
                     <hr>
                     <div class="form-group">
                         <label class="col-md-2 control-label"> Viso:</label>
