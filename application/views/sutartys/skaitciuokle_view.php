@@ -249,6 +249,7 @@
                                     <select name="deklaracija" id="deklaracija" class="form-control" multiple="multiple">
                                         <option value="pvm_12">PVM deklaracija x12</option>
                                         <option value="pvm_2">PVM deklaracija x2</option>
+                                        <option value="FR457">FR457</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">

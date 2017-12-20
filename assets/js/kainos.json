@@ -1,15 +1,30 @@
 {
   "darbuotojai": {
     "vykdomi_rastai": 12,
-    "be_vykdomu_rastu": 100
+    "be_vykdomu_rastu": 10
   },
-  "pirminiai_dokumentai": {
-    "p100": 75,
-    "p250": 150,
-    "p500": 200,
-    "p750": 250,
-    "p1000": 300
-  },
+  "pirminiai_dokumentai":[
+    {"kodas": "p25", "kaina": 2.5, "kiekis": 25},
+    {"kodas": "p50", "kaina": 5.0, "kiekis": 50},
+    {"kodas": "p75", "kaina": 7.5, "kiekis": 75},
+    {"kodas": "p100", "kaina": 10.0, "kiekis": 100},
+    {"kodas": "p125", "kaina": 12.5, "kiekis": 125},
+    {"kodas": "p150", "kaina": 15.0, "kiekis": 150},
+    {"kodas": "p175", "kaina": 17.5, "kiekis": 175},
+    {"kodas": "p200", "kaina": 20.0, "kiekis": 200},
+    {"kodas": "p225", "kaina": 22.5, "kiekis": 225},
+    {"kodas": "p250", "kaina": 25.0, "kiekis": 250},
+    {"kodas": "p275", "kaina": 27.5, "kiekis": 275},
+    {"kodas": "p300", "kaina": 30.0, "kiekis": 300},
+    {"kodas": "p325", "kaina": 32.5, "kiekis": 325},
+    {"kodas": "p350", "kaina": 35.0, "kiekis": 350},
+    {"kodas": "p375", "kaina": 37.5, "kiekis": 375},
+    {"kodas": "p400", "kaina": 40.0, "kiekis": 400},
+    {"kodas": "p450", "kaina": 45.0, "kiekis": 450},
+    {"kodas": "p500", "kaina": 50.0, "kiekis": 500},
+    {"kodas": "p550", "kaina": 55.0, "kiekis": 550},
+    {"kodas": "p600", "kaina": 60.0, "kiekis": 600}
+  ],
 
   "galvijai": [
     {"kiekis": 0, "melziamos": 0, "ne_melziamos": 0},
@@ -42,9 +57,10 @@
     "kuras_kaina": 5,
     "gamtos_apsauga": 50,
     "europa_kaina": 30,
-    "pvm_12_kaina": 4,
-    "pvm_2_kaina": 60,
-    "FR572_12_kaina": 2.45,
+    "galviju_judejimas": 2.5,
+    "pvm_12_kaina": 60,
+    "pvm_2_kaina": 120,
+    "FR572_12_kaina": 30,
     "FR573_kaina": 20,
     "FR457_kaina": 20
   }
