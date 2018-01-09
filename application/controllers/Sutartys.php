@@ -51,13 +51,31 @@ class Sutartys extends CI_Controller
         redirect('main');
     }
 
+    //Pagrindinis visos svetaines puslapis
+    public function pasirinkti_ukininka(){
+        //echo'MATAu'; die;
+        $ukininkas = $this->uri->segment(3);
+            $uk = $this->ukininkai_model->ukininkas($ukininkas);
+            $new = array('vardas' => $uk[0]['vardas'], 'pavarde' => $uk[0]['pavarde'], 'nr' => $ukininkas);
+            $this->session->set_userdata($new);
+            $this->session->set_flashdata('message', 'Ūkininkas pasirinktas: '.$uk[0]['vardas'].' '.$uk[0]['pavarde'].' !');
+
+        redirect('sutartys/skaitciuokle');
+    }
+
+
     public function formuoti(){
+        $data = $this->input->post();
+
+        $this->main_model->info['txt']['numeris'] = "2017/02";
+        $this->main_model->info['txt']['data'] = date("Y - m - d");
+        $this->main_model->info['ukininkas'] = $this->ukininkai_model->ukininkas($data['ukininkas']);
+        //var_dump($this->main_model->info['ukininkas'][0]); die;
 
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Sutartys";
         $this->main_model->info['txt']['info'] = "Skaičiuoklės galutinis rezultatas";
 
-        $data = $this->input->post();
 
         $this->load->view('main_view', array('data' => $data));
     }

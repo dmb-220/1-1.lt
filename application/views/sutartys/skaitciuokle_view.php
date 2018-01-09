@@ -22,29 +22,25 @@
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>sutartys/formuoti" id="skaitciuokle" method="POST">
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Ūkininkas</label>
-                        <div class="col-md-10">
-                            <?php echo form_error('ukininko_vardas');
-                            if($dt['vardas'] == "" AND $dt['pavarde'] == "") { ?>
-                                <select name="ukininko_vardas" class="form-control">
+                        <label for="ukininkas" class="col-md-2 control-label">Ūkininkas:</label>
+                        <div class="col-md-8">
+                            <?php echo form_error('ukininkas'); ?>
+                                <select name="ukininkas" id="ukininkas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
                                     foreach ($this->main_model->info['ukininkai'] as $row) {
-                                        echo "<option value='$row[valdos_nr]'>";
-                                        echo $row['vardas'];
-                                        echo " ";
-                                        echo $row['pavarde'];
-                                        echo "</option>";
+                                        if($dt['nr'] == $row['valdos_nr']) {
+                                            echo "<option value='$row[valdos_nr]' selected>".$row['vardas']." ".$row['pavarde']."</option>";}else {
+                                            echo "<option value='$row[valdos_nr]'>" . $row['vardas'] . " " . $row['pavarde'] . "</option>";
+                                        }
                                     }
                                     ?>
                                 </select>
-                                <?php
-                            }else{
-                                echo '<select name="ukininko_vardas" class="form-control" disabled>';
-                                echo'<option value='.$dt['nr'].' selected="selected">'.$dt['vardas'].' '.$dt['pavarde'].'</option>';
-                                echo'</select>';
-                            }
-                            ?>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-block btn-outline btn-primary" id="pasirinkti_ukininka">
+                                <i class="fa fa-check-circle-o fa-lg"> PASIRINKTI</i>
+                            </button>
                         </div>
                     </div>
                     <div class="alert alert-info text-center">BAZINĖ KAINA</div>
@@ -54,9 +50,7 @@
                         <div class="col-md-10">
                             <div class="row row-space-12">
                                 <div class="col-md-4">
-                                    <select id="pirminiai" name="pirminiai" class="form-control">
-                                        <option value="0">Pasirinkite...</option>
-                                    </select>
+                                    <input type="text" name="pirminiai" id="pirminiai" class="form-control" placeholder="Dokumentų kiekis">
                                 </div>
                                 <div class="col-md-4">
                                     <?php echo form_error('suma_menesis'); ?>
@@ -80,7 +74,7 @@
                         <label class="col-md-2 control-label">Samdomi darbuotojai:</label>
                         <div class="col-md-10">
                             <div class="checkbox checkbox-info">
-                                <input id="is_darbininkai_2" type="checkbox" name="saskaitu_planas">
+                                <input id="is_darbininkai_2" type="checkbox" name="is_darbininkai_2">
                                 <label> DARBUOTOJAI</label>
                             </div>
                             <h5>
@@ -106,7 +100,7 @@
                                 </div>
                                 <div class="col-md-1">
                                     <div class="checkbox checkbox-info">
-                                        <input id="is_darbininkai" type="checkbox" name="darbininkai">
+                                        <input id="is_darbininkai" type="checkbox" name="is_darbininkai">
                                         <label> <b>*</b></label>
                                     </div>
                                 </div>
@@ -140,7 +134,7 @@
                                 <div class="col-md-4">
                                     <?php echo form_error('galvijai_kiekis'); ?>
                                     <input type="text" name="galvijai_kiekis" id="galvijai_kiekis" class="form-control" placeholder="Galvijų kiekis"
-                                           value="<?=  $this->main_model->info['txt']['vidurkis'] ?>" disabled>
+                                           value="<?=  $this->main_model->info['txt']['vidurkis'] ?>">
                                 </div>
                                 <div class="col-md-4">
                                     <?php echo form_error('suma_menesis'); ?>
@@ -191,7 +185,7 @@
                                 <div class="col-md-4">
                                     <?php echo form_error('dek_plotas'); ?>
                                     <input type="text" name="dek_plotas" id="dek_plotas" class="form-control" placeholder="Kiekis"
-                                           value="<?= $this->main_model->info['txt']['deklaruota'] ?>" disabled>
+                                           value="<?= $this->main_model->info['txt']['deklaruota'] ?>">
                                 </div>
                                 <div class="col-md-4">
                                     <?php echo form_error('suma_menesis'); ?>
@@ -246,7 +240,7 @@
                         <div class="col-md-10">
                             <div class="row row-space-12">
                                 <div class="col-md-4">
-                                    <select name="deklaracija" id="deklaracija" class="form-control" multiple="multiple">
+                                    <select name="deklaracija[]" id="deklaracija" class="form-control" multiple="multiple">
                                         <option value="pvm_12">PVM deklaracija x12</option>
                                         <option value="pvm_2">PVM deklaracija x2</option>
                                         <option value="FR457">FR457</option>
@@ -383,53 +377,59 @@
                             </h5>
                         </div>
                     </div>
-                    <div class="alert alert-info text-center">PAPILDOMI NUSTATYMAI</div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Nuolaida (%):</label>
-                        <div class="col-md-10">
-                            <div class="row row-space-12">
-                                <div class="col-md-4">
-                                    <select id="nuolaida" name="nuolaida" class="form-control">
-                                        <option value="0">Pasirinkite...</option>
-                                        <option value="2">2%</option>
-                                        <option value="5">5%</option>
-                                        <option value="10">10%</option>
-                                        <option value="15">15%</option>
-                                        <option value="20">20$</option>
-                                        <option value="25">25%</option>
-                                        <option value="30">30%</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" name="nuolaida_menesis" id="nuolaida_menesis" class="form-control" placeholder="Nuolaida per menesį">
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" name="nuolaida_metai" id="nuolaida_metai" class="form-control" placeholder="Nuolaida per metus">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label"></label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
                                 <div class="col-md-4">
                                     <div class="checkbox checkbox-info">
-                                        <input type="checkbox" name="gamtos_apsauga" id="gamtos_apsauga">
+                                        <input type="checkbox" name="judejimas" id="judejimas">
+                                        <label> GALVIJŲ JUDĖJIMAS</label>
+                                    </div>
+                                </div>
+                                <div id="inp_judejimas" style="display:none">
+                                    <div class="col-md-4">
+                                        <input type="text" name="judejimas_menesis" id="judejimas_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="judejimas_metai" id="judejimas_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-info text-center">PAPILDOMI NUSTATYMAI</div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Nuolaida (%):</label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-6">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="laiku_atsiskaito" id="laiku_atsiskaito">
                                         <label> LAIKU ATSISKAITO</label>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="checkbox checkbox-info">
-                                        <input type="checkbox" name="gamtos_apsauga" id="gamtos_apsauga">
+                                        <input type="checkbox" name="seimos_nariai" id="seimos_nariai">
                                         <label> ŠEIMOS NARIAI VEDA APSKAITA</label>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nuolaida" class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
                                 <div class="col-md-4">
-                                    <div class="checkbox checkbox-info">
-                                        <input type="checkbox" name="gamtos_apsauga" id="gamtos_apsauga">
-                                        <label> GALVIJŲ JUDĖJIMAS</label>
-                                    </div>
+                                    <input type="text" name="nuolaida" id="nuolaida" value="0" min="0" max="100" class="form-control" placeholder="Nuolaida">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="nuolaida_menesis" id="nuolaida_menesis" class="form-control" placeholder="Nuolaida per menesį">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="nuolaida_metai" id="nuolaida_metai" class="form-control" placeholder="Nuolaida per metus">
                                 </div>
                             </div>
                         </div>

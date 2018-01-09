@@ -1,11 +1,10 @@
 @media print {
-    body, html {
+  body, html {
         float: none !important;
         overflow: visible !important;
         padding: 0 !important;
         margin: 0 !important;
         position: relative;
-        top: -50px;
     }
     .ibox-footer, .form-group, .ibox-title, .page-heading, .border-bottom, .modal, .nerodyt {
         display: none;
@@ -14,7 +13,7 @@
         padding: 0 !important;
         margin: 0 !important;
     }
-    div, span, h1, h2, h3, h4, h5, h6, p {
+    span, h1, h2, h3, h4, h5, h6, p {
         margin: 0;
         padding: 0;
         border: 0;
@@ -34,6 +33,18 @@
     }
 }
 
+@page{
+    size: A4;
+    padding: 0;
+    orphans: 0!important;
+    widows: 0!important;
+    /* this affects the margin in the printer settings */
+    margin: 25mm 5mm 25mm 5mm;
+}
+
+div .first:first-letter {
+    margin-left: 5em; }
+div .break{page-break-after: always;}
 
 /* kalendorius */
 

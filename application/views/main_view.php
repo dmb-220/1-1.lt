@@ -159,7 +159,6 @@ $this->load->view('left_view');
         autoclose: true,
         format: "yyyy.mm.dd"
     });
-
 </script>
 </body>
 </html>

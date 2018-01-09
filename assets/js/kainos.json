@@ -3,51 +3,28 @@
     "vykdomi_rastai": 12,
     "be_vykdomu_rastu": 10
   },
-  "pirminiai_dokumentai":[
-    {"kodas": "p25", "kaina": 2.5, "kiekis": 25},
-    {"kodas": "p50", "kaina": 5.0, "kiekis": 50},
-    {"kodas": "p75", "kaina": 7.5, "kiekis": 75},
-    {"kodas": "p100", "kaina": 10.0, "kiekis": 100},
-    {"kodas": "p125", "kaina": 12.5, "kiekis": 125},
-    {"kodas": "p150", "kaina": 15.0, "kiekis": 150},
-    {"kodas": "p175", "kaina": 17.5, "kiekis": 175},
-    {"kodas": "p200", "kaina": 20.0, "kiekis": 200},
-    {"kodas": "p225", "kaina": 22.5, "kiekis": 225},
-    {"kodas": "p250", "kaina": 25.0, "kiekis": 250},
-    {"kodas": "p275", "kaina": 27.5, "kiekis": 275},
-    {"kodas": "p300", "kaina": 30.0, "kiekis": 300},
-    {"kodas": "p325", "kaina": 32.5, "kiekis": 325},
-    {"kodas": "p350", "kaina": 35.0, "kiekis": 350},
-    {"kodas": "p375", "kaina": 37.5, "kiekis": 375},
-    {"kodas": "p400", "kaina": 40.0, "kiekis": 400},
-    {"kodas": "p450", "kaina": 45.0, "kiekis": 450},
-    {"kodas": "p500", "kaina": 50.0, "kiekis": 500},
-    {"kodas": "p550", "kaina": 55.0, "kiekis": 550},
-    {"kodas": "p600", "kaina": 60.0, "kiekis": 600}
+
+  "dokumentai":[
+    {"dydis": "mazas", "kaina": 0.09},
+    {"dydis": "vidutinis", "kaina": 0.10},
+    {"dydis": "didelis", "kaina": 0.11}
   ],
 
   "galvijai": [
-    {"kiekis": 0, "melziamos": 0, "ne_melziamos": 0},
-    {"kiekis": 20, "melziamos": 20, "ne_melziamos": 15},
-    {"kiekis": 40, "melziamos": 30, "ne_melziamos": 20},
-    {"kiekis": 60, "melziamos": 35, "ne_melziamos": 20},
-    {"kiekis": 80, "melziamos": 60, "ne_melziamos": 25},
-    {"kiekis": 100, "melziamos": 75, "ne_melziamos": 25},
-    {"kiekis": 120, "melziamos": 75, "ne_melziamos": 25},
-    {"kiekis": 140, "melziamos": 75, "ne_melziamos": 25},
-    {"kiekis": 160, "melziamos": 80, "ne_melziamos": 30},
-    {"kiekis": 180, "melziamos": 100, "ne_melziamos": 35},
-    {"kiekis": 200, "melziamos": 110, "ne_melziamos": 40},
-    {"kiekis": 250, "melziamos": 120, "ne_melziamos": 45},
-    {"kiekis": 3000, "melziamos": 150, "ne_melziamos": 65}
+    {"dydis": "mazas", "melziamos": 7, "ne_melziamos": 5},
+    {"dydis": "vidutinis", "melziamos": 6.5, "ne_melziamos": 4.5},
+    {"dydis": "didelis", "melziamos": 6, "ne_melziamos": 4}
     ],
+
   "deklaruota": [
-    {"kiekis": "0", "parduodantys": "0", "savo_reikmems": "0"},
-    {"kiekis": "25", "parduodantys": "2.50", "savo_reikmems": "1.50"},
-    {"kiekis": "50", "parduodantys": "3.00", "savo_reikmems": "2.00"},
-    {"kiekis": "75", "parduodantys": "3.50", "savo_reikmems": "2.50"},
-    {"kiekis": "100", "parduodantys": "4.00", "savo_reikmems": "3.00"},
-    {"kiekis": "1000", "parduodantys": "4.50", "savo_reikmems": "3.50"}
+    {"kiekis": 0, "parduodantys": 0, "savo_reikmems": 0},
+    {"kiekis": 25, "parduodantys": 2.50, "savo_reikmems": 1.50},
+    {"kiekis": 50, "parduodantys": 3.00, "savo_reikmems": 2.00},
+    {"kiekis": 75, "parduodantys": 3.50, "savo_reikmems": 2.50},
+    {"kiekis": 100, "parduodantys": 4.00, "savo_reikmems": 3.00},
+    {"kiekis": 150, "parduodantys": 5.00, "savo_reikmems": 4.00},
+    {"kiekis": 200, "parduodantys": 6.00, "savo_reikmems": 5.00},
+    {"kiekis": 1000, "parduodantys": 4.50, "savo_reikmems": 3.50}
   ],
 
   "kita": {
