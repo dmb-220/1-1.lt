@@ -17,14 +17,9 @@
     ],
 
   "deklaruota": [
-    {"kiekis": 0, "parduodantys": 0, "savo_reikmems": 0},
-    {"kiekis": 25, "parduodantys": 2.50, "savo_reikmems": 1.50},
-    {"kiekis": 50, "parduodantys": 3.00, "savo_reikmems": 2.00},
-    {"kiekis": 75, "parduodantys": 3.50, "savo_reikmems": 2.50},
-    {"kiekis": 100, "parduodantys": 4.00, "savo_reikmems": 3.00},
-    {"kiekis": 150, "parduodantys": 5.00, "savo_reikmems": 4.00},
-    {"kiekis": 200, "parduodantys": 6.00, "savo_reikmems": 5.00},
-    {"kiekis": 1000, "parduodantys": 4.50, "savo_reikmems": 3.50}
+    {"kiekis": "mazas", "galvijai": 0, "augalai": 0},
+    {"kiekis": "vidutinis", "galvijai": 2.00, "augalai": 2.63},
+    {"kiekis": "didelis", "galvijai": 0, "augalai": 0}
   ],
 
   "kita": {
@@ -33,12 +28,19 @@
     "saskaita_kaina": 45,
     "kuras_kaina": 5,
     "gamtos_apsauga": 50,
+    "zemes_mokestis": 5,
+    "inventorizacija": 0.05,
     "europa_kaina": 30,
     "galviju_judejimas": 2.5,
     "pvm_12_kaina": 60,
     "pvm_2_kaina": 120,
-    "FR572_12_kaina": 30,
-    "FR573_kaina": 20,
-    "FR457_kaina": 20
+    "FR572_12_kaina": 60,
+    "FR573_kaina": 10,
+    "FR457_kaina": 20,
+    "GPM308_kaina": 100,
+    "pvm_kaina": 120,
+    "SAV1_kaina": 60,
+    "SAM_kaina": 2,
+    "SD_kaina": 2
   }
 }

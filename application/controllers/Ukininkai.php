@@ -131,7 +131,7 @@ class Ukininkai extends CI_Controller {
         $this->form_validation->set_rules('slaptazodis', 'Slaptazodis', 'required', array('required' => 'Įveskite slaptazodi.'));
         $this->form_validation->set_rules('valdos_nr', 'Valdos numeris', 'required|is_natural',
             array('required' => 'Įveskite valdos numerį.', 'is_natural' => 'Valdos numeris tik skaiciai.'));
-        $this->form_validation->set_rules('banda', 'Galviju banda', 'required',  array('required' => 'pasirinkite galvij7 bandos tipą.'));
+        $this->form_validation->set_rules('tipas', 'Ūkio tipas', 'required',  array('required' => 'Pasirinkite Ūkio tipą.'));
 
         if ($this->form_validation->run()) {
             $vardas = $this->input->post('vardas');
@@ -139,7 +139,11 @@ class Ukininkai extends CI_Controller {
             $valdos_nr = $this->input->post('valdos_nr');
             $v_vardas = $this->input->post('v_vardas');
             $slaptazodis = $this->input->post('slaptazodis');
+            $tipas = $this->input->post('tipas');
             $banda = $this->input->post('banda');
+
+            //cia reik saugikliu, ar JS padaryt kad renkantis tipa, vienu arveju reik, bandos tipo, kitu atveju ne
+            if($tipas == 2){$banda = 0;}
 
             $user = $this->ion_auth->user()->row();
 
@@ -148,7 +152,7 @@ class Ukininkai extends CI_Controller {
                 $this->main_model->info['error']['yra'] = "TOKS ukininkas jau yra!";
             }else{
                 $duomenys = array('vardas' => $vardas , 'pavarde' => $pavarde , 'valdos_nr' => $valdos_nr,
-                    'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis, 'banda' => $banda, 'user_id' => $user->id,
+                    'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis, 'banda' => $banda, 'ukio_tipas' => $tipas, 'user_id' => $user->id,
                 );
                 $this->ukininkai_model->irasyti_ukininka($duomenys);
                 $this->main_model->info['error']['ok'] = "Naujas ukininkas pridetas!";}

@@ -25,17 +25,6 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" rel="stylesheet"/>
     <?php } ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <?php if($action == 'formuoti'){ ?>
-    <link href="<?= base_url(); ?>assets/kindeditor/themes/default/default.css" type="text/css" rel="stylesheet"/>
-    <script src="<?= base_url(); ?>assets/kindeditor/kindeditor-all-min.js"></script>
-    <script src="<?= base_url(); ?>assets/kindeditor/lang/en.js"></script>
-    <script>
-        $(function() {
-            var editor = KindEditor.create('textarea[name="content"]');
-        });
-    </script>
-    <?php } ?>
 </head>
 <body class="md-skin">
 <div id="wrapper">

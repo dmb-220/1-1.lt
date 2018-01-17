@@ -127,18 +127,18 @@ class Sutartys extends CI_Controller
             //suskaiciuoti deklaruojama plota
             //metus sutvarkyti, kad paimtu teisingus 2017-10 imtu 2017, o 2018-02 imtu irgi 2017
             $dat = array('ukininkas' => $dt['nr'], 'metai' => '2017');
-            $this->main_model->info['txt']['deklaruota']  = $this->sutartys_model->skaiciuoti_deklaruota_plota($dat);
+            $this->main_model->info['txt']['deklaruota']  = $this->sutartys_model->deklaruotas_plotas($dat);
             //suskaiciuoti gyvuliu vidurki
             $this->main_model->info['txt']['vidurkis'] = $this->sutartys_model->galvijai_vidurkis();
-            $banda = $this->ukininkai_model->ukininkas($dt['nr']);
-            $this->main_model->info['txt']['banda'] = $banda[0]['banda'];
+            $info_uk = $this->ukininkai_model->ukininkas($dt['nr']);
+            $this->main_model->info['txt']['banda'] = $info_uk[0]['banda'];
 
             $sk_gal = $this->sutartys_model->rasti_skaiciu($galviju, $this->main_model->info['txt']['vidurkis']);
             $sk_plo = $this->sutartys_model->rasti_skaiciu($ploto, $this->main_model->info['txt']['deklaruota']);
 
             $suma = $this->sutartys_model->sutarties_suma($dt['nr'], "2017");
 
-            $this->main_model->info['txt']['ukis'] = "Gyvulininkystė";
+            $this->main_model->info['txt']['ukis'] = $info_uk[0]['ukio_tipas'];
             $this->main_model->info['txt']['galvijai'] = $sk_gal;
             $this->main_model->info['txt']['plotas'] = $sk_plo;
             $this->main_model->info['txt']['suma'] = $suma[0];

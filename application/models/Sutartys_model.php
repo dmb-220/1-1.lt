@@ -52,6 +52,16 @@ class Sutartys_model extends CI_Model{
         return $result;
     }
 
+    public function deklaruotas_plotas($dat){
+        $plotas = 0;
+        $dek = $this->paseliai_model->nuskaityti_deklaracija($dat);
+        //sukuriamas masyvas, jis bus sukuriamas pagal deklaracijos duomenis
+        foreach($dek as $row){
+            $plotas = $plotas + $row['plotas'];
+        }
+        return round($plotas, 0);
+    }
+
     public function skaiciuoti_deklaruota_plota($dat){
         $plotas = 0;
         $dek = $this->paseliai_model->nuskaityti_deklaracija($dat);

@@ -18,13 +18,14 @@ $(document).ready(function(){
     var galvijai = [];
     //Deklaracija
     var deklaruota = [];
-
     //Bankai, Kreditai, Saskaitu planas ir t.t.
     var kita = [];
 
     var saskaita_menuo = 0, saskaita_metai = 0;
     var kuras_menuo = 0, kuras_metai = 0;
     var apsauga_menuo = 0, apsauga_metai = 0;
+    var zemes_menuo = 0, zemes_metai = 0;
+    var inventorizacija_metai = 0, inventorizacija_menuo = 0;
     var europa_menuo = 0, europa_metai = 0;
 
     var pirminiai_kiek=0, pirminiai_menuo=0, pirminiai_metai=0;
@@ -40,7 +41,11 @@ $(document).ready(function(){
     var nuolaida_menuo = 0, nuolaida_metai = 0;
     var dydis;
 
-    var laukas = [];
+    var sam = 0, sd = 0;
+
+    //$('#deklaraciju_ivedimas').modal({
+        //show: 'false'
+    //});
 
     //nuskaitom JSON kainu failiuka
     $.getJSON("https://1-1.lt/assets/js/kainos.json", function (data) {
@@ -61,12 +66,15 @@ $(document).ready(function(){
         //I deklaracijas iterpiam pasirinta forma
         $("#deklaracija").append('<option value="FR572_12" selected>FR572 x12</option>');
         $("#deklaracija").append('<option value="FR573" selected>FR573</option>');
-
+        $("#deklaracija").append('<option value="SAM" selected>SAM pranešimai</option>');
+        $("#deklaracija").append('<option value="SD" selected>SD pranešimai</option>');
     }
 
     function deklaracija_darbuotojai_pasalinti() {
         $("#deklaracija option[value='FR572_12']").remove();
         $("#deklaracija option[value='FR573']").remove();
+        $("#deklaracija option[value='SAM']").remove();
+        $("#deklaracija option[value='SD']").remove();
     }
 
     //pasirenkam ukininka, redirect i php koda kuris nustatys pasirinkta ukininka
@@ -76,11 +84,14 @@ $(document).ready(function(){
         window.location.href = "pasirinkti_ukininka/"+ukininkas;
     });
 
-    //reik nustatytik koks ukio tipas: MAZAS, VIDUTINIS, DIDELIS
-    var kiek = $("#galvijai_kiekis").val();
-    if(kiek <= 50){dydis = 0;}else
-        if(kiek > 50 && kiek <= 150 ){dydis = 1;}else
-            if(kiek > 150){ dydis = 2;}
+    $('#isaugoti_dekla').click(function(e) {
+        e.preventDefault();
+       sam = $("#sam").val();
+       sd = $("#sd").val();
+       //console.log(sam);
+       $('#deklaraciju_ivedimas').modal('hide');
+    });
+
 
 
     //sukaiciuojam piminiu dokumentu ruosimo kaina, pagal pasirinktus duomenis
@@ -102,20 +113,8 @@ $(document).ready(function(){
         $('#darbuotojai_2_metai').val(darb_2_metai.toFixed(2)+' €');
         $('#darbuotojai_2_menesis').val(darb_2_menuo.toFixed(2)+' €');
 
-        //deklaracija darbuotoju, pagal ju kieki
-        var darbas = parseInt(darb_kiekis) + parseInt(darb_2_kiekis);
-        deklaracija_menuo = 0;
-        deklaracija_metai = 0;
-        deklaracija = $("#deklaracija").val();
-        $.each(deklaracija, function (index, value) {
-            var kinta = value + '_kaina';
-            if(value == "FR572_12" || value == "FR573"){
-                deklaracija_menuo += (kita[kinta]/12)*darbas;
-                deklaracija_metai += kita[kinta]*darbas;}else{
-                    deklaracija_menuo += (kita[kinta]/12);
-                    deklaracija_metai += kita[kinta];
-            }
-        });
+        deklaraciju_isskaiciavimas();
+
         $('#deklaracija_metai').val(deklaracija_metai.toFixed(2)+' €');
         $('#deklaracija_menesis').val(deklaracija_menuo.toFixed(2)+' €');
     });
@@ -128,20 +127,8 @@ $(document).ready(function(){
         $('#darbuotojai_metai').val(darb_metai.toFixed(2)+' €');
         $('#darbuotojai_menesis').val(darb_menuo.toFixed(2)+' €');
 
-        //deklaracija darbuotoju, pagal ju kieki
-        var darbas = parseInt(darb_kiekis) + parseInt(darb_2_kiekis);
-        deklaracija_menuo = 0;
-        deklaracija_metai = 0;
-        deklaracija = $("#deklaracija").val();
-        $.each(deklaracija, function (index, value) {
-            var kinta = value + '_kaina';
-            if(value == "FR572_12" || value == "FR573"){
-            deklaracija_menuo += (kita[kinta]/12)*darbas;
-            deklaracija_metai += kita[kinta]*darbas;}else{
-                deklaracija_menuo += (kita[kinta]/12);
-                deklaracija_metai += kita[kinta];
-            }
-        });
+        deklaraciju_isskaiciavimas();
+
         $('#deklaracija_metai').val(deklaracija_metai.toFixed(2)+' €');
         $('#deklaracija_menesis').val(deklaracija_menuo.toFixed(2)+' €');
     });
@@ -160,8 +147,9 @@ $(document).ready(function(){
 
     $('#is_darbininkai_2').change(function() {
         if($(this).is(":checked")) {
+            $('#deklaraciju_ivedimas').modal('show');
+            deklaracija_darbuotojai_prideti()
             $("#inp_darbininkai_2").show();
-            deklaracija_darbuotojai_prideti();
         } else {
             $("#inp_darbininkai_2").hide();
             deklaracija_darbuotojai_pasalinti();
@@ -181,49 +169,17 @@ $(document).ready(function(){
 
     //duomenys i INPUT paduodami is PHP, todel apskaiciuoja uzsikraunant puslapiui
     //skaiciujam gyvulinkystes kaina
-    //nusistatom kiek galviju ir kokia kaina pagal kieki
-    //masyvas = $.grep(galvijai, function (idx) {
-        //return idx.kiekis >= kiek;
-    //});
-    //masyvas = masyvas[0];
-
-    //skaiciuojam deklaruota plota
-    var plotas = $("#dek_plotas").val();
-    laukas = $.grep(deklaruota, function (idx) {
-        return idx.kiekis >= plotas;
+    //gyvulininkyste();
+    galviju_kiekis();
+    deklaruotas_plotas();
+    //jei norima redaguoti reiksmes
+    $('#galvijai_kiekis').change(function() {
+       galviju_kiekis();
     });
-    laukas = laukas[0];
 
-    console.log(galvijai[dydis]);
-
-    //paimam reiksme kokia bandos tipas
-    galvijai_banda = $('input[name=banda]:checked').val();
-
-    //pagal bandos tipa, skaiciuoja kaina
-    if(galvijai_banda == 2){
-        galvijai_menuo = (galvijai[dydis].ne_melziamos*kiek)/12;;
-        galvijai_metai = galvijai[dydis].ne_melziamos*kiek;
-        dek_menuo = (laukas.parduodantys*plotas)/12;
-        dek_metai = laukas.parduodantys*plotas;
-    }
-    if(galvijai_banda == 1){
-        galvijai_menuo = (galvijai[dydis].melziamos*kiek)/12;
-        galvijai_metai = galvijai[dydis].melziamos*kiek;
-        dek_menuo = (laukas.savo_reikmems*plotas)/12;
-        dek_metai = laukas.savo_reikmems*plotas;
-    }
-    if(galvijai_banda == 3){
-        galvijai_menuo = (((galvijai[dydis].ne_melziamos + galvijai[dydis].melziamos)*kiek)/2)/12;
-        galvijai_metai = ((galvijai[dydis].ne_melziamos + galvijai[dydis].melziamos)*kiek)/2;
-        dek_menuo = (((laukas.parduodantys + laukas.savo_reikmems)/2)*plotas)/12;
-        dek_metai = (((laukas).parduodantys + laukas.savo_reikmems)/2)*plotas;
-    }
-
-    //sukelia gyvulinkystes sumas
-    $('#galvijai_menesis').val(galvijai_menuo.toFixed(2) + ' €');
-    $('#galvijai_metai').val(galvijai_metai.toFixed(2) + ' €');
-    $('#dek_menesis').val(dek_menuo.toFixed(2)+ ' €');
-    $('#dek_metai').val(dek_metai.toFixed(2) + ' €');
+    $('#dek_plotas').change(function() {
+        deklaruotas_plotas();
+    });
 
     //Bankai, kreditai
     $('#bankai').change(function() {
@@ -243,20 +199,8 @@ $(document).ready(function(){
 
     //deklaraciju skaiciavimai
     $('#deklaracija').change(function() {
-        deklaracija_menuo = 0;
-        deklaracija_metai = 0;
-        deklaracija = $("#deklaracija").val();
+        deklaraciju_isskaiciavimas()
 
-        var darbas = parseInt(darb_kiekis) + parseInt(darb_2_kiekis);
-        $.each(deklaracija, function (index, value) {
-            var kinta = value + '_kaina';
-            if(value == "FR572_12" || value == "FR573"){
-                deklaracija_menuo += (kita[kinta]/12)*darbas;
-                deklaracija_metai += kita[kinta]*darbas;}else{
-                deklaracija_menuo += (kita[kinta]/12);
-                deklaracija_metai += kita[kinta];
-            }
-        });
         $('#deklaracija_metai').val(deklaracija_metai.toFixed(2)+' €');
         $('#deklaracija_menesis').val(deklaracija_menuo.toFixed(2)+' €');
     });
@@ -295,6 +239,46 @@ $(document).ready(function(){
             $('#apsauga_menesis').val('');
             $('#apsauga_metai').val('');
             apsauga_metai = 0; apsauga_menuo = 0;
+        }
+    });
+
+    //Zemes mokestis
+    $('#zemes_mokestis').change(function() {
+        if($(this).is(":checked")) {
+            $("#inp_zemes").show();
+            $('#zemes_kiekis').change(function() {
+                var kiekis = $("#zemes_kiekis").val();
+                zemes_menuo = (kita.zemes_mokestis*kiekis)/12;
+                zemes_metai = kita.zemes_mokestis*kiekis;
+                $('#zemes_menesis').val(zemes_menuo.toFixed(2) + ' €');
+                $('#zemes_metai').val(zemes_metai.toFixed(2) + ' €');
+            });
+        } else {
+            $("#inp_zemes").hide();
+            $('#zemes_kiekis').val('');
+            $('#zemes_menesis').val('');
+            $('#zemes_metai').val('');
+            zemes_metai = 0; zemes_menuo = 0;
+        }
+    });
+
+    //inventorizacija
+    $('#inventorizacija').change(function() {
+        if($(this).is(":checked")) {
+            $("#inp_inventorizacija").show();
+            $('#inventorizacija_kiekis').change(function() {
+                var kiekis = $("#inventorizacija_kiekis").val();
+                inventorizacija_menuo = (kita.inventorizacija*kiekis)/12;
+                inventorizacija_metai = kita.inventorizacija*kiekis;
+                $('#inventorizacija_menesis').val(inventorizacija_menuo.toFixed(2) + ' €');
+                $('#inventorizacija_metai').val(inventorizacija_metai.toFixed(2) + ' €');
+            });
+        } else {
+            $("#inp_inventorizacija").hide();
+            $('#inventorizacija_kiekis').val('');
+            $('#inventorizacija_menesis').val('');
+            $('#inventorizacija_metai').val('');
+            inventorizacija_metai = 0; inventorizacija_menuo = 0;
         }
     });
 
@@ -353,14 +337,15 @@ $(document).ready(function(){
     $('#darbuotojai_2_kiekis').bootstrapNumber();
     $('#darbuotojai_kiekis').bootstrapNumber();
     $('#nuolaida').bootstrapNumber();
+    $('#zemes_kiekis').bootstrapNumber();
 
 
     //Skaiciuojam viska, arba naujam lange suformuojam, kainyno ataskaita
     $("#skaitciuoti").click(function(e) {
         e.preventDefault();
         var nuolaida = $("#nuolaida").val();
-        viso_menuo = pirminiai_menuo + darb_2_menuo + darb_menuo + galvijai_menuo + dek_menuo + kreditai_menuo + bankai_menuo + europa_menuo + saskaita_menuo + kuras_menuo + apsauga_menuo + deklaracija_menuo + judejimas_menuo;
-        viso_metai = pirminiai_metai + darb_2_metai + darb_metai + galvijai_metai + dek_metai + kreditai_metai + bankai_metai + europa_metai + saskaita_metai + kuras_metai + apsauga_metai + deklaracija_metai + judejimas_metai;
+        viso_menuo = pirminiai_menuo + darb_2_menuo + darb_menuo + galvijai_menuo + dek_menuo + kreditai_menuo + bankai_menuo + europa_menuo + saskaita_menuo + kuras_menuo + apsauga_menuo + zemes_menuo + inventorizacija_menuo + deklaracija_menuo + judejimas_menuo;
+        viso_metai = pirminiai_metai + darb_2_metai + darb_metai + galvijai_metai + dek_metai + kreditai_metai + bankai_metai + europa_metai + saskaita_metai + kuras_metai + apsauga_metai + zemes_metai + inventorizacija_metai + deklaracija_metai + judejimas_metai;
         nuolaida_menuo = viso_menuo * (nuolaida/100);
         nuolaida_metai = viso_metai * (nuolaida/100);
         viso_menuo = viso_menuo - nuolaida_menuo;
@@ -371,5 +356,91 @@ $(document).ready(function(){
         $('#viso_menesis').val(viso_menuo.toFixed(2) + ' €');
         $('#viso_metai').val(viso_metai.toFixed(2) + ' €');
     });
+
+    function deklaruotas_plotas(){
+        //deklaruoto ploto kiekis,
+        var plotas = $("#dek_plotas").val();
+        var kieki = 1;
+
+        //paimam reiksme kokia bandos tipas
+        galvijai_banda = $('input[name=banda]:checked').val();
+
+        //pagal bandos tipa, skaiciuoja kaina
+        /*if(galvijai_banda == 2){
+            dek_menuo = (deklaruota[kieki].parduodantys*plotas)/12;
+            dek_metai = deklaruota[kieki].parduodantys*plotas;
+        }
+        if(galvijai_banda == 1){
+            dek_menuo = (deklaruota[kieki].savo_reikmems*plotas)/12;
+            dek_metai = deklaruota[kieki].savo_reikmems*plotas;
+        }
+        if(galvijai_banda == 3){
+            dek_menuo = (((deklaruota[kieki].parduodantys + deklaruota[kieki].savo_reikmems)/2)*plotas)/12;
+            dek_metai = ((deklaruota[kieki].parduodantys + deklaruota[kieki].savo_reikmems)/2)*plotas;
+        }*/
+        if(!galvijai_banda){
+            dek_menuo = (deklaruota[kieki].augalai*plotas)/12;
+            dek_metai = deklaruota[kieki].augalai*plotas;
+        }else{
+            dek_menuo = (deklaruota[kieki].galvijai*plotas)/12;
+            dek_metai = deklaruota[kieki].galvijai*plotas;
+        }
+
+        //sukelia gyvulinkystes sumas
+        $('#dek_menesis').val(dek_menuo.toFixed(2)+ ' €');
+        $('#dek_metai').val(dek_metai.toFixed(2) + ' €');
+    }
+
+    function galviju_kiekis(){
+        //reik nustatytik koks ukio tipas: MAZAS, VIDUTINIS, DIDELIS
+        var kiek = $("#galvijai_kiekis").val();
+        if(kiek <= 50){dydis = 0;}else
+        if(kiek > 50 && kiek <= 150 ){dydis = 1;}else
+        if(kiek > 150){ dydis = 2;}
+
+        //paimam reiksme kokia bandos tipas
+        galvijai_banda = $('input[name=banda]:checked').val();
+
+        //pagal bandos tipa, skaiciuoja kaina
+        if(galvijai_banda == 2){
+            galvijai_menuo = (galvijai[dydis].ne_melziamos*kiek)/12;;
+            galvijai_metai = galvijai[dydis].ne_melziamos*kiek;
+        }
+        if(galvijai_banda == 1){
+            galvijai_menuo = (galvijai[dydis].melziamos*kiek)/12;
+            galvijai_metai = galvijai[dydis].melziamos*kiek;
+        }
+        if(galvijai_banda == 3){
+            galvijai_menuo = (((galvijai[dydis].ne_melziamos + galvijai[dydis].melziamos)*kiek)/2)/12;
+            galvijai_metai = ((galvijai[dydis].ne_melziamos + galvijai[dydis].melziamos)*kiek)/2;
+        }
+
+        //sukelia gyvulinkystes sumas
+        $('#galvijai_menesis').val(galvijai_menuo.toFixed(2) + ' €');
+        $('#galvijai_metai').val(galvijai_metai.toFixed(2) + ' €');
+    }
+
+    function deklaraciju_isskaiciavimas(){
+        //deklaracija darbuotoju, pagal ju kieki
+        var darbas = parseInt(darb_kiekis) + parseInt(darb_2_kiekis);
+        deklaracija_menuo = 0;
+        deklaracija_metai = 0;
+        deklaracija = $("#deklaracija").val();
+        $.each(deklaracija, function (index, value) {
+            var kinta = value + '_kaina';
+            if(value == "FR572_12" || value == "FR573"){
+                deklaracija_menuo += (kita[kinta]/12)*darbas;
+                deklaracija_metai += kita[kinta]*darbas;}else
+                    if(value == "SAM"){
+                deklaracija_menuo += (kita[kinta])*sam;
+                deklaracija_metai += (kita[kinta]*sam)*12;}else
+                    if(value == "SD"){
+                        deklaracija_menuo += (kita[kinta])*sd;
+                        deklaracija_metai += (kita[kinta]*sd)*12;}else{
+                        deklaracija_menuo += (kita[kinta]/12);
+                        deklaracija_metai += kita[kinta];
+            }
+        });
+    }
 
 });

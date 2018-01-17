@@ -31,6 +31,7 @@
     .ibox-content {
         border-style: none;
     }
+    div.break {page-break-before: always;}
 }
 
 @page{
@@ -44,7 +45,6 @@
 
 div .first:first-letter {
     margin-left: 5em; }
-div .break{page-break-after: always;}
 
 /* kalendorius */
 

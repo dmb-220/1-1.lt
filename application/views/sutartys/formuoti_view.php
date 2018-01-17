@@ -15,6 +15,11 @@
                 "FR457" => "FR457",
                 "FR572_12" => "FR572 x12",
                 "FR573" => "FR573",
+                "pvm" => "PVM",
+                "SAV1" => "SAV1",
+                "GPM308" => "GPM308",
+                "SAM" => "SAM pranešimai",
+                "SD" => "SD pranešimai",
             );
             //var_dump($data);
             ?>
@@ -106,11 +111,13 @@
                 <div class="pull-right">Tel. <?php if($this->main_model->info['ukininkas'][0]['telefonas']){ echo $this->main_model->info['ukininkas'][0]['telefonas']; }else{echo"NERASTA";} ?></div>
                 <br>
                 <br>
+                <br>
+                <br>
                 <div class="break">
                     <div class="text-center">
-                        <h4><strong>SUTARTIES PRIEDAS NR. 1</strong></h4>
+                        <h4><strong>Sutarties priedas nr. 1</strong></h4>
                     </div>
-                    <br>
+                    <hr>
                 <table class="table table-bordered">
                     <thead>
                     <tr>
@@ -194,6 +201,22 @@
                         <td>".$data['apsauga_metai']."</td>
                     </tr>";}
 
+                    if($data['zemes_mokestis'] =="on"){
+                        echo"<tr>
+                        <td>Žemės mokestis</td>
+                        <td>".$data['zemes_kiekis']." vnt.</td>
+                        <td>".$data['zemes_menesis']."</td>
+                        <td>".$data['zemes_metai']."</td>
+                    </tr>";}
+
+                    if($data['inventorizacija'] =="on"){
+                        echo"<tr>
+                        <td>Metinė inventorizacija</td>
+                        <td>".$data['inventorizacija_kiekis']." vnt.</td>
+                        <td>".$data['inventorizacija_menesis']."</td>
+                        <td>".$data['inventorizacija_metai']."</td>
+                    </tr>";}
+
                     if($data['europa'] =="on"){
                         echo"<tr>
                         <td>Europos parama</td>
@@ -254,6 +277,7 @@
                     ?>
                     </tbody>
                 </table>
+                    <br>
                 </div>
             </div>
             <div class="form-group">

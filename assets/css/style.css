@@ -4688,19 +4688,19 @@ body.mini-navbar.fixed-sidebar .logo-element {
 }
 /* ERROR & LOGIN & LOCKSCREEN*/
 .middle-box {
-  max-width: 640px;
+  max-width: 480px;
   z-index: 100;
   margin: 0 auto;
   padding-top: 40px;
 }
 
 .loginColumns {
-  max-width: 800px;
+  max-width: 480px;
   margin: 0 auto;
   padding: 100px 20px 20px 20px;
 }
 .passwordBox {
-  max-width: 460px;
+  max-width: 480px;
   margin: 0 auto;
   padding: 100px 20px 20px 20px;
 }

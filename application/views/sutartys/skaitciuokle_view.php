@@ -123,10 +123,15 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="alert alert-info text-center">GYVULININKYSTĖS KAINA</div>
-
-
+                    <?php
+                    echo'<div class="alert alert-info text-center">';
+                    if($this->main_model->info['txt']['ukis'] == 0){echo'GYVULININKYSTĖS KAINA';}
+                    if($this->main_model->info['txt']['ukis'] == 1){echo'AUGALININKYSTĖS KAINA';}
+                    echo'</div>';
+                    ?>
+                    <?php
+                    if($this->main_model->info['txt']['banda'] != 0){
+                    ?>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Galvijai (vnt):</label>
                         <div class="col-md-10">
@@ -178,6 +183,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Deklaruotas plotas (ha):</label>
                         <div class="col-md-10">
@@ -243,7 +249,10 @@
                                     <select name="deklaracija[]" id="deklaracija" class="form-control" multiple="multiple">
                                         <option value="pvm_12">PVM deklaracija x12</option>
                                         <option value="pvm_2">PVM deklaracija x2</option>
+                                        <option value="pvm">PVM deklaracija</option>
                                         <option value="FR457">FR457</option>
+                                        <option value="GPM308">GPM308</option>
+                                        <option value="SAV1">SAV1</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
@@ -296,6 +305,61 @@
                             </h5>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="zemes_mokestis" class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-2">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="zemes_mokestis" id="zemes_mokestis">
+                                        <label> ŽEMĖS MOKESTIS</label>
+                                    </div>
+                                </div>
+                                <div id="inp_zemes" style="display:none">
+                                    <div class="col-md-4">
+                                        <input type="text" name="zemes_kiekis" value="0" min="0" max="100" id="zemes_kiekis" class="form-control" placeholder="Žemės kiekis (vnt)">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="zemes_menesis" id="zemes_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="zemes_metai" id="zemes_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>
+                                <small>
+                                    Nuo 2018-01-01 mokant žemės mokestį, ūkininkas privalo išskaičiuoti gyventojų pajamų mokestį, sumokėti ir deklaruoti VMI.
+                                </small>
+                            </h5>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inventorizacija" class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-3">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="inventorizacija" id="inventorizacija">
+                                        <label> METINĖ INVENTORIZACIJA</label>
+                                    </div>
+                                </div>
+                                <div id="inp_inventorizacija" style="display:none">
+                                    <div class="col-md-3">
+                                        <input type="text" name="inventorizacija_kiekis" id="inventorizacija_kiekis" class="form-control" placeholder="Įrašų skaičius (vnt)">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="inventorizacija_menesis" id="inventorizacija_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="inventorizacija_metai" id="inventorizacija_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label class="col-md-2 control-label"></label>
                         <div class="col-md-10">
@@ -438,7 +502,10 @@
                     <div class="alert alert-danger">
                         <div class="row row-space-12">
                             <div class="col-md-3">
-                                ŪKIS: <b><?php echo $this->main_model->info['txt']['ukis']; ?></b>
+                                ŪKIS: <b><?php
+                                    $arr = array("GYVULININKYSTĖ", "AUGALININKYSTĖ");
+                                    echo $arr[$this->main_model->info['txt']['ukis']];
+                                    ?></b>
                             </div>
                             <div class="col-md-3">
                                 Gyvulių vidurkis: <b><?php echo $this->main_model->info['txt']['galvijai']; ?></b>
@@ -486,5 +553,39 @@
                 </fieldset>
             </form>
         </div>
+
+        <!-- Deklaraciju ivedimas -->
+        <div id="deklaraciju_ivedimas" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Papildomi deklaracijų duomenys</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal form-bordered" action="" method="POST" id="dekla_ivesti">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">SAM pranešimai</label>
+                                    <div class="col-md-6">
+                                        <input name="sam" id="sam" type="text" class="form-control" placeholder= "Kiekis (vnt.)" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">SD pranešimai</label>
+                                    <div class="col-md-6">
+                                        <input name="sd" id="sd" type="text" class="form-control" placeholder= "Kiekis (vnt.)" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="isaugoti_dekla" class="btn btn-primary">Išsaugoti</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Uždaryti</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
