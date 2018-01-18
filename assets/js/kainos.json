@@ -23,6 +23,7 @@
   ],
 
   "kita": {
+    "technika_kaina": 7,
     "bankas": 7,
     "kreditas": 6,
     "saskaita_kaina": 45,
@@ -32,15 +33,16 @@
     "inventorizacija": 0.05,
     "europa_kaina": 30,
     "galviju_judejimas": 2.5,
-    "pvm_12_kaina": 60,
-    "pvm_2_kaina": 120,
+    "pvm_12_kaina": 30,
+    "pvm_2_kaina": 60,
     "FR572_12_kaina": 60,
     "FR573_kaina": 10,
     "FR457_kaina": 20,
     "GPM308_kaina": 100,
-    "pvm_kaina": 120,
     "SAV1_kaina": 60,
-    "SAM_kaina": 2,
-    "SD_kaina": 2
+    "SAM_kaina": 5,
+    "SD_kaina": 2,
+    "laiku_atsiskaito": 1,
+    "seimos_nariai": 1
   }
 }

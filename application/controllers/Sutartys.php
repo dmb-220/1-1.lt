@@ -67,10 +67,14 @@ class Sutartys extends CI_Controller
     public function formuoti(){
         $data = $this->input->post();
 
+        $dt = $this->session->userdata();
         $this->main_model->info['txt']['numeris'] = "2017/02";
         $this->main_model->info['txt']['data'] = date("Y - m - d");
         $this->main_model->info['ukininkas'] = $this->ukininkai_model->ukininkas($data['ukininkas']);
         //var_dump($this->main_model->info['ukininkas'][0]); die;
+
+        $info_uk = $this->ukininkai_model->ukininkas($dt['nr']);
+        $this->main_model->info['txt']['ukis'] = $info_uk[0]['ukio_tipas'];
 
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Sutartys";

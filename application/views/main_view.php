@@ -107,12 +107,19 @@ $this->load->view('left_view');
 <script src="<?= base_url(); ?>assets\js\mano.js"></script>
 <!-- skaiciuokles programa, kad uzsipildytu laukeliai su informacija, kuria paduosim, formajant sutati -->
 <?php if($action == 'skaitciuokle'){ ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="<?= base_url(); ?>assets/js/bootstrap-number-input.js"></script>
     <script src="<?= base_url(); ?>assets/js/skaitciuokle.js"></script>
 <?php } ?>
 
 <script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+
     $('#data_1 .input-group.date').datepicker({
         weekStart: 1,
         defaultViewDate: "today",
