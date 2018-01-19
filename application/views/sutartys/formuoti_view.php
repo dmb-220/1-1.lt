@@ -273,6 +273,33 @@ išskyrus deklaracijos teikimus. </small></h5></td></tr>";}
                     <td>".$data['sav1_metai']."</td>
                 </tr>";}
 
+                if($data['ivaz'] == "on" && $data['ivaz_kiekis'] > 0){
+                    echo"<tr>
+                    <td>I-VAZ</td>
+                    <td>".$data['ivaz_kiekis']."</td>
+                    <td>".$data['ivaz_menesis']."</td>
+                    <td>".$data['ivaz_metai']."</td>
+                </tr>";
+                    echo"<tr><td class='text-left' colspan='4'><h5><small>i.VAZ - elektroninių važtaraščių posistemis.</small></h5></td></tr>";}
+
+                if($data['isaf_12'] == "on"){
+                    echo"<tr>
+                    <td>I-SAF x12</td>
+                    <td> </td>
+                    <td>".$data['isaf_12_menesis']."</td>
+                    <td>".$data['isaf_12_metai']."</td>
+                </tr>";
+                    echo"<tr><td class='text-left' colspan='4'><h5><small>i.SAF - elektroninis sąskaitų faktūrų posistemis. Teikiama 12 kart per metus, t.y. kiekvien1 menesį.</small></h5></td></tr>";}
+
+                if($data['isaf_2'] == "on"){
+                    echo"<tr>
+                    <td>I-SAF x2</td>
+                    <td> </td>
+                    <td>".$data['isaf_2_menesis']."</td>
+                    <td>".$data['isaf_2_metai']."</td>
+                </tr>";
+                    echo"<tr><td class='text-left' colspan='4'><h5><small>i.SAF - elektroninis sąskaitų faktūrų posistemis. Teikiama 2 kartus per metus, t.y. kas pusmetį</small></h5></td></tr>";}
+
                 echo"<tr><td class='success' colspan='4'>KITŲ PASLAUGŲ KAINA</td></tr>";
 
                 if($data['bankai'] > 0){

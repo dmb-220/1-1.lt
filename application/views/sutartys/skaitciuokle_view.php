@@ -464,6 +464,74 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="ivaz" class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-4">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="ivaz" id="ivaz">
+                                        <label> I-VAZ</label>
+                                    </div>
+                                </div>
+                                <div id="inp_ivaz" style="display:none">
+                                    <div class="col-md-2">
+                                        <input type="text" name="ivaz_kiekis" value="0" min="0" max="100" id="ivaz_kiekis" class="form-control" placeholder="I-vaz kiekis (vnt)">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="ivaz_menesis" id="ivaz_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="ivaz_metai" id="ivaz_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isaf_12" class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-4">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="isaf_12" id="isaf_12">
+                                        <label> I-SAF x12</label>
+                                    </div>
+                                </div>
+                                <div id="inp_isaf_12" style="display:none">
+                                    <div class="col-md-4">
+                                        <input type="text" name="isaf_12_menesis" id="isaf_12_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="isaf_12_metai" id="isaf_12_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isaf_2" class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-4">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="isaf_2" id="isaf_2">
+                                        <label> I-SAF x2</label>
+                                    </div>
+                                </div>
+                                <div id="inp_isaf_2" style="display:none">
+                                    <div class="col-md-4">
+                                        <input type="text" name="isaf_2_menesis" id="isaf_2_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="isaf_2_metai" id="isaf_2_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="alert alert-info text-center">KITŲ PASLAUGŲ KAINA</div>
 
@@ -719,7 +787,12 @@
                                     ?></b>
                             </div>
                             <div class="col-md-3">
-                                Gyvulių vidurkis: <b><?php echo $this->main_model->info['txt']['galvijai']; ?></b>
+                                <?php
+                                if($this->main_model->info['txt']['ukis'] == 0){
+                                    echo"Gyvulių vidurkis: <b>";
+                                    echo $this->main_model->info['txt']['galvijai'];
+                                    echo"</b>";
+                                } ?>
                             </div>
                             <div class="col-md-3">
                                 Deklaruojamas plotas: <b><?php echo $this->main_model->info['txt']['plotas']; ?></b>

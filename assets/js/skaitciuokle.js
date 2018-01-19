@@ -35,6 +35,9 @@ $(document).ready(function(){
     var fr457_menuo=0, fr457_metai=0;
     var gpm308_menuo=0, gpm308_metai=0;
     var sav1_menuo=0, sav1_metai=0;
+    var ivaz_menuo=0, ivaz_metai=0;
+    var isaf_12_menuo=0, isaf_12_metai=0;
+    var isaf_2_menuo=0, isaf_2_metai=0;
     //kitos paslaugos
     var bankai_kiek=0, bankai_menuo=0, bankai_metai=0;
     var kreditai_kiek=0, kreditai_menuo=0, kreditai_metai=0;
@@ -304,6 +307,57 @@ $(document).ready(function(){
         }
     });
 
+    $('#isaf_12').change(function() {
+        if($(this).is(":checked")) {
+            $("#inp_isaf_12").show();
+            isaf_12_menuo = kita['isaf_12_kaina']/12;
+            isaf_12_metai = kita['isaf_12_kaina'];
+            $('#isaf_12_menesis').val(isaf_12_menuo.toFixed(2) + ' €');
+            $('#isaf_12_metai').val(isaf_12_metai.toFixed(2) + ' €');
+        } else {
+            $("#inp_isaf_12").hide();
+            $('#isaf_12_menesis').val('');
+            $('#isaf_12_metai').val('');
+            isaf_12_metai = 0; isaf_12_menuo = 0;
+        }
+    });
+
+    $('#isaf_2').change(function() {
+        if($(this).is(":checked")) {
+            $("#inp_isaf_2").show();
+            isaf_2_menuo = kita['isaf_2_kaina']/12;
+            isaf_2_metai = kita['isaf_2_kaina'];
+            $('#isaf_2_menesis').val(isaf_2_menuo.toFixed(2) + ' €');
+            $('#isaf_2_metai').val(isaf_2_metai.toFixed(2) + ' €');
+        } else {
+            $("#inp_isaf_2").hide();
+            $('#isaf_2_menesis').val('');
+            $('#isaf_2_metai').val('');
+            isaf_2_metai = 0; isaf_2_menuo = 0;
+        }
+    });
+
+    //deklaraciju I-VAZ
+    $('#ivaz').change(function() {
+        if($(this).is(":checked")) {
+            $("#inp_ivaz").show();
+            //patikrinti ar ivestas
+            $('#ivaz_kiekis').change(function() {
+                var kiekis = $("#ivaz_kiekis").val();
+                ivaz_menuo = kita.ivaz_kaina * kiekis;
+                ivaz_metai = (kita.ivaz_kaina * kiekis) * 12;
+                $('#ivaz_menesis').val(ivaz_menuo.toFixed(2) + ' €');
+                $('#ivaz_metai').val(ivaz_metai.toFixed(2) + ' €');
+            });
+        } else {
+            $("#inp_ivaz").hide();
+            $('#ivaz_kiekis').val('');
+            $('#ivaz_menesis').val('');
+            $('#ivaz_metai').val('');
+            ivaz_menuo = 0; ivaz_metai = 0;
+        }
+    });
+
     //Bankai, kreditai
     $('#bankai').change(function() {
         bankai_kiek = $("#bankai").val();
@@ -450,6 +504,8 @@ $(document).ready(function(){
     $('#darbuotojai_kiekis').bootstrapNumber();
     $('#nuolaida').bootstrapNumber();
     $('#zemes_kiekis').bootstrapNumber();
+    $('#technika_kiekis').bootstrapNumber();
+    $('#ivaz_kiekis').bootstrapNumber();
 
     //NUolaidos
     $('#laiku_atsiskaito').change(function() {
@@ -481,8 +537,8 @@ $(document).ready(function(){
         var bazine_metai = pirminiai_metai + darb_2_metai + inventorizacija_metai + fr572_metai + fr573_metai + sam_metai + sd_metai;
         var ukis_menuo = galvijai_menuo + dek_menuo + technika_menuo;
         var ukis_metai = galvijai_metai + dek_metai + technika_metai;
-        var deklaracija_menuo = pvm_x12_menuo + pvm_x2_menuo + fr457_menuo + gpm308_menuo + sav1_menuo;
-        var deklaracija_metai = pvm_x12_metai + pvm_x2_metai + fr457_metai + gpm308_metai + sav1_metai;
+        var deklaracija_menuo = pvm_x12_menuo + pvm_x2_menuo + fr457_menuo + gpm308_menuo + sav1_menuo + ivaz_menuo + isaf_2_menuo + isaf_12_menuo;
+        var deklaracija_metai = pvm_x12_metai + pvm_x2_metai + fr457_metai + gpm308_metai + sav1_metai + ivaz_metai + isaf_2_metai + isaf_12_metai;
         var paslaugos_menuo = kreditai_menuo + bankai_menuo + europa_menuo + saskaita_menuo + kuras_menuo + apsauga_menuo + zemes_menuo + judejimas_menuo;
         var paslaugos_metai = kreditai_metai + bankai_metai + europa_metai + saskaita_metai + kuras_metai + apsauga_metai + zemes_metai + judejimas_metai;
         viso_menuo = bazine_menuo + ukis_menuo + deklaracija_menuo + paslaugos_menuo;

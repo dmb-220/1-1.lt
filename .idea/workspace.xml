@@ -5,680 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp.net/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp.net/bin/LitJSON.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp.net/demo.aspx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp.net/file_manager_json.ashx.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp.net/upload_json.ashx.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp/JSON_2.0.4.asp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp/UpLoad_Class.asp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp/demo.asp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp/file_manager_json.asp.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/asp/upload_json.asp.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/_static/file.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/_static/firebug_upload_json.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/_templates/classy/layout.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/_templates/classy/static/classy.css_t" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/_templates/classy/theme.conf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/ajax.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/changelog.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/classyext.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/cmd.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/colorpicker.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/conf.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/core.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/dialog.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/editor.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/event.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/make.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/menu.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/node.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/option.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/plugin.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/qna.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/range.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/selector.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/tabs.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/theme.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/upgrade.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/upload.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/uploadbutton.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/usage.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/docs/widget.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/jsp/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/jsp/demo.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/jsp/file_manager_json.jsp.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/jsp/lib/commons-fileupload-1.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/jsp/lib/commons-io-1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/jsp/lib/json_simple-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/jsp/upload_json.jsp.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/kindeditor-all-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/kindeditor-all.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lang/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lang/en.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lang/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lang/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lang/zh-CN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lang/zh-TW.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/build.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/background.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/contentScript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug-lite-beta.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug128.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug24_disabled.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/firebug48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/googleChrome.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/manifest.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/blank.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/buttonBg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/buttonBgHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/detach.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/detachHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/disable.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/disable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/disableHover.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/disableHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/down.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/downActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/downHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/errorIcon-sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/errorIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/errorIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug-1.3a2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug.IE6.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/firebug.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/group.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/infoIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/infoIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/loading_16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/min.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/minHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/offHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/pixel_transparent.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/roundCorner.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/search.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/shadow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/shadow2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/shadowAlpha.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabHoverLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabHoverMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabHoverRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuCheckbox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuPin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuRadio.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuTarget.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMenuTargetHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tabRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/textEditorBorders.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/textEditorBorders.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/textEditorCorners.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/textEditorCorners.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/titlebarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/toolbarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tree_close.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/tree_open.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/up.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/upActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/upHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/warningIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension-beta/skin/xp/warningIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/background.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/contentScript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug-lite.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug128.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug24_disabled.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/firebug48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/googleChrome.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/manifest.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/blank.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/buttonBg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/buttonBgHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/detach.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/detachHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/disable.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/disable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/disableHover.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/disableHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/down.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/downActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/downHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/errorIcon-sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/errorIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/errorIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug-1.3a2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug.IE6.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/firebug.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/group.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/infoIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/infoIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/loading_16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/min.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/minHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/offHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/pixel_transparent.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/roundCorner.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/search.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/shadow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/shadow2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/shadowAlpha.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabHoverLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabHoverMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabHoverRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuCheckbox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuPin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuRadio.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuTarget.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMenuTargetHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tabRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/textEditorBorders.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/textEditorBorders.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/textEditorCorners.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/textEditorCorners.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/titlebarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/toolbarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tree_close.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/tree_open.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/up.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/upActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/upHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/warningIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/chrome-extension/skin/xp/warningIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/compress.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/firebug-lite-beta.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/firebug-lite-debug.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/build/firebug-lite.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/plugin/proxy/proxy.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/blank.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/buttonBg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/buttonBgHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/detach.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/detachHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/disable.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/disable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/disableHover.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/disableHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/down.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/downActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/downHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/errorIcon-sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/errorIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/errorIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/firebug.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/firebug.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/firebug.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/group.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/infoIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/infoIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/loading_16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/min.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/minHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/offHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/pixel_transparent.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/roundCorner.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/search.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/shadow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/shadow2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/shadowAlpha.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabHoverLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabHoverMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabHoverRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuCheckbox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuPin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuRadio.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuTarget.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMenuTargetHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tabRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/textEditorBorders.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/textEditorBorders.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/textEditorCorners.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/textEditorCorners.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/titlebarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/toolbarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tree_close.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/tree_open.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/twistyClosed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/twistyOpen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/up.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/upActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/upHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/warningIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/classic/warningIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/blank.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/buttonBg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/buttonBgHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/closeHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/detach.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/detachHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/disable.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/disable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/disableHover.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/disableHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/down.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/downActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/downHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/errorIcon-sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/errorIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/errorIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/firebug.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/firebug.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/firebug.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/group.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/infoIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/infoIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/loading_16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/min.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/minHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/offHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/pixel_transparent.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/roundCorner.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/search.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/shadow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/shadow2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/shadowAlpha.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabHoverLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabHoverMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabHoverRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuCheckbox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuPin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuRadio.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuTarget.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMenuTargetHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tabRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/textEditorBorders.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/textEditorBorders.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/textEditorCorners.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/textEditorCorners.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/titlebarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/toolbarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tree_close.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/tree_open.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/twistyClosed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/twistyOpen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/up.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/upActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/upHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/warningIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/light/warningIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/blank.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/buttonBg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/buttonBgHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/detach.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/detachHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/disable.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/disable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/disableHover.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/disableHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/down.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/downActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/downHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/errorIcon-sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/errorIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/errorIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug-1.3a2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug.IE6.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/firebug.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/group.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/infoIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/infoIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/loading_16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/min.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/minHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/offHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/pixel_transparent.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/roundCorner.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/search.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/shadow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/shadow2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/shadowAlpha.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabHoverLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabHoverMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabHoverRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuCheckbox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuPin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuRadio.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuTarget.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMenuTargetHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tabRight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/textEditorBorders.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/textEditorBorders.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/textEditorCorners.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/textEditorCorners.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/titlebarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/toolbarMid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tree_close.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/tree_open.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/up.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/upActive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/upHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/warningIcon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/firebug-lite/skin/xp/warningIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/qunit/qunit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/lib/qunit/qunit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/php/JSON.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/php/demo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/php/file_manager_json.php.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/php/upload_json.php.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/anchor/anchor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/autoheight/autoheight.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/baidumap/baidumap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/baidumap/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/baidumap/map.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/clearhtml/clearhtml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/code/code.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/code/prettify.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/code/prettify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/emoticons.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/0.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/1.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/10.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/100.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/101.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/102.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/103.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/104.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/105.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/106.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/107.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/108.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/109.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/11.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/110.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/111.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/112.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/113.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/114.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/115.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/116.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/117.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/118.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/119.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/12.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/120.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/121.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/122.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/123.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/124.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/125.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/126.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/127.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/128.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/129.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/13.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/130.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/131.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/132.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/133.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/134.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/14.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/15.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/17.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/18.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/19.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/20.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/21.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/22.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/23.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/24.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/25.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/26.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/27.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/28.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/29.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/3.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/30.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/31.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/32.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/33.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/34.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/35.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/36.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/37.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/38.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/39.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/4.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/40.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/41.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/42.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/43.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/44.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/45.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/46.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/47.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/48.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/49.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/5.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/50.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/51.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/52.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/53.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/54.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/55.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/56.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/57.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/58.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/59.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/6.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/60.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/61.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/62.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/63.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/64.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/65.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/66.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/67.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/68.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/69.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/7.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/70.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/71.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/72.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/73.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/74.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/75.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/76.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/77.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/78.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/79.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/8.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/80.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/81.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/82.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/83.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/84.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/85.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/86.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/87.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/88.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/89.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/9.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/90.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/91.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/92.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/93.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/94.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/95.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/96.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/97.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/98.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/99.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/emoticons/images/static.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/filemanager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/file-16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/file-64.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/folder-16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/folder-64.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/filemanager/images/go-up.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/fixtoolbar/fixtoolbar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/flash/flash.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/image/image.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/image/images/align_left.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/image/images/align_right.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/image/images/align_top.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/image/images/refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/insertfile/insertfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/lineheight/lineheight.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/link/link.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/map/map.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/map/map.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/media/media.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/images/image.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/images/select-files-en.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/images/select-files-zh-CN.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/images/swfupload.swf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/multiimage/multiimage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/pagebreak/pagebreak.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/plainpaste/plainpaste.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/preview/preview.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/quickformat/quickformat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/table/table.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/template/html/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/template/html/2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/template/html/3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/template/template.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/plugins/wordpaste/wordpaste.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/cmd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/colorpicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/dialog.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/event.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/footer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/header.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/html.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/menu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/node.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/range.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/selector.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/tabs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/toolbar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/uploadbutton.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/src/widget.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/ajax.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/cmd.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/cmd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/core.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/data/logo_180_30.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/dialog.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/edit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/editor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/editor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/event.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/event.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/hidden.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/html.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/html.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/leak.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/main.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/menu.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/menu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/navi.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/node.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/node.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/quirkmode.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/range.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/range.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/remote.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/selector.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/selector.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/tabs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/toolbar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/toolbar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/total.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/KindEditorDriver.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/all-chrome.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/all-firefox.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/all-ie.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/all.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriver.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverContainer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverElement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverEnvironment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverExceptions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverSession.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/WebDriverSimpleItem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/php-webdriver/__init__.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/test-default.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/test-dialog.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/webdriver/test-unittest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/test/widget.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/common/anchor.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/common/blank.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/common/flash.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/common/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/common/media.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/common/rm.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/default/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/default/default.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/default/default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/qq/editor.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/qq/qq.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/kindeditor/themes/simple/simple.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Sutartys.php" afterPath="$PROJECT_DIR$/application/controllers/Sutartys.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/left_view.php" afterPath="$PROJECT_DIR$/application/views/left_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main_view.php" afterPath="$PROJECT_DIR$/application/views/main_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/mano.css" afterPath="$PROJECT_DIR$/assets/css/mano.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/kainos.json" afterPath="$PROJECT_DIR$/assets/js/kainos.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/skaitciuokle.js" afterPath="$PROJECT_DIR$/assets/js/skaitciuokle.js" />
     </list>
@@ -721,22 +50,19 @@
       <file leaf-file-name="main_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="123" column="21" lean-forward="true" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+            <state relative-caret-position="2091">
+              <caret line="123" column="21" lean-forward="false" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="skaitciuokle_view.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="skaitciuokle_view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="332" column="38" lean-forward="false" selection-start-line="332" selection-start-column="38" selection-end-line="332" selection-end-column="38" />
-              <folding>
-                <element signature="n#style#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#14;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="733">
+              <caret line="794" column="36" lean-forward="true" selection-start-line="794" selection-start-column="36" selection-end-line="794" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -744,87 +70,74 @@
       <file leaf-file-name="formuoti_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="393" column="27" lean-forward="false" selection-start-line="393" selection-start-column="27" selection-end-line="393" selection-end-column="27" />
+            <state relative-caret-position="648">
+              <caret line="300" column="169" lean-forward="false" selection-start-line="300" selection-start-column="169" selection-end-line="300" selection-end-column="169" />
               <folding>
-                <marker date="1516277576265" expanded="true" signature="9015:9260" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="9292:9560" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="9326:9555" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="9330:9550" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="9337:9545" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="9652:9926" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="10052:10309" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="10431:10684" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="10807:11004" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="10841:10999" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="10845:10994" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="10852:10989" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="11128:11332" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="11613:11817" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="12080:12310" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="12557:12783" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="13150:13389" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="13468:13705" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="13782:14021" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="14189:14393" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="14631:14832" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="15068:15272" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="15527:15734" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="15937:16089" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="15937:16098" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="15937:16138" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="16303:16372" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="16303:16527" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="16604:16675" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="16604:16836" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="16922:17040" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="16922:17143" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="17175:18378" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="17209:18373" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="17213:18368" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="17220:18363" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="18464:18541" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="18464:18650" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="18464:18659" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="18464:18700" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="18999:19107" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="18999:19208" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19240:19469" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19274:19464" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19278:19459" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19285:19454" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19549:19658" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19549:19763" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19795:20036" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19829:20031" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19833:20026" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="19840:20021" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="20143:20219" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="20143:20378" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="20410:20604" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="20444:20599" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="20448:20594" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="20455:20589" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="20686:20797" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="20686:20904" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21043:21783" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21067:21243" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21088:21218" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21267:21778" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21267:21783" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21581:21649" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21581:21755" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21826:21885" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21826:21898" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21826:22146" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="21826:22251" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="22289:22329" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="22289:22330" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="22289:22359" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="22289:22422" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="22483:22550" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="22483:22647" ph="..." />
-                <marker date="1516277576265" expanded="true" signature="22810:22913" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="9015:9260" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="9292:9560" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="9326:9555" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="9330:9550" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="9337:9545" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="9652:9926" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="10052:10309" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="10431:10684" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="10807:11004" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="10841:10999" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="10845:10994" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="10852:10989" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="11128:11332" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="11613:11817" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="12080:12310" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="12557:12783" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="13150:13389" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="13468:13705" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="13782:14021" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="14189:14393" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="14631:14832" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="15068:15272" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="15527:15734" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="15937:16138" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="16243:16462" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="16686:16892" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="17171:17374" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="17734:17803" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="17734:17958" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="18035:18106" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="18035:18267" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="18353:18471" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="18353:18574" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="18606:19809" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="18640:19804" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="18644:19799" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="18651:19794" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="19895:19972" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="19895:20081" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="19895:20090" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="19895:20131" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="20430:20538" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="20430:20639" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="20671:20900" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="20705:20895" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="20709:20890" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="20716:20885" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="20980:21089" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="20980:21194" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21226:21467" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21260:21462" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21264:21457" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21271:21452" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21574:21650" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21574:21809" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21841:22035" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21875:22030" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21879:22025" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="21886:22020" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="22117:22228" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="22117:22335" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="23012:23186" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="23257:23329" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="23720:23853" ph="..." />
+                <marker date="1516354929510" expanded="true" signature="23914:24078" ph="..." />
               </folding>
             </state>
           </provider>
@@ -833,18 +146,18 @@
       <file leaf-file-name="kainos.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/kainos.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+            <state relative-caret-position="696">
+              <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="skaitciuokle.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="skaitciuokle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="182" column="42" lean-forward="true" selection-start-line="182" selection-start-column="42" selection-end-line="182" selection-end-column="42" />
+            <state relative-caret-position="-37">
+              <caret line="540" column="146" lean-forward="false" selection-start-line="540" selection-start-column="146" selection-end-line="540" selection-end-column="146" />
               <folding />
             </state>
           </provider>
@@ -853,7 +166,7 @@
       <file leaf-file-name="mano.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="833">
               <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
@@ -863,8 +176,8 @@
       <file leaf-file-name="Sutartys.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="69" column="41" lean-forward="true" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+            <state relative-caret-position="1173">
+              <caret line="69" column="41" lean-forward="false" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -982,10 +295,10 @@
         <option value="$PROJECT_DIR$/application/views/main_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
         <option value="$PROJECT_DIR$/assets/css/mano.css" />
-        <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
-        <option value="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
-        <option value="$PROJECT_DIR$/assets/js/skaitciuokle.js" />
         <option value="$PROJECT_DIR$/assets/js/kainos.json" />
+        <option value="$PROJECT_DIR$/assets/js/skaitciuokle.js" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
       </list>
     </option>
   </component>
@@ -1010,7 +323,7 @@
       <path value="G:\WAMP64\www\Aluza" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="98" />
     <option name="width" value="1243" />
     <option name="height" value="757" />
@@ -1046,7 +359,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1117,6 +429,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -1316,7 +629,8 @@
       <workItem from="1515694303072" duration="1083000" />
       <workItem from="1516168887050" duration="15389000" />
       <workItem from="1516208749911" duration="3775000" />
-      <workItem from="1516256315556" duration="23241000" />
+      <workItem from="1516256315556" duration="23448000" />
+      <workItem from="1516351098668" duration="4118000" />
     </task>
     <task id="LOCAL-00032" summary="optimizuota">
       <created>1507043054847</created>
@@ -1665,7 +979,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="694340000" />
+    <option name="totallyTimeSpent" value="698665000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1677,10 +991,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15138593" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18123667" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18283582" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13111112" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11" sideWeight="0.51599145" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1780,90 +1094,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/upload_json.php.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/JSON.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3060">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/demo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/docs/node.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1428">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/kindeditor-all-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/kindeditor-all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/src/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/upload_json.php.txt" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/JSON.php" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/demo.php" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/docs/node.rst" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/kindeditor-all-min.js" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/kindeditor-all.js" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/src/config.js" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/Gruntfile.js" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/3.html" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/2.html" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/1.html" />
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/template.js" />
     <entry file="file://$PROJECT_DIR$/assets/css/animate.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1945,13 +1187,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/preview/preview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="74" lean-forward="false" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/preview/preview.js" />
     <entry file="file://$PROJECT_DIR$/application/controllers/Galvijai.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="815">
@@ -2000,7 +1236,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-233">
           <caret line="127" column="39" lean-forward="true" selection-start-line="123" selection-start-column="24" selection-end-line="129" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2045,16 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="104" column="41" lean-forward="false" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
-          <folding>
-            <marker date="1515529123889" expanded="true" signature="16617:16969" ph="..." />
-            <marker date="1515529123889" expanded="true" signature="16661:16925" ph="..." />
-            <marker date="1515529123889" expanded="true" signature="16706:16880" ph="..." />
-            <marker date="1515529123889" expanded="true" signature="17176:17344" ph="..." />
-            <marker date="1515529123889" expanded="true" signature="18877:19231" ph="..." />
-            <marker date="1515529123889" expanded="true" signature="18921:19187" ph="..." />
-            <marker date="1515529123889" expanded="true" signature="18966:19142" ph="..." />
-            <marker date="1515529123889" expanded="true" signature="19416:19584" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2066,25 +1291,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/jquery.printPage.js" />
-    <entry file="file://$PROJECT_DIR$/assets/js/printPreview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/printPreview.js" />
     <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="58" column="137" lean-forward="false" selection-start-line="58" selection-start-column="137" selection-end-line="58" selection-end-column="137" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="123" column="21" lean-forward="true" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+        <state relative-caret-position="2091">
+          <caret line="123" column="21" lean-forward="false" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -2093,7 +1311,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2101,136 +1318,119 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="231" column="61" lean-forward="true" selection-start-line="231" selection-start-column="29" selection-end-line="231" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="69" column="41" lean-forward="true" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+        <state relative-caret-position="1173">
+          <caret line="69" column="41" lean-forward="false" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="833">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="332" column="38" lean-forward="false" selection-start-line="332" selection-start-column="38" selection-end-line="332" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#14;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="393" column="27" lean-forward="false" selection-start-line="393" selection-start-column="27" selection-end-line="393" selection-end-column="27" />
-          <folding>
-            <marker date="1516277576265" expanded="true" signature="9015:9260" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="9292:9560" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="9326:9555" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="9330:9550" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="9337:9545" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="9652:9926" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="10052:10309" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="10431:10684" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="10807:11004" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="10841:10999" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="10845:10994" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="10852:10989" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="11128:11332" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="11613:11817" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="12080:12310" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="12557:12783" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="13150:13389" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="13468:13705" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="13782:14021" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="14189:14393" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="14631:14832" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="15068:15272" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="15527:15734" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="15937:16089" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="15937:16098" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="15937:16138" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="16303:16372" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="16303:16527" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="16604:16675" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="16604:16836" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="16922:17040" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="16922:17143" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="17175:18378" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="17209:18373" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="17213:18368" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="17220:18363" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="18464:18541" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="18464:18650" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="18464:18659" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="18464:18700" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="18999:19107" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="18999:19208" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19240:19469" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19274:19464" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19278:19459" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19285:19454" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19549:19658" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19549:19763" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19795:20036" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19829:20031" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19833:20026" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="19840:20021" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="20143:20219" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="20143:20378" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="20410:20604" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="20444:20599" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="20448:20594" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="20455:20589" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="20686:20797" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="20686:20904" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21043:21783" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21067:21243" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21088:21218" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21267:21778" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21267:21783" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21581:21649" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21581:21755" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21826:21885" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21826:21898" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21826:22146" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="21826:22251" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="22289:22329" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="22289:22330" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="22289:22359" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="22289:22422" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="22483:22550" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="22483:22647" ph="..." />
-            <marker date="1516277576265" expanded="true" signature="22810:22913" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/kainos.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+        <state relative-caret-position="696">
+          <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="182" column="42" lean-forward="true" selection-start-line="182" selection-start-column="42" selection-end-line="182" selection-end-column="42" />
+        <state relative-caret-position="-37">
+          <caret line="540" column="146" lean-forward="false" selection-start-line="540" selection-start-column="146" selection-end-line="540" selection-end-column="146" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="300" column="169" lean-forward="false" selection-start-line="300" selection-start-column="169" selection-end-line="300" selection-end-column="169" />
+          <folding>
+            <marker date="1516354929510" expanded="true" signature="9015:9260" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="9292:9560" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="9326:9555" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="9330:9550" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="9337:9545" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="9652:9926" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="10052:10309" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="10431:10684" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="10807:11004" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="10841:10999" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="10845:10994" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="10852:10989" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="11128:11332" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="11613:11817" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="12080:12310" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="12557:12783" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="13150:13389" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="13468:13705" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="13782:14021" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="14189:14393" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="14631:14832" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="15068:15272" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="15527:15734" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="15937:16138" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="16243:16462" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="16686:16892" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="17171:17374" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="17734:17803" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="17734:17958" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="18035:18106" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="18035:18267" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="18353:18471" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="18353:18574" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="18606:19809" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="18640:19804" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="18644:19799" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="18651:19794" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="19895:19972" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="19895:20081" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="19895:20090" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="19895:20131" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="20430:20538" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="20430:20639" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="20671:20900" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="20705:20895" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="20709:20890" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="20716:20885" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="20980:21089" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="20980:21194" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21226:21467" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21260:21462" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21264:21457" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21271:21452" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21574:21650" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21574:21809" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21841:22035" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21875:22030" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21879:22025" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="21886:22020" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="22117:22228" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="22117:22335" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="23012:23186" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="23257:23329" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="23720:23853" ph="..." />
+            <marker date="1516354929510" expanded="true" signature="23914:24078" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="733">
+          <caret line="794" column="36" lean-forward="true" selection-start-line="794" selection-start-column="36" selection-end-line="794" selection-end-column="36" />
           <folding />
         </state>
       </provider>
