@@ -6,19 +6,19 @@
 
   "dokumentai":[
     {"dydis": "mazas", "kaina": 0.09},
-    {"dydis": "vidutinis", "kaina": 0.10},
-    {"dydis": "didelis", "kaina": 0.11}
+    {"dydis": "vidutinis", "kaina": 0.08},
+    {"dydis": "didelis", "kaina": 0.07}
   ],
 
   "galvijai": [
     {"dydis": "mazas", "melziamos": 7, "ne_melziamos": 5},
-    {"dydis": "vidutinis", "melziamos": 6.5, "ne_melziamos": 4.5},
-    {"dydis": "didelis", "melziamos": 6, "ne_melziamos": 4}
+    {"dydis": "vidutinis", "melziamos": 6, "ne_melziamos": 4},
+    {"dydis": "didelis", "melziamos": 5, "ne_melziamos": 3}
     ],
 
   "deklaruota": [
     {"kiekis": "mazas", "galvijai": 0, "augalai": 0},
-    {"kiekis": "vidutinis", "galvijai": 2.00, "augalai": 2.63},
+    {"kiekis": "vidutinis", "galvijai": 1.00, "augalai": 2.63},
     {"kiekis": "didelis", "galvijai": 0, "augalai": 0}
   ],
 
@@ -35,11 +35,11 @@
     "galviju_judejimas": 2.5,
     "pvm_12_kaina": 30,
     "pvm_2_kaina": 60,
-    "FR572_12_kaina": 120,
-    "FR573_kaina": 30,
-    "FR457_kaina": 20,
-    "GPM308_kaina": 100,
-    "SAV1_kaina": 60,
+    "FR572_12_kaina": 60,
+    "FR573_kaina": 60,
+    "FR457_kaina": 60,
+    "GPM308_kaina": 50,
+    "SAV1_kaina": 30,
     "ivaz_kaina": 5,
     "isaf_2_kaina": 40,
     "isaf_12_kaina": 36,

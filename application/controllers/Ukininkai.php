@@ -122,25 +122,37 @@ class Ukininkai extends CI_Controller {
 
 
     public function prideti_ukininka(){
-
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         $this->form_validation->set_rules('vardas', 'Vardas', 'required',  array('required' => 'Įveskite vardą.'));
         $this->form_validation->set_rules('pavarde', 'Pavardė', 'required', array('required' => 'Įveskite pavardę.'));
-        $this->form_validation->set_rules('v_vardas', 'Vartotojo vardas', 'required', array('required' => 'Įveskite vartotojo vardą.'));
-        $this->form_validation->set_rules('slaptazodis', 'Slaptazodis', 'required', array('required' => 'Įveskite slaptazodi.'));
-        $this->form_validation->set_rules('valdos_nr', 'Valdos numeris', 'required|is_natural',
-            array('required' => 'Įveskite valdos numerį.', 'is_natural' => 'Valdos numeris tik skaiciai.'));
+        //$this->form_validation->set_rules('v_vardas', 'Vartotojo vardas', 'required', array('required' => 'Įveskite vartotojo vardą.'));
+        //$this->form_validation->set_rules('slaptazodis', 'Slaptazodis', 'required', array('required' => 'Įveskite slaptazodi.'));
+        //$this->form_validation->set_rules('valdos_nr', 'Valdos numeris', 'required|is_natural',
+           // array('required' => 'Įveskite valdos numerį.', 'is_natural' => 'Valdos numeris tik skaiciai.'));
         $this->form_validation->set_rules('tipas', 'Ūkio tipas', 'required',  array('required' => 'Pasirinkite Ūkio tipą.'));
 
         if ($this->form_validation->run()) {
+            //var_dump($this->input->post()); die;
             $vardas = $this->input->post('vardas');
             $pavarde = $this->input->post('pavarde');
-            $valdos_nr = $this->input->post('valdos_nr');
+            //ar pazymetas vic.lt ivesti prisijungimo duomenis
+            $vic_lt = $this->input->post('vic_lt');
             $v_vardas = $this->input->post('v_vardas');
             $slaptazodis = $this->input->post('slaptazodis');
             $tipas = $this->input->post('tipas');
             $banda = $this->input->post('banda');
+            //papildomi duomenys
+            $papildomi = $this->input->post('papildomi');
+            $asmens_kodas = $this->input->post('asmens_kodas');
+            $pvm = $this->input->post('pvm');
+            $adresas = $this->input->post('adresas');
+            $numeris = $this->input->post('numeris');
+            $bankas = $this->input->post('bankas');
+            $email = $this->input->post('email');
+            $telefonas = $this->input->post('telefonas');
+            //sukuriam unikalu ukininko ID
+            $valdos_nr = time();
 
             //cia reik saugikliu, ar JS padaryt kad renkantis tipa, vienu arveju reik, bandos tipo, kitu atveju ne
             if($tipas == 2){$banda = 0;}
@@ -149,15 +161,14 @@ class Ukininkai extends CI_Controller {
 
             $ok = $this->ukininkai_model->tikinti_ukininka($valdos_nr);
             if($ok>0){
-                $this->main_model->info['error']['yra'] = "TOKS ukininkas jau yra!";
+                $this->main_model->info['error'][] = "TOKS ūkininkas jau yra!";
             }else{
                 $duomenys = array('vardas' => $vardas , 'pavarde' => $pavarde , 'valdos_nr' => $valdos_nr,
                     'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis, 'banda' => $banda, 'ukio_tipas' => $tipas, 'user_id' => $user->id,
                 );
-                $this->ukininkai_model->irasyti_ukininka($duomenys);
-                $this->main_model->info['error']['ok'] = "Naujas ukininkas pridetas!";}
+                //$this->ukininkai_model->irasyti_ukininka($duomenys);
+                $this->main_model->info['error'][] = "Naujas ukininkas pridetas!";}
 
-            $this->main_model->info['error']['action'] = true;
         }
 
         //sukeliam info, informaciniam meniu

@@ -1,7 +1,9 @@
 @media print {
   body, html {
-      font-family: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
+      font-family: TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif !important;
       font-size: 12px;
+      font-style: normal;
+      font-variant: normal;
       float: none !important;
       overflow: visible !important;
       padding: 0 !important;
@@ -29,7 +31,11 @@
               content:none;
           }
 
-    .break{page-break-before: always;}
+    .break{
+        page-break-before: always;
+        display: block !important;
+        line-height: 170%;
+    }
 
     form {
         display: none;
@@ -37,6 +43,8 @@
     .ibox-content {
         border-style: none;
     }
+
+    #footer{display: block; position:fixed; bottom: 0;}
 }
 
 @page{

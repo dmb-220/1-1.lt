@@ -9,19 +9,7 @@
         </div>
         <div class="ibox-content">
             <?php
-            $dekla = array(
-                "pvm_12" => "PVM x12",
-                "pvm_2" => "PVM x2",
-                "FR457" => "FR457",
-                "FR572_12" => "FR572 x12",
-                "FR573" => "FR573",
-                "pvm" => "PVM",
-                "SAV1" => "SAV1",
-                "GPM308" => "GPM308",
-                "SAM" => "SAM pranešimai",
-                "SD" => "SD pranešimai",
-            );
-            //var_dump($data);
+            //echo serialize($data);
             ?>
             <div id="sutartis">
                 <div class="text-center">
@@ -53,7 +41,7 @@
                 </div>
                 <div class="text-justify">
                     4. Užsakovas įsipareigoja pateikti visus reikalingus, teisingai įformintus dokumentus bei informaciją teisingam ūkio apskaitos tvarkymui iki sekančio mėnesio 15 d. ir
-                    laiku atsiskaityti už suteiktas paslauga pagal pateiktas sąskaitas faktūras. Pateikti dokumentai turi būti priskiriami tik ūkio veiklai vykdyti,
+                    laiku atsiskaityti už suteiktas paslaugas pagal pateiktas sąskaitas faktūras. Pateikti dokumentai turi būti priskiriami tik ūkio veiklai vykdyti,
                     o asmeniniams poreikiams priskiramos išlaidos/pajamos aiškiai identifikuojamos. Taip pat nenuslėpti ir neatlikti tyčinių veiksmų,
                     kurie gali sukelti pavojų teisingam buhalterinės apskaitos tvarkymui. Užsakovas suteikia visus reikalingus įgaliojimus, priėjimus prie sistemų,
                     duomenų bazių vykdytojui, o vykdytojas įsipareigoja šiuos duomenis tvarkyti LR įstatymų nustatyta tvarka.
@@ -97,18 +85,28 @@
                 <div class="pull-left">A.Mickevičiaus g. 3-46 Šiauliai</div>
                 <div class="pull-right"><?php if($this->main_model->info['ukininkas'][0]['adresas']){ echo $this->main_model->info['ukininkas'][0]['adresas']; }else{echo"NERASTA";} ?></div>
                 <br>
-                <div class="pull-left">A.s. LT567290000006467266</div>
+                <div class="pull-left">A.s. LT50 7300 0101 5253 5051</div>
                 <div class="pull-right"><?php if($this->main_model->info['ukininkas'][0]['saskaitos_nr']){ echo $this->main_model->info['ukininkas'][0]['saskaitos_nr']; }else{echo"NERASTA";} ?></div>
                 <br>
-                <div class="pull-left">AB Citadelė bankas</div>
+                <div class="pull-left">AB Swedbank bankas</div>
                 <div class="pull-right"><?php if($this->main_model->info['ukininkas'][0]['bankas']){ echo $this->main_model->info['ukininkas'][0]['bankas']; }else{echo"NERASTA";} ?></div>
                 <br>
                 <div class="pull-left">El. p. aluzotransportas@gmail.com</div>
-                <div class="pull-right">El. p. <?php if($this->main_model->info['ukininkas'][0]['email']){ echo $this->main_model->info['ukininkas'][0]['email']; }else{echo"NERASTA";} ?></div>
+                <div class="pull-right">El. p. <?php echo $this->main_model->info['ukininkas'][0]['email']; ?></div>
                 <br>
                 <div class="pull-left">Tel. 864541649</div>
-                <div class="pull-right">Tel. <?php if($this->main_model->info['ukininkas'][0]['telefonas']){ echo $this->main_model->info['ukininkas'][0]['telefonas']; }else{echo"NERASTA";} ?></div>
-                <br>
+                <div class="pull-right">Tel. <?php echo $this->main_model->info['ukininkas'][0]['telefonas']; ?></div>
+                <br><br><br><br>
+                <div class="pull-left">
+                    ......................................................................
+                    <div class="text-center"><h5><small>(Parašas)</small></h5></div>
+                </div>
+                <div class="pull-right">
+                    .......................................................................
+                    <div class="text-center"><h5><small>(Parašas)</small></h5></div>
+                </div>
+                <br><br><br><br><br><br>
+
                 <div class="break">
                 <div class="text-center">
                     <h4><strong>Sutarties priedas nr. 1</strong></h4>
@@ -429,8 +427,43 @@ Pildomi kelionės lapai kiekvienai transporto priemonei. </small></h5></td></tr>
                 ?>
                 </tbody>
             </table>
+                    <div id="footer" class="text-danger text-left">
+                        Jei Jūs samdytumėte buhalterį, tai jums kainuotų 650 eurų per menesį, 7793 eurai per metus. Mokant tik minimalią algą
+                    </div>
                 <br>
             </div>
+                <div class="break" style="display:none">
+                    <div class="text-center">
+                        <strong>SUTIKIMAS DĖL DUOMENŲ NAUDOJIMO</strong>
+                    </div>
+                    <div class="text-center">
+                        <?php echo $this->main_model->info['txt']['data']; ?>
+                    </div>
+                    <div class="text-center">
+                        Šiauliai
+                    </div>
+                    <br>
+                    <div class="text-justify first">
+                        Aš, ūkininkas (-ė) <b><?php echo $this->main_model->info['ukininkas'][0]['vardas']."
+                    ".$this->main_model->info['ukininkas'][0]['pavarde']; ?></b>, asmens kodas <?php if($this->main_model->info['ukininkas'][0]['asmens_kodas']){
+                        echo $this->main_model->info['ukininkas'][0]['asmens_kodas']; }else{echo"NERASTA";} ?> sutinku, kad buhalterinės apskaitos tikslais būtų naudojami mano asmeniai duomenys,
+                        prisijungimo kodai valstybinių įstaigų internetiniuose puslapiuose, kita mano asmeninė informacija. Informacija turi būti naudojama tik apskaitos tikslais
+                        (teikti deklaracijas Valstybinei mokesčių inspekcijai, valstybinio socialinio draudimo fondui, valstybės įmonė Žemės ūkio informacijos ir kaimo verslo centras)
+                        Man yra žinoma, kad aš turiu teisę: būti informuotas apie savo asmens duomenų tvarkymą; susipažinti su savo asmens duomenimis ir  kaip jie  yra tvarkomi;
+                        reikalauti ištaisyti,  sunaikinti savo asmens duomenis arba sustabdyti, išskyrus saugojimą, savo asmens duomenų tvarkymo veiksmus,
+                        kai duomenys tvarkomi nesilaikant LR asmens duomenų teisinės apsaugos ir kitų įstatymų nuostatų; nesutikti, kad būtų tvarkomi mano asmens duomenys.
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="text-center">
+                        ........................................................................................................................................
+                        <h5><small>(Vardas, pavardė, parašas)</small></h5>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <button class="btn btn-block btn-outline btn-primary" type="button" onclick="printDiv('sutartis')">

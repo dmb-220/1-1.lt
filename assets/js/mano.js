@@ -3,6 +3,40 @@ function PrintElem(elem) {
     window.print();
 }
 
+//////////////////////////////////////////////// Ukininkai ////////////////////////////////////////////////////////////
+$(document).ready(function() {
+    //jei turi VIC.LT, pazymi ir gali suvesti prisijungimo duomenis
+    $('#vic_lt').change(function() {
+        if($(this).is(":checked")) {
+            $("#in_vic_lt").show();
+        } else {
+            $("#in_vic_lt").hide();
+            $('#v_vardas').val('');
+            $('#slaptazodis').val('');
+        }
+    });
+
+    $('#papildomi').change(function() {
+        if($(this).is(":checked")) {
+            $("#in_papildomi").show();
+        } else {
+            $("#in_papildomi").hide();
+            //jei reikes isvalyti INPUT, padarysiu veliau
+            //$('#v_vardas').val('');
+            //$('#slaptazodis').val('');
+        }
+    });
+    //pagal ukio tipa, atsiranda pasirinkimas, pakolkas gyvulininkyste skirstoma i bandas
+    $('input[type=radio][name=tipas]').change(function() {
+        if (this.value == '0') {
+            $("#in_galviju_banda").show();}else{
+            $("#in_galviju_banda").hide();
+        }
+        //galimybe praplesti, jei reikes kitus tipus skirstyti
+    });
+
+});
+
 //permeta duomenis i MODAL
 $('#prideti').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);

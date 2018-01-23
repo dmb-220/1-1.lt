@@ -56,7 +56,7 @@
                 <a href="#"><i class="fa fa-keyboard-o"></i> <span class="nav-label">Sutartys</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="<?= base_url(); ?>sutartys/skaitciuokle"><i class="fa fa-edit"></i>Sutarties skaitčiuoklė</a></li>
-                    <li><a href="<?= base_url(); ?>sutartys/sutartys"><i class="fa fa-bars"></i> Sutikimas dėl duomenų naudojimo</a></li>
+                    <li><a href="<?= base_url(); ?>sutartys/sutartys"><i class="fa fa-bars"></i> 2017 metų sutartys</a></li>
                 </ul>
                 </li>
 

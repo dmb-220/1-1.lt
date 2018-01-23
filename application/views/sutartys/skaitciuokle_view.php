@@ -613,14 +613,14 @@
                         <label for="zemes_mokestis" class="col-md-2 control-label"></label>
                         <div class="col-md-10">
                             <div class="row row-space-12">
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <div class="checkbox checkbox-info">
                                         <input type="checkbox" name="zemes_mokestis" id="zemes_mokestis">
                                         <label> ŽEMĖS MOKESTIS</label>
                                     </div>
                                 </div>
                                 <div id="inp_zemes" style="display:none">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <input type="text" name="zemes_kiekis" value="0" min="0" max="100" id="zemes_kiekis" class="form-control" placeholder="Žemės kiekis (vnt)">
                                     </div>
                                     <div class="col-md-3">

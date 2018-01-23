@@ -127,7 +127,7 @@
                         <label class="col-md-4 control-label">Banko pavadinimas:</label>
                         <div class="col-md-6">
                             <?php echo form_error('bankas'); ?>
-                            <input name="bankas" type="text" class="form-control" placeholder="<?= $this->main_model->info['ukininkas'][0]['bankas'] ?>" value="" />
+                            <input name="bankas" type="text" class="form-control" placeholder="Banko pavadinimas" value="<?= $this->main_model->info['ukininkas'][0]['bankas'] ?>" />
                         </div>
                     </div>
                     </div>

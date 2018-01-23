@@ -14,5 +14,6 @@
     <orderEntry type="library" name="bootstrap-select" level="application" />
     <orderEntry type="library" name="lt" level="application" />
     <orderEntry type="library" name="select2" level="application" />
+    <orderEntry type="library" name="jspdf" level="application" />
   </component>
 </module>

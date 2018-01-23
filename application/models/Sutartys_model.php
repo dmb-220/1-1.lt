@@ -28,6 +28,16 @@ class Sutartys_model extends CI_Model{
         return $data;
     }
 
+    public function  sutarties_nr(){
+        $this->db->from('sutartys');
+        $result = $this->db->count_all_results();
+        return $result+1;
+    }
+
+    public function sutartis_irasyti($data){
+        $this->db->insert('sutartys', $data);
+    }
+
     public function galvijai_vidurkis(){
         $sk = 0;
         $dt = $this->session->userdata();

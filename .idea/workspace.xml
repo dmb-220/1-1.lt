@@ -4,12 +4,199 @@
     <bookmark url="file://$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php" line="266" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="">
+    <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="prideta nauju deklaracijos formu">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/Darbsut.xls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/Sutikimas_del_duomenu.odt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/paslaugu_sutartis.xls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/paslaugu_teikimas.odt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/sutikimas.xls" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Aluza.iml" afterPath="$PROJECT_DIR$/.idea/Aluza.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Sutartys.php" afterPath="$PROJECT_DIR$/application/controllers/Sutartys.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Ukininkai.php" afterPath="$PROJECT_DIR$/application/controllers/Ukininkai.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Sutartys_model.php" afterPath="$PROJECT_DIR$/application/models/Sutartys_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/left_view.php" afterPath="$PROJECT_DIR$/application/views/left_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php" afterPath="$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php" afterPath="$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/mano.css" afterPath="$PROJECT_DIR$/assets/css/mano.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/kainos.json" afterPath="$PROJECT_DIR$/assets/js/kainos.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/mano.js" afterPath="$PROJECT_DIR$/assets/js/mano.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/skaitciuokle.js" afterPath="$PROJECT_DIR$/assets/js/skaitciuokle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Benchmark.php" afterPath="$PROJECT_DIR$/system/core/Benchmark.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/CodeIgniter.php" afterPath="$PROJECT_DIR$/system/core/CodeIgniter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Common.php" afterPath="$PROJECT_DIR$/system/core/Common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Config.php" afterPath="$PROJECT_DIR$/system/core/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Controller.php" afterPath="$PROJECT_DIR$/system/core/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Exceptions.php" afterPath="$PROJECT_DIR$/system/core/Exceptions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Hooks.php" afterPath="$PROJECT_DIR$/system/core/Hooks.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Input.php" afterPath="$PROJECT_DIR$/system/core/Input.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Lang.php" afterPath="$PROJECT_DIR$/system/core/Lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Loader.php" afterPath="$PROJECT_DIR$/system/core/Loader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Log.php" afterPath="$PROJECT_DIR$/system/core/Log.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Model.php" afterPath="$PROJECT_DIR$/system/core/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Output.php" afterPath="$PROJECT_DIR$/system/core/Output.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Router.php" afterPath="$PROJECT_DIR$/system/core/Router.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Security.php" afterPath="$PROJECT_DIR$/system/core/Security.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/URI.php" afterPath="$PROJECT_DIR$/system/core/URI.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Utf8.php" afterPath="$PROJECT_DIR$/system/core/Utf8.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/compat/hash.php" afterPath="$PROJECT_DIR$/system/core/compat/hash.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/compat/mbstring.php" afterPath="$PROJECT_DIR$/system/core/compat/mbstring.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/compat/password.php" afterPath="$PROJECT_DIR$/system/core/compat/password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/compat/standard.php" afterPath="$PROJECT_DIR$/system/core/compat/standard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/DB.php" afterPath="$PROJECT_DIR$/system/database/DB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/DB_cache.php" afterPath="$PROJECT_DIR$/system/database/DB_cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/DB_driver.php" afterPath="$PROJECT_DIR$/system/database/DB_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/DB_forge.php" afterPath="$PROJECT_DIR$/system/database/DB_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/DB_query_builder.php" afterPath="$PROJECT_DIR$/system/database/DB_query_builder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/DB_result.php" afterPath="$PROJECT_DIR$/system/database/DB_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/DB_utility.php" afterPath="$PROJECT_DIR$/system/database/DB_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/ibase/ibase_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/ibase/ibase_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/ibase/ibase_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/ibase/ibase_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/ibase/ibase_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/ibase/ibase_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/ibase/ibase_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/ibase/ibase_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_4d_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_4d_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_4d_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_4d_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_cubrid_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_cubrid_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_cubrid_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_cubrid_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_dblib_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_dblib_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_dblib_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_dblib_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_firebird_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_firebird_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_firebird_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_firebird_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_ibm_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_ibm_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_ibm_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_ibm_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_informix_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_informix_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_informix_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_informix_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_mysql_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_mysql_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_mysql_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_mysql_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_oci_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_oci_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_oci_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_oci_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_odbc_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_odbc_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_odbc_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_odbc_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_pgsql_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_pgsql_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_pgsql_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_pgsql_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_sqlite_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_sqlite_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_sqlite_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_sqlite_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_sqlsrv_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_sqlsrv_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_sqlsrv_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/pdo/subdrivers/pdo_sqlsrv_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite3/sqlite3_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlite3/sqlite3_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite3/sqlite3_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlite3/sqlite3_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite3/sqlite3_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlite3/sqlite3_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite3/sqlite3_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlite3/sqlite3_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_driver.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_forge.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_forge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_result.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_utility.php" afterPath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_utility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/array_helper.php" afterPath="$PROJECT_DIR$/system/helpers/array_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/captcha_helper.php" afterPath="$PROJECT_DIR$/system/helpers/captcha_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/cookie_helper.php" afterPath="$PROJECT_DIR$/system/helpers/cookie_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/date_helper.php" afterPath="$PROJECT_DIR$/system/helpers/date_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/directory_helper.php" afterPath="$PROJECT_DIR$/system/helpers/directory_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/download_helper.php" afterPath="$PROJECT_DIR$/system/helpers/download_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/email_helper.php" afterPath="$PROJECT_DIR$/system/helpers/email_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/file_helper.php" afterPath="$PROJECT_DIR$/system/helpers/file_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/form_helper.php" afterPath="$PROJECT_DIR$/system/helpers/form_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/html_helper.php" afterPath="$PROJECT_DIR$/system/helpers/html_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/inflector_helper.php" afterPath="$PROJECT_DIR$/system/helpers/inflector_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/language_helper.php" afterPath="$PROJECT_DIR$/system/helpers/language_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/number_helper.php" afterPath="$PROJECT_DIR$/system/helpers/number_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/path_helper.php" afterPath="$PROJECT_DIR$/system/helpers/path_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/security_helper.php" afterPath="$PROJECT_DIR$/system/helpers/security_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/smiley_helper.php" afterPath="$PROJECT_DIR$/system/helpers/smiley_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/string_helper.php" afterPath="$PROJECT_DIR$/system/helpers/string_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/text_helper.php" afterPath="$PROJECT_DIR$/system/helpers/text_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/typography_helper.php" afterPath="$PROJECT_DIR$/system/helpers/typography_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/url_helper.php" afterPath="$PROJECT_DIR$/system/helpers/url_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/helpers/xml_helper.php" afterPath="$PROJECT_DIR$/system/helpers/xml_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/calendar_lang.php" afterPath="$PROJECT_DIR$/system/language/english/calendar_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/date_lang.php" afterPath="$PROJECT_DIR$/system/language/english/date_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/db_lang.php" afterPath="$PROJECT_DIR$/system/language/english/db_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/email_lang.php" afterPath="$PROJECT_DIR$/system/language/english/email_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/form_validation_lang.php" afterPath="$PROJECT_DIR$/system/language/english/form_validation_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/ftp_lang.php" afterPath="$PROJECT_DIR$/system/language/english/ftp_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/imglib_lang.php" afterPath="$PROJECT_DIR$/system/language/english/imglib_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/migration_lang.php" afterPath="$PROJECT_DIR$/system/language/english/migration_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/number_lang.php" afterPath="$PROJECT_DIR$/system/language/english/number_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/pagination_lang.php" afterPath="$PROJECT_DIR$/system/language/english/pagination_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/profiler_lang.php" afterPath="$PROJECT_DIR$/system/language/english/profiler_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/unit_test_lang.php" afterPath="$PROJECT_DIR$/system/language/english/unit_test_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/language/english/upload_lang.php" afterPath="$PROJECT_DIR$/system/language/english/upload_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Cache/Cache.php" afterPath="$PROJECT_DIR$/system/libraries/Cache/Cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_apc.php" afterPath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_apc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_dummy.php" afterPath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_dummy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_file.php" afterPath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_file.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_memcached.php" afterPath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_memcached.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_redis.php" afterPath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_redis.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_wincache.php" afterPath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_wincache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Calendar.php" afterPath="$PROJECT_DIR$/system/libraries/Calendar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Cart.php" afterPath="$PROJECT_DIR$/system/libraries/Cart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Driver.php" afterPath="$PROJECT_DIR$/system/libraries/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Email.php" afterPath="$PROJECT_DIR$/system/libraries/Email.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Encrypt.php" afterPath="$PROJECT_DIR$/system/libraries/Encrypt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Encryption.php" afterPath="$PROJECT_DIR$/system/libraries/Encryption.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Form_validation.php" afterPath="$PROJECT_DIR$/system/libraries/Form_validation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Ftp.php" afterPath="$PROJECT_DIR$/system/libraries/Ftp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Image_lib.php" afterPath="$PROJECT_DIR$/system/libraries/Image_lib.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Javascript.php" afterPath="$PROJECT_DIR$/system/libraries/Javascript.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Javascript/Jquery.php" afterPath="$PROJECT_DIR$/system/libraries/Javascript/Jquery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Migration.php" afterPath="$PROJECT_DIR$/system/libraries/Migration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Pagination.php" afterPath="$PROJECT_DIR$/system/libraries/Pagination.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Parser.php" afterPath="$PROJECT_DIR$/system/libraries/Parser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Profiler.php" afterPath="$PROJECT_DIR$/system/libraries/Profiler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Session/Session.php" afterPath="$PROJECT_DIR$/system/libraries/Session/Session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Session/SessionHandlerInterface.php" afterPath="$PROJECT_DIR$/system/libraries/Session/SessionHandlerInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Session/Session_driver.php" afterPath="$PROJECT_DIR$/system/libraries/Session/Session_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Session/drivers/Session_database_driver.php" afterPath="$PROJECT_DIR$/system/libraries/Session/drivers/Session_database_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Session/drivers/Session_files_driver.php" afterPath="$PROJECT_DIR$/system/libraries/Session/drivers/Session_files_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Session/drivers/Session_memcached_driver.php" afterPath="$PROJECT_DIR$/system/libraries/Session/drivers/Session_memcached_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Session/drivers/Session_redis_driver.php" afterPath="$PROJECT_DIR$/system/libraries/Session/drivers/Session_redis_driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Table.php" afterPath="$PROJECT_DIR$/system/libraries/Table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Trackback.php" afterPath="$PROJECT_DIR$/system/libraries/Trackback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Typography.php" afterPath="$PROJECT_DIR$/system/libraries/Typography.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Unit_test.php" afterPath="$PROJECT_DIR$/system/libraries/Unit_test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Upload.php" afterPath="$PROJECT_DIR$/system/libraries/Upload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/User_agent.php" afterPath="$PROJECT_DIR$/system/libraries/User_agent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Xmlrpc.php" afterPath="$PROJECT_DIR$/system/libraries/Xmlrpc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Xmlrpcs.php" afterPath="$PROJECT_DIR$/system/libraries/Xmlrpcs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Zip.php" afterPath="$PROJECT_DIR$/system/libraries/Zip.php" />
     </list>
     <ignored path="Aluza.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,108 +234,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2091">
-              <caret line="123" column="21" lean-forward="false" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="skaitciuokle_view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="skaitciuokle_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="733">
-              <caret line="794" column="36" lean-forward="true" selection-start-line="794" selection-start-column="36" selection-end-line="794" selection-end-column="36" />
+            <state relative-caret-position="-2381">
+              <caret line="99" column="40" lean-forward="false" selection-start-line="99" selection-start-column="40" selection-end-line="99" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formuoti_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
+      <file leaf-file-name="sutartys_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/sutartys/sutartys_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="300" column="169" lean-forward="false" selection-start-line="300" selection-start-column="169" selection-end-line="300" selection-end-column="169" />
+            <state relative-caret-position="340">
+              <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="45" selection-end-column="26" />
               <folding>
-                <marker date="1516354929510" expanded="true" signature="9015:9260" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="9292:9560" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="9326:9555" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="9330:9550" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="9337:9545" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="9652:9926" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="10052:10309" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="10431:10684" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="10807:11004" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="10841:10999" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="10845:10994" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="10852:10989" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="11128:11332" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="11613:11817" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="12080:12310" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="12557:12783" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="13150:13389" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="13468:13705" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="13782:14021" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="14189:14393" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="14631:14832" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="15068:15272" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="15527:15734" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="15937:16138" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="16243:16462" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="16686:16892" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="17171:17374" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="17734:17803" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="17734:17958" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="18035:18106" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="18035:18267" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="18353:18471" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="18353:18574" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="18606:19809" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="18640:19804" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="18644:19799" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="18651:19794" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="19895:19972" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="19895:20081" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="19895:20090" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="19895:20131" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="20430:20538" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="20430:20639" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="20671:20900" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="20705:20895" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="20709:20890" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="20716:20885" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="20980:21089" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="20980:21194" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21226:21467" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21260:21462" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21264:21457" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21271:21452" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21574:21650" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21574:21809" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21841:22035" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21875:22030" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21879:22025" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="21886:22020" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="22117:22228" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="22117:22335" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="23012:23186" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="23257:23329" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="23720:23853" ph="..." />
-                <marker date="1516354929510" expanded="true" signature="23914:24078" ph="..." />
+                <marker date="1516718369206" expanded="true" signature="13184:13291" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kainos.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/kainos.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -156,28 +259,8 @@
       <file leaf-file-name="skaitciuokle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-37">
-              <caret line="540" column="146" lean-forward="false" selection-start-line="540" selection-start-column="146" selection-end-line="540" selection-end-column="146" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mano.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sutartys.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="41" lean-forward="false" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+            <state relative-caret-position="516">
+              <caret line="602" column="8" lean-forward="false" selection-start-line="602" selection-start-column="8" selection-end-line="602" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -186,8 +269,72 @@
       <file leaf-file-name="Sutartys_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="61" column="33" lean-forward="false" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+            <state relative-caret-position="17">
+              <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ukininkai.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Ukininkai.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1207">
+              <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mano.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/mano.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prideti_ukininkus_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="69" column="60" lean-forward="false" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auth.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Auth.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="71" column="89" lean-forward="false" selection-start-line="71" selection-start-column="89" selection-end-line="71" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hash.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/system/core/compat/hash.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="redaguoti_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="94" column="21" lean-forward="false" selection-start-line="94" selection-start-column="20" selection-end-line="147" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -248,9 +395,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php" />
         <option value="$PROJECT_DIR$/application/views/ukininkai/sarasas_ukininku_view.php" />
-        <option value="$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php" />
         <option value="$PROJECT_DIR$/assets/js/vuejs.js" />
         <option value="$PROJECT_DIR$/application/models/Ukininkai_model.php" />
         <option value="$PROJECT_DIR$/application/language/lithuanian/ion_auth_lang.php" />
@@ -279,7 +424,6 @@
         <option value="$PROJECT_DIR$/application/controllers/Main.php" />
         <option value="$PROJECT_DIR$/application/views/home_view.php" />
         <option value="$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php" />
-        <option value="$PROJECT_DIR$/assets/js/mano.js" />
         <option value="$PROJECT_DIR$/assets/js/bootstrap-number-input.js" />
         <option value="$PROJECT_DIR$/application/views/auth/register.php" />
         <option value="$PROJECT_DIR$/application/views/auth/login_view.php" />
@@ -288,17 +432,20 @@
         <option value="$PROJECT_DIR$/application/views/admin/admin_view.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/application/views/main_view.php" />
         <option value="$PROJECT_DIR$/application/models/Sutartys_model.php" />
+        <option value="$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php" />
+        <option value="$PROJECT_DIR$/assets/js/skaitciuokle.js" />
+        <option value="$PROJECT_DIR$/assets/js/kainos.json" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
+        <option value="$PROJECT_DIR$/assets/css/mano.css" />
+        <option value="$PROJECT_DIR$/application/views/left_view.php" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
+        <option value="$PROJECT_DIR$/assets/js/mano.js" />
         <option value="$PROJECT_DIR$/application/controllers/Ukininkai.php" />
         <option value="$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php" />
-        <option value="$PROJECT_DIR$/application/views/left_view.php" />
-        <option value="$PROJECT_DIR$/application/views/main_view.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
-        <option value="$PROJECT_DIR$/assets/css/mano.css" />
-        <option value="$PROJECT_DIR$/assets/js/kainos.json" />
-        <option value="$PROJECT_DIR$/assets/js/skaitciuokle.js" />
-        <option value="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
-        <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
       </list>
     </option>
   </component>
@@ -359,6 +506,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -366,70 +514,10 @@
               <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
               <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pasarai" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sutartys" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="DATA" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -447,19 +535,19 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
-      <recent name="G:\WAMP64\www\1-1.lt\assets" />
-      <recent name="G:\WAMP64\www\1-1.lt\application\third_party" />
-      <recent name="G:\WAMP64\www\1-1.lt\application\libraries" />
-      <recent name="G:\WAMP64\www\1-1.lt\DATA" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
       <recent name="G:\WAMP64\www\1-1.lt\DATA" />
       <recent name="G:\WAMP64\www\1-1.lt\assets" />
       <recent name="G:\WAMP64\www\1-1.lt\assets\css" />
       <recent name="G:\WAMP64\www\1-1.lt\application\views\ukininkai" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\WAMP64\www\1-1.lt" />
+      <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
+      <recent name="G:\WAMP64\www\1-1.lt\assets" />
+      <recent name="G:\WAMP64\www\1-1.lt\application\third_party" />
+      <recent name="G:\WAMP64\www\1-1.lt\application\libraries" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -630,14 +718,9 @@
       <workItem from="1516168887050" duration="15389000" />
       <workItem from="1516208749911" duration="3775000" />
       <workItem from="1516256315556" duration="23448000" />
-      <workItem from="1516351098668" duration="4118000" />
-    </task>
-    <task id="LOCAL-00032" summary="optimizuota">
-      <created>1507043054847</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1507043054847</updated>
+      <workItem from="1516351098668" duration="8246000" />
+      <workItem from="1516635643748" duration="8165000" />
+      <workItem from="1516710518685" duration="12299000" />
     </task>
     <task id="LOCAL-00033" summary="optimizuota">
       <created>1507043164800</created>
@@ -975,11 +1058,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516185683840</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="prideta nauju deklaracijos formu">
+      <created>1516355393537</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1516355393538</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="698665000" />
+    <option name="totallyTimeSpent" value="723257000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -994,7 +1084,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15138593" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18283582" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18710022" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13111112" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11" sideWeight="0.51599145" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1017,6 +1107,31 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13111112" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11" sideWeight="0.51599145" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="92" y="107" width="1723" height="840" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32995495" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08777778" sideWeight="0.48720682" order="13" side_tool="false" content_ui="tabs" x="682" y="810" width="743" height="144" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16444445" sideWeight="0.48400852" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15333334" sideWeight="0.49382716" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15138593" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18710022" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280543" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15512614" sideWeight="0.5085865" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1059,7 +1174,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ikeliama nauja sutarties sablonas" />
     <MESSAGE value="sutikimas naudoti asmens duomenis" />
     <MESSAGE value="patvarkymai" />
     <MESSAGE value="patvarkymai 2" />
@@ -1084,7 +1198,8 @@
     <MESSAGE value="sutarties ikelimas" />
     <MESSAGE value="sutarties formavimo, pataisymai, ikelta papildomu nustatymu" />
     <MESSAGE value="sutarties formavimo, pataisymai, ikelta papildomu nustatymu 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="sutarties formavimo, pataisymai, ikelta papildomu nustatymu 2" />
+    <MESSAGE value="prideta nauju deklaracijos formu" />
+    <option name="LAST_COMMIT_MESSAGE" value="prideta nauju deklaracijos formu" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1094,12 +1209,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/upload_json.php.txt" />
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/JSON.php" />
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/php/demo.php" />
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/docs/node.rst" />
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/kindeditor-all-min.js" />
-    <entry file="file://$PROJECT_DIR$/assets/kindeditor/kindeditor-all.js" />
     <entry file="file://$PROJECT_DIR$/assets/kindeditor/src/config.js" />
     <entry file="file://$PROJECT_DIR$/assets/kindeditor/Gruntfile.js" />
     <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/template/html/3.html" />
@@ -1171,35 +1280,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Galvijai_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Ukininkai_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/kindeditor/plugins/preview/preview.js" />
-    <entry file="file://$PROJECT_DIR$/application/controllers/Galvijai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="466" column="59" lean-forward="false" selection-start-line="466" selection-start-column="59" selection-end-line="466" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Admin_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1254,28 +1339,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="33" lean-forward="false" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="74" column="76" lean-forward="false" selection-start-line="74" selection-start-column="76" selection-end-line="74" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Ukininkai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="144" column="114" lean-forward="false" selection-start-line="144" selection-start-column="114" selection-end-line="144" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1292,145 +1355,249 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/jquery.printPage.js" />
     <entry file="file://$PROJECT_DIR$/assets/js/printPreview.js" />
-    <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="58" column="137" lean-forward="false" selection-start-line="58" selection-start-column="137" selection-end-line="58" selection-end-column="137" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" column="21" lean-forward="false" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+        <state relative-caret-position="1955">
+          <caret line="115" column="71" lean-forward="false" selection-start-line="115" selection-start-column="71" selection-end-line="115" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/mano.js">
+    <entry file="file://$PROJECT_DIR$/application/models/Ukininkai_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/paslaugu_teikimas_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pasarai/meslas_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="231" column="61" lean-forward="true" selection-start-line="231" selection-start-column="29" selection-end-line="231" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="41" lean-forward="false" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+        <state relative-caret-position="493">
+          <caret line="149" column="11" lean-forward="true" selection-start-line="149" selection-start-column="8" selection-end-line="151" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
+    <entry file="file://$PROJECT_DIR$/application/models/Galvijai_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="238" column="7" lean-forward="false" selection-start-line="238" selection-start-column="0" selection-end-line="258" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Galvijai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="90" column="16" lean-forward="false" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/kainos.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+        <state relative-caret-position="368">
+          <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle.js">
+    <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="540" column="146" lean-forward="false" selection-start-line="540" selection-start-column="146" selection-end-line="540" selection-end-column="146" />
+        <state relative-caret-position="-289">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="58" column="115" lean-forward="false" selection-start-line="58" selection-start-column="115" selection-end-line="58" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3434">
+          <caret line="202" column="9" lean-forward="true" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="300" column="169" lean-forward="false" selection-start-line="300" selection-start-column="169" selection-end-line="300" selection-end-column="169" />
+        <state relative-caret-position="634">
+          <caret line="109" column="30" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="109" selection-end-column="35" />
           <folding>
-            <marker date="1516354929510" expanded="true" signature="9015:9260" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="9292:9560" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="9326:9555" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="9330:9550" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="9337:9545" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="9652:9926" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="10052:10309" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="10431:10684" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="10807:11004" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="10841:10999" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="10845:10994" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="10852:10989" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="11128:11332" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="11613:11817" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="12080:12310" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="12557:12783" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="13150:13389" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="13468:13705" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="13782:14021" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="14189:14393" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="14631:14832" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="15068:15272" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="15527:15734" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="15937:16138" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="16243:16462" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="16686:16892" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="17171:17374" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="17734:17803" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="17734:17958" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="18035:18106" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="18035:18267" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="18353:18471" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="18353:18574" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="18606:19809" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="18640:19804" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="18644:19799" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="18651:19794" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="19895:19972" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="19895:20081" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="19895:20090" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="19895:20131" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="20430:20538" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="20430:20639" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="20671:20900" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="20705:20895" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="20709:20890" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="20716:20885" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="20980:21089" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="20980:21194" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21226:21467" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21260:21462" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21264:21457" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21271:21452" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21574:21650" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21574:21809" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21841:22035" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21875:22030" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21879:22025" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="21886:22020" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="22117:22228" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="22117:22335" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="23012:23186" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="23257:23329" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="23720:23853" ph="..." />
-            <marker date="1516354929510" expanded="true" signature="23914:24078" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="8982:9227" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="9259:9527" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="9293:9522" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="9297:9517" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="9304:9512" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="9619:9893" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="10019:10276" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="10398:10651" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="10774:10971" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="10808:10966" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="10812:10961" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="10819:10956" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="11095:11299" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="11580:11784" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="12047:12277" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="12524:12750" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="13117:13356" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="13435:13672" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="13749:13988" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="14156:14360" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="14598:14799" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="15035:15239" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="15494:15701" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="15904:16105" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="16210:16429" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="16653:16859" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="17138:17341" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="17701:17770" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="17701:17925" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="18002:18073" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="18002:18234" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="18320:18438" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="18320:18541" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="18573:19776" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="18607:19771" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="18611:19766" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="18618:19761" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="19862:19939" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="19862:20048" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="19862:20057" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="19862:20098" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="20397:20505" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="20397:20606" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="20638:20867" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="20672:20862" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="20676:20857" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="20683:20852" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="20947:21056" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="20947:21161" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21193:21434" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21227:21429" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21231:21424" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21238:21419" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21541:21617" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21541:21776" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21808:22002" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21842:21997" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21846:21992" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="21853:21987" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="22084:22195" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="22084:22302" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="22979:23153" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="23224:23296" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="23687:23820" ph="..." />
+            <marker date="1516713601331" expanded="true" signature="23881:24045" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/sutartys_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="45" selection-end-column="26" />
+          <folding>
+            <marker date="1516718369206" expanded="true" signature="13184:13291" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="602" column="8" lean-forward="false" selection-start-line="602" selection-start-column="8" selection-end-line="602" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="794" column="36" lean-forward="true" selection-start-line="794" selection-start-column="36" selection-end-line="794" selection-end-column="36" />
+        <state relative-caret-position="-2381">
+          <caret line="99" column="40" lean-forward="false" selection-start-line="99" selection-start-column="40" selection-end-line="99" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="94" column="21" lean-forward="false" selection-start-line="94" selection-start-column="20" selection-end-line="147" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/knyga/knyga_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mano.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Ukininkai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="69" column="60" lean-forward="false" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="71" column="89" lean-forward="false" selection-start-line="71" selection-start-column="89" selection-end-line="71" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/compat/hash.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -130,13 +130,13 @@ $(document).ready(function(){
         var darbas = parseInt(darb_kiekis) + parseInt(darb_2_kiekis);
         if(darbas > 0) {
             $("#darbuotoju_deklaracijos").show();
-            fr572_menuo = (kita['FR572_12_kaina']/12)*darbas;
-            fr572_metai = kita['FR572_12_kaina']*darbas;
+            fr572_menuo = (kita['FR572_12_kaina']/12);
+            fr572_metai = kita['FR572_12_kaina'];
             $('#fr572_metai').val(fr572_metai.toFixed(2)+' €');
             $('#fr572_menesis').val(fr572_menuo.toFixed(2)+' €');
 
-            fr573_menuo = (kita['FR573_kaina']/12)*darbas;
-            fr573_metai = kita['FR573_kaina']*darbas;
+            fr573_menuo = (kita['FR573_kaina']/12);
+            fr573_metai = kita['FR573_kaina'];
             $('#fr573_metai').val(fr573_metai.toFixed(2)+' €');
             $('#fr573_menesis').val(fr573_menuo.toFixed(2)+' €');
         }else{
@@ -157,13 +157,13 @@ $(document).ready(function(){
         var darbas = parseInt(darb_kiekis) + parseInt(darb_2_kiekis);
         if(darbas > 0) {
             $("#darbuotoju_deklaracijos").show();
-            fr572_menuo = (kita['FR572_12_kaina']/12)*darbas;
-            fr572_metai = kita['FR572_12_kaina']*darbas;
+            fr572_menuo = (kita['FR572_12_kaina']/12);
+            fr572_metai = kita['FR572_12_kaina'];
             $('#fr572_metai').val(fr572_metai.toFixed(2)+' €');
             $('#fr572_menesis').val(fr572_menuo.toFixed(2)+' €');
 
-            fr573_menuo = (kita['FR573_kaina']/12)*darbas;
-            fr573_metai = kita['FR573_kaina']*darbas;
+            fr573_menuo = (kita['FR573_kaina']/12);
+            fr573_metai = kita['FR573_kaina'];
             $('#fr573_metai').val(fr573_metai.toFixed(2)+' €');
             $('#fr573_menesis').val(fr573_menuo.toFixed(2)+' €');
         }else{
@@ -554,8 +554,8 @@ $(document).ready(function(){
         $('#nuolaida_menesis').val(nuolaida_menuo.toFixed(2) + ' €');
         $('#nuolaida_metai').val(nuolaida_metai.toFixed(2) + ' €');
 
-        $('#viso_menesis').val(viso_menuo.toFixed(2) + ' €');
-        $('#viso_metai').val(viso_metai.toFixed(2) + ' €');
+        $('#viso_menesis').val(viso_menuo.toFixed(0) + ' €');
+        $('#viso_metai').val(viso_metai.toFixed(0) + ' €');
     });
 
     function deklaruotas_plotas(){

@@ -68,11 +68,17 @@ class Sutartys extends CI_Controller
         $data = $this->input->post();
 
         $dt = $this->session->userdata();
-        $this->main_model->info['txt']['numeris'] = "2017/02";
-        $this->main_model->info['txt']['data'] = date("Y - m - d");
+        $sutartis = serialize($data);
+        $numeris = date('y')."-".$this->sutartys_model->sutarties_nr();
+        $ids = 1;
+        $this->main_model->info['txt']['numeris'] = $numeris;
+        $this->main_model->info['txt']['data'] = "2018-01-01";
         $this->main_model->info['ukininkas'] = $this->ukininkai_model->ukininkas($data['ukininkas']);
         //var_dump($this->main_model->info['ukininkas'][0]); die;
+        $dat = array('sutarties_id' => $ids , 'sutartis' => $sutartis , 'numeris' => $numeris, 'u_id' => $data['ukininkas']);
+        $this->sutartys_model->sutartis_irasyti($dat);
 
+        //var_dump(unserialize($sutartis)); exit;
         $info_uk = $this->ukininkai_model->ukininkas($dt['nr']);
         $this->main_model->info['txt']['ukis'] = $info_uk[0]['ukio_tipas'];
 
@@ -163,7 +169,6 @@ class Sutartys extends CI_Controller
     public function darbo_sutartis(){
         $this->load->library('word');
 
-
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Sutartys";
         $this->main_model->info['txt']['info'] = "Darbo sutartis";
@@ -172,111 +177,34 @@ class Sutartys extends CI_Controller
     }
 
     public function sutartys(){
-
         $dt = $this->session->userdata();
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-            $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+        $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+        $this->form_validation->set_rules('numeris', 'Suterties numeris', 'required', array('required' => 'Įveskite sutarties numerį'));
 
         if ($this->form_validation->run()) {
             $ukininkas = $this->input->post('ukininko_vardas');
+            $numeris = $this->input->post('numeris');
             $uk = $this->ukininkai_model->ukininkas($ukininkas);
+
             $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
             $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
+            $this->main_model->info['txt']['asmens_kodas'] = $uk[0]['asmens_kodas'];
+            $this->main_model->info['txt']['data'] = "2017-01-01";
+            $this->main_model->info['txt']['numeris'] = $numeris;
 
-            $this->load->library('Excel');
-            $inputFileName = './DATA/sutikimas.xls';
-// Read the existing excel file
-            $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-            $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-            $objPHPExcel = $objReader->load($inputFileName);
-// Update it's data
-// Set active sheet index to the first sheet, so Excel opens this as the first sheet
-            $objPHPExcel->setActiveSheetIndex(0);
-// Add column headers
-            $objPHPExcel->getActiveSheet()
-                ->setCellValue('D2', date("Y-m-d"))
-                ->setCellValue('C5', $this->main_model->info['txt']['vardas']." ".$this->main_model->info['txt']['pavarde'])
-                //sita pasikeisti kai ukininkai tures duomenis
-                ->setCellValue('G5', "38621116145")
-            ;
-// Generate an updated excel file
-// Redirect output to a client’s web browser (Excel2007)
-            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-            header('Content-Disposition: attachment;filename="' . $inputFileName . '"');
-            header('Cache-Control: max-age=0');
-            $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
-            $objWriter->save('php://output');
+            $suma = $this->sutartys_model->sutarties_suma($ukininkas, "2017");
+            $this->main_model->info['txt']['suma'] = $suma[0];
+
+            $this->main_model->info['ukininkas'] = $this->ukininkai_model->ukininkas($ukininkas);
+
+            $this->main_model->info['error']['action'] = true;
         }
 
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Sutartys";
         $this->main_model->info['txt']['info'] = "Sutikimas dėl duomenų naudojimo";
-
-        $user = $this->ion_auth->user()->row();
-        //Nuskaitom ukininku sarasa, kad butu visada po ranka
-        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
-        $this->load->view('main_view');
-    }
-
-    public function paslaugu_teikimas(){
-        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-
-        $this->form_validation->set_rules('ukininko_vardas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
-        $ukininkas = $this->input->post('ukininko_vardas');
-        $uk = $this->ukininkai_model->ukininkas($ukininkas);
-        $this->main_model->info['txt']['vardas'] = $uk[0]['vardas'];
-        $this->main_model->info['txt']['pavarde'] = $uk[0]['pavarde'];
-
-        $this->form_validation->set_rules('numeris', 'Numeris', 'required', array('required' => 'Įveskite sutarties numerį.'));
-        $this->form_validation->set_rules('data', 'Data', 'required', array('required' => 'Pasirinkite datą.'));
-        $this->form_validation->set_rules('kaina', 'Kaina', 'required', array('required' => 'Įveskitę kaina.'));
-
-            if ($this->form_validation->run()) {
-                $numeris = $this->input->post('numeris');
-                $data = $this->input->post('data');
-                $kaina = $this->input->post('kaina');
-
-                $uki = $this->ukininkai_model->ukininkas($ukininkas);
-                //$adr = explode(PHP_EOL, $uki[0]['adresas']);
-                //var_dump($adr); die;
-                $this->load->library('Excel');
-       $inputFileName = './DATA/paslaugu_sutartis.xls';
-// Read the existing excel file
-       $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-       $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-       $objPHPExcel = $objReader->load($inputFileName);
-// Update it's data
-// Set active sheet index to the first sheet, so Excel opens this as the first sheet
-       $objPHPExcel->setActiveSheetIndex(0);
-// Add column headers
-       $objPHPExcel->getActiveSheet()
-           ->setCellValue('F1', "Nr. ".$numeris)
-           ->setCellValue('D2', date("Y-m-d"))
-           ->setCellValue('C10', $data)
-           ->setCellValue('B6', $this->main_model->info['txt']['vardas']." ".$this->main_model->info['txt']['pavarde'])
-           ->setCellValue('C19', $kaina)
-           ->setCellValue('E35', $this->main_model->info['txt']['vardas']." ".$this->main_model->info['txt']['pavarde'])
-           ->setCellValue('E36', "a.k. ".$uki[0]['asmens_kodas'])
-           ->setCellValue('E37', $uki[0]['pvm_kodas'])
-           ->setCellValue('E38', $uki[0]['adresas'])
-           ->setCellValue('E39', $uki[0]['saskaitos_nr'])
-           ->setCellValue('E40', $uki[0]['bankas'])
-           ->setCellValue('E41', "el. p.: ".$uki[0]['email'])
-           ->setCellValue('E42', "Tel.: ".$uki[0]['telefonas'])
-       ;
-// Generate an updated excel file
-// Redirect output to a client’s web browser (Excel2007)
-       header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-       header('Content-Disposition: attachment;filename="' . $inputFileName . '"');
-       header('Cache-Control: max-age=0');
-       $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
-       $objWriter->save('php://output');
-            }
-
-        //sukeliam info, informaciniam meniu
-        $this->main_model->info['txt']['meniu'] = "Sutartys";
-        $this->main_model->info['txt']['info'] = "Sutarčių šablonai";
 
         $user = $this->ion_auth->user()->row();
         //Nuskaitom ukininku sarasa, kad butu visada po ranka
