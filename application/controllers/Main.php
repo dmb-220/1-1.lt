@@ -49,8 +49,7 @@ class Main extends CI_Controller {
 			$this->session->set_userdata($new);
 			//$this->ukininkai_model->priskirti($ukininkas);
 			//Pranesimas kad ivyko pasirinkimas
-			$this->main_model->info['error']['action'] = true;
-            //$this->session->set_flashdata('message', 'Pasirinktas ūkininkas, su kuriuo dirbsite!');
+            $this->session->set_flashdata('message', "Ūkininkas <b>".$uk[0]['vardas']." ".$uk[0]['pavarde']."</b> pasirinktas.");
 		}
 		//sukeliam info, informaciniam meniu
 		$this->main_model->info['txt']['meniu'] = "Pagrindinis puslapis";

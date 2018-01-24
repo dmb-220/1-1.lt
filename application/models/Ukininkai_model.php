@@ -26,10 +26,10 @@ class Ukininkai_model extends CI_Model{
     }
 
     //patikrinam ar toks ukininkas nera itrauktas i DB
-    public function tikinti_ukininka($valdos_nr) {
+    public function tikinti_ukininka($vardas, $pavarde) {
         $this->db->select('id');
         $this->db->from('ukininkai');
-        $this->db->where('valdos_nr', $valdos_nr);
+        $this->db->where(array('vardas' => $vardas, 'pavarde' => $pavarde));
         $result = $this->db->get();
         if ($result->num_rows() > 0) {
             $row = $result->row();

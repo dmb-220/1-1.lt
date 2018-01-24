@@ -11,6 +11,7 @@
         <i class="fa fa-cogs fa-spin"></i>
     </div>
 </div>
+
 <?php
 if($this->session->flashdata('message')){ ?>
 <script type="text/javascript">
@@ -19,15 +20,15 @@ if($this->session->flashdata('message')){ ?>
     setTimeout(function() {
         toastr.options = {
             closeButton: true,
-            showMethod: 'slideDown',
             showEasing: "swing",
             hideEasing: "linear",
             showMethod: "fadeIn",
             hideMethod: "fadeOut",
-            positionClass: "toast-top-center",
-            hideDuration: 2000,
+            positionClass: "toast-top-full-width",
+            timeOut: "5000",
+            hideDuration: "1000"
     };
-    toastr.error(message, 'Informacija');
+    toastr.warning(message, 'Informacija');
 
     }, 0);
     });

@@ -44,6 +44,7 @@ $this->load->view('left_view');
             case "prideti_ukininka": $this->load->view("ukininkai/prideti_ukininkus_view"); break;
             case "sarasas_ukininku": $this->load->view("ukininkai/sarasas_ukininku_view"); break;
             case "redaguoti": $this->load->view("ukininkai/redaguoti_view"); break;
+            case "profilis": $this->load->view("ukininkai/profilis_view"); break;
             //Gyvuliai
             case "ikelti_duomenis": $this->load->view("galvijai/ikelti_gyvulius_view"); break;
             case "skaiciuoti_gyvulius": $this->load->view("galvijai/skaiciuoti_gyvulius_view"); break;

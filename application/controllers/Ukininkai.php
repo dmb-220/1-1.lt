@@ -40,31 +40,29 @@ class Ukininkai extends CI_Controller {
         }
     }
 
-    public function index()
-    {
+    public function index(){
         $this->load->view("main_view");
     }
 
-    public function iban(){
+    public function profilis(){
         $action = $this->uri->segment(3);
-        //$action = "LT977181700162733511";
-        $arr = str_split($action);
-        if(count($arr) > 9){
-            $arra = $arr[4].$arr[5].$arr[6].$arr[7].$arr[8];
-            //echo $arra; die;
-            $bankas = $this->ukininkai_model->read_iban($arra);
-        }
-        $this->load->view('ukininkai/iban_view', array('bankas' => $bankas[0]['pavadinimas']));
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Ūkininkai";
+        $this->main_model->info['txt']['info'] = "Ūkininko profilis";
+
+        $this->main_model->info['ukininkas'] = $this->ukininkai_model->ukininkas($action);
+        $this->load->view("main_view");
     }
 
     public function redaguoti(){
+        $klaida = FALSE;
         $action = $this->uri->segment(3);
 
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         $this->form_validation->set_rules('vardas', 'Vardas', 'required',  array('required' => 'Įveskite vardą.'));
         $this->form_validation->set_rules('pavarde', 'Pavardė', 'required', array('required' => 'Įveskite pavardę.'));
-        $this->form_validation->set_rules('vartotojas', 'Vartotojo vardas', 'required', array('required' => 'Įveskite VIC.LT vartotojo vardą.'));
+        $this->form_validation->set_rules('tipas', 'Ūkio tipas', 'required',  array('required' => 'Pasirinkite Ūkio tipą.'));
         $this->form_validation->set_rules('asmens_kodas', 'Asmens kodas');
         $this->form_validation->set_rules('adresas', 'Adresas');
         $this->form_validation->set_rules('numeris', 'Saskaitos numeris');
@@ -74,9 +72,11 @@ class Ukininkai extends CI_Controller {
 
 
         if ($this->form_validation->run()) {
+            //var_dump($this->input->post()); die;
             $vardas = $this->input->post('vardas');
             $pavarde = $this->input->post('pavarde');
-            $vartotojas = $this->input->post('vartotojas');
+            $vic_lt = $this->input->post('vic_lt');
+            $vartotojas = $this->input->post('v_vardas');
             $slaptazodis = $this->input->post('slaptazodis');
 
             $asmens_kodas = $this->input->post('asmens_kodas');
@@ -86,18 +86,34 @@ class Ukininkai extends CI_Controller {
             $email = $this->input->post('email');
             $telefonas = $this->input->post('telefonas');
             $pvm = $this->input->post('pvm');
+
+            $tipas = $this->input->post('tipas');
             $banda = $this->input->post('banda');
 
-            $ok = $this->ukininkai_model->tikinti_ukininka($action);
-            if($ok>0){
+            //jei ne gyvulininkyste, bandos nera.
+            if(!$banda){$banda = 0;}
+
+            //patikrinam, ar pazymeta kad nori ivesti VIC.LT duomenis, jei taip privalo uzpildyti
+            if($vic_lt){
+                if(!$vartotojas){ $this->main_model->info['error'][] = "Neįvestas VIC.LT vartotojo vardas"; $klaida = TRUE;}
+                if(!$slaptazodis){ $this->main_model->info['error'][] = "Neįvestas VIC.LT slaptažodis"; $klaida = TRUE;}
+            }
+            //patikrina ar pasirinkus gyvulininkyste, butu pasirinkta kokia banda turi
+            if($tipas == 0){
+                if(!$banda){$this->main_model->info['error'][] = "Pasirinkote GYVULININKYSTĘ, privalote pasirinkti bandą"; $klaida = TRUE;}
+            }else{$banda = 0;}
+            //patikrinam pagal varda, pavarde ar toks ukininkas neegzistuoja
+            $ok = $this->ukininkai_model->tikinti_ukininka($vardas, $pavarde);
+            if($ok<1){
+                $this->main_model->info['error'][] = "Ūkininkas, ".$vardas." ".$pavarde." nerastas!."; $klaida = TRUE;}
+
+            if(!$klaida){
                 $data = array('vardas' => $vardas, 'pavarde' => $pavarde, 'VIC_vartotojo_vardas' => $vartotojas, 'VIC_slaptazodis' => $slaptazodis,
                     'asmens_kodas' => $asmens_kodas, 'adresas' => $adresas, 'saskaitos_nr' => $numeris, 'bankas' => $bankas, 'email' => $email,
-                    'telefonas' => $telefonas, 'pvm_kodas' => $pvm, 'banda' => $banda);
+                    'telefonas' => $telefonas, 'pvm_kodas' => $pvm, 'ukio_tipas' => $tipas, 'banda' => $banda);
                 $this->ukininkai_model->atnaujinti_ukininka($action, $data);
-                $this->main_model->info['error']['ok'] = "Ūkininko duomenys atnaujinti!";
-            }else{
-                $this->main_model->info['error']['nerasta'] = "Ūkininkas nerastas!";
-            }
+                $this->session->set_flashdata('message', "Ūkininko ".$vardas." ".$pavarde." duomenys atnaujinti!");
+                redirect("ukininkai/sarasas_ukininku"); }
         }
         $banda = $this->ukininkai_model->ukininkas($action);
         $this->main_model->info['txt']['banda'] = $banda[0]['banda'];
@@ -111,25 +127,24 @@ class Ukininkai extends CI_Controller {
     }
 
     public function sarasas_ukininku(){
+
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Ūkininkai";
         $this->main_model->info['txt']['info'] = "Ūkininkų sąrašas";
         $user = $this->ion_auth->user()->row();
         //Nuskaitom ukininku sarasa, kad butu visada po ranka
-        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
+        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id);
         $this->load->view("main_view");
     }
 
 
+
     public function prideti_ukininka(){
+        $klaida = FALSE;
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         $this->form_validation->set_rules('vardas', 'Vardas', 'required',  array('required' => 'Įveskite vardą.'));
         $this->form_validation->set_rules('pavarde', 'Pavardė', 'required', array('required' => 'Įveskite pavardę.'));
-        //$this->form_validation->set_rules('v_vardas', 'Vartotojo vardas', 'required', array('required' => 'Įveskite vartotojo vardą.'));
-        //$this->form_validation->set_rules('slaptazodis', 'Slaptazodis', 'required', array('required' => 'Įveskite slaptazodi.'));
-        //$this->form_validation->set_rules('valdos_nr', 'Valdos numeris', 'required|is_natural',
-           // array('required' => 'Įveskite valdos numerį.', 'is_natural' => 'Valdos numeris tik skaiciai.'));
         $this->form_validation->set_rules('tipas', 'Ūkio tipas', 'required',  array('required' => 'Pasirinkite Ūkio tipą.'));
 
         if ($this->form_validation->run()) {
@@ -153,22 +168,34 @@ class Ukininkai extends CI_Controller {
             $telefonas = $this->input->post('telefonas');
             //sukuriam unikalu ukininko ID
             $valdos_nr = time();
-
-            //cia reik saugikliu, ar JS padaryt kad renkantis tipa, vienu arveju reik, bandos tipo, kitu atveju ne
-            if($tipas == 2){$banda = 0;}
-
+            //paimam, prisijungusio vartotojo duomenis, prie jo priskirsim ukininka
             $user = $this->ion_auth->user()->row();
 
-            $ok = $this->ukininkai_model->tikinti_ukininka($valdos_nr);
-            if($ok>0){
-                $this->main_model->info['error'][] = "TOKS ūkininkas jau yra!";
-            }else{
-                $duomenys = array('vardas' => $vardas , 'pavarde' => $pavarde , 'valdos_nr' => $valdos_nr,
-                    'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis, 'banda' => $banda, 'ukio_tipas' => $tipas, 'user_id' => $user->id,
-                );
-                //$this->ukininkai_model->irasyti_ukininka($duomenys);
-                $this->main_model->info['error'][] = "Naujas ukininkas pridetas!";}
+            /////////////////////////////// LIKUSIU DUOMENU PATIKRINIMAS ///////////////////////////////////////
 
+            //jei ne gyvulininkyste, bandos nera.
+            if(!$banda){$banda = 0;}
+            //patikrinam, ar pazymeta kad nori ivesti VIC.LT duomenis, jei taip privalo uzpildyti
+            if($vic_lt){
+                if(!$v_vardas){ $this->main_model->info['error'][] = "Neįvestas VIC.LT vartotojo vardas"; $klaida = TRUE;}
+                if(!$slaptazodis){ $this->main_model->info['error'][] = "Neįvestas VIC.LT slaptažodis"; $klaida = TRUE;}
+            }
+            //patikrina ar pasirinkus gyvulininkyste, butu pasirinkta kokia banda turi
+            if($tipas == 0){
+                if(!$banda){$this->main_model->info['error'][] = "Pasirinkote GYVULININKYSTĘ, privalote pasirinkti bandą"; $klaida = TRUE;}
+            }
+            //patikrinam pagal varda, pavarde ar toks ukininkas neegzistuoja
+            $ok = $this->ukininkai_model->tikinti_ukininka($vardas, $pavarde);
+            if($ok>0){
+                $this->main_model->info['error'][] = "TOKS ūkininkas jau yra!, ".$vardas." ".$pavarde."."; $klaida = TRUE;}
+            //jei nera klaidu irasom i duomenu baze
+            if(!$klaida){
+                $duomenys = array('vardas' => $vardas , 'pavarde' => $pavarde , 'valdos_nr' => $valdos_nr,
+                    'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis, 'banda' => $banda, 'ukio_tipas' => $tipas, 'user_id' => $user->id);
+                //ikelti papildomus duomenis
+                $this->ukininkai_model->irasyti_ukininka($duomenys);
+                $this->session->set_flashdata('message', "Naujas ukininkas pridetas!, ".$vardas." ".$pavarde.".");
+            redirect("ukininkai/sarasas_ukininku");}
         }
 
         //sukeliam info, informaciniam meniu

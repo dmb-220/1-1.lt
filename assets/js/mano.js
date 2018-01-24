@@ -5,27 +5,38 @@ function PrintElem(elem) {
 
 //////////////////////////////////////////////// Ukininkai ////////////////////////////////////////////////////////////
 $(document).ready(function() {
+    var vic_lt = '#vic_lt';
+    var papildomi = '#papildomi';
+
     //jei turi VIC.LT, pazymi ir gali suvesti prisijungimo duomenis
-    $('#vic_lt').change(function() {
+    $(vic_lt).change(function() {
         if($(this).is(":checked")) {
             $("#in_vic_lt").show();
         } else {
             $("#in_vic_lt").hide();
-            $('#v_vardas').val('');
-            $('#slaptazodis').val('');
         }
     });
 
-    $('#papildomi').change(function() {
+    $(papildomi).change(function() {
         if($(this).is(":checked")) {
             $("#in_papildomi").show();
         } else {
             $("#in_papildomi").hide();
-            //jei reikes isvalyti INPUT, padarysiu veliau
-            //$('#v_vardas').val('');
-            //$('#slaptazodis').val('');
         }
     });
+
+    //jei yra klaidu, persikrauna FORMA. jei buvo pazymeta, lieka ir atsidaro tie laukai
+    if($('#vic_lt').is(":checked")) {
+        $("#in_vic_lt").show();}
+
+    if($('#papildomi').is(":checked")) {
+        $("#in_papildomi").show();}
+
+    if($("input:radio[name=tipas][value='0']").is(":checked")){
+        $("#in_galviju_banda").show();
+    }
+
+
     //pagal ukio tipa, atsiranda pasirinkimas, pakolkas gyvulininkyste skirstoma i bandas
     $('input[type=radio][name=tipas]').change(function() {
         if (this.value == '0') {
@@ -36,7 +47,7 @@ $(document).ready(function() {
     });
 
 });
-
+////////////////////////////////////////////////////////////////////// SENAS KODAS /////////////////////////////////////////////////////////////
 //permeta duomenis i MODAL
 $('#prideti').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
