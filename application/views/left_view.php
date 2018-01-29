@@ -2,11 +2,10 @@
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
             <?php $dt = $this->session->userdata(); ?>
-
             <li class="nav-header">
                 <div class="dropdown profile-element">
                     <span>
-                        <img alt="image" class="img-circle" src="<?= base_url(); ?>assets/img\profile_small.jpg">
+                        <img alt="image" class="img-circle" src="<?= base_url(); ?>assets/img/profile_small.jpg">
                     </span>
                     <span class="clear">
                         <span class="block m-t-xs">
@@ -44,13 +43,11 @@
                         <a href="<?= base_url(); ?>buhalterija/buhalterija"><i class="fa fa-calculator"></i><span class="nav-label">Buhalterinė apskaita</span></a>
                     </li>
 
-                    <!--<li>
+                    <!-- <li>
                         <a href="<?= base_url(); ?>zalia_knyga/knyga"><i class="fa fa-bars"></i> <span class="nav-label">Didžioji Knyga</span></a>
                     </li> -->
 
-                    <?php
-                }
-                ?>
+                    <?php } ?>
 
                 <?php if($act == 'sutartys'){echo'<li class="active">';}else{echo'<li>';} ?>
                 <a href="#"><i class="fa fa-keyboard-o"></i> <span class="nav-label">Sutartys</span><span class="fa arrow"></span></a>
@@ -70,6 +67,7 @@
                 <?php if($act == 'galvijai'){echo'<li class="active">';}else{echo'<li>';} ?>
                 <a href="#"><i class="fa fa-paw"></i> <span class="nav-label">Galvijai</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
+                    <li><a href="<?= base_url(); ?>galvijai/pradinis"><i class="fa fa-briefcase"></i>Pradinis (DEMO)</a></li>
                     <li><a href="<?= base_url(); ?>galvijai/nuskaityti_vic"><i class="fa fa-plus"></i> Įtraukti iš VIC.LT</a></li>
                     <li><a href="<?= base_url(); ?>galvijai/gyvuliu_sarasas"><i class="fa fa-list"></i> Galvijų sąrašas</a></li>
                     <li><a href="<?= base_url(); ?>galvijai/skaiciuoti_gyvulius"><i class="fa fa-table"></i> Skaičiuoti galvijus</a></li>

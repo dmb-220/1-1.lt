@@ -304,7 +304,7 @@ class Galvijai_model extends CI_Model{
     //parsinam duomenis ir HTMl failu apie gyvulius
     public function Visi_gyvunai($url){
         $dom = new DOMDocument();
-        @$html = $dom->loadHTML($url);
+        @$dom->loadHTML($url);
         $dom->preserveWhiteSpace = false;
         //the table by its tag name
         $tables = $dom->getElementsByTagName('table');
@@ -339,7 +339,7 @@ class Galvijai_model extends CI_Model{
 
     public function Gyvi_gyvunai($url){
         $dom = new DOMDocument();
-        @$html = $dom->loadHTML($url);
+        @$dom->loadHTML($url);
         $dom->preserveWhiteSpace = false;
         //the table by its tag name
         $tables = $dom->getElementsByTagName('table');

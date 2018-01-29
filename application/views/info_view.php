@@ -1,14 +1,10 @@
 
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-10">
+    <div class="col-lg-12">
         <h2><?php echo $this->main_model->info['txt']['meniu']; ?></h2>
         <ol class="breadcrumb">
             <?php echo $this->main_model->info['txt']['info']; ?>
         </ol>
-    </div>
-
-    <div class="spin-icon">
-        <i class="fa fa-cogs fa-spin"></i>
     </div>
 </div>
 

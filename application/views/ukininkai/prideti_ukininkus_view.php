@@ -145,24 +145,28 @@
                         <div class="form-group">
                             <label for="asmens_kodas" class="col-md-2 control-label">Asmens kodas:</label>
                             <div class="col-md-10">
+                                <?php echo form_error('asmens_kodas'); ?>
                                 <input name="asmens_kodas" type="text" class="form-control" placeholder="Asmens kodas" value="<?php echo set_value('asmens_kodas'); ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="pvm" class="col-md-2 control-label">PVM kodas:</label>
                             <div class="col-md-10">
+                                <?php echo form_error('pvm'); ?>
                                 <input name="pvm" type="text" class="form-control" placeholder="PVM kodas">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="adresas" class="col-md-2 control-label">Adresas:</label>
                             <div class="col-md-10">
+                                <?php echo form_error('adresas'); ?>
                                 <textarea class="form-control" name="adresas"  rows="3" placeholder="Adresas"><?php echo set_value('adresas'); ?></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="numeris" class="col-md-2 control-label">Sąskaitos numeris:</label>
                             <div class="col-md-10">
+                                <?php echo form_error('numeris'); ?>
                                 <input name="numeris" type="text" class="form-control" placeholder="Sąskaitos numeris" value="<?php echo set_value('numeris'); ?>">
                             </div>
                         </div>

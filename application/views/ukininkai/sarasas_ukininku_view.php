@@ -17,8 +17,8 @@
                 </a>
                 <div class="contact-box-footer">
                     <div class="m-t-xs btn-group">
-                        <a class="btn btn-xs btn-white" href="<?php echo"redaguoti/".$row['valdos_nr']; ?>"><i class="glyphicon glyphicon-pencil"></i> Redaguoti </a>
-                        <a class="btn btn-xs btn-white" href="<?php echo"istrinti/".$row['valdos_nr']; ?>"><i class="glyphicon glyphicon-remove"></i> Ištrinti </a>
+                        <a class="btn btn-sm btn-info" href="<?php echo"redaguoti/".$row['valdos_nr']; ?>"><i class="glyphicon glyphicon-pencil"></i> Redaguoti </a>
+                        <a class="btn btn-sm btn-warning" href="<?php echo"istrinti/".$row['valdos_nr']; ?>"><i class="glyphicon glyphicon-remove"></i> Ištrinti </a>
                     </div>
                 </div>
 

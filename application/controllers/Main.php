@@ -56,10 +56,21 @@ class Main extends CI_Controller {
         $this->main_model->info['txt']['info'] = "Čia pateikiama visa reikalinga informacija, kurios pagalba, bus lengva pateikti duomenis, keisti nustatymus. ";
 
         $user = $this->ion_auth->user()->row();
-        //Nuskaitom ukininku sarasa, kad butu visada po ranka
-        $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
 
-		$this->load->view('main_view');
+        //Nuskaitom ukininku sarasa, kad butu visada po ranka
+        $sarasas = $this->ukininkai_model->ukininku_sarasas( $user->id);
+        //gimtadieniai
+        $gimta = array();
+        foreach ($sarasas as $row){
+            $metai = substr($row['asmens_kodas'], 1, 2);
+            $menuo = substr($row['asmens_kodas'], 3, 2);
+            $diena = substr($row['asmens_kodas'], 5, 2);
+            $gimta[] = array("vardas" => $row['vardas'], 'pavarde' => $row['pavarde'],
+                'metai' => $metai, 'menuo' => $menuo, 'diena' => $diena);
+        }
+        $this->main_model->info['ukininkai'] = $sarasas;
+
+		$this->load->view('main_view', array('gimta' => $gimta));
 	}
 
 

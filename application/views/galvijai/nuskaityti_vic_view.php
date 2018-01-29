@@ -1,4 +1,4 @@
-<div class="wrapper wrapper-content animated fadeInRight">
+<div class="wrapper wrapper-content">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>Pasirinkite laikotarpį (VIC.LT)</h5>

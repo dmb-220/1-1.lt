@@ -58,6 +58,17 @@ class Ukininkai_model extends CI_Model{
         return $data;
     }
 
+    //nuskaitom visus ukininkus, jei reiksme TRUE, paimam tik pagrindinius duomenis
+    public function ukininku_sarasas_galvijai($id = "", $ar = ""){
+        if($ar){
+            $this->db->select('vardas, pavarde, valdos_nr');}
+        if($id){
+            $this->db->where(array('user_id' => $id, 'viclt' => '0'));}
+        $query = $this->db->get("ukininkai");
+        $data = $query->result_array();
+        return $data;
+    }
+
     //gaunam informacija apie konkretu ukininka
     public function ukininkas($nr){
         $this->db->from('ukininkai');

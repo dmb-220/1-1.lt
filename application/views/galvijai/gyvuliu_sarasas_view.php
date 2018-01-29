@@ -1,4 +1,4 @@
-<div class="wrapper wrapper-content animated fadeInRight">
+<div class="wrapper wrapper-content">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>Pasirinkite laikotarpį</h5>
@@ -14,9 +14,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label">Ūkininkas</label>
                         <div class="col-md-6">
-                            <?php echo form_error('ukininko_vardas');
+                            <?php echo form_error('ukininkas');
                             if($dt['vardas'] == "" AND $dt['pavarde'] == "") { ?>
-                                <select name="ukininko_vardas" class="form-control">
+                                <select name="ukininkas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php
                                     foreach ($this->main_model->info['ukininkai'] as $row) {

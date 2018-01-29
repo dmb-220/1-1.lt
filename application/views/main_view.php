@@ -6,9 +6,7 @@
     <meta name="description" content="Ūkininkų buhalterijos vedimas, gyvulių, pasėlių ir pašarų skaičiavimas">
     <meta name="author" content="Andrius Norkus (DMB-220)">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <?php $action = $this->uri->segment(2); ?>
-
     <title>1-1.LT | Administracija</title>
     <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>assets\euro.ico" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -27,8 +25,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body class="md-skin">
-<div id="wrapper">
 <?php
+//istrinsim top-navigation ir atkomentuosim left_view
 //uzkraunam meniu
 $this->load->view('left_view');
 ?>
@@ -46,6 +44,7 @@ $this->load->view('left_view');
             case "redaguoti": $this->load->view("ukininkai/redaguoti_view"); break;
             case "profilis": $this->load->view("ukininkai/profilis_view"); break;
             //Gyvuliai
+            case "pradinis": $this->load->view("galvijai/pradinis_view"); break;
             case "ikelti_duomenis": $this->load->view("galvijai/ikelti_gyvulius_view"); break;
             case "skaiciuoti_gyvulius": $this->load->view("galvijai/skaiciuoti_gyvulius_view"); break;
             case "gyvuliu_sarasas": $this->load->view("galvijai/gyvuliu_sarasas_view"); break;
@@ -95,8 +94,6 @@ $this->load->view('left_view');
     //$this->load->view("chat_view");
     //$this->load->view("sidebar_view");
     ?>
-</div>
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\metisMenu\jquery.metisMenu.js"></script>
 <script src="<?= base_url(); ?>assets\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
@@ -106,10 +103,13 @@ $this->load->view('left_view');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 <!-- mano JS -->
 <script src="<?= base_url(); ?>assets\js\mano.js"></script>
-<!-- skaiciuokles programa, kad uzsipildytu laukeliai su informacija, kuria paduosim, formajant sutati -->
+<!-- skaiciuokles programa, kad uzsipildytu laukeliai su informacija, kuria paduosim, formajant sutarti -->
 <?php if($action == 'skaitciuokle'){ ?>
     <script src="<?= base_url(); ?>assets/js/bootstrap-number-input.js"></script>
     <script src="<?= base_url(); ?>assets/js/skaitciuokle.js"></script>
+<?php }
+if($action == 'pradinis'){ ?>
+    <script src="<?= base_url(); ?>assets/js/galvijai.js"></script>
 <?php } ?>
 
 <script type="text/javascript">
@@ -120,24 +120,6 @@ $this->load->view('left_view');
         window.print();
         document.body.innerHTML = originalContents;
     }
-
-    $('#data_1 .input-group.date').datepicker({
-        weekStart: 1,
-        defaultViewDate: "today",
-        keyboardNavigation: false,
-        forceParse: false,
-        autoclose: true,
-        format: "yyyy-mm-dd"
-    });
-
-    $('#data_2 .input-group.date').datepicker({
-        weekStart: 1,
-        defaultViewDate: "today",
-        keyboardNavigation: false,
-        forceParse: false,
-        autoclose: true,
-        format: "yyyy-mm-dd"
-    });
 
     $('#data_knyga .input-group.date').datepicker({
         weekStart: 1,

@@ -110,7 +110,7 @@ class Ukininkai extends CI_Controller {
             if(!$klaida){
                 $data = array('vardas' => $vardas, 'pavarde' => $pavarde, 'VIC_vartotojo_vardas' => $vartotojas, 'VIC_slaptazodis' => $slaptazodis,
                     'asmens_kodas' => $asmens_kodas, 'adresas' => $adresas, 'saskaitos_nr' => $numeris, 'bankas' => $bankas, 'email' => $email,
-                    'telefonas' => $telefonas, 'pvm_kodas' => $pvm, 'ukio_tipas' => $tipas, 'banda' => $banda);
+                    'telefonas' => $telefonas, 'pvm_kodas' => $pvm, 'ukio_tipas' => $tipas, 'banda' => $banda, 'viclt' => !$vic_lt);
                 $this->ukininkai_model->atnaujinti_ukininka($action, $data);
                 $this->session->set_flashdata('message', "Ūkininko ".$vardas." ".$pavarde." duomenys atnaujinti!");
                 redirect("ukininkai/sarasas_ukininku"); }
@@ -183,15 +183,16 @@ class Ukininkai extends CI_Controller {
             //patikrina ar pasirinkus gyvulininkyste, butu pasirinkta kokia banda turi
             if($tipas == 0){
                 if(!$banda){$this->main_model->info['error'][] = "Pasirinkote GYVULININKYSTĘ, privalote pasirinkti bandą"; $klaida = TRUE;}
-            }
+            }else{$banda = 0;}
             //patikrinam pagal varda, pavarde ar toks ukininkas neegzistuoja
             $ok = $this->ukininkai_model->tikinti_ukininka($vardas, $pavarde);
             if($ok>0){
                 $this->main_model->info['error'][] = "TOKS ūkininkas jau yra!, ".$vardas." ".$pavarde."."; $klaida = TRUE;}
             //jei nera klaidu irasom i duomenu baze
             if(!$klaida){
-                $duomenys = array('vardas' => $vardas , 'pavarde' => $pavarde , 'valdos_nr' => $valdos_nr,
-                    'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis, 'banda' => $banda, 'ukio_tipas' => $tipas, 'user_id' => $user->id);
+                $duomenys = array('vardas' => $vardas, 'pavarde' => $pavarde,'valdos_nr' => $valdos_nr, 'VIC_vartotojo_vardas' => $v_vardas, 'VIC_slaptazodis' => $slaptazodis,
+                    'asmens_kodas' => $asmens_kodas, 'adresas' => $adresas, 'saskaitos_nr' => $numeris, 'bankas' => $bankas, 'email' => $email,
+                    'telefonas' => $telefonas, 'pvm_kodas' => $pvm, 'ukio_tipas' => $tipas, 'banda' => $banda, 'user_id' => $user->id, 'viclt' => !$vic_lt);
                 //ikelti papildomus duomenis
                 $this->ukininkai_model->irasyti_ukininka($duomenys);
                 $this->session->set_flashdata('message', "Naujas ukininkas pridetas!, ".$vardas." ".$pavarde.".");
