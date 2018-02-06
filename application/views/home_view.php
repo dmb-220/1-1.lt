@@ -1,5 +1,20 @@
 <div class="wrapper wrapper-content">
     <div class="row">
+        <div class="col-md-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>INFORMACIJA</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        <a class="close-link"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <h1>Ūkininku duomenys uz 2018 sausi yra sukelti</h1>
+                    <h2>Įkeliant sausio menesio ūkininku duomenis pasirodo pas ZITA DARGIENE atsirado, 2017 gruozio menesi pakeitimu su galviju judejimu. pasiziurekit ar gerus duomenis turite?</h2>
+                </div>
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">

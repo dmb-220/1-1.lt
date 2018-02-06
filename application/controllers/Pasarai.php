@@ -22,6 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Ion_auth           $ion_auth           Ion_auth library
  */
 class Pasarai extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
@@ -37,6 +38,10 @@ class Pasarai extends CI_Controller{
             redirect('main/auth_error');
         }
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////// NAUJA //////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////////////////////// SENA /////////////////////////////////////////////////////////////////////////////
 
     public function priesvoris(){
         //sita sutvarkyti

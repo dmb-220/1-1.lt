@@ -1,7 +1,3 @@
-<?php
-$menesiai = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsejis", "Spalis","Lapkritis", "Gruodis");
-?>
-
 <div class="ibox float-e-margins">
     <div class="ibox-title">
         <h5>Gyvulių sąrašas</h5>
@@ -12,8 +8,15 @@ $menesiai = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Biržel
     </div>
     <div class="ibox-content">
         <?php
-        if(count($gyvu)>0){
-        ?>
+        //isvedamos klaidos
+        if(count($this->main_model->info['error']) > 0){
+            foreach ($this->main_model->info['error'] as $klaida){
+                echo'<div class="alert alert-danger">';
+                echo $klaida;
+                echo '</div>';
+            }
+        }else{
+            ?>
         <div class="table-responsive">
             <div class="text-center">
                 <h4><strong>GYVULIŲ SĄRAŠAS
@@ -27,7 +30,7 @@ $menesiai = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Biržel
             <div class="pull-right">
                 <?php
                 $num_day = @cal_days_in_month(CAL_GREGORIAN, $this->main_model->info['txt']['menesis'], $this->main_model->info['txt']['metai']);
-                echo $this->main_model->info['txt']['metai']." ".$menesiai[$this->main_model->info['txt']['menesis']-1]." 1 - ".$num_day;
+                echo $this->main_model->info['txt']['metai']." ".$this->main_model->menesiai[$this->main_model->info['txt']['menesis']-1]." 1 - ".$num_day;
                 ?>
             </div>
             <hr>
@@ -94,7 +97,7 @@ $menesiai = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Biržel
             </table>
         </div>
         <?php
-        }else{echo"Galvijai nerasti!";}
+        }
         ?>
     </div>
 </div>

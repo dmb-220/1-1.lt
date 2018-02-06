@@ -30,6 +30,7 @@ class Galvijai extends CI_Controller {
         //uzkraunam MODEL
         $this->load->model('ukininkai_model');
         $this->load->model('galvijai_model');
+        $this->load->model('pasarai_model');
         $this->load->model('main_model');
 
         $this->load->library('linksniai');
@@ -47,6 +48,9 @@ class Galvijai extends CI_Controller {
 
     //PRADINIS PUSLAPIS
     public function pradinis(){
+        //nuskaitom pasarus
+        $this->main_model->info['pasarai'] = $this->pasarai_model->nuskaityti_viska();
+
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Galvijai";
         $this->main_model->info['txt']['info'] = "Pradinis puslapis";
@@ -57,8 +61,684 @@ class Galvijai extends CI_Controller {
         $this->load->view("main_view");
     }
 
+    public function tuscias(){
+        $this->load->view("galvijai/empty");
+    }
+
     public function aprasymas(){
         $this->load->view("galvijai/aprasymas");
+    }
+
+    public function ganykliniai_pasarai(){
+        $laiko = array();
+
+        $mesl = array(
+            'karves' => '65',
+            'telycios' => '50',
+            'buliai' => '55',
+            'verseliai' => '35',
+        );
+
+        $arr = array(
+            '5', '6', '7', '8', '9',
+        );
+
+        $sesija = $this->session->userdata();
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        $this->form_validation->set_rules('ukininkas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+        $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
+        //$this->form_validation->set_rules('rinktis', 'Skaiciavimas', 'required', array('required' => 'Pasirinkite skaičiavimo metodą.'));
+        //$this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
+
+
+        if ($this->form_validation->run()) {
+            $ukininkas = $this->input->post('ukininkas');
+            $metai = $this->input->post('metai');
+            $menesis = $this->input->post('menesis');
+            $laikotarpis = $this->input->post('laikotarpis');
+
+            //nuskaitom ukininko duomenis
+            $ukis = $this->ukininkai_model->ukininkas($ukininkas);
+            if (count($ukis) > 0) {
+                //jei sesijos duomenis neatitinka su pasirinktu ukininku, atnaujinam sesijos informacija
+                if ($sesija['nr'] != $ukininkas) {
+                    $new = array('vardas' => $ukis[0]['vardas'], 'pavarde' => $ukis[0]['pavarde'], 'nr' => $ukininkas);
+                    $this->session->set_userdata($new);
+                }
+                //sukeliam informacija kuria naudosim
+                $this->main_model->info['txt']['vardas'] = $ukis[0]['vardas'];
+                $this->main_model->info['txt']['pavarde'] = $ukis[0]['pavarde'];
+                $this->main_model->info['txt']['metai'] = $metai;
+                $this->main_model->info['txt']['menesis'] = $menesis;
+
+                //patikrinam kokie pasirinkimai yra, kad maziau nesusipratimu skaiciuojant
+                if (!$menesis AND !$laikotarpis) {
+                    $this->main_model->info['error'][] = "Pasirinkite mėnesį arba laikotarpį kuriam skaičiuosime pašarus.";
+                }
+                if ($menesis AND $laikotarpis) {
+                    $this->main_model->info['error'][] = "Pasirinkite TIK mėnesį arba TIK laikotarpį kuriam skaičiuosime pašarus.";
+                }
+
+                //skaiciuojam nurodyto menesio pasaru kieki galvijams
+                //nuskaitom visus gyvulius, pasirinkto menesio
+                if ($menesis AND !$laikotarpis) {
+                    if(in_array($menesis, $arr)) {
+                        $day = cal_days_in_month(CAL_GREGORIAN, $menesis, $metai);
+                        $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
+                        $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                        if (count($rezultatai) > 0) {
+                            //apdoroti duomenis prie irasant i masyva
+                            foreach ($rezultatai as $sk) {
+                                $one = explode(" ", $sk['lytis']);
+                                if ($one[0] == "Karvė") {
+                                    $this->galvijai_model->ganykliniai['karves']['kiek']++;
+                                    $this->galvijai_model->ganykliniai['karves']['pasarai'] += $mesl['karves'] * $day;
+                                }
+
+                                if ($one[0] == "Buliukas") {
+                                    if ($sk['amzius'] >= 12) {
+                                        $this->galvijai_model->ganykliniai['buliai']['kiek']++;
+                                        $this->galvijai_model->ganykliniai['buliai']['pasarai'] += $mesl['buliai'] * $day;
+                                    }
+                                    if ($sk['amzius'] < 12) {
+                                        $this->galvijai_model->ganykliniai['verseliai']['kiek']++;
+                                        $this->galvijai_model->ganykliniai['verseliai']['pasarai'] += $mesl['verseliai'] * $day;
+                                    }
+                                }
+                                if ($one[0] == "Telyčaitė") {
+                                    if ($sk['amzius'] >= 12) {
+                                        $this->galvijai_model->ganykliniai['telycios']['kiek']++;
+                                        $this->galvijai_model->ganykliniai['telycios']['pasarai'] += $mesl['telycios'] * $day;
+                                    }
+                                    if ($sk['amzius'] < 12) {
+                                        $this->galvijai_model->ganykliniai['verseliai']['kiek']++;
+                                        $this->galvijai_model->ganykliniai['verseliai']['pasarai'] += $mesl['verseliai'] * $day;
+                                    }
+                                }
+                            }
+
+                        } else {$this->main_model->info['error'][] = $metai . " " . $this->main_model->menesiai[$menesis - 1] . " galvjų nerasta, negalime apskaičiuoti galvijų meslo!";}
+                    }else{$this->main_model->info['error'][] = $metai . " " . $this->main_model->menesiai[$menesis - 1] . " Negalite apskaičiuoti ganyklinių pašarų. Galvijai vis dar tvarte!";}
+                }
+                //var_dump($this->input->post());
+                if(!$menesis AND $laikotarpis){
+                    if($laikotarpis == 1){
+                        $laiko = array(5, 6, 7, 8, 9);
+                        $this->main_model->info['txt']['laikotarpis'] = 'Visas sezonas';}
+                    if($laikotarpis == 2){
+                        $laiko = array(5, 6);
+                        $this->main_model->info['txt']['laikotarpis'] = 'II ketvirtis';}
+                    if($laikotarpis == 3){
+                        $laiko = array(7, 8, 9);
+                        $this->main_model->info['txt']['laikotarpis'] = 'II ketvirtis';}
+
+                    if(is_array($laiko)){
+                        foreach($laiko as $lk){
+                            //var_dump($lk);
+                            $day = cal_days_in_month(CAL_GREGORIAN, $lk, $metai);
+                            //nuskaitom visus gyvulius, pasirinkto menesio
+                            $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $lk);
+                            $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
+
+                            if (count($rezultatai) > 0) {
+                                foreach ($rezultatai as $sk) {
+                                    $one = explode(" ", $sk['lytis']);
+                                    if ($one[0] == "Karvė") {
+                                        $this->galvijai_model->ganykliniai['karves']['kiek']++;
+                                        $this->galvijai_model->ganykliniai['karves']['pasarai'] += $mesl['karves']*$day;
+                                    }
+
+                                    if ($one[0] == "Buliukas") {
+                                        if ($sk['amzius'] >= 12) {
+                                            $this->galvijai_model->ganykliniai['buliai']['kiek']++;
+                                            $this->galvijai_model->ganykliniai['buliai']['pasarai'] += $mesl['buliai']*$day;
+                                        }
+                                        if ($sk['amzius'] < 12) {
+                                            $this->galvijai_model->ganykliniai['verseliai']['kiek']++;
+                                            $this->galvijai_model->ganykliniai['verseliai']['pasarai'] += $mesl['verseliai']*$day;
+                                        }
+                                    }
+                                    if ($one[0] == "Telyčaitė") {
+                                        if ($sk['amzius'] >= 12) {
+                                            $this->galvijai_model->ganykliniai['telycios']['kiek']++;
+                                            $this->galvijai_model->ganykliniai['telycios']['pasarai'] += $mesl['telycios']*$day;
+                                        }
+                                        if ($sk['amzius'] < 12) {
+                                            $this->galvijai_model->ganykliniai['verseliai']['kiek']++;
+                                            $this->galvijai_model->ganykliniai['verseliai']['pasarai'] += $mesl['verseliai']*$day;
+                                        }
+                                    }
+                                }
+                            }else{$this->main_model->info['error'][] = $metai." ".$this->main_model->menesiai[$lk-1]." galvjų nerasta, negalime apskaičiuoti galvijų ganyklinių pašarų!";}
+                        }
+                    }
+                }
+            }else{$this->main_model->info['error'][] = "Ūkininkas neegzistuoja, ar / arba klaidos sistemoje, praneškite adminitratoriui!";}
+        }else{$this->main_model->info['error'][] = "Problemos, nepasirinktas ukininkas, blogi metai, ar menesis";}
+        //die;
+        $this->load->view("galvijai/ganykliniai_pasarai");
+    }
+
+    public function  skaiciuoti_priesvori(){
+    $svoris = array(
+        //'karves' => '0',
+        'telycios_1_2' => '12',
+        'telycios_2' => '9',
+        'buliai_1_2' => '16',
+        'buliai_2' => '18',
+        'verseliai' => '20',
+    );
+
+    $sesija = $this->session->userdata();
+
+    $this->load->library('form_validation');
+    $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+    $this->form_validation->set_rules('ukininkas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+    $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
+    $this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
+
+    if ($this->form_validation->run()) {
+        $ukininkas = $this->input->post('ukininkas');
+        $metai = $this->input->post('metai');
+        $menesis = $this->input->post('menesis');
+        //nuskaitom ukininko duomenis
+        $ukis = $this->ukininkai_model->ukininkas($ukininkas);
+        if (count($ukis) > 0) {
+            //jei sesijos duomenis neatitinka su pasirinktu ukininku, atnaujinam sesijos informacija
+            if ($sesija['nr'] != $ukininkas) {
+                $new = array('vardas' => $ukis[0]['vardas'], 'pavarde' => $ukis[0]['pavarde'], 'nr' => $ukininkas);
+                $this->session->set_userdata($new);
+            }
+            //sukeliam informacija kuria naudosim
+            $this->main_model->info['txt']['vardas'] = $ukis[0]['vardas'];
+            $this->main_model->info['txt']['pavarde'] = $ukis[0]['pavarde'];
+            $this->main_model->info['txt']['metai'] = $metai;
+            $this->main_model->info['txt']['menesis'] = $menesis;
+
+            //skaiciuojam nurodyto menesio pasaru kieki galvijams
+            //nuskaitom visus gyvulius, pasirinkto menesio
+            $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
+            $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
+
+            if (count($rezultatai) > 0) {
+                //suskaiciuoti lenteleje, viso kiekius
+                foreach ($rezultatai as $sk) {
+                    $one = explode(" ", $sk['lytis']);
+                    /*if($one[0] == "Karvė"){
+                        $gyvu['karves']['pradzia']++;
+                    }*/
+
+                    if ($one[0] == "Buliukas") {
+                        if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                            $this->galvijai_model->priesvoris['buliai_1_2']['kiek']++;
+                            $this->galvijai_model->priesvoris['buliai_1_2']['svoris'] += $svoris['buliai_1_2'];
+                        }
+                        if ($sk['amzius'] >= 24) {
+                            $this->galvijai_model->priesvoris['buliai_2']['kiek']++;
+                            $this->galvijai_model->priesvoris['buliai_2']['svoris'] += $svoris['buliai_2'];
+                        }
+                        if ($sk['amzius'] < 12 AND $sk['amzius'] != "") {
+                            $this->galvijai_model->priesvoris['verseliai']['kiek']++;
+                            $this->galvijai_model->priesvoris['verseliai']['svoris'] += $svoris['verseliai'];
+                        }
+                    }
+
+                    if ($one[0] == "Telyčaitė") {
+                        if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                            $this->galvijai_model->priesvoris['telycios_1_2']['kiek']++;
+                            $this->galvijai_model->priesvoris['telycios_1_2']['svoris'] += $svoris['telycios_1_2'];
+                        }
+                        if ($sk['amzius'] >= 24) {
+                            $this->galvijai_model->priesvoris['telycios_2']['kiek']++;
+                            $this->galvijai_model->priesvoris['telycios_2']['svoris'] += $svoris['telycios_2'];
+                        }
+                        if ($sk['amzius'] < 12 AND $sk['amzius'] != "") {
+                            $this->galvijai_model->priesvoris['verseliai']['kiek']++;
+                            $this->galvijai_model->priesvoris['verseliai']['svoris'] += $svoris['verseliai'];
+                        }
+                    }
+                }
+            }else{$this->main_model->info['error'][] = $metai." ".$this->main_model->menesiai[$menesis-1]." galvjų nerasta, negalime apskaičiuoti galvijų priesvorio!";}
+        }else{$this->main_model->info['error'][] = "Ūkininkas neegzistuoja, ar / arba klaidos sistemoje, praneškite adminitratoriui!";}
+    }else{$this->main_model->info['error'][] = "Problemos, nepasirinktas ukininkas, blogi metai, ar menesis";}
+
+    $this->load->view("galvijai/skaiciuoti_priesvori");
+}
+
+    public function  skaiciuoti_meslus(){
+        $laiko = array();
+        //svoris per  1 men, tonomis
+        $mesl = array(
+            'karves' => '0.53',
+            'telycios' => '0.53',
+            'buliai' => '0.5',
+            'verseliai' => '0.25',
+        );
+
+        $arr = array(
+            '10', '11', '12', '1', '2', '3', '4'
+        );
+
+        $sesija = $this->session->userdata();
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        $this->form_validation->set_rules('ukininkas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+        $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
+        //$this->form_validation->set_rules('rinktis', 'Skaiciavimas', 'required', array('required' => 'Pasirinkite skaičiavimo metodą.'));
+        //$this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
+
+        //var_dump($this->input->post()); die;
+
+        if ($this->form_validation->run()) {
+            $ukininkas = $this->input->post('ukininkas');
+            $metai = $this->input->post('metai');
+            $menesis = $this->input->post('menesis');
+            $laikotarpis = $this->input->post('laikotarpis');
+
+            //nuskaitom ukininko duomenis
+            $ukis = $this->ukininkai_model->ukininkas($ukininkas);
+            if (count($ukis) > 0) {
+                //jei sesijos duomenis neatitinka su pasirinktu ukininku, atnaujinam sesijos informacija
+                if ($sesija['nr'] != $ukininkas) {
+                    $new = array('vardas' => $ukis[0]['vardas'], 'pavarde' => $ukis[0]['pavarde'], 'nr' => $ukininkas);
+                    $this->session->set_userdata($new);
+                }
+                //sukeliam informacija kuria naudosim
+                $this->main_model->info['txt']['vardas'] = $ukis[0]['vardas'];
+                $this->main_model->info['txt']['pavarde'] = $ukis[0]['pavarde'];
+                $this->main_model->info['txt']['metai'] = $metai;
+                $this->main_model->info['txt']['menesis'] = $menesis;
+
+                //patikrinam kokie pasirinkimai yra, kad maziau nesusipratimu skaiciuojant
+                if (!$menesis AND !$laikotarpis) {
+                    $this->main_model->info['error'][] = "Pasirinkite mėnesį arba laikotarpį kuriam skaičiuosime pašarus.";
+                }
+                if ($menesis AND $laikotarpis) {
+                    $this->main_model->info['error'][] = "Pasirinkite TIK mėnesį arba TIK laikotarpį kuriam skaičiuosime pašarus.";
+                }
+
+                //skaiciuojam nurodyto menesio pasaru kieki galvijams
+                //nuskaitom visus gyvulius, pasirinkto menesio
+                if ($menesis AND !$laikotarpis) {
+                    if(in_array($menesis, $arr)) {
+                        $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
+                        $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                        if (count($rezultatai) > 0) {
+                            //apdoroti duomenis prie irasant i masyva
+                            foreach ($rezultatai as $sk) {
+                                $one = explode(" ", $sk['lytis']);
+                                if ($one[0] == "Karvė") {
+                                    $this->galvijai_model->meslas['karves']['kiek']++;
+                                    $this->galvijai_model->meslas['karves']['meslas'] += $mesl['karves'];
+                                }
+
+                                if ($one[0] == "Buliukas") {
+                                    if ($sk['amzius'] >= 12) {
+                                        $this->galvijai_model->meslas['buliai']['kiek']++;
+                                        $this->galvijai_model->meslas['buliai']['meslas'] += $mesl['buliai'];
+                                    }
+                                    if ($sk['amzius'] < 12) {
+                                        $this->galvijai_model->meslas['verseliai']['kiek']++;
+                                        $this->galvijai_model->meslas['verseliai']['meslas'] += $mesl['verseliai'];
+                                    }
+                                }
+                                if ($one[0] == "Telyčaitė") {
+                                    if ($sk['amzius'] >= 12) {
+                                        $this->galvijai_model->meslas['telycios']['kiek']++;
+                                        $this->galvijai_model->meslas['telycios']['meslas'] += $mesl['telycios'];
+                                    }
+                                    if ($sk['amzius'] < 12) {
+                                        $this->galvijai_model->meslas['verseliai']['kiek']++;
+                                        $this->galvijai_model->meslas['verseliai']['meslas'] += $mesl['verseliai'];
+                                    }
+                                }
+                            }
+
+                        } else {$this->main_model->info['error'][] = $metai . " " . $this->main_model->menesiai[$menesis - 1] . " galvjų nerasta, negalime apskaičiuoti galvijų meslo!";}
+                    }else{$this->main_model->info['error'][] = $metai . " " . $this->main_model->menesiai[$menesis - 1] . " Negalite apskaičiuoti mėšlo. Galvijai vis dar lauke!";}
+                }
+                if(!$menesis AND $laikotarpis){
+                    if($laikotarpis == 1){
+                        $laiko = array(10, 11, 12, 1, 2, 3, 4);
+                        $this->main_model->info['txt']['laikotarpis'] = 'Visas sezonas';}
+                    if($laikotarpis == 2){
+                        $laiko = array(10, 11, 12);
+                        $this->main_model->info['txt']['laikotarpis'] = 'IV ketvirtis';}
+                    if($laikotarpis == 3){
+                        $laiko = array(1, 2, 3);
+                        $this->main_model->info['txt']['laikotarpis'] = 'I ketvirtis';}
+                    if($laikotarpis == 4){
+                        $laiko = array(4);
+                        $this->main_model->info['txt']['laikotarpis'] = 'II ketvirtis (tik Balandis)';}
+
+                    if(is_array($laiko)){
+                        foreach($laiko as $lk){
+                            if($lk == 10 || $lk == 11 || $lk == 12){$met = $metai-1;}else{$met = $metai;}
+                            $this->main_model->info['txt']['metai_2'] = $met;
+                            //nuskaitom visus gyvulius, pasirinkto menesio
+                            $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $lk);
+                            $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
+
+                            if (count($rezultatai) > 0) {
+                                foreach ($rezultatai as $sk) {
+                                    $one = explode(" ", $sk['lytis']);
+                                    if ($one[0] == "Karvė") {
+                                        $this->galvijai_model->meslas['karves']['kiek']++;
+                                        $this->galvijai_model->meslas['karves']['meslas'] += $mesl['karves'];
+                                    }
+
+                                    if ($one[0] == "Buliukas") {
+                                        if ($sk['amzius'] >= 12) {
+                                            $this->galvijai_model->meslas['buliai']['kiek']++;
+                                            $this->galvijai_model->meslas['buliai']['meslas'] += $mesl['buliai'];
+                                        }
+                                        if ($sk['amzius'] < 12) {
+                                            $this->galvijai_model->meslas['verseliai']['kiek']++;
+                                            $this->galvijai_model->meslas['verseliai']['meslas'] += $mesl['verseliai'];
+                                        }
+                                    }
+                                    if ($one[0] == "Telyčaitė") {
+                                        if ($sk['amzius'] >= 12) {
+                                            $this->galvijai_model->meslas['telycios']['kiek']++;
+                                            $this->galvijai_model->meslas['telycios']['meslas'] += $mesl['telycios'];
+                                        }
+                                        if ($sk['amzius'] < 12) {
+                                            $this->galvijai_model->meslas['verseliai']['kiek']++;
+                                            $this->galvijai_model->meslas['verseliai']['meslas'] += $mesl['verseliai'];
+                                        }
+                                    }
+                                }
+                            }else{$this->main_model->info['error'][] = $met." ".$this->main_model->menesiai[$lk-1]." galvjų nerasta, negalime apskaičiuoti galvijų mėšlo!";}
+                        }
+                    }
+                }
+            }else{$this->main_model->info['error'][] = "Ūkininkas neegzistuoja, ar / arba klaidos sistemoje, praneškite adminitratoriui!";}
+        }else{$this->main_model->info['error'][] = "Problemos, nepasirinktas ukininkas, blogi metai, ar menesis";}
+
+        $this->load->view("galvijai/skaiciuoti_meslus");
+    }
+
+    public function skaitciuoti_pasarus(){
+        //kintamieji
+        $laiko = array();
+        $num_day = 0;
+        //nerodo ukiniko prie lenteles, jis ir nebutinas?
+        $sesija = $this->session->userdata();
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        $this->form_validation->set_rules('ukininkas', 'Vardas Pavardė', 'required', array('required' => 'Pasirinkite ūkininką.'));
+        $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
+        //$this->form_validation->set_rules('rinktis', 'Skaiciavimas', 'required', array('required' => 'Pasirinkite skaičiavimo metodą.'));
+        //$this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
+        //var_dump($this->input->post()); die;
+        if ($this->form_validation->run()) {
+            $ukininkas = $this->input->post('ukininkas');
+            $metai = $this->input->post('metai');
+            $menesis = $this->input->post('menesis');
+            $laikotarpis = $this->input->post('laikotarpis');
+            $rinktis = $this->input->post('rinktis');
+            //nuskaitom ukininko duomenis
+            $ukis = $this->ukininkai_model->ukininkas($ukininkas);
+            if (count($ukis) > 0) {
+                //jei sesijos duomenis neatitinka su pasirinktu ukininku, atnaujinam sesijos informacija
+                if ($sesija['nr'] != $ukininkas) {
+                    $new = array('vardas' => $ukis[0]['vardas'], 'pavarde' => $ukis[0]['pavarde'], 'nr' => $ukininkas);
+                    $this->session->set_userdata($new);
+                }
+                //sukeliam informacija kuria naudosim
+                $this->main_model->info['txt']['vardas'] = $ukis[0]['vardas'];
+                $this->main_model->info['txt']['pavarde'] = $ukis[0]['pavarde'];
+                $this->main_model->info['txt']['metai'] = $metai;
+                $this->main_model->info['txt']['menesis'] = $menesis;
+                $this->main_model->info['txt']['rinktis'] = $rinktis;
+
+                //patikrinam kokie pasirinkimai yra, kad maziau nesusipratimu skaiciuojant
+                if (!$menesis AND !$laikotarpis) {
+                    $this->main_model->info['error'][] = "Pasirinkite mėnesį arba laikotarpį kuriam skaičiuosime pašarus.";
+                }
+                if ($menesis AND $laikotarpis) {
+                    $this->main_model->info['error'][] = "Pasirinkite TIK mėnesį arba TIK laikotarpį kuriam skaičiuosime pašarus.";
+                }
+
+                //skaiciuojam pasirinkto menesio pasarus
+                if ($menesis AND !$laikotarpis) {
+                    //skaiciuojam nurodyto menesio pasaru kieki galvijams
+                    //nuskaitom visus gyvulius, pasirinkto menesio
+                    $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
+                    $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                    if (count($rezultatai) > 0) {
+
+                        foreach ($rezultatai as $sk) {
+                            $one = explode(" ", $sk['lytis']);
+                            if ($sk['amzius'] != "") {
+                                if ($one[0] == "Karvė") {
+                                    $this->galvijai_model->pasarai['karves']['kiek']++;
+                                }
+                                if ($one[0] == "Buliukas") {
+                                    if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
+                                        $this->galvijai_model->pasarai['buliai_6_12']['kiek']++;
+                                    }
+                                    if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                                        $this->galvijai_model->pasarai['buliai_12_24']['kiek']++;
+                                    }
+                                    if ($sk['amzius'] >= 24) {
+                                        $this->galvijai_model->pasarai['buliai_24']['kiek']++;
+                                    }
+                                    if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
+                                        $this->galvijai_model->pasarai['verseliai_6']['kiek']++;
+                                    }
+                                }
+                                if ($one[0] == "Telyčaitė") {
+                                    if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
+                                        $this->galvijai_model->pasarai['telycios_6_12']['kiek']++;
+                                    }
+                                    if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                                        $this->galvijai_model->pasarai['telycios_12_24']['kiek']++;
+                                    }
+                                    if ($sk['amzius'] >= 24) {
+                                        $this->galvijai_model->pasarai['telycios_24']['kiek']++;
+                                    }
+                                    if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
+                                        $this->galvijai_model->pasarai['verseliai_6']['kiek']++;
+                                    }
+                                }
+                            }
+                        }
+
+                        //skaiciuojam pasarus
+
+                        foreach ($this->galvijai_model->pasarai as $key => $row) {
+                            $duo = $this->pasarai_model->nuskaityti_pasarus($key);
+                            $ke = array_keys($duo[0]);
+                            $this->galvijai_model->pasarai[$key]['pavadinimas'] = $duo[0]['gyvuliai'];
+                            $num_day = cal_days_in_month(CAL_GREGORIAN, $menesis, $metai);
+                            for ($i = 3; $i < 11; $i++) {
+                                if ($duo[0][$ke[$i]] != 0) {
+                                    if (strstr($duo[0][$ke[$i]], '-')) {
+                                        $sie = explode("-", $duo[0][$ke[$i]]);
+                                        $min = $sie[0];
+                                        $vid = ($sie[0] + $sie[1]) / 2;
+                                        $max = $sie[1];
+                                    } else {
+                                        $min = $vid = $max = $duo[0][$ke[$i]];
+                                    }
+                                    //skaiciuojam pasaru kiekius i masyva
+                                    $this->galvijai_model->pasarai[$key][$ke[$i]]['min'] = $this->galvijai_model->pasarai[$key]['kiek'] * $min * $num_day;
+                                    $this->galvijai_model->pasarai[$key][$ke[$i]]['vid'] = $this->galvijai_model->pasarai[$key]['kiek'] * $vid * $num_day;
+                                    $this->galvijai_model->pasarai[$key][$ke[$i]]['max'] = $this->galvijai_model->pasarai[$key]['kiek'] * $max * $num_day;
+                                }
+                            }
+                        }
+
+                        //suskaiciuoti lenteleje, viso kiekius
+                        $keys = array_keys($this->galvijai_model->pasarai['karves']);
+                        foreach ($keys as $ro) {
+                            $sum = $ro;
+                            if ($ro != 'kiek') {
+                                $this->galvijai_model->pasarai['viso'][$ro]['vid'] = @array_reduce($this->galvijai_model->pasarai,
+                                    function ($runningTotal, $record) use ($sum) {
+                                        $runningTotal += $record[$sum]['vid'];
+                                        return $runningTotal;
+                                    }, 0);
+                                $this->galvijai_model->pasarai['viso'][$ro]['min'] = @array_reduce($this->galvijai_model->pasarai,
+                                    function ($runningTotal, $record) use ($sum) {
+                                        $runningTotal += $record[$sum]['min'];
+                                        return $runningTotal;
+                                    }, 0);
+                                $this->galvijai_model->pasarai['viso'][$ro]['max'] = @array_reduce($this->galvijai_model->pasarai,
+                                    function ($runningTotal, $record) use ($sum) {
+                                        $runningTotal += $record[$sum]['max'];
+                                        return $runningTotal;
+                                    }, 0);
+                            } else {
+                                $this->galvijai_model->pasarai['viso'][$ro] = @array_reduce($this->galvijai_model->pasarai,
+                                    function ($runningTotal, $record) use ($sum) {
+                                        $runningTotal += $record[$sum];
+                                        return $runningTotal;
+                                    }, 0);
+                            }
+                        }
+                        $this->galvijai_model->pasarai['viso']['pavadinimas'] = "Viso:";
+                    }else{$this->main_model->info['error'][] = $metai." ".$this->main_model->menesiai[$menesis-1]." galvjų nerasta, negalime apskaičiuoti galvijų pašarų!";}
+                }
+
+                //pradedam skaiciuoti ketvircius ir pusmecius
+                if(!$menesis AND $laikotarpis){
+                    if($laikotarpis == 1){
+                        $laiko = array(1, 2, 3, 4, 5, 6);
+                        $this->main_model->info['txt']['laikotarpis'] = 'I pusmetis';}
+                    if($laikotarpis == 2){
+                        $laiko = array(7, 8, 9, 10, 11, 12);
+                        $this->main_model->info['txt']['laikotarpis'] = 'II pusmetis';}
+                    if($laikotarpis == 3){
+                        $laiko = array(1, 2, 3);
+                        $this->main_model->info['txt']['laikotarpis'] = 'I ketvirtis';}
+                    if($laikotarpis == 4){
+                        $laiko = array(4, 5, 6);
+                        $this->main_model->info['txt']['laikotarpis'] = 'II ketvirtis';}
+                    if($laikotarpis == 5){
+                        $laiko = array(7, 8, 9);
+                        $this->main_model->info['txt']['laikotarpis'] = 'III ketvirtis';}
+                    if($laikotarpis == 6){
+                        $laiko = array(10, 11, 12);
+                        $this->main_model->info['txt']['laikotarpis'] = 'IV ketvirtis';}
+
+                    if(is_array($laiko)){
+                        foreach($laiko as $lk){
+                            //suskaiciuojam kiek dienu turi
+                            $num_day = $num_day + cal_days_in_month(CAL_GREGORIAN, $lk, $metai);
+                            //nuskaitom visus gyvulius, pasirinkto menesio
+                            $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $lk);
+                            $rezultatai = $this->galvijai_model->nuskaityti_gyvulius($dat);
+
+                            if (count($rezultatai) > 0) {
+                                foreach ($rezultatai as $sk) {
+                                    $one = explode(" ", $sk['lytis']);
+                                    if ($one[0] == "Karvė") {
+                                        if ($sk['amzius'] != "") {
+                                            $this->galvijai_model->pasarai['karves']['kiek']++;
+                                        }
+                                    }
+
+                                    if ($one[0] == "Buliukas") {
+                                        if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
+                                            $this->galvijai_model->pasarai['buliai_6_12']['kiek']++;
+                                        }
+                                        if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                                            $this->galvijai_model->pasarai['buliai_12_24']['kiek']++;
+                                        }
+                                        if ($sk['amzius'] >= 24) {
+                                            $this->galvijai_model->pasarai['buliai_24']['kiek']++;
+                                        }
+                                        if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
+                                            $this->galvijai_model->pasarai['verseliai_6']['kiek']++;
+                                        }
+                                    }
+
+                                    if ($one[0] == "Telyčaitė") {
+                                        if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
+                                            $this->galvijai_model->pasarai['telycios_6_12']['kiek']++;
+                                        }
+                                        if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                                            $this->galvijai_model->pasarai['telycios_12_24']['kiek']++;
+                                        }
+                                        if ($sk['amzius'] >= 24) {
+                                            $this->galvijai_model->pasarai['telycios_24']['kiek']++;
+                                        }
+                                        if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
+                                            $this->galvijai_model->pasarai['verseliai_6']['kiek']++;
+                                        }
+                                    }
+                                }
+                            }else{$this->main_model->info['error'][] = $metai." ".$this->main_model->menesiai[$lk-1]." galvjų nerasta, negalime apskaičiuoti galvijų pašarų!";}
+                        }
+                    }
+                    //skaiciuojam pasarus
+                    foreach ($this->galvijai_model->pasarai as $key => $row) {
+                        $duo = $this->pasarai_model->nuskaityti_pasarus($key);
+                        //var_dump($duo);
+                        $ke = array_keys($duo[0]);
+                        $this->galvijai_model->pasarai[$key]['pavadinimas'] = $duo[0]['gyvuliai'];
+                        for ($i = 3; $i < 11; $i++) {
+                            if ($duo[0][$ke[$i]] != 0) {
+                                if (strstr($duo[0][$ke[$i]], '-')) {
+                                    $sie = explode("-", $duo[0][$ke[$i]]);
+                                    $min = $sie[0];
+                                    $vid = ($sie[0] + $sie[1]) / 2;
+                                    $max = $sie[1];
+                                } else {
+                                    $min = $vid = $max = $duo[0][$ke[$i]];
+                                }
+                                //skaiciuojam pasaru kiekius i masyva
+                                $this->galvijai_model->pasarai[$key][$ke[$i]]['min'] = $this->galvijai_model->pasarai[$key]['kiek'] * $min*$num_day;
+                                $this->galvijai_model->pasarai[$key][$ke[$i]]['vid'] = $this->galvijai_model->pasarai[$key]['kiek'] * $vid*$num_day;
+                                $this->galvijai_model->pasarai[$key][$ke[$i]]['max'] = $this->galvijai_model->pasarai[$key]['kiek'] * $max*$num_day;
+                            }
+                        }
+                    }
+                    //suskaiciuoti lenteleje, viso kiekius
+                    $keys = array_keys($this->galvijai_model->pasarai['karves']);
+                    foreach ($keys as $ro) {
+                        $sum = $ro;
+                        if ($ro != 'kiek') {
+                            $this->galvijai_model->pasarai['viso'][$ro]['vid'] = @array_reduce($this->galvijai_model->pasarai,
+                                function ($runningTotal, $record) use ($sum) {
+                                    $runningTotal += $record[$sum]['vid'];
+                                    return $runningTotal;
+                                }, 0);
+                            $this->galvijai_model->pasarai['viso'][$ro]['min'] = @array_reduce($this->galvijai_model->pasarai,
+                                function ($runningTotal, $record) use ($sum) {
+                                    $runningTotal += $record[$sum]['min'];
+                                    return $runningTotal;
+                                }, 0);
+                            $this->galvijai_model->pasarai['viso'][$ro]['max'] = @array_reduce($this->galvijai_model->pasarai,
+                                function ($runningTotal, $record) use ($sum) {
+                                    $runningTotal += $record[$sum]['max'];
+                                    return $runningTotal;
+                                }, 0);
+                        } else {
+                            $this->galvijai_model->pasarai['viso'][$ro] = @array_reduce($this->galvijai_model->pasarai,
+                                function ($runningTotal, $record) use ($sum) {
+                                    $runningTotal += $record[$sum];
+                                    return $runningTotal;
+                                }, 0);
+                        }
+                    }
+                    $this->galvijai_model->pasarai['viso']['pavadinimas'] = "Viso:";
+                }
+
+            }else{$this->main_model->info['error'][] = "Ūkininkas neegzistuoja, ar / arba klaidos sistemoje, praneškite adminitratoriui!";}
+        }else{$this->main_model->info['error'][] = "Problemos, nepasirinktas ukininkas, blogi metai, ar menesis";}
+
+        $this->load->view("galvijai/skaiciuoti_pasarus");
     }
 
     public function galviju_sarasas(){
@@ -76,30 +756,35 @@ class Galvijai extends CI_Controller {
             $menesis = $this->input->post('menesis');
             //nuskaitom ukininko duomenis
             $ukis = $this->ukininkai_model->ukininkas($ukininkas);
-            //jei sesijos duomenis neatitinka su pasirinktu ukininku, atnaujinam sesijos informacija
-            if($sesija['nr'] != $ukininkas){
-                $new = array('vardas' => $ukis[0]['vardas'], 'pavarde' => $ukis[0]['pavarde'], 'nr' => $ukininkas);
-                $this->session->set_userdata($new);
-            }
-            //sukeliam informacija kuria naudosim
-            $this->main_model->info['txt']['vardas'] = $ukis[0]['vardas'];
-            $this->main_model->info['txt']['pavarde'] = $ukis[0]['pavarde'];
-            $this->main_model->info['txt']['metai'] = $metai;
-            $this->main_model->info['txt']['menesis'] = $menesis;
+            if (count($ukis) > 0) {
+                //jei sesijos duomenis neatitinka su pasirinktu ukininku, atnaujinam sesijos informacija
+                if ($sesija['nr'] != $ukininkas) {
+                    $new = array('vardas' => $ukis[0]['vardas'], 'pavarde' => $ukis[0]['pavarde'], 'nr' => $ukininkas);
+                    $this->session->set_userdata($new);
+                }
+                //sukeliam informacija kuria naudosim
+                $this->main_model->info['txt']['vardas'] = $ukis[0]['vardas'];
+                $this->main_model->info['txt']['pavarde'] = $ukis[0]['pavarde'];
+                $this->main_model->info['txt']['metai'] = $metai;
+                $this->main_model->info['txt']['menesis'] = $menesis;
 
-            $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
-            $psl = $this->galvijai_model->nuskaityti_gyvulius($dat);
-            for($i = 0; $i < count($psl); $i++){
-                $gyvu[$i]['numeris'] = $psl[$i]['numeris'];
-                $gyvu[$i]['lytis'] = $psl[$i]['lytis'];
-                $gyvu[$i]['veisle'] = $psl[$i]['veisle'];
-                $gyvu[$i]['gimimo_data'] = $psl[$i]['gimimo_data'];
-                $gyvu[$i]['laikymo_pradzia'] = $psl[$i]['laikymo_pradzia'];
-                $gyvu[$i]['laikymo_pabaiga'] = $psl[$i]['laikymo_pabaiga'];
-                $gyvu[$i]['amzius'] = $psl[$i]['amzius'];
-                $gyvu[$i]['informacija'] = $psl[$i]['informacija'];
-            }
-        }
+                $dat = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis);
+                $psl = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                if(count($psl) > 0) {
+                    for ($i = 0; $i < count($psl); $i++) {
+                        $gyvu[$i]['numeris'] = $psl[$i]['numeris'];
+                        $gyvu[$i]['lytis'] = $psl[$i]['lytis'];
+                        $gyvu[$i]['veisle'] = $psl[$i]['veisle'];
+                        $gyvu[$i]['gimimo_data'] = $psl[$i]['gimimo_data'];
+                        $gyvu[$i]['laikymo_pradzia'] = $psl[$i]['laikymo_pradzia'];
+                        $gyvu[$i]['laikymo_pabaiga'] = $psl[$i]['laikymo_pabaiga'];
+                        $gyvu[$i]['amzius'] = $psl[$i]['amzius'];
+                        $gyvu[$i]['informacija'] = $psl[$i]['informacija'];
+                    }
+                }else{$this->main_model->info['error'][] = $metai." ".$this->main_model->menesiai[$menesis]." galvjų nerasta!";}
+            }else{$this->main_model->info['error'][] = "Ūkininkas neegzistuoja, ar / arba klaidos sistemoje, praneškite adminitratoriui!";}
+        }else{$this->main_model->info['error'][] = "Problemos, nepasirinktas ukininkas, blogi metai, ar menesis";}
+
         $this->load->view("galvijai/galviju_sarasas", array('gyvu' => $gyvu));
     }
 
@@ -116,8 +801,12 @@ class Galvijai extends CI_Controller {
             $ukininkas = $this->input->post('ukininkas');
             $metai = $this->input->post('metai');
             $menesis = $this->input->post('menesis');
+
+            //$rinktis = $this->input->post('rinktis');
             //nuskaitom ukininko duomenis
             $ukis = $this->ukininkai_model->ukininkas($ukininkas);
+            if (count($ukis) == 0) {
+                $this->main_model->info['error'][] = "Ūkininkas neegzistuoja, ar / arba klaidos sistemoje, praneškite adminitratoriui!"; $klaida = TRUE;}
             //jei sesijos duomenis neatitinka su pasirinktu ukininku, atnaujinam sesijos informacija
             if($sesija['nr'] != $ukininkas){
                 $new = array('vardas' => $ukis[0]['vardas'], 'pavarde' => $ukis[0]['pavarde'], 'nr' => $ukininkas);
@@ -130,13 +819,22 @@ class Galvijai extends CI_Controller {
             $this->main_model->info['txt']['metai'] = $metai;
             $this->main_model->info['txt']['menesis'] = $menesis;
             //apskaiciuojam NUO IKI
-            //$num_day = cal_days_in_month(CAL_GREGORIAN, $menesis, $metai);
-            if($menesis < 10){$men = "0".$menesis;}else{$men = $menesis;}
-            $data1 = $metai."-".$men."-01";
-            if($menesis == 12){$met = $metai+1; $men = "01";}else{
-                $met = $metai;  if($menesis < 10){$men = "0".($menesis+1);}else{$men = $menesis+1;}}
-            $data2 = $met."-".$men."-01";
-            //echo $data1; echo" - "; echo $data2; die;
+            //uzkomentuota bandymas pasirinkti skrtungus NUO IKI
+            /*if($rinktis == 1){
+                //$num_day = cal_days_in_month(CAL_GREGORIAN, $menesis, $metai);
+                if($menesis < 10){$men = "0".$menesis;}else{$men = $menesis;}
+                $data1 = $metai."-".$men."-01";
+                if($menesis == 12){$met = $metai+1; $men = "01";}else{
+                    $met = $metai;  if($menesis < 10){$men = "0".($menesis+1);}else{$men = $menesis+1;}}
+                $data2 = $met."-".$men."-01";
+            }*/
+            //if($rinktis == 2){
+                $num_day = cal_days_in_month(CAL_GREGORIAN, $menesis, $metai);
+                if($menesis < 10){$men = "0".$menesis;}else{$men = $menesis;}
+                $data1 = $metai."-".$men."-01";
+                $data2 = $metai."-".$men."-".$num_day;
+            //}
+
             //adresai
             $gyvi_url = "https://www.vic.lt:8102/pls/gris/private.gyvuliu_sarasas";
             $visi_url = "https://www.vic.lt:8102/pls/gris/private.laikytojo_gyvuliai_frame";
@@ -162,20 +860,56 @@ class Galvijai extends CI_Controller {
                 $page2 = $this->galvijai_model->get_VIC($visi_url, $post2, $auth);
                 $data_gyvi = $this->galvijai_model->Gyvi_gyvunai($page['content']);
                 $data_visi = $this->galvijai_model->Visi_gyvunai($page2['content']);
-                //$this->galvijai_model->Irasyti_visus($data_visi, $ukininkas, $metai, $menesis);
-                //$this->galvijai_model->Atnaujinti_visus($data_gyvi, $ukininkas, $metai, $menesis);
-                $this->main_model->info['error'][] = $metai . ' ' . $this->main_model->menesiai[$menesis - 1] . ' galvijai įtraukti į duomenų bazę!';
+                $this->galvijai_model->Irasyti_visus($data_visi, $ukininkas, $metai, $menesis);
+                $this->galvijai_model->Atnaujinti_visus($data_gyvi, $ukininkas, $metai, $menesis);
+                $this->main_model->info['error'][] = 'Nuo '.$data1.' iki '.$data2.', ūkininko '.$ukis[0]['vardas'].' '.$ukis[0]['pavarde'].' galvijai įtraukti į duomenų bazę!';
             }
-        }
+        }else{$this->main_model->info['error'][] = "Problemos, nepasirinktas ukininkas, blogi metai, ar menesis";}
+
         $this->load->view("galvijai/ikelti_duomenis");
     }
 
     public function istrinti_viclt(){
-        var_dump($this->input->post());
-        echo "ISTRINTI"; die;
-        //redirect("pradinis");
-    }
+        $klaida = FALSE;
+        $sesija = $this->session->userdata();
 
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        $this->form_validation->set_rules('ukininkas', 'Vardas Pavardė', 'required',  array('required' => 'Pasirinkite ūkininką.'));
+        $this->form_validation->set_rules('metai', 'Metai', 'required', array('required' => 'Pasirinkite metus.'));
+        $this->form_validation->set_rules('menesis', 'Menesis', 'required', array('required' => 'Pasirinkite menesį.'));
+
+        if ($this->form_validation->run()) {
+            $ukininkas = $this->input->post('ukininkas');
+            $metai = $this->input->post('metai');
+            $menesis = $this->input->post('menesis');
+            //nuskaitom ukininko duomenis
+            $ukis = $this->ukininkai_model->ukininkas($ukininkas);
+            if(count($ukis) > 0){
+                //jei sesijos duomenis neatitinka su pasirinktu ukininku, atnaujinam sesijos informacija
+                if ($sesija['nr'] != $ukininkas) {
+                    $new = array('vardas' => $ukis[0]['vardas'], 'pavarde' => $ukis[0]['pavarde'], 'nr' => $ukininkas);
+                    $this->session->set_userdata($new);
+                }
+                //sukeliam informacija kuria naudosim
+                $this->main_model->info['txt']['vardas'] = $ukis[0]['vardas'];
+                $this->main_model->info['txt']['pavarde'] = $ukis[0]['pavarde'];
+                $this->main_model->info['txt']['metai'] = $metai;
+                $this->main_model->info['txt']['menesis'] = $menesis;
+
+                $kiek = $this->galvijai_model->tikinti_gyvulius_ikelti($metai, $menesis, $ukininkas);
+                $this->main_model->info['txt']['galviju_sk'] = $kiek;
+                if($kiek > 0) {
+                    $data = array("ukininkas" => $ukininkas, "metai" => $metai, "menesis" => $menesis);
+                    $this->galvijai_model->istrinti_galvijus($data);
+                    $istrinta = $this->galvijai_model->tikinti_gyvulius_ikelti($metai, $menesis, $ukininkas);
+                    if($istrinta > 0){
+                        $this->main_model->info['error'][] = $metai . ' ' . $this->main_model->menesiai[$menesis - 1] . ', nepavyko ištrinti duomenų!';
+                    }else{$this->main_model->info['error'][] = $metai . ' ' . $this->main_model->menesiai[$menesis - 1] . ', duomeny sėkmingai ištrinti!';}
+                }else{$this->main_model->info['error'][] = $metai . ' ' . $this->main_model->menesiai[$menesis - 1] . ', dar nesate įkėlęs galvijų!';}
+            }else{$this->main_model->info['error'][] = "Ūkininkas neegzistuoja, ar / arba klaidos sistemoje, praneškite adminitratoriui!";}
+        }else{ $this->main_model->info['error'][] = "Problemos, nepasirinktas ukininkas, blogi metai, ar menesis";}
+        $this->load->view("galvijai/istrinti_duomenis");
+    }
 
     public function galviju_judejimas(){
         $sesija = $this->session->userdata();
@@ -916,8 +1650,6 @@ class Galvijai extends CI_Controller {
 
 
     ///////////////////////////////////////////////////////////////////////////////// SENA ////////////////////////////////////////////////////////////////////
-
-
 
     ///////////////////////////////////////////// RODOMAS GYVULIU SARASAS //////////////////////////////////////////////
     public function gyvuliu_sarasas(){

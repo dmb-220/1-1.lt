@@ -397,7 +397,7 @@ Pildomi kelionės lapai kiekvienai transporto priemonei. </small></h5></td></tr>
                 </thead>
                 <tbody>
                 <?php
-                $be_nuolaidos_menuo = str_replace(" €", "", $data['viso_menesis']) + str_replace(" €", "", $data['nuolaida_menesis']);
+                /*$be_nuolaidos_menuo = str_replace(" €", "", $data['viso_menesis']) + str_replace(" €", "", $data['nuolaida_menesis']);
                 $be_nuolaidos_metai = str_replace(" €", "", $data['viso_metai']) + str_replace(" €", "", $data['nuolaida_metai']);
                 echo"<tr>
                     <td>Be nuolaidos</td>
@@ -418,7 +418,7 @@ Pildomi kelionės lapai kiekvienai transporto priemonei. </small></h5></td></tr>
                     <td>0 €</td>
                     <td>0 €</td>
                 </tr>";
-                }
+                }*/
                 echo"<tr class='danger'>
                     <td>Viso</td>
                     <td>".$data['viso_menesis']."</td>

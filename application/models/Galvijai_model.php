@@ -3,6 +3,7 @@
  * @property Galvijai_model     $galvijai_model     Galvijai models
  */
 class Galvijai_model extends CI_Model{
+    //KINTAMIEJI MASYVAI
     public $galvijai = array(
         'karves' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
         'verseliai' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
@@ -12,7 +13,6 @@ class Galvijai_model extends CI_Model{
         'buliai_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
         'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
     );
-
     public $mesiniai = array(
         'karves' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
         'verseliai' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
@@ -22,7 +22,92 @@ class Galvijai_model extends CI_Model{
         'buliai_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
         'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
     );
-
+    public $pasarai = array(
+        'karves' => array('pavadinimas' => "", 'kiek' => 0,
+            'sienas' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'siaudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'grudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sakniavaisiai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sienainis' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'bulves' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'silosas' => array('min' => 0, 'vid' => 0, 'max' => 0)),
+        'telycios_6_12' => array('pavadinimas' => "", 'kiek' => 0,
+            'sienas' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'siaudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'grudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sakniavaisiai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sienainis' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'bulves' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'silosas' => array('min' => 0, 'vid' => 0, 'max' => 0)),
+        'buliai_6_12' => array('pavadinimas' => "",'kiek' => 0,
+            'sienas' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'siaudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'grudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sakniavaisiai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sienainis' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'bulves' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'silosas' => array('min' => 0, 'vid' => 0, 'max' => 0)),
+        'telycios_12_24' => array('pavadinimas' => "",'kiek' => 0,
+            'sienas' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'siaudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'grudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sakniavaisiai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sienainis' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'bulves' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'silosas' => array('min' => 0, 'vid' => 0, 'max' => 0)),
+        'verseliai_6' => array('pavadinimas' => "",'kiek' => 0,
+            'sienas' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'siaudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'grudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sakniavaisiai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sienainis' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'bulves' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'silosas' => array('min' => 0, 'vid' => 0, 'max' => 0)),
+        'buliai_12_24' => array('pavadinimas' => "",'kiek' => 0,
+            'sienas' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'siaudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'grudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sakniavaisiai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sienainis' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'bulves' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'silosas' => array('min' => 0, 'vid' => 0, 'max' => 0)),
+        'telycios_24' => array('pavadinimas' => "",'kiek' => 0,
+            'sienas' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'siaudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'grudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sakniavaisiai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sienainis' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'bulves' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'silosas' => array('min' => 0, 'vid' => 0, 'max' => 0)),
+        'buliai_24' =>  array('pavadinimas' => "",'kiek' => 0,
+            'sienas' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'siaudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'grudai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sakniavaisiai' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'sienainis' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'bulves' => array('min' => 0, 'vid' => 0, 'max' => 0),
+            'silosas' => array('min' => 0, 'vid' => 0, 'max' => 0)),
+);
+    public $priesvoris = array(
+        //'karves' => array('kiek' => 0, 'svoris' => 0, 'pavadinimas' => 'Karvės',),
+        'verseliai' => array('kiek' => 0, 'svoris' => 0, 'pavadinimas' => 'Veršeliai',),
+        'telycios_1_2' => array('kiek' => 0, 'svoris' => 0, 'pavadinimas' => 'Telyčios 1-2 m.',),
+        'telycios_2' => array('kiek' => 0, 'svoris' => 0, 'pavadinimas' => 'Telyčios virš 2 m.',),
+        'buliai_1_2' => array('kiek' => 0,  'svoris' => 0, 'pavadinimas' => 'Buliai 1-2 m.',),
+        'buliai_2' => array('kiek' => 0,  'svoris' => 0, 'pavadinimas' => 'Buliai virš 2.',),
+);
+    public $meslas = array(
+        'karves' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'M. Karvės',),
+        'verseliai' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'Veršeliai',),
+        'telycios' => array('kiek' => 0, 'meslas' => 0, 'pavadinimas' => 'Telyčios',),
+        'buliai' => array('kiek' => 0,  'meslas' => 0, 'pavadinimas' => 'Buliai',),
+        );
+    public $ganykliniai = array(
+        'karves' => array('kiek' => 0, 'pasarai' => 0, 'pavadinimas' => 'M. Karvės',),
+        'verseliai' => array('kiek' => 0, 'pasarai' => 0, 'pavadinimas' => 'Veršeliai',),
+        'telycios' => array('kiek' => 0, 'pasarai' => 0, 'pavadinimas' => 'Telyčios',),
+        'buliai' => array('kiek' => 0,  'pasarai' => 0, 'pavadinimas' => 'Buliai',),
+        );
     public $pardavimai = array(
     'karves' => array(),
     'verseliai' => array(),
@@ -43,6 +128,12 @@ class Galvijai_model extends CI_Model{
     public function __construct(){
         parent::__construct();
 
+    }
+
+    //istrinti ikeltus galvijus
+    public function istrinti_galvijus($data){
+        $this->db->where($data);
+        $this->db->delete('galvijai');
     }
 
     //is filtruojamas kodas pagal kuri nustatom kur dingo gyvuliukas
