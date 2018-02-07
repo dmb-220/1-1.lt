@@ -11,8 +11,8 @@
   ],
 
   "galvijai": [
-    {"dydis": "mazas", "melziamos": 7, "ne_melziamos": 5},
-    {"dydis": "vidutinis", "melziamos": 6, "ne_melziamos": 4},
+    {"dydis": "mazas", "melziamos": 5, "ne_melziamos": 3},
+    {"dydis": "vidutinis", "melziamos": 5, "ne_melziamos":3},
     {"dydis": "didelis", "melziamos": 5, "ne_melziamos": 3}
     ],
 
@@ -24,7 +24,7 @@
 
   "kita": {
     "technika_kaina": 1,
-    "bankas": 7,
+    "bankas": 5,
     "kreditas": 6,
     "saskaita_kaina": 45,
     "kuras_kaina": 5,
@@ -34,18 +34,19 @@
     "europa_kaina": 30,
     "galviju_judejimas": 2.5,
     "pvm_12_kaina": 30,
-    "pvm_2_kaina": 60,
+    "pvm_2_kaina": 30,
     "FR572_12_kaina": 60,
     "FR573_kaina": 60,
-    "FR457_kaina": 25,
+    "FR457_kaina": 5,
     "GPM308_kaina": 50,
-    "SAV1_kaina": 30,
+    "SAV1_kaina": 2.50,
     "ivaz_kaina": 5,
-    "isaf_2_kaina": 40,
+    "isaf_2_kaina": 36,
     "isaf_12_kaina": 36,
     "SAM_kaina": 5,
     "SD_kaina": 1,
-    "laiku_atsiskaito": 1,
-    "seimos_nariai": 1
+    "laiku_atsiskaito": 2,
+    "seimos_nariai": 5,
+    "laiku_dokumentai": 10
   }
 }

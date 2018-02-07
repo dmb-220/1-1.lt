@@ -104,7 +104,8 @@
                 </div>
                 <div class="text-justify">
                     6. Vykdytojas gali reikalauti 0,2 proc. netesybų nuo neapmokėtos sumos, jei užsakovas vėluoja atsiskaityti už suteiktas paslaugas
-                    ilgiau nei 45 kalendorines dienas nuosąskaitos-faktūros išrašymo dienos.
+                    ilgiau nei 45 kalendorines dienas nuosąskaitos-faktūros išrašymo dienos. Už pavėluotą dokumentų peteikimą (4 punktas) vykdytojui,
+                    gali būti skaičiuojamas sutarties netesybos - 1 euras už 1 pavėluotą kalendorinę dieną.
                 </div>
                 <div class="text-justify">
                     7. Ši sutartis gali būti keičiama, papildoma, nutraukiama šaliu susitarimu arba bet kurios šalies iniciatyva informuojant kitą šalį prieš vieną

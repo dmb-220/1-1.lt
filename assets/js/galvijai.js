@@ -205,7 +205,7 @@ $(document).ready(function(){
     //triname duomenis
     $('#pasaru_normos').on('click', function() {
         $('#pasaru_normos_langas').modal({
-            backdrop: 'static',
+            backdrop: true,
             keyboard: false
         })
             .one('click', '#delete', function() {

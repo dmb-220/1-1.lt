@@ -43,8 +43,6 @@
     .ibox-content {
         border-style: none;
     }
-
-    #footer{display: block; position:fixed; bottom: 0;}
 }
 
 @page{
