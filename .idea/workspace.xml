@@ -5,13 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/galvijai/langai_modal.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/saskaitos.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/Saskaitos_model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/galvijai/kopijuoti.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/saskaitos/saskaitos.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/sutartys/kainos.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/sutartys/perziureti.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/sutartys/sarasas.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ukininkai/sarasas.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/Excel.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/Word.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/galvijai/pradinis_view.php" afterPath="$PROJECT_DIR$/application/views/galvijai/pradinis_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Galvijai.php" afterPath="$PROJECT_DIR$/application/controllers/Galvijai.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Sutartys.php" afterPath="$PROJECT_DIR$/application/controllers/Sutartys.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Ukininkai.php" afterPath="$PROJECT_DIR$/application/controllers/Ukininkai.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Galvijai_model.php" afterPath="$PROJECT_DIR$/application/models/Galvijai_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Sutartys_model.php" afterPath="$PROJECT_DIR$/application/models/Sutartys_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Ukininkai_model.php" afterPath="$PROJECT_DIR$/application/models/Ukininkai_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/home_view.php" afterPath="$PROJECT_DIR$/application/views/home_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/info_view.php" afterPath="$PROJECT_DIR$/application/views/info_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/left_view.php" afterPath="$PROJECT_DIR$/application/views/left_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main_view.php" afterPath="$PROJECT_DIR$/application/views/main_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/mano.css" afterPath="$PROJECT_DIR$/assets/css/mano.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/galvijai.js" afterPath="$PROJECT_DIR$/assets/js/galvijai.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/kainos.json" afterPath="$PROJECT_DIR$/assets/js/kainos.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/skaitciuokle.js" afterPath="$PROJECT_DIR$/assets/js/skaitciuokle.js" />
@@ -52,109 +70,152 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Galvijai.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Galvijai.php">
+      <file leaf-file-name="formuoti_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="15" column="110" lean-forward="false" selection-start-line="15" selection-start-column="110" selection-end-line="15" selection-end-column="110" />
               <folding>
-                <element signature="n#tuscias#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#aprasymas#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#ganykliniai_pasarai#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#skaiciuoti_priesvori#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#skaiciuoti_meslus#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#skaitciuoti_pasarus#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#galviju_sarasas#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#ikelti_viclt#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#istrinti_viclt#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#galviju_judejimas#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#gyvuliu_sarasas#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#nuskaityti_vic#0;n#Galvijai#0;n#!!top" expanded="false" />
-                <element signature="n#skaiciuoti_gyvulius#0;n#Galvijai#0;n#!!top" expanded="false" />
+                <marker date="1519892937716" expanded="true" signature="9147:9392" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="9424:9692" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="9458:9687" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="9462:9682" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="9469:9677" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="9784:10058" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="10133:10357" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="10434:10666" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="10746:10960" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="10992:11233" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="11026:11228" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="11030:11223" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="11037:11218" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="11572:11841" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="11995:12260" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="12415:12612" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="12449:12607" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="12453:12602" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="12460:12597" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="12845:13058" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="13376:13589" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="13889:14131" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="14415:14653" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="15312:15563" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="15674:15892" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="15982:16231" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="16372:16623" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="17107:17319" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="17594:17803" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="18105:18317" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="18609:18824" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="19092:19328" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="19465:19696" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="19957:20171" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="20487:20698" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="21270:21499" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="21536:22740" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="21570:22735" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="21574:22730" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="21581:22725" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="22888:23136" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="23173:23521" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="23207:23516" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="23211:23511" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="23218:23506" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="23632:23849" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="23886:24115" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="23920:24110" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="23924:24105" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="23931:24100" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="24255:24502" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="24539:24733" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="24573:24728" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="24577:24723" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="24584:24718" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="25449:25623" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="25694:25766" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="26272:26405" ph="..." />
+                <marker date="1519892937716" expanded="true" signature="26466:26630" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="galvijai.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/galvijai.js">
+      <file leaf-file-name="Sutartys_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3519">
-              <caret line="207" column="22" lean-forward="false" selection-start-line="207" selection-start-column="22" selection-end-line="207" selection-end-column="22" />
+            <state relative-caret-position="17">
+              <caret line="62" column="17" lean-forward="false" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formuoti_view.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
+      <file leaf-file-name="Saskaitos.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Saskaitos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="453" column="95" lean-forward="false" selection-start-line="453" selection-start-column="95" selection-end-line="453" selection-end-column="95" />
-              <folding>
-                <marker date="1518033397209" expanded="true" signature="9147:9392" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="9424:9692" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="9458:9687" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="9462:9682" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="9469:9677" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="9784:10058" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="10133:10357" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="10434:10666" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="10746:10960" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="10992:11233" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="11026:11228" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="11030:11223" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="11037:11218" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="11572:11841" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="11995:12260" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="12415:12612" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="12449:12607" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="12453:12602" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="12460:12597" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="12845:13058" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="13376:13589" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="13889:14131" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="14415:14653" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="15312:15563" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="15674:15892" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="15982:16231" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="16372:16623" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="17107:17319" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="17594:17803" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="18105:18317" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="18609:18824" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="19092:19301" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="19438:19669" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="19930:20144" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="20460:20671" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="21243:21472" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="21509:22713" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="21543:22708" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="21547:22703" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="21554:22698" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="22861:23109" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="23146:23494" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="23180:23489" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="23184:23484" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="23191:23479" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="23605:23822" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="23859:24088" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="23893:24083" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="23897:24078" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="23904:24073" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="24228:24475" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="24512:24706" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="24546:24701" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="24550:24696" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="24557:24691" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="24908:25084" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="24929:25059" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="25108:25181" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="25422:25596" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="25667:25739" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="26245:26378" ph="..." />
-                <marker date="1518033397209" expanded="true" signature="26439:26603" ph="..." />
-              </folding>
+            <state relative-caret-position="628">
+              <caret line="50" column="29" lean-forward="false" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="saskaitos.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/saskaitos/saskaitos.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="left_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="52" column="126" lean-forward="false" selection-start-line="52" selection-start-column="126" selection-end-line="52" selection-end-column="126" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Saskaitos_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Saskaitos_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ukininkai.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Ukininkai.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="84" column="33" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="90" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ukininkai_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Ukininkai_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,95 +223,9 @@
       <file leaf-file-name="skaitciuokle_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="313" column="36" lean-forward="false" selection-start-line="313" selection-start-column="36" selection-end-line="313" selection-end-column="36" />
-              <folding>
-                <element signature="n#div#2;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#9;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#10;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#11;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#12;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#13;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#16;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#17;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="e#29105#30804#0#PHP" expanded="false" />
-                <element signature="n#div#19;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#21;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#22;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#23;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#24;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#25;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#26;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#27;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#28;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#29;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#31;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#32;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#33;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#34;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#35;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="skaitciuokle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="725" column="0" lean-forward="false" selection-start-line="725" selection-start-column="0" selection-end-line="725" selection-end-column="0" />
-              <folding>
-                <element signature="e#53#73#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kainos.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/kainos.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="781">
-              <caret line="49" column="26" lean-forward="false" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+            <state relative-caret-position="799">
+              <caret line="47" column="159" lean-forward="false" selection-start-line="47" selection-start-column="159" selection-end-line="47" selection-end-column="159" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ganykliniai_pasarai.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/galvijai/ganykliniai_pasarai.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pradinis_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/galvijai/pradinis_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="langai_modal.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/galvijai/langai_modal.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-              <folding>
-                <marker date="1517928772502" expanded="true" signature="1216:2454" ph="..." />
-                <marker date="1517928772502" expanded="true" signature="2014:2435" ph="..." />
-                <marker date="1517928772502" expanded="true" signature="2037:2430" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -310,36 +285,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/js/editor.js" />
-        <option value="$PROJECT_DIR$/assets/kindeditor/src/config.js" />
-        <option value="$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php" />
-        <option value="$PROJECT_DIR$/assets/js/bootstrap-number-input.js" />
-        <option value="$PROJECT_DIR$/application/views/auth/register.php" />
-        <option value="$PROJECT_DIR$/application/views/auth/login_view.php" />
-        <option value="$PROJECT_DIR$/DATA/kainos.json" />
-        <option value="$PROJECT_DIR$/assets/kindeditor/plugins/preview/preview.js" />
-        <option value="$PROJECT_DIR$/application/views/admin/admin_view.php" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/application/models/Sutartys_model.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
         <option value="$PROJECT_DIR$/assets/js/mano.js" />
         <option value="$USER_HOME$/Desktop/sarasas_ukininku_view.php" />
         <option value="$PROJECT_DIR$/application/views/ukininkai/redaguoti_view.php" />
         <option value="$PROJECT_DIR$/application/views/ukininkai/profilis_view.php" />
-        <option value="$PROJECT_DIR$/application/views/ukininkai/sarasas_ukininku_view.php" />
         <option value="$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Ukininkai.php" />
         <option value="$PROJECT_DIR$/application/controllers/Main.php" />
-        <option value="$PROJECT_DIR$/application/views/left_view.php" />
-        <option value="$PROJECT_DIR$/application/views/info_view.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/nuskaityti_vic_view.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/gyvuliu_sarasas_view.php" />
-        <option value="$PROJECT_DIR$/application/views/main_view.php" />
-        <option value="$PROJECT_DIR$/application/models/Ukininkai_model.php" />
         <option value="$PROJECT_DIR$/application/models/Main_model.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/galviju_judejimas.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/ikelti_duomenis.php" />
-        <option value="$PROJECT_DIR$/application/views/home_view.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php" />
         <option value="$PROJECT_DIR$/application/views/pasarai/skaiciuoti_pasarus.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/galviju_sarasas.php" />
@@ -349,18 +306,36 @@
         <option value="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_priesvori.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_pasarus.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/skaiciuoti_meslus.php" />
-        <option value="$PROJECT_DIR$/application/models/Galvijai_model.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/ganykliniai_pasarai.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Galvijai.php" />
         <option value="$PROJECT_DIR$/application/views/galvijai/langai_modal.php" />
-        <option value="$PROJECT_DIR$/application/views/galvijai/pradinis_view.php" />
-        <option value="$PROJECT_DIR$/assets/js/galvijai.js" />
         <option value="$PROJECT_DIR$/application/views/sutartys/sutartys_view.php" />
         <option value="$PROJECT_DIR$/assets/css/mano.css" />
         <option value="$PROJECT_DIR$/assets/js/kainos.json" />
         <option value="$PROJECT_DIR$/assets/js/skaitciuokle.js" />
-        <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/kainos.php" />
+        <option value="$PROJECT_DIR$/application/views/galvijai/kopijuoti.php" />
+        <option value="$PROJECT_DIR$/application/views/galvijai/pradinis_view.php" />
+        <option value="$PROJECT_DIR$/assets/js/galvijai.js" />
+        <option value="$PROJECT_DIR$/application/controllers/Galvijai.php" />
+        <option value="$PROJECT_DIR$/application/models/Galvijai_model.php" />
+        <option value="$PROJECT_DIR$/application/views/ukininkai/sarasas_ukininku_view.php" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/perziureti.php" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/sarasas.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Ukininkai.php" />
+        <option value="$PROJECT_DIR$/application/views/ukininkai/sarasas.php" />
+        <option value="$PROJECT_DIR$/application/models/Ukininkai_model.php" />
+        <option value="$PROJECT_DIR$/application/views/info_view.php" />
+        <option value="$PROJECT_DIR$/application/views/home_view.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
+        <option value="$PROJECT_DIR$/application/models/Sutartys_model.php" />
         <option value="$PROJECT_DIR$/application/views/sutartys/formuoti_view.php" />
+        <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
+        <option value="$PROJECT_DIR$/application/controllers/saskaitos.php" />
+        <option value="$PROJECT_DIR$/application/models/Saskaitos_model.php" />
+        <option value="$PROJECT_DIR$/application/views/main_view.php" />
+        <option value="$PROJECT_DIR$/application/views/saskaitos/saskaitos.php" />
+        <option value="$PROJECT_DIR$/application/views/left_view.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Saskaitos.php" />
       </list>
     </option>
   </component>
@@ -386,7 +361,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="76" />
     <option name="width" value="1243" />
     <option name="height" value="757" />
   </component>
@@ -421,8 +396,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -458,7 +433,7 @@
               <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="galvijai" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="saskaitos" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
@@ -466,6 +441,13 @@
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="sutartys" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ukininkai" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
@@ -483,6 +465,11 @@
               <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="1-1.lt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="1-1.lt" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="DATA" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -504,19 +491,19 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\WAMP64\www\1-1.lt\application\views\sutartys" />
+      <recent name="G:\WAMP64\www\1-1.lt\application\views\galvijai" />
+      <recent name="G:\WAMP64\www\1-1.lt\assets\img" />
+      <recent name="G:\WAMP64\www\1-1.lt" />
+      <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\WAMP64\www\1-1.lt\application\views\galvijai" />
       <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
       <recent name="G:\WAMP64\www\1-1.lt\DATA" />
       <recent name="G:\WAMP64\www\1-1.lt\assets" />
       <recent name="G:\WAMP64\www\1-1.lt\assets\css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\WAMP64\www\1-1.lt\application\views\galvijai" />
-      <recent name="G:\WAMP64\www\1-1.lt\assets\img" />
-      <recent name="G:\WAMP64\www\1-1.lt" />
-      <recent name="G:\WAMP64\www\1-1.lt\assets\js" />
-      <recent name="G:\WAMP64\www\1-1.lt\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -704,14 +691,25 @@
       <workItem from="1517820084451" duration="18628000" />
       <workItem from="1517849404511" duration="1924000" />
       <workItem from="1517897532500" duration="26310000" />
-      <workItem from="1518018626046" duration="12459000" />
-    </task>
-    <task id="LOCAL-00037" summary="error tvarkymas kad tvarkingai rodytu">
-      <created>1507046209335</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1507046209335</updated>
+      <workItem from="1518018626046" duration="13241000" />
+      <workItem from="1518106419544" duration="6710000" />
+      <workItem from="1518245320814" duration="15411000" />
+      <workItem from="1518334094610" duration="2510000" />
+      <workItem from="1518466430584" duration="3339000" />
+      <workItem from="1518500341114" duration="658000" />
+      <workItem from="1518501063618" duration="769000" />
+      <workItem from="1518503818207" duration="597000" />
+      <workItem from="1518504485910" duration="1654000" />
+      <workItem from="1518506427071" duration="30878000" />
+      <workItem from="1518589440924" duration="1246000" />
+      <workItem from="1518714444538" duration="1255000" />
+      <workItem from="1519022106662" duration="8042000" />
+      <workItem from="1519106896297" duration="2445000" />
+      <workItem from="1519713199363" duration="2491000" />
+      <workItem from="1519822853268" duration="3399000" />
+      <workItem from="1519887520389" duration="5957000" />
+      <workItem from="1520060989573" duration="609000" />
+      <workItem from="1520144005333" duration="714000" />
     </task>
     <task id="LOCAL-00038" summary="error tvarkymas kad tvarkingai rodytu">
       <created>1507050632809</created>
@@ -1049,11 +1047,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517924628326</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="skaitciokles tvarkymas, pakeistas isdestymas">
+      <created>1518033634568</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1518033634568</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="868900000" />
+    <option name="totallyTimeSpent" value="958366000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1068,15 +1073,17 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15138593" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21908316" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13111112" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11" sideWeight="0.51599145" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18777777" sideWeight="0.48720682" order="13" side_tool="false" content_ui="tabs" x="682" y="810" width="743" height="144" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16444445" sideWeight="0.48400852" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15333334" sideWeight="0.49382716" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15512614" sideWeight="0.5085865" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1084,12 +1091,10 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="92" y="107" width="1723" height="840" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32995495" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13111112" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
@@ -1158,7 +1163,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tvarkau" />
     <MESSAGE value="tvarkau 2017-11-06" />
     <MESSAGE value="sutarciu skaitciuokle" />
     <MESSAGE value="klaidu pataisymai; prideta galviju bandos nustatymas, europos parama, kuro apskaita" />
@@ -1183,265 +1187,21 @@
     <MESSAGE value="sutvarkyta ukininkai sritis" />
     <MESSAGE value="kuriama nauja galviju valdymo versija" />
     <MESSAGE value="kuriama nauja galviju valdymo versija, jau beveik baigta, kuriamas nustatymu ivesdimo meniu" />
-    <option name="LAST_COMMIT_MESSAGE" value="kuriama nauja galviju valdymo versija, jau beveik baigta, kuriamas nustatymu ivesdimo meniu" />
+    <MESSAGE value="skaitciokles tvarkymas, pakeistas isdestymas" />
+    <option name="LAST_COMMIT_MESSAGE" value="skaitciokles tvarkymas, pakeistas isdestymas" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/application/models/Galvijai_model.php</url>
-          <line>118</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/buhalterija_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/ilgalaikis_turtas_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="35" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/info_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/gyvuliu_sarasas_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/ikelti_gyvulius_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/buhalterija.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="19" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="115" column="20" lean-forward="false" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="111" lean-forward="false" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Ukininkai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="191" column="20" lean-forward="true" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Ukininkai_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="65" column="52" lean-forward="false" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Main_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/nuskaityti_vic_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/knyga/naujas_irasas_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="81" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/home_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" column="67" lean-forward="false" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/istrinti_duomenis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_gyvulius_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="84" column="11" lean-forward="true" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/empty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_pasarus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpstorm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="70" column="20" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/ikelti_duomenis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/aprasymas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/galviju_sarasas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pasarai/apskaiciuoti_pasarus_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="117" column="57" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="125" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/galviju_judejimas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="192" column="52" lean-forward="false" selection-start-line="192" selection-start-column="27" selection-end-line="192" selection-end-column="52" />
-          <folding>
-            <marker date="1517250659235" expanded="true" signature="11644:11996" ph="..." />
-            <marker date="1517250659235" expanded="true" signature="11688:11952" ph="..." />
-            <marker date="1517250659235" expanded="true" signature="11733:11907" ph="..." />
-            <marker date="1517250659235" expanded="true" signature="12137:12305" ph="..." />
-            <marker date="1517250659235" expanded="true" signature="13651:14005" ph="..." />
-            <marker date="1517250659235" expanded="true" signature="13695:13961" ph="..." />
-            <marker date="1517250659235" expanded="true" signature="13740:13916" ph="..." />
-            <marker date="1517250659235" expanded="true" signature="14146:14314" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pasarai/priesvoris_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="98" column="18" lean-forward="false" selection-start-line="98" selection-start-column="16" selection-end-line="150" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_priesvori.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pasarai/meslas_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="97" column="18" lean-forward="false" selection-start-line="97" selection-start-column="16" selection-end-line="146" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pasarai/ganykliniai_pasarai_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="120" column="18" lean-forward="false" selection-start-line="120" selection-start-column="16" selection-end-line="175" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Galvijai_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="104" column="12" lean-forward="true" selection-start-line="104" selection-start-column="12" selection-end-line="104" selection-end-column="23" />
-          <folding>
-            <element signature="e#239#1450#0#PHP" expanded="false" />
-            <element signature="e#1475#2686#0#PHP" expanded="false" />
-            <element signature="e#2710#7088#0#PHP" expanded="false" />
-            <element signature="e#7115#7683#0#PHP" expanded="false" />
-            <element signature="e#8489#8666#0#PHP" expanded="false" />
-            <element signature="e#8691#8896#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1452,38 +1212,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_meslus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Pasarai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="627" column="8" lean-forward="true" selection-start-line="627" selection-start-column="8" selection-end-line="627" selection-end-column="86" />
-          <folding>
-            <element signature="n#__construct#0;n#Pasarai#0;n#!!top" expanded="false" />
-            <element signature="n#priesvoris#0;n#Pasarai#0;n#!!top" expanded="false" />
-            <element signature="n#ganykliniai_pasarai#0;n#Pasarai#0;n#!!top" expanded="false" />
-            <element signature="n#meslas#0;n#Pasarai#0;n#!!top" expanded="false" />
-            <element signature="e#21187#31099#0#PHP" expanded="false" />
-            <element signature="e#25253#27466#0#PHP" expanded="false" />
-            <element signature="e#27563#27674#0#PHP" expanded="false" />
-            <element signature="e#27692#31025#0#PHP" expanded="false" />
-            <element signature="n#rankinis_pasarus#0;n#Pasarai#0;n#!!top" expanded="false" />
-            <element signature="n#apskaiciuoti_pasarus#0;n#Pasarai#0;n#!!top" expanded="false" />
-            <element signature="e#58752#64855#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/galvijai/ganykliniai_pasarai.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1494,19 +1226,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Zalia_knyga_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Zalia_knyga.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1514,18 +1237,125 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-          <folding>
-            <marker date="1517928772502" expanded="true" signature="1216:2454" ph="..." />
-            <marker date="1517928772502" expanded="true" signature="2014:2435" ph="..." />
-            <marker date="1517928772502" expanded="true" signature="2037:2430" ph="..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/knyga/knyga_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="31" column="57" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/index_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/sutartys_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="107" column="20" lean-forward="false" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/galvijai/ikelti_gyvulius_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/galvijai/nuskaityti_vic_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="38" column="54" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/galvijai/skaiciuoti_meslus.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="64" column="56" lean-forward="false" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/kainos.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12903">
+          <caret line="761" column="58" lean-forward="false" selection-start-line="761" selection-start-column="58" selection-end-line="761" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/galvijai/ikelti_duomenis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Linksniai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="64" column="54" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/prideti_ukininkus_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="210" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/galvijai/pradinis_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/galvijai.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="264" column="9" lean-forward="false" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/galvijai/kopijuoti.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Galvijai.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="1666">
+          <caret line="98" column="39" lean-forward="false" selection-start-line="98" selection-start-column="39" selection-end-line="98" selection-end-column="39" />
           <folding>
             <element signature="n#tuscias#0;n#Galvijai#0;n#!!top" expanded="false" />
             <element signature="n#aprasymas#0;n#Galvijai#0;n#!!top" expanded="false" />
@@ -1544,175 +1374,279 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/knyga/knyga_view.php">
+    <entry file="file://$PROJECT_DIR$/application/models/Zalia_knyga_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <caret line="31" column="57" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="57" />
+        <state relative-caret-position="442">
+          <caret line="44" column="42" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="45" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/buhalterija/index_view.php">
+    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/profilis_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/mano.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="75" />
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/galvijai/pradinis_view.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="143" column="81" lean-forward="false" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/sarasas_ukininku_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="44" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Pasarai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5815">
+          <caret line="627" column="8" lean-forward="true" selection-start-line="627" selection-start-column="8" selection-end-line="627" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Paseliai_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Paseliai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="83" column="41" lean-forward="true" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/paseliai/paseliai_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ukininkai/sarasas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/perziureti.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Galvijai_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="407" column="9" lean-forward="true" selection-start-line="407" selection-start-column="8" selection-end-line="407" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/info_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/home_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="116" column="49" lean-forward="false" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="49" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/galvijai.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3519">
-          <caret line="207" column="22" lean-forward="false" selection-start-line="207" selection-start-column="22" selection-end-line="207" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/sutartys/sutartys_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="107" column="20" lean-forward="false" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/mano.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/kainos.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="49" column="26" lean-forward="false" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="725" column="0" lean-forward="false" selection-start-line="725" selection-start-column="0" selection-end-line="725" selection-end-column="0" />
-          <folding>
-            <element signature="e#53#73#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="313" column="36" lean-forward="false" selection-start-line="313" selection-start-column="36" selection-end-line="313" selection-end-column="36" />
-          <folding>
-            <element signature="n#div#2;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#10;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#11;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#12;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#13;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#16;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#17;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#29105#30804#0#PHP" expanded="false" />
-            <element signature="n#div#19;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#21;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#22;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#23;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#24;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#25;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#26;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#27;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#28;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#29;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#31;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#32;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#33;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#34;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#35;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/sutartys/formuoti_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="453" column="95" lean-forward="false" selection-start-line="453" selection-start-column="95" selection-end-line="453" selection-end-column="95" />
+        <state relative-caret-position="0">
+          <caret line="15" column="110" lean-forward="false" selection-start-line="15" selection-start-column="110" selection-end-line="15" selection-end-column="110" />
           <folding>
-            <marker date="1518033397209" expanded="true" signature="9147:9392" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="9424:9692" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="9458:9687" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="9462:9682" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="9469:9677" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="9784:10058" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="10133:10357" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="10434:10666" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="10746:10960" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="10992:11233" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="11026:11228" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="11030:11223" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="11037:11218" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="11572:11841" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="11995:12260" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="12415:12612" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="12449:12607" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="12453:12602" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="12460:12597" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="12845:13058" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="13376:13589" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="13889:14131" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="14415:14653" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="15312:15563" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="15674:15892" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="15982:16231" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="16372:16623" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="17107:17319" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="17594:17803" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="18105:18317" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="18609:18824" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="19092:19301" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="19438:19669" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="19930:20144" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="20460:20671" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="21243:21472" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="21509:22713" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="21543:22708" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="21547:22703" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="21554:22698" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="22861:23109" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="23146:23494" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="23180:23489" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="23184:23484" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="23191:23479" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="23605:23822" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="23859:24088" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="23893:24083" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="23897:24078" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="23904:24073" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="24228:24475" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="24512:24706" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="24546:24701" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="24550:24696" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="24557:24691" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="24908:25084" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="24929:25059" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="25108:25181" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="25422:25596" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="25667:25739" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="26245:26378" ph="..." />
-            <marker date="1518033397209" expanded="true" signature="26439:26603" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="9147:9392" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="9424:9692" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="9458:9687" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="9462:9682" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="9469:9677" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="9784:10058" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="10133:10357" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="10434:10666" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="10746:10960" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="10992:11233" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="11026:11228" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="11030:11223" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="11037:11218" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="11572:11841" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="11995:12260" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="12415:12612" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="12449:12607" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="12453:12602" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="12460:12597" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="12845:13058" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="13376:13589" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="13889:14131" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="14415:14653" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="15312:15563" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="15674:15892" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="15982:16231" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="16372:16623" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="17107:17319" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="17594:17803" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="18105:18317" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="18609:18824" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="19092:19328" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="19465:19696" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="19957:20171" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="20487:20698" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="21270:21499" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="21536:22740" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="21570:22735" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="21574:22730" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="21581:22725" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="22888:23136" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="23173:23521" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="23207:23516" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="23211:23511" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="23218:23506" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="23632:23849" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="23886:24115" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="23920:24110" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="23924:24105" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="23931:24100" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="24255:24502" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="24539:24733" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="24573:24728" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="24577:24723" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="24584:24718" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="25449:25623" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="25694:25766" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="26272:26405" ph="..." />
+            <marker date="1519892937716" expanded="true" signature="26466:26630" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/kl101310p_20180302_090354.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3774">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="159" lean-forward="false" selection-start-line="47" selection-start-column="159" selection-end-line="47" selection-end-column="159" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/sarasas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="14" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Ukininkai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="84" column="33" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="90" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="62" column="17" lean-forward="false" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Ukininkai_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Saskaitos_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/kainos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="56" column="56" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/left_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="52" column="126" lean-forward="false" selection-start-line="52" selection-start-column="126" selection-end-line="52" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/saskaitos/saskaitos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Saskaitos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="50" column="29" lean-forward="false" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

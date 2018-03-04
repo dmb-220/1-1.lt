@@ -44,6 +44,52 @@ class Ukininkai extends CI_Controller {
         $this->load->view("main_view");
     }
 
+    public function sarasas(){
+        $this->load->library("pagination");
+        $config = array();
+        $config["base_url"] = base_url() . "ukininkai/sarasas";
+        $config["total_rows"] = $this->ukininkai_model->sarasas_count("Telšių");
+        //var_dump($config["total_rows"]); die;
+        $config["per_page"] = 30;
+        $config["uri_segment"] = 3;
+        //$choice = $config["total_rows"] / $config["per_page"];
+        //$config["num_links"] = round($choice);
+
+        $config['first_link'] = 'Pirmas';
+        $config['last_link'] = 'Paskutinis';
+
+        /* This Application Must Be Used With BootStrap 3 *  */
+        $config['full_tag_open'] = "<ul class='pagination'>";
+        $config['full_tag_close'] ="</ul>";
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+        $config['next_tag_open'] = "<li>";
+        $config['next_tagl_close'] = "</li>";
+        $config['prev_tag_open'] = "<li>";
+        $config['prev_tagl_close'] = "</li>";
+        $config['first_tag_open'] = "<li>";
+        $config['first_tagl_close'] = "</li>";
+        $config['last_tag_open'] = "<li>";
+        $config['last_tagl_close'] = "</li>";
+
+        $this->pagination->initialize($config);
+        //$dat = array('sekla !=' => "", 'derlius !=' => "");
+        //$duom = $this->paseliai_model->nuskaityti_paselius($dat);
+        $data = array();
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data["results"] = $this->ukininkai_model->sarasas_limit($config["per_page"], $page, "Telšių");
+        $data["links"] = $this->pagination->create_links();
+
+        //$this->main_model->info['sarasas'] = $this->ukininkai_model->sarasas("Telšių");
+
+        $this->main_model->info['txt']['meniu'] = "Ūkininkai";
+        $this->main_model->info['txt']['info'] = "Sarasas";
+
+        $this->load->view("main_view",  array('data' => $data));
+    }
+
     public function profilis(){
         $action = $this->uri->segment(3);
         //sukeliam info, informaciniam meniu

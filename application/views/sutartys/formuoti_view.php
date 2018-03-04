@@ -329,7 +329,7 @@ išskyrus deklaracijos teikimus. </small></h5></td></tr>";
                     if ($data['sav1'] == "on" && $data['sav1_kiekis'] > 0) {
                         echo "<tr>
                     <td>SAV1 forma</td>
-                    <td> </td>
+                    <td>" . $data['sav1_kiekis'] . "</td>
                     <td>" . $data['sav1_menesis'] . "</td>
                     <td>" . $data['sav1_metai'] . "</td>
                 </tr>";

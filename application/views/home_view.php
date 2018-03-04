@@ -10,8 +10,9 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <h1>Ūkininku duomenys uz 2018 sausi yra sukelti</h1>
-                    <h2>Įkeliant sausio menesio ūkininku duomenis pasirodo pas ZITA DARGIENE atsirado, 2017 gruozio menesi pakeitimu su galviju judejimu. pasiziurekit ar gerus duomenis turite?</h2>
+                    ....
+                    <?php
+                    ?>
                 </div>
             </div>
         </div>

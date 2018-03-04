@@ -9,6 +9,37 @@ class Sutartys_model extends CI_Model{
         parent::__construct();
     }
 
+    public function tikrinti_sutarti($id, $kokia) {
+        $this->db->from('sutartys');
+        $this->db->where(array("sutarties_id" => $kokia, "u_id" => $id));
+        return $this->db->count_all_results();
+
+    }
+
+    //istrinama ukininko sutartis
+    public function istrinti_sutarti($kokia = 1, $id){
+        $this->db->where(array("sutarties_id" => $kokia, "u_id" => $id));
+        return $this->db->delete("sutartys");
+
+    }
+
+    //Gaunamas ukininko sutartis
+    public function ukininko_sutartis($kokia = 1, $id){
+        $this->db->where(array("sutarties_id" => $kokia, "u_id" => $id));
+        //$this->db->join('ukininkai', 'ukininkai.valdos_nr = sutartys.u_id', 'left');
+        $query = $this->db->get("sutartys");
+        $data = $query->result_array();
+        return $data;
+    }
+
+    //Gaunamas Sutarciu sarasas
+    public function sutarciu_sarasas(){
+        $this->db->join('ukininkai', 'ukininkai.valdos_nr = sutartys.u_id', 'left');
+        $query = $this->db->get("sutartys");
+        $data = $query->result_array();
+        return $data;
+    }
+
     //
     public function rasti_skaiciu($masyvas, $skaicius){
         foreach ($masyvas as $row){
@@ -29,9 +60,42 @@ class Sutartys_model extends CI_Model{
     }
 
     public function  sutarties_nr(){
+        $num = 0;
+        //gaunam didziasia sutartnies numeri
+        $query = $this->db->get("sutartys");
+        $this->db->where(array("sutarties_id" => 1));
+        $data = $query->result_array();
+        $nr = 0;
+        foreach ($data as $row) {
+            $no = explode("-", $row['numeris']);
+            if((int)$no[1] > $nr){$nr = (int)$no[1];}
+        }
+
+        //suskaiciuojam kiek yra sutarciu irasytu
+        //jei neatitinka, reiksmia yra skyliu. reik uzlopyti
         $this->db->from('sutartys');
+        $this->db->where(array("sutarties_id" => 1));
         $result = $this->db->count_all_results();
-        return $result+1;
+
+        if($result != $nr){
+            //surasti skyle ir uzpildyti
+            $arr = array();
+            for($i = 1; $i <= $nr; $i++){
+                foreach ($data as $row){
+                    $no = explode("-", $row['numeris']);
+                    if($no[1] == $i){
+                        $arr[$i] = $i;
+                    }
+                }
+                if(!key_exists($i, $arr)){
+                    $num = $i;
+                    //break;
+                }
+            }
+        }else{
+            $num = $nr+1;
+        }
+        return $num;
     }
 
     public function sutartis_irasyti($data){

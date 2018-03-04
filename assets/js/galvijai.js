@@ -238,6 +238,30 @@ $(document).ready(function(){
                 $("#data").html(result);
             });
     }
+/*
+    var nuo = 0, iki = 500;
+    var kartas = 1;
 
+    function kopija(){
+        $.post(url, {
+                nuo: nuo,
+                iki: iki
+            },
+            function(result) {
+                $("#data").html(result);
+            });
+    }
+
+    ///////////////////////////////////
+    $('#kopijuoti').on('click', function() {
+        url = "kopijuoti";
+        console.log(nuo);
+        console.log(iki);
+        kopija();
+        kartas++;
+        nuo = kartas*500;
+        iki = nuo+500;
+        $("#in_viclt, #in_skaiciuoti_pasarus, #in_skaiciuoti_meslus, #in_ganykliniai_pasarai, #in_nustatymai").hide();
+    });*/
 
 });

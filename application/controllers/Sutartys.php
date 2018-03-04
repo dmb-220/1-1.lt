@@ -63,20 +63,70 @@ class Sutartys extends CI_Controller
         redirect('sutartys/skaitciuokle');
     }
 
+    public function sutarciu_sarasas(){
+        $this->main_model->info['sarasas'] = $this->sutartys_model->sutarciu_sarasas();
+        //var_dump($this->main_model->info['sarasas']); die;
+
+        $this->main_model->info['txt']['meniu'] = "Sutartys";
+        $this->main_model->info['txt']['info'] = "Sarasas";
+
+        $this->load->view("main_view");
+    }
+
+    public function perziureti(){
+        $action = $this->uri->segment(3);
+        $duomenys = $this->sutartys_model->ukininko_sutartis(1, $action);
+        $this->main_model->info['sutartis'] = $duomenys;
+
+        $this->main_model->info['txt']['meniu'] = "Sutartys";
+        $this->main_model->info['txt']['info'] = "Peržiūrėti";
+
+        $this->load->view("main_view");
+    }
+
+    public function istrinti(){
+        $action = $this->uri->segment(3);
+        if($this->sutartys_model->istrinti_sutarti(1, $action)){
+            $this->session->set_flashdata('message', "Ūkininko sutartis sėkmingai istrinta!");
+        }else{
+            $this->session->set_flashdata('message', "Ūkininko sutarties ištrinti nepavyko, praneškite admininstracijai!");
+        }
+        redirect('sutartys/sutarciu_sarasas');
+    }
+
+    public function kainos(){
+        $jsonString = file_get_contents('https://1-1.lt/assets/js/kainos.json');
+        $data = json_decode($jsonString, true);
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Sutartys";
+        $this->main_model->info['txt']['info'] = "Skaičiuoklės kainos";
+
+        $this->load->view('main_view', array("data" => $data));
+    }
+
 
     public function formuoti(){
         $data = $this->input->post();
 
         $dt = $this->session->userdata();
         $sutartis = serialize($data);
-        $numeris = date('y')."-".$this->sutartys_model->sutarties_nr();
+
+        $numeris = "ALU ".date('Y')."-".$this->sutartys_model->sutarties_nr();
+        //jis reiskia kad tai paslaugu teikimo sutartis
         $ids = 1;
         $this->main_model->info['txt']['numeris'] = $numeris;
         $this->main_model->info['txt']['data'] = "2018-01-01";
         $this->main_model->info['ukininkas'] = $this->ukininkai_model->ukininkas($data['ukininkas']);
-        //var_dump($this->main_model->info['ukininkas'][0]); die;
-        $dat = array('sutarties_id' => $ids , 'sutartis' => $sutartis , 'numeris' => $numeris, 'u_id' => $data['ukininkas']);
-        $this->sutartys_model->sutartis_irasyti($dat);
+        ///var_dump($this->sutartys_model->tikrinti_sutarti($data['ukininkas'], $ids)); die;
+        if($this->sutartys_model->tikrinti_sutarti($data['ukininkas'], $ids) > 0){
+            $this->session->set_flashdata('message', 'Ūkininko sutartis jau įtraukta į duomenų bazę! jei notite per naują suformatuoti sutartį, galite ištrinti, jas rasite SUTARČIŲ SĄRAŠAS');
+            //var_dump($this->session->flashdata('message')); die;
+            redirect('sutartys/skaitciuokle');
+        }else{
+            //sita perkelti kai nuspaudziamas myktukas issaugoti
+            $dat = array('sutarties_id' => $ids , 'sutartis' => $sutartis , 'numeris' => $numeris, 'u_id' => $data['ukininkas'], "data" => $this->main_model->info['txt']['data']);
+            $this->sutartys_model->sutartis_irasyti($dat);
+        }
 
         //var_dump(unserialize($sutartis)); exit;
         $info_uk = $this->ukininkai_model->ukininkas($dt['nr']);
@@ -130,6 +180,9 @@ class Sutartys extends CI_Controller
             array("kodas" => "A15", "kiekis" => 500),
         );
 
+        $numeris = "ALU ".date('Y')."-".$this->sutartys_model->sutarties_nr();
+        $this->main_model->info['txt']['numeris'] = $numeris;
+
         $dt = $this->session->userdata();
         if($dt['nr'] == ""){
             $this->main_model->info['error']['login'] = "Norėdami pradėti darbus, Pasirinkite ūkininką su kuriuo dirbsite!";
@@ -167,7 +220,7 @@ class Sutartys extends CI_Controller
     }
 
     public function darbo_sutartis(){
-        $this->load->library('word');
+        //$this->load->library('word');
 
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Sutartys";

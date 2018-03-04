@@ -17,8 +17,6 @@
                 echo '</div>';
             }
             ?>
-
-
             <form class="form-horizontal form-bordered" action="<?= base_url(); ?>sutartys/formuoti" id="skaitciuokle" method="POST">
                 <fieldset>
                     <div class="form-group">
@@ -41,6 +39,13 @@
                             <button class="btn btn-block btn-outline btn-primary" id="pasirinkti_ukininka">
                                 <i class="fa fa-check-circle-o fa-lg"> PASIRINKTI</i>
                             </button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label for="sut_nr" class="col-md-2 control-label">Sutarties numeris:</label>
+                        <div class="col-md-10">
+                            <input type="text" name="sut_nr" id="sut_nr" class="form-control" value="<?= $this->main_model->info['txt']['numeris'] ?>" disabled>
                         </div>
                     </div>
 

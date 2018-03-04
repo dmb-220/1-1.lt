@@ -13,6 +13,33 @@ class Ukininkai_model extends CI_Model{
         $this->ukininkas = $nr;
     }
 
+    public function sarasas($id){
+            $this->db->where('miestas', $id);
+        $query = $this->db->get("ukininku_sarasas");
+        $data = $query->result_array();
+        return $data;
+    }
+
+    public function sarasas_count($id) {
+        $this->db->where('miestas', $id);
+        $query = $this->db->get("ukininku_sarasas");
+        return $query->num_rows();
+    }
+
+    public function sarasas_limit($limit, $start, $id) {
+        $this->db->where('miestas', $id);
+        $this->db->limit($limit, $start);
+        $query = $this->db->get("ukininku_sarasas");
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result_array() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+    }
+
     //atnaujinam ukikinku duomenis
     public function atnaujinti_ukininka($nr, $data){
         $where = array('valdos_nr' => $nr);

@@ -43,8 +43,12 @@ $this->load->view('left_view');
             case "sarasas_ukininku": $this->load->view("ukininkai/sarasas_ukininku_view"); break;
             case "redaguoti": $this->load->view("ukininkai/redaguoti_view"); break;
             case "profilis": $this->load->view("ukininkai/profilis_view"); break;
+            case "sarasas": $this->load->view("ukininkai/sarasas"); break;
+            //Saskaitos
+            case "saskaitos": $this->load->view("saskaitos/saskaitos"); break;
             //Gyvuliai
             case "pradinis": $this->load->view("galvijai/pradinis_view"); break;
+            case "kopijuoti": $this->load->view("galvijai/kopijuoti"); break;
             case "ikelti_duomenis": $this->load->view("galvijai/ikelti_gyvulius_view"); break;
             case "skaiciuoti_gyvulius": $this->load->view("galvijai/skaiciuoti_gyvulius_view"); break;
             case "gyvuliu_sarasas": $this->load->view("galvijai/gyvuliu_sarasas_view"); break;
@@ -68,7 +72,9 @@ $this->load->view('left_view');
             //Sutartys
             case "skaitciuokle": $this->load->view("sutartys/skaitciuokle_view"); break;
             case "sutartys": $this->load->view("sutartys/sutartys_view"); break;
-            case "paslaugu_teikimas": $this->load->view("sutartys/paslaugu_teikimas_view"); break;
+            case "kainos": $this->load->view("sutartys/kainos"); break;
+            case "sutarciu_sarasas": $this->load->view("sutartys/sarasas"); break;
+            case "perziureti": $this->load->view("sutartys/perziureti"); break;
             case "darbo_sutartis": $this->load->view("sutartys/darbo_sustartis_view"); break;
             case "formuoti": $this->load->view("sutartys/formuoti_view"); break;
             //Kalendorius

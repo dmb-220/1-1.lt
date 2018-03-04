@@ -9,6 +9,7 @@
 </div>
 
 <?php
+
 if($this->session->flashdata('message')){ ?>
 <script type="text/javascript">
     $(document).ready(function() {
