@@ -36,6 +36,7 @@ class Sutartys extends CI_Controller
         $this->load->model('ukininkai_model');
         $this->load->model('galvijai_model');
         $this->load->model('sutartys_model');
+        $this->load->model('paseliai_model');
         $this->load->model('main_model');
 
         //$this->load->library('linksniai');
@@ -141,7 +142,6 @@ class Sutartys extends CI_Controller
     }
 
     public function skaitciuokle(){
-        $this->load->model('paseliai_model');
 
         $galviju = array(
             array("kodas" => "U0", "kiekis" => 10),
@@ -192,7 +192,7 @@ class Sutartys extends CI_Controller
             $dat = array('ukininkas' => $dt['nr'], 'metai' => '2017');
             $this->main_model->info['txt']['deklaruota']  = $this->sutartys_model->deklaruotas_plotas($dat);
             //suskaiciuoti gyvuliu vidurki
-            $this->main_model->info['txt']['vidurkis'] = $this->sutartys_model->galvijai_vidurkis();
+            $this->main_model->info['txt']['vidurkis'] = $this->sutartys_model->galvijai_vidurkis($dt['nr']);
             $info_uk = $this->ukininkai_model->ukininkas($dt['nr']);
             $this->main_model->info['txt']['banda'] = $info_uk[0]['banda'];
 
@@ -217,6 +217,44 @@ class Sutartys extends CI_Controller
         $this->main_model->info['ukininkai'] = $this->ukininkai_model->ukininku_sarasas( $user->id, TRUE);
 
         $this->load->view('main_view');
+    }
+
+    public function vidurkis(){
+        $user = $this->ion_auth->user()->row();
+        //Nuskaitom ukininku sarasa, kad butu visada po ranka
+        $sarasas = $this->ukininkai_model->ukininku_sarasas($user->id);
+        $this->main_model->info['ukininkai'] = $sarasas;
+
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Sutartys";
+        $this->main_model->info['txt']['info'] = "Vidurkis";
+
+        $this->load->view('main_view');
+    }
+
+    public function ukio_dydis(){
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        $this->form_validation->set_rules('ukio_id[]', 'Ukininko ID', 'required', array('required' => 'Pasirinkite ūkininką.'));
+        $this->form_validation->set_rules('dydis[]', 'Ukio dydis', 'required', array('required' => 'Pasirinkite dydi.'));
+
+        if ($this->form_validation->run()) {
+            $ukio_id = $this->input->post('ukio_id');
+            $dydis = $this->input->post('dydis');
+            $ukis = $this->ukininkai_model->ukininkas($ukio_id[0]);
+            if (count($ukis) > 0) {
+                $data = array("dydis" => $dydis[0]);
+                if($this->sutartys_model->atnaujinti_ukio_dydi($ukio_id[0], $data)){
+                    $this->session->set_flashdata('message', "Ūkininko ūkio dydis, pakeistas!");
+                }else{
+                    $this->session->set_flashdata('message', "Ūkininko ūkio dydžio pakeisti nepavyko, praneškite administracijai!");
+                }
+            }else{
+                $this->session->set_flashdata('message', "Ūkininkas neegzistuoja, ar / arba klaidos sistemoje, praneškite adminitratoriui!");
+            }
+        }else{$this->session->set_flashdata('message', "Netikėtos problemos, praneškite adminitratoriui!");}
+        redirect('sutartys/vidurkis');
     }
 
     public function darbo_sutartis(){

@@ -15,5 +15,7 @@
     <orderEntry type="library" name="lt" level="application" />
     <orderEntry type="library" name="select2" level="application" />
     <orderEntry type="library" name="jspdf" level="application" />
+    <orderEntry type="library" name="dropzone-amd-module" level="application" />
+    <orderEntry type="library" name="dropzone" level="application" />
   </component>
 </module>

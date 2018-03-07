@@ -52,6 +52,7 @@
                 "gamtos_apsauga" => "Aplinkos taršos mokestis",
                 "zemes_mokestis" => "Žemės mokestis",
                 "europa_kaina" => "Europos parama",
+                "kitos_paslaugos_kaina" => "KItos paslaugos",
                 //NUOLAIDOS
                 "laiku_atsiskaito" => "Laiku atsiskaito",
                 "seimos_nariai" => "Šeimos nariai veda apskaita",

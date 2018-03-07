@@ -854,6 +854,36 @@
                             </h5>
                         </div>
                     </div>
+                    <!-- Kuro apskaita -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <div class="row row-space-12">
+                                <div class="col-md-3">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" name="kitos_paslaugos" id="kitos_paslaugos">
+                                        <label for="kitos_paslaugos"> KITOS PASLAUGOS</label>
+                                    </div>
+                                </div>
+                                <div id="inp_kitos_paslaugos" style="display:none">
+                                    <div class="col-md-3">
+                                        <input type="text" name="kitos_paslaugos_kiekis" value="0" min="0" max="100" id="kitos_paslaugos_kiekis" class="form-control" placeholder="Kitos paslaugos (vnt)">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="kitos_paslaugos_menesis" id="kitos_paslaugos_menesis" class="form-control" placeholder="Suma per menesį">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="kitos_paslaugos_metai" id="kitos_paslaugos_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>
+                                <small>
+                                    Kitos paslaugos, teikiamos ūkininkui, kai netinka, jokiai kitai kategorijai.
+                                </small>
+                            </h5>
+                        </div>
+                    </div>
                     <hr>
                     <!-- VISO deklaraciju teikimas KAINA -->
                     <div class="form-group">

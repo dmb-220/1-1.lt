@@ -37,6 +37,7 @@ $(document).ready(function(){
     var saskaita_menuo = 0, saskaita_metai = 0;
     var europa_menuo = 0, europa_metai = 0;
     var kuras_menuo = 0, kuras_metai = 0;
+    var kitos_paslaugos_menuo = 0, kitos_paslaugos_metai = 0;
     var apsauga_menuo = 0, apsauga_metai = 0;
     var zemes_menuo = 0, zemes_metai = 0;
     var judejimas_menuo = 0, judejimas_metai = 0;
@@ -55,6 +56,7 @@ $(document).ready(function(){
     $('#bankai').bootstrapNumber();
     $('#kreditai').bootstrapNumber();
     $('#kuras_kiekis').bootstrapNumber();
+    $('#kitos_paslaugos_kiekis').bootstrapNumber();
     $('#darbuotojai_2_kiekis').bootstrapNumber();
     $('#darbuotojai_kiekis').bootstrapNumber();
     $('#nuolaida').bootstrapNumber();
@@ -643,10 +645,38 @@ $(document).ready(function(){
         kiti_viso();
     });
 
+    //KITOS PASLAUGOS
+    $('#kitos_paslaugos').change(function() {
+        if($(this).is(":checked")) {
+            $("#inp_kitos_paslaugos").show();
+            //patikrinti ar ivestas
+            $('#kitos_paslaugos_kiekis').change(function() {
+                var kiekis = $("#kitos_paslaugos_kiekis").val();
+                kitos_paslaugos_menuo = kita['kitos_paslaugos_kaina'] * kiekis;
+                kitos_paslaugos_metai = (kita['kitos_paslaugos_kaina'] * kiekis) * 12;
+                $('#kitos_paslaugos_menesis').val(kitos_paslaugos_menuo.toFixed(2) + ' €');
+                $('#kitos_paslaugos_metai').val(kitos_paslaugos_metai.toFixed(2) + ' €');
+
+                //skaiciuojam viso
+                kiti_viso();
+            });
+        } else {
+            $("#inp_kitos_paslaugos").hide();
+            $('#kitos_paslaugos_kiekis').val('');
+            $('#kitos_paslaugos_menesis').val('');
+            $('#kitos_paslaugos_metai').val('');
+            kitos_paslaugos_menuo = 0; kitos_paslaugos_metai = 0;
+        }
+        //skaiciuojam viso
+        kiti_viso();
+    });
+
+
+
     //funkcija skaiciuoti VISO menesis ir metai
     function kiti_viso(){
-        kt_menesis = parseFloat(europa_menuo) + parseFloat(zemes_menuo) + parseFloat(apsauga_menuo) + parseFloat(kuras_menuo);
-        kt_metai = parseFloat(europa_metai) + parseFloat(zemes_metai) + parseFloat(apsauga_metai) + parseFloat(kuras_metai);
+        kt_menesis = parseFloat(europa_menuo) + parseFloat(zemes_menuo) + parseFloat(apsauga_menuo) + parseFloat(kuras_menuo) + parseFloat(kitos_paslaugos_menuo);
+        kt_metai = parseFloat(europa_metai) + parseFloat(zemes_metai) + parseFloat(apsauga_metai) + parseFloat(kuras_metai) + parseFloat(kitos_paslaugos_metai);
         $('#kiti_menesis').val(kt_menesis.toFixed(2) + ' €');
         $('#kiti_metai').val(kt_metai.toFixed(2) + ' €');
     }
@@ -695,14 +725,16 @@ $(document).ready(function(){
         //var uki_menesis, uki_metai;
         //var dk_menesis, dk_metai;
        // var kt_menesis, kt_metai;
-        var bazine_menuo = pirminiai_menuo + darb_2_menuo + inventorizacija_menuo + fr572_menuo + fr573_menuo + sam_menuo + sd_menuo;
-        var bazine_metai = pirminiai_metai + darb_2_metai + inventorizacija_metai + fr572_metai + fr573_metai + sam_metai + sd_metai;
-        var ukis_menuo = galvijai_menuo + dek_menuo + technika_menuo;
-        var ukis_metai = galvijai_metai + dek_metai + technika_metai;
+
+        //sutvarkyti pagal taip kaip isdestyta
+        var bazine_menuo = kreditai_menuo + bankai_menuo + pirminiai_menuo + darb_menuo + darb_2_menuo + inventorizacija_menuo + fr572_menuo + fr573_menuo + sam_menuo + sd_menuo;
+        var bazine_metai = kreditai_metai + bankai_metai + pirminiai_metai + darb_metai + darb_2_metai + inventorizacija_metai + fr572_metai + fr573_metai + sam_metai + sd_metai;
+        var ukis_menuo = galvijai_menuo + dek_menuo + technika_menuo + judejimas_menuo;
+        var ukis_metai = galvijai_metai + dek_metai + technika_metai + judejimas_metai;
         var deklaracija_menuo = pvm_x12_menuo + pvm_x2_menuo + fr457_menuo + gpm308_menuo + sav1_menuo + ivaz_menuo + isaf_2_menuo + isaf_12_menuo;
         var deklaracija_metai = pvm_x12_metai + pvm_x2_metai + fr457_metai + gpm308_metai + sav1_metai + ivaz_metai + isaf_2_metai + isaf_12_metai;
-        var paslaugos_menuo = kreditai_menuo + bankai_menuo + europa_menuo + saskaita_menuo + kuras_menuo + apsauga_menuo + zemes_menuo + judejimas_menuo;
-        var paslaugos_metai = kreditai_metai + bankai_metai + europa_metai + saskaita_metai + kuras_metai + apsauga_metai + zemes_metai + judejimas_metai;
+        var paslaugos_menuo = europa_menuo + saskaita_menuo + kuras_menuo + apsauga_menuo + zemes_menuo + kitos_paslaugos_menuo;
+        var paslaugos_metai = europa_metai + saskaita_metai + kuras_metai + apsauga_metai + zemes_metai + kitos_paslaugos_metai;
         viso_menuo = bazine_menuo + ukis_menuo + deklaracija_menuo + paslaugos_menuo;
         viso_metai = bazine_metai + ukis_metai + deklaracija_metai + paslaugos_metai;
         //paskaiciuojam nuolaida

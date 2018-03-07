@@ -39,7 +39,8 @@
     "kuras_kaina": 5,
     "gamtos_apsauga": 50,
     "zemes_mokestis": 5,
-    "europa_kaina": 30
+    "europa_kaina": 30,
+    "kitos_paslaugos_kaina": 5
   },
 
   "nuolaida": {

@@ -43,9 +43,13 @@ class Saskaitos extends CI_Controller
         }
     }
 
-    public function index()
-    {
+
+    public function index(){
         $this->load->view("main_view");
+    }
+
+    public function aprasymas(){
+        $this->load->view("saskaitos/aprasymas");
     }
 
     public function saskaitos(){
@@ -54,5 +58,19 @@ class Saskaitos extends CI_Controller
         $this->main_model->info['txt']['info'] = "Įkelimas";
 
         $this->load->view("main_view");
+    }
+
+    public function ikelti(){
+        $config['upload_path']   = './DATA/SASKAITOS/';
+        $config['allowed_types'] = 'pdf';
+        $config['max_size']      = 10024;
+
+        $this->load->library('upload', $config);
+        $this->upload->do_upload('file');
+
+        print_r('Image Uploaded Successfully.');
+
+        exit;
+
     }
 }

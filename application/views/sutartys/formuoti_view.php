@@ -424,6 +424,16 @@ skirstomas paramos nusidėvėjimas ir nusidėvėjimas standartinėmis sąnaudomi
                         echo "<tr><td class='text-left' colspan='4'><h5><small>Kuro apskaitą vykdome, jei įtraukiami į apskaitą visų rūšių degalai. 
 Pildomi kelionės lapai kiekvienai transporto priemonei. </small></h5></td></tr>";
                     }
+
+                    if ($data['kitos_paslaugos'] == "on" && $data['kitos_paslaugos_kiekis'] > 0) {
+                        echo "<tr>
+                    <td>Kitos paslaugos</td>
+                    <td>" . $data['kitos_paslaugos_kiekis'] . " vnt.</td>
+                    <td>" . $data['kitos_paslaugos_menesis'] . "</td>
+                    <td>" . $data['kitos_paslaugos_metai'] . "</td>
+                </tr>";
+                        echo "<tr><td class='text-left' colspan='4'><h5><small>Kitos paslaugos, teikiamos ūkininkui, kai netinka, jokiai kitai kategorijai.</small></h5></td></tr>";
+                    }
                 }
 
                 ?>

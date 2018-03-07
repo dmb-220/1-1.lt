@@ -22,6 +22,10 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" rel="stylesheet"/>
     <?php } ?>
+    <?php if($action == 'saskaitos'){ ?>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.js"></script>
+    <?php } ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body class="md-skin">
@@ -46,6 +50,8 @@ $this->load->view('left_view');
             case "sarasas": $this->load->view("ukininkai/sarasas"); break;
             //Saskaitos
             case "saskaitos": $this->load->view("saskaitos/saskaitos"); break;
+            //Atsiskaitymai
+            case "atsiskaitymas": $this->load->view("atsiskaitymas/atsiskaitymas"); break;
             //Gyvuliai
             case "pradinis": $this->load->view("galvijai/pradinis_view"); break;
             case "kopijuoti": $this->load->view("galvijai/kopijuoti"); break;
@@ -72,6 +78,7 @@ $this->load->view('left_view');
             //Sutartys
             case "skaitciuokle": $this->load->view("sutartys/skaitciuokle_view"); break;
             case "sutartys": $this->load->view("sutartys/sutartys_view"); break;
+            case "vidurkis": $this->load->view("sutartys/vidurkis_view"); break;
             case "kainos": $this->load->view("sutartys/kainos"); break;
             case "sutarciu_sarasas": $this->load->view("sutartys/sarasas"); break;
             case "perziureti": $this->load->view("sutartys/perziureti"); break;
@@ -115,9 +122,16 @@ $this->load->view('left_view');
     <script src="<?= base_url(); ?>assets/js/skaitciuokle.js"></script>
 <?php }
 if($action == 'pradinis'){ ?>
-    <script src="<?= base_url(); ?>assets/js/galvijai.js"></script>
+<script src="<?= base_url(); ?>assets/js/galvijai.js"></script>
 <?php } ?>
-
+<?php
+if($action == 'saskaitos'){ ?>
+<script src="<?= base_url(); ?>assets/js/saskaitos.js"></script>
+<?php } ?>
+<?php
+if($action == 'atsiskaitymas'){ ?>
+    <script src="<?= base_url(); ?>assets/js/atsiskaitymas.js"></script>
+<?php } ?>
 <script type="text/javascript">
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;

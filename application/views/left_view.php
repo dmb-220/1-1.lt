@@ -52,11 +52,15 @@
                 <li>
                     <a href="<?= base_url(); ?>saskaitos/saskaitos"><i class="fa fa-calculator"></i><span class="nav-label">Sąskaitos</span></a>
                 </li>
+                <li>
+                    <a href="<?= base_url(); ?>atsiskaitymas/atsiskaitymas"><i class="fa fa-calculator"></i><span class="nav-label">Atsiskaitymai</span></a>
+                </li>
 
                 <?php if($act == 'sutartys'){echo'<li class="active">';}else{echo'<li>';} ?>
                 <a href="#"><i class="fa fa-keyboard-o"></i> <span class="nav-label">Sutartys</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="<?= base_url(); ?>sutartys/skaitciuokle"><i class="fa fa-edit"></i>Sutarties skaitčiuoklė</a></li>
+                    <li><a href="<?= base_url(); ?>sutartys/vidurkis"><i class="fa fa-edit"></i>Vidurkiai</a></li>
                     <li><a href="<?= base_url(); ?>sutartys/kainos"><i class="fa fa-edit"></i>Kainos</a></li>
                     <li><a href="<?= base_url(); ?>sutartys/sutarciu_sarasas"><i class="fa fa-edit"></i>Sutarčių sąrašas</a></li>
                     <li><a href="<?= base_url(); ?>sutartys/sutartys"><i class="fa fa-bars"></i> 2017 metų sutartys</a></li>

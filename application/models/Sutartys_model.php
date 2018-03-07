@@ -1,12 +1,19 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * @property Sutartys_model     $sutartys_model     Sutartys models
+ * @property Paseliai_model     $paseliai_model     Paseliai models
  */
 
 class Sutartys_model extends CI_Model{
 
     public function __construct(){
         parent::__construct();
+    }
+
+    public function atnaujinti_ukio_dydi($nr, $data){
+        $where = array('valdos_nr' => $nr);
+        $this->db->where($where);
+        return $this->db->update('ukininkai', $data);
     }
 
     public function tikrinti_sutarti($id, $kokia) {
@@ -102,16 +109,16 @@ class Sutartys_model extends CI_Model{
         $this->db->insert('sutartys', $data);
     }
 
-    public function galvijai_vidurkis(){
+    public function galvijai_vidurkis($ukininkas){
         $sk = 0;
-        $dt = $this->session->userdata();
+        //$dt = $this->session->userdata();
         $metai = date('Y');
         $menesis = date('m') -1;
         //$m = $menesis;
         //$nuskaityti gyvulius
         for($i=0; $i<9; $i++) {
             if($menesis <= 1){$menesis = 12; $metai = $metai - 1;}else{$menesis = $menesis - 1;}
-            $array = array('ukininkas' => $dt['nr'], 'metai' => $metai, 'menesis' => $menesis, 'amzius !=' => "");
+            $array = array('ukininkas' => $ukininkas, 'metai' => $metai, 'menesis' => $menesis, 'amzius !=' => "");
             $s = $this->sutartys_model->skaitciuoti_galvijus($array);
             $sk = $sk + $s;
         }
