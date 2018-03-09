@@ -1645,6 +1645,7 @@ class Galvijai extends CI_Controller {
             }else{$this->main_model->info['error'][] = "Norint suskaičiuoti galvijų judėjimą, reikia pasirinkto menesio ir vieno menesio pries tai, duomenu";}
             }else{$this->main_model->info['error'][] = "Ūkininkas neegzistuoja, ar / arba klaidos sistemoje, praneškite adminitratoriui!";}
         }else{ $this->main_model->info['error'][] = "Problemos, nepasirinktas ukininkas, blogi metai, ar menesis";}
+
         $this->load->view("galvijai/galviju_judejimas");
     }
 

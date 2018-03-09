@@ -10,7 +10,8 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    ....
+                    <h2>Bolio Kombario ir Arūno Žvirgždino sausio menesio galviju judejime yra pakeitimu. pasitaisykit jei reikia</h2>
+                    <h2>Mindaugas Salys nebegalima prisijungti prie VIC.LT, reikia naujo slaptazodzio ar pan.</h2>
                     <?php
                     ?>
                 </div>

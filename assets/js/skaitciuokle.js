@@ -46,11 +46,11 @@ $(document).ready(function(){
     var nuolaida = 0, nuolaida_input = 0, nuolaida_menuo = 0, nuolaida_metai = 0;
     var viso_menuo=0, viso_metai=0;
     //atskyru skyriu viso skaiciavimui
-    var baz_menesis, baz_metai;
-    var uzm_menesis, uzm_metai;
-    var uki_menesis, uki_metai;
-    var dk_menesis, dk_metai;
-    var kt_menesis, kt_metai;
+    var baz_menesis = 0, baz_metai = 0;
+    var uzm_menesis = 0, uzm_metai = 0;
+    var uki_menesis = 0, uki_metai = 0;
+    var dk_menesis = 0, dk_metai = 0;
+    var kt_menesis = 0, kt_metai = 0;
 
     //pasidarom kad nereiketu vesti
     $('#bankai').bootstrapNumber();
@@ -708,10 +708,10 @@ $(document).ready(function(){
     $('#laiku_dokumentai').change(function() {
         nuolaida_input = $("#nuolaida").val();
         if($(this).is(":checked")) {
-            nuolaida = parseInt(nuolaida_input) + procentai['laiku_dokumentai'];
+            nuolaida = parseFloat(nuolaida_input) + procentai['laiku_dokumentai'];
             $('#nuolaida').val(nuolaida);
         } else {
-            nuolaida = parseInt(nuolaida_input) - procentai['laiku_dokumentai'];
+            nuolaida = parseFloat(nuolaida_input) - procentai['laiku_dokumentai'];
             $('#nuolaida').val(nuolaida);
         }
     });
@@ -720,28 +720,16 @@ $(document).ready(function(){
     $("#skaitciuoti").click(function(e) {
         e.preventDefault();
         nuolaida_input = $("#nuolaida").val();
-        //var baz_menesis, baz_metai;
-        //var uzm_menesis, uzm_metai;
-        //var uki_menesis, uki_metai;
-        //var dk_menesis, dk_metai;
-       // var kt_menesis, kt_metai;
+
 
         //sutvarkyti pagal taip kaip isdestyta
-        var bazine_menuo = kreditai_menuo + bankai_menuo + pirminiai_menuo + darb_menuo + darb_2_menuo + inventorizacija_menuo + fr572_menuo + fr573_menuo + sam_menuo + sd_menuo;
-        var bazine_metai = kreditai_metai + bankai_metai + pirminiai_metai + darb_metai + darb_2_metai + inventorizacija_metai + fr572_metai + fr573_metai + sam_metai + sd_metai;
-        var ukis_menuo = galvijai_menuo + dek_menuo + technika_menuo + judejimas_menuo;
-        var ukis_metai = galvijai_metai + dek_metai + technika_metai + judejimas_metai;
-        var deklaracija_menuo = pvm_x12_menuo + pvm_x2_menuo + fr457_menuo + gpm308_menuo + sav1_menuo + ivaz_menuo + isaf_2_menuo + isaf_12_menuo;
-        var deklaracija_metai = pvm_x12_metai + pvm_x2_metai + fr457_metai + gpm308_metai + sav1_metai + ivaz_metai + isaf_2_metai + isaf_12_metai;
-        var paslaugos_menuo = europa_menuo + saskaita_menuo + kuras_menuo + apsauga_menuo + zemes_menuo + kitos_paslaugos_menuo;
-        var paslaugos_metai = europa_metai + saskaita_metai + kuras_metai + apsauga_metai + zemes_metai + kitos_paslaugos_metai;
-        viso_menuo = bazine_menuo + ukis_menuo + deklaracija_menuo + paslaugos_menuo;
-        viso_metai = bazine_metai + ukis_metai + deklaracija_metai + paslaugos_metai;
-        //paskaiciuojam nuolaida
-        //nuolaida = parseInt(nuolaida) + parseInt(laiku_atsiskaito) + parseInt(seimos_nariai);
-        nuolaida_menuo = viso_menuo * (nuolaida_input/100);
+        viso_menuo = baz_menesis + uki_menesis + dk_menesis + kt_menesis + uzm_menesis;
+        viso_metai = baz_metai + uki_metai + dk_metai + kt_metai + uzm_metai;
 
+        //paskaiciuojam nuolaida
+        nuolaida_menuo = viso_menuo * (nuolaida_input/100);
         nuolaida_metai = viso_metai * (nuolaida_input/100);
+
         viso_menuo = viso_menuo - nuolaida_menuo;
         viso_metai = viso_metai - nuolaida_metai;
 

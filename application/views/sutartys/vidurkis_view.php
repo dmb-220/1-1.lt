@@ -8,50 +8,37 @@
             </div>
         </div>
         <div class="ibox-content">
-        <div class="table-responsive" id="table-responsive">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#galviju_skirstymas">Galvijų skirtymas</button>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#zemes_skirstymas">Žemės skirtymas</button>
+            <hr>
+            <form class="form-bordered" action="<?= base_url(); ?>sutartys/vidurkis"  method="POST">
+                <fieldset>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <select name="rinktis" id="rinktis" class="form-control">
+                                <option value="1" selected>Galvijų vidurkis</option>
+                                <option value="2">Žemės vidurkis</option>
+                            </select>
+                        </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-block btn-info" type="submit">
+                                    <span class="fa fa-download text-white"></span> PASIRINKTI RUŠIAVIMĄ
+                                </button>
+                            </div>
+                        </div>
+                </fieldset
+            </form>
+            <br>
             <?php
-            $galviju = array(
-                array("kodas" => "U0", "kiekis" => 10),
-                array("kodas" => "U1", "kiekis" => 30),
-                array("kodas" => "U2", "kiekis" => 60),
-                array("kodas" => "U3", "kiekis" => 90),
-                array("kodas" => "U4", "kiekis" => 120),
-                array("kodas" => "U5", "kiekis" => 150),
-                array("kodas" => "U6", "kiekis" => 180),
-                array("kodas" => "U7", "kiekis" => 210),
-                array("kodas" => "U8", "kiekis" => 240),
-                array("kodas" => "U9", "kiekis" => 270),
-                array("kodas" => "U10", "kiekis" => 300),
-                array("kodas" => "U11", "kiekis" => 350),
-                array("kodas" => "U12", "kiekis" => 400),
-                array("kodas" => "U13", "kiekis" => 450),
-                array("kodas" => "U14", "kiekis" => 500),
-                array("kodas" => "U15", "kiekis" => 750),
-            );
-            $ploto = array(
-                array("kodas" => "A0", "kiekis" => 5),
-                array("kodas" => "A1", "kiekis" => 10),
-                array("kodas" => "A2", "kiekis" => 15),
-                array("kodas" => "A3", "kiekis" => 20),
-                array("kodas" => "A4", "kiekis" => 25),
-                array("kodas" => "A5", "kiekis" => 30),
-                array("kodas" => "A6", "kiekis" => 35),
-                array("kodas" => "A7", "kiekis" => 40),
-                array("kodas" => "A8", "kiekis" => 50),
-                array("kodas" => "A9", "kiekis" => 75),
-                array("kodas" => "A10", "kiekis" => 100),
-                array("kodas" => "A11", "kiekis" => 150),
-                array("kodas" => "A12", "kiekis" => 200),
-                array("kodas" => "A13", "kiekis" => 250),
-                array("kodas" => "A14", "kiekis" => 300),
-                array("kodas" => "A15", "kiekis" => 500),
-            ); ?>
-
+            //echo $this->main_model->info['txt']['rinktis'];
+            ?>
+        <div class="table-responsive" id="table-responsive">
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
                     <th>Ūkininkas</th>
                     <th>Ūkis</th>
+                    <th>Banda</th>
                     <th>Dydis</th>
                     <th>Galvijai</th>
                     <th>Žemė</th>
@@ -62,26 +49,31 @@
                 </thead>
                 <tbody>
                 <?php
-                foreach($this->main_model->info['ukininkai'] as $row) {
-                    $ukio_tipas = array("GYVULININKYSTĖ", "AUGALININKYSTĖ", "ŽUVININKYSTĖ", "MIŠKININKYSTĖ");
-                    $galviju_kiekis = $this->sutartys_model->galvijai_vidurkis($row['valdos_nr']);
-                    $dat = array('ukininkas' => $row['valdos_nr'], 'metai' => '2017');
-                    $zemes_kiekis =  $this->sutartys_model->deklaruotas_plotas($dat);
+                //var_dump($data); die;
+                $aa = array("", "galviju_vidurkis", "zemes_vidurkis", "suma_uz_menesi", "suma_uz_metus");
 
-                    $sk_gal = $this->sutartys_model->rasti_skaiciu($galviju, $galviju_kiekis);
-                    $sk_plo = $this->sutartys_model->rasti_skaiciu($ploto, $zemes_kiekis);
+                function array_sort_by_column(&$arr, $col, $dir = SORT_DESC) {
+                    $sort_col = array();
+                    foreach ($arr as $key=> $row) {
+                        $sort_col[$key] = $row[$col];
+                    }
 
-                    $suma = $this->sutartys_model->sutarties_suma($row['valdos_nr'], "2017");
-                    ?>
+                    array_multisort($sort_col, $dir, $arr);
+                }
 
+                array_sort_by_column($data, $aa[$this->main_model->info['txt']['rinktis']]);
+
+
+                foreach($data as $row) {?>
                     <tr>
                         <td><?php echo $row['vardas']." ".$row['pavarde']; ?></td>
-                        <td><?php echo $ukio_tipas[$row['ukio_tipas']]; ?></td>
-                        <td><?php echo $sk_gal." - ".$sk_plo; ?></td>
-                        <td><?php if($row['ukio_tipas'] == 0) { echo "Galvijų vidurkis: " . $galviju_kiekis;} ?></td>
-                        <td><?php echo "Žemės vidurkis: " . $zemes_kiekis; ?></td>
-                        <td><?php echo $suma[0]['uz_menesi']; ?></td>
-                        <td><?php echo $suma[0]['uz_metus']; ?></td>
+                        <td><?php echo $row['ukio_tipas']; ?></td>
+                        <td><?php echo $row['banda']; ?></td>
+                        <td><?php echo $row['galviju_kodas']." - ".$row['zemes_kodas']; ?></td>
+                        <td><?php echo "Galvijų vidurkis: " . $row['galviju_vidurkis']; ?></td>
+                        <td><?php echo "Žemės vidurkis: " . $row['zemes_vidurkis']; ?></td>
+                        <td><?php echo $row['suma_uz_menesi']; ?></td>
+                        <td><?php echo $row['suma_uz_metus']; ?></td>
                         <td><form action='<?= base_url(); ?>sutartys/ukio_dydis' method='POST'>
                                 <input type="hidden" value="<?= $row['valdos_nr']; ?>" name="ukio_id[]">
                                 <select name='dydis[]' class='form-control' onchange='if(this.value != 0) { this.form.submit(); }'>
@@ -107,5 +99,81 @@
             </button>
         </div>
         </div>
+
+        <!-- Modal -->
+        <div id="galviju_skirstymas" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Galvijų skirstymas</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Kodas</th>
+                                <th>Kiekis</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                        <?php
+                        foreach ($this->sutartys_model->galviju as $row){
+                            echo"<tr>";
+                            echo"<td>".$row['kodas']."</td>";
+                            echo"<td>".$row["kiekis"]."</td>";
+                            echo"</tr>";
+                        }
+                        ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Uždaryti</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="zemes_skirstymas" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Žemės skirstymas</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Kodas</th>
+                                <th>Kiekis</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach ($this->sutartys_model->ploto as $row){
+                                echo"<tr>";
+                                echo"<td>".$row['kodas']."</td>";
+                                echo"<td>".$row["kiekis"]."</td>";
+                                echo"</tr>";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Uždaryti</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>

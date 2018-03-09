@@ -142,44 +142,6 @@ class Sutartys extends CI_Controller
     }
 
     public function skaitciuokle(){
-
-        $galviju = array(
-            array("kodas" => "U0", "kiekis" => 10),
-            array("kodas" => "U1", "kiekis" => 30),
-            array("kodas" => "U2", "kiekis" => 60),
-            array("kodas" => "U3", "kiekis" => 90),
-            array("kodas" => "U4", "kiekis" => 120),
-            array("kodas" => "U5", "kiekis" => 150),
-            array("kodas" => "U6", "kiekis" => 180),
-            array("kodas" => "U7", "kiekis" => 210),
-            array("kodas" => "U8", "kiekis" => 240),
-            array("kodas" => "U9", "kiekis" => 270),
-            array("kodas" => "U10", "kiekis" => 300),
-            array("kodas" => "U11", "kiekis" => 350),
-            array("kodas" => "U12", "kiekis" => 400),
-            array("kodas" => "U13", "kiekis" => 450),
-            array("kodas" => "U14", "kiekis" => 500),
-            array("kodas" => "U15", "kiekis" => 750),
-        );
-        $ploto = array(
-            array("kodas" => "A0", "kiekis" => 5),
-            array("kodas" => "A1", "kiekis" => 10),
-            array("kodas" => "A2", "kiekis" => 15),
-            array("kodas" => "A3", "kiekis" => 20),
-            array("kodas" => "A4", "kiekis" => 25),
-            array("kodas" => "A5", "kiekis" => 30),
-            array("kodas" => "A6", "kiekis" => 35),
-            array("kodas" => "A7", "kiekis" => 40),
-            array("kodas" => "A8", "kiekis" => 50),
-            array("kodas" => "A9", "kiekis" => 75),
-            array("kodas" => "A10", "kiekis" => 100),
-            array("kodas" => "A11", "kiekis" => 150),
-            array("kodas" => "A12", "kiekis" => 200),
-            array("kodas" => "A13", "kiekis" => 250),
-            array("kodas" => "A14", "kiekis" => 300),
-            array("kodas" => "A15", "kiekis" => 500),
-        );
-
         $numeris = "ALU ".date('Y')."-".$this->sutartys_model->sutarties_nr();
         $this->main_model->info['txt']['numeris'] = $numeris;
 
@@ -196,8 +158,8 @@ class Sutartys extends CI_Controller
             $info_uk = $this->ukininkai_model->ukininkas($dt['nr']);
             $this->main_model->info['txt']['banda'] = $info_uk[0]['banda'];
 
-            $sk_gal = $this->sutartys_model->rasti_skaiciu($galviju, $this->main_model->info['txt']['vidurkis']);
-            $sk_plo = $this->sutartys_model->rasti_skaiciu($ploto, $this->main_model->info['txt']['deklaruota']);
+            $sk_gal = $this->sutartys_model->rasti_skaiciu($this->sutartys_model->galviju, $this->main_model->info['txt']['vidurkis']);
+            $sk_plo = $this->sutartys_model->rasti_skaiciu($this->sutartys_model->ploto, $this->main_model->info['txt']['deklaruota']);
 
             $suma = $this->sutartys_model->sutarties_suma($dt['nr'], "2017");
 
@@ -220,16 +182,58 @@ class Sutartys extends CI_Controller
     }
 
     public function vidurkis(){
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        $this->form_validation->set_rules('rinktis', 'Pasirinkti rusiavima', 'required', array('required' => 'Pasirinkite pagal ka rusiuoti.'));
+
+        $arr = array();
         $user = $this->ion_auth->user()->row();
-        //Nuskaitom ukininku sarasa, kad butu visada po ranka
-        $sarasas = $this->ukininkai_model->ukininku_sarasas($user->id);
-        $this->main_model->info['ukininkai'] = $sarasas;
+
+        if ($this->form_validation->run()) {
+            $rinktis = $this->input->post('rinktis');
+        }else{
+            $rinktis = 1;
+        }
+
+        $this->main_model->info['txt']['rinktis'] = $rinktis;
+
+        $i = 0;
+        foreach($this->ukininkai_model->ukininku_sarasas($user->id) as $row) {
+            //surenkam duomenisir sujungiam i viena masyva
+            $ukio_tipas = array("GYVULININKYSTĖ", "AUGALININKYSTĖ", "ŽUVININKYSTĖ", "MIŠKININKYSTĖ");
+            $bandos_tipas = array("", "PIENINIAI", "MĖSINIAI", "MIŠRŪS");
+            $galviju_kiekis = $this->sutartys_model->galvijai_vidurkis($row['valdos_nr']);
+            $dat = array('ukininkas' => $row['valdos_nr'], 'metai' => '2017');
+            $zemes_kiekis =  $this->sutartys_model->deklaruotas_plotas($dat);
+
+            if(1 == $row['valdos_nr']){$galviju_kiekis = 25; }
+
+
+            $sk_gal = $this->sutartys_model->rasti_skaiciu($this->sutartys_model->galviju, $galviju_kiekis);
+            $sk_plo = $this->sutartys_model->rasti_skaiciu($this->sutartys_model->ploto, $zemes_kiekis);
+            $suma = $this->sutartys_model->sutarties_suma($row['valdos_nr'], "2017");
+            //dedam i masyva
+            $arr[$i]['valdos_nr'] = $row['valdos_nr'];
+            $arr[$i]['banda'] = $bandos_tipas[$row['banda']];
+            $arr[$i]['dydis'] = $row['dydis'];
+            $arr[$i]["vardas"] = $row['vardas'];
+            $arr[$i]["pavarde"] = $row['pavarde'];
+            $arr[$i]["ukio_tipas"] = $ukio_tipas[$row['ukio_tipas']];
+            $arr[$i]["galviju_kodas"] = $sk_gal;
+            $arr[$i]["zemes_kodas"] = $sk_plo;
+            $arr[$i]["galviju_vidurkis"] = $galviju_kiekis;
+            $arr[$i]["zemes_vidurkis"] = $zemes_kiekis;
+            $arr[$i]["suma_uz_menesi"] = $suma[0]['uz_menesi'];
+            $arr[$i]["suma_uz_metus"] = $suma[0]['uz_metus'];
+
+            $i++;
+        }
 
         //sukeliam info, informaciniam meniu
         $this->main_model->info['txt']['meniu'] = "Sutartys";
         $this->main_model->info['txt']['info'] = "Vidurkis";
 
-        $this->load->view('main_view');
+        $this->load->view('main_view', array("data" => $arr));
     }
 
     public function ukio_dydis(){
