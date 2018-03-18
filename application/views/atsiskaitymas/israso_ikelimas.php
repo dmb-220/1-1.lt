@@ -7,9 +7,17 @@
         </div>
     </div>
     <div class="ibox-content">
-        <?php
-        var_dump($this->main_model->info['error']);
-        var_dump($this->main_model->info['ok']);
+    <?php
+    //isvedamos klaidos
+    if(count($this->main_model->info['error']) > 0){
+        foreach ($this->main_model->info['error'] as $klaida){
+            echo'<div class="alert alert-danger">';
+            echo $klaida;
+            echo '</div>';
+        }
+    }
+        echo"Bandymas";
+        var_dump($mokejimai);
         ?>
     </div>
 </div>

@@ -738,7 +738,7 @@ $(document).ready(function(){
         $('#nuolaida_metai').val(nuolaida_metai.toFixed(2) + ' €');
 
         $('#viso_menesis').val(viso_menuo.toFixed(0) + ' €');
-        $('#viso_metai').val(viso_metai.toFixed(0) + ' €');
+        $('#viso_metai').val((viso_menuo*12).toFixed(0) + ' €');
     });
 
     function deklaruotas_plotas(){

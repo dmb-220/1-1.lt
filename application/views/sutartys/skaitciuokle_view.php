@@ -36,7 +36,7 @@
                                 </select>
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-block btn-outline btn-primary" id="pasirinkti_ukininka">
+                            <button class="btn btn-block btn-outline btn-primary" id="pasirinkti_ukininka" type="button">
                                 <i class="fa fa-check-circle-o fa-lg"> PASIRINKTI</i>
                             </button>
                         </div>
@@ -874,6 +874,10 @@
                                     </div>
                                     <div class="col-md-3">
                                         <input type="text" name="kitos_paslaugos_metai" id="kitos_paslaugos_metai" class="form-control" placeholder="Suma per metus">
+                                    </div>
+                                    <br>
+                                    <div class="col-md-12">
+                                        <textarea class="form-control" rows="3" name="kitos_paslaugos_komentaras" id="kitos_paslaugos_komentaras"></textarea>
                                     </div>
                                 </div>
                             </div>

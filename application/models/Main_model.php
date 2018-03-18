@@ -10,6 +10,7 @@ class Main_model extends CI_Model{
         "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis","Lapkritis", "Gruodis"
     );
 
+
     //Kintamasis / masyvas i kuria sukrausiu informacija siunciama i VIEW faila
     public $info = array();
 

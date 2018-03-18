@@ -27,6 +27,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.js"></script>
     <?php } ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
 </head>
 <body class="md-skin">
 <?php
@@ -128,6 +130,12 @@ if($action == 'pradinis'){ ?>
 if($action == 'saskaitos'){ ?>
 <script src="<?= base_url(); ?>assets/js/saskaitos.js"></script>
 <?php } ?>
+
+<?php
+if($action == 'knyga'){ ?>
+    <script src="<?= base_url(); ?>assets/js/zalia_knyga.js"></script>
+<?php } ?>
+
 <?php
 if($action == 'atsiskaitymas'){ ?>
     <script src="<?= base_url(); ?>assets/js/atsiskaitymas.js"></script>

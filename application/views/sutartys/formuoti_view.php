@@ -10,6 +10,7 @@
         <div class="ibox-content">
             <?php
             //echo serialize($data);
+            //var_dump($data); die;
             ?>
             <div id="sutartis">
                 <div class="text-center">
@@ -367,7 +368,7 @@ išskyrus deklaracijos teikimus. </small></h5></td></tr>";
                 }
 
 
-                if($data['kuras_kiekis'] > 0 || $data['gamtos_apsauga'] == "on" || $data['zemes_kiekis'] > 0 || $data['europa'] == "on") {
+                if($data['kuras_kiekis'] > 0 || $data['gamtos_apsauga'] == "on" || $data['zemes_kiekis'] > 0 || $data['europa'] == "on" || $data['kitos_paslaugos_kiekis'] > 0) {
                     echo "<tr><td class='success' colspan='4'>KITŲ PASLAUGŲ KAINA</td></tr>";
 
                     if ($data['gamtos_apsauga'] == "on") {
@@ -431,7 +432,9 @@ Pildomi kelionės lapai kiekvienai transporto priemonei. </small></h5></td></tr>
                     <td>" . $data['kitos_paslaugos_kiekis'] . " vnt.</td>
                     <td>" . $data['kitos_paslaugos_menesis'] . "</td>
                     <td>" . $data['kitos_paslaugos_metai'] . "</td>
-                </tr>";
+                </tr>
+                <tr>
+                <td colspan='4' class='text-left'>".$data['kitos_paslaugos_komentaras']."</td></tr>";
                         echo "<tr><td class='text-left' colspan='4'><h5><small>Kitos paslaugos, teikiamos ūkininkui, kai netinka, jokiai kitai kategorijai.</small></h5></td></tr>";
                     }
                 }

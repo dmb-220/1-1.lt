@@ -13,8 +13,8 @@ class Zalia_knyga_model extends CI_Model{
         return $result;
     }
     //naujas irasas pwm tarifas
-    public function naujas_irasas($pavadinimas, $kodas, $tarifas){
-        return $this->db->insert('pvm', array("pavadinimas" => $pavadinimas, "kodas" => $kodas, "tarifas" => $tarifas));
+    public function naujas_pvm($pavadinimas, $kodas, $tarifas, $pvz){
+        return $this->db->insert('pvm', array("pavadinimas" => $pavadinimas, "kodas" => $kodas, "tarifas" => $tarifas, "pvz" => $pvz));
     }
     //nuskaito pvm irasus
     public function nuskaityti_pvm($id = ""){
@@ -25,6 +25,7 @@ class Zalia_knyga_model extends CI_Model{
         $data = $query->result_array();
         return $data;
     }
+
     ///////////////////////////////////// KNYGA ///////////////////////////////////
     //patikrinam ar toks pvm tarifas nera jau ikeltas, kad nesidubliutu
     public function tikrinti_irasa($data) {
@@ -42,22 +43,25 @@ class Zalia_knyga_model extends CI_Model{
     public function nuskaityti_knyga($dat){
         $this->db->where($dat);
         $this->db->join('pvm', 'pvm.id = zalia_knyga.pvm_id', 'left');
+        $this->db->join('organizaciju_sarasas', 'organizaciju_sarasas.id = zalia_knyga.organizacija', 'left');
         $query = $this->db->get("zalia_knyga");
         $data = $query->result_array();
         return $data;
     }
-    //kiti metodai, model
 
-    public function nuskaityti_saskaitas(){
-            $this->db->select ( '*' );
-            $this->db->from ( 'saskaitu_grupe' );
-            $this->db->join ( 'saskaitu_grupe_pogrupis', 'saskaitu_grupe_pogrupis.po_id = saskaitu_grupe.id' , 'left' );
-            //$this->db->join ( 'saskaitu_grupe', 'saskaitu_grupe.id = saskaitu_pogrupis.id' , 'left' );
-            $query = $this->db->get ();
-            return $query->result_array();
-        }
-
-        /////////////////////////////////////////////////////////// ORGANIZACIJOS //////////////////////////////////////////
+    /////////////////////////////////////////////////////////// ORGANIZACIJOS //////////////////////////////////////////
+    //
+    public function tikrinti_organizacija($kodas, $pavadinimas){
+        $this->db->select('id');
+        $this->db->from('organizaciju_sarasas');
+        $this->db->where(array("imones_kodas" => $kodas, "pavadinimas" => $pavadinimas));
+        $result = $this->db->count_all_results();
+        return $result;
+    }
+    //
+    public function nauja_organizacija($pavadinimas, $kodas, $pvm){
+        return $this->db->insert('organizaciju_sarasas', array("pavadinimas" => $pavadinimas, "imones_kodas" => $kodas, "pvm_kodas" => $pvm));
+    }
     //nuskaito pvm irasus
     public function nuskaityti_organizacijas($id = ""){
         $query = $this->db->get("organizaciju_sarasas");

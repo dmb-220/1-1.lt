@@ -1,3 +1,41 @@
+Vue.http.options.emulateJSON = true; // send as
+
+Vue.component('tr-item', {
+    props: ['todo'],
+    template: '<tr><td>{{ todo.debetas_kreditas }}</td><td>{{ todo.operacijos_suma }}</td><td>{{ todo.moketojas }}</td><td>{{ todo.gavejas }}</td></tr>'
+});
+
+new Vue({
+    el: '#israsu_redagavimas',
+    data: {
+        metai: '2017',
+        menesis: '10',
+        rodyti_redagavima: false,
+        israso_sarasas: false,
+        israsas: []
+    },
+    methods: {
+        pasirinkti_israsus: function () {
+            this.rodyti_redagavima = !this.rodyti_redagavima;
+        },
+
+        rinktis_israsus: function () {
+            this.$http.post('israsu_redagavimas', {
+                metai: this.metai,
+                menesis: this.menesis
+            })
+                .then(function (response) {
+                    this.israsas = response.body;
+                    this.israso_sarasas = true;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }}
+});
+
+
+
 $(document).ready(function (e) {
     $("#banko_israsas").on('submit',(function(e) {
         e.preventDefault();
@@ -40,6 +78,8 @@ $(document).ready(function(){
     //URL kur kreiptis AJAX
     var url = "aprasymas";
 
+    var israsas;
+
     //uzsikrauna puslapis parodoma ir informacija.
     uzklausa();
 
@@ -52,22 +92,39 @@ $(document).ready(function(){
     });
 
     //pasirenkus ukininka, metus ar menesi, turi uzsikrauti informacija
-    $('#metai, #menesis').on('change',function() {
+    /*$('#metai, #menesis').on('change',function() {
         if(url === "aprasymas" || url === "nustatymai"){}else{
             uzklausa();
         }
-    });
+    });*/
 
 
 ////////////////////////////////////////////////////////////////////////// Banko israsu IKELIMAS/////////////////////////////////////////////
     //atidarom sub-meniu
     $('#israsai_ikelti').on('click', function() {
         $('#in_israsai_ikelti').toggle();
-        $("").hide();
+        $("#in_israsu_redagavimas").hide();
         $("#data").html("");
         url = "tuscia";
     });
 
+////////////////////////////////////////////////////////////////////////// Israsu sarasas /////////////////////////////////////////////
+    $('#israsai_sarasas').on('click', function() {
+        url = "israsai_sarasas";
+        uzklausa();
+        url = "tuscias";
+        $("#in_israsai_ikelti, #in_israsu_redagavimas").hide();
+    });
+
+////////////////////////////////////////////////////////////////////////// ukininkai /////////////////////////////////////////////
+    $('#ukininkai').on('click', function() {
+        url = "ukininkai";
+        uzklausa();
+        url = "tuscias";
+        $("#in_israsai_ikelti, #in_israsu_redagavimas").hide();
+    });
+
+////////////////////////////////////////////////////////////////////////// redagavimas /////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////// FUNKCIJOS /////////////////////////////////////////////////////////////////////////
     //siunciam pagrindinius duomenis, ukininkas, metai, menesis

@@ -77,6 +77,7 @@ class Sutartys extends CI_Controller
     public function perziureti(){
         $action = $this->uri->segment(3);
         $duomenys = $this->sutartys_model->ukininko_sutartis(1, $action);
+        $this->main_model->info['ukininkas'] = $this->ukininkai_model->ukininkas($action);
         $this->main_model->info['sutartis'] = $duomenys;
 
         $this->main_model->info['txt']['meniu'] = "Sutartys";
