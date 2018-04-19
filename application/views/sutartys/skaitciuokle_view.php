@@ -22,7 +22,6 @@
                     <div class="form-group">
                         <label for="ukininkas" class="col-md-2 control-label">Ūkininkas:</label>
                         <div class="col-md-8">
-                            <?php echo form_error('ukininkas'); ?>
                                 <select name="ukininkas" id="ukininkas" class="form-control">
                                     <option value="">Pasirinkite...</option>
                                     <?php

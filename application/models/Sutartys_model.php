@@ -48,6 +48,53 @@ class Sutartys_model extends CI_Model{
         array("kodas" => "A15", "kiekis" => 500),
     );
 
+    public $EVRK = array(
+        "A" => array("01", "02", "03"),
+        "B" => array("04", "05", "06", "07", "08", "09"),
+        "C" => array("10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33"),
+        "D" => array("35"),
+        "E" => array("36", "37", "38", "39"),
+        "F" => array("41", "42", "43"),
+        "G" => array("45", "46", "47"),
+        "H" => array("49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63"),
+        "K" => array("64", "65", "66"),
+        "L" => array("68"),
+        "M" => array("69", "70", "71", "72", "73", "74", "75"),
+        "N" => array("77", "78", "79", "80", "81", "82"),
+        "O" => array("84"),
+        "P" => array("85"),
+        "Q" => array("86", "87", "88"),
+        "R" => array("90", "91", "92", "93"),
+        "S" => array("94", "95", "96"),
+        "T" => array("97", 98),
+        "U" => array("99")
+     );
+
+    /////////////////////////////////////////////// JA /////////////////////////////////
+    public function EVRK_sekcija(){
+        $this->db->where(array("sekcija !=" => ""));
+        $query = $this->db->get("EVRK_2");
+        $data = $query->result_array();
+        return $data;
+    }
+
+    public function EVRK_skyrius($sekcija){
+        $this->db->where(array('skyrius !=' => ""));
+        $this->db->where_in('skyrius', $this->EVRK[$sekcija]);
+        $query = $this->db->get("EVRK_2");
+        $data = $query->result_array();
+        return $data;
+    }
+
+    public function EVRK_grupe($skyrius){
+        $this->db->where(array('grupe !=' => ""));
+        $this->db->like('grupe', $skyrius, 'after');
+        $query = $this->db->get("EVRK_2");
+        $data = $query->result_array();
+        return $data;
+    }
+
+
     public function atnaujinti_ukio_dydi($nr, $data){
         $where = array('valdos_nr' => $nr);
         $this->db->where($where);
@@ -76,6 +123,7 @@ class Sutartys_model extends CI_Model{
         $data = $query->result_array();
         return $data;
     }
+
 
     //Gaunamas Sutarciu sarasas
     public function sutarciu_sarasas(){

@@ -82,6 +82,7 @@ $this->load->view('left_view');
             case "knyga": $this->load->view("knyga/knyga_view"); break;
             //Sutartys
             case "skaitciuokle": $this->load->view("sutartys/skaitciuokle_view"); break;
+            case "skaitciuokle_JA": $this->load->view("sutartys/skaitciuokle_JA"); break;
             case "sutartys": $this->load->view("sutartys/sutartys_view"); break;
             case "vidurkis": $this->load->view("sutartys/vidurkis_view"); break;
             case "kainos": $this->load->view("sutartys/kainos"); break;
@@ -126,6 +127,12 @@ $this->load->view('left_view');
     <script src="<?= base_url(); ?>assets/js/bootstrap-number-input.js"></script>
     <script src="<?= base_url(); ?>assets/js/skaitciuokle.js"></script>
 <?php }
+
+if($action == 'skaitciuokle_JA'){ ?>
+    <script src="<?= base_url(); ?>assets/js/bootstrap-number-input.js"></script>
+    <script src="<?= base_url(); ?>assets/js/skaitciuokle_JA.js"></script>
+<?php }
+
 if($action == 'pradinis'){ ?>
 <script src="<?= base_url(); ?>assets/js/galvijai.js"></script>
 <?php } ?>

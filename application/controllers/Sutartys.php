@@ -51,6 +51,45 @@ class Sutartys extends CI_Controller
     {
         redirect('main');
     }
+    ///////////////////////////////////////////// JURIDINIAI ASMENYS //////////////////////////////////////////////
+
+    public function skaitciuokle_JA(){
+        $numeris = "ALU_JA ".date('Y')."-".$this->sutartys_model->sutarties_nr();
+        $this->main_model->info['txt']['numeris'] = $numeris;
+
+        $dt = $this->session->userdata();
+        if($dt['nr'] == ""){
+            $this->main_model->info['error']['login'] = "Norėdami pradėti darbus, Pasirinkite JA su kuriuo dirbsite!";
+        }else {
+            $this->main_model->info['juridinis_asmuo'] = array(
+                "UAB", "AB", "ŽŪB"
+            );
+            //cia surenkam duomenis kuriu reikes uzpildant laukelius
+        }
+
+        //sukeliam info, informaciniam meniu
+        $this->main_model->info['txt']['meniu'] = "Sutartys";
+        $this->main_model->info['txt']['info'] = "Sutarties JA paruošimas";
+
+        $user = $this->ion_auth->user()->row();
+        //Nuskaitom ukininku sarasa, kad butu visada po ranka
+        $this->main_model->info['evrk_sekcijos'] = $this->sutartys_model->EVRK_sekcija();
+
+        $this->load->view('main_view');
+    }
+
+    public function EVRK_JA(){
+        $this->form_validation->set_rules('sekcija', 'SEKCIJA', 'required');
+        $data = array();
+        if ($this->form_validation->run()) {
+            $sekcija = $this->input->post('sekcija');
+            $data = $this->sutartys_model->EVRK_skyrius($sekcija);
+        }
+        echo json_encode($data); die;
+    }
+
+
+    /////////////////////////////////////// UKININKAI /////////////////////////////////////////////////////
 
     //Pagrindinis visos svetaines puslapis
     public function pasirinkti_ukininka(){
