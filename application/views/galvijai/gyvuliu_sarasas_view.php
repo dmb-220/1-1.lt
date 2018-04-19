@@ -96,7 +96,7 @@ if($this->main_model->info['error']['action']){
             <div class="ibox-content">
                 <div class="table-responsive">
                     <h4><strong>
-                            <p class="text-center">GYVULIŲ SĄRAŠAS</p>
+                            <div class="text-center">GYVULIŲ SĄRAŠAS</div>
                         </strong></h4><br><br>
                     <div class="pull-left">
                         <?php echo $this->linksniai->getName($this->main_model->info['txt']['vardas'], 'kil')." 

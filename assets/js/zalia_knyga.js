@@ -1,21 +1,6 @@
 Vue.http.options.emulateJSON = true; // send as
+//Vue.component('v-select', VueSelect.VueSelect);
 
-Vue.component('option-item', {
-    props: ['option'],
-    template: '<option :value=option.id>{{ option.pavadinimas }}</option>'
-});
-
-Vue.component('option-pvm', {
-    props: ['option'],
-    template: '<option :value=option.id>{{ option.kodas }}</option>'
-});
-
-Vue.component('tr-item', {
-    props: ['todo', 'vnt', 'eur', 'rusis'],
-    template: '<tr><td>{{ todo.numeris }}</td><td>{{ todo.metai }}-{{todo.menesis}}-{{ todo.diena }}</td><td>{{ todo.pavadinimas }}</td><td>{{ rusis[todo.dokumento_rusis].pavadinimas }}</td>' +
-    '<td>{{ todo.kiekis }}</td><td>{{ vnt[todo.mato_vnt] }}</td><td>{{ eur[todo.atsiskaitymas] }}</td><td>{{ todo.atsiskaitymo_data }}</td><td>{{ todo.be_PVM}}</td>' +
-    '<td>{{ todo.PVM }}</td><td>{{ parseFloat(todo.be_PVM) + parseFloat(todo.PVM) }}</td><td>{{ todo.kodas }}</td><td></td></tr>'
-});
 
 new Vue({
     el: '#zalia_knyga',
@@ -24,38 +9,49 @@ new Vue({
         dokumento_numeris: '',
         data: '',
         organizacija: '',
-        dok_rusis: '',
+        dok_rusis: 0,
         kiekis: '',
         mato_vnt: '',
         atsiskaitymas: '',
         be_pvm: 0,
         pvm: 0,
         bendra_suma: 0,
-        pvm_kodas: '',
+        pvm_kodas: [],
+        pvm_nr: 0,
         atsiskaitymo_data: '',
-
+        asm_reikmes: '',
+        rodyti_asmeninius: false,
+        //jei pasirenkam kad yra asmeniniu
+        be_pvm2: 0,
+        pvm2: 0,
+        bendra_suma2: 0,
+        pvm_kodas2: [],
+        pvm_nr2: 0,
+        //priskirti PVM kodus pasirinkus dokumentu rusi
         dokumento_rusis: [
-            {id: 1, pavadinimas: 'Pirkimas'},
-            {id: 2, pavadinimas: 'Pardavimas'},
-            {id: 3, pavadinimas: 'Asmeninės lėšos, paėmimas'},
-            {id: 4, pavadinimas: 'Asmeninės lėšos, įnešimas'},
-            {id: 5, pavadinimas: 'Grynųjų paėmimas'},
-            {id: 6, pavadinimas: 'Grynųjų įnešimas'},
-            {id: 7, pavadinimas: 'Sumokėta bauda, netesybos, neleistinos palūkanos'},
-            {id: 8, pavadinimas: 'Gauta paskola'},
-            {id: 9, pavadinimas: 'Sumokėta paskola'},
-            {id: 10, pavadinimas: 'Išskirta einam. Metų paskolos dalis'},
-            {id: 11, pavadinimas: 'Sunaudota asmenninėms reikmėms ūkio produkcija'},
-            {id: 12, pavadinimas: 'Sėja'},
-            {id: 13, pavadinimas: 'Derlius'},
-            {id: 14, pavadinimas: 'Sumokėtas gyventojų pajamų mokestis'},
-            {id: 15, pavadinimas: 'Sumokėtos sodros įmokos'},
-            {id: 16, pavadinimas: 'Sumokėtas darbo užmokestis'},
-            {id: 17, pavadinimas: 'Ilgalaikio turto pirkimas'},
-            {id: 18, pavadinimas: 'Ilgalaikio turto pardavimas'},
-            {id: 19, pavadinimas: 'Ilgalaikio turto nusidėvėjimas'},
-            {id: 20, pavadinimas: 'Ilgalaikio turto nurašymas'},
-            {id: 21, pavadinimas: 'Ilgalaikio turto perkainojimas'}
+            {id: 0, pavadinimas: 'Pasirinkite', pvm: ''},
+            {id: 1, pavadinimas: 'Pirkimas', pvm: 8}, //PVM1
+            {id: 2, pavadinimas: 'Pardavimas', pvm: 8}, //PVM1
+            {id: 3, pavadinimas: 'Draudimas', pvm: 14}, //PVM5
+            {id: 4, pavadinimas: 'Asmeninės lėšos, paėmimas', pvm: 15}, //PVM6
+            {id: 5, pavadinimas: 'Asmeninės lėšos, įnešimas', pvm: ''},
+            {id: 6, pavadinimas: 'Grynųjų paėmimas', pvm: ''},
+            {id: 7, pavadinimas: 'Grynųjų įnešimas', pvm: ''},
+            {id: 8, pavadinimas: 'Sumokėta bauda, netesybos, neleistinos palūkanos', pvm: 50}, //PVM100
+            {id: 9, pavadinimas: 'Gauta paskola', pvm: ''},
+            {id: 10, pavadinimas: 'Sumokėta paskola'},
+            {id: 11, pavadinimas: 'Išskirta einam. Metų paskolos dalis', pvm: ''},
+            {id: 12, pavadinimas: 'Sunaudota asmenninėms reikmėms ūkio produkcija', pvm: 15}, //PVM6
+            {id: 13, pavadinimas: 'Sėja', pvm: ''},
+            {id: 14, pavadinimas: 'Derlius', pvm: ''},
+            {id: 15, pavadinimas: 'Sumokėtas gyventojų pajamų mokestis', pvm: ''},
+            {id: 16, pavadinimas: 'Sumokėtos sodros įmokos', pvm: ''},
+            {id: 17, pavadinimas: 'Sumokėtas darbo užmokestis', pvm: ''},
+            {id: 18, pavadinimas: 'Ilgalaikio turto pirkimas', pvm: ''},
+            {id: 19, pavadinimas: 'Ilgalaikio turto pardavimas', pvm: ''},
+            {id: 20, pavadinimas: 'Ilgalaikio turto nusidėvėjimas', pvm: ''},
+            {id: 21, pavadinimas: 'Ilgalaikio turto nurašymas', pvm: ''},
+            {id: 22, pavadinimas: 'Ilgalaikio turto perkainojimas', pvm: ''}
         ],
         pvm_kodai: [],
         selectPVM: [],
@@ -63,37 +59,75 @@ new Vue({
         organizacijos: [],
         zalia_knyga: [],
         vnt: ['', 'vnt', 'kg', 't', 'l', 'pora'],
-        eur: ['', 'Bankas', 'Kasa', 'Skola']
+        eur: ['', 'Bankas', 'Kasa', 'Skola'],
+        redaguoti_irasa: [],
+        istrinti_irasa: []
     },
     computed: {
-        suma: function() {
-            this.bendra_suma = parseInt(this.be_pvm)+parseInt(this.pvm);
+
+        pvm: function() {
+            return parseInt(this.be_pvm)+parseInt(this.pvm);
         }
     },
 
-    mounted: function() {
-        this.$http.get('zalia_knyga')
-            .then(function (response) {
-                //sukraunam organizaciju sarasa i kintamaji is DB
-                for (var i = 0; i < response.body.length; i++) {
-                    this.zalia_knyga.push(response.body[i]);
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    },
+    mounted: function () {
+            this.$http.get('zalia_knyga')
+                .then(function (response) {
+                    //sukraunam organizaciju sarasa i kintamaji is DB
+                    for (var i = 0; i < response.body.length; i++) {
+                        this.zalia_knyga.push(response.body[i]);
+                    }
+                    //isrykiaujam kad naujausi irasai, virsuje
+                    this.zalia_knyga.sort((a, b) => b.za_id - a.za_id);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
 
     methods: {
+        suma: function() {
+            this.bendra_suma = parseInt(this.be_pvm)+parseInt(this.pvm);
+        },
+
+        knyga_redaguoti: function (todo) {
+            $('#editmodal').modal('show');
+            this.redaguoti_irasa = todo;
+        },
+        knyga_istrinti: function (todo) {
+            $('#deletemodal').modal('show');
+            this.istrinti_irasa = todo;
+        },
+
+        rodyti_asm_reikmes: function () {
+            this.rodyti_asmeninius = !this.rodyti_asmeninius;
+            this.be_pvm2 = 0; this.pvm2 = 0;
+            this.bendra_suma2 = 0; this.pvm_nr2 = 15;
+        },
+
         rastiPVM: function() {
             this.pvm_info = true;
-            var length = this.pvm_kodai.length;
-            for(var i = 0; i < length; i++) {
-                if(this.pvm_kodai[i]['id'] == this.pvm_kodas){
-                    this.selectPVM = this.pvm_kodai[i];
-                    //console.log(this.pvm_kodai[i]);
+            for(var i = 0; i < this.pvm_kodai.length; i++){
+                if(this.pvm_kodai[i].id == this.pvm_nr){
+                    this.pvm_kodas = this.pvm_kodai[i];
+                    this.pvm_info = true;
                 }
             }
+        },
+
+        //priskiriam PVM koda kai pasirenkamas dokumento rusis
+        priskirtiPVM: function () {
+            //console.log(this.pvm_kodai);
+            if (this.dokumento_rusis[this.dok_rusis].pvm !== '') {
+                this.pvm_nr = this.dokumento_rusis[this.dok_rusis].pvm;
+                for(var i = 0; i < this.pvm_kodai.length; i++){
+                    if(this.pvm_kodai[i].id == this.pvm_nr){
+                        this.pvm_kodas = this.pvm_kodai[i];
+                        this.pvm_info = true;
+                    }
+                }
+            }else{
+                this.pvm_nr = 0;}
         },
 
         //nauja iraso tikrinimas

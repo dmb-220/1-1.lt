@@ -41,27 +41,27 @@
                     padidėjusių/sumažėjusių/ nekitusių kaštų, terminų ir kitų sąlygų.
                 </div>
                 <div class="text-justify">
-                    4. Užsakovas įsipareigoja pateikti visus reikalingus, teisingai įformintus dokumentus bei informaciją teisingam ūkio apskaitos tvarkymui iki sekančio mėnesio 15 d. ir
+                    4. Užsakovas įsipareigoja pateikti visus reikalingus, teisingai įformintus dokumentus bei informaciją teisingam ūkio buhalterinės apskaitos tvarkymui iki sekančio mėnesio 15 d. ir
                     laiku atsiskaityti už suteiktas paslaugas pagal pateiktas sąskaitas faktūras. Pateikti dokumentai turi būti priskiriami tik ūkio veiklai vykdyti,
                     o asmeniniams poreikiams priskiramos išlaidos/pajamos aiškiai identifikuojamos. Taip pat nenuslėpti ir neatlikti tyčinių veiksmų,
                     kurie gali sukelti pavojų teisingam buhalterinės apskaitos tvarkymui. Užsakovas suteikia visus reikalingus įgaliojimus, priėjimus prie sistemų,
                     duomenų bazių vykdytojui, o vykdytojas įsipareigoja šiuos duomenis tvarkyti LR įstatymų nustatyta tvarka.
                 </div>
                 <div class="text-justify">
-                    5. Atsiskaitymo tvarka; užsakovas atsiskaito už paslaugas pagal pateiktas sąskaitas-faktūras. Paslaugos įkainis nustatomas <b><?php echo $data['viso_menesis'] ?></b> eurų per mėnesį.
-                    Mėnesinį paslaugų įkainį sumokėti  iki sekančo mėnesio paskutinės kalendorinės dienos. Už gruodžio mėnesį sąskaita išrašoma paskutinio metų mėnesio 31 d.
+                    5. Atsiskaitymo tvarka: užsakovas atsiskaito už paslaugas pagal pateiktas sąskaitas-faktūras. Paslaugos įkainis nustatomas <b><?php echo $data['viso_menesis'] ?></b> eurų per mėnesį.
+                    Mėnesinį paslaugų įkainį sumokėti  iki sekančo mėnesio paskutinės kalendorinės dienos. Už gruodžio mėnesį sąskaita išrašoma einamųjų metų gruodžio 31 d.
                     Atlygis indeksuojamas atskiru susitarimu, jei toks susitarimas yra būtinas. Apie tokio susitarimo būtinumą užsakovas informuoja raštu.
                     Už papildomus darbus apmokama atskiru susitarimu.
                 </div>
                 <div class="text-justify">
                     6. Vykdytojas gali reikalauti 0,2 proc. netesybų nuo neapmokėtos sumos, jei užsakovas vėluoja atsiskaityti už suteiktas paslaugas
-                    ilgiau nei 45 kalendorines dienas nuosąskaitos-faktūros išrašymo dienos. Už pavėluotą dokumentų peteikimą (4 punktas) vykdytojui,
-                    gali būti skaičiuojamas sutarties netesybos - 1 euras už 1 pavėluotą kalendorinę dieną.
+                    ilgiau nei 45 kalendorines dienas nuo sąskaitos-faktūros išrašymo dienos. Už pavėluotą dokumentų peteikimą (4 punktas) vykdytojas,
+                    gali skaičiuoti sutarties netesybos - 1 euras už 1 pavėluotą kalendorinę dieną.
                 </div>
                 <div class="text-justify">
-                    7. Ši sutartis gali būti keičiama, papildoma, nutraukiama šaliu susitarimu arba bet kurios šalies iniciatyva informuojant kitą šalį prieš vieną
-                    kalendorinį mėnesį, iki sutarties nutraukimo turi būti pilnai atsiskaityta už paslaugas ir grąžinti dokumentai užsakovui proporcingai apmokėtiems atliktiems darbams.
-                    Užsakovas neteikia archyvavimo paslaugų.
+                    7. Ši sutartis gali būti keičiama, papildoma, nutraukiama šalių susitarimu arba bet kurios šalies iniciatyva informuojant kitą šalį prieš vieną
+                    kalendorinį mėnesį. Iki sutarties nutraukimo turi būti pilnai atsiskaityta už paslaugas ir grąžinti dokumentai užsakovui proporcingai apmokėtiems atliktiems darbams.
+                    Vykdytojas neteikia dokumentų archyvavimo paslaugų.
                 </div>
                 <div class="text-justify">
                     8. Ši sutartis sudaryta 2 (dviem) egzemplioriais, turinčiais vienodą juridinę galią. Iškilę ginčai sprendžiami LR įstatymų nustatyta tvarka.
@@ -71,8 +71,13 @@
                 </div>
                 <div class="text-justify">
                     10. Ši sutartis yra konfidenciali ir negali būti atskleista tretiesiems asmenims visą sutarties vykdymo laikotarpį ir 1 (vienerius) metus po sutarties nutraukimo,
-                    nebent konfidencialios informacijos atskleidimas yra būtinas LR įstatymų nustatyta tvarka. Pažeidus šį punktą taikomos netesybos 12 VDU.
+                    nebent konfidencialios informacijos atskleidimas yra būtinas LR įstatymų nustatyta tvarka. Pažeidus šį punktą taikomos netesybos 12 VDU. VDU dydis nustatomas pagal pažeidimo
+                    padarymo metu galiojusį VDU, kurį skelbia LR Statistikos departamentas.
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
                 <br>
                 <br>
                 <div class="pull-left">Direktorius Andrius Norkus</div>
@@ -100,11 +105,11 @@
                 <div class="pull-right">Tel. <?php echo $this->main_model->info['ukininkas'][0]['telefonas']; ?></div>
                 <br><br><br><br>
                 <div class="pull-left">
-                    ......................................................................
+                    .....................................................
                     <div class="text-center"><h5><small>(Parašas)</small></h5></div>
                 </div>
                 <div class="pull-right">
-                    .......................................................................
+                    .....................................................
                     <div class="text-center"><h5><small>(Parašas)</small></h5></div>
                 </div>
                 <br><br><br><br><br><br>
@@ -139,8 +144,8 @@
                 if($data['inventorizacija_kiekis'] !=""){
                     echo"<tr>
                     <td>Metinė inventorizacija</td>
-                    <td>".$data['inventorizacija_kiekis']." vnt.</td>
-                    <td>".$data['inventorizacija_menesis']."</td>
+                    <td> </td>
+                    <td> </td>
                     <td>".$data['inventorizacija_metai']."</td>
                 </tr>";}
 
@@ -399,8 +404,7 @@ Nuo mokesčio už aplinkos teršimą iš stacionarių taršos šaltinių atleid�
                     <td>" . $data['zemes_menesis'] . "</td>
                     <td>" . $data['zemes_metai'] . "</td>
                 </tr>";
-                        echo "<tr><td class='text-left' colspan='4'><h5><small>Nuo 2018-01-01 mokant žemės mokestį, ūkininkas privalo išskaičiuoti gyventojų pajamų mokestį, sumokėti ir deklaruoti VMI.<br>
-Nuo 2018-01-01 mokant žemės nuomos mokestį fiziniams asmenims, ūkininkas privalo išskaičiuoti ir deklaruoti gyventojų pajamų mokestį GPM313 deklaracijoje.</small></h5></td></tr>";
+                        echo "<tr><td class='text-left' colspan='4'><h5><small>Nuo 2018-01-01 mokant žemės nuomos mokestį fiziniams asmenims, ūkininkas privalo išskaičiuoti ir deklaruoti gyventojų pajamų mokestį GPM313 deklaracijoje.</small></h5></td></tr>";
                     }
 
                     if ($data['europa'] == "on") {
@@ -484,10 +488,11 @@ Pildomi kelionės lapai kiekvienai transporto priemonei. </small></h5></td></tr>
                 ?>
                 </tbody>
             </table>
-                    <div id="footer" class="text-danger text-left">
-                        Jei Jūs samdytumėte buhalterį, tai jums kainuotų 650 eurų per menesį, 7793 eurai per metus. Mokant tik minimalią algą
+                    <br><br><br><br>
+                    <div class="text-center">
+                        ........................................................................................................................................
+                        <h5><small>(Vardas, pavardė, parašas)</small></h5>
                     </div>
-                <br>
             </div>
                 <div class="break" style="display:none">
                     <div class="text-center">

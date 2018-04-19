@@ -18,5 +18,9 @@
     <orderEntry type="library" name="dropzone-amd-module" level="application" />
     <orderEntry type="library" name="dropzone" level="application" />
     <orderEntry type="library" name="vue-resource" level="application" />
+    <orderEntry type="library" name="index" level="application" />
+    <orderEntry type="library" name="vuetify" level="application" />
+    <orderEntry type="library" name="polyfill" level="application" />
+    <orderEntry type="library" name="bootstrap-vue" level="application" />
   </component>
 </module>

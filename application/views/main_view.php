@@ -10,7 +10,7 @@
     <title>1-1.LT | Administracija</title>
     <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>assets\euro.ico" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets\font-awesome\css\font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" rel="stylesheet">
@@ -18,6 +18,7 @@
     <link href="<?= base_url(); ?>assets\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" rel="stylesheet">
     <!-- mano CSS -->
     <link href="<?= base_url(); ?>assets/css/mano.css" rel="stylesheet"/>
+
     <?php if($action == 'skaitciuokle'){ ?>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" rel="stylesheet"/>
@@ -26,10 +27,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.js"></script>
     <?php } ?>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
 </head>
+
 <body class="md-skin">
 <?php
 //istrinsim top-navigation ir atkomentuosim left_view
@@ -133,6 +136,7 @@ if($action == 'saskaitos'){ ?>
 
 <?php
 if($action == 'knyga'){ ?>
+    <script src="https://unpkg.com/vue-select@latest"></script>
     <script src="<?= base_url(); ?>assets/js/zalia_knyga.js"></script>
 <?php } ?>
 

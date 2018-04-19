@@ -41,10 +41,12 @@ class Zalia_knyga_model extends CI_Model{
     }
     //nuskaito knygos irasus
     public function nuskaityti_knyga($dat){
+        $this->db->select("zalia_knyga.*, zalia_knyga.id AS za_id, pvm.*, organizaciju_sarasas.*");
         $this->db->where($dat);
+        $this->db->from("zalia_knyga");
         $this->db->join('pvm', 'pvm.id = zalia_knyga.pvm_id', 'left');
         $this->db->join('organizaciju_sarasas', 'organizaciju_sarasas.id = zalia_knyga.organizacija', 'left');
-        $query = $this->db->get("zalia_knyga");
+        $query = $this->db->get();
         $data = $query->result_array();
         return $data;
     }
