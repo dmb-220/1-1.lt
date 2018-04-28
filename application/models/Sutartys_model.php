@@ -94,6 +94,22 @@ class Sutartys_model extends CI_Model{
         return $data;
     }
 
+    public function EVRK_klase($klase){
+        $this->db->where(array('klase !=' => ""));
+        $this->db->like('klase', $klase, 'after');
+        $query = $this->db->get("EVRK_2");
+        $data = $query->result_array();
+        return $data;
+    }
+
+    public function EVRK_poklase($poklase){
+        $this->db->where(array('poklasis !=' => ""));
+        $this->db->like('poklasis', $poklase, 'after');
+        $query = $this->db->get("EVRK_2");
+        $data = $query->result_array();
+        return $data;
+    }
+
 
     public function atnaujinti_ukio_dydi($nr, $data){
         $where = array('valdos_nr' => $nr);

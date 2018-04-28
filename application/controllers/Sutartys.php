@@ -60,6 +60,9 @@ class Sutartys extends CI_Controller
         $dt = $this->session->userdata();
         if($dt['nr'] == ""){
             $this->main_model->info['error']['login'] = "Norėdami pradėti darbus, Pasirinkite JA su kuriuo dirbsite!";
+            $this->main_model->info['juridinis_asmuo'] = array(
+                "UAB", "AB", "ŽŪB"
+            );
         }else {
             $this->main_model->info['juridinis_asmuo'] = array(
                 "UAB", "AB", "ŽŪB"
@@ -78,7 +81,7 @@ class Sutartys extends CI_Controller
         $this->load->view('main_view');
     }
 
-    public function EVRK_JA(){
+    public function EVRK_skyriai(){
         $this->form_validation->set_rules('sekcija', 'SEKCIJA', 'required');
         $data = array();
         if ($this->form_validation->run()) {
@@ -87,6 +90,37 @@ class Sutartys extends CI_Controller
         }
         echo json_encode($data); die;
     }
+
+    public function EVRK_grupes(){
+        $this->form_validation->set_rules('skyrius', 'SKYRIUS', 'required');
+        $data = array();
+        if ($this->form_validation->run()) {
+            $skyrius = $this->input->post('skyrius');
+            $data = $this->sutartys_model->EVRK_grupe($skyrius);
+        }
+        echo json_encode($data); die;
+    }
+
+    public function EVRK_klases(){
+        $this->form_validation->set_rules('grupe', 'GRUPE', 'required');
+        $data = array();
+        if ($this->form_validation->run()) {
+            $grupe = $this->input->post('grupe');
+            $data = $this->sutartys_model->EVRK_klase($grupe);
+        }
+        echo json_encode($data); die;
+    }
+
+    public function EVRK_poklases(){
+        $this->form_validation->set_rules('klase', 'KLASE', 'required');
+        $data = array();
+        if ($this->form_validation->run()) {
+            $klase = $this->input->post('klase');
+            $data = $this->sutartys_model->EVRK_poklase($klase);
+        }
+        echo json_encode($data); die;
+    }
+
 
 
     /////////////////////////////////////// UKININKAI /////////////////////////////////////////////////////

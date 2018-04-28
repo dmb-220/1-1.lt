@@ -6,288 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71da15b0-e7af-444d-9f0d-2c6f0eaa0392" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/third_party/Excel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_JA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/skaitciuokle_JA.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/AbstractCollection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Bookmarks.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Charts.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Endnotes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Footnotes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Collection/Titles.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/ComplexType/FootnoteProperties.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/ComplexType/ProofState.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/ComplexType/TrackChangesView.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/AbstractContainer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/AbstractElement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Bookmark.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Cell.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Chart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/CheckBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Comment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Endnote.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Field.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Footer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Footnote.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/FormField.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Line.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Link.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/ListItem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/ListItemRun.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Object.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/PageBreak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/PreserveText.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Row.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/SDT.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Section.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Shape.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TOC.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Text.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TextBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TextBreak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TextRun.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/Title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Element/TrackChange.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/AbstractEscaper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/EscaperInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/RegExp.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/Rtf.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Escaper/Xml.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/CopyFileException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/CreateTemporaryFileException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/Exception.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/InvalidImageException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/InvalidObjectException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/InvalidStyleException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Exception/UnsupportedImageTypeException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/IOFactory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Media.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Metadata/Compatibility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Metadata/DocInfo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Metadata/Protection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Metadata/Settings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/PhpWord.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/AbstractReader.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/HTML.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/MsDoc.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ODText.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ODText/AbstractPart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ODText/Content.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ODText/Meta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/RTF.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/RTF/Document.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/ReaderInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/AbstractPart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/DocPropsApp.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/DocPropsCore.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/DocPropsCustom.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Document.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Endnotes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Footnotes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Numbering.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Settings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Reader/Word2007/Styles.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Settings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/AbstractEnum.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/Converter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/Html.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/OLERead.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/PCLZip/pclzip.lib.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Shared/ZipArchive.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/SimpleType/Jc.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/SimpleType/JcTable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/SimpleType/NumberFormat.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/SimpleType/TextAlignment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/SimpleType/Zoom.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/AbstractStyle.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Border.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Cell.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Chart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Extrusion.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Fill.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Font.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Frame.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Indentation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Language.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Line.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/LineNumbering.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/ListItem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Numbering.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/NumberingLevel.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Outline.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Paper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Paragraph.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Row.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Section.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Shading.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Shadow.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Shape.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Spacing.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/TOC.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Tab.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/Table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Style/TextBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Template.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/TemplateProcessor.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/AbstractWriter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/AbstractElement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Container.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Endnote.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Footnote.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Link.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/ListItem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/PageBreak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Text.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/TextBreak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/TextRun.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Element/Title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Part/AbstractPart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Part/Body.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Part/Head.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/AbstractStyle.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/Font.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/Generic.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/HTML/Style/Paragraph.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/AbstractElement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Container.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Link.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Text.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/TextBreak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/TextRun.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Element/Title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/AbstractPart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Content.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Manifest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Meta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Mimetype.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Part/Styles.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/AbstractStyle.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Font.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Paragraph.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Section.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/ODText/Style/Table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF/AbstractRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF/DomPDF.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF/MPDF.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/PDF/TCPDF.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/AbstractElement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Container.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Link.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/ListItem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/PageBreak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Text.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/TextBreak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/TextRun.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Element/Title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Part/AbstractPart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Part/Document.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Part/Header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/AbstractStyle.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/Border.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/Font.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/Paragraph.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/RTF/Style/Section.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/AbstractElement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Bookmark.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Chart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/CheckBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Container.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Endnote.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Field.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Footnote.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/FormField.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Line.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Link.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/ListItem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/ListItemRun.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Object.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/PageBreak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/ParagraphAlignment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/PreserveText.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/SDT.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Shape.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TOC.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TableAlignment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Text.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TextBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TextBreak.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/TextRun.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Element/Title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/AbstractPart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Chart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/ContentTypes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/DocPropsApp.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/DocPropsCore.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/DocPropsCustom.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Document.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Endnotes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/FontTable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Footer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Footnotes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Numbering.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Rels.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/RelsDocument.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/RelsPart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Settings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Styles.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/Theme.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Part/WebSettings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/AbstractStyle.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Cell.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Extrusion.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Fill.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Font.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Frame.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Indentation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Line.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/LineNumbering.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/MarginBorder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Outline.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Paragraph.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Row.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Section.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Shading.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Shadow.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Shape.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Spacing.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Tab.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/Table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/Word2007/Style/TextBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/Writer/WriterInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/resources/doc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/resources/ppt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/PhpWord/resources/xls.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Sutartys.php" afterPath="$PROJECT_DIR$/application/controllers/Sutartys.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Sutartys_model.php" afterPath="$PROJECT_DIR$/application/models/Sutartys_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/left_view.php" afterPath="$PROJECT_DIR$/application/views/left_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main_view.php" afterPath="$PROJECT_DIR$/application/views/main_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" afterPath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_JA.php" afterPath="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_JA.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/skaitciuokle_JA.js" afterPath="$PROJECT_DIR$/assets/js/skaitciuokle_JA.js" />
     </list>
     <ignored path="Aluza.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -328,7 +51,7 @@
       <file leaf-file-name="main_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1989">
+            <state relative-caret-position="0">
               <caret line="132" column="60" lean-forward="false" selection-start-line="132" selection-start-column="60" selection-end-line="132" selection-end-column="60" />
               <folding />
             </state>
@@ -338,8 +61,8 @@
       <file leaf-file-name="zalia_knyga.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/zalia_knyga.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="168" column="8" lean-forward="true" selection-start-line="168" selection-start-column="8" selection-end-line="193" selection-end-column="9" />
+            <state relative-caret-position="2856">
+              <caret line="168" column="8" lean-forward="false" selection-start-line="168" selection-start-column="8" selection-end-line="193" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -348,8 +71,8 @@
       <file leaf-file-name="Sutartys.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="87" column="25" lean-forward="false" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
+            <state relative-caret-position="170">
+              <caret line="64" column="14" lean-forward="false" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -358,8 +81,18 @@
       <file leaf-file-name="skaitciuokle_JA.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_JA.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="137" column="72" lean-forward="false" selection-start-line="137" selection-start-column="72" selection-end-line="137" selection-end-column="72" />
+            <state relative-caret-position="357">
+              <caret line="1244" column="125" lean-forward="false" selection-start-line="1244" selection-start-column="125" selection-end-line="1244" selection-end-column="125" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="skaitciuokle_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="767" column="20" lean-forward="true" selection-start-line="767" selection-start-column="20" selection-end-line="797" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -368,8 +101,8 @@
       <file leaf-file-name="skaitciuokle_JA.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle_JA.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="476">
+              <caret line="57" column="18" lean-forward="false" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -378,8 +111,8 @@
       <file leaf-file-name="Sutartys_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="89" column="37" lean-forward="false" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+            <state relative-caret-position="1768">
+              <caret line="104" column="43" lean-forward="false" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -486,10 +219,10 @@
         <option value="$PROJECT_DIR$/application/views/main_view.php" />
         <option value="$PROJECT_DIR$/assets/js/skaitciuokle.js" />
         <option value="$PROJECT_DIR$/application/third_party/Excel.php" />
+        <option value="$PROJECT_DIR$/application/models/Sutartys_model.php" />
         <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/Sutartys.php" />
         <option value="$PROJECT_DIR$/assets/js/skaitciuokle_JA.js" />
-        <option value="$PROJECT_DIR$/application/models/Sutartys_model.php" />
         <option value="$PROJECT_DIR$/application/views/sutartys/skaitciuokle_JA.php" />
       </list>
     </option>
@@ -516,8 +249,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="238" />
-    <option name="y" value="1" />
+    <option name="x" value="3" />
     <option name="width" value="1243" />
     <option name="height" value="755" />
   </component>
@@ -873,14 +605,11 @@
       <workItem from="1523287844520" duration="301000" />
       <workItem from="1523371990395" duration="815000" />
       <workItem from="1523548754010" duration="1736000" />
-      <workItem from="1524150390359" duration="15528000" />
-    </task>
-    <task id="LOCAL-00043" summary="saskaitos ivedimo pasirinkimai">
-      <created>1507304766979</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1507304766979</updated>
+      <workItem from="1524150390359" duration="16268000" />
+      <workItem from="1524329770884" duration="588000" />
+      <workItem from="1524585070847" duration="11571000" />
+      <workItem from="1524674660349" duration="840000" />
+      <workItem from="1524923020417" duration="4640000" />
     </task>
     <task id="LOCAL-00044" summary="patvarkymai">
       <created>1507311440843</created>
@@ -1218,11 +947,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524151529631</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="kuriama skaiciuokle, JA">
+      <created>1524167880257</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1524167880257</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1201165000" />
+    <option name="totallyTimeSpent" value="1219544000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1237,7 +973,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15138593" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1369936" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1433902" sideWeight="0.49141347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13111112" sideWeight="0.49812132" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18777777" sideWeight="0.5165245" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1327,7 +1063,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sutvarkyta registracija, patvarkytos klaidos" />
     <MESSAGE value="admin meniu pagrindas pajungtas" />
     <MESSAGE value="buhalterija dizainas" />
     <MESSAGE value="buhalterija dizainas 2" />
@@ -1352,7 +1087,8 @@
     <MESSAGE value="pataisymai, isnalizuota banko israsai" />
     <MESSAGE value="kuriama didzioji knyga, pardzia, bandoma naudoti VUEJS" />
     <MESSAGE value="atnaujintas codeigniter 3,1,8" />
-    <option name="LAST_COMMIT_MESSAGE" value="atnaujintas codeigniter 3,1,8" />
+    <MESSAGE value="kuriama skaiciuokle, JA" />
+    <option name="LAST_COMMIT_MESSAGE" value="kuriama skaiciuokle, JA" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1499,7 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="43" column="62" lean-forward="false" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1536,65 +1271,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="81" column="20" lean-forward="false" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
-          <folding>
-            <marker date="1523288105750" expanded="true" signature="9377:9622" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="9654:9922" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="9688:9917" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="9692:9912" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="9699:9907" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="10014:10214" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="10289:10513" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="10590:10822" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="10902:11116" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="11148:11389" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="11182:11384" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="11186:11379" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="11193:11374" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="11728:11997" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="12151:12416" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="12571:12768" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="12605:12763" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="12609:12758" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="12616:12753" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="13001:13214" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="13532:13745" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="14045:14287" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="14571:14809" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="15468:15719" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="15830:16048" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="16138:16387" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="16528:16779" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="17263:17475" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="17750:17959" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="18261:18473" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="18765:18980" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="19248:19484" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="19621:19852" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="20113:20327" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="20643:20854" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="21465:21694" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="21731:22935" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="21765:22930" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="21769:22925" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="21776:22920" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="23083:23331" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="23701:23918" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="23955:24184" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="23989:24179" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="23993:24174" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="24000:24169" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="24324:24571" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="24608:24802" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="24642:24797" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="24646:24792" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="24653:24787" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="24961:25240" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="25261:25361" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="26258:26432" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="26503:26575" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="27081:27214" ph="..." />
-            <marker date="1523288105750" expanded="true" signature="27275:27439" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1602,7 +1278,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2159">
           <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1610,7 +1285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="191" column="8" lean-forward="true" selection-start-line="191" selection-start-column="8" selection-end-line="195" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1618,7 +1292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="12" column="91" lean-forward="false" selection-start-line="12" selection-start-column="91" selection-end-line="12" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1626,7 +1299,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1700,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="60" column="75" lean-forward="false" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1716,7 +1387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1724,7 +1394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1732,7 +1401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1740,7 +1408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1756,7 +1423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
           <caret line="650" column="13" lean-forward="true" selection-start-line="650" selection-start-column="12" selection-end-line="650" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1764,13 +1430,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/main_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
+        <state relative-caret-position="0">
           <caret line="132" column="60" lean-forward="false" selection-start-line="132" selection-start-column="60" selection-end-line="132" selection-end-column="60" />
           <folding />
         </state>
@@ -1780,7 +1445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="53" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1788,7 +1452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="19" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1796,14 +1459,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-238">
           <caret line="23" column="89" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/zalia_knyga.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="168" column="8" lean-forward="true" selection-start-line="168" selection-start-column="8" selection-end-line="193" selection-end-column="9" />
+        <state relative-caret-position="2856">
+          <caret line="168" column="8" lean-forward="false" selection-start-line="168" selection-start-column="8" selection-end-line="193" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1812,7 +1474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="788">
           <caret line="47" column="24" lean-forward="true" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1820,7 +1481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1828,46 +1488,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="38" column="40" lean-forward="true" selection-start-line="38" selection-start-column="40" selection-end-line="41" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
+    <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="76" />
+        <state relative-caret-position="1768">
+          <caret line="104" column="43" lean-forward="false" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Sutartys.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="87" column="25" lean-forward="false" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
+        <state relative-caret-position="170">
+          <caret line="64" column="14" lean-forward="false" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/skaitciuokle_JA.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="476">
+          <caret line="57" column="18" lean-forward="false" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Sutartys_model.php">
+    <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="89" column="37" lean-forward="false" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+        <state relative-caret-position="17">
+          <caret line="767" column="20" lean-forward="true" selection-start-line="767" selection-start-column="20" selection-end-line="797" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/sutartys/skaitciuokle_JA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="137" column="72" lean-forward="false" selection-start-line="137" selection-start-column="72" selection-end-line="137" selection-end-column="72" />
+        <state relative-caret-position="357">
+          <caret line="1244" column="125" lean-forward="false" selection-start-line="1244" selection-start-column="125" selection-end-line="1244" selection-end-column="125" />
           <folding />
         </state>
       </provider>
