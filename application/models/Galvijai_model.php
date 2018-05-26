@@ -4,6 +4,36 @@
  */
 class Galvijai_model extends CI_Model{
     //KINTAMIEJI MASYVAI
+    public $menesiai = array("Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis","Lapkritis", "Gruodis");
+
+    //NAUJAS SKAICIAVIMAS KITOKS GALVIJU SKIRSTYMAS
+    //PIENINIAI
+    public $NEW_pieniniai = array(
+        'telycios_6' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai_6' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'telycios_12' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai_12' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'telycios_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'telycios' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'karves' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
+    );
+
+    //MESINIAI
+    public $NEW_mesiniai = array(
+        'telycios_8' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai_8' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'telycios_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'telycios' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'buliai' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'karves' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
+        'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
+    );
+
+    //SENI DUOMENU MASYVAI< GALES ITRINTI< KAI PERRASYSIU PROGRAMA
     public $galvijai = array(
         'karves' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
         'verseliai' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
@@ -13,6 +43,7 @@ class Galvijai_model extends CI_Model{
         'buliai_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
         'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
     );
+
     public $mesiniai = array(
         'karves' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
         'verseliai' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
@@ -22,6 +53,8 @@ class Galvijai_model extends CI_Model{
         'buliai_24' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0),
         'viso' => array('pradzia' => 0, 'gimimai' => 0, 'pirkimai' => 0, 'j_is' => 0, 'j_i' => 0, 'kritimai' => 0, 'suvartota' => 0, 'parduota' => 0, 'pabaiga' => 0)
     );
+
+
     public $pasarai = array(
         'karves' => array('pavadinimas' => "", 'kiek' => 0,
             'sienas' => array('min' => 0, 'vid' => 0, 'max' => 0),
@@ -191,6 +224,40 @@ class Galvijai_model extends CI_Model{
                     //$this->galvijai['karves']['j_i']++;
                 }
             }
+        }
+    }
+
+    /////////////////// PIENINIAI ////////////////////////////
+    public function karviu_judejimas_pieniniai($dat){
+        $pi = $this->nuskaityti_gyvulius($dat);
+        if (!empty($pi)) {
+            if ($pi[0]['lytis'] == "Telyčaitė (Karvė)" OR $pi[0]['lytis'] == "Telyčaitė (Telyčaitė)") {
+                //reikia patikrinti amziu, nes i karves galiu judeti ir is telyciu iki 24 menesiu
+                if($pi[0]['amzius']>=24){
+                    $this->galvijai_model->NEW_pieniniai['karves']['j_i']++;
+                    $this->galvijai_model->NEW_pieniniai['telycios']['j_is']++;
+                }else{
+                    $this->galvijai_model->NEW_pieniniai['karves']['j_i']++;
+                    $this->galvijai_model->NEW_pieniniai['telycios_24']['j_is']++;
+                }
+            }
+        }
+    }
+
+    public function ivykio_skaiciavimas_pieniniai($pp, $gyvunas, $duomenys){
+        if($pp == '07' || $pp == '05'){
+            $this->galvijai_model->NEW_pieniniai[$gyvunas]['parduota']++;
+            $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
+        }
+        if($pp == '03'){
+            $this->galvijai_model->NEW_pieniniai[$gyvunas]['kritimai']++;
+        }
+        if($pp == '14'){
+            $this->galvijai_model->NEW_pieniniai[$gyvunas]['suvartota']++;
+        }
+        if($pp == '02'){
+            $this->galvijai_model->NEW_pieniniai[$gyvunas]['parduota']++;
+            $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
         }
     }
 

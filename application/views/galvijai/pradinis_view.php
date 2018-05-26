@@ -24,7 +24,10 @@ $this->load->view("galvijai/langai_modal");
                 <span class="fa fa-bar-chart-o fa-2x text-info"></span> <br/>Galvijų  sąrašas
             </button>
             <button class="btn btn-default" type="button" id="galviju_judejimas">
-                <span class="fa fa-line-chart fa-2x text-info"></span> <br/>Galvijų judėjimas
+                <span class="fa fa-line-chart fa-2x text-info"></span> <br/>Galvijų judėjimas 2017
+            </button>
+            <button class="btn btn-default" type="button" id="galviju_judejimas2">
+                <span class="fa fa-line-chart fa-2x text-danger"></span> <br/>Galvijų judėjimas 2018
             </button>
             ---
             <button class="btn btn-default" type="button" id="skaiciuoti_pasarus">

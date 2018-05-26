@@ -93,6 +93,15 @@ $(document).ready(function(){
         uzklausa();
         $("#in_viclt, #in_skaiciuoti_pasarus, #in_skaiciuoti_meslus, #in_ganykliniai_pasarai, #in_nustatymai").hide();
     });
+
+    //suformuojama lentele su galviju judejimu (NAUJAS)
+    $('#galviju_judejimas2').on('click', function() {
+        $('#metai').val(pr_metai);
+        $('#menesis').val(pr_menesis);
+        url = "galviju_judejimas2";
+        uzklausa();
+        $("#in_viclt, #in_skaiciuoti_pasarus, #in_skaiciuoti_meslus, #in_ganykliniai_pasarai, #in_nustatymai").hide();
+    });
 ////////////////////////////////////////////////////////////////////////// DUOMENU IKELIMAS IS VIC.lT /////////////////////////////////////////////
     //atidarom sub-meniu
     $('#viclt').on('click', function() {
