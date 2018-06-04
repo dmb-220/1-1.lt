@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 /**
  * ************************ CONTROLLERS ************************
  * @property Pasarai            $pasarai            Pasarai controller
@@ -46,35 +49,20 @@ class Galvijai extends CI_Controller {
 
     ///////////////////////////////////////////////////////////////////////////////// NAUJA ////////////////////////////////////////////////////////////////////
 
-    function gauti_excel_faila($data){
-        //load our new PHPExcel library
-        $this->load->library('excel');
+    function gauti_excel_faila(){
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'Hello World !');
 
-        //activate worksheet number 1
-        $this->excel->setActiveSheetIndex(0);
-        //name the worksheet
-        $this->excel->getActiveSheet()->setTitle('test worksheet');
-        //set cell A1 content with some text
-        $this->excel->getActiveSheet()->setCellValue('A1', 'This is just some text value');
-        //change the font size
-        $this->excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(20);
-        //make the font become bold
-        $this->excel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
-        //merge cell A1 until D1
-        $this->excel->getActiveSheet()->mergeCells('A1:D1');
-        //set aligment to center for that merged cell (A1 to D1)
-        $this->excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        $writer = new Xlsx($spreadsheet);
 
-        $filename='./DATA/galviju_judejimas.xlsx'; //save our workbook as this file name
-        header('Content-Type: application/vnd.ms-excel'); //mime type
-        header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
-        header('Cache-Control: max-age=0'); //no cache
+        $filename = './DATA/galviju_judejimas';
 
-//save it to Excel5 format (excel 2003 .XLS file), change this to 'Excel2007' (and adjust the filename extension, also the header mime type)
-//if you want to save it as .XLSX Excel 2007 format
-        $objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel2007');
-//force user to download the Excel file without writing it to server's HD
-        $objWriter->save('php://output');
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output'); // download file
     }
 
 

@@ -12,7 +12,8 @@
 	},
 	"require": {
 		"php": ">=5.2.4",
-		"appzcoder/laravel-admin": "v1.0.0"
+		"appzcoder/laravel-admin": "v1.0.0",
+		"phpoffice/phpspreadsheet": "^1.2"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"

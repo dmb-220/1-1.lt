@@ -104,7 +104,13 @@
                     <i class="fa fa-check-circle-o fa-lg"> SPAUSDINTI</i>
                 </button>
             </div>
+
             <?php
+            /*<div class="form-group">
+                <a href="<?= base_url() ?>galvijai/gauti_excel_faila" class="btn btn-block btn-outline btn-primary" type="button">
+                    <i class="fa fa-check-circle-o fa-lg"> ATSISIŲSTI</i>
+                </a>
+            </div>*/
         }
         ?>
     </div>
