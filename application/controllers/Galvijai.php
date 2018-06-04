@@ -46,6 +46,38 @@ class Galvijai extends CI_Controller {
 
     ///////////////////////////////////////////////////////////////////////////////// NAUJA ////////////////////////////////////////////////////////////////////
 
+    function gauti_excel_faila($data){
+        //load our new PHPExcel library
+        $this->load->library('excel');
+
+        //activate worksheet number 1
+        $this->excel->setActiveSheetIndex(0);
+        //name the worksheet
+        $this->excel->getActiveSheet()->setTitle('test worksheet');
+        //set cell A1 content with some text
+        $this->excel->getActiveSheet()->setCellValue('A1', 'This is just some text value');
+        //change the font size
+        $this->excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(20);
+        //make the font become bold
+        $this->excel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
+        //merge cell A1 until D1
+        $this->excel->getActiveSheet()->mergeCells('A1:D1');
+        //set aligment to center for that merged cell (A1 to D1)
+        $this->excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+        $filename='./DATA/galviju_judejimas.xlsx'; //save our workbook as this file name
+        header('Content-Type: application/vnd.ms-excel'); //mime type
+        header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
+        header('Cache-Control: max-age=0'); //no cache
+
+//save it to Excel5 format (excel 2003 .XLS file), change this to 'Excel2007' (and adjust the filename extension, also the header mime type)
+//if you want to save it as .XLSX Excel 2007 format
+        $objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel2007');
+//force user to download the Excel file without writing it to server's HD
+        $objWriter->save('php://output');
+    }
+
+
     //PRADINIS PUSLAPIS
     public function pradinis(){
         //nuskaitom pasarus
@@ -954,422 +986,784 @@ class Galvijai extends CI_Controller {
                 //nuskaitom visus gyvulius, pries tai buvusio menesio
                 $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'amzius !=' => "");
                 $rezultatai_vakar = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                /////////////////// PIENINIAI /////////////////////////////////////
+                if($banda == 1) {
+                    if (count($rezultatai_dabar) > 0 && count($rezultatai_vakar) > 0) {
+                        //////////////////////////////////////////////////////////////////////
+                        // GALVIJU KIEKIS MENESIO PRADZIOJE SKAICIUOJAMS TIK BENDRAS KIEKIS //
+                        //////////////////////////////////////////////////////////////////////
+                        foreach ($rezultatai_vakar as $sk) {
+                            $one = explode(" ", $sk['lytis']);
 
-                if(count($rezultatai_dabar) > 0 && count($rezultatai_vakar) > 0) {
-                    //////////////////////////////////////////////////////////////////////
-                    // GALVIJU KIEKIS MENESIO PRADZIOJE SKAICIUOJAMS TIK BENDRAS KIEKIS //
-                    //////////////////////////////////////////////////////////////////////
-                    foreach ($rezultatai_vakar as $sk) {
-                        $one = explode(" ", $sk['lytis']);
+                            if ($one[0] == "Karvė") {
+                                $this->galvijai_model->NEW_pieniniai['karves']['pradzia']++;
+                            }
 
-                        if ($one[0] == "Karvė") {
-                            $this->galvijai_model->NEW_pieniniai['karves']['pradzia']++;
+                            if ($one[0] == "Buliukas") {
+                                if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_pieniniai['buliai_6']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
+                                    $this->galvijai_model->NEW_pieniniai['buliai_12']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                                    $this->galvijai_model->NEW_pieniniai['buliai_24']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 24) {
+                                    $this->galvijai_model->NEW_pieniniai['buliai']['pradzia']++;
+                                }
+                            }
+
+                            if ($one[0] == "Telyčaitė") {
+                                if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_pieniniai['telycios_6']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
+                                    $this->galvijai_model->NEW_pieniniai['telycios_12']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                                    $this->galvijai_model->NEW_pieniniai['telycios_24']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 24) {
+                                    $this->galvijai_model->NEW_pieniniai['telycios']['pradzia']++;
+                                }
+                            }
                         }
 
-                        if ($one[0] == "Buliukas") {
-                            if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
-                                $this->galvijai_model->NEW_pieniniai['buliai_6']['pradzia']++;
-                            }
-                            if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
-                                $this->galvijai_model->NEW_pieniniai['buliai_12']['pradzia']++;
-                            }
-                            if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
-                                $this->galvijai_model->NEW_pieniniai['buliai_24']['pradzia']++;
-                            }
-                            if ($sk['amzius'] >= 24) {
-                                $this->galvijai_model->NEW_pieniniai['buliai']['pradzia']++;
-                            }
-                        }
-
-                        if ($one[0] == "Telyčaitė") {
-                            if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
-                                $this->galvijai_model->NEW_pieniniai['telycios_6']['pradzia']++;
-                            }
-                            if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
-                                $this->galvijai_model->NEW_pieniniai['telycios_12']['pradzia']++;
-                            }
-                            if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
-                                $this->galvijai_model->NEW_pieniniai['telycios_24']['pradzia']++;
-                            }
-                            if ($sk['amzius'] >= 24) {
-                                $this->galvijai_model->NEW_pieniniai['telycios']['pradzia']++;
-                            }
-                        }
-                    }
-
-                    //////////////////////////////////////////////////////////////////////////////
-                    // GALVIJU KIEKIS MENESIO PABAIGOJE SKAICIUOJAMS VISKA, GYMIMAI, PARDAVIMAI //
-                    //////////////////////////////////////////////////////////////////////////////
-                    foreach ($rezultatai_dabar as $sk) {
-                        $one = explode(" ", $sk['lytis']);
-                        //KARVES JUDĖJIMAS
-                        if ($one[0] == "Karvė") {
-                            //karve vis dar egzistuoja
-                            if ($sk['amzius'] != "") {
-                                $this->galvijai_model->NEW_pieniniai['karves']['pabaiga']++;
-                                //nupirktos karves
-                                //susedam i masyva kad rodyti nupirktu sarasa
-                                $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                $laikas = explode(".", $sk['laikymo_pradzia']);
-                                if ($laikas[0] == $metai AND $laikas[1] == $menesis) {
+                        //////////////////////////////////////////////////////////////////////////////
+                        // GALVIJU KIEKIS MENESIO PABAIGOJE SKAICIUOJAMS VISKA, GYMIMAI, PARDAVIMAI //
+                        //////////////////////////////////////////////////////////////////////////////
+                        foreach ($rezultatai_dabar as $sk) {
+                            $one = explode(" ", $sk['lytis']);
+                            //KARVES JUDĖJIMAS
+                            if ($one[0] == "Karvė") {
+                                //karve vis dar egzistuoja
+                                if ($sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_pieniniai['karves']['pabaiga']++;
+                                    //nupirktos karves
+                                    //susedam i masyva kad rodyti nupirktu sarasa
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                    $laikas = explode(".", $sk['laikymo_pradzia']);
+                                    if ($laikas[0] == $metai AND $laikas[1] == $menesis) {
                                         $this->galvijai_model->NEW_pieniniai['karves']['pirkimai']++;
                                         $this->galvijai_model->pirkimai['karves'][] = $da;
+                                    }
+                                    //karviu judejimas is telyciu
+                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                    $this->galvijai_model->karviu_judejimas_pieniniai($dat);
+                                } else {
+                                    //is telyciu pereina i karves ir parduodama, dingsta
+                                    //karviu judejimas is telyciu
+                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                    $this->galvijai_model->karviu_judejimas_pieniniai($dat);
+
+                                    //issifiltruojam ivykio koda
+                                    $pp = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
+                                    //tikrinsim pagal ivykio koda kas nutiko gyvuliui
+                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                    $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pp, "karves", $dd);
                                 }
-                                //karviu judejimas is telyciu
-                                $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                $this->galvijai_model->karviu_judejimas_pieniniai($dat);
-                            } else {
-                                //is telyciu pereina i karves ir parduodama, dingsta
-                                //karviu judejimas is telyciu
-                                $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                $this->galvijai_model->karviu_judejimas_pieniniai($dat);
-
-                                //issifiltruojam ivykio koda
-                                $pp = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
-                                //tikrinsim pagal ivykio koda kas nutiko gyvuliui
-                                $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pp, "karves", $dd);
                             }
-                        }
 
-                        //BULIAI JUDEJIMAS
-                        if ($one[0] == "Buliukas") {
-                            //buliukai nuo 6 iki 12
-                            if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
-                                $this->galvijai_model->NEW_pieniniai['buliai_12']['pabaiga']++;
+                            //BULIAI JUDEJIMAS
+                            if ($one[0] == "Buliukas") {
+                                //buliukai nuo 6 iki 12
+                                if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
+                                    $this->galvijai_model->NEW_pieniniai['buliai_12']['pabaiga']++;
 
-                                if ($sk['amzius'] >= 6 AND $sk['amzius'] < 9) {
+                                    if ($sk['amzius'] >= 6 AND $sk['amzius'] < 9) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (!empty($am)) {
+                                            if ($am[0]['amzius'] < 6) {
+                                                $this->galvijai_model->NEW_pieniniai['buliai_12']['j_i']++;
+                                                $this->galvijai_model->NEW_pieniniai['buliai_6']['j_is']++;
+                                            }
+                                        }
+                                    }
+                                    //tikrinam ar nera nupirktas
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                    $lka = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lka[0] == $metai AND $lka[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_pieniniai['buliai_12']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['buliai_12'][] = $da;
+                                    }
+                                }
+                                //buliukai nuo 12 iki 24
+                                if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                                    $this->galvijai_model->NEW_pieniniai['buliai_24']['pabaiga']++;
+
+                                    if ($sk['amzius'] >= 12 AND $sk['amzius'] < 14) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (!empty($am)) {
+                                            if ($am[0]['amzius'] < 12) {
+                                                $this->galvijai_model->NEW_pieniniai['buliai_24']['j_i']++;
+                                                $this->galvijai_model->NEW_pieniniai['buliai_12']['j_is']++;
+                                            }
+                                        }
+                                    }
+                                    //tikrinam ar nera nupirktas
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                    $lka = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lka[0] == $metai AND $lka[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_pieniniai['buliai_24']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['buliai_24'][] = $da;
+                                    }
+                                }
+
+                                //Buliukai virs 24
+                                if ($sk['amzius'] >= 24) {
+                                    $this->galvijai_model->NEW_pieniniai['buliai']['pabaiga']++;
+
                                     $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                                     $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
                                     if (!empty($am)) {
+                                        if ($am[0]['amzius'] < 24) {
+                                            $this->galvijai_model->NEW_pieniniai['buliai']['j_i']++;
+                                            $this->galvijai_model->NEW_pieniniai['buliai_24']['j_is']++;
+                                        }
+                                    }
+                                    //tikrinam ar nera nupirktas
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
+                                    $lk = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_pieniniai['buliai']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['buliai'][] = $da;
+                                    }
+                                }
+
+                                //Buliukai mezesni negu 12
+                                if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_pieniniai['buliai_6']['pabaiga']++;
+
+                                    //tikrinti gimimus pagal laikymo pradzia, nes jei pagal gimimo data buna kad neatitinka data, buna gimsta sausi, laikymo pradzia vasari
+                                    //nevisada pagal gimimo data tinka gimimui indentifikuoti
+                                    $lp = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
+                                        $this->galvijai_model->NEW_pieniniai['buliai_6']['gimimai']++;
+                                    }
+                                    //reik del gimimu dar patikrinti ar nera atgaline tvarka irasytas
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis - 1 AND $info[1] == 'Gimęs') {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (empty($am)) {
+                                            $this->galvijai_model->NEW_pieniniai['buliai_6']['gimimai']++;
+                                        }
+                                    }
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_pieniniai['buliai_6']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['buliai_6'][] = $da;
+                                    }
+                                }
+
+                                //jei yra tuscias, reikia galvijai kazkur iskeliavo, reik issiaiskintu kur
+                                if ($sk['amzius'] == "") {
+                                    $pr = str_replace(".", "-", $sk['gimimo_data']);
+                                    if (strstr($sk['laikymo_pabaiga'], '*')) {
+                                        $pp = explode("*", $sk['laikymo_pabaiga']);
+                                        $pp = explode(" ", $pp[1]);
+                                    } else {
+                                        $pp = explode(" ", $sk['laikymo_pabaiga']);
+                                    }
+
+                                    $pb = str_replace(".", "-", $pp[0]);
+                                    $pb = str_replace(">", "", $pb);
+
+                                    $da = $this->galvijai_model->dateDifference($pr, $pb, '%y-%m-%d');
+                                    $dd = explode("-", $da);
+                                    $mo = $dd[0] * 12 + $dd[1];
+
+                                    //reik atsifiltruoti dingimo koduka, gali buti ne tik parduota bet ir kritimas arba suvartota sau
+                                    $pa = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
+
+                                    if ($mo >= 6 AND $mo < 12) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
                                         if ($am[0]['amzius'] < 6) {
                                             $this->galvijai_model->NEW_pieniniai['buliai_12']['j_i']++;
                                             $this->galvijai_model->NEW_pieniniai['buliai_6']['j_is']++;
                                         }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "buliai_12", $dd);
                                     }
-                                }
-                                //tikrinam ar nera nupirktas
-                                $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                $lka = explode(".", $sk['laikymo_pradzia']);
-                                $info = explode(" ", $sk['informacija']);
-                                if ($lka[0] == $metai AND $lka[1] == $menesis AND $info[1] == 'Atvyko') {
-                                    $this->galvijai_model->NEW_pieniniai['buliai_12']['pirkimai']++;
-                                    $this->galvijai_model->pirkimai['buliai_12'][] = $da;
-                                }
-                            }
-                            //buliukai nuo 12 iki 24
-                            if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
-                                $this->galvijai_model->NEW_pieniniai['buliai_24']['pabaiga']++;
 
-                                if ($sk['amzius'] >= 12 AND $sk['amzius'] < 14) {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if (!empty($am)) {
+                                    if ($mo >= 12 AND $mo < 24) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
                                         if ($am[0]['amzius'] < 12) {
                                             $this->galvijai_model->NEW_pieniniai['buliai_24']['j_i']++;
                                             $this->galvijai_model->NEW_pieniniai['buliai_12']['j_is']++;
                                         }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "buliai_24", $dd);
                                     }
-                                }
-                                //tikrinam ar nera nupirktas
-                                $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                $lka = explode(".", $sk['laikymo_pradzia']);
-                                $info = explode(" ", $sk['informacija']);
-                                if ($lka[0] == $metai AND $lka[1] == $menesis AND $info[1] == 'Atvyko') {
-                                    $this->galvijai_model->NEW_pieniniai['buliai_24']['pirkimai']++;
-                                    $this->galvijai_model->pirkimai['buliai_24'][] = $da;
+                                    if ($mo >= 24) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if ($am[0]['amzius'] < 24) {
+                                            $this->galvijai_model->NEW_pieniniai['buliai']['j_i']++;
+                                            $this->galvijai_model->NEW_pieniniai['buliai_24']['j_is']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "buliai", $dd);
+                                    }
+                                    if ($mo < 6) {
+                                        $lp = explode(".", $sk['laikymo_pradzia']);
+                                        $info = explode(" ", $sk['informacija']);
+                                        if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
+                                            $this->galvijai_model->NEW_pieniniai['buliai_6']['gimimai']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "buliai_6", $dd);
+                                    }
+
                                 }
                             }
 
-                            //Buliukai virs 24
-                            if ($sk['amzius'] >= 24) {
-                                    $this->galvijai_model->NEW_pieniniai['buliai']['pabaiga']++;
+                            if ($one[0] == "Telyčaitė") {
+                                //Telycaites nuo 6 iki 12
+                                if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
+                                    $this->galvijai_model->NEW_pieniniai['telycios_12']['pabaiga']++;
 
-                                $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                if (!empty($am)) {
-                                    if ($am[0]['amzius'] < 24) {
-                                        $this->galvijai_model->NEW_pieniniai['buliai']['j_i']++;
-                                        $this->galvijai_model->NEW_pieniniai['buliai_24']['j_is']++;
+                                    if ($sk['amzius'] >= 6 AND $sk['amzius'] < 9) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (!empty($am) AND $am[0]['amzius'] < 6) {
+                                            $this->galvijai_model->NEW_pieniniai['telycios_12']['j_i']++;
+                                            $this->galvijai_model->NEW_pieniniai['telycios_6']['j_is']++;
+                                        }
                                     }
-                                }
-                                //tikrinam ar nera nupirktas
-                                $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                    //pirkimai
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
 
-                                $lk = explode(".", $sk['laikymo_pradzia']);
-                                $info = explode(" ", $sk['informacija']);
-                                if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
-                                    $this->galvijai_model->NEW_pieniniai['buliai']['pirkimai']++;
-                                    $this->galvijai_model->pirkimai['buliai'][] = $da;
-                                }
-                            }
-
-                            //Buliukai mezesni negu 12
-                            if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
-                                $this->galvijai_model->NEW_pieniniai['buliai_6']['pabaiga']++;
-
-                                //tikrinti gimimus pagal laikymo pradzia, nes jei pagal gimimo data buna kad neatitinka data, buna gimsta sausi, laikymo pradzia vasari
-                                //nevisada pagal gimimo data tinka gimimui indentifikuoti
-                                $lp = explode(".", $sk['laikymo_pradzia']);
-                                $info = explode(" ", $sk['informacija']);
-                                if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
-                                    $this->galvijai_model->NEW_pieniniai['buliai_6']['gimimai']++;
-                                }
-                                //reik del gimimu dar patikrinti ar nera atgaline tvarka irasytas
-                                if ($lp[0] == $metai AND $lp[1] == $menesis - 1 AND $info[1] == 'Gimęs') {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if (empty($am)) {
-                                        $this->galvijai_model->NEW_pieniniai['buliai_6']['gimimai']++;
-                                    }
-                                }
-                                $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-
-                                if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko') {
-                                    $this->galvijai_model->NEW_pieniniai['buliai_6']['pirkimai']++;
-                                    $this->galvijai_model->pirkimai['buliai_6'][] = $da;
-                                }
-                            }
-
-                            //jei yra tuscias, reikia galvijai kazkur iskeliavo, reik issiaiskintu kur
-                            if ($sk['amzius'] == "") {
-                                $pr = str_replace(".", "-", $sk['gimimo_data']);
-                                if (strstr($sk['laikymo_pabaiga'], '*')) {
-                                    $pp = explode("*", $sk['laikymo_pabaiga']);
-                                    $pp = explode(" ", $pp[1]);
-                                } else {
-                                    $pp = explode(" ", $sk['laikymo_pabaiga']);
-                                }
-
-                                $pb = str_replace(".", "-", $pp[0]);
-                                $pb = str_replace(">", "", $pb);
-
-                                $da = $this->galvijai_model->dateDifference($pr, $pb, '%y-%m-%d');
-                                $dd = explode("-", $da);
-                                $mo = $dd[0] * 12 + $dd[1];
-
-                                //reik atsifiltruoti dingimo koduka, gali buti ne tik parduota bet ir kritimas arba suvartota sau
-                                $pa = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
-
-                                if ($mo >= 6 AND $mo < 12) {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if ($am[0]['amzius'] < 6) {
-                                        $this->galvijai_model->NEW_pieniniai['buliai_12']['j_i']++;
-                                        $this->galvijai_model->NEW_pieniniai['buliai_6']['j_is']++;
-                                    }
-                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                    $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "buliai_12", $dd);
-                                }
-
-                                if ($mo >= 12 AND $mo < 24) {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if ($am[0]['amzius'] < 12) {
-                                        $this->galvijai_model->NEW_pieniniai['buliai_24']['j_i']++;
-                                        $this->galvijai_model->NEW_pieniniai['buliai_12']['j_is']++;
-                                    }
-                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                    $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "buliai_24", $dd);
-                                }
-                                if ($mo >= 24) {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if ($am[0]['amzius'] < 24) {
-                                        $this->galvijai_model->NEW_pieniniai['buliai']['j_i']++;
-                                        $this->galvijai_model->NEW_pieniniai['buliai_24']['j_is']++;
-                                    }
-                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                    $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "buliai", $dd);
-                                }
-                                if ($mo < 6) {
-                                    $lp = explode(".", $sk['laikymo_pradzia']);
+                                    $lk = explode(".", $sk['laikymo_pradzia']);
                                     $info = explode(" ", $sk['informacija']);
-                                    if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
-                                        $this->galvijai_model->NEW_pieniniai['buliai_6']['gimimai']++;
+                                    if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_pieniniai['telycios_12']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['telycios_12'][] = $da;
                                     }
-                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                    $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "buliai_6", $dd);
                                 }
 
-                            }
-                        }
+                                //Telycaites nuo 12 iki 24
+                                if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
+                                    $this->galvijai_model->NEW_pieniniai['telycios_24']['pabaiga']++;
 
-                        if ($one[0] == "Telyčaitė") {
-                            //Telycaites nuo 6 iki 12
-                            if ($sk['amzius'] >= 6 AND $sk['amzius'] < 12) {
-                                $this->galvijai_model->NEW_pieniniai['telycios_12']['pabaiga']++;
+                                    if ($sk['amzius'] >= 12 AND $sk['amzius'] < 14) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (!empty($am) AND $am[0]['amzius'] < 12) {
+                                            $this->galvijai_model->NEW_pieniniai['telycios_24']['j_i']++;
+                                            $this->galvijai_model->NEW_pieniniai['telycios_12']['j_is']++;
+                                        }
+                                    }
+                                    //pirkimai
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
 
-                                if ($sk['amzius'] >= 6 AND $sk['amzius'] < 9) {
+                                    $lk = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_pieniniai['telycios_24']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['telycios_24'][] = $da;
+                                    }
+                                }
+
+                                //Telycaites virs 24
+                                if ($sk['amzius'] >= 24) {
+                                    $this->galvijai_model->NEW_pieniniai['telycios']['pabaiga']++;
+
                                     $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
                                     $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if (!empty($am) AND $am[0]['amzius'] < 6) {
-                                        $this->galvijai_model->NEW_pieniniai['telycios_12']['j_i']++;
-                                        $this->galvijai_model->NEW_pieniniai['telycios_6']['j_is']++;
+                                    if (!empty($am)) {
+                                        if ($am[0]['amzius'] < 24) {
+                                            $this->galvijai_model->NEW_pieniniai['telycios']['j_i']++;
+                                            $this->galvijai_model->NEW_pieniniai['telycios_24']['j_is']++;
+                                        }
                                     }
-                                }
-                                //pirkimai
-                                $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                    //pirkimai
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
 
-                                $lk = explode(".", $sk['laikymo_pradzia']);
-                                $info = explode(" ", $sk['informacija']);
-                                if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
-                                    $this->galvijai_model->NEW_pieniniai['telycios_12']['pirkimai']++;
-                                    $this->galvijai_model->pirkimai['telycios_12'][] = $da;
-                                }
-                            }
-
-                            //Telycaites nuo 12 iki 24
-                            if ($sk['amzius'] >= 12 AND $sk['amzius'] < 24) {
-                                $this->galvijai_model->NEW_pieniniai['telycios_24']['pabaiga']++;
-
-                                if ($sk['amzius'] >= 12 AND $sk['amzius'] < 14) {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if (!empty($am) AND $am[0]['amzius'] < 12) {
-                                        $this->galvijai_model->NEW_pieniniai['telycios_24']['j_i']++;
-                                        $this->galvijai_model->NEW_pieniniai['telycios_12']['j_is']++;
-                                    }
-                                }
-                                //pirkimai
-                                $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-
-                                $lk = explode(".", $sk['laikymo_pradzia']);
-                                $info = explode(" ", $sk['informacija']);
-                                if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
-                                    $this->galvijai_model->NEW_pieniniai['telycios_24']['pirkimai']++;
-                                    $this->galvijai_model->pirkimai['telycios_24'][] = $da;
-                                }
-                            }
-
-                            //Telycaites virs 24
-                            if ($sk['amzius'] >= 24) {
-                                $this->galvijai_model->NEW_pieniniai['telycios']['pabaiga']++;
-
-                                $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                if (!empty($am)) {
-                                    if ($am[0]['amzius'] < 24) {
-                                        $this->galvijai_model->NEW_pieniniai['telycios']['j_i']++;
-                                        $this->galvijai_model->NEW_pieniniai['telycios_24']['j_is']++;
-                                    }
-                                }
-                                //pirkimai
-                                $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-
-                                $lk = explode(".", $sk['laikymo_pradzia']);
-                                $info = explode(" ", $sk['informacija']);
-                                if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
-                                    $this->galvijai_model->NEW_pieniniai['telycios']['pirkimai']++;
-                                    $this->galvijai_model->pirkimai['telycios'][] = $da;
-                                }
-                            }
-
-                            //Telycaites mazesnios negu 12
-                            if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
-                                $this->galvijai_model->NEW_pieniniai['telycios_6']['pabaiga']++;
-
-                                $lp = explode(".", $sk['laikymo_pradzia']);
-                                $info = explode(" ", $sk['informacija']);
-                                if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
-                                    $this->galvijai_model->NEW_pieniniai['telycios_6']['gimimai']++;
-                                }
-                                //reik del gimimu dar patikrinti ar nera atgaline tvarka irasytas
-                                if ($lp[0] == $metai AND $lp[1] == $menesis - 1 AND $info[1] == 'Gimęs') {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if (empty($am)) {
-                                        $this->galvijai_model->NEW_pieniniai['telycios_6']['gimimai']++;
+                                    $lk = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_pieniniai['telycios']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['telycios'][] = $da;
                                     }
                                 }
 
-                                $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                //Telycaites mazesnios negu 12
+                                if ($sk['amzius'] < 6 AND $sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_pieniniai['telycios_6']['pabaiga']++;
 
-                                if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko') {
-                                    $this->galvijai_model->NEW_pieniniai['telycios_6']['pirkimai']++;
-                                    $this->galvijai_model->pirkimai['telycios_6'][] = $da;
-                                }
-                            }
-
-                            //jei yra tuscias, reikia galvijai kazkur iskeliavo, reik issiaiskintu kur
-                            //reik atsifiltruoti dingimo koduka, gali buti ne tik parduota bet ir kritimas arba suvartota sau
-                            ////////////////////////////////////////////
-                            //pasitikrinti amziu ar pries pardavima nebuvo kitoje kategorijoje, perejo ir iskart pardave
-
-                            if ($sk['amzius'] == "") {
-                                $pr = str_replace(".", "-", $sk['gimimo_data']);
-
-                                if (strstr($sk['laikymo_pabaiga'], '*')) {
-                                    $pp = explode("*", $sk['laikymo_pabaiga']);
-                                    $pp = explode(" ", $pp[1]);
-                                } else {
-                                    $pp = explode(" ", $sk['laikymo_pabaiga']);
-                                }
-                                $pb = str_replace(".", "-", $pp[0]);
-                                $pb = str_replace(">", "", $pb);
-
-                                $da = $this->galvijai_model->dateDifference($pr, $pb, '%y-%m-%d');
-                                $dd = explode("-", $da);
-                                $mo = $dd[0] * 12 + $dd[1];
-                                //reik atsifiltruoti dingimo koduka, gali buti ne tik parduota bet ir kritimas arba suvartota sau
-                                $pa = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
-
-                                //tikrinama kas atsitiko gyvuliams, kur dingo?
-                                if ($mo >= 6 AND $mo < 12) {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if ($am[0]['amzius'] < 6) {
-                                        $this->galvijai_model->NEW_pieniniai['telycios_6']['j_is']++;
-                                        $this->galvijai_model->NEW_pieniniai['telycios_12']['j_i']++;
-                                    }
-                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                    $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "telycios_12", $dd);
-                                }
-
-                                if ($mo >= 12 AND $mo < 24) {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if ($am[0]['amzius'] < 12) {
-                                        $this->galvijai_model->NEW_pieniniai['telycios_12']['j_is']++;
-                                        $this->galvijai_model->NEW_pieniniai['telycios_24']['j_i']++;
-                                    }
-                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                    $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "telycios_24", $dd);
-                                }
-                                if ($mo >= 24) {
-                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
-                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
-                                    if ($am[0]['amzius'] < 24) {
-                                        $this->galvijai_model->NEW_pieniniai['telycios_24']['j_is']++;
-                                        $this->galvijai_model->NEW_pieniniai['telycios']['j_i']++;
-                                    }
-                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                    $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "telycios", $dd);
-                                }
-                                if ($mo < 6) {
                                     $lp = explode(".", $sk['laikymo_pradzia']);
                                     $info = explode(" ", $sk['informacija']);
                                     if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
                                         $this->galvijai_model->NEW_pieniniai['telycios_6']['gimimai']++;
                                     }
-                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
-                                    $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "telycios_6", $dd);
+                                    //reik del gimimu dar patikrinti ar nera atgaline tvarka irasytas
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis - 1 AND $info[1] == 'Gimęs') {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (empty($am)) {
+                                            $this->galvijai_model->NEW_pieniniai['telycios_6']['gimimai']++;
+                                        }
+                                    }
+
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_pieniniai['telycios_6']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['telycios_6'][] = $da;
+                                    }
+                                }
+
+                                //jei yra tuscias, reikia galvijai kazkur iskeliavo, reik issiaiskintu kur
+                                //reik atsifiltruoti dingimo koduka, gali buti ne tik parduota bet ir kritimas arba suvartota sau
+                                ////////////////////////////////////////////
+                                //pasitikrinti amziu ar pries pardavima nebuvo kitoje kategorijoje, perejo ir iskart pardave
+
+                                if ($sk['amzius'] == "") {
+                                    $pr = str_replace(".", "-", $sk['gimimo_data']);
+
+                                    if (strstr($sk['laikymo_pabaiga'], '*')) {
+                                        $pp = explode("*", $sk['laikymo_pabaiga']);
+                                        $pp = explode(" ", $pp[1]);
+                                    } else {
+                                        $pp = explode(" ", $sk['laikymo_pabaiga']);
+                                    }
+                                    $pb = str_replace(".", "-", $pp[0]);
+                                    $pb = str_replace(">", "", $pb);
+
+                                    $da = $this->galvijai_model->dateDifference($pr, $pb, '%y-%m-%d');
+                                    $dd = explode("-", $da);
+                                    $mo = $dd[0] * 12 + $dd[1];
+                                    //reik atsifiltruoti dingimo koduka, gali buti ne tik parduota bet ir kritimas arba suvartota sau
+                                    $pa = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
+
+                                    //tikrinama kas atsitiko gyvuliams, kur dingo?
+                                    if ($mo >= 6 AND $mo < 12) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if ($am[0]['amzius'] < 6) {
+                                            $this->galvijai_model->NEW_pieniniai['telycios_6']['j_is']++;
+                                            $this->galvijai_model->NEW_pieniniai['telycios_12']['j_i']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "telycios_12", $dd);
+                                    }
+
+                                    if ($mo >= 12 AND $mo < 24) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if ($am[0]['amzius'] < 12) {
+                                            $this->galvijai_model->NEW_pieniniai['telycios_12']['j_is']++;
+                                            $this->galvijai_model->NEW_pieniniai['telycios_24']['j_i']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "telycios_24", $dd);
+                                    }
+                                    if ($mo >= 24) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if ($am[0]['amzius'] < 24) {
+                                            $this->galvijai_model->NEW_pieniniai['telycios_24']['j_is']++;
+                                            $this->galvijai_model->NEW_pieniniai['telycios']['j_i']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "telycios", $dd);
+                                    }
+                                    if ($mo < 6) {
+                                        $lp = explode(".", $sk['laikymo_pradzia']);
+                                        $info = explode(" ", $sk['informacija']);
+                                        if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
+                                            $this->galvijai_model->NEW_pieniniai['telycios_6']['gimimai']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_pieniniai($pa, "telycios_6", $dd);
+                                    }
                                 }
                             }
                         }
-                    }
 
-                    //suskaiciuoti lenteleje, viso kiekius GYVULIAI
-                    $keys = array_keys($this->galvijai_model->NEW_pieniniai['karves']);
-                    foreach($keys as $ro){
-                        $sumDetail = $ro;
-                        $this->galvijai_model->NEW_pieniniai['viso'][$ro] = array_reduce($this->galvijai_model->NEW_pieniniai,
-                            function($runningTotal, $record) use($sumDetail) {
-                                $runningTotal += $record[$sumDetail];
-                                return $runningTotal;}, 0 );
-                    }
+                        //suskaiciuoti lenteleje, viso kiekius GYVULIAI
+                        $keys = array_keys($this->galvijai_model->NEW_pieniniai['karves']);
+                        foreach ($keys as $ro) {
+                            $sumDetail = $ro;
+                            $this->galvijai_model->NEW_pieniniai['viso'][$ro] = array_reduce($this->galvijai_model->NEW_pieniniai,
+                                function ($runningTotal, $record) use ($sumDetail) {
+                                    $runningTotal += $record[$sumDetail];
+                                    return $runningTotal;
+                                }, 0);
+                        }
 
-                }else{$this->main_model->info['error'][] = "Nerasta galvijų, kuriuos galėtume skaitčiuoti";}
+                    } else {
+                        $this->main_model->info['error'][] = "Nerasta galvijų, kuriuos galėtume skaitčiuoti";
+                    }
+                }
+
+
+                ///////////////////// MESINIAI //////////////////////
+                if($banda == 2) {
+                    if (count($rezultatai_dabar) > 0 && count($rezultatai_vakar) > 0) {
+                        //////////////////////////////////////////////////////////////////////
+                        // GALVIJU KIEKIS MENESIO PRADZIOJE SKAICIUOJAMS TIK BENDRAS KIEKIS //
+                        //////////////////////////////////////////////////////////////////////
+                        foreach ($rezultatai_vakar as $sk) {
+                            $one = explode(" ", $sk['lytis']);
+
+                            if ($one[0] == "Karvė") {
+                                $this->galvijai_model->NEW_mesiniai['karves']['pradzia']++;
+                            }
+
+                            if ($one[0] == "Buliukas") {
+                                if ($sk['amzius'] < 8 AND $sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_mesiniai['buliai_8']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 8 AND $sk['amzius'] < 24) {
+                                    $this->galvijai_model->NEW_mesiniai['buliai_24']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 24) {
+                                    $this->galvijai_model->NEW_mesiniai['buliai']['pradzia']++;
+                                }
+                            }
+
+                            if ($one[0] == "Telyčaitė") {
+                                if ($sk['amzius'] < 8 AND $sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_mesiniai['telycios_8']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 8 AND $sk['amzius'] < 24) {
+                                    $this->galvijai_model->NEW_mesiniai['telycios_24']['pradzia']++;
+                                }
+                                if ($sk['amzius'] >= 24) {
+                                    $this->galvijai_model->NEW_mesiniai['telycios']['pradzia']++;
+                                }
+                            }
+                        }
+
+                        //////////////////////////////////////////////////////////////////////////////
+                        // GALVIJU KIEKIS MENESIO PABAIGOJE SKAICIUOJAMS VISKA, GYMIMAI, PARDAVIMAI //
+                        //////////////////////////////////////////////////////////////////////////////
+                        foreach ($rezultatai_dabar as $sk) {
+                            $one = explode(" ", $sk['lytis']);
+                            //KARVES JUDĖJIMAS
+                            if ($one[0] == "Karvė") {
+                                //karve vis dar egzistuoja
+                                if ($sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_mesiniai['karves']['pabaiga']++;
+                                    //nupirktos karves
+                                    //susedam i masyva kad rodyti nupirktu sarasa
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                    $laikas = explode(".", $sk['laikymo_pradzia']);
+                                    if ($laikas[0] == $metai AND $laikas[1] == $menesis) {
+                                        $this->galvijai_model->NEW_mesiniai['karves']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['karves'][] = $da;
+                                    }
+                                    //karviu judejimas is telyciu
+                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                    $this->galvijai_model->karviu_judejimas_mesiniai($dat);
+                                } else {
+                                    //is telyciu pereina i karves ir parduodama, dingsta
+                                    //karviu judejimas is telyciu
+                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                    $this->galvijai_model->karviu_judejimas_mesiniai($dat);
+
+                                    //issifiltruojam ivykio koda
+                                    $pp = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
+                                    //tikrinsim pagal ivykio koda kas nutiko gyvuliui
+                                    $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                    $this->galvijai_model->ivykio_skaiciavimas_mesiniai($pp, "karves", $dd);
+                                }
+                            }
+
+                            //BULIAI JUDEJIMAS
+                            if ($one[0] == "Buliukas") {
+                                //buliukai nuo 8 iki 24
+                                if ($sk['amzius'] >= 8 AND $sk['amzius'] < 24) {
+                                    $this->galvijai_model->NEW_mesiniai['buliai_24']['pabaiga']++;
+
+                                    if ($sk['amzius'] >= 8 AND $sk['amzius'] < 12) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (!empty($am)) {
+                                            if ($am[0]['amzius'] < 8) {
+                                                $this->galvijai_model->NEW_mesiniai['buliai_24']['j_i']++;
+                                                $this->galvijai_model->NEW_mesiniai['buliai_8']['j_is']++;
+                                            }
+                                        }
+                                    }
+                                    //tikrinam ar nera nupirktas
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                    $lka = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lka[0] == $metai AND $lka[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_mesiniai['buliai_24']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['buliai_24'][] = $da;
+                                    }
+                                }
+
+                                //Buliukai virs 24
+                                if ($sk['amzius'] >= 24) {
+                                    $this->galvijai_model->NEW_mesiniai['buliai']['pabaiga']++;
+
+                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                    if (!empty($am)) {
+                                        if ($am[0]['amzius'] < 24) {
+                                            $this->galvijai_model->NEW_mesiniai['buliai']['j_i']++;
+                                            $this->galvijai_model->NEW_mesiniai['buliai_24']['j_is']++;
+                                        }
+                                    }
+                                    //tikrinam ar nera nupirktas
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
+                                    $lk = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_mesiniai['buliai']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['buliai'][] = $da;
+                                    }
+                                }
+
+                                //Buliukai mezesni negu 8
+                                if ($sk['amzius'] < 8 AND $sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_mesiniai['buliai_8']['pabaiga']++;
+
+                                    //tikrinti gimimus pagal laikymo pradzia, nes jei pagal gimimo data buna kad neatitinka data, buna gimsta sausi, laikymo pradzia vasari
+                                    //nevisada pagal gimimo data tinka gimimui indentifikuoti
+                                    $lp = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
+                                        $this->galvijai_model->NEW_mesiniai['buliai_8']['gimimai']++;
+                                    }
+                                    //reik del gimimu dar patikrinti ar nera atgaline tvarka irasytas
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis - 1 AND $info[1] == 'Gimęs') {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (empty($am)) {
+                                            $this->galvijai_model->NEW_mesiniai['buliai_8']['gimimai']++;
+                                        }
+                                    }
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_mesiniai['buliai_8']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['buliai_8'][] = $da;
+                                    }
+                                }
+
+                                //jei yra tuscias, reikia galvijai kazkur iskeliavo, reik issiaiskintu kur
+                                if ($sk['amzius'] == "") {
+                                    $pr = str_replace(".", "-", $sk['gimimo_data']);
+                                    if (strstr($sk['laikymo_pabaiga'], '*')) {
+                                        $pp = explode("*", $sk['laikymo_pabaiga']);
+                                        $pp = explode(" ", $pp[1]);
+                                    } else {
+                                        $pp = explode(" ", $sk['laikymo_pabaiga']);
+                                    }
+
+                                    $pb = str_replace(".", "-", $pp[0]);
+                                    $pb = str_replace(">", "", $pb);
+
+                                    $da = $this->galvijai_model->dateDifference($pr, $pb, '%y-%m-%d');
+                                    $dd = explode("-", $da);
+                                    $mo = $dd[0] * 12 + $dd[1];
+
+                                    //reik atsifiltruoti dingimo koduka, gali buti ne tik parduota bet ir kritimas arba suvartota sau
+                                    $pa = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
+
+
+                                    ///echo $pa; die;
+
+                                    if ($mo < 8) {
+                                        $lp = explode(".", $sk['laikymo_pradzia']);
+                                        $info = explode(" ", $sk['informacija']);
+                                        if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
+                                            $this->galvijai_model->NEW_mesiniai['buliai_8']['gimimai']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_mesiniai($pa, "buliai_8", $dd);
+                                    }
+
+                                    if ($mo >= 8 AND $mo < 24) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if ($am[0]['amzius'] < 8) {
+                                            $this->galvijai_model->NEW_mesiniai['buliai_24']['j_i']++;
+                                            $this->galvijai_model->NEW_mesiniai['buliai_8']['j_is']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_mesiniai($pa, "buliai_24", $dd);
+                                    }
+
+                                    if ($mo >= 24) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if ($am[0]['amzius'] < 24) {
+                                            $this->galvijai_model->NEW_mesiniai['buliai']['j_i']++;
+                                            $this->galvijai_model->NEW_mesiniai['buliai_24']['j_is']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_mesiniai($pa, "buliai", $dd);
+                                    }
+
+                                }
+                            }
+
+                            if ($one[0] == "Telyčaitė") {
+                                //Telycaites nuo 8 iki 24
+                                if ($sk['amzius'] >= 8 AND $sk['amzius'] < 24) {
+                                    $this->galvijai_model->NEW_mesiniai['telycios_24']['pabaiga']++;
+
+                                    if ($sk['amzius'] >= 8 AND $sk['amzius'] < 12) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (!empty($am) AND $am[0]['amzius'] < 8) {
+                                            $this->galvijai_model->NEW_mesiniai['telycios_24']['j_i']++;
+                                            $this->galvijai_model->NEW_mesiniai['telycios_8']['j_is']++;
+                                        }
+                                    }
+                                    //pirkimai
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
+                                    $lk = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_mesiniai['telycios_24']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['telycios_24'][] = $da;
+                                    }
+                                }
+
+
+                                //Telycaites virs 24
+                                if ($sk['amzius'] >= 24) {
+                                    $this->galvijai_model->NEW_mesiniai['telycios']['pabaiga']++;
+
+                                    $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                    $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                    if (!empty($am)) {
+                                        if ($am[0]['amzius'] < 24) {
+                                            $this->galvijai_model->NEW_mesiniai['telycios']['j_i']++;
+                                            $this->galvijai_model->NEW_mesiniai['telycios_24']['j_is']++;
+                                        }
+                                    }
+                                    //pirkimai
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
+                                    $lk = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lk[0] == $metai AND $lk[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_mesiniai['telycios']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['telycios'][] = $da;
+                                    }
+                                }
+
+                                //Telycaites mazesnios negu 12
+                                if ($sk['amzius'] < 8 AND $sk['amzius'] != "") {
+                                    $this->galvijai_model->NEW_mesiniai['telycios_8']['pabaiga']++;
+
+                                    $lp = explode(".", $sk['laikymo_pradzia']);
+                                    $info = explode(" ", $sk['informacija']);
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
+                                        $this->galvijai_model->NEW_mesiniai['telycios_8']['gimimai']++;
+                                    }
+                                    //reik del gimimu dar patikrinti ar nera atgaline tvarka irasytas
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis - 1 AND $info[1] == 'Gimęs') {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if (empty($am)) {
+                                            $this->galvijai_model->NEW_mesiniai['telycios_8']['gimimai']++;
+                                        }
+                                    }
+
+                                    $da = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+
+                                    if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Atvyko') {
+                                        $this->galvijai_model->NEW_mesiniai['telycios_8']['pirkimai']++;
+                                        $this->galvijai_model->pirkimai['telycios_8'][] = $da;
+                                    }
+                                }
+
+                                //jei yra tuscias, reikia galvijai kazkur iskeliavo, reik issiaiskintu kur
+                                //reik atsifiltruoti dingimo koduka, gali buti ne tik parduota bet ir kritimas arba suvartota sau
+                                ////////////////////////////////////////////
+                                //pasitikrinti amziu ar pries pardavima nebuvo kitoje kategorijoje, perejo ir iskart pardave
+
+                                if ($sk['amzius'] == "") {
+                                    $pr = str_replace(".", "-", $sk['gimimo_data']);
+
+                                    if (strstr($sk['laikymo_pabaiga'], '*')) {
+                                        $pp = explode("*", $sk['laikymo_pabaiga']);
+                                        $pp = explode(" ", $pp[1]);
+                                    } else {
+                                        $pp = explode(" ", $sk['laikymo_pabaiga']);
+                                    }
+                                    $pb = str_replace(".", "-", $pp[0]);
+                                    $pb = str_replace(">", "", $pb);
+
+                                    $da = $this->galvijai_model->dateDifference($pr, $pb, '%y-%m-%d');
+                                    $dd = explode("-", $da);
+                                    $mo = $dd[0] * 12 + $dd[1];
+                                    //reik atsifiltruoti dingimo koduka, gali buti ne tik parduota bet ir kritimas arba suvartota sau
+                                    $pa = $this->galvijai_model->ivykio_kodas($sk['laikymo_pabaiga']);
+
+                                    //tikrinama kas atsitiko gyvuliams, kur dingo?
+                                    if ($mo >= 8 AND $mo < 24) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if ($am[0]['amzius'] < 8) {
+                                            $this->galvijai_model->NEW_mesiniai['telycios_8']['j_is']++;
+                                            $this->galvijai_model->NEW_mesiniai['telycios_24']['j_i']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_mesiniai($pa, "telycios_24", $dd);
+                                    }
+
+                                    if ($mo >= 24) {
+                                        $dat = array('ukininkas' => $ukininkas, 'metai' => $met, 'menesis' => $men, 'numeris' => $sk['numeris']);
+                                        $am = $this->galvijai_model->nuskaityti_gyvulius($dat);
+                                        if ($am[0]['amzius'] < 24) {
+                                            $this->galvijai_model->NEW_mesiniai['telycios_24']['j_is']++;
+                                            $this->galvijai_model->NEW_mesiniai['telycios']['j_i']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_mesiniai($pa, "telycios", $dd);
+                                    }
+                                    if ($mo < 8) {
+                                        $lp = explode(".", $sk['laikymo_pradzia']);
+                                        $info = explode(" ", $sk['informacija']);
+                                        if ($lp[0] == $metai AND $lp[1] == $menesis AND $info[1] == 'Gimęs') {
+                                            $this->galvijai_model->NEW_mesiniai['telycios_8']['gimimai']++;
+                                        }
+                                        $dd = array('numeris' => $sk['numeris'], 'kam' => $sk['informacija']);
+                                        $this->galvijai_model->ivykio_skaiciavimas_mesiniai($pa, "telycios_8", $dd);
+                                    }
+                                }
+                            }
+                        }
+
+                        //suskaiciuoti lenteleje, viso kiekius GYVULIAI
+                        $keys = array_keys($this->galvijai_model->NEW_mesiniai['karves']);
+                        foreach ($keys as $ro) {
+                            $sumDetail = $ro;
+                            $this->galvijai_model->NEW_mesiniai['viso'][$ro] = array_reduce($this->galvijai_model->NEW_mesiniai,
+                                function ($runningTotal, $record) use ($sumDetail) {
+                                    $runningTotal += $record[$sumDetail];
+                                    return $runningTotal;
+                                }, 0);
+                        }
+
+                    } else {
+                        $this->main_model->info['error'][] = "Nerasta galvijų, kuriuos galėtume skaitčiuoti";
+                    }
+                }
+
             }else{$this->main_model->info['error'][] = "Blogas ukininkas, klaidos sistemoje";}
         }else{$this->main_model->info['error'][] = "Problemos, nepasirinktas ukininkas, blogi metai, ar menesis";}
         //bandos nustatymas

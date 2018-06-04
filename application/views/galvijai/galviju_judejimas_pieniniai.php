@@ -120,8 +120,10 @@
             <div class="modal-body">
 
                 <?php
-                $par = array('karves' => "Karvės", 'verseliai' => "Veršeliai", 'telycios_12' => "Telyčios 1-2 m.",
-                    'buliai_12' => "Buliai 1-2 m.", 'telycios_24' => "Telyčios virš 2 m.", 'buliai_24' => "Buliai virš 2 m.",
+
+                $par = array('karves' => "Melžiamos karvės.", 'telycios_6' => "Telyčaitės  iki 6 mėn.", 'telycios_12' => "Telyčaitės  6-12 mėn.",
+                    'buliai_6' => 'Buliukai iki 6 mėn.', 'buliai_12' => "Buliai 6 - 12 men.", 'telycios_24' => "Telyčios 1-2 m.",
+                    'buliai_24' => "Buliai nuo 1-2 m.", 'buliai' => 'Buliai nuo 2 m. ir vyresni.', "telycios" => "Telyčios virš 2 m.bandos atstatymui"
                 );
 
                 //var_dump($this->galvijai_model->pardavimai);
@@ -168,8 +170,9 @@
             <div class="modal-body">
 
                 <?php
-                $par = array('karves' => "Karvės", 'verseliai' => "Veršeliai", 'telycios_12' => "Telyčios 1-2 m.",
-                    'buliai_12' => "Buliai 1-2 m.", 'telycios_24' => "Telyčios virš 2 m.", 'buliai_24' => "Buliai virš 2 m.",
+                $par = array('karves' => "Melžiamos karvės.", 'telycios_6' => "Telyčaitės  iki 6 mėn.", 'telycios_12' => "Telyčaitės  6-12 mėn.",
+                    'buliai_6' => 'Buliukai iki 6 mėn.', 'buliai_12' => "Buliai 6 - 12 men.", 'telycios_24' => "Telyčios 1 - 2 m.",
+                    'buliai_24' => "Buliai nuo 1 - 2 m.", 'buliai' => 'Buliai nuo 2 m. ir vyresni.', "telycios" => "Telyčios virš 2 m.bandos atstatymui"
                 );
 
                 //var_dump($this->galvijai_model->pardavimai);

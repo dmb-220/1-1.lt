@@ -227,6 +227,40 @@ class Galvijai_model extends CI_Model{
         }
     }
 
+    /////////////////// MESINIAI ////////////////////////////
+    public function karviu_judejimas_mesiniai($dat){
+        $pi = $this->nuskaityti_gyvulius($dat);
+        if (!empty($pi)) {
+            if ($pi[0]['lytis'] == "Telyčaitė (Karvė)" OR $pi[0]['lytis'] == "Telyčaitė (Telyčaitė)") {
+                //reikia patikrinti amziu, nes i karves galiu judeti ir is telyciu iki 24 menesiu
+                if($pi[0]['amzius']>=24){
+                    $this->galvijai_model->NEW_mesiniai['karves']['j_i']++;
+                    $this->galvijai_model->NEW_pieniniai['telycios']['j_is']++;
+                }else{
+                    $this->galvijai_model->NEW_mesiniai['karves']['j_i']++;
+                    $this->galvijai_model->NEW_mesiniai['telycios_24']['j_is']++;
+                }
+            }
+        }
+    }
+
+    public function ivykio_skaiciavimas_mesiniai($pp, $gyvunas, $duomenys){
+        if($pp == '07' || $pp == '05'){
+            $this->galvijai_model->NEW_mesiniai[$gyvunas]['parduota']++;
+            $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
+        }
+        if($pp == '03'){
+            $this->galvijai_model->NEW_mesiniai[$gyvunas]['kritimai']++;
+        }
+        if($pp == '14'){
+            $this->galvijai_model->NEW_mesiniai[$gyvunas]['suvartota']++;
+        }
+        if($pp == '02'){
+            $this->galvijai_model->NEW_mesiniai[$gyvunas]['parduota']++;
+            $this->galvijai_model->pardavimai[$gyvunas][] = $duomenys;
+        }
+    }
+
     /////////////////// PIENINIAI ////////////////////////////
     public function karviu_judejimas_pieniniai($dat){
         $pi = $this->nuskaityti_gyvulius($dat);
